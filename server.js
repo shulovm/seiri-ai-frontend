@@ -326,24 +326,12 @@ app.get("/api/history", (req, res) => {
   return res.json({ session_id: sid, history: getSession(sid).history });
 });
 
-app.get("/api/health", async (_req, res) => {
+app.get("/api/health", (_req, res) => {
   const hasKey = Boolean(ANTHROPIC_API_KEY && ANTHROPIC_API_KEY.length > 10);
-  if (!hasKey) return res.json({ ok: false, anthropic: "missing" });
-  try {
-    await withTimeout(
-      client.messages.create({
-        model: MODEL,
-        max_tokens: 5,
-        messages: [{ role: "user", content: "hi" }],
-      }),
-      15000,
-      "health_timeout"
-    );
-    return res.json({ ok: true, anthropic: "ok" });
-  } catch (e) {
-    const msg = e?.message && e.message.length < 80 ? e.message : "error";
-    return res.json({ ok: false, anthropic: msg });
-  }
+  return res.json({
+    ok: hasKey,
+    anthropic: hasKey ? "set" : "missing",
+  });
 });
 
 app.post("/api/reset", (req, res) => {

@@ -97,7 +97,7 @@ vercel
 - API: **https://（あなたのドメイン）/api/organize** など
 - ルート `/` にアクセスすると `/ma/` にリダイレクトされます。
 
-**API キーが効いているか確認する:** ブラウザで **https://（あなたのドメイン）/api/health** を開く。`{"ok":true,"anthropic":"ok"}` ならキーと接続は問題なし。`anthropic":"missing"` なら環境変数未設定、`anthropic":"..."` に別の値ならエラー内容。
+**API キーが設定されているか確認する:** ブラウザで **https://（あなたのドメイン）/api/health** を開く。`{"ok":true,"anthropic":"set"}` なら環境変数は入っている。`{"ok":false,"anthropic":"missing"}` なら未設定。接続の確認は実際に短い文を送って返答が返るかで判断できる。
 
 ### 5. 注意（Vercel のサーバーレス）
 
