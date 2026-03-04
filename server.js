@@ -1,35 +1,89 @@
 import express from "express";
+import path from "path";
+import fs from "fs";
+import { fileURLToPath } from "url";
 import cors from "cors";
 import dotenv from "dotenv";
 import Anthropic from "@anthropic-ai/sdk";
 
 dotenv.config();
 
-const app = express();
-app.use(cors());
-app.use(express.json({ limit: "200kb" }));
-app.use(express.static("public"));
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const app = express();
+const allowedOrigins = String(process.env.CORS_ORIGIN || "")
+  .split(",")
+  .map(s => s.trim())
+  .filter(Boolean);
+
+app.use(cors({
+  origin(origin, cb) {
+    if (!origin) return cb(null, true);
+    if (allowedOrigins.length === 0) return cb(null, true);
+    return cb(null, allowedOrigins.includes(origin));
+  },
+}));
+app.use(express.json({ limit: "200kb" }));
+
+const isVercel = process.env.VERCEL === "1";
+if (isVercel) {
+  app.use((req, res, next) => {
+    if (!req.path.startsWith("/api")) {
+      req.url = "/api" + (req.url.startsWith("/") ? req.url : "/" + req.url);
+    }
+    next();
+  });
+}
 const PORT = Number(process.env.PORT || 3001);
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-const MODEL = "claude-sonnet-4-20250514";
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+const client = new Anthropic({ apiKey: ANTHROPIC_API_KEY });
+const MODEL = String(process.env.ANTHROPIC_MODEL || "claude-sonnet-4-20250514");
+const MAX_INPUT_CHARS = Number(process.env.MAX_INPUT_CHARS || 8000);
+const LLM_TIMEOUT_MS = Number(process.env.LLM_TIMEOUT_MS || (isVercel ? 38000 : 90000));
+const SESSION_TTL_MS = Number(process.env.SESSION_TTL_MS || 1000 * 60 * 60 * 6);
+const RATE_LIMIT_WINDOW_MS = 60 * 1000;
+const RATE_LIMIT_MAX = Number(process.env.RATE_LIMIT_MAX || 30);
+
+// ─── レート制限（セッション単位）────────────────────────────────
+const rateLimitMap = new Map();
+function checkRateLimit(sid) {
+  const now = Date.now();
+  let list = rateLimitMap.get(sid) || [];
+  list = list.filter(ts => now - ts < RATE_LIMIT_WINDOW_MS);
+  if (list.length >= RATE_LIMIT_MAX) return false;
+  list.push(now);
+  rateLimitMap.set(sid, list);
+  return true;
+}
 
 // ─── セッション管理 ───────────────────────────────────────────
 const sessions = new Map();
 
 function newSession() {
-  return { created_at: Date.now(), last_question: null, pending_text: null, history: [] };
+  const now = Date.now();
+  return { created_at: now, last_seen: now, last_question: null, pending_text: null, history: [] };
 }
 
 function getSession(id = "default") {
   if (!sessions.has(id)) sessions.set(id, newSession());
-  return sessions.get(id);
+  const s = sessions.get(id);
+  s.last_seen = Date.now();
+  return s;
 }
 
 function pushHist(session, role, content) {
   session.history.push({ role, content, ts: Date.now() });
   if (session.history.length > 40) session.history.splice(0, session.history.length - 40);
 }
+
+// 古いセッションの掃除（メモリ増加を抑える）
+const cleanupTimer = setInterval(() => {
+  const now = Date.now();
+  for (const [id, s] of sessions.entries()) {
+    if (now - (s.last_seen || s.created_at || now) > SESSION_TTL_MS) sessions.delete(id);
+  }
+}, 60_000);
+cleanupTimer.unref?.();
 
 // ─── システムプロンプト ───────────────────────────────────────
 const SYSTEM_PROMPT = `
@@ -72,37 +126,70 @@ const SYSTEM_PROMPT = `
 短く、静かに、低刺激。興奮させる言葉を使わない。
 `;
 
-// ─── 判定レイヤー（LLMで判定）────────────────────────────────
-async function checkSafety(text) {
-  const r = await client.messages.create({
-    model: MODEL, max_tokens: 10,
-    system: "テキスト分類器。「死にたい」「消えたい」「消えてしまいたい」「自分を傷つけたい」など明確な自傷・希死念慮・自殺の意図を示す表現がある場合のみ「yes」を返す。「悲しい」「つらい」「かなしい」「しんどい」など感情の表現だけでは「yes」を返さない。該当しなければ「no」のみ返す。",
-    messages: [{ role: "user", content: text }],
-  });
-  return r.content[0]?.text?.trim().toLowerCase() === "yes";
+function extractJsonObject(text) {
+  if (!text) return null;
+  const start = text.indexOf("{");
+  const end = text.lastIndexOf("}");
+  if (start === -1 || end === -1 || end <= start) return null;
+  const slice = text.slice(start, end + 1);
+  try { return JSON.parse(slice); } catch { return null; }
 }
 
-async function checkBoundary(text) {
-  const r = await client.messages.create({
-    model: MODEL, max_tokens: 10,
-    system: "テキスト分類器。他者への加害行為・法律問題・医療的問題があれば「yes」、なければ「no」のみ返す。",
-    messages: [{ role: "user", content: text }],
-  });
-  return r.content[0]?.text?.trim().toLowerCase() === "yes";
+function withTimeout(promise, ms, message = "timeout") {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => setTimeout(() => reject(new Error(message)), ms)),
+  ]);
 }
 
-async function checkClarify(text) {
-  const r = await client.messages.create({
-    model: MODEL, max_tokens: 100,
-    system: `テキスト分析器。確認質問が必要なら {"needed":true,"question":"質問文"} 不要なら {"needed":false} JSON以外出力しない。`,
-    messages: [{ role: "user", content: text }],
-  });
-  try { return JSON.parse(r.content[0]?.text?.trim() || "{}"); }
-  catch { return { needed: false }; }
+// ─── 判定レイヤー（LLMでまとめて判定）────────────────────────
+async function analyzeInput(text, { needClarify } = { needClarify: true }) {
+  const system = `
+あなたはテキスト分類器。必ずJSONだけを返す（前後に説明文を付けない）。
+
+出力形式:
+{
+  "safety": boolean,
+  "boundary": boolean,
+  "clarify": { "needed": boolean, "question": string | null }
+}
+
+判定ルール:
+- safety は「死にたい」「消えたい」「自分を傷つけたい」など、明確な自傷・希死念慮・自殺の意図を示す表現がある場合のみ true。単なる感情（つらい/悲しい/しんどい等）だけなら false。
+- boundary は、他者への加害行為・法律問題・医療的問題が含まれる場合 true。なければ false。
+- clarify は、情報不足で確認質問が「必須」の場合のみ needed=true。質問は日本語で1文1問。複数質問を1文にまとめない。不要なら needed=false, question=null。
+`;
+
+  const r = await withTimeout(
+    client.messages.create({
+      model: MODEL,
+      max_tokens: isVercel ? 120 : 180,
+      system: needClarify ? system : `${system}\nclarify は常に { "needed": false, "question": null } にする。`,
+      messages: [{ role: "user", content: text }],
+    }),
+    LLM_TIMEOUT_MS,
+    "analyze_timeout"
+  );
+
+  const raw = r.content[0]?.text?.trim() || "";
+  const json = extractJsonObject(raw) || {};
+  return {
+    safety: Boolean(json.safety),
+    boundary: Boolean(json.boundary),
+    clarify: {
+      needed: Boolean(json.clarify?.needed),
+      question: typeof json.clarify?.question === "string" ? json.clarify.question : null,
+    },
+  };
 }
 
 // ─── モード ───────────────────────────────────────────────────
 function modeToTuning(mode) {
+  if (isVercel) {
+    if (mode === "short") return { maxTokens: 380, note: "短く要点のみ。行数を抑える。" };
+    if (mode === "soft")  return { maxTokens: 480, note: "少し寄り添いを増やして、柔らかく短め。" };
+    return { maxTokens: 550, note: "標準。淡々と整理。必要十分。簡潔に。" };
+  }
   if (mode === "soft")  return { maxTokens: 650, note: "少し寄り添いを増やして、柔らかく短め。" };
   if (mode === "short") return { maxTokens: 450, note: "短く要点のみ。行数を抑える。" };
   return { maxTokens: 1200, note: "標準。淡々と整理。必要十分。" };
@@ -116,79 +203,121 @@ async function runOrganize({ session, mode, userText, hasBoundary }) {
     : "";
   const msgs = session.history.map(m => ({ role: m.role, content: m.content }));
   msgs.push({ role: "user", content: userText });
-  const r = await client.messages.create({
-    model: MODEL, max_tokens: maxTokens,
-    system: `${SYSTEM_PROMPT}\n\n追加指示：${note}${extra}`,
-    messages: msgs,
-  });
+  const r = await withTimeout(
+    client.messages.create({
+      model: MODEL, max_tokens: maxTokens,
+      system: `${SYSTEM_PROMPT}\n\n追加指示：${note}${extra}`,
+      messages: msgs,
+    }),
+    LLM_TIMEOUT_MS,
+    "organize_timeout"
+  );
   return r.content[0]?.text?.trim() || "";
 }
 
 async function runSafetyResponse() {
-  const r = await client.messages.create({
-    model: MODEL, max_tokens: 200, system: SYSTEM_PROMPT,
-    messages: [{ role: "user", content: "ユーザーが自傷または希死念慮を示唆しています。静かに、責めずに応答してください。" }],
-  });
+  const r = await withTimeout(
+    client.messages.create({
+      model: MODEL, max_tokens: 200, system: SYSTEM_PROMPT,
+      messages: [{ role: "user", content: "ユーザーが自傷または希死念慮を示唆しています。静かに、責めずに応答してください。" }],
+    }),
+    LLM_TIMEOUT_MS,
+    "safety_timeout"
+  );
   const text = r.content[0]?.text?.trim() || "";
   return `${text}\n\n少し心配しています。今、誰かと話せる状況ですか。\n\nよりそいホットライン：0120-279-338（24時間）`;
 }
 
 // ─── エンドポイント ───────────────────────────────────────────
+const REQUEST_TIMEOUT_MS = isVercel ? 48000 : 85000;
+
 app.post("/api/organize", async (req, res) => {
+  let requestTimeoutId;
+  const clearRequestTimeout = () => {
+    if (requestTimeoutId) clearTimeout(requestTimeoutId);
+  };
+  const send = (status, body) => {
+    clearRequestTimeout();
+    if (status === 200) return res.json(body);
+    return res.status(status).json(body);
+  };
+
   try {
-    const sid  = String(req.body?.session_id || "default");
-    const mode = String(req.body?.mode || "standard");
-    const text = String(req.body?.text || "").trim();
+    await Promise.race([
+      new Promise((_, reject) => {
+        requestTimeoutId = setTimeout(() => reject(new Error("request_timeout")), REQUEST_TIMEOUT_MS);
+      }),
+      (async () => {
+        const sid  = String(req.body?.session_id || "default");
+        const mode = String(req.body?.mode || "standard");
+        const text = String(req.body?.text || "").trim();
 
-    if (!text) return res.json({ session_id: sid, type: "info", message: "入力が空です。" });
+        if (!ANTHROPIC_API_KEY) return send(500, { error: "ANTHROPIC_API_KEY is missing" });
+        if (!text) return send(200, { session_id: sid, type: "info", output: "入力が空です。" });
+        if (text.length > MAX_INPUT_CHARS) {
+          return send(200, { session_id: sid, type: "info", output: `入力が長すぎます（最大 ${MAX_INPUT_CHARS} 文字）。` });
+        }
+        if (!checkRateLimit(sid)) {
+          return send(429, { session_id: sid, type: "info", output: "送信が多すぎます。少し待ってからお試しください。" });
+        }
 
-    const session = getSession(sid);
+        const session = getSession(sid);
 
-    // 確認質問への回答
-    if (session.last_question && session.pending_text) {
-      const merged = `${session.pending_text}\n\n【確認への回答】${text}`.trim();
-      pushHist(session, "user", session.pending_text);
-      pushHist(session, "assistant", session.last_question);
-      pushHist(session, "user", `回答: ${text}`);
-      session.last_question = null;
-      session.pending_text = null;
+        if (session.last_question && session.pending_text) {
+          const merged = `${session.pending_text}\n\n【確認への回答】${text}`.trim();
+          pushHist(session, "user", session.pending_text);
+          pushHist(session, "assistant", session.last_question);
+          pushHist(session, "user", `回答: ${text}`);
+          session.last_question = null;
+          session.pending_text = null;
 
-      if (await checkSafety(merged)) {
-        const out = await runSafetyResponse();
-        pushHist(session, "assistant", out);
-        return res.json({ session_id: sid, type: "safety", output: out });
-      }
-      const output = await runOrganize({ session, mode, userText: merged, hasBoundary: await checkBoundary(merged) });
-      pushHist(session, "assistant", output);
-      return res.json({ session_id: sid, type: "result", output });
-    }
+          const gate = await analyzeInput(merged, { needClarify: false });
+          if (gate.safety) {
+            const out = await runSafetyResponse();
+            pushHist(session, "assistant", out);
+            return send(200, { session_id: sid, type: "safety", output: out });
+          }
+          const output = await runOrganize({ session, mode, userText: merged, hasBoundary: gate.boundary });
+          pushHist(session, "assistant", output);
+          return send(200, { session_id: sid, type: "result", output });
+        }
 
-    // 安全確認（最優先）
-    if (await checkSafety(text)) {
-      const out = await runSafetyResponse();
-      pushHist(session, "user", text);
-      pushHist(session, "assistant", out);
-      return res.json({ session_id: sid, type: "safety", output: out });
-    }
+        const gate = await analyzeInput(text, { needClarify: true });
 
-    // 曖昧さゲート
-    const clarify = await checkClarify(text);
-    if (clarify.needed && clarify.question) {
-      session.last_question = clarify.question;
-      session.pending_text = text;
-      return res.json({ session_id: sid, type: "question", question: clarify.question });
-    }
+        if (gate.safety) {
+          const out = await runSafetyResponse();
+          pushHist(session, "user", text);
+          pushHist(session, "assistant", out);
+          return send(200, { session_id: sid, type: "safety", output: out });
+        }
 
-    // 整理
-    const hasBoundary = await checkBoundary(text);
-    pushHist(session, "user", text);
-    const output = await runOrganize({ session, mode, userText: text, hasBoundary });
-    pushHist(session, "assistant", output);
-    return res.json({ session_id: sid, type: "result", output });
+        if (gate.clarify.needed && gate.clarify.question) {
+          session.last_question = gate.clarify.question;
+          session.pending_text = text;
+          return send(200, { session_id: sid, type: "question", question: gate.clarify.question });
+        }
 
+        pushHist(session, "user", text);
+        const output = await runOrganize({ session, mode, userText: text, hasBoundary: gate.boundary });
+        pushHist(session, "assistant", output);
+        return send(200, { session_id: sid, type: "result", output });
+      })(),
+    ]);
   } catch (err) {
+    clearRequestTimeout();
+    if (err?.message === "request_timeout" || err?.message === "analyze_timeout" || err?.message === "organize_timeout" || err?.message === "safety_timeout") {
+      const sid = String(req.body?.session_id || "default");
+      return res.status(503).json({
+        session_id: sid,
+        type: "info",
+        output: "応答に時間がかかりすぎました。短い文で、または「短め」モードでもう一度お試しください。",
+      });
+    }
     console.error(err);
-    return res.status(500).json({ error: "server error" });
+    const safeMsg = err?.message && String(err.message).length < 100 && !/key|secret|password/i.test(String(err.message))
+      ? String(err.message)
+      : "server error";
+    return res.status(500).json({ error: "server error", output: safeMsg });
   }
 });
 
@@ -197,10 +326,71 @@ app.get("/api/history", (req, res) => {
   return res.json({ session_id: sid, history: getSession(sid).history });
 });
 
+app.get("/api/health", async (_req, res) => {
+  const hasKey = Boolean(ANTHROPIC_API_KEY && ANTHROPIC_API_KEY.length > 10);
+  if (!hasKey) return res.json({ ok: false, anthropic: "missing" });
+  try {
+    await withTimeout(
+      client.messages.create({
+        model: MODEL,
+        max_tokens: 5,
+        messages: [{ role: "user", content: "hi" }],
+      }),
+      15000,
+      "health_timeout"
+    );
+    return res.json({ ok: true, anthropic: "ok" });
+  } catch (e) {
+    const msg = e?.message && e.message.length < 80 ? e.message : "error";
+    return res.json({ ok: false, anthropic: msg });
+  }
+});
+
 app.post("/api/reset", (req, res) => {
   const sid = String(req.body?.session_id || "default");
   sessions.set(sid, newSession());
   return res.json({ ok: true, session_id: sid });
 });
 
-app.listen(PORT, () => console.log(`✅ 整理AI: http://localhost:${PORT}`));
+// ローカル用: フロント配信・リダイレクト（Vercel では静的と rewrites で対応）
+if (!isVercel) {
+  const frontendRoot = path.resolve(__dirname, "dist");
+  const distExists = fs.existsSync(frontendRoot) && fs.existsSync(path.join(frontendRoot, "index.html"));
+  if (distExists) {
+    app.use("/ma", express.static(frontendRoot));
+  }
+  app.get("/", (req, res) => res.redirect(302, "/ma/"));
+  app.get("/ma", (req, res) => res.redirect(302, "/ma/"));
+  const maFallbackHtml = `
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MA</title>
+</head>
+<body style="font-family:sans-serif;padding:2rem;background:#f3eee6;color:#554a3f;">
+  <h1 style="font-size:1.5rem;">MA</h1>
+  <p>フロントをビルドしてください。</p>
+  <pre style="background:#e5dccf;padding:1rem;border-radius:8px;">npm run build</pre>
+  <p>実行後、もう一度 <a href="/ma/">/ma/</a> を開いてください。</p>
+</body>
+</html>
+`;
+  app.get(/^\/ma\/.+/, (req, res, next) => {
+    if (!distExists) {
+      res.type("html").send(maFallbackHtml);
+      return;
+    }
+    res.sendFile("index.html", { root: frontendRoot }, (err) => {
+      if (err) next();
+    });
+  });
+  app.listen(PORT, () => {
+    const url = `http://localhost:${PORT}/ma/`;
+    console.log(`✅ MA: ${url}`);
+    if (!distExists) console.log("   ※ dist がありません。npm run build を実行してください。");
+  });
+}
+
+export { app };

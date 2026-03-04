@@ -1,0 +1,18 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "redirects": [
+    { "source": "/", "destination": "/ma/", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/ma", "destination": "/ma/" },
+    { "source": "/ma/", "destination": "/index.html" },
+    { "source": "/ma/assets/:path*", "destination": "/assets/:path*" }
+  ],
+  "functions": {
+    "api/[[...path]].js": {
+      "maxDuration": 60,
+      "memory": 1024
+    }
+  }
+}
