@@ -38,8 +38,10 @@ const PORT = Number(process.env.PORT || 3001);
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const client = new Anthropic({ apiKey: ANTHROPIC_API_KEY });
 const MODEL = String(process.env.ANTHROPIC_MODEL || "claude-sonnet-4-20250514");
+const GATE_MODEL = String(process.env.ANTHROPIC_GATE_MODEL || (isVercel ? "claude-haiku-4-5" : MODEL));
 const MAX_INPUT_CHARS = Number(process.env.MAX_INPUT_CHARS || 8000);
-const LLM_TIMEOUT_MS = Number(process.env.LLM_TIMEOUT_MS || (isVercel ? 38000 : 90000));
+const LLM_TIMEOUT_MS = Number(process.env.LLM_TIMEOUT_MS || (isVercel ? 35000 : 90000));
+const GATE_TIMEOUT_MS = Number(process.env.GATE_TIMEOUT_MS || (isVercel ? 20000 : 40000));
 const SESSION_TTL_MS = Number(process.env.SESSION_TTL_MS || 1000 * 60 * 60 * 6);
 const RATE_LIMIT_WINDOW_MS = 60 * 1000;
 const RATE_LIMIT_MAX = Number(process.env.RATE_LIMIT_MAX || 30);
@@ -162,12 +164,12 @@ async function analyzeInput(text, { needClarify } = { needClarify: true }) {
 
   const r = await withTimeout(
     client.messages.create({
-      model: MODEL,
+      model: GATE_MODEL,
       max_tokens: isVercel ? 120 : 180,
       system: needClarify ? system : `${system}\nclarify は常に { "needed": false, "question": null } にする。`,
       messages: [{ role: "user", content: text }],
     }),
-    LLM_TIMEOUT_MS,
+    GATE_TIMEOUT_MS,
     "analyze_timeout"
   );
 

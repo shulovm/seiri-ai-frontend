@@ -20,7 +20,7 @@ function getOrCreateSessionId() {
 
 const SESSION_ID = getOrCreateSessionId();
 
-const API_TIMEOUT_MS = 55000;
+const API_TIMEOUT_MS = 58000;
 
 async function organize({ text, mode, sessionId }) {
   const ac = new AbortController();

@@ -114,7 +114,8 @@ vercel
 ## 環境変数（サーバー）
 
 - `ANTHROPIC_API_KEY`（必須）
-- `ANTHROPIC_MODEL`（任意）
+- `ANTHROPIC_MODEL`（任意）… 整理用モデル（未設定時: claude-sonnet-4-20250514）
+- `ANTHROPIC_GATE_MODEL`（任意）… 安全・境界線・確認質問の判定用モデル。Vercel では未設定時は Haiku 4.5（高速）を使用。同じモデルにしたい場合は `ANTHROPIC_MODEL` と同じ値を設定。
 - `PORT`（任意、デフォルト `3001`）
 - `MAX_INPUT_CHARS`（任意、デフォルト `8000`）
 - `SESSION_TTL_MS`（任意、デフォルト 6時間）
