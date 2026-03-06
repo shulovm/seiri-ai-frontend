@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import { track } from "@vercel/analytics";
 
 const DEFAULT_DEV_API = "http://localhost:3001";
 const API_BASE =
@@ -19,12 +21,20 @@ function getOrCreateSessionId() {
 }
 
 const SESSION_ID = getOrCreateSessionId();
+const MESSAGES_STORAGE_KEY = "ma_messages";
+const getAppUrl = () => (typeof window !== "undefined" && window.location.origin + window.location.pathname) || "";
 
-const API_TIMEOUT_MS = 58000;
+const API_INITIAL_TIMEOUT_MS = 90000;
 
-async function organize({ text, mode, sessionId }) {
+async function organize({ text, mode, sessionId, onStreamChunk }) {
   const ac = new AbortController();
-  const timeoutId = setTimeout(() => ac.abort(), API_TIMEOUT_MS);
+  let initialTimeoutId = setTimeout(() => ac.abort(), API_INITIAL_TIMEOUT_MS);
+  const clearInitialTimeout = () => {
+    if (initialTimeoutId) {
+      clearTimeout(initialTimeoutId);
+      initialTimeoutId = null;
+    }
+  };
   try {
     const res = await fetch(`${API_BASE}/api/organize`, {
       method: "POST",
@@ -32,7 +42,52 @@ async function organize({ text, mode, sessionId }) {
       body: JSON.stringify({ text, mode, session_id: sessionId }),
       signal: ac.signal,
     });
-    clearTimeout(timeoutId);
+    clearInitialTimeout();
+    const contentType = res.headers.get("content-type") || "";
+    if (contentType.includes("text/event-stream") && res.ok && onStreamChunk) {
+      let receiveText = "";
+      let streamed = "";
+      const reader = res.body.getReader();
+      const dec = new TextDecoder();
+      let buffer = "";
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += dec.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() || "";
+        for (const line of lines) {
+          if (line.startsWith("data: ")) {
+            try {
+              const obj = JSON.parse(line.slice(6));
+              clearInitialTimeout();
+              if (obj.started === true) continue;
+              if ((obj.part === "receive" || obj.part === "block1") && obj.text != null) {
+                receiveText = obj.text;
+                onStreamChunk(receiveText);
+              }
+              if (obj.chunk != null) {
+                streamed += obj.chunk;
+                onStreamChunk(receiveText ? receiveText + "\n\n" + streamed : streamed);
+              }
+              if (obj.done === true) {
+                return {
+                  session_id: obj.session_id,
+                  type: obj.type,
+                  output: obj.output,
+                  question: obj.question,
+                };
+              }
+              if (obj.error) throw new Error(obj.error === "timeout" ? "timeout" : obj.error);
+            } catch (e) {
+              if (e instanceof SyntaxError) continue;
+              throw e;
+            }
+          }
+        }
+      }
+      throw new Error("stream ended without done");
+    }
     const data = await res.json().catch(() => ({}));
     if (!res.ok) {
       const e = new Error(data?.error || "server error");
@@ -42,7 +97,7 @@ async function organize({ text, mode, sessionId }) {
     }
     return data;
   } catch (err) {
-    clearTimeout(timeoutId);
+    clearInitialTimeout();
     if (err.name === "AbortError") throw new Error("timeout");
     throw err;
   }
@@ -86,7 +141,8 @@ function Message({ msg }) {
       aria-label={isUser ? "あなたのメッセージ" : "MAの返答"}
       style={{
       display: "flex",
-      justifyContent: isUser ? "flex-end" : "flex-start",
+      flexDirection: "column",
+      alignItems: isUser ? "flex-end" : "flex-start",
       marginBottom: 18,
       animation: "fadeIn 0.3s ease",
     }}>
@@ -129,57 +185,127 @@ function Message({ msg }) {
   );
 }
 
+function loadStoredMessages() {
+  try {
+    const s = typeof localStorage !== "undefined" && localStorage.getItem(MESSAGES_STORAGE_KEY);
+    if (s) {
+      const p = JSON.parse(s);
+      if (Array.isArray(p) && p.length > 0) return p;
+    }
+  } catch (_) {}
+  return [];
+}
+
 export default function App() {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState(loadStoredMessages);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [waiting, setWaiting] = useState(false);
   const [mode, setMode] = useState("short");
+  const [shareFeedback, setShareFeedback] = useState(false);
+  const [copyRowFeedback, setCopyRowFeedback] = useState(false);
+  const [feedbackSent, setFeedbackSent] = useState(null);
   const bottomRef = useRef(null);
+  const streamStartedRef = useRef(false);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, loading]);
 
+  useEffect(() => {
+    if (!API_BASE) {
+      fetch(`/api/history?session_id=${SESSION_ID}`, { method: "GET" }).catch(() => {});
+    }
+  }, []);
+
+  useEffect(() => {
+    if (messages.length === 0) return;
+    const t = setTimeout(() => {
+      try {
+        localStorage.setItem(MESSAGES_STORAGE_KEY, JSON.stringify(messages));
+      } catch (_) {}
+    }, 800);
+    return () => clearTimeout(t);
+  }, [messages]);
+
+  const ONBOARDING_DONE_KEY = "ma_onboarding_done";
+  const showOnboarding = messages.length === 0 && !loading && typeof localStorage !== "undefined" && !localStorage.getItem(ONBOARDING_DONE_KEY);
+
   const add = (role, content, type = "result") =>
     setMessages(p => [...p, { role, content, type, id: Date.now() + Math.random() }]);
 
-  const handleSend = async () => {
-    const text = input.trim();
+  const handleSend = async (exampleText) => {
+    const text = (exampleText != null && String(exampleText).trim() !== "") ? String(exampleText).trim() : input.trim();
     if (!text || loading) return;
-    setInput("");
+    try {
+      localStorage.setItem(ONBOARDING_DONE_KEY, "1");
+    } catch (_) {}
+    if (!exampleText) setInput("");
     add("user", text);
     setLoading(true);
+    const streamId = Date.now() + Math.random();
+    streamStartedRef.current = false;
     try {
-      const data = await organize({ text, mode, sessionId: SESSION_ID });
-      if (data.type === "question") {
-        add("assistant", data.question, "question");
-        setWaiting(true);
-      } else if (data.type === "safety") {
-        add("assistant", data.output, "safety");
-        setWaiting(false);
-      } else if (data.type === "info") {
-        add("assistant", data.output || "情報が返りました。", "info");
-        setWaiting(false);
+      const data = await organize({
+        text,
+        mode,
+        sessionId: SESSION_ID,
+        onStreamChunk: (accumulated) => {
+          streamStartedRef.current = true;
+          setMessages(prev => {
+            const hasStream = prev.some(m => m.id === streamId);
+            if (!hasStream) return [...prev, { role: "assistant", content: accumulated, type: "result", id: streamId }];
+            return prev.map(m => (m.id === streamId ? { ...m, content: accumulated } : m));
+          });
+        },
+      });
+      if (streamStartedRef.current) {
+        const finalContent = data.output ?? data.question ?? "";
+        setMessages(prev => prev.map(m => (m.id === streamId ? { ...m, content: finalContent, type: data.type } : m)));
       } else {
-        add("assistant", data.output, "result");
-        setWaiting(false);
+        if (data.type === "question") {
+          add("assistant", data.question, "question");
+          setWaiting(true);
+        } else if (data.type === "safety") {
+          add("assistant", data.output, "safety");
+          setWaiting(false);
+        } else if (data.type === "info") {
+          add("assistant", data.output || "情報が返りました。", "info");
+          setWaiting(false);
+        } else {
+          add("assistant", data.output, "result");
+          setWaiting(false);
+        }
       }
+      setWaiting(data.type === "question");
+      track("message_sent", { mode });
+      if (exampleText) track("onboarding_example_sent");
     } catch (err) {
+      if (streamStartedRef.current) {
+        setMessages(prev => prev.filter(m => m.id !== streamId));
+      }
       let msg = err?.serverMessage || "";
       if (msg === "ANTHROPIC_API_KEY is missing") {
-        msg = "APIキーが設定されていません。管理者は Vercel の環境変数「ANTHROPIC_API_KEY」を確認してください。";
+        msg = "APIキーが設定されていません。管理者は環境変数「ANTHROPIC_API_KEY」を確認してください。";
       } else if (err?.status === 503 || err?.status === 504) {
-        msg = "応答が時間内に返ってきませんでした。\n\n・「短め」モードを選ぶ\n・1〜2文だけ送る\nのどちらかで、もう一度お試しください。";
+        msg = mode === "short"
+          ? "応答が時間内に返ってきませんでした。しばらくしてからもう一度お試しください。"
+          : "応答が時間内に返ってきませんでした。\n\n「短め」モードで、1〜2文だけ送ってもう一度お試しください。";
       } else if (!msg) {
         msg =
           err?.message === "timeout"
-            ? "応答が遅れています。「短め」モードで短い文でもう一度お試しください。"
+            ? (mode === "short"
+                ? "接続がタイムアウトしました。\n\nサーバーの起動に時間がかかっている可能性があります。1〜2分待ってから、もう一度「送信」を押してみてください。"
+                : "応答が遅れています。「短め」モードで短い文をお試しください。")
             : err?.message === "Failed to fetch" || err?.name === "TypeError"
-              ? "ネットワークに接続できません。URLと接続を確認してください。"
+              ? "接続できませんでした。しばらくしてからもう一度お試しください。"
               : err?.status === 500
-                ? "サーバーエラーです。しばらくしてから、または「短め」で短い文でもう一度お試しください。"
-                : "一時的なエラーです。「短め」モードで短い文でもう一度お試しください。";
+                ? (mode === "short"
+                    ? "サーバーエラーです。しばらくしてからもう一度お試しください。"
+                    : "サーバーエラーです。しばらくしてから、または「短め」で短い文でもう一度お試しください。")
+                : (mode === "short"
+                    ? "一時的なエラーです。しばらくしてからもう一度お試しください。"
+                    : "一時的なエラーです。「短め」モードで短い文でもう一度お試しください。");
       }
       add("assistant", msg, "error");
     } finally {
@@ -191,14 +317,44 @@ export default function App() {
     if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleSend(); }
   };
 
+  const handleFeedback = (helpful) => {
+    setFeedbackSent(helpful ? "good" : "bad");
+    track("feedback", { helpful });
+  };
+
   const handleReset = async () => {
+    track("reset_clicked");
     try {
       await resetSession(SESSION_ID);
       setMessages([]);
       setWaiting(false);
+      setFeedbackSent(null);
+      try {
+        localStorage.removeItem(MESSAGES_STORAGE_KEY);
+      } catch (_) {}
     } catch {
       add("assistant", "リセットに失敗しました。しばらくしてからもう一度お試しください。", "error");
     }
+  };
+
+  const handleShare = () => {
+    const url = getAppUrl();
+    const text = `答えを出さず、決断できる状態を整えるAI「MA」\n${url}`;
+    navigator.clipboard?.writeText(text).then(() => {
+      track("share_clicked");
+      setShareFeedback(true);
+      setTimeout(() => setShareFeedback(false), 2000);
+    }).catch(() => {});
+  };
+
+  const lastAssistantContent = [...messages].reverse().find(m => m.role === "assistant" && m.content && !["error", "info"].includes(m.type))?.content;
+  const handleCopyLast = () => {
+    if (!lastAssistantContent) return;
+    navigator.clipboard?.writeText(lastAssistantContent).then(() => {
+      setCopyRowFeedback(true);
+      track("copy_response");
+      setTimeout(() => setCopyRowFeedback(false), 2000);
+    }).catch(() => {});
   };
 
   return (
@@ -278,13 +434,20 @@ export default function App() {
               </button>
             ))}
           </div>
-          <button type="button" aria-label="会話をリセット" onClick={handleReset} disabled={loading} style={{
+          <Link to="/plans" style={{
+            fontSize: 11, padding: "5px 11px", borderRadius: 4,
+            color: "#a19180", textDecoration: "none", letterSpacing: "0.05em",
+          }}>
+            プラン
+          </Link>
+          <button type="button" aria-label="新しい会話を始める" title="新しい会話を始める" onClick={handleReset} disabled={loading} style={{
             background: "none", border: "1px solid #e0d4c5",
             color: loading ? "#c3b7a8" : "#a19180",
-            fontSize: 11, padding: "5px 11px",
-            borderRadius: 4, cursor: loading ? "default" : "pointer", letterSpacing: "0.05em",
+            fontSize: 16, fontWeight: 300, padding: "2px 10px",
+            borderRadius: 4, cursor: loading ? "default" : "pointer", letterSpacing: "0.02em",
+            lineHeight: 1.2,
           }}>
-            リセット
+            ＋
           </button>
         </div>
       </div>
@@ -306,12 +469,70 @@ export default function App() {
           }}>
             何でも話してください。<br/>
             答えは出しません。整理するだけです。
+            {showOnboarding && (
+              <div style={{ marginTop: 24 }}>
+                <button
+                  type="button"
+                  onClick={() => handleSend("誰かに話したかった")}
+                  style={{
+                    background: "#f6f0e7",
+                    border: "1px solid #e0d4c5",
+                    borderRadius: 10,
+                    color: "#6b5d52",
+                    fontSize: 12,
+                    padding: "10px 18px",
+                    cursor: "pointer",
+                    letterSpacing: "0.04em",
+                    boxShadow: "0 2px 6px rgba(0,0,0,0.04)",
+                  }}
+                >
+                  例: 誰かに話したかった → 送ってみる
+                </button>
+              </div>
+            )}
           </div>
         )}
-        {messages.map(msg => <Message key={msg.id} msg={msg}/>)}
+        {messages.map(msg => <Message key={msg.id} msg={msg} />)}
         {loading && (
-          <div style={{ paddingLeft: 8 }} aria-hidden="true">
+          <div style={{ paddingLeft: 8, color: "#8a7d6f", fontSize: 12, marginTop: 4 }} aria-live="polite">
             <TypingDots/>
+            <span style={{ display: "block", marginTop: 6 }}>少々お待ちください。通常は30秒〜1分ほどで返ります。</span>
+          </div>
+        )}
+        {!loading && messages.some(m => m.role === "assistant") && (
+          <div style={{ marginTop: 10, marginBottom: 6, display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
+            <button type="button" onClick={handleCopyLast} disabled={!lastAssistantContent} style={{
+              background: "none", border: "none", padding: 0,
+              color: copyRowFeedback ? "#8a9a6b" : "#8a7d6f",
+              fontSize: 10, cursor: lastAssistantContent ? "pointer" : "default", letterSpacing: "0.04em",
+            }}>
+              {copyRowFeedback ? "コピーしました" : "コピー"}
+            </button>
+            {feedbackSent ? (
+              <span style={{ fontSize: 10, color: "#8a7d6f" }}>ありがとう</span>
+            ) : (
+              <>
+                <button type="button" aria-label="いいね" onClick={() => handleFeedback(true)} style={{
+                  background: "none", border: "none", padding: 2, cursor: "pointer",
+                  display: "inline-flex", alignItems: "center", justifyContent: "center",
+                }} title="いいね">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8a7d6f" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+                </button>
+                <button type="button" aria-label="いまいち" onClick={() => handleFeedback(false)} style={{
+                  background: "none", border: "none", padding: 2, cursor: "pointer",
+                  display: "inline-flex", alignItems: "center", justifyContent: "center",
+                }} title="いまいち">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8a7d6f" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"/></svg>
+                </button>
+              </>
+            )}
+            <button type="button" onClick={handleShare} style={{
+              background: "none", border: "none", padding: 0,
+              color: shareFeedback ? "#8a9a6b" : "#8a7d6f",
+              fontSize: 10, cursor: "pointer", letterSpacing: "0.04em",
+            }}>
+              {shareFeedback ? "コピーしました" : "シェア"}
+            </button>
           </div>
         )}
         <div ref={bottomRef}/>
@@ -366,7 +587,7 @@ export default function App() {
         }}>
           Enter で送信 · Shift+Enter で改行 · 判断はあなたにあります
         </div>
-        {messages.length === 0 && (
+        {messages.length === 0 && !showOnboarding && (
           <div style={{
             color: "#a29384", fontSize: 10, textAlign: "center",
             marginTop: 6, letterSpacing: "0.03em",

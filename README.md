@@ -2,6 +2,10 @@
 
 「答えを出す」のではなく、入力を壊さずに整えるためのチャットUI + APIサーバーです。
 
+**本番**: [https://seiri-ai-frontend-production-a2ef.up.railway.app/ma/](https://seiri-ai-frontend-production-a2ef.up.railway.app/ma/)
+
+**ドメインを開いても空白になる場合**: Railway の **Variables** で `API_ONLY` を削除し、**Settings** → **Build** で **Build Command** を `npm run build` に設定してから再デプロイしてください。詳しくは下記「本番デプロイ（Railway）」を参照。
+
 ## 構成
 
 - `server.js`: Express API（Anthropic SDK 経由で整理・判定）
@@ -93,16 +97,110 @@ vercel
 
 ### 4. デプロイ後の URL
 
-- フロント: **https://（あなたのドメイン）/ma/**
-- API: **https://（あなたのドメイン）/api/organize** など
+- 本番アプリ: **https://seiri-ai-frontend-production-a2ef.up.railway.app/ma/**
+- API: **https://seiri-ai-frontend-production-a2ef.up.railway.app/api/organize** など
 - ルート `/` にアクセスすると `/ma/` にリダイレクトされます。
 
-**API キーが設定されているか確認する:** ブラウザで **https://（あなたのドメイン）/api/health** を開く。`{"ok":true,"anthropic":"set"}` なら環境変数は入っている。`{"ok":false,"anthropic":"missing"}` なら未設定。接続の確認は実際に短い文を送って返答が返るかで判断できる。
+**API キーが設定されているか確認する:** ブラウザで **https://seiri-ai-frontend-production-a2ef.up.railway.app/api/health** を開く。`{"ok":true,"anthropic":"set"}` なら環境変数は入っている。`{"ok":false,"anthropic":"missing"}` なら未設定。接続の確認は実際に短い文を送って返答が返るかで判断できる。
 
 ### 5. 注意（Vercel のサーバーレス）
 
 - API は **Serverless Functions** で動きます。セッションはメモリ上のため、リクエストごとに別インスタンスだと会話が続かないことがあります（同じインスタンスに当たると続きます）。
+- **Cold start（初回起動）**で、最初の1回だけ数十秒〜1分かかることがあります。タイムアウトした場合は「1〜2分待ってからもう一度送信」を試してください。`vercel.json` の **Cron** で 5 分ごとに `GET /api/history` を呼ぶようにしてあり、同じ関数がウォームに保たれるため、Cold start が起きにくくなります（Vercel Pro では 5 分ごと実行。Hobby プランでは Cron の実行頻度に制限がある場合があります）。
 - 会話を確実に残したい場合は、のちに Vercel KV など外部ストアの利用を検討してください。
+
+### 6. 課金・運用の選択肢（任意）
+
+現在は無料の Vercel と Anthropic API の従量課金で運用できます。以下は「より安定させたい」「将来の有料サービスにしたい」場合の案です。
+
+| 選択肢 | 内容 | 想定コスト目安 |
+|--------|------|----------------|
+| **Vercel Pro** | 関数の最大実行時間を延長（本プロジェクトは 120 秒に設定）。Cold start 後も余裕を持って応答し、Cron で 5 分ごとにウォーム化。 | 月額 $20 前後 |
+| **Anthropic API** | 利用量に応じた従量課金のみ。モデルやトークン数で変動。 | 利用量による |
+| **将来の有料機能案** | 優先応答・長文対応・法人向けサポート・利用履歴のエクスポートなど | 要設計 |
+
+- 課金ページをアプリ内に設けない場合は、上記はあくまで運用側（Vercel ダッシュボード・Anthropic コンソール）の設定のみで対応できます。
+- アプリとして「有料プラン」を提供する場合は、決済（Stripe 等）とプラン別の制限（リクエスト数・文字数など）の実装が必要です。
+
+### 7. 接続タイムアウトの原因と切り分け
+
+「接続がタイムアウトしました」と出る主な原因は次のとおりです。
+
+| 原因 | 説明 | 確認方法 |
+|------|------|----------|
+| **Cold start** | しばらく使っていないと、API が止まり、最初のリクエストで起動に時間かかることがある。 | ブラウザで **https://seiri-ai-frontend-production-a2ef.up.railway.app/api/ping** を開く。すぐ `{"ok":true,...}` が返れば届いている。 |
+| **古いフロントがデプロイされたまま** | クライアントの待ち時間が古いままだと、サーバーが応答する前に切れる。 | デプロイ後はブラウザのハードリロード（Ctrl+Shift+R）でキャッシュを捨てる。 |
+| **サーバーが 503 を返している** | サーバー側で LLM が時間内に返らず、503 を返している。 | ログで 503 や `request_timeout` が出ていないか確認する。 |
+| **関数のクラッシュ** | 未処理の例外でレスポンスが返らない。 | ログでエラーやスタックトレースを確認する。`ANTHROPIC_API_KEY` 未設定でも 500 が返るはず。 |
+| **FUNCTION_INVOCATION_TIMEOUT** | 関数の実行が上限を超えて強制終了する。 | サーバー側でタイムアウトを設けている。ログで確認する。 |
+
+**診断の手順**
+
+1. **https://seiri-ai-frontend-production-a2ef.up.railway.app/api/ping** を開く  
+   - すぐ `{"ok":true,...}` が返れば API は届いている。  
+   - 504 が出る場合は **/api/health** も試す。
+
+2. **最新をデプロイしたか**  
+   - デプロイ後、本番 **https://seiri-ai-frontend-production-a2ef.up.railway.app/ma/** で動作を確認する。
+
+3. **ログ**  
+   - Railway のログで 503・500 やエラーが出ていないか見る。
+
+**504 / タイムアウト ベストな改善策（本プロジェクトで実施済み）**
+
+| 対策 | 内容 |
+|------|------|
+| **Anthropic SDK の遅延読み込み** | `server.js` で SDK をトップレベルで読まず、`/api/organize` 処理時だけ読み込む。`/api/ping` や `/api/history` は SDK を読まないため Cold start が軽くなり、504 が出にくくなる。 |
+| **軽量な /api/ping** | `api/ping.js` を Express とは別の単体関数にした。診断用にすぐ `{ ok, t, vercel }` が返る。 |
+| **ストリーミング＋受け取り先行** | 応答を「受け取り1文 → 本編を少しずつ」のチャット式で返し、最初のバイトを早く送る。 |
+| **Cron でウォーム** | 5 分ごとに `GET /api/history` を呼び、メイン関数を起動したままにしておく。 |
+| **ページ表示時のウォーム** | 本番で `/ma/` を開いた瞬間にフロントから `GET /api/history` を1回送る。送信前に API 関数の Cold start を起こしておき、初回送信が速くなりやすい。 |
+| **黒線で一度切る** | 応答を「block1（受け取り＋確認＋整形）」と「block2（分かれ道〜）」に分け、block1 を先に返してから block2 をストリーム。前半が早く表示される。 |
+| **Fluid Compute（Pro）** | まだ 504 が出る場合: Vercel Pro で **Fluid Compute** を有効にすると、実行時間上限を延長できる。 |
+
+**Vercel 公式のタイムアウト対策（参考）**
+
+- [FUNCTION_INVOCATION_TIMEOUT](https://vercel.com/docs/errors/FUNCTION_INVOCATION_TIMEOUT) … 関数が上限時間内に応答を返す・未処理の例外を防ぐ・上流 API のエラー確認・ログの確認（例: `https://（デプロイURL）/ _logs`）。
+- より長い実行が必要な場合: Pro で **Fluid Compute** を有効にすると、関数の最大実行時間を延長できる。
+
+**本番環境**
+
+- 本番は **Railway** で 1 本の URL に統一しています。
+- アプリ: **https://seiri-ai-frontend-production-a2ef.up.railway.app/ma/**
+- API: 同一オリジン（`/api/organize` など）。Cold start 対策のため常時起動を想定しています。
+
+---
+
+## 本番デプロイ（Railway）
+
+本番は **https://seiri-ai-frontend-production-a2ef.up.railway.app/ma/** で提供しています。同じリポジトリを Railway にデプロイし、次の設定をします。
+
+### 1. ビルド・起動の設定（必須）
+
+- **Build Command**: `npm run build`  
+  - 未設定のままにすると `dist/` が作られず、`/ma/` を開いても空白になります。
+- **Start Command**: `node server.js`  
+- **Root Directory**: 空のまま
+
+### 2. 環境変数（Railway）
+
+| 名前 | 値 | 必須 |
+|------|-----|------|
+| `ANTHROPIC_API_KEY` | あなたのキー | ✅ |
+| `API_ONLY` | **設定しない**（未設定にするとフロント＋API を同一 URL で配信。`1` にすると API 専用になり `/ma/` は案内ページのみ） | — |
+| `CORS_ORIGIN` | 別オリジンから API を呼ぶ場合のみ: `https://seiri-ai-frontend-production-a2ef.up.railway.app` | 必要に応じて |
+| `PORT` | Railway が自動設定 | 任意 |
+
+### 3. 空白になる場合の確認
+
+1. **Variables** に `API_ONLY` が入っていないか確認し、あれば削除する。
+2. **Settings** → **Build** で **Build Command** が `npm run build` になっているか確認する。
+3. 上記を変更したら **Redeploy** する。
+
+### 4. 動作確認
+
+- **https://seiri-ai-frontend-production-a2ef.up.railway.app/ma/** でチャットが表示されること。
+- **https://seiri-ai-frontend-production-a2ef.up.railway.app/api/health** で `{"ok":true,"anthropic":"set"}` が返ること。
 
 ---
 
@@ -119,4 +217,6 @@ vercel
 - `PORT`（任意、デフォルト `3001`）
 - `MAX_INPUT_CHARS`（任意、デフォルト `8000`）
 - `SESSION_TTL_MS`（任意、デフォルト 6時間）
-- `CORS_ORIGIN`（任意、カンマ区切りで許可オリジン）
+- `RATE_LIMIT_MAX`（任意、デフォルト `60`。1分あたりの送信回数上限）
+- `CORS_ORIGIN`（API を別オリジンで動かすときは必須。カンマ区切りで許可オリジン。本番: `https://seiri-ai-frontend-production-a2ef.up.railway.app`）
+- `API_ONLY`（任意。`1` のときは API ルートのみ起動し、フロントの静的配信を行わない。Railway/Render で API 専用デプロイするときに使う）

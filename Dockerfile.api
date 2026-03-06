@@ -1,0 +1,13 @@
+# API 専用デプロイ用（Railway / Render など）
+# 使い方: docker build -f Dockerfile.api -t ma-api . && docker run -p 3001:3001 -e ANTHROPIC_API_KEY=xxx -e CORS_ORIGIN=... -e API_ONLY=1 ma-api
+FROM node:20-alpine
+WORKDIR /app
+ENV NODE_ENV=production
+ENV API_ONLY=1
+
+COPY package.json package-lock.json* ./
+RUN npm ci --omit=dev 2>/dev/null || npm install --omit=dev
+
+COPY server.js ./
+EXPOSE 3001
+CMD ["node", "server.js"]
