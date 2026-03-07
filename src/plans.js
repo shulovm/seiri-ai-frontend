@@ -1,12 +1,10 @@
 /**
  * 課金プラン定義（Stripe 連携用の priceId は後で設定）
  *
- * フリー：無料・1日5回まで・記憶なし・カスタムなし・ブックマークなし
- * ライト：680円/月・1日20回・簡単な記憶・カスタムなし・ブックマークなし
- * スタンダード：1,480円/月・無制限・深い記憶・ユーモア3段階選択・ブックマーク無制限
- * プレミアム：2,980円/月・無制限・完全記憶＋感情理解・ユーモア・共感度・返答スタイルを調整・ブックマーク無制限
- *
- * ブックマーク機能：基本保存なし、気に入った言葉だけ⭐でブックマーク。サイドバーに一覧表示。スタンダード以上のみ使用可能。
+ * フリー：無料・1日5回・記憶なし・カスタムなし・整理と編集はできるが保存不可
+ * ライト：680円/月・1日20回・簡単な記憶・カスタムなし・整理編集保存可
+ * スタンダード：1,480円/月・無制限・深い記憶・ユーモア3段階・整理編集保存可・ブックマーク無制限
+ * プレミアム：2,980円/月・無制限・完全記憶＋感情理解・ユーモア共感度返答スタイルをスライダーで調整・整理編集保存可・ブックマーク無制限
  */
 export const PLAN_IDS = {
   FREE: "free",
@@ -24,11 +22,12 @@ export const PLANS = [
     priceDisplay: "無料",
     period: null,
     dailyLimit: 5,
-    dailyLimitDisplay: "1日5回まで",
+    dailyLimitDisplay: "1日5回",
     memory: "なし",
     memoryDetail: "記憶なし",
     bookmark: false,
-    features: ["1日5回まで"],
+    canSaveSummary: false,
+    features: ["1日5回", "整理・編集可／保存不可"],
     stripePriceId: null,
   },
   {
@@ -43,7 +42,8 @@ export const PLANS = [
     memory: "簡単",
     memoryDetail: "簡単な記憶",
     bookmark: false,
-    features: ["1日20回", "簡単な記憶"],
+    canSaveSummary: true,
+    features: ["1日20回", "簡単な記憶", "整理編集保存可"],
     stripePriceId: null,
   },
   {
@@ -58,7 +58,8 @@ export const PLANS = [
     memory: "深い",
     memoryDetail: "深い記憶",
     bookmark: true,
-    features: ["無制限", "深い記憶", "ユーモア3段階選択", "ブックマーク無制限"],
+    canSaveSummary: true,
+    features: ["無制限", "深い記憶", "ユーモア3段階", "整理編集保存可", "かけら無制限"],
     stripePriceId: null,
   },
   {
@@ -73,7 +74,8 @@ export const PLANS = [
     memory: "完全",
     memoryDetail: "完全記憶＋感情理解",
     bookmark: true,
-    features: ["無制限", "完全記憶＋感情理解", "ユーモア・共感度・返答スタイルを調整", "ブックマーク無制限"],
+    canSaveSummary: true,
+    features: ["無制限", "完全記憶＋感情理解", "ユーモア・共感度・返答スタイルをスライダーで調整", "整理編集保存可", "かけら無制限"],
     stripePriceId: null,
   },
 ];
@@ -86,4 +88,10 @@ export function getPlanById(id) {
 export function canUseBookmark(planId) {
   const plan = getPlanById(planId);
   return plan.bookmark === true;
+}
+
+/** 今日の整理をブックマークに保存可能なプランか（ライト以上） */
+export function canSaveSummary(planId) {
+  const plan = getPlanById(planId);
+  return plan.canSaveSummary === true;
 }

@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { track } from "@vercel/analytics";
+import { getPlanById, canSaveSummary } from "./plans.js";
 
 const DEFAULT_DEV_API = "http://localhost:3001";
 const API_BASE =
@@ -25,6 +26,23 @@ const MESSAGES_STORAGE_KEY = "ma_messages";
 const getAppUrl = () => (typeof window !== "undefined" && window.location.origin + window.location.pathname) || "";
 
 const API_INITIAL_TIMEOUT_MS = 90000;
+const PLAN_STORAGE_KEY = "ma_plan";
+const BOOKMARKS_STORAGE_KEY = "ma_bookmarks";
+
+async function fetchSummarize(messages) {
+  const res = await fetch(`${API_BASE}/api/summarize`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json; charset=utf-8" },
+    body: JSON.stringify({
+      messages: messages.map((m) => ({ role: m.role, content: m.content })),
+    }),
+  });
+  if (!res.ok) {
+    const d = await res.json().catch(() => ({}));
+    throw new Error(d?.error || "summarize failed");
+  }
+  return res.json();
+}
 
 async function organize({ text, mode, sessionId, onStreamChunk }) {
   const ac = new AbortController();
@@ -205,6 +223,31 @@ export default function App() {
   const [shareFeedback, setShareFeedback] = useState(false);
   const [copyRowFeedback, setCopyRowFeedback] = useState(false);
   const [feedbackSent, setFeedbackSent] = useState(null);
+  const [currentPlan] = useState(() => {
+    try {
+      const p = typeof localStorage !== "undefined" && localStorage.getItem(PLAN_STORAGE_KEY);
+      return p && ["free", "light", "standard", "premium"].includes(p) ? p : "free";
+    } catch (_) { return "free"; }
+  });
+  const [summaryPanelOpen, setSummaryPanelOpen] = useState(false);
+  const [summaryPoints, setSummaryPoints] = useState(["", "", ""]);
+  const [loadingSummary, setLoadingSummary] = useState(false);
+  const [summaryError, setSummaryError] = useState("");
+  const [savedFlash, setSavedFlash] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [bookmarks, setBookmarks] = useState([]);
+  const allowSave = canSaveSummary(currentPlan);
+
+  const refreshBookmarks = () => {
+    try {
+      const raw = localStorage.getItem(BOOKMARKS_STORAGE_KEY);
+      setBookmarks(raw ? JSON.parse(raw) : []);
+    } catch (_) { setBookmarks([]); }
+  };
+
+  useEffect(() => {
+    if (sidebarOpen) refreshBookmarks();
+  }, [sidebarOpen]);
   const bottomRef = useRef(null);
   const streamStartedRef = useRef(false);
 
@@ -337,6 +380,42 @@ export default function App() {
     }
   };
 
+  const handleSummarize = async () => {
+    if (!messages.some((m) => m.role === "assistant") || loadingSummary) return;
+    setLoadingSummary(true);
+    setSummaryError("");
+    try {
+      const data = await fetchSummarize(messages);
+      const pts = Array.isArray(data.points) ? data.points : ["", "", ""];
+      setSummaryPoints([pts[0] ?? "", pts[1] ?? "", pts[2] ?? ""]);
+      setSummaryPanelOpen(true);
+    } catch (e) {
+      setSummaryError(e?.message === "timeout" ? "タイムアウトしました" : "要約できませんでした");
+    } finally {
+      setLoadingSummary(false);
+    }
+  };
+
+  const handleSaveSummaryToBookmark = () => {
+    if (!allowSave) return;
+    try {
+      const raw = localStorage.getItem(BOOKMARKS_STORAGE_KEY);
+      const list = raw ? JSON.parse(raw) : [];
+      list.unshift({
+        id: Date.now().toString(36) + Math.random().toString(36).slice(2),
+        points: [...summaryPoints],
+        createdAt: new Date().toISOString(),
+      });
+      localStorage.setItem(BOOKMARKS_STORAGE_KEY, JSON.stringify(list));
+      setSavedFlash(true);
+      refreshBookmarks();
+      setTimeout(() => {
+        setSavedFlash(false);
+        setSummaryPanelOpen(false);
+      }, 1200);
+    } catch (_) {}
+  };
+
   const handleShare = () => {
     const url = getAppUrl();
     const text = `答えを出さず、決断できる状態を整えるAI「MA」\n${url}`;
@@ -383,7 +462,32 @@ export default function App() {
         .md strong { color: #4d4336; font-weight: 500; }
         .md code { background: #f3ede3; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
         textarea::placeholder { color: #b0a495; }
+        @keyframes savedSparkle { 0% { opacity: 0.4; transform: scale(0.9); } 50% { opacity: 1; transform: scale(1.1); } 100% { opacity: 1; transform: scale(1); } }
       `}</style>
+
+      {/* サイドバー：かけら */}
+      {sidebarOpen && (
+        <div style={{ position: "fixed", top: 0, right: 0, bottom: 0, width: "min(320px, 85vw)", background: "#fdfbf7", borderLeft: "1px solid #e0d4c5", zIndex: 99, boxShadow: "-4px 0 20px rgba(0,0,0,0.06)", overflow: "hidden", display: "flex", flexDirection: "column" }}>
+          <div style={{ padding: "24px 20px 16px", borderBottom: "1px solid #e8e0d5", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <span style={{ fontSize: 14, fontWeight: 400, color: "#5a4b3f", letterSpacing: "0.06em" }}>かけら</span>
+            <button type="button" onClick={() => setSidebarOpen(false)} style={{ background: "none", border: "none", color: "#8a7d6f", fontSize: 18, cursor: "pointer", lineHeight: 1 }} aria-label="閉じる">×</button>
+          </div>
+          <div style={{ flex: 1, overflowY: "auto", padding: 16 }}>
+            {bookmarks.length === 0 ? (
+              <p style={{ fontSize: 12, color: "#a29384", lineHeight: 1.7 }}>まだかけらはありません。<br />「整理する」→「かけらに残す」で保存できます。</p>
+            ) : (
+              bookmarks.map((b) => (
+                <div key={b.id} style={{ marginBottom: 16, padding: 12, background: "#f9f6f0", borderRadius: 8, border: "1px solid #e8e0d5" }}>
+                  {(b.points || []).filter(Boolean).map((p, i) => (
+                    <p key={i} style={{ fontSize: 12, color: "#5a4b3f", marginBottom: i < 2 ? 6 : 0, lineHeight: 1.6 }}>{p}</p>
+                  ))}
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+      )}
+      {sidebarOpen && <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.15)", zIndex: 98 }} onClick={() => setSidebarOpen(false)} aria-hidden="true" />}
 
       {/* ヘッダー */}
       <div style={{
@@ -434,6 +538,12 @@ export default function App() {
               </button>
             ))}
           </div>
+          <button type="button" onClick={() => setSidebarOpen(true)} style={{
+            fontSize: 11, padding: "5px 11px", borderRadius: 4, background: "none", border: "none",
+            color: "#a19180", cursor: "pointer", letterSpacing: "0.05em",
+          }}>
+            かけら
+          </button>
           <Link to="/plans" style={{
             fontSize: 11, padding: "5px 11px", borderRadius: 4,
             color: "#a19180", textDecoration: "none", letterSpacing: "0.05em",
@@ -538,12 +648,69 @@ export default function App() {
         <div ref={bottomRef}/>
       </main>
 
+      {/* 今日の整理パネル */}
+      {summaryPanelOpen && (
+        <div style={{
+          position: "fixed", inset: 0, background: "rgba(0,0,0,0.2)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 100,
+        }} onClick={() => setSummaryPanelOpen(false)}>
+          <div style={{
+            background: "#fdfbf7", borderRadius: 12, padding: "24px 24px 20px", maxWidth: 420, width: "90%", boxShadow: "0 8px 32px rgba(0,0,0,0.12)", border: "1px solid #e0d4c5",
+          }} onClick={e => e.stopPropagation()}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+              <span style={{ fontSize: 14, fontWeight: 400, color: "#5a4b3f", letterSpacing: "0.04em" }}>今日の整理</span>
+              <button type="button" onClick={() => setSummaryPanelOpen(false)} style={{ background: "none", border: "none", color: "#8a7d6f", fontSize: 18, cursor: "pointer", lineHeight: 1 }} aria-label="閉じる">×</button>
+            </div>
+            {summaryPoints.map((point, i) => (
+              <div key={i} style={{ marginBottom: 12 }}>
+                <label style={{ display: "block", fontSize: 11, color: "#8a7d6f", marginBottom: 4 }}>{i + 1}.</label>
+                <textarea
+                  value={point}
+                  onChange={e => setSummaryPoints(prev => { const n = [...prev]; n[i] = e.target.value; return n; })}
+                  rows={2}
+                  style={{
+                    width: "100%", padding: "10px 12px", border: "1px solid #e0d4c5", borderRadius: 8, fontSize: 13, color: "#5a4b3f", fontFamily: "inherit", resize: "vertical", boxSizing: "border-box",
+                  }}
+                />
+              </div>
+            ))}
+            <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 8, position: "relative" }}>
+              {allowSave ? (
+                <button type="button" onClick={handleSaveSummaryToBookmark} disabled={savedFlash} style={{
+                  width: "100%", padding: "10px 16px", background: savedFlash ? "#f0ebe0" : "#e7dbcc", border: "none", borderRadius: 8, color: "#5a4b3f", fontSize: 12, cursor: savedFlash ? "default" : "pointer", letterSpacing: "0.04em",
+                }}>
+                  {savedFlash ? <span style={{ animation: "savedSparkle 1s ease" }}>✨</span> : "かけらに残す"}
+                </button>
+              ) : (
+                <div style={{ textAlign: "center" }}>
+                  <button type="button" disabled style={{
+                    width: "100%", padding: "10px 16px", background: "#e8e0d5", border: "none", borderRadius: 8, color: "#a29384", fontSize: 12, cursor: "default", letterSpacing: "0.04em",
+                  }}>
+                    かけらに残す
+                  </button>
+                  <p style={{ marginTop: 6, fontSize: 11, color: "#8a7d6f" }}>ライトプランでかけらに残せます</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* 入力 */}
       <div style={{
         width: "100%", maxWidth: 660,
         padding: "12px 24px 28px",
         background: "linear-gradient(transparent, rgba(243,238,230,0.9) 32%)",
       }}>
+        {messages.some((m) => m.role === "assistant") && (
+          <div style={{ marginBottom: 10 }}>
+            <button type="button" onClick={handleSummarize} disabled={loadingSummary} style={{
+              background: "#f6f0e7", border: "1px solid #e0d4c5", borderRadius: 8, color: "#6b5d52", fontSize: 12, padding: "8px 16px", cursor: loadingSummary ? "default" : "pointer", letterSpacing: "0.04em",
+            }}>
+              {loadingSummary ? "要約中…" : "整理する"}
+            </button>
+            {summaryError && <span style={{ marginLeft: 10, fontSize: 11, color: "#c17a6b" }}>{summaryError}</span>}
+          </div>
+        )}
         {waiting && (
           <div style={{ color: "#444", fontSize: 11, marginBottom: 8, letterSpacing: "0.04em" }}>
             確認への回答を入力してください

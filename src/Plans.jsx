@@ -186,12 +186,11 @@ export default function Plans() {
           }}
         >
           <div style={{ fontSize: 12, fontWeight: 400, color: "#5a4b3f", marginBottom: 10, letterSpacing: "0.04em" }}>
-            ブックマーク機能（スタンダード以上）
+            今日の整理・保存
           </div>
           <ul style={{ margin: 0, paddingLeft: "1.2em", fontSize: 12, color: "#6b5d52", lineHeight: 1.9, letterSpacing: "0.02em" }}>
-            <li>基本保存なし。気に入った言葉だけ ⭐ でブックマーク</li>
-            <li>サイドバーに一覧表示</li>
-            <li>スタンダード以上のみ使用可能</li>
+            <li>会話を「整理する」で3点要約。各項目は自由に編集可能</li>
+            <li>ライト以上で「かけらに残す」が利用可能。フリーは整理・編集のみ（保存不可）</li>
           </ul>
         </div>
 
