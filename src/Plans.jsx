@@ -38,7 +38,7 @@ export default function Plans() {
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <div style={{ marginBottom: 32 }}>
           <Link
-            to="/"
+            to="/ma/"
             style={{
               color: "#8a7d6f",
               fontSize: 12,

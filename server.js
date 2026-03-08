@@ -102,13 +102,14 @@ const SYSTEM_PROMPT = SYSTEM_PROMPT_SHORT;
 // 全出力経路で強制するルール（整理AIの返答時のみ適用）
 const OUTPUT_FORCE_RULES = `
 ## 出力強制ルール（必ず守る）
-- 思考整理AI・感情ナビゲーションAI。答えを出さず、ユーザーが気づく瞬間を作る。判断はユーザーに委ねる。
-- 出力は「共感（1行）→ 構造（1〜3個）→ 言語化 or 近い質問」。質問は必須ではない。
-- 共感は感情に寄せる。状況を決めつけない。感情は断定せず「近さ」「混ざり」で扱う。
-- ユーザーの言葉を残して構造化。ユーザーの言葉にない感情を足さない。
-- 状況が不明で構造が作れない時だけ「まず状況を少し整理させて。」＋選択ウィジェット。状況が読める場合は使わない。
+- 整理AIは「答えるAI」ではなく「頭の中を見せるAI」。説明型ではなく構造提示型で返す。
+- 出力は「共感（1行）→ 短い導入（任意）→ 箇条書きで構造 → 軽いまとめ → 必要なら近い質問」。質問は必須ではない。
+- 「今の気持ちを整理すると」「状況としては」などの説明前置きを出さない。箇条書きで構造を前に出す。
+- 箇条書きは1〜3個まで。4個以上は出さない。まとめ文は1文で短く（「この3つが重なってそう。」程度）。質問は必ず箇条書きの後ろに置く。
+- 感情1〜3個。思考はユーザーの文に明確に含まれる場合のみ最大1個追加。ユーザーの言葉を残す。抽象語にしない。
+- 共感は感情に寄せる。状況を決めつけない。最大8行程度。自然な会話のリズム。
+- 状況が不明で構造が作れない時だけ「まず状況を少し整理させて。」＋選択ウィジェット。
 - A/B/C/D・行動案・アドバイス・未来質問は禁止。「詳しく教えて」「状況を説明してください」「実際に〜ですか？」は禁止。
-- 毎回同じ型・同じ質問表現を繰り返さない。最大8行程度。自然な会話のリズム。
 `;
 
 function extractJsonObject(text) {
@@ -549,40 +550,45 @@ if (!isVercel && apiOnly) {
   app.get(/^\/ma\/.+/, (req, res) => res.redirect(302, "/ma/"));
 }
 
-// ローカル用: フロント配信・リダイレクト（Vercel / API_ONLY では静的配信しない）
+// ローカル用: フロント配信（Vercel / API_ONLY では静的配信しない）
+// トップ(/) = ランディング、/ma = アプリ。SPA なので index.html をルートでも配信。
 if (!isVercel && !apiOnly) {
   const frontendRoot = path.resolve(__dirname, "dist");
   const distExists = fs.existsSync(frontendRoot) && fs.existsSync(path.join(frontendRoot, "index.html"));
   if (distExists) {
-    app.use("/ma", express.static(frontendRoot));
-  }
-  app.get("/", (req, res) => res.redirect(302, "/ma/"));
-  app.get("/ma", (req, res) => res.redirect(302, "/ma/"));
-  const maFallbackHtml = `
+    // SPA: ルート・/ma・/ma/* は index.html（静的ファイルより先に登録）
+    app.get(["/", "/ma", "/ma/", "/ma/plans"], (req, res, next) => {
+      res.sendFile("index.html", { root: frontendRoot }, (err) => {
+        if (err) next();
+      });
+    });
+    app.get(/^\/ma\/.+/, (req, res, next) => {
+      res.sendFile("index.html", { root: frontendRoot }, (err) => {
+        if (err) next();
+      });
+    });
+    app.use(express.static(frontendRoot));
+  } else {
+    app.get("/", (req, res) => res.redirect(302, "/ma/"));
+    app.get("/ma", (req, res) => res.redirect(302, "/ma/"));
+    const maFallbackHtml = `
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MA</title>
+  <title>GROUND</title>
 </head>
 <body style="font-family:sans-serif;padding:2rem;background:#f3eee6;color:#554a3f;">
-  <h1 style="font-size:1.5rem;">MA</h1>
+  <h1 style="font-size:1.5rem;">GROUND</h1>
   <p>フロントをビルドしてください。</p>
   <pre style="background:#e5dccf;padding:1rem;border-radius:8px;">npm run build</pre>
-  <p>実行後、もう一度 <a href="/ma/">/ma/</a> を開いてください。</p>
+  <p>実行後、<a href="/">/</a>（ランディング）または <a href="/ma/">/ma/</a>（アプリ）を開いてください。</p>
 </body>
 </html>
 `;
-  app.get(/^\/ma\/.+/, (req, res, next) => {
-    if (!distExists) {
-      res.type("html").send(maFallbackHtml);
-      return;
-    }
-    res.sendFile("index.html", { root: frontendRoot }, (err) => {
-      if (err) next();
-    });
-  });
+    app.get(/^\/ma\/?/, (req, res) => res.type("html").send(maFallbackHtml));
+  }
 }
 if (!isVercel) {
   app.listen(PORT, () => {

@@ -189,16 +189,143 @@ function Message({ msg }) {
                 const text = Array.isArray(children)
                   ? children.map(c => typeof c === 'string' ? c : '').join('')
                   : String(children ?? '');
+                const trimmed = text.trim();
+                const isBullet = /^[・\-\*]\s*/.test(trimmed) || (trimmed.length > 0 && trimmed.startsWith('・'));
+                const isChoice = /^[A-D]\.\s/.test(text);
                 return (
-                  <p style={{ marginBottom: /^[A-D]\.\s/.test(text) ? '1em' : '0.65em' }}>
+                  <p style={{
+                    marginTop: isBullet ? 8 : undefined,
+                    marginBottom: isChoice ? '1em' : (isBullet ? 8 : '0.65em'),
+                    paddingLeft: isBullet ? 2 : undefined,
+                  }}>
                     {children}
                   </p>
                 );
-              }
+              },
+              ul({ children }) {
+                return <ul style={{ margin: '10px 0 12px 0', paddingLeft: 22 }}>{children}</ul>;
+              },
+              li({ children }) {
+                return <li style={{ marginBottom: 8 }}>{children}</li>;
+              },
             }}
           >{formatOptions(msg.content)}</ReactMarkdown>
         )}
       </div>
+    </div>
+  );
+}
+
+/** 助手メッセージから箇条書き項目を抽出（思考カード用） */
+function parseThoughtItems(content) {
+  if (!content || typeof content !== "string") return [];
+  const lines = content.split(/\r?\n/);
+  const items = [];
+  for (const line of lines) {
+    const trimmed = line.trim();
+    const m = trimmed.match(/^[・\-\*]\s*(.+)$/);
+    if (m) {
+      const label = m[1].trim();
+      if (label && label !== "その他を書く") items.push(label);
+    }
+  }
+  return items.slice(0, 8);
+}
+
+function ThoughtCards({ items, onSelect, onOtherExpand, onOtherClose, otherExpanded, otherValue, onOtherChange, onOtherSubmit }) {
+  const cardStyle = {
+    background: "#f6f0e7",
+    border: "1px solid #e0d4c5",
+    borderRadius: 10,
+    padding: "10px 14px",
+    fontSize: 13,
+    color: "#5a4b3f",
+    cursor: "pointer",
+    letterSpacing: "0.02em",
+    textAlign: "left",
+    width: "100%",
+    boxShadow: "0 2px 6px rgba(0,0,0,0.04)",
+  };
+  return (
+    <div style={{ marginTop: 12, marginBottom: 8, maxWidth: "72%" }}>
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(2, 1fr)",
+        gap: 10,
+      }}>
+        {items.map((label, i) => (
+          <button
+            key={i}
+            type="button"
+            style={cardStyle}
+            onClick={() => onSelect(label)}
+          >
+            {label}
+          </button>
+        ))}
+        <button
+          type="button"
+          style={cardStyle}
+          onClick={() => !otherExpanded && onOtherExpand()}
+        >
+          その他を書く
+        </button>
+      </div>
+      {otherExpanded && (
+        <div style={{ marginTop: 12 }}>
+          <textarea
+            placeholder="今頭にあることをそのまま書いてください"
+            value={otherValue}
+            onChange={e => onOtherChange(e.target.value)}
+            rows={3}
+            style={{
+              width: "100%",
+              padding: "12px 14px",
+              border: "1px solid #e0d4c5",
+              borderRadius: 10,
+              fontSize: 13,
+              color: "#5a4b3f",
+              background: "#fdfbf7",
+              fontFamily: "inherit",
+              resize: "vertical",
+              boxSizing: "border-box",
+            }}
+          />
+          <div style={{ marginTop: 8, display: "flex", gap: 8, alignItems: "center" }}>
+            <button
+              type="button"
+              onClick={() => otherValue.trim() && onOtherSubmit(otherValue.trim())}
+              disabled={!otherValue.trim()}
+              style={{
+                padding: "10px 18px",
+                background: "#e8e4df",
+                border: "1px solid #e0d4c5",
+                borderRadius: 8,
+                color: "#2a3a4f",
+                fontSize: 12,
+                cursor: otherValue.trim() ? "pointer" : "default",
+                letterSpacing: "0.04em",
+              }}
+            >
+              送る
+            </button>
+            <button
+              type="button"
+              onClick={onOtherClose}
+              style={{
+                background: "none",
+                border: "none",
+                padding: 0,
+                color: "#8a7d6f",
+                fontSize: 11,
+                cursor: "pointer",
+              }}
+            >
+              閉じる
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -236,6 +363,8 @@ export default function App() {
   const [savedFlash, setSavedFlash] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [bookmarks, setBookmarks] = useState([]);
+  const [otherCardExpanded, setOtherCardExpanded] = useState(false);
+  const [otherCardValue, setOtherCardValue] = useState("");
   const allowSave = canSaveSummary(currentPlan);
 
   const refreshBookmarks = () => {
@@ -280,6 +409,8 @@ export default function App() {
   const handleSend = async (exampleText) => {
     const text = (exampleText != null && String(exampleText).trim() !== "") ? String(exampleText).trim() : input.trim();
     if (!text || loading) return;
+    setOtherCardExpanded(false);
+    setOtherCardValue("");
     try {
       localStorage.setItem(ONBOARDING_DONE_KEY, "1");
     } catch (_) {}
@@ -544,7 +675,7 @@ export default function App() {
           }}>
             かけら
           </button>
-          <Link to="/plans" style={{
+          <Link to="/ma/plans" style={{
             fontSize: 11, padding: "5px 11px", borderRadius: 4,
             color: "#a19180", textDecoration: "none", letterSpacing: "0.05em",
           }}>
@@ -578,7 +709,7 @@ export default function App() {
             fontWeight: 300, marginTop: 90, lineHeight: 2.2, letterSpacing: "0.05em",
           }}>
             何でも話してください。<br/>
-            答えは出しません。整理するだけです。
+            答えは出さない。頭の中を見せるだけ。
             {showOnboarding && (
               <div style={{ marginTop: 24 }}>
                 <button
@@ -603,6 +734,31 @@ export default function App() {
           </div>
         )}
         {messages.map(msg => <Message key={msg.id} msg={msg} />)}
+        {!loading && (() => {
+          const lastAssistant = [...messages].reverse().find(m => m.role === "assistant" && m.content && !["error", "info"].includes(m.type));
+          const thoughtItems = lastAssistant ? parseThoughtItems(lastAssistant.content) : [];
+          if (thoughtItems.length < 1) return null;
+          return (
+            <ThoughtCards
+              items={thoughtItems}
+              onSelect={(text) => {
+                setOtherCardExpanded(false);
+                setOtherCardValue("");
+                handleSend(text);
+              }}
+              onOtherExpand={() => setOtherCardExpanded(true)}
+              onOtherClose={() => { setOtherCardExpanded(false); setOtherCardValue(""); }}
+              otherExpanded={otherCardExpanded}
+              otherValue={otherCardValue}
+              onOtherChange={setOtherCardValue}
+              onOtherSubmit={(val) => {
+                handleSend(val);
+                setOtherCardExpanded(false);
+                setOtherCardValue("");
+              }}
+            />
+          );
+        })()}
         {loading && (
           <div style={{ paddingLeft: 8, color: "#8a7d6f", fontSize: 12, marginTop: 4 }} aria-live="polite">
             <TypingDots/>
@@ -611,12 +767,17 @@ export default function App() {
         )}
         {!loading && messages.some(m => m.role === "assistant") && (
           <div style={{ marginTop: 10, marginBottom: 6, display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
-            <button type="button" onClick={handleCopyLast} disabled={!lastAssistantContent} style={{
-              background: "none", border: "none", padding: 0,
+            <button type="button" onClick={handleCopyLast} disabled={!lastAssistantContent} title={copyRowFeedback ? "コピーしました" : "コピー"} style={{
+              background: "none", border: "none", padding: 2,
               color: copyRowFeedback ? "#8a9a6b" : "#8a7d6f",
-              fontSize: 10, cursor: lastAssistantContent ? "pointer" : "default", letterSpacing: "0.04em",
+              cursor: lastAssistantContent ? "pointer" : "default",
+              display: "inline-flex", alignItems: "center", justifyContent: "center",
             }}>
-              {copyRowFeedback ? "コピーしました" : "コピー"}
+              {copyRowFeedback ? (
+                <span style={{ fontSize: 10 }}>OK</span>
+              ) : (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              )}
             </button>
             {feedbackSent ? (
               <span style={{ fontSize: 10, color: "#8a7d6f" }}>ありがとう</span>
@@ -636,12 +797,17 @@ export default function App() {
                 </button>
               </>
             )}
-            <button type="button" onClick={handleShare} style={{
-              background: "none", border: "none", padding: 0,
+            <button type="button" onClick={handleShare} title={shareFeedback ? "コピーしました" : "シェア"} style={{
+              background: "none", border: "none", padding: 2,
               color: shareFeedback ? "#8a9a6b" : "#8a7d6f",
-              fontSize: 10, cursor: "pointer", letterSpacing: "0.04em",
+              cursor: "pointer",
+              display: "inline-flex", alignItems: "center", justifyContent: "center",
             }}>
-              {shareFeedback ? "コピーしました" : "シェア"}
+              {shareFeedback ? (
+                <span style={{ fontSize: 10 }}>OK</span>
+              ) : (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              )}
             </button>
           </div>
         )}
@@ -739,7 +905,7 @@ export default function App() {
               e.target.style.height = Math.min(e.target.scrollHeight, 140) + "px";
             }}
           />
-          <button type="button" aria-label="送信" onClick={handleSend} disabled={loading || !input.trim()} style={{
+          <button type="button" aria-label="送信" onClick={() => handleSend()} disabled={loading || !input.trim()} style={{
             background: "none", border: "none",
             color: loading || !input.trim() ? "#d1c5b8" : "#a28d79",
             cursor: loading || !input.trim() ? "default" : "pointer",
