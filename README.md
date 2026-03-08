@@ -1,8 +1,9 @@
-# 整理AI（seiri-ai-frontend）
+# GROUND（seiri-ai-frontend）
 
-「答えを出す」のではなく、入力を壊さずに整えるためのチャットUI + APIサーバーです。
+**GROUND**（[ground.ink](https://ground.ink)）— Find your ground. Sort your thoughts.  
+「答えを出す」のではなく、思考を整理するチャットUI + APIサーバーです。
 
-**本番**: [https://seiri-ai-frontend-production-a2ef.up.railway.app/ma/](https://seiri-ai-frontend-production-a2ef.up.railway.app/ma/)
+**本番**: [https://ground.ink](https://ground.ink)（または [Railway デプロイ URL](https://seiri-ai-frontend-production-a2ef.up.railway.app/)）
 
 **ドメインを開いても空白になる場合**: Railway の **Variables** で `API_ONLY` を削除し、**Settings** → **Build** で **Build Command** を `npm run build` に設定してから再デプロイしてください。詳しくは下記「本番デプロイ（Railway）」を参照。
 
@@ -10,6 +11,7 @@
 
 - `server.js`: Express API（Anthropic SDK 経由で整理・判定）
 - `src/App.jsx`: チャットUI（React）
+- `src/Landing.jsx`: ランディングページ（`/welcome`）
 
 ## セットアップ
 
@@ -38,7 +40,7 @@ npm run server
 npm run dev
 ```
 
-**http://localhost:5173/ma/** でアクセスできます（URL は MA 用に `/ma` で公開）。
+**http://localhost:5173/** でアクセスできます（アプリはルート `/` で動作）。
 
 ## 本番
 
@@ -50,14 +52,14 @@ npm run prod
 
 （内部で `npm run build` → `node server.js`）
 
-2) ブラウザで **http://localhost:3001/ma/** を開く。
+2) ブラウザで **http://localhost:3001/** を開く。
 
-- 本番ではフロントは `dist/` を `/ma` で配信し、API は `/api` のままです。
+- 本番ではフロントは `dist/` をルート `/` で配信し、API は `/api` のままです。
 - 本番サーバーを立てる場合は、リバースプロキシ（nginx 等）でこのポートを向けるか、`PORT` を環境変数で指定してください。
 
 ## Vercel にデプロイ（フロント + API 両方）
 
-フロント（`/ma`）と API（`/api`）を Vercel でまとめて公開できます。
+フロント（`/`）と API（`/api`）を Vercel でまとめて公開できます。
 
 ### 1. 前提
 
@@ -97,11 +99,11 @@ vercel
 
 ### 4. デプロイ後の URL
 
-- 本番アプリ: **https://seiri-ai-frontend-production-a2ef.up.railway.app/ma/**
-- API: **https://seiri-ai-frontend-production-a2ef.up.railway.app/api/organize** など
-- ルート `/` にアクセスすると `/ma/` にリダイレクトされます。
+- 本番アプリ: **https://ground.ink**（または Railway のデプロイ URL）
+- API: **https://ground.ink/api/organize** など（同一オリジン）
+- ルート `/` がアプリ、`/welcome` がランディングページです。
 
-**API キーが設定されているか確認する:** ブラウザで **https://seiri-ai-frontend-production-a2ef.up.railway.app/api/health** を開く。`{"ok":true,"anthropic":"set"}` なら環境変数は入っている。`{"ok":false,"anthropic":"missing"}` なら未設定。接続の確認は実際に短い文を送って返答が返るかで判断できる。
+**API キーが設定されているか確認する:** ブラウザで **https://ground.ink/api/health**（またはデプロイ URL/api/health）を開く。`{"ok":true,"anthropic":"set"}` なら環境変数は入っている。`{"ok":false,"anthropic":"missing"}` なら未設定。接続の確認は実際に短い文を送って返答が返るかで判断できる。
 
 ### 5. 注意（Vercel のサーバーレス）
 
@@ -128,7 +130,7 @@ vercel
 
 | 原因 | 説明 | 確認方法 |
 |------|------|----------|
-| **Cold start** | しばらく使っていないと、API が止まり、最初のリクエストで起動に時間かかることがある。 | ブラウザで **https://seiri-ai-frontend-production-a2ef.up.railway.app/api/ping** を開く。すぐ `{"ok":true,...}` が返れば届いている。 |
+| **Cold start** | しばらく使っていないと、API が止まり、最初のリクエストで起動に時間かかることがある。 | ブラウザで **https://ground.ink/api/ping** を開く。すぐ `{"ok":true,...}` が返れば届いている。 |
 | **古いフロントがデプロイされたまま** | クライアントの待ち時間が古いままだと、サーバーが応答する前に切れる。 | デプロイ後はブラウザのハードリロード（Ctrl+Shift+R）でキャッシュを捨てる。 |
 | **サーバーが 503 を返している** | サーバー側で LLM が時間内に返らず、503 を返している。 | ログで 503 や `request_timeout` が出ていないか確認する。 |
 | **関数のクラッシュ** | 未処理の例外でレスポンスが返らない。 | ログでエラーやスタックトレースを確認する。`ANTHROPIC_API_KEY` 未設定でも 500 が返るはず。 |
@@ -136,12 +138,12 @@ vercel
 
 **診断の手順**
 
-1. **https://seiri-ai-frontend-production-a2ef.up.railway.app/api/ping** を開く  
+1. **https://ground.ink/api/ping**（またはデプロイ URL/api/ping）を開く  
    - すぐ `{"ok":true,...}` が返れば API は届いている。  
    - 504 が出る場合は **/api/health** も試す。
 
 2. **最新をデプロイしたか**  
-   - デプロイ後、本番 **https://seiri-ai-frontend-production-a2ef.up.railway.app/ma/** で動作を確認する。
+   - デプロイ後、本番 **https://ground.ink** で動作を確認する。
 
 3. **ログ**  
    - Railway のログで 503・500 やエラーが出ていないか見る。
@@ -154,7 +156,7 @@ vercel
 | **軽量な /api/ping** | `api/ping.js` を Express とは別の単体関数にした。診断用にすぐ `{ ok, t, vercel }` が返る。 |
 | **ストリーミング＋受け取り先行** | 応答を「受け取り1文 → 本編を少しずつ」のチャット式で返し、最初のバイトを早く送る。 |
 | **Cron でウォーム** | 5 分ごとに `GET /api/history` を呼び、メイン関数を起動したままにしておく。 |
-| **ページ表示時のウォーム** | 本番で `/ma/` を開いた瞬間にフロントから `GET /api/history` を1回送る。送信前に API 関数の Cold start を起こしておき、初回送信が速くなりやすい。 |
+| **ページ表示時のウォーム** | 本番で `/` を開いた瞬間にフロントから `GET /api/history` を1回送る。送信前に API 関数の Cold start を起こしておき、初回送信が速くなりやすい。 |
 | **黒線で一度切る** | 応答を「block1（受け取り＋確認＋整形）」と「block2（分かれ道〜）」に分け、block1 を先に返してから block2 をストリーム。前半が早く表示される。 |
 | **Fluid Compute（Pro）** | まだ 504 が出る場合: Vercel Pro で **Fluid Compute** を有効にすると、実行時間上限を延長できる。 |
 
@@ -165,20 +167,20 @@ vercel
 
 **本番環境**
 
-- 本番は **Railway** で 1 本の URL に統一しています。
-- アプリ: **https://seiri-ai-frontend-production-a2ef.up.railway.app/ma/**
+- 本番は **ground.ink**（Railway 等で 1 本の URL に統一）。
+- アプリ: **https://ground.ink**
 - API: 同一オリジン（`/api/organize` など）。Cold start 対策のため常時起動を想定しています。
 
 ---
 
 ## 本番デプロイ（Railway）
 
-本番は **https://seiri-ai-frontend-production-a2ef.up.railway.app/ma/** で提供しています。同じリポジトリを Railway にデプロイし、次の設定をします。
+本番は **https://ground.ink** で提供しています（Railway にデプロイし、カスタムドメイン ground.ink を向ける想定）。同じリポジトリを Railway にデプロイし、次の設定をします。
 
 ### 1. ビルド・起動の設定（必須）
 
 - **Build Command**: `npm run build`  
-  - 未設定のままにすると `dist/` が作られず、`/ma/` を開いても空白になります。
+  - 未設定のままにすると `dist/` が作られず、`/` を開いても空白になります。
 - **Start Command**: `node server.js`  
 - **Root Directory**: 空のまま
 
@@ -187,26 +189,82 @@ vercel
 | 名前 | 値 | 必須 |
 |------|-----|------|
 | `ANTHROPIC_API_KEY` | あなたのキー | ✅ |
-| `API_ONLY` | **設定しない**（未設定にするとフロント＋API を同一 URL で配信。`1` にすると API 専用になり `/ma/` は案内ページのみ） | — |
-| `CORS_ORIGIN` | 別オリジンから API を呼ぶ場合のみ: `https://seiri-ai-frontend-production-a2ef.up.railway.app` | 必要に応じて |
+| `API_ONLY` | **設定しない**（未設定にするとフロント＋API を同一 URL で配信。`1` にすると API 専用になり `/` は案内ページのみ） | — |
+| `CORS_ORIGIN` | 別オリジンから API を呼ぶ場合のみ: `https://seiri-ai-frontend-production-a2ef.up.railway.app` または `https://ground.ink` | 必要に応じて |
 | `PORT` | Railway が自動設定 | 任意 |
 
-### 3. 空白になる場合の確認
+### 3. ビルドし直して再デプロイする手順
+
+**A. GitHub と Railway を連携している場合**
+
+1. このリポジトリの最新を **push** する。
+   ```bash
+   git add .
+   git commit -m "Update GROUND UI and error handling"
+   git push origin main
+   ```
+2. **Railway** のダッシュボードを開く → 対象プロジェクト → **Deployments**。
+3. 新しいコミットが検知されていれば自動でビルドが始まります。始まっていない場合は **Deploy** や **Redeploy** を押す。
+4. **Build Command** が `npm run build` になっているか **Settings** → **Build** で確認する。
+5. **https://ground.ink/ma/** で配信している場合は、**Variables** に次を追加してから再デプロイする。
+   - 名前: `VITE_BASE_PATH`  
+   - 値: `/ma/`
+   - これでビルド時に `base: '/ma/'` が使われ、タブ・ヘッダーが GROUND になり、アセットのパスも `/ma/` 用になる。
+
+**B. 手動でビルドしてからデプロイする場合**
+
+1. リポジトリのルートで依存関係を入れる。
+   ```bash
+   cd seiri-ai-frontend
+   npm install
+   ```
+2. ビルドする。
+   - **ルート（ground.ink）で配信する場合**
+     ```bash
+     npm run build
+     ```
+   - **ground.ink/ma/ で配信する場合**（PowerShell）
+     ```powershell
+     $env:VITE_BASE_PATH="/ma/"; npm run build
+     ```
+   - **ground.ink/ma/ で配信する場合**（cmd）
+     ```cmd
+     set VITE_BASE_PATH=/ma/ && npm run build
+     ```
+3. できた **`dist/`** を、本番サーバーのルート（または `/ma/`）にアップロードする。
+4. サーバー側で、`/` および `/plans`・`/welcome`（または `/ma/`・`/ma/plans`・`/ma/welcome`）で `dist/index.html` が返るようにルーティングする。
+
+**動作確認**
+
+- ブラウザの**ハードリロード**（Ctrl+Shift+R または Cmd+Shift+R）でキャッシュを消してから開く。
+- タブ名が **GROUND — ground.ink**、画面の見出しが **GROUND** になっていれば反映済みです。
+
+### 4. 空白になる場合の確認
 
 1. **Variables** に `API_ONLY` が入っていないか確認し、あれば削除する。
 2. **Settings** → **Build** で **Build Command** が `npm run build` になっているか確認する。
 3. 上記を変更したら **Redeploy** する。
 
-### 4. 動作確認
+### 5. 動作確認
 
-- **https://seiri-ai-frontend-production-a2ef.up.railway.app/ma/** でチャットが表示されること。
-- **https://seiri-ai-frontend-production-a2ef.up.railway.app/api/health** で `{"ok":true,"anthropic":"set"}` が返ること。
+- **https://ground.ink**（またはデプロイ URL）でチャットが表示されること。
+- **https://ground.ink/api/health** で `{"ok":true,"anthropic":"set"}` が返ること。
+
+### 6. ground.ink/ma/ で配信する場合（補足）
+
+アプリを **https://ground.ink/ma/** のようにサブパスで配信する場合は、ビルド時にベースパスを指定してください。
+
+- **Mac / Linux**: `VITE_BASE_PATH=/ma/ npm run build`
+- **Windows (PowerShell)**: `$env:VITE_BASE_PATH="/ma/"; npm run build`
+- **Windows (cmd)**: `set VITE_BASE_PATH=/ma/ && npm run build`
+
+生成された `dist/` をサーバーの `/ma/` に配置し、`/ma/` および `/ma/plans`・`/ma/welcome` で `index.html` が返るようにルーティングしてください。ビルド後はタブ名・ヘッダーとも **GROUND** で表示されます。
 
 ---
 
 ## 開発メモ
 
-- `vite.config.js` で `/api` を `http://localhost:3001` にプロキシしています（CORSで詰まりにくくするため）。
+- `vite.config.js` で `base: '/'`、`/api` を `http://localhost:3001` にプロキシしています（CORSで詰まりにくくするため）。
 - フロントは `VITE_API_BASE` があればそれを使い、なければ開発時は `http://localhost:3001` を使います。
 
 ## 環境変数（サーバー）
@@ -218,5 +276,5 @@ vercel
 - `MAX_INPUT_CHARS`（任意、デフォルト `8000`）
 - `SESSION_TTL_MS`（任意、デフォルト 6時間）
 - `RATE_LIMIT_MAX`（任意、デフォルト `60`。1分あたりの送信回数上限）
-- `CORS_ORIGIN`（API を別オリジンで動かすときは必須。カンマ区切りで許可オリジン。本番: `https://seiri-ai-frontend-production-a2ef.up.railway.app`）
+- `CORS_ORIGIN`（API を別オリジンで動かすときは必須。カンマ区切りで許可オリジン。本番: `https://ground.ink` など）
 - `API_ONLY`（任意。`1` のときは API ルートのみ起動し、フロントの静的配信を行わない。Railway/Render で API 専用デプロイするときに使う）

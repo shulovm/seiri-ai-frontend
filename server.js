@@ -99,18 +99,19 @@ cleanupTimer.unref?.();
 // ─── システムプロンプト（system.js のみ読み込み）──────────────
 const SYSTEM_PROMPT = SYSTEM_PROMPT_SHORT;
 
-// 全出力経路で強制するルール（整理AIの返答時のみ適用）
+// 全出力経路で強制するルール（GROUND 返答時のみ適用）
 const OUTPUT_FORCE_RULES = `
 ## 出力強制ルール（必ず守る）
-- 整理AIは「答えるAI」ではなく「頭の中を見せるAI」。説明型ではなく構造提示型で返す。
-- 出力は「共感（1行）→ 短い導入（任意）→ 箇条書きで構造 → 軽いまとめ → 必要なら近い質問」。質問は必須ではない。
-- 「今の気持ちを整理すると」「状況としては」などの説明前置きを出さない。箇条書きで構造を前に出す。
-- 箇条書きは1〜3個まで。4個以上は出さない。まとめ文は1文で短く（「この3つが重なってそう。」程度）。質問は必ず箇条書きの後ろに置く。
-- 感情1〜3個。思考はユーザーの文に明確に含まれる場合のみ最大1個追加。ユーザーの言葉を残す。抽象語にしない。
-- 共感は感情に寄せる。状況を決めつけない。最大8行程度。自然な会話のリズム。
-- 状況が不明で構造が作れない時だけ「まず状況を少し整理させて。」＋選択ウィジェット。
-- A/B/C/D・行動案・アドバイス・未来質問は禁止。「詳しく教えて」「状況を説明してください」「実際に〜ですか？」は禁止。
+- GROUNDは「答えるAI」ではなく「思考を整理するAI」。アドバイス・結論・人生判断は出さない。診断AIではない。
+- 出力は「共感（1行）→ 短い導入（任意）→ 箇条書きで構造（カード用）1〜3個 → 軽いまとめ → 必要なら近い質問」。質問は必須ではない。
+- 箇条書きは1〜3個まで。4個以上は出さない。ユーザーの言葉を優先。毎回動的生成。固定カードは禁止。
+- まとめ文は1文で短く。質問は箇条書きの後ろに置く。A/B/C/D・アドバイス・未来質問は禁止。
 `;
+
+function getLangInstruction(lang) {
+  if (lang === "en") return "\n\n【言語】必ず英語で返す。共感・箇条書き・まとめ・質問・カードラベルもすべて英語。Reply in English only.";
+  return "\n\n【言語】必ず日本語で返す。共感・箇条書き・まとめ・質問・カードラベルもすべて日本語。";
+}
 
 function extractJsonObject(text) {
   if (!text) return null;
@@ -184,8 +185,9 @@ function modeToTuning(mode) {
 }
 
 // ─── 整理実行 ─────────────────────────────────────────────────
-async function runOrganize({ session, mode, userText, hasBoundary }) {
+async function runOrganize({ session, mode, userText, hasBoundary, lang }) {
   const { maxTokens, note } = modeToTuning(mode);
+  const langHint = getLangInstruction(lang === "en" ? "en" : "ja");
   const extra = hasBoundary
     ? "\n\n追加：他者への影響・法律・医療の要素あり。境界線を1文で事実として静かに。恐怖を使わない。"
     : "";
@@ -195,7 +197,7 @@ async function runOrganize({ session, mode, userText, hasBoundary }) {
   const r = await withTimeout(
     client.messages.create({
       model: MODEL, max_tokens: maxTokens,
-      system: `${OUTPUT_FORCE_RULES}\n\n${SYSTEM_PROMPT}\n\n追加指示：${note}${extra}`,
+      system: `${OUTPUT_FORCE_RULES}${langHint}\n\n${SYSTEM_PROMPT}\n\n追加指示：${note}${extra}`,
       messages: msgs,
     }),
     LLM_TIMEOUT_MS,
@@ -228,7 +230,7 @@ const SINGLE_CALL_SYSTEM = OUTPUT_FORCE_RULES + `
 判定ルール:
 - [SAFETY] は「死にたい」「消えたい」「自分を傷つけたい」など明確な自傷・希死念慮のみ。つらい/悲しい/しんどい等だけなら使わない。
 - [CLARIFY] は情報不足で確認が必須のときだけ。不要なら [RESULT] で整理する。
-- それ以外は必ず [RESULT] で、下記の整理AIのルールに従う。
+- それ以外は必ず [RESULT] で、下記のGROUNDのルールに従う。
 ` + SYSTEM_PROMPT;
 
 function parseSingleCallResponse(raw) {
@@ -245,9 +247,10 @@ function parseSingleCallResponse(raw) {
   return { type: "result", output: text };
 }
 
-async function runOrganizeVercelSingle({ session, mode, userText, isMerged }) {
+async function runOrganizeVercelSingle({ session, mode, userText, isMerged, lang }) {
   const { maxTokens, note } = modeToTuning(mode);
-  const system = SINGLE_CALL_SYSTEM + `\n\n追加指示：${note}`;
+  const langHint = getLangInstruction(lang === "en" ? "en" : "ja");
+  const system = SINGLE_CALL_SYSTEM + langHint + `\n\n追加指示：${note}`;
   const msgs = session.history.map(m => ({ role: m.role, content: m.content }));
   const lastUser = msgs.filter(m => m.role === "user").pop();
   if (!lastUser || lastUser.content !== userText) msgs.push({ role: "user", content: userText });
@@ -272,7 +275,7 @@ function writeSSE(res, obj) {
   } catch (_) {}
 }
 
-async function runOrganizeVercelStream(res, clearRequestTimeout, sid, session, mode, userText, isMerged) {
+async function runOrganizeVercelStream(res, clearRequestTimeout, sid, session, mode, userText, isMerged, lang) {
   clearRequestTimeout();
   res.setHeader("Content-Type", "text/event-stream");
   res.setHeader("Cache-Control", "no-store");
@@ -281,17 +284,18 @@ async function runOrganizeVercelStream(res, clearRequestTimeout, sid, session, m
   writeSSE(res, { started: true });
 
   const { maxTokens, note } = modeToTuning(mode);
+  const langHint = getLangInstruction(lang === "en" ? "en" : "ja");
   const msgs = session.history.map(m => ({ role: m.role, content: m.content }));
   const lastUser = msgs.filter(m => m.role === "user").pop();
   if (!lastUser || lastUser.content !== userText) msgs.push({ role: "user", content: userText });
 
   try {
     const client = await getAnthropicClient();
-    const block1Prompt = OUTPUT_FORCE_RULES + `
+    const block1Prompt = OUTPUT_FORCE_RULES + langHint + `
 必ず次のいずれか1つで始め、ラベル行の改行のあとに本文を書く。
 [SAFETY] … 自傷・希死念慮のみ。その受け止めだけ。
 [CLARIFY] … 共感1行のあと、確認1問のみ。
-[RESULT] … 必ず「共感1行→構造1〜3個→自然な言語化 または 近い質問」の順。質問は必須ではない。最大8行。ユーザーの言葉のみ。A/B/C/D・詳しく教えて・型の繰り返しは禁止。
+[RESULT] … 必ず「共感1行→構造（カード用）1〜3個→自然な言語化 または 近い質問」の順。質問は必須ではない。最大8行。ユーザーの言葉のみ。A/B/C/D・アドバイス・型の繰り返しは禁止。
 禁止：「〜そのものと、それに対するあなたの感覚」のような表現。
 ` + SYSTEM_PROMPT;
     const block1Res = await withTimeout(
@@ -318,7 +322,7 @@ async function runOrganizeVercelStream(res, clearRequestTimeout, sid, session, m
       pushHist(session, "assistant", block1Text);
       writeSSE(res, { done: true, session_id: sid, type: "question", output: block1Text, question: block1Parsed.question });
     } else {
-      const restSystem = SINGLE_CALL_SYSTEM + `\n\n共感・構造はblock1で送済み。この出力では [RESULT] で自然な言語化 または 近い質問（質問は必須ではない。2行以内）。A/B/C/D・「詳しく教えて」・「どうしたい？」は絶対に出さない。\n\n追加指示：${note}`;
+      const restSystem = SINGLE_CALL_SYSTEM + langHint + `\n\n共感・構造はblock1で送済み。この出力では [RESULT] で自然な言語化 または 近い質問（質問は必須ではない。2行以内）。A/B/C/D・アドバイス・「どうしたい？」は絶対に出さない。\n\n追加指示：${note}`;
       const streamModel = isVercel ? GATE_MODEL : MODEL;
       const streamMaxTokens = isVercel ? 120 : Math.min(maxTokens, 150);
       const stream = client.messages.stream({
@@ -368,6 +372,7 @@ app.post("/api/organize", async (req, res) => {
         const sid  = String(req.body?.session_id || "default");
         const mode = String(req.body?.mode || "standard");
         const text = String(req.body?.text || "").trim();
+        const lang = req.body?.lang === "en" ? "en" : "ja";
 
         if (!ANTHROPIC_API_KEY) return send(500, { error: "ANTHROPIC_API_KEY is missing" });
         if (!text) return send(200, { session_id: sid, type: "info", output: "入力が空です。" });
@@ -389,7 +394,7 @@ app.post("/api/organize", async (req, res) => {
           session.pending_text = null;
 
           if (isVercel) {
-            await runOrganizeVercelStream(res, clearRequestTimeout, sid, session, mode, merged, true);
+            await runOrganizeVercelStream(res, clearRequestTimeout, sid, session, mode, merged, true, lang);
             return;
           }
           const gate = await analyzeInput(merged, { needClarify: false });
@@ -398,14 +403,14 @@ app.post("/api/organize", async (req, res) => {
             pushHist(session, "assistant", out);
             return send(200, { session_id: sid, type: "safety", output: out });
           }
-          const output = await runOrganize({ session, mode, userText: merged, hasBoundary: gate.boundary });
+          const output = await runOrganize({ session, mode, userText: merged, hasBoundary: gate.boundary, lang });
           pushHist(session, "assistant", output);
           return send(200, { session_id: sid, type: "result", output });
         }
 
         if (isVercel) {
           pushHist(session, "user", text);
-          await runOrganizeVercelStream(res, clearRequestTimeout, sid, session, mode, text, false);
+          await runOrganizeVercelStream(res, clearRequestTimeout, sid, session, mode, text, false, lang);
           return;
         }
 
@@ -422,7 +427,7 @@ app.post("/api/organize", async (req, res) => {
           return send(200, { session_id: sid, type: "question", question: gate.clarify.question });
         }
         pushHist(session, "user", text);
-        const output = await runOrganize({ session, mode, userText: text, hasBoundary: gate.boundary });
+        const output = await runOrganize({ session, mode, userText: text, hasBoundary: gate.boundary, lang });
         pushHist(session, "assistant", output);
         return send(200, { session_id: sid, type: "result", output });
       })(),
@@ -487,7 +492,7 @@ app.post("/api/summarize", async (req, res) => {
   }
   const messages = Array.isArray(req.body?.messages) ? req.body.messages : [];
   const text = messages
-    .map((m) => (m.role === "user" ? "ユーザー: " : "MA: ") + (m.content || ""))
+    .map((m) => (m.role === "user" ? "ユーザー: " : "GROUND: ") + (m.content || ""))
     .join("\n\n");
   if (!text.trim()) {
     return res.status(400).json({ error: "messages required" });
@@ -527,16 +532,14 @@ app.post("/api/summarize", async (req, res) => {
 
 const apiOnly = process.env.API_ONLY === "1";
 
-// API_ONLY のとき /ma/ で案内を表示（空白を防ぐ）
+// API_ONLY のとき / で案内を表示（空白を防ぐ）
 if (!isVercel && apiOnly) {
-  app.get("/", (req, res) => res.redirect(302, "/ma/"));
-  app.get("/ma", (req, res) => res.redirect(302, "/ma/"));
   const apiOnlyHtml = `
 <!DOCTYPE html>
 <html lang="ja">
-<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>MA</title></head>
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>GROUND — ground.ink</title></head>
 <body style="font-family:sans-serif;padding:2rem;background:#f3eee6;color:#554a3f;max-width:480px;margin:0 auto;">
-  <h1 style="font-size:1.25rem;">MA</h1>
+  <h1 style="font-size:1.25rem;">GROUND — ground.ink</h1>
   <p>このデプロイは API 専用です。アプリを表示するには:</p>
   <ol style="line-height:1.8;">
     <li>Railway の <strong>Variables</strong> で <code>API_ONLY</code> を削除する</li>
@@ -546,57 +549,48 @@ if (!isVercel && apiOnly) {
   <p style="margin-top:1.5rem;font-size:0.9em;color:#8a7d6f;">API は <a href="/api/health">/api/health</a> で確認できます。</p>
 </body>
 </html>`;
-  app.get("/ma/", (req, res) => res.type("html").send(apiOnlyHtml));
-  app.get(/^\/ma\/.+/, (req, res) => res.redirect(302, "/ma/"));
+  app.get("/", (req, res) => res.type("html").send(apiOnlyHtml));
 }
 
 // ローカル用: フロント配信（Vercel / API_ONLY では静的配信しない）
-// トップ(/) = ランディング、/ma = アプリ。SPA なので index.html をルートでも配信。
+// ルート(/) = アプリ。SPA なので index.html を /, /plans, /welcome で配信。
 if (!isVercel && !apiOnly) {
   const frontendRoot = path.resolve(__dirname, "dist");
   const distExists = fs.existsSync(frontendRoot) && fs.existsSync(path.join(frontendRoot, "index.html"));
   if (distExists) {
-    // SPA: ルート・/ma・/ma/* は index.html（静的ファイルより先に登録）
-    app.get(["/", "/ma", "/ma/", "/ma/plans"], (req, res, next) => {
-      res.sendFile("index.html", { root: frontendRoot }, (err) => {
-        if (err) next();
-      });
-    });
-    app.get(/^\/ma\/.+/, (req, res, next) => {
+    app.get(["/", "/plans", "/welcome"], (req, res, next) => {
       res.sendFile("index.html", { root: frontendRoot }, (err) => {
         if (err) next();
       });
     });
     app.use(express.static(frontendRoot));
   } else {
-    app.get("/", (req, res) => res.redirect(302, "/ma/"));
-    app.get("/ma", (req, res) => res.redirect(302, "/ma/"));
-    const maFallbackHtml = `
+    const fallbackHtml = `
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GROUND</title>
+  <title>GROUND — ground.ink</title>
 </head>
 <body style="font-family:sans-serif;padding:2rem;background:#f3eee6;color:#554a3f;">
-  <h1 style="font-size:1.5rem;">GROUND</h1>
+  <h1 style="font-size:1.5rem;">GROUND — ground.ink</h1>
   <p>フロントをビルドしてください。</p>
   <pre style="background:#e5dccf;padding:1rem;border-radius:8px;">npm run build</pre>
-  <p>実行後、<a href="/">/</a>（ランディング）または <a href="/ma/">/ma/</a>（アプリ）を開いてください。</p>
+  <p>実行後、<a href="/">/</a> を開いてください。</p>
 </body>
 </html>
 `;
-    app.get(/^\/ma\/?/, (req, res) => res.type("html").send(maFallbackHtml));
+    app.get("/", (req, res) => res.type("html").send(fallbackHtml));
   }
 }
 if (!isVercel) {
   app.listen(PORT, () => {
     if (apiOnly) {
-      console.log(`✅ MA API only: http://localhost:${PORT}/api/organize など`);
+      console.log(`✅ GROUND API only: http://localhost:${PORT}/api/organize など`);
     } else {
-      const url = `http://localhost:${PORT}/ma/`;
-      console.log(`✅ MA: ${url}`);
+      const url = `http://localhost:${PORT}/`;
+      console.log(`✅ GROUND: ${url}`);
       const frontendRoot = path.resolve(__dirname, "dist");
       const distExists = fs.existsSync(frontendRoot) && fs.existsSync(path.join(frontendRoot, "index.html"));
       if (!distExists) console.log("   ※ dist がありません。npm run build を実行してください。");

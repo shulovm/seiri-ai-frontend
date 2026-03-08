@@ -42,7 +42,7 @@ export default function Landing() {
         </span>
         <nav style={{ display: "flex", gap: 20, alignItems: "center" }}>
           <Link
-            to="/ma/"
+            to="/"
             style={{
               fontSize: 12,
               color: "#8a7d6f",
@@ -83,12 +83,24 @@ export default function Landing() {
             lineHeight: 1.5,
             letterSpacing: "0.02em",
             color: "#3d3529",
-            marginBottom: 24,
+            marginBottom: 12,
           }}
         >
           答えを出さず、<br />
           思考を整理する。
         </h1>
+        <p
+          className="landing-fade-delay-1"
+          style={{
+            fontSize: "clamp(12px, 2vw, 13px)",
+            fontWeight: 300,
+            letterSpacing: "0.12em",
+            color: "#8a7d6f",
+            marginBottom: 24,
+          }}
+        >
+          Find your ground. Sort your thoughts.
+        </p>
         <p
           className="landing-fade-delay-2"
           style={{
@@ -107,7 +119,7 @@ export default function Landing() {
         </p>
         <div className="landing-fade-delay-3" style={{ marginBottom: 56 }}>
           <Link
-            to="/ma/"
+            to="/"
             style={{
               display: "inline-block",
               padding: "14px 32px",
@@ -193,15 +205,19 @@ export default function Landing() {
           borderTop: "1px solid rgba(210,199,186,0.5)",
         }}
       >
-        <span
+        <a
+          href="https://ground.ink"
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             fontSize: 10,
             letterSpacing: "0.15em",
             color: "#a89b8d",
+            textDecoration: "none",
           }}
         >
           GROUND — ground.ink
-        </span>
+        </a>
       </footer>
     </div>
   );

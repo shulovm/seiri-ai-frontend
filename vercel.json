@@ -1,13 +1,11 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "redirects": [
-    { "source": "/", "destination": "/ma/", "permanent": false }
-  ],
   "rewrites": [
-    { "source": "/ma", "destination": "/ma/" },
-    { "source": "/ma/", "destination": "/index.html" },
-    { "source": "/ma/assets/:path*", "destination": "/assets/:path*" }
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/plans", "destination": "/index.html" },
+    { "source": "/welcome", "destination": "/index.html" },
+    { "source": "/assets/:path*", "destination": "/assets/:path*" }
   ],
   "functions": {
     "api/[[...path]].js": {

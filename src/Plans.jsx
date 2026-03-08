@@ -38,7 +38,7 @@ export default function Plans() {
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <div style={{ marginBottom: 32 }}>
           <Link
-            to="/ma/"
+            to="/"
             style={{
               color: "#8a7d6f",
               fontSize: 12,
@@ -70,7 +70,7 @@ export default function Plans() {
             marginBottom: 32,
           }}
         >
-          決めるのは、あなた。MA の利用回数と機能でお選びください。
+          決めるのは、あなた。GROUND の利用回数と機能でお選びください。
         </p>
 
         <div

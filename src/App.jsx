@@ -29,6 +29,16 @@ const API_INITIAL_TIMEOUT_MS = 90000;
 const PLAN_STORAGE_KEY = "ma_plan";
 const BOOKMARKS_STORAGE_KEY = "ma_bookmarks";
 
+/** 入力テキストから言語を推定（日本語 / 英語） */
+function detectLang(text) {
+  if (!text || typeof text !== "string") return "ja";
+  const t = text.trim();
+  if (!t.length) return "ja";
+  const ascii = (t.match(/[a-zA-Z]/g) || []).length;
+  const total = (t.replace(/\s/g, "").length) || 1;
+  return total > 0 && ascii / total > 0.5 ? "en" : "ja";
+}
+
 async function fetchSummarize(messages) {
   const res = await fetch(`${API_BASE}/api/summarize`, {
     method: "POST",
@@ -44,7 +54,7 @@ async function fetchSummarize(messages) {
   return res.json();
 }
 
-async function organize({ text, mode, sessionId, onStreamChunk }) {
+async function organize({ text, mode, sessionId, lang, onStreamChunk }) {
   const ac = new AbortController();
   let initialTimeoutId = setTimeout(() => ac.abort(), API_INITIAL_TIMEOUT_MS);
   const clearInitialTimeout = () => {
@@ -57,7 +67,7 @@ async function organize({ text, mode, sessionId, onStreamChunk }) {
     const res = await fetch(`${API_BASE}/api/organize`, {
       method: "POST",
       headers: { "Content-Type": "application/json; charset=utf-8" },
-      body: JSON.stringify({ text, mode, session_id: sessionId }),
+      body: JSON.stringify({ text, mode, session_id: sessionId, lang: lang === "en" ? "en" : "ja" }),
       signal: ac.signal,
     });
     clearInitialTimeout();
@@ -156,7 +166,7 @@ function Message({ msg }) {
   return (
     <div
       role="article"
-      aria-label={isUser ? "あなたのメッセージ" : "MAの返答"}
+      aria-label={isUser ? "あなたのメッセージ" : "GROUNDの返答"}
       style={{
       display: "flex",
       flexDirection: "column",
@@ -216,7 +226,10 @@ function Message({ msg }) {
   );
 }
 
-/** 助手メッセージから箇条書き項目を抽出（思考カード用） */
+const OTHER_CARD_JA = "その他を書く";
+const OTHER_CARD_EN = "Something else";
+
+/** 助手メッセージから箇条書き項目を抽出（思考カード用）。最大3個。日英対応。 */
 function parseThoughtItems(content) {
   if (!content || typeof content !== "string") return [];
   const lines = content.split(/\r?\n/);
@@ -226,13 +239,18 @@ function parseThoughtItems(content) {
     const m = trimmed.match(/^[・\-\*]\s*(.+)$/);
     if (m) {
       const label = m[1].trim();
-      if (label && label !== "その他を書く") items.push(label);
+      if (label && label !== OTHER_CARD_JA && label !== OTHER_CARD_EN) items.push(label);
     }
   }
-  return items.slice(0, 8);
+  return items.slice(0, 3);
 }
 
-function ThoughtCards({ items, onSelect, onOtherExpand, onOtherClose, otherExpanded, otherValue, onOtherChange, onOtherSubmit }) {
+function ThoughtCards({ items, lang, onSelect, onOtherExpand, onOtherClose, otherExpanded, otherValue, onOtherChange, onOtherSubmit }) {
+  const isEn = lang === "en";
+  const otherLabel = isEn ? OTHER_CARD_EN : OTHER_CARD_JA;
+  const placeholder = isEn ? "Write what's on your mind." : "今頭にあることをそのまま書いてください";
+  const sendLabel = isEn ? "Send" : "送る";
+  const closeLabel = isEn ? "Close" : "閉じる";
   const cardStyle = {
     background: "#f6f0e7",
     border: "1px solid #e0d4c5",
@@ -248,11 +266,7 @@ function ThoughtCards({ items, onSelect, onOtherExpand, onOtherClose, otherExpan
   };
   return (
     <div style={{ marginTop: 12, marginBottom: 8, maxWidth: "72%" }}>
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(2, 1fr)",
-        gap: 10,
-      }}>
+      <div className="thought-cards-grid">
         {items.map((label, i) => (
           <button
             key={i}
@@ -268,13 +282,13 @@ function ThoughtCards({ items, onSelect, onOtherExpand, onOtherClose, otherExpan
           style={cardStyle}
           onClick={() => !otherExpanded && onOtherExpand()}
         >
-          その他を書く
+          {otherLabel}
         </button>
       </div>
       {otherExpanded && (
-        <div style={{ marginTop: 12 }}>
+        <div style={{ marginTop: 14 }}>
           <textarea
-            placeholder="今頭にあることをそのまま書いてください"
+            placeholder={placeholder}
             value={otherValue}
             onChange={e => onOtherChange(e.target.value)}
             rows={3}
@@ -307,7 +321,7 @@ function ThoughtCards({ items, onSelect, onOtherExpand, onOtherClose, otherExpan
                 letterSpacing: "0.04em",
               }}
             >
-              送る
+              {sendLabel}
             </button>
             <button
               type="button"
@@ -321,7 +335,7 @@ function ThoughtCards({ items, onSelect, onOtherExpand, onOtherClose, otherExpan
                 cursor: "pointer",
               }}
             >
-              閉じる
+              {closeLabel}
             </button>
           </div>
         </div>
@@ -377,6 +391,14 @@ export default function App() {
   useEffect(() => {
     if (sidebarOpen) refreshBookmarks();
   }, [sidebarOpen]);
+
+  // 配下の index.html が古く「MA」のままでも、表示タイトルを GROUND に統一する
+  useEffect(() => {
+    if (typeof document !== "undefined" && document.title !== "GROUND — ground.ink") {
+      document.title = "GROUND — ground.ink";
+    }
+  }, []);
+
   const bottomRef = useRef(null);
   const streamStartedRef = useRef(false);
 
@@ -418,12 +440,14 @@ export default function App() {
     add("user", text);
     setLoading(true);
     const streamId = Date.now() + Math.random();
+    const requestStartedAt = Date.now();
     streamStartedRef.current = false;
     try {
       const data = await organize({
         text,
         mode,
         sessionId: SESSION_ID,
+        lang: detectLang(text),
         onStreamChunk: (accumulated) => {
           streamStartedRef.current = true;
           setMessages(prev => {
@@ -458,28 +482,35 @@ export default function App() {
       if (streamStartedRef.current) {
         setMessages(prev => prev.filter(m => m.id !== streamId));
       }
+      const elapsed = Date.now() - requestStartedAt;
+      const likelyColdStart = elapsed < 8000 && (
+        err?.status === 503 || err?.status === 504 ||
+        err?.message === "timeout" ||
+        err?.message === "Failed to fetch" || err?.name === "TypeError"
+      );
+
       let msg = err?.serverMessage || "";
       if (msg === "ANTHROPIC_API_KEY is missing") {
         msg = "APIキーが設定されていません。管理者は環境変数「ANTHROPIC_API_KEY」を確認してください。";
+      } else if (likelyColdStart) {
+        msg = "サーバーが起動中の可能性があります。30秒ほど待ってから、もう一度「送信」を押してみてください。";
       } else if (err?.status === 503 || err?.status === 504) {
         msg = mode === "short"
-          ? "応答が時間内に返ってきませんでした。しばらくしてからもう一度お試しください。"
-          : "応答が時間内に返ってきませんでした。\n\n「短め」モードで、1〜2文だけ送ってもう一度お試しください。";
+          ? "応答が時間内に返ってきませんでした。しばらく待ってからもう一度送信してみてください。"
+          : "応答が時間内に返ってきませんでした。しばらく待つか、「短め」で短い文でもう一度お試しください。";
       } else if (!msg) {
+        const alreadyShort = mode === "short";
+        const tryAgainLater = "しばらく待ってから、もう一度送ってみてください。";
         msg =
           err?.message === "timeout"
-            ? (mode === "short"
-                ? "接続がタイムアウトしました。\n\nサーバーの起動に時間がかかっている可能性があります。1〜2分待ってから、もう一度「送信」を押してみてください。"
+            ? (alreadyShort
+                ? "接続がタイムアウトしました。サーバーが起動中かもしれません。1〜2分待ってから、もう一度送信を押してみてください。"
                 : "応答が遅れています。「短め」モードで短い文をお試しください。")
             : err?.message === "Failed to fetch" || err?.name === "TypeError"
-              ? "接続できませんでした。しばらくしてからもう一度お試しください。"
+              ? "接続できませんでした。ネットワークを確認するか、30秒ほど待ってからもう一度お試しください。"
               : err?.status === 500
-                ? (mode === "short"
-                    ? "サーバーエラーです。しばらくしてからもう一度お試しください。"
-                    : "サーバーエラーです。しばらくしてから、または「短め」で短い文でもう一度お試しください。")
-                : (mode === "short"
-                    ? "一時的なエラーです。しばらくしてからもう一度お試しください。"
-                    : "一時的なエラーです。「短め」モードで短い文でもう一度お試しください。");
+                ? `サーバーエラーです。${tryAgainLater}${alreadyShort ? "" : "「短め」で短い文だと届きやすい場合があります。"}`
+                : `一時的なエラーです。${tryAgainLater}${alreadyShort ? "" : "「短め」で短い文だと届きやすい場合があります。"}`;
       }
       add("assistant", msg, "error");
     } finally {
@@ -549,7 +580,7 @@ export default function App() {
 
   const handleShare = () => {
     const url = getAppUrl();
-    const text = `答えを出さず、決断できる状態を整えるAI「MA」\n${url}`;
+    const text = `GROUND（ground.ink）— Find your ground. Sort your thoughts.\n${url}`;
     navigator.clipboard?.writeText(text).then(() => {
       track("share_clicked");
       setShareFeedback(true);
@@ -594,6 +625,8 @@ export default function App() {
         .md code { background: #f3ede3; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
         textarea::placeholder { color: #b0a495; }
         @keyframes savedSparkle { 0% { opacity: 0.4; transform: scale(0.9); } 50% { opacity: 1; transform: scale(1.1); } 100% { opacity: 1; transform: scale(1); } }
+        .thought-cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+        @media (max-width: 480px) { .thought-cards-grid { grid-template-columns: 1fr; gap: 14px; } }
       `}</style>
 
       {/* サイドバー：かけら */}
@@ -628,11 +661,11 @@ export default function App() {
       }}>
         <div>
           <h1 style={{ margin: 0, color: "#b39b7e", fontSize: 10, fontWeight: 400, letterSpacing: "0.18em", marginBottom: 5 }}>
-            MA
+            GROUND
           </h1>
           <div style={{ color: "#75675a", fontSize: 11, fontWeight: 300, letterSpacing: "0.04em", lineHeight: 1.6 }}>
-            決めるのは、あなた。<br />
-            — 答えを出さず、決断できる状態を整えるAI —
+            Find your ground. Sort your thoughts.<br />
+            — 答えを出さず、思考を整理するAI —
           </div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -675,7 +708,7 @@ export default function App() {
           }}>
             かけら
           </button>
-          <Link to="/ma/plans" style={{
+          <Link to="/plans" style={{
             fontSize: 11, padding: "5px 11px", borderRadius: 4,
             color: "#a19180", textDecoration: "none", letterSpacing: "0.05em",
           }}>
@@ -735,12 +768,45 @@ export default function App() {
         )}
         {messages.map(msg => <Message key={msg.id} msg={msg} />)}
         {!loading && (() => {
+          const lastMsg = messages[messages.length - 1];
+          const lastIsError = lastMsg?.role === "assistant" && lastMsg?.type === "error";
+          const lastUserContent = lastIsError
+            ? [...messages].slice(0, -1).reverse().find(m => m.role === "user")?.content
+            : null;
+          if (lastUserContent) {
+            return (
+              <div style={{ marginTop: 8, marginBottom: 4, maxWidth: "72%" }}>
+                <button
+                  type="button"
+                  onClick={() => handleSend(lastUserContent)}
+                  style={{
+                    padding: "8px 14px",
+                    background: "#f6f0e7",
+                    border: "1px solid #e0d4c5",
+                    borderRadius: 8,
+                    color: "#5a4b3f",
+                    fontSize: 12,
+                    cursor: "pointer",
+                    letterSpacing: "0.04em",
+                  }}
+                >
+                  再送信
+                </button>
+              </div>
+            );
+          }
+          return null;
+        })()}
+        {!loading && (() => {
           const lastAssistant = [...messages].reverse().find(m => m.role === "assistant" && m.content && !["error", "info"].includes(m.type));
+          const lastUserMsg = [...messages].reverse().find(m => m.role === "user");
+          const cardLang = lastUserMsg ? detectLang(lastUserMsg.content) : "ja";
           const thoughtItems = lastAssistant ? parseThoughtItems(lastAssistant.content) : [];
           if (thoughtItems.length < 1) return null;
           return (
             <ThoughtCards
               items={thoughtItems}
+              lang={cardLang}
               onSelect={(text) => {
                 setOtherCardExpanded(false);
                 setOtherCardValue("");

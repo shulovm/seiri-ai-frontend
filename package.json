@@ -8,6 +8,7 @@
     "server": "node server.js",
     "dev:ma": "concurrently -n api,vite -c blue,gray \"npm run server\" \"npm run dev\"",
     "build": "vite build",
+    "build:ma": "vite build",
     "start": "node server.js",
     "prod": "npm run build && node server.js",
     "lint": "eslint .",
