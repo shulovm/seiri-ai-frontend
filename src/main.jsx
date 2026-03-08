@@ -9,7 +9,7 @@ import Plans from './Plans.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <BrowserRouter basename={typeof window !== "undefined" && window.location.pathname.startsWith("/ma") ? "/ma" : import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/plans" element={<Plans />} />

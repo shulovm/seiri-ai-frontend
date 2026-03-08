@@ -563,6 +563,13 @@ if (!isVercel && !apiOnly) {
         if (err) next();
       });
     });
+    // ground.ink/ma/ 用: 同じ SPA を /ma 以下でも配信（1 つのビルドでルートと /ma 両対応）
+    app.get(["/ma", "/ma/", "/ma/plans", "/ma/welcome"], (req, res, next) => {
+      res.sendFile("index.html", { root: frontendRoot }, (err) => {
+        if (err) next();
+      });
+    });
+    app.use("/ma", express.static(frontendRoot));
     app.use(express.static(frontendRoot));
   } else {
     const fallbackHtml = `

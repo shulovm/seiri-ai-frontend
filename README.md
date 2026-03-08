@@ -206,10 +206,7 @@ vercel
 2. **Railway** のダッシュボードを開く → 対象プロジェクト → **Deployments**。
 3. 新しいコミットが検知されていれば自動でビルドが始まります。始まっていない場合は **Deploy** や **Redeploy** を押す。
 4. **Build Command** が `npm run build` になっているか **Settings** → **Build** で確認する。
-5. **https://ground.ink/ma/** で配信している場合は、**Variables** に次を追加してから再デプロイする。
-   - 名前: `VITE_BASE_PATH`  
-   - 値: `/ma/`
-   - これでビルド時に `base: '/ma/'` が使われ、タブ・ヘッダーが GROUND になり、アセットのパスも `/ma/` 用になる。
+5. **https://ground.ink/ma/** でも同じアプリを見るだけなら、**VITE_BASE_PATH は不要**です。サーバーがルート（`/`）と `/ma/` の両方で同じ SPA を配信するため、**Variables に VITE_BASE_PATH を入れず**にビルドすれば、どちらの URL でも GROUND が表示されます。以前 `VITE_BASE_PATH=/ma/` を追加した場合は**削除**してから再デプロイしてください。
 
 **B. 手動でビルドしてからデプロイする場合**
 
@@ -252,13 +249,11 @@ vercel
 
 ### 6. ground.ink/ma/ で配信する場合（補足）
 
-アプリを **https://ground.ink/ma/** のようにサブパスで配信する場合は、ビルド時にベースパスを指定してください。
+このリポジトリのサーバーは **ルート（/）と /ma/ の両方**で同じ SPA を配信します。**VITE_BASE_PATH は設定しないでください**（未設定のまま `npm run build` でビルド）。Railway にデプロイすれば、次の URL のどちらでも同じ GROUND アプリが開きます。
 
-- **Mac / Linux**: `VITE_BASE_PATH=/ma/ npm run build`
-- **Windows (PowerShell)**: `$env:VITE_BASE_PATH="/ma/"; npm run build`
-- **Windows (cmd)**: `set VITE_BASE_PATH=/ma/ && npm run build`
-
-生成された `dist/` をサーバーの `/ma/` に配置し、`/ma/` および `/ma/plans`・`/ma/welcome` で `index.html` が返るようにルーティングしてください。ビルド後はタブ名・ヘッダーとも **GROUND** で表示されます。
+- **https://seiri-ai-frontend-production-a2ef.up.railway.app/**
+- **https://seiri-ai-frontend-production-a2ef.up.railway.app/ma/**  
+  （ground.ink で /ma をこのサーバーに向けている場合も同様）
 
 ---
 
