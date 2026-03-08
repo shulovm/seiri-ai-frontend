@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "server": "node server.js",
+    "dev:ma": "concurrently -n api,vite -c blue,gray \"npm run server\" \"npm run dev\"",
     "build": "vite build",
     "start": "node server.js",
     "prod": "npm run build && node server.js",
@@ -25,6 +26,7 @@
     "serverless-http": "^4.0.0"
   },
   "devDependencies": {
+    "concurrently": "^9.1.0",
     "@eslint/js": "^9.39.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
