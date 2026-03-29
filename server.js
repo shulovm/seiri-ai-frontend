@@ -530,6 +530,174 @@ app.post("/api/summarize", async (req, res) => {
   }
 });
 
+// ─── 探索モード：カード生成（選択ベース深掘り）────────────────────────
+const EXPLORE_CARDS_SYSTEM = `
+You are an assistant that generates question-cards for an exploration UI.
+Return JSON only. No surrounding text.
+
+Output schema:
+{
+  "cards": [
+    { "title": "a single question", "subtitle": "optional, 1 line" }
+  ]
+}
+
+Rules:
+- Generate 2 to 4 cards.
+- Each card must be a QUESTION the user would want to pick. (Not a statement.)
+- The question should move thinking forward without giving advice.
+- Titles must be 1–2 lines max (keep short). End with “?” for English, “？” for Japanese.
+- Subtitles are optional and must be 1 line max (keep short, inviting).
+- Not random: must reflect the user's theme and the selected path so far.
+- If user is stuck (or asks for a different angle), do NOT paraphrase previous cards. Shift the perspective (emotion / reality / relationships / self-view / time-horizon) based on context.
+- Avoid repeating or closely matching any of the previous card titles provided.
+- Do not include an \"Other\" card (UI adds it separately).
+- Avoid diagnosis, conclusions, or life decisions.
+`;
+
+function exploreLangHint(lang) {
+  if (lang === "en") return "Write in English only.";
+  return "日本語のみで書く。";
+}
+
+app.post("/api/explore/cards", async (req, res) => {
+  if (!ANTHROPIC_API_KEY) {
+    return res.status(500).json({ error: "ANTHROPIC_API_KEY is missing" });
+  }
+  const theme = String(req.body?.theme || "").trim();
+  const path = Array.isArray(req.body?.path) ? req.body.path.map(String).map(s => s.trim()).filter(Boolean) : [];
+  const previousCards = Array.isArray(req.body?.previous_cards)
+    ? req.body.previous_cards.map(String).map(s => s.trim()).filter(Boolean).slice(0, 12)
+    : [];
+  const strategy = req.body?.strategy === "shift" || req.body?.strategy === "angle" ? req.body.strategy : "default";
+  const angle = typeof req.body?.angle === "string" ? req.body.angle.trim() : "";
+  const lang = req.body?.lang === "en" ? "en" : "ja";
+  if (!theme) return res.status(400).json({ error: "theme required" });
+
+  const prompt = `
+Theme:
+${theme}
+
+Selected path so far:
+${path.length ? path.map((p, i) => `${i + 1}. ${p}`).join("\n") : "(none)"}
+
+Strategy:
+${strategy === "shift" ? "User is stuck. Shift perspective and propose different angles." : strategy === "angle" ? `User requested a specific angle: ${angle || "(not specified)"}` : "Normal next-layer exploration."}
+
+Previous card titles (avoid repeating or paraphrasing these):
+${previousCards.length ? previousCards.map((t, i) => `${i + 1}. ${t}`).join("\n") : "(none)"}
+
+Generate the next layer of exploration cards.
+`;
+
+  try {
+    const client = await getAnthropicClient();
+    const r = await withTimeout(
+      client.messages.create({
+        model: GATE_MODEL,
+        max_tokens: 260,
+        system: `${EXPLORE_CARDS_SYSTEM}\n\n${exploreLangHint(lang)}`,
+        messages: [{ role: "user", content: prompt }],
+      }),
+      isVercel ? 20000 : 30000,
+      "explore_cards_timeout"
+    );
+    const raw = r.content?.find((c) => c.type === "text")?.text?.trim() || "";
+    const parsed = extractJsonObject(raw);
+    const cards = Array.isArray(parsed?.cards) ? parsed.cards : null;
+    if (!cards) return res.status(500).json({ error: "invalid cards" });
+    const cleaned = cards
+      .map((c) => ({
+        title: typeof c?.title === "string" ? c.title.trim() : "",
+        subtitle: typeof c?.subtitle === "string" ? c.subtitle.trim() : "",
+      }))
+      .filter((c) => c.title)
+      .slice(0, 4);
+    if (cleaned.length < 2) {
+      return res.json({
+        cards: lang === "en"
+          ? [
+              { title: "Name what feels most charged", subtitle: "" },
+              { title: "Look for what’s underneath", subtitle: "" },
+              { title: "Map what’s pulling you two ways", subtitle: "" },
+            ].slice(0, 2)
+          : [
+              { title: "いま一番強いところを言葉にする", subtitle: "" },
+              { title: "その下にあるものを探す", subtitle: "" },
+              { title: "ぶつかっている要素を並べる", subtitle: "" },
+            ].slice(0, 2),
+      });
+    }
+    return res.json({ cards: cleaned });
+  } catch (err) {
+    console.error("explore cards error", err);
+    const msg = err?.message === "explore_cards_timeout" ? "timeout" : "server error";
+    return res.status(err?.message === "explore_cards_timeout" ? 503 : 500).json({ error: msg });
+  }
+});
+
+// ─── 探索モード：今日の整理（選択履歴を3点で要約）────────────────────
+const EXPLORE_SUMMARY_SYSTEM = `
+Return JSON only. No surrounding text.
+
+Output schema:
+{
+  "narrative": "1-2 sentences describing the path",
+  "points": ["point1", "point2", "point3"]
+}
+
+Rules:
+- Summarize the exploration path as \"today's整理\" in 3 points.
+- Each point must be 1–2 sentences, concise.
+- Also write a short narrative that feels like: \"You explored X through Y and arrived at Z.\" (No advice.)
+- No advice, no conclusions, no life decisions.
+`;
+
+app.post("/api/explore/summary", async (req, res) => {
+  if (!ANTHROPIC_API_KEY) {
+    return res.status(500).json({ error: "ANTHROPIC_API_KEY is missing" });
+  }
+  const theme = String(req.body?.theme || "").trim();
+  const path = Array.isArray(req.body?.path) ? req.body.path.map(String).map(s => s.trim()).filter(Boolean) : [];
+  const lang = req.body?.lang === "en" ? "en" : "ja";
+  if (!theme) return res.status(400).json({ error: "theme required" });
+
+  const prompt = `
+Theme:
+${theme}
+
+Path:
+${path.length ? path.map((p, i) => `${i + 1}. ${p}`).join("\n") : "(none)"}
+`;
+
+  try {
+    const client = await getAnthropicClient();
+    const r = await withTimeout(
+      client.messages.create({
+        model: GATE_MODEL,
+        max_tokens: 300,
+        system: `${EXPLORE_SUMMARY_SYSTEM}\n\n${exploreLangHint(lang)}`,
+        messages: [{ role: "user", content: prompt }],
+      }),
+      isVercel ? 20000 : 30000,
+      "explore_summary_timeout"
+    );
+    const raw = r.content?.find((c) => c.type === "text")?.text?.trim() || "";
+    const parsed = extractJsonObject(raw);
+    const points = Array.isArray(parsed?.points) ? parsed.points : null;
+    const narrative = typeof parsed?.narrative === "string" ? parsed.narrative.trim() : "";
+    if (!points || points.length < 3) return res.status(500).json({ error: "invalid summary" });
+    return res.json({
+      narrative,
+      points: points.slice(0, 3).map((p) => String(p || "").trim()),
+    });
+  } catch (err) {
+    console.error("explore summary error", err);
+    const msg = err?.message === "explore_summary_timeout" ? "timeout" : "server error";
+    return res.status(err?.message === "explore_summary_timeout" ? 503 : 500).json({ error: msg });
+  }
+});
+
 const apiOnly = process.env.API_ONLY === "1";
 
 // API_ONLY のとき / で案内を表示（空白を防ぐ）
@@ -592,11 +760,14 @@ if (!isVercel && !apiOnly) {
   }
 }
 if (!isVercel) {
-  app.listen(PORT, () => {
+  // Railway / コンテナでは明示的に全インターフェースで待ち受け（未設定だと接続できない環境がある）
+  const host = process.env.HOST || "0.0.0.0";
+  app.set("trust proxy", 1);
+  app.listen(PORT, host, () => {
     if (apiOnly) {
-      console.log(`✅ GROUND API only: http://localhost:${PORT}/api/organize など`);
+      console.log(`✅ GROUND API only: http://${host}:${PORT}/api/organize など`);
     } else {
-      const url = `http://localhost:${PORT}/`;
+      const url = `http://${host}:${PORT}/`;
       console.log(`✅ GROUND: ${url}`);
       const frontendRoot = path.resolve(__dirname, "dist");
       const distExists = fs.existsSync(frontendRoot) && fs.existsSync(path.join(frontendRoot, "index.html"));

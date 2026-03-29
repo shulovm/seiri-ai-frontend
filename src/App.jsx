@@ -1,13 +1,20 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { track } from "@vercel/analytics";
-import { getPlanById, canSaveSummary } from "./plans.js";
+import { pickSuggestion } from "./suggestions.js";
+import TopNav from "./TopNav.jsx";
+import {
+  getStoredLangPref,
+  setStoredLangPref,
+  getStoredTonePref,
+  setStoredTonePref,
+} from "./prefs.js";
+import { loadKakera, pushKakera } from "./kakera.js";
+import { getUiCopy } from "./uiCopy.js";
 
-const DEFAULT_DEV_API = "http://localhost:3001";
-const API_BASE =
-  import.meta.env.VITE_API_BASE ??
-  (import.meta.env.DEV ? DEFAULT_DEV_API : "");
+// 本番と同じく相対パス /api（開発時は Vite が 5173 でプロキシ）
+const API_BASE = import.meta.env.VITE_API_BASE ?? "";
 
 function getOrCreateSessionId() {
   const key = "seiri_session_id";
@@ -26,8 +33,6 @@ const MESSAGES_STORAGE_KEY = "ma_messages";
 const getAppUrl = () => (typeof window !== "undefined" && window.location.origin + window.location.pathname) || "";
 
 const API_INITIAL_TIMEOUT_MS = 90000;
-const PLAN_STORAGE_KEY = "ma_plan";
-const BOOKMARKS_STORAGE_KEY = "ma_bookmarks";
 
 /** 入力テキストから言語を推定（日本語 / 英語） */
 function detectLang(text) {
@@ -248,7 +253,7 @@ function parseThoughtItems(content) {
 function ThoughtCards({ items, lang, onSelect, onOtherExpand, onOtherClose, otherExpanded, otherValue, onOtherChange, onOtherSubmit }) {
   const isEn = lang === "en";
   const otherLabel = isEn ? OTHER_CARD_EN : OTHER_CARD_JA;
-  const placeholder = isEn ? "Write what's on your mind." : "今頭にあることをそのまま書いてください";
+  const placeholder = isEn ? "Try writing freely." : "そのまま書いてみてください";
   const sendLabel = isEn ? "Send" : "送る";
   const closeLabel = isEn ? "Close" : "閉じる";
   const cardStyle = {
@@ -360,37 +365,105 @@ export default function App() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [waiting, setWaiting] = useState(false);
-  const [mode, setMode] = useState("short");
+  const [tone, setTone] = useState(() => getStoredTonePref());
+  const [langPref, setLangPref] = useState(() => getStoredLangPref()); // null = auto
+  const [menuOpen, setMenuOpen] = useState(false);
   const [shareFeedback, setShareFeedback] = useState(false);
   const [copyRowFeedback, setCopyRowFeedback] = useState(false);
   const [feedbackSent, setFeedbackSent] = useState(null);
-  const [currentPlan] = useState(() => {
-    try {
-      const p = typeof localStorage !== "undefined" && localStorage.getItem(PLAN_STORAGE_KEY);
-      return p && ["free", "light", "standard", "premium"].includes(p) ? p : "free";
-    } catch (_) { return "free"; }
-  });
   const [summaryPanelOpen, setSummaryPanelOpen] = useState(false);
   const [summaryPoints, setSummaryPoints] = useState(["", "", ""]);
   const [loadingSummary, setLoadingSummary] = useState(false);
   const [summaryError, setSummaryError] = useState("");
   const [savedFlash, setSavedFlash] = useState(false);
+  const [kakeraSavedNotice, setKakeraSavedNotice] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [bookmarks, setBookmarks] = useState([]);
+  const [kakeraExpandId, setKakeraExpandId] = useState(null);
   const [otherCardExpanded, setOtherCardExpanded] = useState(false);
   const [otherCardValue, setOtherCardValue] = useState("");
-  const allowSave = canSaveSummary(currentPlan);
+  const [inputFocused, setInputFocused] = useState(false);
+
+  const autoLangSource = useMemo(() => {
+    const lastUser = [...messages].reverse().find((m) => m.role === "user")?.content || "";
+    return input || lastUser;
+  }, [input, messages]);
+  const lang = langPref || detectLang(autoLangSource);
+  const isEn = lang === "en";
+  const copy = getUiCopy(isEn);
+
+  const [inputExample, setInputExample] = useState("");
+
+  useEffect(() => {
+    // 例は1つだけ。言語に合わせてランダムで差し替え。
+    setInputExample(pickSuggestion(lang, "random"));
+  }, [lang]);
+
+  useEffect(() => {
+    const sync = () => {
+      setLangPref(getStoredLangPref());
+      setTone(getStoredTonePref());
+    };
+    window.addEventListener("storage", sync);
+    window.addEventListener("ground:prefs", sync);
+    return () => {
+      window.removeEventListener("storage", sync);
+      window.removeEventListener("ground:prefs", sync);
+    };
+  }, []);
+
+  useEffect(() => {
+    setStoredTonePref(tone);
+  }, [tone]);
 
   const refreshBookmarks = () => {
+    const k = loadKakera();
     try {
-      const raw = localStorage.getItem(BOOKMARKS_STORAGE_KEY);
-      setBookmarks(raw ? JSON.parse(raw) : []);
-    } catch (_) { setBookmarks([]); }
+      const raw = localStorage.getItem("ma_bookmarks");
+      const old = raw ? JSON.parse(raw) : [];
+      if (Array.isArray(old) && old.length) {
+        const seen = new Set(k.map((x) => x.id));
+        const extra = old
+          .map((b, i) => {
+            if (!b) return null;
+            const id = b.id || `legacy-${i}-${b.createdAt || ""}`;
+            if (seen.has(id)) return null;
+            seen.add(id);
+            return {
+              id,
+              createdAt: b.createdAt || new Date().toISOString(),
+              source: "chat",
+              points: Array.isArray(b.points) ? b.points.slice(0, 3) : ["", "", ""],
+              originalInput: "",
+            };
+          })
+          .filter(Boolean);
+        setBookmarks([...k, ...extra]);
+        return;
+      }
+    } catch (_) {}
+    setBookmarks(k);
   };
 
   useEffect(() => {
     if (sidebarOpen) refreshBookmarks();
   }, [sidebarOpen]);
+
+  useEffect(() => {
+    const onKakera = () => refreshBookmarks();
+    window.addEventListener("ground:kakera", onKakera);
+    return () => window.removeEventListener("ground:kakera", onKakera);
+  }, []);
+
+  useEffect(() => {
+    try {
+      if (sessionStorage.getItem("ground_open_kakera") === "1") {
+        sessionStorage.removeItem("ground_open_kakera");
+        setSidebarOpen(true);
+        refreshBookmarks();
+      }
+    } catch (_) {}
+  }, []);
 
   // 配下の index.html が古く「MA」のままでも、表示タイトルを GROUND に統一する
   useEffect(() => {
@@ -445,9 +518,9 @@ export default function App() {
     try {
       const data = await organize({
         text,
-        mode,
+        mode: tone === "normal" ? "standard" : tone,
         sessionId: SESSION_ID,
-        lang: detectLang(text),
+        lang: langPref || detectLang(text),
         onStreamChunk: (accumulated) => {
           streamStartedRef.current = true;
           setMessages(prev => {
@@ -476,7 +549,7 @@ export default function App() {
         }
       }
       setWaiting(data.type === "question");
-      track("message_sent", { mode });
+      track("message_sent", { mode: tone === "normal" ? "standard" : tone });
       if (exampleText) track("onboarding_example_sent");
     } catch (err) {
       if (streamStartedRef.current) {
@@ -495,11 +568,11 @@ export default function App() {
       } else if (likelyColdStart) {
         msg = "サーバーが起動中の可能性があります。30秒ほど待ってから、もう一度「送信」を押してみてください。";
       } else if (err?.status === 503 || err?.status === 504) {
-        msg = mode === "short"
+        msg = tone === "short"
           ? "応答が時間内に返ってきませんでした。しばらく待ってからもう一度送信してみてください。"
           : "応答が時間内に返ってきませんでした。しばらく待つか、「短め」で短い文でもう一度お試しください。";
       } else if (!msg) {
-        const alreadyShort = mode === "short";
+        const alreadyShort = tone === "short";
         const tryAgainLater = "しばらく待ってから、もう一度送ってみてください。";
         msg =
           err?.message === "timeout"
@@ -542,6 +615,15 @@ export default function App() {
     }
   };
 
+  const [kakeraModalEdit, setKakeraModalEdit] = useState(false);
+  const [kakeraOriginalSnapshot, setKakeraOriginalSnapshot] = useState("");
+
+  const buildChatOriginalInput = (msgs) =>
+    msgs
+      .map((m) => (m.role === "user" ? "ユーザー" : "GROUND") + ": " + String(m.content || ""))
+      .join("\n\n")
+      .slice(0, 50000);
+
   const handleSummarize = async () => {
     if (!messages.some((m) => m.role === "assistant") || loadingSummary) return;
     setLoadingSummary(true);
@@ -549,7 +631,9 @@ export default function App() {
     try {
       const data = await fetchSummarize(messages);
       const pts = Array.isArray(data.points) ? data.points : ["", "", ""];
+      setKakeraOriginalSnapshot(buildChatOriginalInput(messages));
       setSummaryPoints([pts[0] ?? "", pts[1] ?? "", pts[2] ?? ""]);
+      setKakeraModalEdit(false);
       setSummaryPanelOpen(true);
     } catch (e) {
       setSummaryError(e?.message === "timeout" ? "タイムアウトしました" : "要約できませんでした");
@@ -558,23 +642,19 @@ export default function App() {
     }
   };
 
-  const handleSaveSummaryToBookmark = () => {
-    if (!allowSave) return;
+  const handleSaveKakeraFromChat = () => {
     try {
-      const raw = localStorage.getItem(BOOKMARKS_STORAGE_KEY);
-      const list = raw ? JSON.parse(raw) : [];
-      list.unshift({
-        id: Date.now().toString(36) + Math.random().toString(36).slice(2),
+      pushKakera({
+        source: "chat",
         points: [...summaryPoints],
-        createdAt: new Date().toISOString(),
+        originalInput: kakeraOriginalSnapshot,
       });
-      localStorage.setItem(BOOKMARKS_STORAGE_KEY, JSON.stringify(list));
       setSavedFlash(true);
+      setKakeraSavedNotice(true);
       refreshBookmarks();
-      setTimeout(() => {
-        setSavedFlash(false);
-        setSummaryPanelOpen(false);
-      }, 1200);
+      setSummaryPanelOpen(false);
+      setTimeout(() => setSavedFlash(false), 1400);
+      setTimeout(() => setKakeraSavedNotice(false), 14000);
     } catch (_) {}
   };
 
@@ -589,6 +669,14 @@ export default function App() {
   };
 
   const lastAssistantContent = [...messages].reverse().find(m => m.role === "assistant" && m.content && !["error", "info"].includes(m.type))?.content;
+
+  const exploreLikeCard = {
+    background: "rgba(255,255,255,0.55)",
+    border: "1px solid #e8e0d5",
+    borderRadius: 14,
+    padding: "18px 18px 16px",
+    boxShadow: "0 6px 18px rgba(0,0,0,0.05)",
+  };
   const handleCopyLast = () => {
     if (!lastAssistantContent) return;
     navigator.clipboard?.writeText(lastAssistantContent).then(() => {
@@ -633,18 +721,63 @@ export default function App() {
       {sidebarOpen && (
         <div style={{ position: "fixed", top: 0, right: 0, bottom: 0, width: "min(320px, 85vw)", background: "#fdfbf7", borderLeft: "1px solid #e0d4c5", zIndex: 99, boxShadow: "-4px 0 20px rgba(0,0,0,0.06)", overflow: "hidden", display: "flex", flexDirection: "column" }}>
           <div style={{ padding: "24px 20px 16px", borderBottom: "1px solid #e8e0d5", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <span style={{ fontSize: 14, fontWeight: 400, color: "#5a4b3f", letterSpacing: "0.06em" }}>かけら</span>
+            <span style={{ fontSize: 14, fontWeight: 400, color: "#5a4b3f", letterSpacing: "0.06em" }}>{copy.kakera}</span>
             <button type="button" onClick={() => setSidebarOpen(false)} style={{ background: "none", border: "none", color: "#8a7d6f", fontSize: 18, cursor: "pointer", lineHeight: 1 }} aria-label="閉じる">×</button>
           </div>
           <div style={{ flex: 1, overflowY: "auto", padding: 16 }}>
             {bookmarks.length === 0 ? (
-              <p style={{ fontSize: 12, color: "#a29384", lineHeight: 1.7 }}>まだかけらはありません。<br />「整理する」→「かけらに残す」で保存できます。</p>
+              <p style={{ fontSize: 12, color: "#a29384", lineHeight: 1.7 }}>
+                <>
+                  {copy.kakeraEmptyLine1}
+                  <br />
+                  {copy.kakeraEmptyLine2}
+                </>
+              </p>
             ) : (
               bookmarks.map((b) => (
                 <div key={b.id} style={{ marginBottom: 16, padding: 12, background: "#f9f6f0", borderRadius: 8, border: "1px solid #e8e0d5" }}>
+                  <div style={{ fontSize: 10, color: "#a29384", marginBottom: 8, letterSpacing: "0.06em" }}>
+                    {b.source === "explore" ? copy.sourceExplore : copy.sourceChat}
+                  </div>
                   {(b.points || []).filter(Boolean).map((p, i) => (
                     <p key={i} style={{ fontSize: 12, color: "#5a4b3f", marginBottom: i < 2 ? 6 : 0, lineHeight: 1.6 }}>{p}</p>
                   ))}
+                  {b.originalInput ? (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => setKakeraExpandId((id) => (id === b.id ? null : b.id))}
+                        style={{
+                          marginTop: 8,
+                          padding: 0,
+                          border: "none",
+                          background: "none",
+                          color: "#8a7d6f",
+                          fontSize: 10,
+                          cursor: "pointer",
+                          letterSpacing: "0.04em",
+                        }}
+                      >
+                        {kakeraExpandId === b.id ? (isEn ? "Hide source" : "元の入力を閉じる") : (isEn ? "Original input" : "元の入力")}
+                      </button>
+                      {kakeraExpandId === b.id ? (
+                        <pre style={{
+                          marginTop: 8,
+                          padding: 10,
+                          background: "#fdfbf7",
+                          borderRadius: 8,
+                          border: "1px solid #e8e0d5",
+                          fontSize: 10,
+                          color: "#6b5d52",
+                          whiteSpace: "pre-wrap",
+                          wordBreak: "break-word",
+                          maxHeight: 160,
+                          overflowY: "auto",
+                          lineHeight: 1.55,
+                        }}>{b.originalInput}</pre>
+                      ) : null}
+                    </>
+                  ) : null}
                 </div>
               ))
             )}
@@ -653,119 +786,238 @@ export default function App() {
       )}
       {sidebarOpen && <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.15)", zIndex: 98 }} onClick={() => setSidebarOpen(false)} aria-hidden="true" />}
 
-      {/* ヘッダー */}
-      <div style={{
-        width: "100%", maxWidth: 660,
-        padding: "32px 24px 0",
-        display: "flex", justifyContent: "space-between", alignItems: "flex-end",
-      }}>
-        <div>
-          <h1 style={{ margin: 0, color: "#b39b7e", fontSize: 10, fontWeight: 400, letterSpacing: "0.18em", marginBottom: 5 }}>
-            GROUND
-          </h1>
-          <div style={{ color: "#75675a", fontSize: 11, fontWeight: 300, letterSpacing: "0.04em", lineHeight: 1.6 }}>
-            Find your ground. Sort your thoughts.<br />
-            — 答えを出さず、思考を整理するAI —
-          </div>
+      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+        <div style={{ width: "100%", maxWidth: 720, margin: "0 auto" }}>
+          <TopNav
+            mode="chat"
+            lang={lang}
+            langPref={langPref}
+            onSetLang={(next) => {
+              setLangPref(next);
+              setStoredLangPref(next);
+            }}
+            tone={tone}
+            onSetTone={(next) => setTone(next)}
+            resetLabel={isEn ? "Reset" : "リセット"}
+            onReset={() => {
+              setMenuOpen(false);
+              handleReset();
+            }}
+            menuOpen={menuOpen}
+            onToggleMenu={() => setMenuOpen((p) => !p)}
+            menuItems={[
+              {
+                id: "new",
+                label: isEn ? "New chat" : "新しい会話",
+                onClick: () => {
+                  setMenuOpen(false);
+                  handleReset();
+                },
+              },
+              {
+                id: "plans",
+                label: isEn ? "Plans" : "プラン",
+                onClick: () => {
+                  setMenuOpen(false);
+                  const base = typeof window !== "undefined" && window.location.pathname.startsWith("/ma") ? "/ma" : "";
+                  window.location.assign(base + "/plans");
+                },
+              },
+              {
+                id: "bookmarks",
+                label: copy.kakera,
+                onClick: () => {
+                  setMenuOpen(false);
+                  setSidebarOpen(true);
+                },
+              },
+              {
+                id: "lang-auto",
+                label: isEn ? "Language: Auto" : "言語：自動",
+                onClick: () => {
+                  setMenuOpen(false);
+                  setLangPref(null);
+                  setStoredLangPref(null);
+                },
+              },
+            ]}
+            maxWidth={720}
+            showTone={messages.length > 0}
+          />
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{
-            display: "flex",
-            background: "#f6f0e7",
-            border: "1px solid #e0d4c5",
-            borderRadius: 10,
-            overflow: "hidden",
-          }}>
-            {[
-              { id: "standard", label: "標準" },
-              { id: "short", label: "短め" },
-              { id: "soft", label: "やわらかめ" },
-            ].map(opt => (
+      </div>
+
+      <div style={{ width: "100%", maxWidth: 720, padding: "0 24px", margin: "0 auto" }}>
+        <div style={{ height: 1, background: "#e1d8cd", margin: "16px 0 14px" }} />
+      </div>
+
+      {/* メッセージ（初期は /explore と同じ白カード） */}
+      {messages.length === 0 ? (
+        <main
+          style={{
+            flex: 1,
+            width: "100%",
+            maxWidth: 720,
+            padding: "0 24px 22px",
+            margin: "0 auto",
+          }}
+          aria-live="polite"
+          aria-label="会話"
+        >
+          {kakeraSavedNotice && (
+            <div
+              role="status"
+              style={{
+                marginBottom: 14,
+                padding: "11px 14px",
+                borderRadius: 12,
+                border: "1px solid #e0d4c5",
+                background: "rgba(255,255,255,0.72)",
+                boxShadow: "0 4px 14px rgba(33, 23, 11, 0.06)",
+                display: "flex",
+                flexWrap: "wrap",
+                alignItems: "center",
+                gap: 10,
+              }}
+            >
+              <span style={{ flex: "1 1 200px", fontSize: 12, color: "#5a4b3f", lineHeight: 1.65, letterSpacing: "0.02em" }}>
+                {copy.savedBanner}
+              </span>
               <button
-                key={opt.id}
                 type="button"
-                aria-label={`トーン: ${opt.label}`}
-                aria-pressed={mode === opt.id}
-                onClick={() => setMode(opt.id)}
-                disabled={loading}
+                onClick={() => {
+                  setSidebarOpen(true);
+                  setKakeraSavedNotice(false);
+                  refreshBookmarks();
+                }}
                 style={{
-                  background: mode === opt.id ? "#e7dbcc" : "transparent",
-                  border: "none",
-                  color: mode === opt.id ? "#5a4b3f" : "#a29384",
-                  fontSize: 10,
-                  padding: "6px 9px",
-                  cursor: loading ? "default" : "pointer",
-                  letterSpacing: "0.05em",
+                  padding: "8px 14px",
+                  borderRadius: 10,
+                  border: "1px solid #d7c8b7",
+                  background: "#efe6da",
+                  color: "#5a4b3f",
+                  fontSize: 11,
+                  letterSpacing: "0.06em",
+                  cursor: "pointer",
+                  flexShrink: 0,
                 }}
               >
-                {opt.label}
+                {copy.openKakera}
               </button>
-            ))}
-          </div>
-          <button type="button" onClick={() => setSidebarOpen(true)} style={{
-            fontSize: 11, padding: "5px 11px", borderRadius: 4, background: "none", border: "none",
-            color: "#a19180", cursor: "pointer", letterSpacing: "0.05em",
-          }}>
-            かけら
-          </button>
-          <Link to="/plans" style={{
-            fontSize: 11, padding: "5px 11px", borderRadius: 4,
-            color: "#a19180", textDecoration: "none", letterSpacing: "0.05em",
-          }}>
-            プラン
-          </Link>
-          <button type="button" aria-label="新しい会話を始める" title="新しい会話を始める" onClick={handleReset} disabled={loading} style={{
-            background: "none", border: "1px solid #e0d4c5",
-            color: loading ? "#c3b7a8" : "#a19180",
-            fontSize: 16, fontWeight: 300, padding: "2px 10px",
-            borderRadius: 4, cursor: loading ? "default" : "pointer", letterSpacing: "0.02em",
-            lineHeight: 1.2,
-          }}>
-            ＋
-          </button>
-        </div>
-      </div>
-
-      <div style={{ width: "100%", maxWidth: 660, padding: "0 24px" }}>
-        <div style={{ height: 1, background: "#e1d8cd", margin: "18px 0 16px" }}/>
-      </div>
-
-      {/* メッセージ */}
-      <main style={{
-        flex: 1, width: "100%", maxWidth: 660,
-        padding: "0 24px", overflowY: "auto",
-        minHeight: "calc(100vh - 200px)",
-      }} aria-live="polite" aria-label="会話">
-        {messages.length === 0 && (
-          <div style={{
-            textAlign: "center", color: "#a19384", fontSize: 13,
-            fontWeight: 300, marginTop: 90, lineHeight: 2.2, letterSpacing: "0.05em",
-          }}>
-            何でも話してください。<br/>
-            答えは出さない。頭の中を見せるだけ。
-            {showOnboarding && (
-              <div style={{ marginTop: 24 }}>
-                <button
-                  type="button"
-                  onClick={() => handleSend("誰かに話したかった")}
-                  style={{
-                    background: "#f6f0e7",
-                    border: "1px solid #e0d4c5",
-                    borderRadius: 10,
-                    color: "#6b5d52",
-                    fontSize: 12,
-                    padding: "10px 18px",
-                    cursor: "pointer",
-                    letterSpacing: "0.04em",
-                    boxShadow: "0 2px 6px rgba(0,0,0,0.04)",
-                  }}
-                >
-                  例: 誰かに話したかった → 送ってみる
-                </button>
+            </div>
+          )}
+          <div style={exploreLikeCard}>
+            <div style={{ color: "#75675a", fontSize: 13, fontWeight: 300, lineHeight: 1.75, letterSpacing: "0.04em", marginBottom: 10 }}>
+              {copy.inputLead}
+            </div>
+            {!input.trim() && (
+              <p
+                role="button"
+                tabIndex={0}
+                onClick={() => setInput(inputExample)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setInput(inputExample);
+                  }
+                }}
+                style={{
+                  margin: "0 0 12px",
+                  color: "#9b9084",
+                  fontSize: 12,
+                  fontWeight: 300,
+                  lineHeight: 1.7,
+                  letterSpacing: "0.02em",
+                  cursor: "pointer",
+                  opacity: inputFocused ? 0.5 : 1,
+                  transition: "opacity 160ms ease",
+                }}
+                title={isEn ? "Use this example" : "この例を入力に入れる"}
+              >
+                {copy.examplePrefix}
+                {inputExample}
+              </p>
+            )}
+            <textarea
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder={copy.placeholderSoft}
+              aria-label="メッセージ入力"
+              rows={3}
+              style={{
+                width: "100%",
+                padding: "12px 14px",
+                border: "1px solid #e0d4c5",
+                borderRadius: 12,
+                fontSize: 14,
+                color: "#5a4b3f",
+                background: "#fdfbf7",
+                fontFamily: "inherit",
+                resize: "vertical",
+                minHeight: 74,
+                boxSizing: "border-box",
+              }}
+              onFocus={() => setInputFocused(true)}
+              onBlur={() => setInputFocused(false)}
+            />
+            <div style={{ marginTop: 14, display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
+              <Link
+                to="/explore"
+                style={{
+                  textDecoration: "none",
+                  padding: "9px 14px",
+                  background: "#f6f0e7",
+                  border: "1px solid #e0d4c5",
+                  borderRadius: 12,
+                  color: "#5a4b3f",
+                  fontSize: 12,
+                  letterSpacing: "0.06em",
+                  display: "inline-block",
+                }}
+              >
+                {copy.navExplore}
+              </Link>
+              <button
+                type="button"
+                onClick={() => handleSend()}
+                disabled={!input.trim() || loading}
+                style={{
+                  padding: "10px 18px",
+                  background: !input.trim() || loading ? "#c4b8a8" : "#5a4b3f",
+                  border: "none",
+                  borderRadius: 12,
+                  color: "#fdfbf7",
+                  fontSize: 12,
+                  cursor: !input.trim() || loading ? "default" : "pointer",
+                  letterSpacing: "0.06em",
+                }}
+              >
+                {isEn ? "Send" : "送る"}
+              </button>
+            </div>
+            {!showOnboarding && !inputFocused && (
+              <div style={{ color: "#a29384", fontSize: 10, textAlign: "center", marginTop: 12, letterSpacing: "0.03em", lineHeight: 1.5 }}>
+                {isEn ? "Short messages (1–2 sentences) tend to respond faster." : "短い文（1〜2文）で送ると応答が返りやすくなります"}
               </div>
             )}
           </div>
-        )}
+          <div ref={bottomRef} />
+        </main>
+      ) : (
+        <main
+          style={{
+            flex: 1,
+            width: "100%",
+            maxWidth: 720,
+            padding: "0 24px 8px",
+            overflowY: "auto",
+            minHeight: 0,
+            margin: "0 auto",
+          }}
+          aria-live="polite"
+          aria-label="会話"
+        >
         {messages.map(msg => <Message key={msg.id} msg={msg} />)}
         {!loading && (() => {
           const lastMsg = messages[messages.length - 1];
@@ -790,7 +1042,7 @@ export default function App() {
                     letterSpacing: "0.04em",
                   }}
                 >
-                  再送信
+                  {isEn ? "Resend" : "再送信"}
                 </button>
               </div>
             );
@@ -799,8 +1051,7 @@ export default function App() {
         })()}
         {!loading && (() => {
           const lastAssistant = [...messages].reverse().find(m => m.role === "assistant" && m.content && !["error", "info"].includes(m.type));
-          const lastUserMsg = [...messages].reverse().find(m => m.role === "user");
-          const cardLang = lastUserMsg ? detectLang(lastUserMsg.content) : "ja";
+          const cardLang = lang;
           const thoughtItems = lastAssistant ? parseThoughtItems(lastAssistant.content) : [];
           if (thoughtItems.length < 1) return null;
           return (
@@ -828,7 +1079,9 @@ export default function App() {
         {loading && (
           <div style={{ paddingLeft: 8, color: "#8a7d6f", fontSize: 12, marginTop: 4 }} aria-live="polite">
             <TypingDots/>
-            <span style={{ display: "block", marginTop: 6 }}>少々お待ちください。通常は30秒〜1分ほどで返ります。</span>
+            <span style={{ display: "block", marginTop: 6 }}>
+              {isEn ? "Hold on a moment. Usually returns in ~30–60s." : "少々お待ちください。通常は30秒〜1分ほどで返ります。"}
+            </span>
           </div>
         )}
         {!loading && messages.some(m => m.role === "assistant") && (
@@ -879,73 +1132,173 @@ export default function App() {
         )}
         <div ref={bottomRef}/>
       </main>
+      )}
 
-      {/* 今日の整理パネル */}
+      {/* 要約 → 確認 → かけらに保存 */}
       {summaryPanelOpen && (
         <div style={{
-          position: "fixed", inset: 0, background: "rgba(0,0,0,0.2)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 100,
+          position: "fixed", inset: 0, background: "rgba(0,0,0,0.22)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 100,
         }} onClick={() => setSummaryPanelOpen(false)}>
           <div style={{
-            background: "#fdfbf7", borderRadius: 12, padding: "24px 24px 20px", maxWidth: 420, width: "90%", boxShadow: "0 8px 32px rgba(0,0,0,0.12)", border: "1px solid #e0d4c5",
+            background: "#fdfbf7", borderRadius: 14, padding: "20px 20px 18px", maxWidth: 480, width: "92%", boxShadow: "0 10px 36px rgba(0,0,0,0.12)", border: "1px solid #e0d4c5",
           }} onClick={e => e.stopPropagation()}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-              <span style={{ fontSize: 14, fontWeight: 400, color: "#5a4b3f", letterSpacing: "0.04em" }}>今日の整理</span>
-              <button type="button" onClick={() => setSummaryPanelOpen(false)} style={{ background: "none", border: "none", color: "#8a7d6f", fontSize: 18, cursor: "pointer", lineHeight: 1 }} aria-label="閉じる">×</button>
-            </div>
-            {summaryPoints.map((point, i) => (
-              <div key={i} style={{ marginBottom: 12 }}>
-                <label style={{ display: "block", fontSize: 11, color: "#8a7d6f", marginBottom: 4 }}>{i + 1}.</label>
-                <textarea
-                  value={point}
-                  onChange={e => setSummaryPoints(prev => { const n = [...prev]; n[i] = e.target.value; return n; })}
-                  rows={2}
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14, gap: 10 }}>
+              <span style={{ fontSize: 13, fontWeight: 400, color: "#5a4b3f", letterSpacing: "0.06em" }}>{copy.summaryTitle}</span>
+              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                <button
+                  type="button"
+                  onClick={() => setKakeraModalEdit((e) => !e)}
                   style={{
-                    width: "100%", padding: "10px 12px", border: "1px solid #e0d4c5", borderRadius: 8, fontSize: 13, color: "#5a4b3f", fontFamily: "inherit", resize: "vertical", boxSizing: "border-box",
+                    padding: "4px 10px",
+                    fontSize: 10,
+                    letterSpacing: "0.06em",
+                    color: "#8a7d6f",
+                    background: "rgba(255,255,255,0.6)",
+                    border: "1px solid #e0d4c5",
+                    borderRadius: 8,
+                    cursor: "pointer",
                   }}
-                />
-              </div>
-            ))}
-            <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 8, position: "relative" }}>
-              {allowSave ? (
-                <button type="button" onClick={handleSaveSummaryToBookmark} disabled={savedFlash} style={{
-                  width: "100%", padding: "10px 16px", background: savedFlash ? "#f0ebe0" : "#e7dbcc", border: "none", borderRadius: 8, color: "#5a4b3f", fontSize: 12, cursor: savedFlash ? "default" : "pointer", letterSpacing: "0.04em",
-                }}>
-                  {savedFlash ? <span style={{ animation: "savedSparkle 1s ease" }}>✨</span> : "かけらに残す"}
+                >
+                  {kakeraModalEdit ? (isEn ? "Done" : "完了") : (isEn ? "Edit" : "編集")}
                 </button>
-              ) : (
-                <div style={{ textAlign: "center" }}>
-                  <button type="button" disabled style={{
-                    width: "100%", padding: "10px 16px", background: "#e8e0d5", border: "none", borderRadius: 8, color: "#a29384", fontSize: 12, cursor: "default", letterSpacing: "0.04em",
-                  }}>
-                    かけらに残す
-                  </button>
-                  <p style={{ marginTop: 6, fontSize: 11, color: "#8a7d6f" }}>ライトプランでかけらに残せます</p>
-                </div>
-              )}
+                <button type="button" onClick={() => setSummaryPanelOpen(false)} style={{ background: "none", border: "none", color: "#8a7d6f", fontSize: 18, cursor: "pointer", lineHeight: 1 }} aria-label="閉じる">×</button>
+              </div>
             </div>
+            <div style={{ padding: 12, borderRadius: 12, background: "#f6f0e7", border: "1px solid #e8e0d5", marginBottom: 14 }}>
+              {summaryPoints.map((point, i) => (
+                kakeraModalEdit ? (
+                  <div key={i} style={{ marginBottom: i < 2 ? 10 : 0 }}>
+                    <label style={{ display: "block", fontSize: 10, color: "#8a7d6f", marginBottom: 4 }}>{i + 1}</label>
+                    <textarea
+                      value={point}
+                      onChange={e => setSummaryPoints(prev => { const n = [...prev]; n[i] = e.target.value; return n; })}
+                      rows={2}
+                      style={{
+                        width: "100%", padding: "8px 10px", border: "1px solid #e0d4c5", borderRadius: 8, fontSize: 12, color: "#5a4b3f", fontFamily: "inherit", resize: "vertical", boxSizing: "border-box",
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <div key={i} style={{ marginBottom: i < 2 ? 10 : 0, color: "#5a4b3f", fontSize: 12, lineHeight: 1.75 }}>
+                    {point || "—"}
+                  </div>
+                )
+              ))}
+            </div>
+            <p style={{ fontSize: 10, color: "#9a8f82", marginBottom: 12, lineHeight: 1.6 }}>
+              {copy.saveHelpChat}
+            </p>
+            <button
+              type="button"
+              onClick={handleSaveKakeraFromChat}
+              disabled={savedFlash}
+              style={{
+                width: "100%", padding: "11px 16px", background: savedFlash ? "#f0ebe0" : "#e7dbcc", border: "1px solid #e0d4c5", borderRadius: 10, color: "#5a4b3f", fontSize: 12, cursor: savedFlash ? "default" : "pointer", letterSpacing: "0.06em",
+              }}
+            >
+              {savedFlash ? copy.savedShort : copy.save}
+            </button>
           </div>
         </div>
       )}
 
-      {/* 入力 */}
+      {/* 入力（会話開始後は従来の下部バー） */}
+      {messages.length > 0 && (
       <div style={{
-        width: "100%", maxWidth: 660,
-        padding: "12px 24px 28px",
+        width: "100%", maxWidth: 720,
+        padding: "14px 24px 26px",
         background: "linear-gradient(transparent, rgba(243,238,230,0.9) 32%)",
+        margin: "0 auto",
       }}>
+        {kakeraSavedNotice && (
+          <div
+            role="status"
+            style={{
+              marginBottom: 14,
+              padding: "11px 14px",
+              borderRadius: 12,
+              border: "1px solid #e0d4c5",
+              background: "rgba(255,255,255,0.72)",
+              boxShadow: "0 4px 14px rgba(33, 23, 11, 0.06)",
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "center",
+              gap: 10,
+            }}
+          >
+            <span style={{ flex: "1 1 200px", fontSize: 12, color: "#5a4b3f", lineHeight: 1.65, letterSpacing: "0.02em" }}>
+              {copy.savedBanner}
+            </span>
+            <button
+              type="button"
+              onClick={() => {
+                setSidebarOpen(true);
+                setKakeraSavedNotice(false);
+                refreshBookmarks();
+              }}
+              style={{
+                padding: "8px 14px",
+                borderRadius: 10,
+                border: "1px solid #d7c8b7",
+                background: "#efe6da",
+                color: "#5a4b3f",
+                fontSize: 11,
+                letterSpacing: "0.06em",
+                cursor: "pointer",
+                flexShrink: 0,
+              }}
+              className="ground-pressable"
+            >
+              {copy.openKakera}
+            </button>
+          </div>
+        )}
+        <div style={{ marginBottom: 10 }}>
+          <div style={{ color: "#75675a", fontSize: 13, fontWeight: 300, lineHeight: 1.85, letterSpacing: "0.04em" }}>
+            {copy.inputLead}
+          </div>
+          {!input.trim() && (
+            <p
+              role="button"
+              tabIndex={0}
+              onClick={() => setInput(inputExample)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setInput(inputExample);
+                }
+              }}
+              style={{
+                margin: "12px 0 0",
+                color: "#9b9084",
+                fontSize: 12,
+                fontWeight: 300,
+                lineHeight: 1.7,
+                letterSpacing: "0.02em",
+                cursor: "pointer",
+                opacity: inputFocused ? 0.5 : 1,
+                transition: "opacity 160ms ease",
+              }}
+              title={isEn ? "Use this example" : "この例を入力に入れる"}
+            >
+              {copy.examplePrefix}
+              {inputExample}
+            </p>
+          )}
+        </div>
         {messages.some((m) => m.role === "assistant") && (
           <div style={{ marginBottom: 10 }}>
             <button type="button" onClick={handleSummarize} disabled={loadingSummary} style={{
               background: "#f6f0e7", border: "1px solid #e0d4c5", borderRadius: 8, color: "#6b5d52", fontSize: 12, padding: "8px 16px", cursor: loadingSummary ? "default" : "pointer", letterSpacing: "0.04em",
             }}>
-              {loadingSummary ? "要約中…" : "整理する"}
+              {loadingSummary ? copy.summarizing : copy.summarize}
             </button>
             {summaryError && <span style={{ marginLeft: 10, fontSize: 11, color: "#c17a6b" }}>{summaryError}</span>}
           </div>
         )}
         {waiting && (
           <div style={{ color: "#444", fontSize: 11, marginBottom: 8, letterSpacing: "0.04em" }}>
-            確認への回答を入力してください
+            {isEn ? "Please answer the check question." : "確認への回答を入力してください"}
           </div>
         )}
         <div style={{
@@ -957,18 +1310,21 @@ export default function App() {
             value={input}
             onChange={e => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="いま頭の中にあることを、そのまま書いてください"
+            placeholder={copy.placeholderSoft}
             aria-label="メッセージ入力"
-            rows={1}
+            rows={3}
             style={{
               flex: 1, background: "none", border: "none",
               color: "#5b4c3e", fontSize: 14, lineHeight: 1.65,
               fontFamily: "inherit", fontWeight: 300, letterSpacing: "0.02em",
-              minHeight: 22, maxHeight: 140, overflowY: "auto",
+              minHeight: 74, maxHeight: 220, overflowY: "auto",
+              padding: "2px 0",
             }}
+            onFocus={() => setInputFocused(true)}
+            onBlur={() => setInputFocused(false)}
             onInput={e => {
               e.target.style.height = "auto";
-              e.target.style.height = Math.min(e.target.scrollHeight, 140) + "px";
+              e.target.style.height = Math.min(e.target.scrollHeight, 220) + "px";
             }}
           />
           <button type="button" aria-label="送信" onClick={() => handleSend()} disabled={loading || !input.trim()} style={{
@@ -980,21 +1336,16 @@ export default function App() {
             ↑
           </button>
         </div>
-        <div style={{
-          color: "#b4a696", fontSize: 10, textAlign: "center",
-          marginTop: 9, letterSpacing: "0.06em",
-        }}>
-          Enter で送信 · Shift+Enter で改行 · 判断はあなたにあります
-        </div>
-        {messages.length === 0 && !showOnboarding && (
+        {!showOnboarding && !inputFocused && (
           <div style={{
             color: "#a29384", fontSize: 10, textAlign: "center",
-            marginTop: 6, letterSpacing: "0.03em",
+            marginTop: 8, letterSpacing: "0.03em", lineHeight: 1.5,
           }}>
-            短い文（1〜2文）で送ると応答が返りやすくなります
+            {isEn ? "Short messages (1–2 sentences) tend to respond faster." : "短い文（1〜2文）で送ると応答が返りやすくなります"}
           </div>
         )}
       </div>
+      )}
     </div>
   );
 }

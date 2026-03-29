@@ -189,8 +189,8 @@ export default function Plans() {
             今日の整理・保存
           </div>
           <ul style={{ margin: 0, paddingLeft: "1.2em", fontSize: 12, color: "#6b5d52", lineHeight: 1.9, letterSpacing: "0.02em" }}>
-            <li>会話を「整理する」で3点要約。各項目は自由に編集可能</li>
-            <li>ライト以上で「かけらに残す」が利用可能。フリーは整理・編集のみ（保存不可）</li>
+            <li>会話後に「要約する」で3点にまとめられます。各項目は編集可能です</li>
+            <li>ライト以上で「保存する」（かけら）が利用可能。フリーは要約・編集のみ（保存不可）</li>
           </ul>
         </div>
 

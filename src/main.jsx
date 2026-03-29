@@ -6,6 +6,7 @@ import './index.css'
 import Landing from './Landing.jsx'
 import App from './App.jsx'
 import Plans from './Plans.jsx'
+import Explore from './Explore.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -14,6 +15,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route path="/plans" element={<Plans />} />
         <Route path="/welcome" element={<Landing />} />
+        <Route path="/explore" element={<Explore />} />
       </Routes>
     </BrowserRouter>
     <Analytics />

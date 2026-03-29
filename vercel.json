@@ -5,7 +5,12 @@
     { "source": "/", "destination": "/index.html" },
     { "source": "/plans", "destination": "/index.html" },
     { "source": "/welcome", "destination": "/index.html" },
-    { "source": "/assets/:path*", "destination": "/assets/:path*" }
+    { "source": "/assets/:path*", "destination": "/assets/:path*" },
+    { "source": "/ma", "destination": "/index.html" },
+    { "source": "/ma/", "destination": "/index.html" },
+    { "source": "/ma/plans", "destination": "/index.html" },
+    { "source": "/ma/welcome", "destination": "/index.html" },
+    { "source": "/ma/assets/:path*", "destination": "/assets/:path*" }
   ],
   "functions": {
     "api/[[...path]].js": {
