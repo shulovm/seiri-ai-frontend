@@ -473,6 +473,18 @@ app.get("/api/health", (_req, res) => {
   });
 });
 
+// ドメイン監視用: APIプレフィックスなしでも軽量ヘルス確認できるようにする
+app.get("/ping", (_req, res) => {
+  res.setHeader("Cache-Control", "no-store");
+  return res.json({ ok: true, t: Date.now(), vercel: isVercel });
+});
+
+app.get("/healthz", (_req, res) => {
+  res.setHeader("Cache-Control", "no-store");
+  const hasKey = Boolean(ANTHROPIC_API_KEY && ANTHROPIC_API_KEY.length > 10);
+  return res.json({ ok: hasKey, anthropic: hasKey ? "set" : "missing" });
+});
+
 app.post("/api/reset", (req, res) => {
   const sid = String(req.body?.session_id || "default");
   sessions.set(sid, newSession());

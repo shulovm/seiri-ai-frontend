@@ -1,0 +1,23 @@
+name: Railway Keepalive
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ping ground.ink (retry)
+        run: |
+          set -euo pipefail
+          curl -fsS --retry 5 --retry-all-errors --connect-timeout 10 --max-time 20 "https://ground.ink/ping" >/dev/null
+          curl -fsS --retry 5 --retry-all-errors --connect-timeout 10 --max-time 20 "https://ground.ink/api/ping" >/dev/null
+
+      - name: Ping railway URL (retry)
+        run: |
+          set -euo pipefail
+          curl -fsS --retry 5 --retry-all-errors --connect-timeout 10 --max-time 20 "https://seiri-ai-frontend-production-a2ef.up.railway.app/ping" >/dev/null
+          curl -fsS --retry 5 --retry-all-errors --connect-timeout 10 --max-time 20 "https://seiri-ai-frontend-production-a2ef.up.railway.app/api/ping" >/dev/null
