@@ -41,7 +41,9 @@ export async function POST(req: Request) {
     }
 
     const body = JSON.parse(rawBody || "{}");
+    console.log("LINE EVENT BODY:", JSON.stringify(body, null, 2));
     const events = Array.isArray(body?.events) ? body.events : [];
+    console.log("LINE EVENT COUNT:", events.length);
     if (!events.length) {
       return Response.json({ ok: true });
     }
@@ -50,6 +52,11 @@ export async function POST(req: Request) {
       const replyToken = event?.replyToken;
       const messageType = event?.message?.type;
       const userId = event?.source?.userId || null;
+      console.log("LINE EVENT SOURCE USER:", {
+        userId,
+        type: event?.type || null,
+        messageType,
+      });
 
       if (event?.type === "message" && messageType === "text") {
         const text = event?.message?.text || "";
