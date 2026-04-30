@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans JP",
+    "Hiragino Kaku Gothic ProN", sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color-scheme: light;
+  color: #4a4034;
+  background-color: #f3eee6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}

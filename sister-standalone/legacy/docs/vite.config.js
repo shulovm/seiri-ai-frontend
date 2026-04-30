@@ -1,0 +1,20 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  // ground.ink/ma/ で配信する場合は VITE_BASE_PATH=/ma/ でビルド
+  base: process.env.VITE_BASE_PATH || '/',
+  server: {
+    proxy: {
+      '/api': 'http://localhost:3001',
+    },
+  },
+  preview: {
+    proxy: {
+      '/api': 'http://localhost:3001',
+    },
+  },
+})
