@@ -28,10 +28,14 @@ export type ProblemImageAnalysis = {
 export type WeaknessLog = {
   id: string;
   createdAt: string;
+  timestamp: number;
   studentLineUserId: string;
   parentLineUserId: string;
   messageId: string;
+  messageType: "text" | "image";
+  imageId: string | null;
   imagePath: string;
+  analysisResult: ProblemImageAnalysis;
   subject: ProblemImageAnalysis["subject"];
   topicId: string;
   topicName: string;
@@ -54,6 +58,7 @@ const STORAGE_DIR = process.env.VERCEL
   : path.resolve(process.cwd(), "storage");
 const IMAGE_DIR = path.join(STORAGE_DIR, "line-images");
 const DB_PATH = path.join(STORAGE_DIR, "sister-parent-monitor-logs.json");
+const REVIEW_SENT_PATH = path.join(STORAGE_DIR, "review-reminder-state.json");
 
 function ensureStorage() {
   if (!fs.existsSync(STORAGE_DIR)) fs.mkdirSync(STORAGE_DIR, { recursive: true });
@@ -94,6 +99,9 @@ export function saveWeaknessLog(args: {
   studentLineUserId: string;
   parentLineUserId: string;
   messageId: string;
+  messageType?: "text" | "image";
+  imageId?: string | null;
+  timestamp?: number;
   imagePath: string;
   analysis: ProblemImageAnalysis;
 }): WeaknessLog {
@@ -104,10 +112,14 @@ export function saveWeaknessLog(args: {
   const entry: WeaknessLog = {
     id: `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`,
     createdAt: now.toISOString(),
+    timestamp: Number(args.timestamp || now.getTime()),
     studentLineUserId: args.studentLineUserId,
     parentLineUserId: args.parentLineUserId,
     messageId: args.messageId,
+    messageType: args.messageType || "image",
+    imageId: args.imageId || args.messageId || null,
     imagePath: args.imagePath,
+    analysisResult: args.analysis,
     subject: args.analysis.subject,
     topicId: args.analysis.topicId,
     topicName: args.analysis.topicName,
@@ -134,6 +146,55 @@ export function saveWeaknessLog(args: {
   logs.unshift(entry);
   saveWeaknessLogs(logs);
   return entry;
+}
+
+function toJstDateKey(date = new Date()): string {
+  const jst = new Date(date.getTime() + 9 * 60 * 60 * 1000);
+  const y = jst.getUTCFullYear();
+  const m = String(jst.getUTCMonth() + 1).padStart(2, "0");
+  const d = String(jst.getUTCDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
+
+function loadReviewSentState(): Record<string, string[]> {
+  ensureStorage();
+  if (!fs.existsSync(REVIEW_SENT_PATH)) return {};
+  try {
+    const raw = fs.readFileSync(REVIEW_SENT_PATH, "utf8");
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveReviewSentState(state: Record<string, string[]>) {
+  ensureStorage();
+  fs.writeFileSync(REVIEW_SENT_PATH, JSON.stringify(state, null, 2), "utf8");
+}
+
+export function hasSentReviewReminderToday(studentLineUserId: string, now = new Date()): boolean {
+  const key = toJstDateKey(now);
+  const state = loadReviewSentState();
+  return Array.isArray(state[key]) && state[key].includes(studentLineUserId);
+}
+
+export function markReviewReminderSentToday(studentLineUserId: string, now = new Date()): void {
+  const key = toJstDateKey(now);
+  const state = loadReviewSentState();
+  const list = Array.isArray(state[key]) ? state[key] : [];
+  if (!list.includes(studentLineUserId)) {
+    list.push(studentLineUserId);
+    state[key] = list;
+  }
+  // Keep only recent 14 days to bound file size.
+  const keys = Object.keys(state).sort();
+  if (keys.length > 14) {
+    for (const oldKey of keys.slice(0, keys.length - 14)) {
+      delete state[oldKey];
+    }
+  }
+  saveReviewSentState(state);
 }
 
 export function getTodaySmartReview(studentLineUserId: string): WeaknessLog[] {

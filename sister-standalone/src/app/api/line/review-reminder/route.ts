@@ -1,17 +1,29 @@
-import { getTodaySmartReview } from "@/lib/sister/saveWeaknessLog";
+import {
+  getTodaySmartReview,
+  hasSentReviewReminderToday,
+  markReviewReminderSentToday,
+} from "@/lib/sister/saveWeaknessLog";
 import { pushLineMessage } from "@/lib/line/client";
+import { requireApiKey } from "@/lib/server/requireApiKey";
 
-export async function POST() {
+export async function POST(req: Request) {
+  const unauthorized = requireApiKey(req);
+  if (unauthorized) return unauthorized;
+
   const studentLineUserId = String(process.env.STUDENT_LINE_USER_ID || "");
   const appBaseUrl = String(process.env.APP_BASE_URL || "");
 
   if (!studentLineUserId) {
-    return Response.json({ error: "line env is missing" }, { status: 400 });
+    return Response.json({ error: "STUDENT_LINE_USER_ID is missing" }, { status: 400 });
+  }
+  if (hasSentReviewReminderToday(studentLineUserId)) {
+    return Response.json({ ok: true, sent: false, reason: "already sent today" });
   }
   const due = getTodaySmartReview(studentLineUserId);
-  if (!due.length) return Response.json({ ok: true, sent: false, reason: "no due items" });
-
-  const top = due[0];
+  const top = due[0] || {
+    id: "dummy-review-item",
+    topicName: "テスト用ダミー復習",
+  };
   const qs = new URLSearchParams({ themeId: top.id, studentId: studentLineUserId });
   const url = appBaseUrl ? `${appBaseUrl.replace(/\/$/, "")}/sister/understanding?${qs.toString()}` : "";
   const text = [
@@ -24,5 +36,11 @@ export async function POST() {
   ].join("\n");
 
   await pushLineMessage(studentLineUserId, text);
-  return Response.json({ ok: true, sent: true, count: due.length });
+  markReviewReminderSentToday(studentLineUserId);
+  return Response.json({
+    ok: true,
+    sent: true,
+    count: due.length || 1,
+    forcedDummy: due.length === 0,
+  });
 }

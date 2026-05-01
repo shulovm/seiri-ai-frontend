@@ -1,6 +1,10 @@
 import { loadWeaknessLogs } from "@/lib/sister/saveWeaknessLog";
+import { requireApiKey } from "@/lib/server/requireApiKey";
 
-export async function GET() {
+export async function GET(req: Request) {
+  const unauthorized = requireApiKey(req);
+  if (unauthorized) return unauthorized;
+
   const logs = loadWeaknessLogs();
   const accessToken = String(process.env.LINE_CHANNEL_ACCESS_TOKEN || "");
   let lineApiCheck: {
