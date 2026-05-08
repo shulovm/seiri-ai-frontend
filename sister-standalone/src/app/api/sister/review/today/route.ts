@@ -16,8 +16,8 @@ export async function GET(req: Request) {
       reason: x.reviewState?.stabilityScore != null && x.reviewState.stabilityScore < 0.55
         ? "再ミス後の短縮タイミング"
         : "忘れかけタイミング",
-      nextAction: x.nextAction,
-      nextReviewAt: x.reviewState?.nextReviewAt || x.nextReviewDate,
+      nextAction: `「${x.mistakeHint}」が出る場面を1回だけ確認`,
+      nextReviewAt: x.reviewState?.nextReviewAt,
     })),
   });
 }

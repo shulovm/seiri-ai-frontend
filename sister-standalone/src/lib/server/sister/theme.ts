@@ -10,8 +10,9 @@ function subjectLabelJa(subject: string) {
 
 export function createThemeFromLog(log: any) {
   const themeTitle = `${subjectLabelJa(log.subject)}・${log.topicName}`;
-  const focus = log.hiddenWeaknessPatterns?.[0] || "条件の読み取りと手順の接続";
-  const essence = log.recurringRootCause || focus;
+  const focus =
+    (typeof log?.mistakeHint === "string" && log.mistakeHint.trim()) || "詰まりどころ不明";
+  const essence = focus;
   const isMathLinear = log.subject === "math" && /一次関数/.test(String(log.topicName || ""));
   const quickCheck = isMathLinear
     ? "グラフが y軸と2で交わり、xが1増えるとyが3増えるとき、式はどうなる？"
@@ -52,7 +53,10 @@ export function createThemeFromLog(log: any) {
         a: "計算より前に、何が増減しているかを決めると根拠が崩れにくいです。",
       },
     ],
-    microTrainings: Array.isArray(log.suggestedMicroTraining) ? log.suggestedMicroTraining : [log.nextAction],
+    microTrainings: [
+      `「${log.topicName}」で「${focus}」が出る場面を1回だけ確認`,
+      `今度は同じ詰まりを避けるために「根拠を1文」で言ってみよう`,
+    ],
     quickCheckQuestion: quickCheck,
   };
 }
@@ -101,8 +105,10 @@ export function answerThemeQuestion({
 
   const logs = loadWeaknessLogs();
   const log = logs.find((x) => x.id === themeId) || logs[0];
-  const oneView = log?.hiddenWeaknessPatterns?.[0] || "条件と知識を1つずつ結びつける";
-  const anotherView = log?.suggestedMicroTraining?.[0] || "5分で1問だけ確認";
+  const oneView =
+    (typeof log?.mistakeHint === "string" && log.mistakeHint.trim()) ||
+    "条件と知識を1つずつ結びつける";
+  const anotherView = log?.subject === "math" ? "図→式でつなぐ視点を1つ試す" : "言葉→根拠の順で1文を作る";
 
   return {
     done: false,

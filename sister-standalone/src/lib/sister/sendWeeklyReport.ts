@@ -42,17 +42,20 @@ export function buildWeeklyReportText(logs: WeaknessLog[]): string {
   from.setDate(from.getDate() - 7);
   const recent = logs.filter((x) => new Date(x.createdAt).getTime() >= from.getTime());
 
-  const grouped = new Map<string, { subject: WeaknessLog["subject"]; topicName: string; missCause: string; nextAction: string; count: number }>();
+  const grouped = new Map<
+    string,
+    { subject: WeaknessLog["subject"]; topicName: string; mistakeHint: string; count: number }
+  >();
   for (const item of recent) {
     const key = `${item.subject}:${item.topicName}`;
     const prev = grouped.get(key) || {
       subject: item.subject,
       topicName: item.topicName,
-      missCause: item.missCause,
-      nextAction: item.nextAction,
+      mistakeHint: item.mistakeHint,
       count: 0,
     };
     prev.count += 1;
+    prev.mistakeHint = item.mistakeHint;
     grouped.set(key, prev);
   }
 
@@ -64,8 +67,8 @@ export function buildWeeklyReportText(logs: WeaknessLog[]): string {
   } else {
     ranking.forEach((item, idx) => {
       lines.push(`${idx + 1}. ${subjectLabel(item.subject)}：${item.topicName}`);
-      lines.push(`   原因：${item.missCause}`);
-      lines.push(`   対策：${item.nextAction}`);
+      lines.push(`   詰まりどころ：${item.mistakeHint}`);
+      lines.push(`   対策：今度は「${item.mistakeHint}」を避ける意識で1回復習`);
       lines.push("");
     });
   }

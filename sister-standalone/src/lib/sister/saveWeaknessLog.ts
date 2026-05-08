@@ -13,6 +13,8 @@ export type ProblemImageAnalysis = {
   topicName: string;
   problemType: string;
   missCause: string;
+  /** どの工程・条件で詰まっているか（分析の主眼） */
+  mistakeHint: string;
   prerequisiteGaps: string[];
   entrancePriority: "HIGH" | "MIDDLE" | "LOW";
   nextReviewDays: number;
@@ -26,55 +28,100 @@ export type ProblemImageAnalysis = {
 };
 
 export type WeaknessLog = {
+  /** テーマ/復習候補として扱うユニークID */
   id: string;
   createdAt: string;
+  /** LINE event の timestamp */
   timestamp: number;
+  /** userId（LINEのsource.userId） */
   studentLineUserId: string;
-  parentLineUserId: string;
-  messageId: string;
-  messageType: "text" | "image";
-  imageId: string | null;
-  imagePath: string;
-  analysisResult: ProblemImageAnalysis;
   subject: ProblemImageAnalysis["subject"];
-  topicId: string;
+  /** topic（永続化は topicName のみ） */
   topicName: string;
-  problemType: string;
-  missCause: string;
-  prerequisiteGaps: string[];
-  entrancePriority: "HIGH" | "MIDDLE" | "LOW";
-  nextReviewDate: string;
-  nextAction: string;
-  parentCheck: string;
-  hiddenWeaknessPatterns: string[];
-  recurringRootCause: string | null;
+  /** 詰まりどころ（保存の主眼） */
+  mistakeHint: string;
+  /** 信頼度（0-1） */
   confidenceScore: number;
-  suggestedMicroTraining: string[];
+  /** 元の LINE messageId（元画像に紐づくIDだが、画像本体は保存しない） */
+  originalMessageId: string;
+  /** 復習タイミング算出のための状態 */
   reviewState: ReviewState;
 };
 
 const STORAGE_DIR = process.env.VERCEL
   ? path.resolve("/tmp/sister-parent-monitor")
   : path.resolve(process.cwd(), "storage");
-const IMAGE_DIR = path.join(STORAGE_DIR, "line-images");
 const DB_PATH = path.join(STORAGE_DIR, "sister-parent-monitor-logs.json");
 const REVIEW_SENT_PATH = path.join(STORAGE_DIR, "review-reminder-state.json");
 
-function ensureStorage() {
-  if (!fs.existsSync(STORAGE_DIR)) fs.mkdirSync(STORAGE_DIR, { recursive: true });
-  if (!fs.existsSync(IMAGE_DIR)) fs.mkdirSync(IMAGE_DIR, { recursive: true });
+const MAX_STORED_TEXT = 500;
+
+function clampStoredText(s: string, max = MAX_STORED_TEXT): string {
+  const t = String(s || "").trim();
+  return t.length <= max ? t : `${t.slice(0, max)}…`;
 }
 
-export function saveLineImage(messageId: string, imageBuffer: Buffer, ext = "jpg") {
-  ensureStorage();
-  const safeId = String(messageId || Date.now());
-  const filename = `${safeId}.${ext}`;
-  const fullPath = path.join(IMAGE_DIR, filename);
-  fs.writeFileSync(fullPath, imageBuffer);
+function ensureStorage() {
+  if (!fs.existsSync(STORAGE_DIR)) fs.mkdirSync(STORAGE_DIR, { recursive: true });
+}
+
+function normalizeLoadedLog(raw: any): WeaknessLog {
+  const ar = raw?.analysisResult;
+  const now = new Date();
+
+  const subject: WeaknessLog["subject"] =
+    raw?.subject ||
+    ar?.subject ||
+    "math";
+
+  const topicName =
+    typeof raw?.topicName === "string" && raw.topicName.trim()
+      ? raw.topicName
+      : typeof ar?.topicName === "string" && ar.topicName.trim()
+        ? ar.topicName
+        : "不明テーマ";
+
+  const mistakeHint =
+    (typeof raw?.mistakeHint === "string" && raw.mistakeHint.trim() ? raw.mistakeHint : "") ||
+    (typeof raw?.missCause === "string" && raw.missCause.trim() ? raw.missCause : "") ||
+    (typeof ar?.mistakeHint === "string" && ar.mistakeHint.trim() ? ar.mistakeHint : "") ||
+    (typeof ar?.missCause === "string" && ar.missCause.trim() ? ar.missCause : "") ||
+    "詰まりどころ不明";
+
+  const confidenceScore =
+    Number(raw?.confidenceScore ?? ar?.confidenceScore ?? 0.66) || 0.66;
+
+  const originalMessageId =
+    String(raw?.originalMessageId ?? raw?.messageId ?? raw?.imageId ?? "");
+
+  const createdAt =
+    typeof raw?.createdAt === "string" && raw.createdAt.trim()
+      ? raw.createdAt
+      : now.toISOString();
+
+  const timestamp = Number(raw?.timestamp ?? now.getTime()) || now.getTime();
+
+  const reviewState: ReviewState =
+    raw?.reviewState && typeof raw.reviewState === "object"
+      ? raw.reviewState
+      : createInitialReviewState({
+          itemId: originalMessageId || String(raw?.messageId || ""),
+          missCause: mistakeHint,
+          confidenceScore,
+          now,
+        });
+
   return {
-    filename,
-    fullPath,
-    relativePath: `storage/line-images/${filename}`,
+    id: String(raw?.id || `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`),
+    createdAt,
+    timestamp,
+    studentLineUserId: String(raw?.studentLineUserId || ""),
+    subject,
+    topicName: String(topicName),
+    mistakeHint: String(mistakeHint),
+    confidenceScore,
+    originalMessageId,
+    reviewState,
   };
 }
 
@@ -84,7 +131,8 @@ export function loadWeaknessLogs(): WeaknessLog[] {
   try {
     const raw = fs.readFileSync(DB_PATH, "utf8");
     const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
+    if (!Array.isArray(parsed)) return [];
+    return parsed.map(normalizeLoadedLog);
   } catch {
     return [];
   }
@@ -102,42 +150,28 @@ export function saveWeaknessLog(args: {
   messageType?: "text" | "image";
   imageId?: string | null;
   timestamp?: number;
-  imagePath: string;
   analysis: ProblemImageAnalysis;
 }): WeaknessLog {
+  const a = args.analysis;
+  const mistakeHint = clampStoredText(a.mistakeHint || a.missCause);
+  const conf = Number(a.confidenceScore || 0.6);
   const now = new Date();
-  const next = new Date(now);
-  next.setDate(now.getDate() + Math.max(1, Number(args.analysis.nextReviewDays || 1)));
 
+  // 画像バイナリは保持しない。分析結果も JSON には最小限のみ（レガシーの analysisResult は書かない）
   const entry: WeaknessLog = {
     id: `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`,
     createdAt: now.toISOString(),
     timestamp: Number(args.timestamp || now.getTime()),
     studentLineUserId: args.studentLineUserId,
-    parentLineUserId: args.parentLineUserId,
-    messageId: args.messageId,
-    messageType: args.messageType || "image",
-    imageId: args.imageId || args.messageId || null,
-    imagePath: args.imagePath,
-    analysisResult: args.analysis,
-    subject: args.analysis.subject,
-    topicId: args.analysis.topicId,
-    topicName: args.analysis.topicName,
-    problemType: args.analysis.problemType,
-    missCause: args.analysis.missCause,
-    prerequisiteGaps: args.analysis.prerequisiteGaps.slice(0, 3),
-    entrancePriority: args.analysis.entrancePriority,
-    nextReviewDate: next.toISOString(),
-    nextAction: args.analysis.nextAction,
-    parentCheck: args.analysis.parentCheck,
-    hiddenWeaknessPatterns: args.analysis.hiddenWeaknessPatterns.slice(0, 4),
-    recurringRootCause: args.analysis.recurringRootCause,
-    confidenceScore: Number(args.analysis.confidenceScore || 0.6),
-    suggestedMicroTraining: args.analysis.suggestedMicroTraining.slice(0, 3),
+    subject: a.subject,
+    topicName: clampStoredText(a.topicName, 200),
+    mistakeHint,
+    confidenceScore: conf,
+    originalMessageId: String(args.messageId),
     reviewState: createInitialReviewState({
       itemId: args.messageId,
-      missCause: args.analysis.missCause,
-      confidenceScore: Number(args.analysis.confidenceScore || 0.6),
+      missCause: mistakeHint,
+      confidenceScore: conf,
       now,
     }),
   };
@@ -218,13 +252,12 @@ export function markReviewAttempt(args: {
     reviewState: current.reviewState,
     isCorrect: Boolean(args.isCorrect),
     answerTimeSec: args.answerTimeSec,
-    missCause: args.missCause || current.missCause,
+    missCause: args.missCause || current.mistakeHint,
   });
 
   logs[idx] = {
     ...current,
     reviewState: nextState,
-    nextReviewDate: nextState.nextReviewAt,
   };
   saveWeaknessLogs(logs);
   return logs[idx];

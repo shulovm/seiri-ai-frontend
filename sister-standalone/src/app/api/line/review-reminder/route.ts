@@ -3,6 +3,7 @@ import {
   hasSentReviewReminderToday,
   markReviewReminderSentToday,
 } from "@/lib/sister/saveWeaknessLog";
+import { loadWeaknessLogs } from "@/lib/sister/saveWeaknessLog";
 import { pushLineMessage } from "@/lib/line/client";
 import { requireApiKey } from "@/lib/server/requireApiKey";
 
@@ -20,7 +21,8 @@ export async function POST(req: Request) {
     return Response.json({ ok: true, sent: false, reason: "already sent today" });
   }
   const due = getTodaySmartReview(studentLineUserId);
-  const top = due[0] || {
+  const realLogs = due.length ? due : loadWeaknessLogs().filter((x) => x.studentLineUserId === studentLineUserId);
+  const top = realLogs[0] || {
     id: "dummy-review-item",
     topicName: "テスト用ダミー復習",
   };
@@ -29,9 +31,7 @@ export async function POST(req: Request) {
   const text = [
     "今日の5分復習タイミングです。",
     "",
-    `前に間違えた「${top.topicName}」`,
-    "今やると定着しやすい時間です。",
-    "",
+    `「${top.topicName}」を1回だけ復習しよう。`,
     url ? `[復習する]\n${url}` : "理解ページを開いて復習しよう。",
   ].join("\n");
 
@@ -41,6 +41,6 @@ export async function POST(req: Request) {
     ok: true,
     sent: true,
     count: due.length || 1,
-    forcedDummy: due.length === 0,
+    forcedDummy: !realLogs.length,
   });
 }

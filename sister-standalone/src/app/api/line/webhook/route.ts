@@ -2,7 +2,7 @@ import { after } from "next/server";
 import { fetchLineImageContent, pushLineMessage, replyLineMessage } from "@/lib/line/client";
 import { verifyLineSignature } from "@/lib/line/verifySignature";
 import { analyzeProblemImage } from "@/lib/sister/analyzeProblemImage";
-import { saveLineImage, saveWeaknessLog } from "@/lib/sister/saveWeaknessLog";
+import { saveWeaknessLog } from "@/lib/sister/saveWeaknessLog";
 
 function buildStudyRedirectText(input: string): string {
   const text = input.trim();
@@ -122,7 +122,6 @@ async function handleImage(event: ParsedLineEvent, config: RuntimeConfig): Promi
 
   try {
     const imageBuffer = await fetchLineImageContent(event.messageId);
-    const saved = saveLineImage(String(event.messageId), imageBuffer, "jpg");
     const analysis = await analyzeProblemImage({
       imageBuffer,
       mimeType: "image/jpeg",
@@ -136,7 +135,6 @@ async function handleImage(event: ParsedLineEvent, config: RuntimeConfig): Promi
       messageType: "image",
       imageId: String(event.messageId),
       timestamp: Number(event.timestamp || Date.now()),
-      imagePath: saved.relativePath,
       analysis,
     });
 

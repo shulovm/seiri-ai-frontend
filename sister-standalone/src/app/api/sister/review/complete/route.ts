@@ -13,7 +13,7 @@ export async function POST(req: Request) {
 
   return Response.json({
     ok: true,
-    nextReviewAt: updated.reviewState?.nextReviewAt || updated.nextReviewDate,
+    nextReviewAt: updated.reviewState?.nextReviewAt,
     streakCorrect: updated.reviewState?.streakCorrect || 0,
     stabilityScore: updated.reviewState?.stabilityScore || 0,
   });

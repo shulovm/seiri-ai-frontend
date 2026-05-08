@@ -41,16 +41,19 @@ function byFallbackText(text: string): ProblemImageAnalysis {
         ? KNOWLEDGE_MAP.math.similarity
         : KNOWLEDGE_MAP.math.linear_function;
 
+  const missCause = /計算ミス|符号|凡ミス/.test(src)
+    ? "ケアレスミス"
+    : /手順|途中|順番/.test(src)
+      ? "手順ミス"
+      : "根拠の言語化不足";
+
   return {
     subject,
     topicId,
     topicName: node.topicName,
     problemType: isScience ? "実験考察" : /図形|証明/.test(src) ? "図形証明" : "関数",
-    missCause: /計算ミス|符号|凡ミス/.test(src)
-      ? "ケアレスミス"
-      : /手順|途中|順番/.test(src)
-        ? "手順ミス"
-        : "根拠の言語化不足",
+    missCause,
+    mistakeHint: missCause,
     prerequisiteGaps: [...node.prerequisiteGaps],
     entrancePriority: node.entrancePriority,
     nextReviewDays: node.entrancePriority === "HIGH" ? 1 : 2,
@@ -102,7 +105,7 @@ export async function analyzeProblemImage(input: {
       model: process.env.ANTHROPIC_GATE_MODEL || "claude-haiku-4-5",
       max_tokens: 500,
       system:
-        "福岡県公立高校入試向け学習ログ分類器。答えは出さず、JSONのみを返す。key: subject,topicId,topicName,problemType,missCause,prerequisiteGaps,entrancePriority,nextReviewDays,nextAction,studentMessage,parentCheck,hiddenWeaknessPatterns,recurringRootCause,confidenceScore,suggestedMicroTraining",
+        "福岡県公立高校入試向け学習ログ分類器。答えは出さず、JSONのみを返す。mistakeHintは「どの条件・手順で詰まっているか」を一文で。key: subject,topicId,topicName,problemType,missCause,mistakeHint,prerequisiteGaps,entrancePriority,nextReviewDays,nextAction,studentMessage,parentCheck,hiddenWeaknessPatterns,recurringRootCause,confidenceScore,suggestedMicroTraining",
       messages: [
         {
           role: "user",
@@ -127,24 +130,37 @@ export async function analyzeProblemImage(input: {
     if (start === -1 || end === -1 || end <= start) return byFallbackText(input.noteText || "");
 
     const parsed = JSON.parse(text.slice(start, end + 1));
+    const fb = byFallbackText(input.noteText || "");
+    const mistakeFromModel =
+      typeof parsed.mistakeHint === "string" && parsed.mistakeHint.trim()
+        ? parsed.mistakeHint.trim()
+        : typeof parsed.missCause === "string" && parsed.missCause.trim()
+          ? parsed.missCause.trim()
+          : "";
+    const missCauseResolved =
+      typeof parsed.missCause === "string" && parsed.missCause.trim()
+        ? parsed.missCause.trim()
+        : mistakeFromModel || fb.missCause;
     return {
-      ...byFallbackText(input.noteText || ""),
+      ...fb,
       ...parsed,
+      missCause: missCauseResolved,
+      mistakeHint: mistakeFromModel || fb.mistakeHint,
       entrancePriority:
         parsed.entrancePriority === "HIGH" || parsed.entrancePriority === "LOW" ? parsed.entrancePriority : "MIDDLE",
       prerequisiteGaps: Array.isArray(parsed.prerequisiteGaps) ? parsed.prerequisiteGaps.slice(0, 3) : [],
       nextReviewDays: Math.max(1, Number(parsed.nextReviewDays || 1)),
       hiddenWeaknessPatterns: Array.isArray(parsed.hiddenWeaknessPatterns)
         ? parsed.hiddenWeaknessPatterns.slice(0, 4)
-        : byFallbackText(input.noteText || "").hiddenWeaknessPatterns,
+        : fb.hiddenWeaknessPatterns,
       recurringRootCause:
         typeof parsed.recurringRootCause === "string" && parsed.recurringRootCause.trim().length > 0
           ? parsed.recurringRootCause
-          : byFallbackText(input.noteText || "").recurringRootCause,
+          : fb.recurringRootCause,
       confidenceScore: Number(parsed.confidenceScore || 0.66),
       suggestedMicroTraining: Array.isArray(parsed.suggestedMicroTraining)
         ? parsed.suggestedMicroTraining.slice(0, 3)
-        : byFallbackText(input.noteText || "").suggestedMicroTraining,
+        : fb.suggestedMicroTraining,
     };
   } catch {
     return byFallbackText(input.noteText || "");
