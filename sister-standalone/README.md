@@ -43,3 +43,5 @@ npm run start
 - adminホスト: 管理者ページ
 
 このディレクトリ配下だけで完結しており、ground本体コードには依存しません。
+
+git auto deploy test
