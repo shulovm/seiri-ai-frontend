@@ -82,6 +82,16 @@ function parseEvent(event: any): ParsedLineEvent {
   };
 }
 
+function logIncomingWebhookEvents(events: any[]) {
+  for (const ev of events) {
+    console.log("LINE WEBHOOK INCOMING:", {
+      eventType: String(ev?.type || ""),
+      messageType: ev?.message?.type || null,
+      sourceUserId: ev?.source?.userId || null,
+    });
+  }
+}
+
 const displayNameCache = new Map<string, string | null>();
 
 async function resolveDisplayName(userId: string | null): Promise<string | null> {
@@ -195,6 +205,7 @@ export async function POST(req: Request) {
 
     const body = JSON.parse(rawBody || "{}");
     const events = Array.isArray(body?.events) ? body.events : [];
+    logIncomingWebhookEvents(events);
     if (config.debugBody) {
       console.log("LINE EVENT BODY:", JSON.stringify(body, null, 2));
     }
