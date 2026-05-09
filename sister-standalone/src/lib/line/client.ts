@@ -60,3 +60,19 @@ export async function fetchLineImageContent(messageId: string): Promise<Buffer> 
   const ab = await res.arrayBuffer();
   return Buffer.from(ab);
 }
+
+export async function fetchLineUserDisplayName(userId: string): Promise<string | null> {
+  const accessToken = getAccessToken();
+  if (!accessToken || !userId) return null;
+
+  const res = await fetch(`${LINE_API_BASE}/profile/${encodeURIComponent(userId)}`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+
+  if (!res.ok) return null;
+  const body = (await res.json().catch(() => ({}))) as { displayName?: string };
+  return typeof body.displayName === "string" && body.displayName.trim() ? body.displayName.trim() : null;
+}

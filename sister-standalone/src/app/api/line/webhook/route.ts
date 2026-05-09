@@ -1,5 +1,5 @@
 import { after } from "next/server";
-import { fetchLineImageContent, pushLineMessage, replyLineMessage } from "@/lib/line/client";
+import { fetchLineImageContent, fetchLineUserDisplayName, pushLineMessage, replyLineMessage } from "@/lib/line/client";
 import { verifyLineSignature } from "@/lib/line/verifySignature";
 import { analyzeProblemImage } from "@/lib/sister/analyzeProblemImage";
 import { saveWeaknessLog } from "@/lib/sister/saveWeaknessLog";
@@ -82,13 +82,24 @@ function parseEvent(event: any): ParsedLineEvent {
   };
 }
 
-function logEventMeta(event: ParsedLineEvent) {
-  const maskedUserId = event.userId ? `${event.userId.slice(0, 4)}***` : null;
+const displayNameCache = new Map<string, string | null>();
+
+async function resolveDisplayName(userId: string | null): Promise<string | null> {
+  if (!userId) return null;
+  if (displayNameCache.has(userId)) return displayNameCache.get(userId) ?? null;
+  const name = await fetchLineUserDisplayName(userId).catch(() => null);
+  displayNameCache.set(userId, name);
+  return name;
+}
+
+async function logEventMeta(event: ParsedLineEvent) {
+  const displayName = await resolveDisplayName(event.userId);
   console.log("LINE EVENT META:", {
     webhookEventId: event.webhookEventId,
     isRedelivery: event.isRedelivery,
     eventType: event.eventType,
-    userId: maskedUserId,
+    sourceUserId: event.userId,
+    displayName,
     messageType: event.messageType,
   });
 }
@@ -166,7 +177,7 @@ async function processEvents(events: any[], config: RuntimeConfig): Promise<void
       console.log("LINE EVENT SKIPPED DUPLICATE:", { webhookEventId: event.webhookEventId });
       continue;
     }
-    logEventMeta(event);
+    await logEventMeta(event);
     await handleText(event);
     await handleImage(event, config);
   }
