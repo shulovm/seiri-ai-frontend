@@ -84,11 +84,17 @@ function parseEvent(event: any): ParsedLineEvent {
 
 function logIncomingWebhookEvents(events: any[]) {
   for (const ev of events) {
-    console.log("LINE WEBHOOK INCOMING:", {
-      eventType: String(ev?.type || ""),
-      messageType: ev?.message?.type || null,
-      sourceUserId: ev?.source?.userId || null,
-    });
+    const eventType = String(ev?.type || "");
+    const messageType = ev?.message?.type || null;
+    const sourceType = ev?.source?.type || null;
+    const sourceUserId = ev?.source?.userId || null;
+    const groupId = ev?.source?.groupId || null;
+    const roomId = ev?.source?.roomId || null;
+    console.log(
+      `[LINE WEBHOOK INCOMING] eventType=${eventType} messageType=${String(messageType)} sourceType=${String(
+        sourceType,
+      )} sourceUserId=${String(sourceUserId)} groupId=${String(groupId)} roomId=${String(roomId)}`,
+    );
   }
 }
 
@@ -104,14 +110,13 @@ async function resolveDisplayName(userId: string | null): Promise<string | null>
 
 async function logEventMeta(event: ParsedLineEvent) {
   const displayName = await resolveDisplayName(event.userId);
-  console.log("LINE EVENT META:", {
-    webhookEventId: event.webhookEventId,
-    isRedelivery: event.isRedelivery,
-    eventType: event.eventType,
-    sourceUserId: event.userId,
-    displayName,
-    messageType: event.messageType,
-  });
+  console.log(
+    `[LINE EVENT META] webhookEventId=${String(event.webhookEventId)} isRedelivery=${String(
+      event.isRedelivery,
+    )} eventType=${event.eventType} messageType=${String(event.messageType)} sourceUserId=${String(
+      event.userId,
+    )} displayName=${String(displayName)}`,
+  );
 }
 
 async function safeReply(replyToken: string | null, text: string, label: string): Promise<void> {
