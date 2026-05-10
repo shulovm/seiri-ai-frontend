@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 
 function subjectLabelJa(subject) {
@@ -42,6 +42,7 @@ function groupBySubjectUnit(items) {
 }
 
 export default function SisterParent({ studentLineUserId }) {
+  const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([]);
 
@@ -89,9 +90,13 @@ export default function SisterParent({ studentLineUserId }) {
     <main className="min-h-screen bg-stone-50 text-stone-700">
       <div className="mx-auto w-full max-w-5xl px-4 py-6 sm:px-6 sm:py-8">
         <header className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
-          <Link href="/" className="text-xs text-stone-500 no-underline">
-            ← 戻る
-          </Link>
+          <button
+            type="button"
+            onClick={() => router.back()}
+            className="block cursor-pointer border-0 bg-transparent p-0 text-left text-xs text-stone-500 underline-offset-2 hover:underline"
+          >
+            ← 前の画面へ
+          </button>
           <h1 className="mt-2 text-2xl font-semibold tracking-tight text-stone-800">SISTER 保護者向け</h1>
           <p className="mt-1 text-sm text-stone-500">間違いの記録（写真は保存されません）</p>
         </header>
