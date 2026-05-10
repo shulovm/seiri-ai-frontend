@@ -1,7 +1,7 @@
 "use client";
 
-import SisterPrototype from "@/components/sister/SisterPrototype";
+import SisterPrototypeDemo from "@/components/sister/SisterPrototypeDemo";
 
 export default function SisterPrototypePage() {
-  return <SisterPrototype />;
+  return <SisterPrototypeDemo />;
 }

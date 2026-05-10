@@ -1,3 +1,6 @@
+/**
+ * 開発・デモ専用の固定UIサンプル（本番の生徒ページでは使わない）
+ */
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -58,7 +61,7 @@ const quizChoices = [
 ];
 const correctChoiceId = "B";
 
-export default function SisterPrototype() {
+export default function SisterPrototypeDemo() {
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [showResult, setShowResult] = useState(false);
   const [openedFaq, setOpenedFaq] = useState(faqItems[0].q);
@@ -66,14 +69,17 @@ export default function SisterPrototype() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-700">
       <div className="mx-auto w-full max-w-4xl px-4 py-6 sm:px-6 sm:py-8">
+        <p className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-2 text-sm text-amber-900">
+          デモ用の固定サンプルです。実データとは無関係です。
+        </p>
         <header className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
-              <h1 className="text-2xl font-semibold tracking-tight text-slate-800">SISTER</h1>
+              <h1 className="text-2xl font-semibold tracking-tight text-slate-800">SISTER（プロトタイプ）</h1>
               <p className="mt-1 text-sm text-slate-500">間違いから理解を育てる学習サイト</p>
             </div>
             <span className="rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-medium text-cyan-700">
-              LINE連携済み
+              demo
             </span>
           </div>
         </header>
@@ -85,8 +91,12 @@ export default function SisterPrototype() {
             「傾き」と「切片」を同時に見ようとして混乱しやすい傾向があります。今日は、この2つを分けて見る練習だけでOKです。
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <button className="rounded-xl border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">3分で理解する</button>
-            <button className="rounded-xl border border-slate-300 bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700">確認1問へ</button>
+            <button className="rounded-xl border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              3分で理解する
+            </button>
+            <button className="rounded-xl border border-slate-300 bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700">
+              確認1問へ
+            </button>
           </div>
         </section>
 
@@ -101,8 +111,13 @@ export default function SisterPrototype() {
           <h2 className="text-lg font-semibold text-slate-800">多方向から理解する</h2>
           <div className="mt-3 grid gap-3 sm:grid-cols-2">
             {understandingCards.map((card) => (
-              <article key={card.title} className="cursor-pointer rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-cyan-200 hover:bg-cyan-50/40">
-                <h3 className="text-base font-semibold text-slate-800">{card.icon} {card.title}</h3>
+              <article
+                key={card.title}
+                className="cursor-pointer rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-cyan-200 hover:bg-cyan-50/40"
+              >
+                <h3 className="text-base font-semibold text-slate-800">
+                  {card.icon} {card.title}
+                </h3>
                 <p className="mt-2 whitespace-pre-line text-sm leading-7 text-slate-600">{card.body}</p>
               </article>
             ))}
@@ -129,9 +144,7 @@ export default function SisterPrototype() {
           </div>
           <div className="mt-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
             <p className="text-sm font-medium text-slate-700">ポイント</p>
-            <p className="mt-1 text-sm leading-7 text-slate-600">
-              {faqItems.find((x) => x.q === openedFaq)?.a}
-            </p>
+            <p className="mt-1 text-sm leading-7 text-slate-600">{faqItems.find((x) => x.q === openedFaq)?.a}</p>
           </div>
         </section>
 
@@ -167,9 +180,7 @@ export default function SisterPrototype() {
                     setShowResult(true);
                   }}
                   className={`relative flex w-full items-center gap-2 rounded-xl border p-3 text-left text-sm transition ${
-                    isSelected
-                      ? "border-cyan-300 bg-cyan-50/50"
-                      : "border-slate-200 bg-white hover:border-slate-300"
+                    isSelected ? "border-cyan-300 bg-cyan-50/50" : "border-slate-200 bg-white hover:border-slate-300"
                   }`}
                 >
                   <span className="text-slate-700">{choice.label}</span>
@@ -212,8 +223,8 @@ export default function SisterPrototype() {
               );
             })}
           </div>
-          {showResult && (
-            selectedAnswer === correctChoiceId ? (
+          {showResult &&
+            (selectedAnswer === correctChoiceId ? (
               <p className="mt-2 rounded-xl bg-cyan-50 px-3 py-2 text-sm leading-7 text-cyan-800">
                 いい感じ。
                 今日は見方がつかめてる。
@@ -238,8 +249,7 @@ export default function SisterPrototype() {
                   </button>
                 </div>
               </div>
-            )
-          )}
+            ))}
         </section>
 
         <section className="mt-4 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -273,7 +283,6 @@ export default function SisterPrototype() {
             </ul>
           </div>
         </section>
-
       </div>
     </main>
   );

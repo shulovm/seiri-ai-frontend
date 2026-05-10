@@ -1,7 +1,8 @@
-"use client";
+import SisterStudentHome from "@/components/sister/SisterStudentHome";
 
-import SisterPrototype from "@/components/sister/SisterPrototype";
+export const dynamic = "force-dynamic";
 
 export default function SisterStudyPage() {
-  return <SisterPrototype />;
+  const studentLineUserId = process.env.STUDENT_LINE_USER_ID ?? "";
+  return <SisterStudentHome studentLineUserId={studentLineUserId} />;
 }
