@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { isValidAdminSessionCookie } from "@/lib/server/adminSession";
 
 type SiteRole = "student" | "parent" | "admin";
 
@@ -15,7 +16,7 @@ function resolveSiteRole(req: NextRequest): SiteRole {
   if (studentHost && host === studentHost) return "student";
   if (parentHost && host === parentHost) return "parent";
   if (adminHost && host === adminHost) return "admin";
-  return "admin";
+  return "student";
 }
 
 function isStudentPath(pathname: string): boolean {
@@ -26,21 +27,29 @@ function isParentPath(pathname: string): boolean {
   return pathname === "/sister/parent";
 }
 
-function isAdminOnlyPath(pathname: string): boolean {
-  return pathname === "/" || pathname === "/sister";
-}
-
-export function middleware(req: NextRequest) {
-  const role = resolveSiteRole(req);
+export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   if (pathname.startsWith("/api") || pathname.startsWith("/_next") || pathname === "/favicon.ico") {
     return NextResponse.next();
   }
 
-  // student site: student画面のみ
+  const secret = String(process.env.SISTER_ADMIN_SECRET || process.env.INTERNAL_API_KEY || "");
+  if (pathname.startsWith("/admin") && !pathname.startsWith("/admin/login")) {
+    const cookieVal = req.cookies.get("sister_admin_session")?.value;
+    const ok = secret ? await isValidAdminSessionCookie(cookieVal, secret) : false;
+    if (!ok) {
+      const url = req.nextUrl.clone();
+      url.pathname = "/admin/login";
+      url.search = "";
+      return NextResponse.redirect(url);
+    }
+  }
+
+  const role = resolveSiteRole(req);
+
   if (role === "student") {
-    if (isParentPath(pathname) || isAdminOnlyPath(pathname)) {
+    if (isParentPath(pathname)) {
       const url = req.nextUrl.clone();
       url.pathname = "/sister/prototype";
       url.search = "";
@@ -49,9 +58,8 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // parent site: parent画面のみ
   if (role === "parent") {
-    if (isStudentPath(pathname) || isAdminOnlyPath(pathname)) {
+    if (isStudentPath(pathname)) {
       const url = req.nextUrl.clone();
       url.pathname = "/sister/parent";
       url.search = "";
@@ -60,7 +68,6 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // admin site: 管理画面を起点に使う
   return NextResponse.next();
 }
 
