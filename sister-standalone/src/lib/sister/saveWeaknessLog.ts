@@ -27,6 +27,8 @@ export type ProblemImageAnalysis = {
   suggestedMicroTraining: string[];
 };
 
+export type MistakeLogSource = "line-image";
+
 export type WeaknessLog = {
   /** テーマ/復習候補として扱うユニークID */
   id: string;
@@ -36,16 +38,22 @@ export type WeaknessLog = {
   /** userId（LINEのsource.userId） */
   studentLineUserId: string;
   subject: ProblemImageAnalysis["subject"];
-  /** topic（永続化は topicName のみ） */
+  /** 単元（分析の topicName） */
+  unit: string;
+  /** テーマ・問題の型（分析の problemType） */
+  topic: string;
+  /** 互換・理解ページ等: 単元ラベルと同一 */
   topicName: string;
   /** 詰まりどころ（保存の主眼） */
   mistakeHint: string;
   /** 信頼度（0-1） */
   confidenceScore: number;
-  /** 元の LINE messageId（元画像に紐づくIDだが、画像本体は保存しない） */
+  /** 元の LINE messageId（画像本体は保存しない） */
   originalMessageId: string;
   /** 復習タイミング算出のための状態 */
   reviewState: ReviewState;
+  /** 記録の由来 */
+  source: MistakeLogSource | string;
 };
 
 const STORAGE_DIR = process.env.VERCEL
@@ -81,6 +89,20 @@ function normalizeLoadedLog(raw: any): WeaknessLog {
         ? ar.topicName
         : "不明テーマ";
 
+  const unit =
+    typeof raw?.unit === "string" && raw.unit.trim()
+      ? raw.unit.trim()
+      : topicName;
+
+  const topic =
+    typeof raw?.topic === "string" && raw.topic.trim()
+      ? raw.topic.trim()
+      : typeof ar?.problemType === "string" && ar.problemType.trim()
+        ? ar.problemType.trim()
+        : typeof raw?.problemType === "string" && raw.problemType.trim()
+          ? raw.problemType.trim()
+          : "";
+
   const mistakeHint =
     (typeof raw?.mistakeHint === "string" && raw.mistakeHint.trim() ? raw.mistakeHint : "") ||
     (typeof raw?.missCause === "string" && raw.missCause.trim() ? raw.missCause : "") ||
@@ -111,17 +133,24 @@ function normalizeLoadedLog(raw: any): WeaknessLog {
           now,
         });
 
+  const sourceRaw = raw?.source;
+  const source =
+    typeof sourceRaw === "string" && sourceRaw.trim() ? sourceRaw.trim() : "line-image";
+
   return {
     id: String(raw?.id || `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`),
     createdAt,
     timestamp,
     studentLineUserId: String(raw?.studentLineUserId || ""),
     subject,
+    unit: String(unit),
+    topic: String(topic),
     topicName: String(topicName),
     mistakeHint: String(mistakeHint),
     confidenceScore,
     originalMessageId,
     reviewState,
+    source,
   };
 }
 
@@ -151,23 +180,29 @@ export function saveWeaknessLog(args: {
   imageId?: string | null;
   timestamp?: number;
   analysis: ProblemImageAnalysis;
+  source?: MistakeLogSource | string;
 }): WeaknessLog {
   const a = args.analysis;
   const mistakeHint = clampStoredText(a.mistakeHint || a.missCause);
   const conf = Number(a.confidenceScore || 0.6);
   const now = new Date();
+  const unit = clampStoredText(a.topicName, 200);
+  const topic = clampStoredText(a.problemType, 120);
 
-  // 画像バイナリは保持しない。分析結果も JSON には最小限のみ（レガシーの analysisResult は書かない）
+  // 画像バイナリは保持しない。分析結果も JSON にはテキスト・構造化フィールドのみ
   const entry: WeaknessLog = {
     id: `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`,
     createdAt: now.toISOString(),
     timestamp: Number(args.timestamp || now.getTime()),
     studentLineUserId: args.studentLineUserId,
     subject: a.subject,
-    topicName: clampStoredText(a.topicName, 200),
+    unit,
+    topic,
+    topicName: unit,
     mistakeHint,
     confidenceScore: conf,
     originalMessageId: String(args.messageId),
+    source: args.source ?? "line-image",
     reviewState: createInitialReviewState({
       itemId: args.messageId,
       missCause: mistakeHint,

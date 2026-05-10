@@ -162,6 +162,7 @@ async function handleImage(event: ParsedLineEvent, config: RuntimeConfig): Promi
       imageId: String(event.messageId),
       timestamp: Number(event.timestamp || Date.now()),
       analysis,
+      source: "line-image",
     });
 
     const understandingUrl =
