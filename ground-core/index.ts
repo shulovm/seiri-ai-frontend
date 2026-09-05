@@ -3643,3 +3643,6 @@ export type {
   ContributionQuantityAvailabilityEvidenceComposition,
   ContributionQuantityAvailabilityCompositionAssessment,
 } from "./reality/contribution-availability-composition-types.js";
+
+export { declareContributionRequiredEvidence, assessContributionRequiredEvidence } from "./reality/contribution-required-evidence-core.js";
+export type { ContributionEvidenceBinding, ContributionRequiredEvidenceDimension, ContributionRequiredEvidenceSpecification, ContributionRequiredEvidenceDeclaration, ContributionRequiredEvidenceInput, ContributionEvidenceCanonicalClassification, ContributionRequiredEvidenceDimensionAssessment, ContributionRequiredEvidenceAssessment } from "./reality/contribution-required-evidence-types.js";

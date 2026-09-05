@@ -16,9 +16,19 @@ See GROUND_CONTRIBUTION_AVAILABILITY_APPLICABILITY.md for the adopted human deci
 implemented contract, lineage, absence and exact-time boundaries, and validation.
 Numbers do not prescribe the next implementation.
 
-## Next possible frontier (not authorized or predetermined)
+## Binding-owned required evidence checkpoint
 
-Required-dimension semantics or downstream use of the preserved evidence vector.
-The current evidence contract does not select necessary/sufficient dimensions,
-create an overall polarity, establish Resource Ready or grant execution authority.
-No unique additional semantic primitive follows from the completed region.
+The adopted human decision adds explicit required dimensions owned by the existing
+stable 133 Binding, independently bound operands, per-required-dimension coverage,
+and exact upstream state reporting. See GROUND_CONTRIBUTION_REQUIRED_EVIDENCE.md.
+The declared required set enters stable identity; current evidence updates do not.
+Missing, unresolved and canonical NOT_APPLICABLE remain distinct. The whole
+composition is not a prerequisite for independent required-operand coverage.
+
+## Next frontier discovery boundary
+
+No proposition result follows from requiredness, coverage or canonical resolvedness.
+A downstream consumer would need its own actual proposition and authority before
+state admissibility/decisiveness could be defined. Candidate B remains deferred;
+this checkpoint does not invent that proposition, retrofit Resource Ready, or
+select/aggregate multiple Binding or availability contracts.

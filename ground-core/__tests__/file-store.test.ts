@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -73,8 +74,11 @@ describe("file-store", () => {
 });
 
 describe("gitignore", () => {
-  it("includes ground-core storage projects path", () => {
-    const gitignore = readFileSync(join(process.cwd(), ".gitignore"), "utf8");
-    assert.match(gitignore, /ground-core\/storage\/projects\//);
+  it("excludes runtime projects and generated storage scratch from Git", () => {
+    const paths = ["ground-core/storage/projects/ignore-probe.json", "ground-core/storage/ignore-probe.json"];
+    const ignored = execFileSync("git", ["check-ignore", "--no-index", "--stdin"], {
+      cwd: process.cwd(), input: paths.join("\n") + "\n", encoding: "utf8",
+    });
+    assert.deepEqual(ignored.trim().split("\n"), paths);
   });
 });
