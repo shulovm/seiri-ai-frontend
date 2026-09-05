@@ -31,7 +31,11 @@ function loadProjectFile(projectId: string): ProjectState {
 }
 
 function minimalState(projectId: string, title: string): ProjectState {
-  const base = structuredClone(buildFreeWaterPhase0Fixture());
+  // Rebind every owned entity, not just Project and CurrentState.
+  const base: ProjectState = JSON.parse(JSON.stringify(
+    buildFreeWaterPhase0Fixture(),
+    (key, value) => key === "project_id" ? projectId : value,
+  ));
   return {
     ...base,
     project: {
