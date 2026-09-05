@@ -3618,3 +3618,18 @@ export type {
   CommitmentConditionRole,
   CommitmentBasisReference,
 } from "./types.js";
+
+export {
+  availabilityEvidenceContractKey,
+  buildAvailabilityEvidenceContract,
+  contributionAvailabilityContext,
+  contributionAvailabilityContextKey,
+  declareContributionAvailabilityApplicability,
+} from "./reality/contribution-availability-applicability-core.js";
+export type {
+  AvailabilityEvidenceContract,
+  ContributionAvailabilityContext,
+  ContributionAvailabilityApplicabilityDeclaration,
+  ContributionAvailabilityApplicabilitySpecification,
+  ContributionQuantityEvaluationState,
+} from "./reality/contribution-availability-applicability-types.js";
