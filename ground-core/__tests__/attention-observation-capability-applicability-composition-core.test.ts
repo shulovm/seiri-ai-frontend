@@ -487,7 +487,7 @@ function assertNoForbiddenSemantics(payload: unknown): void {
 describe("Attention Observation Capability Applicability Composition (GROUND-060)", () => {
   describe("purity / architecture / schema", () => {
     it("schema 0.1.24; composes 055/057/058/059; no 053/041–045/classifiers/ActiveAt/wall-clock", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

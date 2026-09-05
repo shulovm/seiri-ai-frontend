@@ -150,7 +150,7 @@ function assertNoReadinessSemantics(payload: unknown): void {
 
 describe("GROUND-134 RESOURCE_READINESS Evaluation Instant", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("model limitations fixed order", () => {

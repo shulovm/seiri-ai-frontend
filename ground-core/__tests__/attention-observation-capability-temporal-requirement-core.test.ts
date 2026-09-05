@@ -288,7 +288,7 @@ function assertNoForbiddenSemantics(payload: unknown): void {
 describe("Attention Observation Capability Temporal Requirement (GROUND-056)", () => {
   describe("Temporal vocabulary / purity / architecture", () => {
     it("schema 0.1.24; minimal runtime window; no 050–055 / ActiveAt / wall-clock", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

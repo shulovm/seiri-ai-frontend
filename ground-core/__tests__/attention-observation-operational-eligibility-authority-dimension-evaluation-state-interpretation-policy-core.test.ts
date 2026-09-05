@@ -863,7 +863,7 @@ describe("GROUND-128 Explicit Authority Dimension Evaluation State Interpretatio
 
   describe("static / architectural boundaries", () => {
     it("schema 0.1.24; 127+spec only; type-only 127; no current 127/Satisfaction", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.equal(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_AUTHORITY_DIMENSION_EVALUATION_STATE_INTERPRETATION_POLICY_MODEL_LIMITATIONS[0],
         "OPERATIONAL_ELIGIBILITY_AUTHORITY_DIMENSION_INTERPRETATION_BASIS_NOT_MODELED"

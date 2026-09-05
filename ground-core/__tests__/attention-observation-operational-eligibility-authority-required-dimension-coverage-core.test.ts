@@ -755,7 +755,7 @@ describe("GROUND-118 Operational Eligibility AUTHORITY Required Dimension Covera
     });
 
     it("schema 0.1.24; 084+117 only; no 116/094/095; no polarity branch", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_AUTHORITY_REQUIRED_DIMENSION_COVERAGE_MODEL_LIMITATIONS.slice(
           0,

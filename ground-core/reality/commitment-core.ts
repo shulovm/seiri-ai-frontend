@@ -1,3 +1,4 @@
+import { getDecisionSnapshotVerification } from "../decision-snapshot-verification.js";
 import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Commitment Core I assessment (GROUND-030).
@@ -276,6 +277,7 @@ export function assessCommitmentBasis(
   const decision_context_capture_relations: CommitmentBasisAssessment["decision_context_capture_relations"] =
     [];
   const candidateFlags: boolean[] = [];
+  const decision_snapshot_verifications: CommitmentBasisAssessment["decision_snapshot_verifications"] = [];
 
   for (const decisionId of decision_basis_ids) {
     const decision = projectState.reality_decision_declarations.find(
@@ -286,6 +288,7 @@ export function assessCommitmentBasis(
         `RealityDecisionDeclaration ${decisionId} not found in project state`
       );
     }
+    decision_snapshot_verifications.push(getDecisionSnapshotVerification(decision));
     decision_actor_relations.push(
       decisionActorRelation(
         decision.selected_actor_entity_id,
@@ -321,6 +324,7 @@ export function assessCommitmentBasis(
     decision_actor_relations,
     holder_was_candidate_in_decision_snapshot,
     decision_context_capture_relations,
+    decision_snapshot_verifications,
     all_intent_bases_are_pursue: true,
   };
 }

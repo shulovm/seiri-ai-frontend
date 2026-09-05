@@ -549,7 +549,7 @@ function deepClone<T>(value: T): T {
 
 describe("GROUND-174 Deterministic POINT-STOCK Required-Amount Compatibility Basis", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("model limitations fixed order", () => {

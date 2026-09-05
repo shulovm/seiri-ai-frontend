@@ -636,7 +636,7 @@ const CANON_CON =
 
 describe("GROUND-169 Canonical Aggregated Capacity-Compatibility Evidence State", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("model limitations fixed order including provenance cardinality debt", () => {

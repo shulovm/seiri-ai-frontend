@@ -762,7 +762,7 @@ describe("GROUND-100 Operational Eligibility Permission Source Aggregation Readi
     });
 
     it("schema 0.1.24; no 093–096/084-direct; no ANY/ALL execution/result", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_PERMISSION_SOURCE_AGGREGATION_READINESS_BASIS_MODEL_LIMITATIONS.slice(
           0,

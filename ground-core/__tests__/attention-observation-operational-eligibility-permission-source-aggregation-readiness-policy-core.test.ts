@@ -435,7 +435,7 @@ describe("GROUND-099 Explicit Operational Eligibility Permission Source Aggregat
     });
 
     it("schema 0.1.24; no 093–098; no READY/match-count/result/vacuous truth", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_PERMISSION_SOURCE_AGGREGATION_READINESS_POLICY_MODEL_LIMITATIONS.slice(
           0,

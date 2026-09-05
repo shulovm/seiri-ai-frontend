@@ -184,7 +184,7 @@ describe("Intervention Core (GROUND-023)", () => {
   it("migrates 0.1.13 → 0.1.16 with empty permission collections", () => {
     assert.ok(validateProjectStateV0113(validProjectStateV0113).valid);
     const migrated = migrateProjectState(validProjectStateV0113);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.intervention_declarations, []);
     assert.deepEqual(migrated.intervention_capability_requirement_declarations, []);
     assert.deepEqual(migrated.intervention_resource_requirement_declarations, []);

@@ -814,7 +814,7 @@ describe("GROUND-127 Operational Eligibility Authority Dimension Evaluation Stat
 
   describe("static / architectural boundaries", () => {
     it("schema 0.1.24; no 118/119/121–124 cores; no Satisfaction/OE/can_execute", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_AUTHORITY_DIMENSION_EVALUATION_STATE_MODEL_LIMITATIONS.slice(
           0,

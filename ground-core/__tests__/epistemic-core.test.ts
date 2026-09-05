@@ -523,7 +523,7 @@ describe("Epistemic Core I (GROUND-004)", () => {
   describe("Migration", () => {
     it("migrates 0.1.2 to 0.1.4 with empty epistemic collections", () => {
       const migrated = migrateProjectState(validProjectStateV012);
-      assert.equal(migrated.schema_version, "0.1.24");
+      assert.equal(migrated.schema_version, "0.1.25");
       assert.deepEqual(migrated.epistemic_observations, []);
       assert.deepEqual(migrated.evidence, []);
       assert.deepEqual(migrated.claims, []);

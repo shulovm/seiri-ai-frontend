@@ -412,7 +412,7 @@ function assertNoVerdictFields(payload: unknown): void {
 describe("Resource Contention Discovery (GROUND-038)", () => {
   describe("Schema / architecture / read-only", () => {
     it("schema remains 0.1.24; modules are read-only and consume 036/037", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(__dirnameTest, "../reality/resource-contention-discovery.ts"),
         "utf8"

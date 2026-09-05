@@ -1,3 +1,4 @@
+import { getDecisionSnapshotVerification } from "../decision-snapshot-verification.js";
 import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Intent Core I assessment (GROUND-029).
@@ -263,6 +264,7 @@ export function assessIntentDecisionBasis(
       holder_was_candidate_in_decision_snapshot: null,
       disposition_relation: null,
       decision_context_capture_relation: null,
+      decision_snapshot_verification: null,
     };
   }
 
@@ -305,6 +307,7 @@ export function assessIntentDecisionBasis(
     selected_actor_relation,
     holder_was_candidate_in_decision_snapshot,
     disposition_relation,
+    decision_snapshot_verification: getDecisionSnapshotVerification(decision),
     decision_context_capture_relation: deriveDecisionContextCaptureRelation(
       decision.decided_at,
       decision.context_snapshot.captured_at

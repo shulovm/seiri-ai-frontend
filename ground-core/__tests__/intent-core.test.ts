@@ -290,7 +290,7 @@ describe("Intent Core I (GROUND-029)", () => {
   describe("Migration", () => {
     it("migrates 0.1.17 → 0.1.18 with empty Intent array", () => {
       const migrated = migrateProjectState(validProjectStateV0117);
-      assert.equal(migrated.schema_version, "0.1.24");
+      assert.equal(migrated.schema_version, "0.1.25");
       assert.deepEqual(migrated.intervention_intent_declarations, []);
     });
 
@@ -300,7 +300,7 @@ describe("Intent Core I (GROUND-029)", () => {
     });
 
     it("SCHEMA_VERSION is 0.1.18", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
     });
   });
 

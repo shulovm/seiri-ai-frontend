@@ -811,7 +811,7 @@ describe("GROUND-106 Permission Dimension Satisfaction State", () => {
     });
 
     it("schema 0.1.24; 105-only runtime; no 103/104/094/095/091 polarity inference", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.equal(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_PERMISSION_DIMENSION_SATISFACTION_STATE_MODEL_LIMITATIONS[0],
         "OPERATIONAL_ELIGIBILITY_AUTHORITY_SOURCE_BRIDGE_NOT_MODELED"

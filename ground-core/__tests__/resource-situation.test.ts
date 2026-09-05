@@ -353,7 +353,7 @@ function assertNoVerdictFields(payload: unknown): void {
 describe("Resource-aware Situation (GROUND-039)", () => {
   describe("Schema / architecture / read-only", () => {
     it("schema 0.1.24; additive API; consumes 038 not recalculation cores", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(__dirnameTest, "../reality/resource-situation.ts"),
         "utf8"

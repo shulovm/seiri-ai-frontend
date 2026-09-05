@@ -685,7 +685,7 @@ describe("GROUND-109 Explicit AUTHORITY Evaluation Instant", () => {
     });
 
     it("schema 0.1.24; no ProjectState / Governance / OE / wall-clock", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

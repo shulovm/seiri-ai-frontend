@@ -236,7 +236,7 @@ describe("Decision Memory I (GROUND-028)", () => {
   describe("Migration", () => {
     it("migrates 0.1.16 → 0.1.17 with empty decision array", () => {
       const migrated = migrateProjectState(validProjectStateV0116);
-      assert.equal(migrated.schema_version, "0.1.24");
+      assert.equal(migrated.schema_version, "0.1.25");
       assert.deepEqual(migrated.reality_decision_declarations, []);
     });
 
@@ -250,7 +250,7 @@ describe("Decision Memory I (GROUND-028)", () => {
 
   describe("Canonical schema version", () => {
     it("SCHEMA_VERSION is 0.1.17", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
     });
   });
 
@@ -1152,4 +1152,150 @@ describe("Decision Memory I (GROUND-028)", () => {
       assert.throws(() => applyPatch(after, deletePatch), /reality_decision_declaration|decision_space/i);
     });
   });
+});
+
+// Persistence-time verification facts are separate from the recorded snapshot.
+import { getDecisionHistoricalSnapshot, getDecisionSnapshotVerification } from "../decision-snapshot-verification.js";
+import { validateProjectState } from "../validate.js";
+
+describe("Decision snapshot persistence-time verification", () => {
+  function persist(unresolved = false, alter = false) {
+    const state = baseState();
+    const snapshot = buildDecisionContextSnapshot(state, SPACE_D, DECIDED_AT, RECORDED_AT);
+    if (alter) {
+      snapshot.actor_feasibility_bases[0]!.permission.has_permit_declaration = true;
+    }
+    if (unresolved) state.decision_option_actor_candidate_declarations[0]!.recorded_at = "2026-07-01T23:59:60Z";
+    const patch = buildDecisionPatch(state, DECL_ID, { snapshotOverride: snapshot, selectedActorEntityId: ENTITY_ACTOR_A });
+    const before = JSON.stringify(patch);
+    const next = applyPatch(state, patch);
+    assert.equal(JSON.stringify(patch), before, "verification generation does not mutate caller input");
+    return { state: next, decision: next.reality_decision_declarations[0]!, snapshot };
+  }
+
+  it("records VERIFIED only after deterministic persistence-time match", () => {
+    const { state, decision } = persist();
+    const fact = getDecisionSnapshotVerification(decision);
+    assert.equal(fact.status, "VERIFIED");
+    assert.equal(fact.decision_id, decision.id);
+    assert.match(fact.snapshot_content_digest, /^sha256:[a-f0-9]{64}$/);
+    assert.ok(fact.persisted_at);
+    assert.equal(state.schema_version, "0.1.25");
+    assert.equal(validateProjectState(state).valid, true);
+    assert.equal(assessDecisionMemory(decision).snapshot_verification.status, "VERIFIED");
+  });
+
+  it("preserves unresolved snapshot and temporal reason without calling it mismatched", () => {
+    const { decision, snapshot } = persist(true);
+    const fact = getDecisionSnapshotVerification(decision);
+    assert.deepEqual(decision.context_snapshot, snapshot);
+    assert.equal(fact.status, "UNVERIFIED");
+    if (fact.status === "UNVERIFIED") {
+      assert.equal(fact.reason, "TEMPORAL_RESOLUTION_UNAVAILABLE");
+      assert.equal(fact.temporal_reason, "LEAP_SECOND_AUTHORITY_NOT_AVAILABLE");
+      assert.equal(fact.temporal_declaration, "2026-07-01T23:59:60Z");
+    }
+  });
+
+  it("rejects executable mismatch without generating verification", () => {
+    assert.throws(() => persist(false, true), /deterministic expected snapshot/);
+  });
+
+  it("Permission reproduction stays visible but explicitly UNVERIFIED", () => {
+    const { state, decision } = persist(true, true);
+    assert.equal(state.intervention_permission_declarations.length, 0);
+    const memory = assessDecisionMemory(decision);
+    assert.equal(memory.selected_actor_feasibility_basis!.permission.has_permit_declaration, true);
+    assert.equal(memory.snapshot_verification.status, "UNVERIFIED");
+    assert.equal(getDecisionHistoricalSnapshot(decision).verification.status, "UNVERIFIED");
+  });
+
+  for (const unresolved of [false, true]) it(`current Reality and later resolvability cannot change stored fact: ${unresolved}`, () => {
+    const { state, decision } = persist(unresolved);
+    const original = structuredClone(getDecisionSnapshotVerification(decision));
+    // A later resolvable source or an absent current source is not historical proof.
+    state.decision_option_actor_candidate_declarations[0]!.recorded_at = TS;
+    state.intervention_permission_declarations = [];
+    state.decision_option_actor_candidate_declarations = [];
+    const reloaded = migrateProjectState(JSON.parse(JSON.stringify(state)));
+    assert.deepEqual(getDecisionSnapshotVerification(reloaded.reality_decision_declarations[0]!), original);
+  });
+
+  it("different frozen snapshot or Decision cannot inherit old VERIFIED fact", () => {
+    const { state, decision } = persist();
+    decision.context_snapshot.actor_feasibility_bases[0]!.permission.has_permit_declaration = true;
+    assert.throws(() => assessDecisionMemory(decision), /different frozen content/);
+    assert.throws(() => migrateProjectState(state), /different frozen content/);
+    const other = persist().decision;
+    other.id = DECL_ID_2;
+    assert.throws(() => getDecisionHistoricalSnapshot(other), /different frozen content/);
+  });
+
+  it("content binding ignores JSON member order and does not infer temporal identity", () => {
+    const { decision } = persist(true);
+    const fact = getDecisionSnapshotVerification(decision);
+    decision.context_snapshot = Object.fromEntries(Object.entries(decision.context_snapshot).reverse()) as unknown as DecisionContextSnapshotV1;
+    assert.deepEqual(getDecisionSnapshotVerification(decision), fact);
+  });
+
+  it("legacy migration records absence of evidence without recomputation", () => {
+    const { state, decision } = persist();
+    state.schema_version = "0.1.24";
+    delete decision.snapshot_verification;
+    state.decision_option_actor_candidate_declarations[0]!.recorded_at = "2026-07-01T23:59:60Z";
+    const migrated = migrateProjectState(state);
+    const fact = getDecisionSnapshotVerification(migrated.reality_decision_declarations[0]!);
+    assert.equal(fact.status, "NOT_RECORDED");
+    assert.equal(fact.persisted_at, null);
+    assert.equal(migrateProjectState(migrated).reality_decision_declarations[0]!.snapshot_verification!.status, "NOT_RECORDED");
+    assert.deepEqual(decision.context_snapshot, migrated.reality_decision_declarations[0]!.context_snapshot);
+  });
+
+  it("caller cannot declare its own successful verification through patch", () => {
+    const state = baseState(), patch = buildDecisionPatch(state, DECL_ID);
+    const payload = patch.operations[0]!.payload as Record<string, unknown>;
+    payload.snapshot_verification = persist().decision.snapshot_verification;
+    assert.throws(() => applyPatch(state, patch), /generated only by Decision persistence/);
+  });
+});
+
+it("snapshot semantic matching ignores object member insertion order at persistence", () => {
+  const state = baseState();
+  const snapshot = buildDecisionContextSnapshot(state, SPACE_D, DECIDED_AT, RECORDED_AT);
+  const reordered = Object.fromEntries(Object.entries(snapshot).reverse()) as unknown as DecisionContextSnapshotV1;
+  const next = applyPatch(state, buildDecisionPatch(state, DECL_ID, { snapshotOverride: reordered }));
+  assert.equal(getDecisionSnapshotVerification(next.reality_decision_declarations[0]!).status, "VERIFIED");
+});
+
+import { assessIntentDecisionBasis } from "../reality/intent-core.js";
+import { assessCommitmentBasis } from "../reality/commitment-core.js";
+import { saveProject, loadProject } from "../file-store.js";
+import { mkdtempSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+
+it("unverified historical fact survives file storage and accompanies Intent and Commitment", () => {
+  const source = baseState();
+  const snapshot = buildDecisionContextSnapshot(source, SPACE_D, DECIDED_AT, RECORDED_AT);
+  source.decision_option_actor_candidate_declarations[0]!.recorded_at = "2026-07-01T23:59:60Z";
+  const state = applyPatch(source, buildDecisionPatch(source, DECL_ID, { snapshotOverride: snapshot, selectedActorEntityId: ENTITY_ACTOR_A }));
+  const common = { project_id: PROJECT_ID, intervention_id: INT_A, valid_until: null, declared_by: { kind: "human" as const }, recorded_at: RECORDED_AT, created_at: RECORDED_AT, updated_at: RECORDED_AT };
+  state.intervention_intent_declarations.push({ ...common, id: DECL_ID_2, intent_holder_entity_id: ENTITY_ACTOR_A, disposition: "PURSUE", decision_basis_declaration_id: DECL_ID, intent_formed_at: RECORDED_AT });
+  state.intervention_commitment_declarations.push({ ...common, id: DECL_ID_3, commitment_holder_entity_id: ENTITY_ACTOR_A, basis: [{ kind: "REALITY_DECISION", decision_declaration_id: DECL_ID }], committed_at: RECORDED_AT });
+  const storageDir = mkdtempSync(join(tmpdir(), "ground-snapshot-fact-"));
+  try {
+    saveProject(state, { storageDir });
+    const loaded = loadProject(PROJECT_ID, { storageDir });
+    assert.equal(assessIntentDecisionBasis(loaded, DECL_ID_2).decision_snapshot_verification!.status, "UNVERIFIED");
+    assert.equal(assessCommitmentBasis(loaded, DECL_ID_3).decision_snapshot_verifications[0]!.status, "UNVERIFIED");
+  } finally { rmSync(storageDir, { recursive: true, force: true }); }
+});
+
+it("raw historical snapshot stays inspectable when its own time is unresolved", () => {
+  const state = baseState(), snapshot = buildDecisionContextSnapshot(state, SPACE_D, DECIDED_AT, RECORDED_AT);
+  const leap = "2026-08-01T23:59:60Z";
+  snapshot.assessed_at = leap;
+  const next = applyPatch(state, buildDecisionPatch(state, DECL_ID, { snapshotOverride: snapshot, decidedAt: leap }));
+  const recorded = getDecisionHistoricalSnapshot(next.reality_decision_declarations[0]!);
+  assert.equal(recorded.verification.status, "UNVERIFIED");
+  assert.equal(recorded.snapshot.assessed_at, leap);
 });

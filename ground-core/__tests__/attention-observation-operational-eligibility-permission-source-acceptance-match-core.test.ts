@@ -894,7 +894,7 @@ describe("GROUND-097 Operational Eligibility Permission Source Acceptance Match"
     });
 
     it("schema 0.1.24; no 094/095/084-direct/091-core; no aggregation/OE", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_PERMISSION_SOURCE_ACCEPTANCE_MATCH_MODEL_LIMITATIONS.slice(
           0,

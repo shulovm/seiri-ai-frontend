@@ -77,6 +77,6 @@ describe("Stable availability contract and explicit contribution applicability",
     const core = readFileSync(new URL("../reality/contribution-availability-applicability-core.ts", import.meta.url), "utf8");
     assert.doesNotMatch(core, /from .*canonical-selected-source|from .*resource-reservation|from .*feasibility/);
     assert.doesNotMatch(core, /buildDeclaredResourceAvailability|applyPatch|saveProject/);
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 });

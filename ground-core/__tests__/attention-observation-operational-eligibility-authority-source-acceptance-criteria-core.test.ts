@@ -563,7 +563,7 @@ describe("GROUND-120 Explicit Operational Eligibility AUTHORITY Source Acceptanc
     });
 
     it("schema 0.1.24; 084 only; no 117/118/119; no match semantics", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_AUTHORITY_SOURCE_ACCEPTANCE_CRITERIA_MODEL_LIMITATIONS.slice(
           0,

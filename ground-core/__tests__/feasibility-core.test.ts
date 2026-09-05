@@ -428,8 +428,8 @@ function withPositiveComposition(): ProjectState {
 
 describe("Feasibility Basis (GROUND-027)", () => {
   it("does not change schema 0.1.16", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
-    assert.equal(withPositiveComposition().schema_version, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
+    assert.equal(withPositiveComposition().schema_version, "0.1.25");
   });
 
   it("all-positive composition exposes basis without feasibility verdict", () => {

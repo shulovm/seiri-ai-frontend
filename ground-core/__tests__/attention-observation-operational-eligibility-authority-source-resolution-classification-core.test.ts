@@ -789,7 +789,7 @@ describe("GROUND-119 Operational Eligibility AUTHORITY Source Resolution Classif
     });
 
     it("schema 0.1.24; 117 only; no 118/084/116 runtime; no coverage semantics", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_AUTHORITY_SOURCE_RESOLUTION_CLASSIFICATION_MODEL_LIMITATIONS.slice(
           0,

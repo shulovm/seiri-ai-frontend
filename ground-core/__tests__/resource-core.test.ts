@@ -184,7 +184,7 @@ describe("Resource Core (GROUND-022)", () => {
   it("migrates 0.1.12 → 0.1.16 with empty resource collections", () => {
     assert.ok(validateProjectStateV0112(validProjectStateV0112).valid);
     const migrated = migrateProjectState(validProjectStateV0112);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.resource_declarations, []);
     assert.deepEqual(migrated.resource_capacity_declarations, []);
     assert.deepEqual(migrated.resource_availability_declarations, []);

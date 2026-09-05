@@ -1,3 +1,4 @@
+import { getDecisionSnapshotVerification } from "../decision-snapshot-verification.js";
 import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Decision Memory I assessment (GROUND-028).
@@ -525,6 +526,7 @@ export function assessDecisionMemory(
 
   return {
     decision_declaration: decl,
+    snapshot_verification: getDecisionSnapshotVerification(decl),
     context_capture_relation,
     selected_option_was_represented: true,
     selected_actor_was_candidate,

@@ -358,7 +358,7 @@ function assertNoForbiddenSemantics(payload: unknown): void {
 describe("Attention Observation Capability Declaration Match (GROUND-050)", () => {
   describe("CapabilityDeclaration audit / purity / schema", () => {
     it("schema 0.1.24; CapabilityDeclaration fields; no ProjectState / 041-045 / verification runtime", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

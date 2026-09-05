@@ -747,7 +747,7 @@ describe("GROUND-077 Capability Requirement Set Composition Readiness Policy", (
 
   describe("static proofs / schema / model limitations", () => {
     it("schema 0.1.24; 048-only runtime; no 061–076 / no Satisfaction evaluation", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
 
       const core = readFileSync(
         join(

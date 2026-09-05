@@ -1,3 +1,4 @@
+import type { DecisionSnapshotVerification } from "../types.js";
 /**
  * Reality Core v0.7 — Commitment Core I derived types (GROUND-030).
  *
@@ -72,6 +73,7 @@ export interface CommitmentBasisAssessment {
   decision_actor_relations: CommitmentDecisionActorRelation[];
   holder_was_candidate_in_decision_snapshot: boolean | null;
   decision_context_capture_relations: DecisionContextCaptureRelation[];
+  decision_snapshot_verifications: DecisionSnapshotVerification[];
   all_intent_bases_are_pursue: true;
 }
 

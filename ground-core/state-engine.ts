@@ -1,3 +1,6 @@
+import { canonicalValueKey } from "./reality/semantic-equality.js";
+import { decisionSnapshotContentDigest, getDecisionSnapshotVerification } from "./decision-snapshot-verification.js";
+import type { DecisionSnapshotVerification } from "./types.js";
 import { compareTemporalInstants, temporalInstantKey } from "./temporal.js";
 import { assessTemporalPrerequisite, isAdmissionTemporalRelationProven, haveVerifiedEqualValues } from "./temporal-admission.js";
 import { randomUUID } from "node:crypto";
@@ -536,7 +539,8 @@ function applyUpsert(
   }
 
   if (operation.entity === "reality_decision_declaration") {
-    assertRealityDecisionDeclarationUpsert(state, operation, now);
+    const fact = assertRealityDecisionDeclarationUpsert(state, operation, now);
+    operation = { ...operation, payload: { ...operation.payload, snapshot_verification: fact } };
   }
 
   if (operation.entity === "intervention_intent_declaration") {
@@ -6386,6 +6390,7 @@ function assertRealityDecisionDeclarationInvariants(
     }
     // Shape validation (referential integrity, temporal, snapshot field checks)
     assertRealityDecisionDeclarationShape(state, decl, decl.id);
+    getDecisionSnapshotVerification(decl);
   }
 }
 
@@ -6393,7 +6398,7 @@ function assertRealityDecisionDeclarationUpsert(
   state: ProjectState,
   operation: Extract<PatchOperation, { entity: "reality_decision_declaration" }>,
   now: string
-): void {
+): DecisionSnapshotVerification {
   const payload = operation.payload ?? {};
   const existing = state.reality_decision_declarations.find(
     (d) => d.id === operation.entity_id
@@ -6404,6 +6409,10 @@ function assertRealityDecisionDeclarationUpsert(
     throw new PatchError(
       `Cannot update reality_decision_declaration ${operation.entity_id}: Decision Memory is append-only`
     );
+  }
+
+  if (Object.hasOwn(payload, "snapshot_verification")) {
+    throw new PatchError("snapshot_verification is generated only by Decision persistence");
   }
 
   // Build merged record from payload for creation-only validation
@@ -6449,8 +6458,8 @@ function assertRealityDecisionDeclarationUpsert(
       ...snapshot, assessed_at: temporalInstantKey(snapshot.assessed_at),
       captured_at: temporalInstantKey(snapshot.captured_at),
     });
-    return JSON.stringify(semanticSnapshot(decl.context_snapshot)) ===
-      JSON.stringify(semanticSnapshot(expectedSnapshot.value));
+    return canonicalValueKey(semanticSnapshot(decl.context_snapshot)) ===
+      canonicalValueKey(semanticSnapshot(expectedSnapshot.value));
   });
   if (snapshotMatch.status === "VERIFIED" && !snapshotMatch.value) {
     throw new PatchError(
@@ -6500,6 +6509,14 @@ function assertRealityDecisionDeclarationUpsert(
       `reality_decision_declaration ${operation.entity_id}: semantic duplicate from same declarer already exists`
     );
   }
+  const identity = { decision_id: decl.id, snapshot_content_digest: decisionSnapshotContentDigest(decl), persisted_at: now };
+  if (snapshotMatch.status === "UNRESOLVED") {
+    return { ...identity, status: "UNVERIFIED", reason: "TEMPORAL_RESOLUTION_UNAVAILABLE",
+      temporal_declaration: snapshotMatch.error.declaration,
+      temporal_operation: snapshotMatch.error.operation, temporal_reason: snapshotMatch.error.reason };
+  }
+  return { ...identity, status: "VERIFIED" };
+
 }
 
 const VALID_INTERVENTION_INTENT_DISPOSITIONS = new Set<InterventionIntentDisposition>([

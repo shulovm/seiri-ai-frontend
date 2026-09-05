@@ -323,7 +323,7 @@ function withRr(
 describe("Resource Reservation Contention (GROUND-036)", () => {
   describe("Schema / read-only", () => {
     it("schema remains 0.1.24 with no migration", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.equal(validProjectStateV0124.schema_version, "0.1.24");
     });
 

@@ -324,7 +324,7 @@ describe("Governance Provenance (GROUND-020)", () => {
   it("migrates 0.1.9 → 0.1.13 with empty delegation/contest/capability arrays", () => {
     assert.ok(validateProjectStateV019(validProjectStateV019).valid);
     const migrated = migrateProjectState(validProjectStateV019);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.authority_delegation_declarations, []);
     assert.deepEqual(migrated.authority_contest_declarations, []);
     assert.deepEqual(migrated.capability_declarations, []);

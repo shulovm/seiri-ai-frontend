@@ -304,7 +304,7 @@ describe("Governance Core (GROUND-019)", () => {
   it("migrates 0.1.8 → 0.1.13 with empty governance collections", () => {
     assert.ok(validateProjectStateV018(validProjectStateV018).valid);
     const migrated = migrateProjectState(validProjectStateV018);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.authority_declarations, []);
     assert.deepEqual(migrated.standing_declarations, []);
     assert.deepEqual(migrated.mandate_declarations, []);

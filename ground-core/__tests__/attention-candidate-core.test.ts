@@ -360,7 +360,7 @@ function assertNoForbidden(payload: unknown): void {
 describe("Attention Candidate Set (GROUND-040)", () => {
   describe("Schema / architecture / read-only", () => {
     it("schema 0.1.24; consumes 039 only; no recalculation cores", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(__dirnameTest, "../reality/attention-candidate-core.ts"),
         "utf8"

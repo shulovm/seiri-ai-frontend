@@ -1003,7 +1003,7 @@ describe("GROUND-117 Operational Eligibility AUTHORITY Source Bridge", () => {
     });
 
     it("schema 0.1.24; GROUND-116 only; no direct 115/114/113/ProjectState", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_AUTHORITY_SOURCE_BRIDGE_MODEL_LIMITATIONS.slice(
           0,

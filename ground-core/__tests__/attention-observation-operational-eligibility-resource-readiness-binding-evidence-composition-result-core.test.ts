@@ -398,7 +398,7 @@ function corruptHoldsBasis(
 
 describe("GROUND-148 RESOURCE_READINESS Binding Evidence Composition Result", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("model limitations fixed order", () => {

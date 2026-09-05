@@ -194,7 +194,7 @@ describe("Permission Core (GROUND-024)", () => {
   it("migrates 0.1.13 → 0.1.16 with empty permission array", () => {
     assert.ok(validateProjectStateV0113(validProjectStateV0113).valid);
     const migrated = migrateProjectState(validProjectStateV0113);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.intervention_permission_declarations, []);
     assert.deepEqual(migrated.decision_space_declarations, []);
     assert.deepEqual(migrated.decision_option_declarations, []);

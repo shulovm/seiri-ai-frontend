@@ -324,7 +324,7 @@ describe("Commitment Temporal Terms (GROUND-032)", () => {
   describe("Migration", () => {
     it("migrates 0.1.20 → 0.1.21 with empty Temporal Term array", () => {
       const migrated = migrateProjectState(validProjectStateV0120);
-      assert.equal(migrated.schema_version, "0.1.24");
+      assert.equal(migrated.schema_version, "0.1.25");
       assert.deepEqual(
         migrated.intervention_commitment_temporal_term_declarations,
         []
@@ -340,7 +340,7 @@ describe("Commitment Temporal Terms (GROUND-032)", () => {
     });
 
     it("SCHEMA_VERSION is 0.1.21", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
     });
   });
 

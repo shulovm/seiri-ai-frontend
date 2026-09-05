@@ -1,3 +1,5 @@
+export { getDecisionSnapshotVerification, getDecisionHistoricalSnapshot } from "./decision-snapshot-verification.js";
+export type { DecisionSnapshotVerification } from "./types.js";
 export {
   GroundCoreError,
   NotFoundError,

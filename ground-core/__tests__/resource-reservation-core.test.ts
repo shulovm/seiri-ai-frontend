@@ -337,12 +337,12 @@ describe("Resource Reservation (GROUND-035)", () => {
   describe("Migration / persistence", () => {
     it("migrates 0.1.23 → 0.1.24 with empty Reservation array", () => {
       const migrated = migrateProjectState(validProjectStateV0123);
-      assert.equal(migrated.schema_version, "0.1.24");
+      assert.equal(migrated.schema_version, "0.1.25");
       assert.deepEqual(migrated.intervention_resource_reservation_declarations, []);
     });
 
     it("SCHEMA_VERSION is 0.1.24", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
     });
 
     it("persists FULL_RESOURCE without numeric inference", () => {

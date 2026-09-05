@@ -420,7 +420,7 @@ function assertNoForbiddenSemantics(payload: unknown): void {
 describe("Attention Observation Capability State Composition (GROUND-053)", () => {
   describe("Purity / schema / vocabulary", () => {
     it("schema 0.1.24; composition != effective state; no active-at / wall-clock / ProjectState", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

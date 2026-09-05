@@ -254,7 +254,7 @@ function assertOnly(
 describe("Attention Consideration Basis (GROUND-041)", () => {
   describe("Schema / architecture / purity", () => {
     it("schema 0.1.24; pure Candidate transform; no Resource/Situation/ProjectState runtime", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(__dirnameTest, "../reality/attention-consideration-core.ts"),
         "utf8"

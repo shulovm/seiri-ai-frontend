@@ -497,7 +497,7 @@ function firstBinding(set: ReturnType<typeof build177>) {
 
 describe("GROUND-177 Quantity-Compatibility Heterogeneous Evaluation State", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("domain constant exact", () => {

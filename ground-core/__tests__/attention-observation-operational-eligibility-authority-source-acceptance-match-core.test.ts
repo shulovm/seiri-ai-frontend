@@ -887,7 +887,7 @@ describe("GROUND-121 Operational Eligibility AUTHORITY Source Acceptance Match",
     });
 
     it("schema 0.1.24; 117+120 only; no 118/119/084-direct/116-core; no aggregation/OE", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_AUTHORITY_SOURCE_ACCEPTANCE_MATCH_MODEL_LIMITATIONS.slice(
           0,

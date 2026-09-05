@@ -350,7 +350,7 @@ function assertNoForbiddenSemantics(payload: unknown): void {
 describe("Attention Observation Capability Dimension Source Aggregation Policy (GROUND-065)", () => {
   describe("purity / architecture / schema", () => {
     it("schema 0.1.24; 063-only runtime; no 061/062/064/050–060", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

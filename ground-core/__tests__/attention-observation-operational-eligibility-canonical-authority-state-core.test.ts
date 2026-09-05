@@ -924,7 +924,7 @@ describe("GROUND-116 Canonical Authority State", () => {
     });
 
     it("schema 0.1.24; 115 only; no direct 113/114/111", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

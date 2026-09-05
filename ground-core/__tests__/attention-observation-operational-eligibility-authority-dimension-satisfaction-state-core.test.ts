@@ -860,7 +860,7 @@ describe("GROUND-130 AUTHORITY Dimension Satisfaction State", () => {
     });
 
     it("schema 0.1.24; 129-only runtime; no 127/128 polarity inference", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.equal(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_AUTHORITY_DIMENSION_SATISFACTION_MODEL_LIMITATIONS[0],
         "GENERIC_OPERATIONAL_ELIGIBILITY_DIMENSION_SOURCE_UNION_NOT_MODELED"

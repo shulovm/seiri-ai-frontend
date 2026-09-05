@@ -250,7 +250,7 @@ function assertNoForbidden(payload: unknown): void {
 describe("Attention Observation Capability Requirement (GROUND-048)", () => {
   describe("Schema / purity / Capability identity audit", () => {
     it("schema 0.1.24; uses GROUND-021 capability_key semantics; no matching runtime", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

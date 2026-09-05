@@ -773,7 +773,7 @@ describe("GROUND-103 Operational Eligibility Permission Dimension Evaluation Sta
 
   describe("static / architectural boundaries", () => {
     it("schema 0.1.24; no 094/095/097–100 cores; no Satisfaction/OE/can_execute", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_PERMISSION_DIMENSION_EVALUATION_STATE_MODEL_LIMITATIONS.slice(
           0,

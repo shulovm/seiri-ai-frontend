@@ -1,7 +1,9 @@
+import { legacyDecisionSnapshotVerification, getDecisionSnapshotVerification } from "./decision-snapshot-verification.js";
 import { ValidationError } from "./errors.js";
 import {
   LEGACY_SCHEMA_VERSION,
   SCHEMA_VERSION,
+  SCHEMA_VERSION_V0124,
   SCHEMA_VERSION_V011,
   SCHEMA_VERSION_V012,
   SCHEMA_VERSION_V013,
@@ -32,6 +34,7 @@ import {
 import {
   validateLegacyProjectState,
   validateProjectState,
+  validateProjectStateV0124,
   validateProjectStateV011,
   validateProjectStateV012,
   validateProjectStateV013,
@@ -431,14 +434,25 @@ function withEmptyResourceReservationCollections(
   };
 }
 
+function migrateV0124ToV0125(data: Record<string, unknown>): ProjectState {
+  const migrated = structuredClone(data) as unknown as ProjectState;
+  migrated.schema_version = SCHEMA_VERSION;
+  migrated.reality_decision_declarations = migrated.reality_decision_declarations.map(decl => ({
+    ...decl, snapshot_verification: legacyDecisionSnapshotVerification(decl),
+  }));
+  const validation = validateProjectState(migrated);
+  if (!validation.valid) throw new ValidationError("Migration to v0.1.25 produced invalid ProjectState", validation.errors);
+  return migrated;
+}
+
 function migrateV0123ToV0124(data: Record<string, unknown>): ProjectState {
   const migrated: ProjectState = {
     ...(data as unknown as ProjectState),
-    schema_version: SCHEMA_VERSION,
+    schema_version: SCHEMA_VERSION_V0124,
     ...withEmptyResourceReservationCollections(data),
   };
 
-  const validation = validateProjectState(migrated);
+  const validation = validateProjectStateV0124(migrated);
   if (!validation.valid) {
     throw new ValidationError(
       "Migration to v0.1.24 produced invalid ProjectState",
@@ -446,7 +460,7 @@ function migrateV0123ToV0124(data: Record<string, unknown>): ProjectState {
     );
   }
 
-  return migrated;
+  return migrateV0124ToV0125(migrated as unknown as Record<string, unknown>);
 }
 
 function withEmptyResourceCommitmentCollections(
@@ -829,7 +843,7 @@ function migrateV011ToV012(data: Record<string, unknown>): Record<string, unknow
   };
 }
 
-/** Upgrade any supported ProjectState to canonical v0.1.24 */
+/** Upgrade any supported ProjectState to canonical v0.1.25 */
 export function migrateProjectState(data: unknown): ProjectState {
   if (!isRecord(data)) {
     throw new ValidationError("ProjectState must be an object");
@@ -838,9 +852,16 @@ export function migrateProjectState(data: unknown): ProjectState {
   if (data.schema_version === SCHEMA_VERSION) {
     const validation = validateProjectState(data);
     if (!validation.valid) {
-      throw new ValidationError("Invalid v0.1.24 ProjectState", validation.errors);
+      throw new ValidationError("Invalid v0.1.25 ProjectState", validation.errors);
     }
+    for (const decl of (data as unknown as ProjectState).reality_decision_declarations) getDecisionSnapshotVerification(decl);
     return data as unknown as ProjectState;
+  }
+
+  if (data.schema_version === SCHEMA_VERSION_V0124) {
+    const validation = validateProjectStateV0124(data);
+    if (!validation.valid) throw new ValidationError("Invalid v0.1.24 ProjectState", validation.errors);
+    return migrateV0124ToV0125(data);
   }
 
   if (data.schema_version === SCHEMA_VERSION_V0123) {
@@ -1089,7 +1110,7 @@ export function migrateProjectState(data: unknown): ProjectState {
   );
 }
 
-/** Normalize any supported ProjectState to canonical v0.1.24 */
+/** Normalize any supported ProjectState to canonical v0.1.25 */
 export function normalizeProjectState(data: unknown): ProjectState {
   return migrateProjectState(data);
 }

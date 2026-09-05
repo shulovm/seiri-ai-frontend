@@ -288,7 +288,7 @@ function assertNoForbidden(payload: unknown): void {
 describe("Attention Observation Planning Basis (GROUND-047)", () => {
   describe("Schema / purity / branch independence", () => {
     it("schema 0.1.24; pure 046 + explicit ObservationNeed; no 041–045 / ProjectState", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

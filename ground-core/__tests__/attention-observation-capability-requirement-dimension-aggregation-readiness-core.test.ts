@@ -254,7 +254,7 @@ function buildSet(
 describe("Attention Observation Capability Requirement Dimension Aggregation Readiness Basis (GROUND-070)", () => {
   describe("purity / architecture / schema", () => {
     it("schema 0.1.24; 067+069 only; no 068 / READY / aggregation execution", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

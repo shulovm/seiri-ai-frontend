@@ -1,3 +1,4 @@
+import type { DecisionSnapshotVerification } from "../types.js";
 /**
  * Reality Core v0.7 — Decision Memory I derived types (GROUND-028).
  *
@@ -70,10 +71,12 @@ export interface DecisionSelectionConflict {
  *   outcome_modeled = false (not implemented)
  *
  * selected_option_was_represented = true because write-time validation
- * guarantees this; otherwise the declaration would have been rejected.
+ * guarantees membership in the recorded snapshot. This does not itself prove
+ * that snapshot was verified: consult snapshot_verification for historical authority.
  */
 export interface DecisionMemoryAssessment {
   decision_declaration: RealityDecisionDeclaration;
+  snapshot_verification: DecisionSnapshotVerification;
   context_capture_relation: DecisionContextCaptureRelation;
   selected_option_was_represented: true;
   selected_actor_was_candidate: boolean | null;

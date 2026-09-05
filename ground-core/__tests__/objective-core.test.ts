@@ -248,7 +248,7 @@ describe("Objective Core (GROUND-013)", () => {
       ],
     });
     assert.equal(next.reality_objectives.length, 1);
-    assert.equal(next.schema_version, "0.1.24");
+    assert.equal(next.schema_version, "0.1.25");
 
     const dir = join(process.cwd(), "ground-core/storage/.obj-test-tmp");
     saveProject(next, { storageDir: dir });
@@ -700,7 +700,7 @@ describe("Objective Core (GROUND-013)", () => {
   it("migrates 0.1.5 → 0.1.6 with empty prospective collections — no backfill", () => {
     assert.ok(validateProjectStateV015(validProjectStateV015).valid);
     const migrated = migrateProjectState(validProjectStateV015);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.future_scenarios, []);
     assert.deepEqual(migrated.scenario_state_projections, []);
     assert.deepEqual(migrated.scenario_likelihood_estimates, []);

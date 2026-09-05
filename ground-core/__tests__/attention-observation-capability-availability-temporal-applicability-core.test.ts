@@ -406,7 +406,7 @@ function assertNoForbiddenSemantics(payload: unknown): void {
 describe("Attention Observation Capability Availability Temporal Applicability (GROUND-059)", () => {
   describe("Availability interval / purity / architecture", () => {
     it("schema 0.1.24; 059-local classifier; no 051/053–055/057–058 / ActiveAt / wall-clock", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

@@ -663,7 +663,7 @@ describe("GROUND-110 Observation-Context Declared AUTHORITY Assessment", () => {
     });
 
     it("schema 0.1.24; 019 only; no provenance/Permission/OE/wall-clock", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

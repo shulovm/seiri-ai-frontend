@@ -1,3 +1,4 @@
+import type { DecisionSnapshotVerification } from "../types.js";
 /**
  * Reality Core v0.7 — Intent Core I derived types (GROUND-029).
  *
@@ -79,6 +80,7 @@ export interface IntentDecisionBasisAssessment {
   holder_was_candidate_in_decision_snapshot: boolean | null;
   disposition_relation: DecisionIntentDispositionRelation | null;
   decision_context_capture_relation: DecisionContextCaptureRelation | null;
+  decision_snapshot_verification: DecisionSnapshotVerification | null;
 }
 
 export interface InterventionIntentHistory {

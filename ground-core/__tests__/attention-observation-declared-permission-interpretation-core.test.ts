@@ -1048,7 +1048,7 @@ describe("GROUND-090 Declared Permission Interpretation Basis", () => {
     });
 
     it("canonical orders; schema 0.1.24; no 024/087/083–085 / ProjectState / wall-clock / OE", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_DECLARED_PERMISSION_INTERPRETATION_MODEL_LIMITATIONS.slice(
           0,

@@ -254,7 +254,7 @@ function typesSource(): string {
 
 describe("GROUND-187 Canonical Selected-source Aggregated Declared Resource Availability Evidence State", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("proposition and model limitations fixed", () => {

@@ -725,7 +725,7 @@ describe("GROUND-074 Satisfaction Interpretation Basis", () => {
     });
 
     it("schema 0.1.24; 072+073 only; no older reopening / no SATISFIED state", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

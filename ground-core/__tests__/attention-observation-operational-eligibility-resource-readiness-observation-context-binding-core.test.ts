@@ -125,7 +125,7 @@ function assertNoReadinessSemantics(payload: unknown): void {
 
 describe("GROUND-133 RESOURCE_READINESS Observation Context Binding", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("model limitations fixed order", () => {

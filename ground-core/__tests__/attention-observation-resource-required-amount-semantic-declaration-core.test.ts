@@ -162,7 +162,7 @@ const default132 = () =>
 
 describe("GROUND-171 Required Amount Semantic Declaration", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("model limitations fixed order; GROUND-155 singleton invariant retained", () => {

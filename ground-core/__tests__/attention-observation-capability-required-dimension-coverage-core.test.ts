@@ -505,7 +505,7 @@ function assertNoForbiddenSemantics(payload: unknown): void {
 describe("Attention Observation Capability Required Dimension Coverage (GROUND-062)", () => {
   describe("purity / architecture / schema", () => {
     it("schema 0.1.24; 060+061 only; no rematch classifiers / ProjectState / wall-clock", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

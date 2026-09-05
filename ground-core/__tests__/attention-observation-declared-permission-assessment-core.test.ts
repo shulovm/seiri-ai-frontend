@@ -776,7 +776,7 @@ describe("GROUND-088 Observation-Context Declared Permission Assessment", () => 
     });
 
     it("schema 0.1.24; 087+024 only; no governance / OE / wall-clock / 083–085", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

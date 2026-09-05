@@ -1093,7 +1093,7 @@ describe("GROUND-125 Operational Eligibility Authority Source Aggregation Result
 
   describe("static / architectural boundaries", () => {
     it("schema 0.1.24; model limitations fixed; no ProjectState/wall-clock/forbidden deps", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_AUTHORITY_SOURCE_AGGREGATION_RESULT_MODEL_LIMITATIONS,
         [

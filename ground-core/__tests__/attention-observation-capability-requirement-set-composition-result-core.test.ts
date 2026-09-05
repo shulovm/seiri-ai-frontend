@@ -706,7 +706,7 @@ describe("GROUND-079 Capability Requirement Set Composition Result", () => {
 
   describe("static proofs / schema", () => {
     it("schema 0.1.24; 075+076+078 only; no 077/074/073/072; no Capability truth", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

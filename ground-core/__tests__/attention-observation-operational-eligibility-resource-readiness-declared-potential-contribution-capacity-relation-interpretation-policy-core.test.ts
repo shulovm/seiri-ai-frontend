@@ -365,7 +365,7 @@ function deepClone<T>(value: T): T {
 
 describe("GROUND-159 Explicit Declared Potential Contribution Capacity-Relation Interpretation Policy", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("model limitations fixed order", () => {

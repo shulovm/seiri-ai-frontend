@@ -299,7 +299,7 @@ function assertNoForbidden(payload: unknown): void {
 describe("Attention Basis Coverage (GROUND-042)", () => {
   describe("Schema / purity", () => {
     it("schema 0.1.24; pure 041 transform; no enrichment runtimes", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(__dirnameTest, "../reality/attention-basis-coverage-core.ts"),
         "utf8"

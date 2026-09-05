@@ -49,3 +49,12 @@ unresolved declarations without claiming validity. Strict Worldline and instant
 identity boundaries remain. See GROUND_TEMPORAL_PATCH_ADMISSION.md.
 Global frontier discovery resumes from this checkpoint; it does not establish a
 contribution verdict or activate Candidate B.
+
+
+## Historical Decision snapshot verification checkpoint
+
+Decision persistence now records whether its frozen snapshot was actually verified
+at acceptance. Historical verification is independent of current Reality and
+travels with Decision Memory, Intent and Commitment snapshot-derived relations.
+See GROUND_DECISION_SNAPSHOT_VERIFICATION.md. Schema advances to 0.1.25; no current
+revalidation or downstream verdict is introduced. Global discovery continues.

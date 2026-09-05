@@ -186,7 +186,7 @@ describe("Impact Core (GROUND-017)", () => {
   it("migrates 0.1.6 → 0.1.7 with empty impact_declarations", () => {
     assert.ok(validateProjectStateV016(validProjectStateV016).valid);
     const migrated = migrateProjectState(validProjectStateV016);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.impact_declarations, []);
     assert.deepEqual(migrated.impact_measure_declarations, []);
     assert.ok(validateProjectState(migrated).valid);

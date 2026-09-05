@@ -768,7 +768,7 @@ describe("GROUND-124 Operational Eligibility Authority Source Aggregation Readin
     });
 
     it("schema 0.1.24; no 117–120/084-direct; no ANY/ALL execution/result", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_AUTHORITY_SOURCE_AGGREGATION_READINESS_BASIS_MODEL_LIMITATIONS.slice(
           0,

@@ -698,7 +698,7 @@ describe("GROUND-085 Operational Eligibility Capability State Source Bridge", ()
     });
 
     it("schema 0.1.24; 083-only runtime; no 084 / polarity / eligibility / other bridges", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

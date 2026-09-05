@@ -636,7 +636,7 @@ describe("GROUND-075 Capability Requirement Satisfaction State", () => {
     });
 
     it("schema 0.1.24; 074-only runtime; no 072/073 recomputation", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

@@ -846,7 +846,7 @@ describe("GROUND-105 Permission Dimension Evaluation State Interpretation Basis"
     });
 
     it("schema 0.1.24; 103+104 only; no Satisfaction/094/095/101/084-core", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.equal(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_PERMISSION_DIMENSION_EVALUATION_STATE_INTERPRETATION_BASIS_MODEL_LIMITATIONS[0],
         "OPERATIONAL_ELIGIBILITY_PERMISSION_DIMENSION_SATISFACTION_STATE_NOT_MODELED"
