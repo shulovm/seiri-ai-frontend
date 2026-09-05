@@ -1,3 +1,4 @@
+import { canonicalValueKey } from "./semantic-equality.js";
 /**
  * Reality Core v0.7 — Feasibility Basis I assessment (GROUND-027).
  *
@@ -209,7 +210,7 @@ export function deriveFeasibilityBasisGaps(
   const gaps: FeasibilityBasisGap[] = [];
 
   for (const basis of capabilityBases) {
-    const related = `${basis.capability_key}|${capabilityScopeKey(basis.capability_scope)}`;
+    const related = canonicalValueKey([basis.capability_key, basis.capability_scope]);
     if (!basis.has_exact_match) {
       gaps.push({
         key: `feasibility-gap|${candidateKey}|capability|${related}|exact-match-absent`,
@@ -235,11 +236,7 @@ export function deriveFeasibilityBasisGaps(
   }
 
   for (const basis of resourceBases) {
-    const related = [
-      basis.resource_key,
-      basis.unit,
-      resourceScopeKey(basis.resource_scope),
-    ].join("|");
+    const related = canonicalValueKey([basis.resource_key, basis.unit, basis.resource_scope]);
     if (!basis.has_exact_match) {
       gaps.push({
         key: `feasibility-gap|${candidateKey}|resource|${related}|exact-match-absent`,
@@ -312,7 +309,7 @@ export function deriveFeasibilityBasisContests(
     if (contested.length === 0) {
       continue;
     }
-    const related = `${basis.capability_key}|${capabilityScopeKey(basis.capability_scope)}`;
+    const related = canonicalValueKey([basis.capability_key, basis.capability_scope]);
     contests.push({
       key: `feasibility-contest|${candidateKey}|capability|${related}|availability`,
       kind: "CAPABILITY_AVAILABILITY_CONTEST_PRESENT",
@@ -322,11 +319,7 @@ export function deriveFeasibilityBasisContests(
   }
 
   for (const basis of resourceBases) {
-    const related = [
-      basis.resource_key,
-      basis.unit,
-      resourceScopeKey(basis.resource_scope),
-    ].join("|");
+    const related = canonicalValueKey([basis.resource_key, basis.unit, basis.resource_scope]);
     const divergent = basis.matching_resource_assessments.filter(
       (entry) => entry.has_capacity_divergence
     );
@@ -392,7 +385,7 @@ export function deriveDeclaredExecutionConstraints(
       if (assessment.availability.unavailable_declaration_ids.length === 0) {
         continue;
       }
-      const related = `${basis.capability_key}|${capabilityScopeKey(basis.capability_scope)}`;
+      const related = canonicalValueKey([basis.capability_key, basis.capability_scope]);
       const source_declaration_ids = [
         ...assessment.availability.unavailable_declaration_ids,
       ].sort(compareIds);
@@ -409,11 +402,7 @@ export function deriveDeclaredExecutionConstraints(
       if (assessment.availability.unavailable_declaration_ids.length === 0) {
         continue;
       }
-      const related = [
-        basis.resource_key,
-        basis.unit,
-        resourceScopeKey(basis.resource_scope),
-      ].join("|");
+      const related = canonicalValueKey([basis.resource_key, basis.unit, basis.resource_scope]);
       const source_declaration_ids = [
         ...assessment.availability.unavailable_declaration_ids,
       ].sort(compareIds);

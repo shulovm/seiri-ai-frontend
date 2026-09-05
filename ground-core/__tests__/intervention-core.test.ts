@@ -13,6 +13,7 @@ import {
   findDeclaredInterventions,
   getApplicableInterventions,
   groupInterventionResourceRequirements,
+  groupInterventionCapabilityRequirements,
   isInterventionDeclarationActiveAt,
 } from "../reality/intervention-core.js";
 import {
@@ -835,4 +836,25 @@ describe("Intervention Core (GROUND-023)", () => {
       /referenced by intervention_capability_requirement/
     );
   });
+});
+
+it("persisted resource requirements keep independent resource and unit tuple identities", () => {
+  let state = applyPatch(baseProject(), patch("intervention_declaration", INT_A, intervention()));
+  for (const [id, resource_key, unit] of [[RES_REQ_A, "A|B", "C"], [RES_REQ_B, "A", "B|C"]]) {
+    state = applyPatch(state, patch("intervention_resource_requirement_declaration", id!, resReq({ id, resource_key, unit })));
+  }
+  const groups = groupInterventionResourceRequirements(state, INT_A, AT);
+  assert.equal(groups.length, 2);
+  assert.deepEqual(new Set(groups.map(g => JSON.stringify([g.resource_key, g.unit]))), new Set(['["A|B","C"]', '["A","B|C"]']));
+});
+
+it("capability name and scope remain independent even when names contain scope delimiters", () => {
+  let state = applyPatch(baseProject(), patch("intervention_declaration", INT_A, intervention()));
+  state = applyPatch(state, patch("intervention_capability_requirement_declaration", CAP_REQ_A, capReq({
+    capability_key: `inspect|SUBJECT_STATE|${ENTITY_PIPE}|condition`, capability_scope: { kind: "UNSCOPED" },
+  })));
+  state = applyPatch(state, patch("intervention_capability_requirement_declaration", CAP_REQ_B, capReq({
+    id: CAP_REQ_B, capability_key: "inspect", capability_scope: { kind: "SUBJECT_STATE", subject_id: ENTITY_PIPE, state_kind: "condition|UNSCOPED" },
+  })));
+  assert.equal(groupInterventionCapabilityRequirements(state, INT_A, AT).length, 2);
 });
