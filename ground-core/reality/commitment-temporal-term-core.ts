@@ -1,3 +1,4 @@
+import { canonicalValueKey } from "./semantic-equality.js";
 import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Commitment Temporal Term assessment (GROUND-032).
@@ -48,12 +49,7 @@ function compareTermKinds(
 }
 
 function declarerKey(declarer: ReferenceDeclarer): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function sortDeclarers(declarers: ReferenceDeclarer[]): ReferenceDeclarer[] {

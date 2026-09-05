@@ -1,3 +1,4 @@
+import { canonicalValueKey } from "./semantic-equality.js";
 import { getDecisionSnapshotVerification } from "../decision-snapshot-verification.js";
 import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
@@ -31,12 +32,7 @@ function compareIds(a: string, b: string): number {
 }
 
 function declarerKey(declarer: ReferenceDeclarer): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function sortDeclarers(declarers: ReferenceDeclarer[]): ReferenceDeclarer[] {

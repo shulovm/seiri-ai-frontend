@@ -858,3 +858,15 @@ it("capability name and scope remain independent even when names contain scope d
   })));
   assert.equal(groupInterventionCapabilityRequirements(state, INT_A, AT).length, 2);
 });
+
+it("distinct declarer external-id and label tuples do not trigger false duplicate rejection", () => {
+  let state = applyPatch(baseProject(), patch("intervention_declaration", INT_A, intervention()));
+  state = applyPatch(state, patch("intervention_capability_requirement_declaration", CAP_REQ_A, capReq({
+    declared_by: { kind: "external", external_id: "a|b", label: "c" },
+  })));
+  state = applyPatch(state, patch("intervention_capability_requirement_declaration", CAP_REQ_B, capReq({
+    id: CAP_REQ_B, declared_by: { kind: "external", external_id: "a", label: "b|c" },
+  })));
+  assert.equal(state.intervention_capability_requirement_declarations.length, 2);
+  assert.equal(groupInterventionCapabilityRequirements(state, INT_A, AT)[0]!.requirement_declaration_ids.length, 2);
+});

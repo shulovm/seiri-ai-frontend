@@ -1,3 +1,4 @@
+import { canonicalValueKey } from "./semantic-equality.js";
 import { getDecisionSnapshotVerification } from "../decision-snapshot-verification.js";
 import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
@@ -379,7 +380,7 @@ export function getRealityDecisionDeclarationsForSpace(
 // ─── Derived groupings ────────────────────────────────────────────────────────
 
 function declarerKey(d: ReferenceDeclarer): string {
-  return [d.kind, d.entity_id ?? "", d.external_id ?? "", d.label ?? ""].join("|");
+  return canonicalValueKey([d.kind, d.entity_id ?? "", d.external_id ?? "", d.label ?? ""]);
 }
 
 /**

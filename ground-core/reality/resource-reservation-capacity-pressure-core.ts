@@ -1,3 +1,4 @@
+import { canonicalValueKey } from "./semantic-equality.js";
 import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Declared Capacity Pressure Basis (GROUND-037).
@@ -36,12 +37,7 @@ function compareIds(a: string, b: string): number {
 }
 
 function declarerKey(declarer: ReferenceDeclarer): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function sortDeclarers(declarers: ReferenceDeclarer[]): ReferenceDeclarer[] {

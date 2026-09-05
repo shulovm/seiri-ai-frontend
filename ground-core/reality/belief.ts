@@ -62,12 +62,7 @@ function compareEvidence(a: Evidence, b: Evidence): number {
 }
 
 function provenanceKey(p: EpistemicProvenance): string {
-  return [
-    p.kind,
-    p.entity_id ?? "",
-    p.external_id ?? "",
-    p.label ?? "",
-  ].join("\u0000");
+  return canonicalValueKey([p.kind, p.entity_id ?? "", p.external_id ?? "", p.label ?? ""]);
 }
 
 function toProvenanceSummary(p: EpistemicProvenance): ProvenanceSummaryEntry {

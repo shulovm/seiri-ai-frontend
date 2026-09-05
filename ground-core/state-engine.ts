@@ -2949,12 +2949,7 @@ function normalizeImpactDimension(value: string): string {
 function impactDeclarerKey(
   declarer: ImpactDeclaration["declared_by"]
 ): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function assertImpactDirection(value: unknown): ImpactDirection {
@@ -3320,12 +3315,7 @@ const AUTHORITY_POWER_SCOPE_KINDS: Record<
 const VALID_STANDING_RIGHTS = new Set<StandingRight>(["PARTICIPATE", "CONTEST"]);
 
 function governanceDeclarerKey(declarer: AuthorityDeclaration["declared_by"]): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function standingRightsKey(rights: StandingRight[]): string {
@@ -6477,12 +6467,7 @@ function assertRealityDecisionDeclarationUpsert(
     decl.selected_actor_entity_id
   ));
 
-  const declarerK = [
-    decl.declared_by.kind,
-    decl.declared_by.entity_id ?? "",
-    decl.declared_by.external_id ?? "",
-    decl.declared_by.label ?? "",
-  ].join("|");
+  const declarerK = canonicalValueKey([decl.declared_by.kind, decl.declared_by.entity_id ?? "", decl.declared_by.external_id ?? "", decl.declared_by.label ?? ""]);
 
   const duplicate = state.reality_decision_declarations.some((d) => {
     const existingKey = assessTemporalPrerequisite(() => realityDecisionSemanticKey(
@@ -6495,12 +6480,7 @@ function assertRealityDecisionDeclarationUpsert(
     if (!haveVerifiedEqualValues(existingKey, semanticKey)) {
       return false;
     }
-    const dDeclarerK = [
-      d.declared_by.kind,
-      d.declared_by.entity_id ?? "",
-      d.declared_by.external_id ?? "",
-      d.declared_by.label ?? "",
-    ].join("|");
+    const dDeclarerK = canonicalValueKey([d.declared_by.kind, d.declared_by.entity_id ?? "", d.declared_by.external_id ?? "", d.declared_by.label ?? ""]);
     return dDeclarerK === declarerK;
   });
 

@@ -1,3 +1,4 @@
+import { canonicalValueKey } from "./semantic-equality.js";
 import { compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Impact Measurement assessment (GROUND-018).
@@ -41,12 +42,7 @@ function sortUniqueStrings(values: string[]): string[] {
 }
 
 function declarerKey(declarer: ReferenceDeclarer): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 /** Deterministic semantic key for an ImpactMeasure — no floating tolerance. */

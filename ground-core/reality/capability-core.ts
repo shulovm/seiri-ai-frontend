@@ -1,3 +1,4 @@
+import { canonicalValueKey } from "./semantic-equality.js";
 import { compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Capability Core I assessment (GROUND-021).
@@ -34,12 +35,7 @@ function sortUniqueIds(ids: string[]): string[] {
 }
 
 function declarerKey(declarer: ReferenceDeclarer): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function sortDeclarers(declarers: ReferenceDeclarer[]): ReferenceDeclarer[] {
