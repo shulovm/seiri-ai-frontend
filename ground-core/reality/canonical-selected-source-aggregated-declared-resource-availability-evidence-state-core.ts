@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Canonical Selected-source Aggregated
  * Declared Resource Availability Evidence State (GROUND-187).
@@ -144,7 +145,7 @@ export function canonicalSelectedSourceAggregatedDeclaredResourceAvailabilityEvi
   return [
     "canonical-selected-source-aggregated-declared-resource-availability-evidence-state",
     params.resource_declaration_id,
-    params.evaluation_at ?? NONE_TOKEN,
+    (params.evaluation_at == null ? params.evaluation_at : temporalInstantKey(params.evaluation_at)) ?? NONE_TOKEN,
     params.availability_source_aggregation_policy_key ?? NONE_TOKEN,
     params.current_lineage_anchor_key ?? NONE_TOKEN,
     params.interpretation_basis_key ?? NONE_TOKEN,

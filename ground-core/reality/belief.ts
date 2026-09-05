@@ -1,3 +1,4 @@
+import { compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Belief & Reconciliation (GROUND-005).
  *
@@ -35,10 +36,10 @@ import type {
  * Does NOT use recorded_at / created_at as substitutes.
  */
 export function isClaimApplicableAt(claim: Claim, at: string): boolean {
-  if (claim.applicable_from !== null && claim.applicable_from > at) {
+  if (claim.applicable_from !== null && compareTemporalInstants(claim.applicable_from, at) > 0) {
     return false;
   }
-  if (claim.applicable_until !== null && !(at < claim.applicable_until)) {
+  if (claim.applicable_until !== null && !(compareTemporalInstants(at, claim.applicable_until) < 0)) {
     return false;
   }
   return true;
@@ -50,8 +51,8 @@ function projectClaims(projectState: ProjectState): Claim[] {
 }
 
 function compareClaims(a: Claim, b: Claim): number {
-  if (a.recorded_at !== b.recorded_at) {
-    return a.recorded_at < b.recorded_at ? -1 : 1;
+  if (compareTemporalInstants(a.recorded_at, b.recorded_at) !== 0) {
+    return compareTemporalInstants(a.recorded_at, b.recorded_at) < 0 ? -1 : 1;
   }
   return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
 }

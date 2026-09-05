@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * Canonical Declared Potential Contribution Required-Amount
@@ -160,7 +161,7 @@ export function attentionObservationOperationalEligibilityResourceReadinessCanon
     params.observation_resource_requirement_key,
     params.resource_readiness_observation_context_binding_key,
     params.resource_declaration_id,
-    params.evaluation_at ?? NONE_TOKEN,
+    (params.evaluation_at == null ? params.evaluation_at : temporalInstantKey(params.evaluation_at)) ?? NONE_TOKEN,
     params.physical_potential_contribution_declaration_key ?? NONE_TOKEN,
     params.ground174_status,
     canonicalUnresolvedReasonSetToken(params.unresolved_reasons),

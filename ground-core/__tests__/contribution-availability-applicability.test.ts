@@ -50,7 +50,7 @@ describe("Stable availability contract and explicit contribution applicability",
   it("subject changes are not evidence-only updates", () => {
     const q = quantity(), c = buildAvailabilityEvidenceContract(policy()!);
     for (const field of ["candidate_key", "observation_need_key", "capability_requirement_set_key", "observation_resource_requirement_key", "physical_potential_contribution_declaration_key", "evaluation_at"] as const) {
-      assert.throws(() => declareContributionAvailabilityApplicability({ quantity_evaluation_state: { ...q, [field]: "changed" }, availability_evidence_contract: c, specification: specification(q, c) }), /exact context and contract/);
+      assert.throws(() => declareContributionAvailabilityApplicability({ quantity_evaluation_state: { ...q, [field]: field === "evaluation_at" ? "2026-09-03T12:00:00.000Z" : "changed" }, availability_evidence_contract: c, specification: specification(q, c) }), /exact context and contract/);
     }
   });
   it("rejects cross-resource and malformed policy lineage", () => {

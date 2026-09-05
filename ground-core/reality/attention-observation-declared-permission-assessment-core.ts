@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Declared Permission Assessment
  * (GROUND-088).
@@ -69,11 +70,11 @@ export const ATTENTION_OBSERVATION_DECLARED_PERMISSION_ASSESSMENT_MODEL_LIMITATI
   ];
 
 /**
- * Lexicographic ISO-8601 instant validation.
- * No Date.parse / locale / timezone coercion.
+ * Declared ISO-8601 timestamp syntax validation.
+ * Preserves representation; temporal consumption resolves exact instants separately.
  */
 const PERMISSION_EVALUATION_AT_PATTERN =
-  /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,9})?(Z|[+-]\d{2}:\d{2})$/;
+  /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[+-]\d{2}:\d{2})$/;
 
 function compareStrings(a: string, b: string): number {
   return a < b ? -1 : a > b ? 1 : 0;
@@ -127,7 +128,7 @@ export function attentionObservationDeclaredPermissionAssessmentKey(
     observationNeedKey,
     capabilityRequirementSetKey,
     permissionContextBindingKey,
-    permissionEvaluationAt,
+    temporalInstantKey(permissionEvaluationAt),
     declaredPermissionAssessmentCanonicalKey,
   ].join("|");
 }
@@ -192,7 +193,7 @@ export function normalizeAttentionObservationDeclaredPermissionEvaluationSpecifi
 
     const existing = evaluationByCandidateKey.get(entry.candidate_key);
     if (existing) {
-      if (existing.permission_evaluation_at !== permission_evaluation_at) {
+      if (compareTemporalInstants(existing.permission_evaluation_at, permission_evaluation_at) !== 0) {
         throw new Error(
           `Conflicting Permission evaluation instants declared for candidate ${entry.candidate_key}`
         );
@@ -289,7 +290,7 @@ function buildPerBindingAssessment(
 
   assertBindingContextConsistency(binding, declared_permission_assessment);
 
-  if (declared_permission_assessment.at !== permissionEvaluationAt) {
+  if (compareTemporalInstants(declared_permission_assessment.at, permissionEvaluationAt) !== 0) {
     throw new Error(
       `Declared Permission Assessment invariant violated: evaluation instant drift for binding ${binding.key}`
     );

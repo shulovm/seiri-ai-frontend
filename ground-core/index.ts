@@ -3646,3 +3646,6 @@ export type {
 
 export { declareContributionRequiredEvidence, assessContributionRequiredEvidence } from "./reality/contribution-required-evidence-core.js";
 export type { ContributionEvidenceBinding, ContributionRequiredEvidenceDimension, ContributionRequiredEvidenceSpecification, ContributionRequiredEvidenceDeclaration, ContributionRequiredEvidenceInput, ContributionEvidenceCanonicalClassification, ContributionRequiredEvidenceDimensionAssessment, ContributionRequiredEvidenceAssessment } from "./reality/contribution-required-evidence-types.js";
+
+export { resolveTemporalInstant, requireTemporalInstant, temporalInstantKey, compareTemporalInstants, TemporalResolutionError } from "./temporal.js";
+export type { ExactTemporalInstant, TemporalResolution } from "./temporal.js";

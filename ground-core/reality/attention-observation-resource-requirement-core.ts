@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Resource Requirement (GROUND-132).
  *
@@ -152,7 +153,7 @@ function assertRequirementInterval(
   if (
     validFrom !== null &&
     validUntil !== null &&
-    validUntil <= validFrom
+    compareTemporalInstants(validUntil, validFrom) <= 0
   ) {
     throw new Error("valid_until must be after valid_from");
   }
@@ -255,8 +256,8 @@ export function attentionObservationResourceRequirementKey(
     unit,
     resourceScopeKey(resourceScope),
     resourceRequirementAmountKey(requiredAmount),
-    validFrom ?? "NONE",
-    validUntil ?? "NONE",
+    (validFrom == null ? validFrom : temporalInstantKey(validFrom)) ?? "NONE",
+    (validUntil == null ? validUntil : temporalInstantKey(validUntil)) ?? "NONE",
   ].join("|");
 }
 

@@ -1,3 +1,4 @@
+import { compareTemporalInstants } from "../temporal.js";
 /**
  * Read-only reference resolution into authoritative GROUND-187, followed by
  * lossless GROUND-177 + GROUND-187 composition under explicit Applicability.
@@ -37,8 +38,8 @@ export function resolveContributionAvailabilityReference(input: {
   const readinessSet = set.availability_source_aggregation_result_interpretation_basis_set
     .availability_source_aggregation_result_set.availability_source_aggregation_readiness_basis_set;
   const at = readinessSet.evaluation_at;
-  if (!at || at !== readinessSet.per_source_availability_evidence_state_set.evaluation_at ||
-      at !== declaration.contribution_context.evaluation_at) {
+  if (!at || compareTemporalInstants(at, readinessSet.per_source_availability_evidence_state_set.evaluation_at) !== 0 ||
+      compareTemporalInstants(at, declaration.contribution_context.evaluation_at) !== 0) {
     throw new Error("Contribution/current availability evaluation_at mismatch");
   }
   const matches = set.resource_assessments.filter(a => a.resource_declaration_id === contract.resource_declaration_id);
@@ -55,7 +56,7 @@ export function resolveContributionAvailabilityReference(input: {
   const basis = assessment.interpretation_basis_assessment;
   if (state.resource_declaration_id !== contract.resource_declaration_id ||
       basis.resource_declaration_id !== contract.resource_declaration_id ||
-      (state.evaluation_at !== null && state.evaluation_at !== at)) {
+      (state.evaluation_at !== null && compareTemporalInstants(state.evaluation_at, at) !== 0)) {
     throw new Error("Current availability State context mismatch");
   }
   const policy = basis.availability_source_aggregation_result_interpretation_policy_assessment.interpretation_policy;

@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * Per-binding RESOURCE_READINESS Declared Capacity–Required Amount
@@ -200,7 +201,7 @@ export function attentionObservationOperationalEligibilityResourceReadinessPerBi
     params.observation_resource_requirement_key,
     params.resource_readiness_observation_context_binding_key,
     params.resource_declaration_id,
-    params.evaluation_at,
+    temporalInstantKey(params.evaluation_at),
     params.required_amount_canonical_key,
     params.canonical_capacity_relation_entry_set_key,
   ].join("|");

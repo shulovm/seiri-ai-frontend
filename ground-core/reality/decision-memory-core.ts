@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Decision Memory I assessment (GROUND-028).
  *
@@ -76,7 +77,7 @@ export function realityDecisionSemanticKey(
 ): string {
   const selKey = realityDecisionSelectionKey(selectedOption);
   const actorPart = selectedActorEntityId ?? "NONE";
-  return `decision|${decisionSpaceId}|${decisionMakerEntityId}|${decidedAt}|${selKey}|${actorPart}`;
+  return `decision|${decisionSpaceId}|${decisionMakerEntityId}|${temporalInstantKey(decidedAt)}|${selKey}|${actorPart}`;
 }
 
 /** Key for grouping conflict scope: (space, maker, decidedAt). */
@@ -85,7 +86,7 @@ function decisionConflictScopeKey(
   decisionMakerEntityId: string,
   decidedAt: string
 ): string {
-  return `conflict|${decisionSpaceId}|${decisionMakerEntityId}|${decidedAt}`;
+  return `conflict|${decisionSpaceId}|${decisionMakerEntityId}|${temporalInstantKey(decidedAt)}`;
 }
 
 // ─── Filtered ProjectState view ───────────────────────────────────────────────
@@ -102,7 +103,7 @@ function filteredProjectState(
   capturedAt: string
 ): ProjectState {
   function filterArr<T extends { recorded_at: string }>(arr: T[]): T[] {
-    return arr.filter((d) => d.recorded_at <= capturedAt);
+    return arr.filter((d) => compareTemporalInstants(d.recorded_at, capturedAt) <= 0);
   }
   return {
     ...projectState,
@@ -347,8 +348,8 @@ export function getRealityDecisionDeclarationsForSpace(
   return projectState.reality_decision_declarations
     .filter((d) => d.decision_space_id === decisionSpaceId)
     .sort((a, b) => {
-      if (a.decided_at !== b.decided_at) {
-        return a.decided_at < b.decided_at ? -1 : 1;
+      if (compareTemporalInstants(a.decided_at, b.decided_at) !== 0) {
+        return compareTemporalInstants(a.decided_at, b.decided_at) < 0 ? -1 : 1;
       }
       if (a.decision_maker_entity_id !== b.decision_maker_entity_id) {
         return compareIds(a.decision_maker_entity_id, b.decision_maker_entity_id);
@@ -424,8 +425,8 @@ export function groupRealityDecisionPositions(
   }
 
   return positions.sort((a, b) => {
-    if (a.decided_at !== b.decided_at) {
-      return a.decided_at < b.decided_at ? -1 : 1;
+    if (compareTemporalInstants(a.decided_at, b.decided_at) !== 0) {
+      return compareTemporalInstants(a.decided_at, b.decided_at) < 0 ? -1 : 1;
     }
     if (a.decision_maker_entity_id !== b.decision_maker_entity_id) {
       return compareIds(a.decision_maker_entity_id, b.decision_maker_entity_id);
@@ -483,7 +484,7 @@ export function deriveDecisionContextCaptureRelation(
   decidedAt: string,
   capturedAt: string
 ): DecisionContextCaptureRelation {
-  return decidedAt === capturedAt
+  return compareTemporalInstants(decidedAt, capturedAt) === 0
     ? "CAPTURED_AT_DECISION_TIME"
     : "RETROSPECTIVE_RECONSTRUCTION";
 }

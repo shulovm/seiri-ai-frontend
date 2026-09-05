@@ -1,3 +1,4 @@
+import { compareTemporalInstants, requireTemporalInstant } from "../temporal.js";
 /**
  * Reality Core v0.7 — Worldline & temporal composition (GROUND-003).
  *
@@ -23,7 +24,7 @@ import type {
 
 /**
  * Deterministic ordering for equal timestamps:
- * 1. time ascending (ISO-8601 string compare)
+ * 1. time ascending (exact resolved semantic instant)
  * 2. temporal_role priority: STATE_BECAME_VALID < EVENT_OCCURRED < STATE_CEASED_VALID
  * 3. recorded_at ascending
  * 4. record_id ascending
@@ -94,13 +95,13 @@ export function isRealityStateActiveAt(
   state: RealityState,
   at: string
 ): boolean {
-  if (state.valid_from > at) {
+  if (compareTemporalInstants(state.valid_from, at, "Worldline activity valid_from/evaluation_at") > 0) {
     return false;
   }
   if (state.valid_until === null) {
     return true;
   }
-  return at < state.valid_until;
+  return compareTemporalInstants(at, state.valid_until, "Worldline activity evaluation_at/valid_until") < 0;
 }
 
 function intervalsOverlap(
@@ -110,22 +111,23 @@ function intervalsOverlap(
   bUntil: string | null
 ): boolean {
   // Half-open [from, until): overlap iff aFrom < bUntil' && bFrom < aUntil'
-  const aEnd = aUntil ?? "\uffff";
-  const bEnd = bUntil ?? "\uffff";
-  return aFrom < bEnd && bFrom < aEnd;
+  requireTemporalInstant(aFrom, "Worldline overlap start");
+  requireTemporalInstant(bFrom, "Worldline overlap start");
+  return (bUntil === null || compareTemporalInstants(aFrom, bUntil, "Worldline overlap end") < 0) &&
+    (aUntil === null || compareTemporalInstants(bFrom, aUntil, "Worldline overlap end") < 0);
 }
 
 function compareSortable(a: SortableEntry, b: SortableEntry): number {
-  if (a.entry.time !== b.entry.time) {
-    return a.entry.time < b.entry.time ? -1 : 1;
+  if (compareTemporalInstants(a.entry.time, b.entry.time, "Worldline ordering") !== 0) {
+    return compareTemporalInstants(a.entry.time, b.entry.time, "Worldline ordering") < 0 ? -1 : 1;
   }
   const roleA = TEMPORAL_ROLE_PRIORITY[a.entry.temporal_role];
   const roleB = TEMPORAL_ROLE_PRIORITY[b.entry.temporal_role];
   if (roleA !== roleB) {
     return roleA - roleB;
   }
-  if (a.recorded_at !== b.recorded_at) {
-    return a.recorded_at < b.recorded_at ? -1 : 1;
+  if (compareTemporalInstants(a.recorded_at, b.recorded_at, "Worldline ordering") !== 0) {
+    return compareTemporalInstants(a.recorded_at, b.recorded_at, "Worldline ordering") < 0 ? -1 : 1;
   }
   if (a.entry.record_id !== b.entry.record_id) {
     return a.entry.record_id < b.entry.record_id ? -1 : 1;
@@ -144,8 +146,8 @@ function buildOrderedEntries(
     .filter((event) => event.occurred_at === null)
     .slice()
     .sort((a, b) => {
-      if (a.recorded_at !== b.recorded_at) {
-        return a.recorded_at < b.recorded_at ? -1 : 1;
+      if (compareTemporalInstants(a.recorded_at, b.recorded_at, "Worldline ordering") !== 0) {
+        return compareTemporalInstants(a.recorded_at, b.recorded_at, "Worldline ordering") < 0 ? -1 : 1;
       }
       return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
     });
@@ -195,6 +197,7 @@ function buildOrderedEntries(
 
   sortable.sort(compareSortable);
 
+  for (const item of sortable) requireTemporalInstant(item.entry.time, "Worldline timeline placement");
   return {
     ordered_entries: sortable.map((item) => item.entry),
     unplaced_events,
@@ -301,8 +304,8 @@ export function getRealityWorldline(
   );
 
   const times = ordered_entries.map((e) => e.time);
-  const earliest_time = times.length > 0 ? times.reduce((a, b) => (a < b ? a : b)) : null;
-  const latest_time = times.length > 0 ? times.reduce((a, b) => (a > b ? a : b)) : null;
+  const earliest_time = times.length > 0 ? times.reduce((a, b) => (compareTemporalInstants(a, b) < 0 ? a : b)) : null;
+  const latest_time = times.length > 0 ? times.reduce((a, b) => (compareTemporalInstants(a, b) > 0 ? a : b)) : null;
 
   return {
     entity,
@@ -331,6 +334,7 @@ export function getRealityStatesAt(
   at: string
 ): RealityState[] {
   findEntity(projectState, entityId);
+  requireTemporalInstant(at, "Worldline query evaluation_at");
   return entityStates(projectState, entityId)
     .filter((state) => isRealityStateActiveAt(state, at))
     .slice()

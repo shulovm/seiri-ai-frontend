@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * AUTHORITY Source Resolution Classification core (GROUND-119).
@@ -100,7 +101,7 @@ export function attentionObservationOperationalEligibilityAuthoritySourceResolut
     encodeSegment(params.authority_power),
     encodeSegment(params.governance_scope_key),
     encodeSegment(params.authority_evaluation_instant_key),
-    encodeSegment(params.authority_evaluation_at),
+    encodeSegment(temporalInstantKey(params.authority_evaluation_at)),
     encodeSegment(params.authority_source_key),
     encodeSegment(params.canonical_authority_state_key),
     encodeSegment(params.canonical_authority_state_basis_key),

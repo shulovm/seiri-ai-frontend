@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility Permission
  * State Source Bridge (GROUND-093).
@@ -73,7 +74,7 @@ export function attentionObservationOperationalEligibilityPermissionStateSourceK
     capabilityRequirementSetKey,
     permissionContextBindingKey,
     permissionStateBasisKey,
-    permissionEvaluationAt,
+    temporalInstantKey(permissionEvaluationAt),
     permissionState,
   ].join("|");
 }

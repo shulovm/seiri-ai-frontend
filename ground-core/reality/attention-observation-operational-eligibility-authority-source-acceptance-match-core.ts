@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * AUTHORITY Source Acceptance Match core (GROUND-121).
@@ -100,7 +101,7 @@ export function attentionObservationOperationalEligibilityAuthoritySourceAccepta
     params.authority_power,
     params.governance_scope_key,
     params.authority_evaluation_instant_key,
-    params.authority_evaluation_at,
+    temporalInstantKey(params.authority_evaluation_at),
     params.authority_source_key,
     params.canonical_authority_state_key,
     params.canonical_authority_state_basis_key,

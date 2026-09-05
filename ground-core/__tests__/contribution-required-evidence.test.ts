@@ -119,7 +119,7 @@ test("availability coverage does not require a current quantity operand", () => 
 for (const field of ["candidate_key", "observation_need_key", "capability_requirement_set_key", "observation_resource_requirement_key", "resource_readiness_observation_context_binding_key", "resource_declaration_id", "evaluation_at", "physical_potential_contribution_declaration_key"] as const) {
   test(`quantity with wrong ${field} is not covered`, () => {
     const { input, q } = setup(["CAPACITY_COMPATIBILITY", "REQUIRED_AMOUNT_COMPATIBILITY"]);
-    input.quantity_evaluation_state = { ...q, [field]: "other" };
+    input.quantity_evaluation_state = { ...q, [field]: field === "evaluation_at" ? "2026-09-03T12:00:00.000Z" : "other" };
     assert.equal(assessContributionRequiredEvidence(input).summary.not_represented_count, 2);
   });
 }

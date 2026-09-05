@@ -32,3 +32,13 @@ A downstream consumer would need its own actual proposition and authority before
 state admissibility/decisiveness could be defined. Candidate B remains deferred;
 this checkpoint does not invent that proposition, retrofit Resource Ready, or
 select/aggregate multiple Binding or availability contracts.
+
+
+## Exact temporal mechanics checkpoint
+
+Equivalent instant spellings now compare and identify equally in Reality read
+models. Temporal resolution remains distinct from syntax validity; unresolved leap
+seconds propagate a dedicated error at existing Worldline/identity boundaries.
+See GROUND_TEMPORAL_INSTANT_RESOLUTION.md for scope and verification. The next
+repository-exposed boundary is temporal admission in state-engine whole-project
+invariant checks, not a new contribution verdict or Candidate B.

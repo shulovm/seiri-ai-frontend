@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * Canonical Authority State (GROUND-116).
@@ -98,7 +99,7 @@ export function attentionObservationOperationalEligibilityCanonicalAuthorityStat
     params.authority_power,
     params.governance_scope_key,
     params.authority_evaluation_instant_key,
-    params.authority_evaluation_at,
+    temporalInstantKey(params.authority_evaluation_at),
     params.authority_evidence_evaluation_state_key,
     params.authority_evidence_evaluation_state_basis_key,
     params.authority_evidence_evaluation_state_interpretation_basis_status,
@@ -142,7 +143,7 @@ export function attentionObservationOperationalEligibilityCanonicalAuthorityStat
     params.authority_holder_entity_id,
     params.authority_power,
     params.governance_scope_key,
-    params.authority_evaluation_at,
+    temporalInstantKey(params.authority_evaluation_at),
     buildCanonicalAuthorityStateValueCanonicalKey(
       params.canonical_authority_state_value
     ),
@@ -257,7 +258,7 @@ function assertEvidenceStateBasisLineage(
       state.authority_holder_entity_id ||
     evidenceBasis.authority_power !== state.authority_power ||
     evidenceBasis.governance_scope_key !== state.governance_scope_key ||
-    evidenceBasis.authority_evaluation_at !== state.authority_evaluation_at
+    compareTemporalInstants(evidenceBasis.authority_evaluation_at, state.authority_evaluation_at) !== 0
   ) {
     throw new Error(
       `Canonical Authority State invariant violated: evidence State/Basis context mismatch for State ${state.key}`

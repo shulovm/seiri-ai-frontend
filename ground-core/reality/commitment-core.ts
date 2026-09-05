@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Commitment Core I assessment (GROUND-030).
  *
@@ -61,20 +62,20 @@ export function interventionCommitmentSemanticKey(
   interventionId: string,
   committedAt: string
 ): string {
-  return `commitment|${holderEntityId}|${interventionId}|${committedAt}`;
+  return `commitment|${holderEntityId}|${interventionId}|${temporalInstantKey(committedAt)}`;
 }
 
 export function isInterventionCommitmentActiveAt(
   declaration: InterventionCommitmentDeclaration,
   at: string
 ): boolean {
-  if (declaration.committed_at > at) {
+  if (compareTemporalInstants(declaration.committed_at, at) > 0) {
     return false;
   }
   if (declaration.valid_until === null) {
     return true;
   }
-  return at < declaration.valid_until;
+  return compareTemporalInstants(at, declaration.valid_until) < 0;
 }
 
 export function compareInterventionCommitmentDeclarations(
@@ -87,8 +88,8 @@ export function compareInterventionCommitmentDeclarations(
   if (a.intervention_id !== b.intervention_id) {
     return compareIds(a.intervention_id, b.intervention_id);
   }
-  if (a.committed_at !== b.committed_at) {
-    return a.committed_at < b.committed_at ? -1 : 1;
+  if (compareTemporalInstants(a.committed_at, b.committed_at) !== 0) {
+    return compareTemporalInstants(a.committed_at, b.committed_at) < 0 ? -1 : 1;
   }
   return compareIds(a.id, b.id);
 }
@@ -166,8 +167,8 @@ function groupDeclarationsIntoPositions(
     if (a.intervention_id !== b.intervention_id) {
       return compareIds(a.intervention_id, b.intervention_id);
     }
-    if (a.committed_at !== b.committed_at) {
-      return a.committed_at < b.committed_at ? -1 : 1;
+    if (compareTemporalInstants(a.committed_at, b.committed_at) !== 0) {
+      return compareTemporalInstants(a.committed_at, b.committed_at) < 0 ? -1 : 1;
     }
     return 0;
   });

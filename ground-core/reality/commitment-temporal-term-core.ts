@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Commitment Temporal Term assessment (GROUND-032).
  *
@@ -78,7 +79,7 @@ export function commitmentTemporalTermSemanticKey(
   termKind: CommitmentTemporalTermKind,
   deadlineAt: string
 ): string {
-  return `commitment-temporal-term|${commitmentSemanticKey}|${termKind}|${deadlineAt}`;
+  return `commitment-temporal-term|${commitmentSemanticKey}|${termKind}|${temporalInstantKey(deadlineAt)}`;
 }
 
 export function commitmentTemporalTermDivergenceKey(
@@ -96,8 +97,8 @@ export function compareInterventionCommitmentTemporalTermDeclarations(
   if (kindCmp !== 0) {
     return kindCmp;
   }
-  if (a.deadline_at !== b.deadline_at) {
-    return a.deadline_at < b.deadline_at ? -1 : 1;
+  if (compareTemporalInstants(a.deadline_at, b.deadline_at) !== 0) {
+    return compareTemporalInstants(a.deadline_at, b.deadline_at) < 0 ? -1 : 1;
   }
   return compareIds(a.id, b.id);
 }
@@ -228,8 +229,8 @@ function groupTemporalTermDeclarationsIntoPositions(
     if (kindCmp !== 0) {
       return kindCmp;
     }
-    if (a.deadline_at !== b.deadline_at) {
-      return a.deadline_at < b.deadline_at ? -1 : 1;
+    if (compareTemporalInstants(a.deadline_at, b.deadline_at) !== 0) {
+      return compareTemporalInstants(a.deadline_at, b.deadline_at) < 0 ? -1 : 1;
     }
     return a.key.localeCompare(b.key);
   });
@@ -283,15 +284,19 @@ function divergencesFromPositions(
 
   const divergences: CommitmentTemporalTermDivergence[] = [];
   for (const [termKind, group] of byKind.entries()) {
-    const distinctDeadlines = [
-      ...new Set(group.map((entry) => entry.deadline_at)),
-    ].sort();
+    // Deduplicate by instant, retain a declared representation for the read model.
+    const deadlineByInstant = new Map<string, string>();
+    for (const entry of group) {
+      const key = temporalInstantKey(entry.deadline_at);
+      if (!deadlineByInstant.has(key)) deadlineByInstant.set(key, entry.deadline_at);
+    }
+    const distinctDeadlines = [...deadlineByInstant.values()].sort(compareTemporalInstants);
     if (distinctDeadlines.length < 2) {
       continue;
     }
     const sortedGroup = [...group].sort((a, b) => {
-      if (a.deadline_at !== b.deadline_at) {
-        return a.deadline_at < b.deadline_at ? -1 : 1;
+      if (compareTemporalInstants(a.deadline_at, b.deadline_at) !== 0) {
+        return compareTemporalInstants(a.deadline_at, b.deadline_at) < 0 ? -1 : 1;
       }
       return a.key.localeCompare(b.key);
     });

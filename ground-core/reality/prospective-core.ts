@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Prospective Core assessment (GROUND-015).
  *
@@ -44,8 +45,8 @@ function compareIds(a: string, b: string): number {
 }
 
 function compareProjections(a: ScenarioStateProjection, b: ScenarioStateProjection): number {
-  if (a.projected_for !== b.projected_for) {
-    return a.projected_for < b.projected_for ? -1 : 1;
+  if (compareTemporalInstants(a.projected_for, b.projected_for) !== 0) {
+    return compareTemporalInstants(a.projected_for, b.projected_for) < 0 ? -1 : 1;
   }
   if (a.subject_id !== b.subject_id) {
     return compareIds(a.subject_id, b.subject_id);
@@ -60,8 +61,8 @@ function compareLikelihoodEstimates(
   a: ScenarioLikelihoodEstimate,
   b: ScenarioLikelihoodEstimate
 ): number {
-  if (a.estimated_at !== b.estimated_at) {
-    return a.estimated_at < b.estimated_at ? -1 : 1;
+  if (compareTemporalInstants(a.estimated_at, b.estimated_at) !== 0) {
+    return compareTemporalInstants(a.estimated_at, b.estimated_at) < 0 ? -1 : 1;
   }
   return compareIds(a.id, b.id);
 }
@@ -74,8 +75,8 @@ function compareFindings(
   if (kindDiff !== 0) {
     return kindDiff;
   }
-  if (a.projected_for !== b.projected_for) {
-    return a.projected_for < b.projected_for ? -1 : 1;
+  if (compareTemporalInstants(a.projected_for, b.projected_for) !== 0) {
+    return compareTemporalInstants(a.projected_for, b.projected_for) < 0 ? -1 : 1;
   }
   if (a.subject_id !== b.subject_id) {
     return compareIds(a.subject_id, b.subject_id);
@@ -146,7 +147,7 @@ function projectionConflictKey(
     scenarioId,
     subjectId,
     stateKind,
-    projectedFor,
+    temporalInstantKey(projectedFor),
     ...projectionIds.slice().sort(),
   ].join("|");
 }
@@ -221,7 +222,7 @@ export function detectScenarioProjectionConflicts(
     const scopeKey = [
       projection.subject_id,
       projection.state_kind,
-      projection.projected_for,
+      temporalInstantKey(projection.projected_for),
     ].join("\u0000");
     const group = byScope.get(scopeKey) ?? [];
     group.push(projection);
@@ -417,8 +418,8 @@ export function assessScenarioReferences(
   }
 
   const sortedComparisons = projected_reference_comparisons.sort((a, b) => {
-    if (a.projected_for !== b.projected_for) {
-      return a.projected_for < b.projected_for ? -1 : 1;
+    if (compareTemporalInstants(a.projected_for, b.projected_for) !== 0) {
+      return compareTemporalInstants(a.projected_for, b.projected_for) < 0 ? -1 : 1;
     }
     if (a.subject_id !== b.subject_id) {
       return compareIds(a.subject_id, b.subject_id);

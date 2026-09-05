@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Resource Commitment assessment (GROUND-034).
  *
@@ -88,7 +89,7 @@ export function resourceCommitmentSemanticKey(
     commitmentSemanticKey,
     resourceDeclarationId,
     resourceCommitterEntityId,
-    resourceCommittedAt,
+    temporalInstantKey(resourceCommittedAt),
   ].join("|");
 }
 
@@ -110,8 +111,8 @@ export function compareInterventionResourceCommitmentDeclarations(
       ? -1
       : 1;
   }
-  if (a.resource_committed_at !== b.resource_committed_at) {
-    return a.resource_committed_at < b.resource_committed_at ? -1 : 1;
+  if (compareTemporalInstants(a.resource_committed_at, b.resource_committed_at) !== 0) {
+    return compareTemporalInstants(a.resource_committed_at, b.resource_committed_at) < 0 ? -1 : 1;
   }
   return compareIds(a.id, b.id);
 }

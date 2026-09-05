@@ -1,3 +1,4 @@
+import { compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Capability Availability Temporal
  * Applicability (GROUND-059).
@@ -144,13 +145,13 @@ function availabilityFullyCoversRequired(
   a0: string,
   a1: string | null
 ): boolean {
-  if (a0 > r0) {
+  if (compareTemporalInstants(a0, r0) > 0) {
     return false;
   }
   if (r1 === null) {
     return a1 === null;
   }
-  return a1 === null || a1 >= r1;
+  return a1 === null || compareTemporalInstants(a1, r1) >= 0;
 }
 
 function halfOpenIntervalsOverlap(
@@ -159,8 +160,8 @@ function halfOpenIntervalsOverlap(
   a0: string,
   a1: string | null
 ): boolean {
-  const a0BeforeR1 = r1 === null || a0 < r1;
-  const r0BeforeA1 = a1 === null || r0 < a1;
+  const a0BeforeR1 = r1 === null || compareTemporalInstants(a0, r1) < 0;
+  const r0BeforeA1 = a1 === null || compareTemporalInstants(r0, a1) < 0;
   return a0BeforeR1 && r0BeforeA1;
 }
 

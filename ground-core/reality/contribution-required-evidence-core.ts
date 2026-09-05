@@ -1,3 +1,4 @@
+import { compareTemporalInstants } from "../temporal.js";
 import { isApplicableAttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceState as capacityApplicable, isResolvedAttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceState as capacityResolved, isUnresolvedAttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceState as capacityUnresolved } from "./attention-observation-operational-eligibility-resource-readiness-canonical-aggregated-declared-potential-contribution-capacity-compatibility-evidence-state-core.js";
 import { isApplicableAttentionObservationOperationalEligibilityResourceReadinessCanonicalDeclaredPotentialContributionRequiredAmountCompatibilityEvidenceState as amountApplicable, isResolvedAttentionObservationOperationalEligibilityResourceReadinessCanonicalDeclaredPotentialContributionRequiredAmountCompatibilityEvidenceState as amountResolved, isUnresolvedAttentionObservationOperationalEligibilityResourceReadinessCanonicalDeclaredPotentialContributionRequiredAmountCompatibilityEvidenceState as amountUnresolved } from "./attention-observation-operational-eligibility-resource-readiness-canonical-declared-potential-contribution-required-amount-compatibility-evidence-state-core.js";
 import { isCanonicalSelectedSourceAggregatedDeclaredResourceAvailabilityEvidenceStateApplicable as availabilityApplicable, isCanonicalSelectedSourceAggregatedDeclaredResourceAvailabilityEvidenceStateResolved as availabilityResolved, isCanonicalSelectedSourceAggregatedDeclaredResourceAvailabilityEvidenceStateUnresolved as availabilityUnresolved } from "./canonical-selected-source-aggregated-declared-resource-availability-evidence-state-core.js";
@@ -56,7 +57,7 @@ export function assessContributionRequiredEvidence(input: ContributionRequiredEv
     // Reuse reference authority/lineage checks, never trust a detached copied status/state.
     const verified = resolveContributionAvailabilityReference(reference);
     if (verified.status !== reference.status || verified.referenced_evidence_state !== reference.referenced_evidence_state ||
-        verified.evaluation_at !== reference.evaluation_at) throw new Error("Availability reference assessment lineage mismatch");
+        compareTemporalInstants(verified.evaluation_at, reference.evaluation_at) !== 0) throw new Error("Availability reference assessment lineage mismatch");
     availability = verified.referenced_evidence_state;
   }
   const assessments: ContributionRequiredEvidenceDimensionAssessment[] = rebuilt.required_dimensions.map(d => {

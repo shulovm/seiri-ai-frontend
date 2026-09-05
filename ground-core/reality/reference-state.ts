@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Reference State assessment (GROUND-011).
  *
@@ -37,13 +38,13 @@ export function isReferenceConditionActiveAt(
   ref: ReferenceCondition,
   at: string
 ): boolean {
-  if (ref.valid_from > at) {
+  if (compareTemporalInstants(ref.valid_from, at) > 0) {
     return false;
   }
   if (ref.valid_until === null) {
     return true;
   }
-  return at < ref.valid_until;
+  return compareTemporalInstants(at, ref.valid_until) < 0;
 }
 
 export function getReferenceConditionsAt(
@@ -66,8 +67,8 @@ export function getReferenceConditionsAt(
       if (a.reference_kind !== b.reference_kind) {
         return a.reference_kind < b.reference_kind ? -1 : 1;
       }
-      if (a.valid_from !== b.valid_from) {
-        return a.valid_from < b.valid_from ? -1 : 1;
+      if (compareTemporalInstants(a.valid_from, b.valid_from) !== 0) {
+        return compareTemporalInstants(a.valid_from, b.valid_from) < 0 ? -1 : 1;
       }
       return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
     });
@@ -155,7 +156,7 @@ function conflictKey(
     subjectId,
     stateKind,
     referenceKind,
-    at,
+    temporalInstantKey(at),
     ...ids.slice().sort(),
   ].join("|");
 }

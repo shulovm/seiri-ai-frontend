@@ -1,3 +1,4 @@
+import { compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Impact Measurement assessment (GROUND-018).
  *
@@ -60,13 +61,13 @@ export function isImpactMeasureDeclarationActiveAt(
   declaration: ImpactMeasureDeclaration,
   at: string
 ): boolean {
-  if (declaration.valid_from > at) {
+  if (compareTemporalInstants(declaration.valid_from, at) > 0) {
     return false;
   }
   if (declaration.valid_until === null) {
     return true;
   }
-  return at < declaration.valid_until;
+  return compareTemporalInstants(at, declaration.valid_until) < 0;
 }
 
 function compareMeasureDeclarations(
@@ -82,8 +83,8 @@ function compareMeasureDeclarations(
   if (a.unit !== b.unit) {
     return a.unit < b.unit ? -1 : 1;
   }
-  if (a.valid_from !== b.valid_from) {
-    return a.valid_from < b.valid_from ? -1 : 1;
+  if (compareTemporalInstants(a.valid_from, b.valid_from) !== 0) {
+    return compareTemporalInstants(a.valid_from, b.valid_from) < 0 ? -1 : 1;
   }
   return compareIds(a.id, b.id);
 }

@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Intent Core I assessment (GROUND-029).
  *
@@ -52,13 +53,13 @@ export function isInterventionIntentActiveAt(
   declaration: InterventionIntentDeclaration,
   at: string
 ): boolean {
-  if (declaration.intent_formed_at > at) {
+  if (compareTemporalInstants(declaration.intent_formed_at, at) > 0) {
     return false;
   }
   if (declaration.valid_until === null) {
     return true;
   }
-  return at < declaration.valid_until;
+  return compareTemporalInstants(at, declaration.valid_until) < 0;
 }
 
 export function interventionIntentPositionKey(
@@ -74,7 +75,7 @@ export function intentDispositionConflictKey(
   interventionId: string,
   at: string
 ): string {
-  return `intent-conflict|${holderEntityId}|${interventionId}|${at}`;
+  return `intent-conflict|${holderEntityId}|${interventionId}|${temporalInstantKey(at)}`;
 }
 
 export function compareInterventionIntentDeclarations(
@@ -87,8 +88,8 @@ export function compareInterventionIntentDeclarations(
   if (a.intervention_id !== b.intervention_id) {
     return compareIds(a.intervention_id, b.intervention_id);
   }
-  if (a.intent_formed_at !== b.intent_formed_at) {
-    return a.intent_formed_at < b.intent_formed_at ? -1 : 1;
+  if (compareTemporalInstants(a.intent_formed_at, b.intent_formed_at) !== 0) {
+    return compareTemporalInstants(a.intent_formed_at, b.intent_formed_at) < 0 ? -1 : 1;
   }
   if (a.disposition !== b.disposition) {
     return DISPOSITION_ORDER[a.disposition] - DISPOSITION_ORDER[b.disposition];

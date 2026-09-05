@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Stable Availability Evidence Contract + explicit Applicability declaration.
  * Authorities: 185 for contract; 177 for subject; runtime specification for relation.
@@ -50,7 +51,7 @@ export function contributionAvailabilityContextKey(context: ContributionAvailabi
   const values = [context.candidate_key, context.observation_need_key,
     context.capability_requirement_set_key, context.observation_resource_requirement_key,
     context.resource_readiness_observation_context_binding_key, context.resource_declaration_id,
-    context.evaluation_at, context.physical_potential_contribution_declaration_key];
+    temporalInstantKey(context.evaluation_at), context.physical_potential_contribution_declaration_key];
   values.forEach(value => requireKey(value, "contribution context identity"));
   return JSON.stringify(["contribution-availability-context", ...values]);
 }

@@ -1,3 +1,4 @@
+import { compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Epistemic Gap / Unknown detection (GROUND-006).
  *
@@ -83,7 +84,7 @@ function scopeClaims(
 function priorClaims(claims: Claim[], at: string): Claim[] {
   return claims.filter(
     (claim) =>
-      claim.applicable_until !== null && !(at < claim.applicable_until)
+      claim.applicable_until !== null && !(compareTemporalInstants(at, claim.applicable_until) < 0)
   );
 }
 
@@ -93,7 +94,7 @@ function priorClaims(claims: Claim[], at: string): Claim[] {
  */
 function laterClaims(claims: Claim[], at: string): Claim[] {
   return claims.filter(
-    (claim) => claim.applicable_from !== null && claim.applicable_from > at
+    (claim) => claim.applicable_from !== null && compareTemporalInstants(claim.applicable_from, at) > 0
   );
 }
 
@@ -259,8 +260,8 @@ export function getUnresolvedSubjectClaims(
     .filter((claim) => claim.subject_id === null)
     .slice()
     .sort((a, b) => {
-      if (a.recorded_at !== b.recorded_at) {
-        return a.recorded_at < b.recorded_at ? -1 : 1;
+      if (compareTemporalInstants(a.recorded_at, b.recorded_at) !== 0) {
+        return compareTemporalInstants(a.recorded_at, b.recorded_at) < 0 ? -1 : 1;
       }
       return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
     });

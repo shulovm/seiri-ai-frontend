@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Candidate composition (GROUND-040).
  *
@@ -89,7 +90,7 @@ export function attentionCandidateKeyFromBaseSalience(
     "attention-candidate",
     "base-situation-salience",
     subjectId,
-    at,
+    temporalInstantKey(at),
     salienceSignalKey,
   ].join("|");
 }
@@ -103,7 +104,7 @@ export function attentionCandidateKeyFromResourceSalience(
     "attention-candidate",
     "resource-situation-salience",
     subjectId,
-    at,
+    temporalInstantKey(at),
     resourceSalienceSignalKey,
   ].join("|");
 }

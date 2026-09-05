@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Inquiry / Question Formation (GROUND-007).
  *
@@ -56,7 +57,7 @@ function propositionKey(
   predicate: string | null,
   at: string | null
 ): string {
-  return ["prop", subjectId ?? "", predicateKind ?? "", predicate ?? "", at ?? ""].join(
+  return ["prop", subjectId ?? "", predicateKind ?? "", predicate ?? "", (at == null ? at : temporalInstantKey(at)) ?? ""].join(
     "|"
   );
 }
@@ -330,7 +331,7 @@ function inquiryKeyFromQuestions(
     subjectId ?? "",
     query?.predicateKind ?? "",
     query?.predicate ?? "",
-    query?.at ?? "",
+    (query?.at == null ? query?.at : temporalInstantKey(query?.at)) ?? "",
     ...questions.map((q) => q.key),
   ].join("|");
 }

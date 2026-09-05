@@ -1,3 +1,4 @@
+import { compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Objective Core assessment (GROUND-013).
  *
@@ -39,13 +40,13 @@ export function isIntervalActiveAt(
   validUntil: string | null,
   at: string
 ): boolean {
-  if (validFrom > at) {
+  if (compareTemporalInstants(validFrom, at) > 0) {
     return false;
   }
   if (validUntil === null) {
     return true;
   }
-  return at < validUntil;
+  return compareTemporalInstants(at, validUntil) < 0;
 }
 
 export function getApplicableObjectivesAt(
