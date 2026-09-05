@@ -9,6 +9,8 @@
  * This module provides identity anchors only — no policy / no Satisfaction.
  */
 
+import { canonicalValueKey } from "./semantic-equality.js";
+
 /**
  * Stable canonical exact Requirement key ordering (serialization only).
  */
@@ -23,7 +25,7 @@ export function canonicalizeCapabilityRequirementKeys(
  * Not a second authority for which Requirements exist.
  *
  * Format:
- * capability-requirement-set|candidateKey|observationNeedKey|canonicalExactCapabilityRequirementKeySet
+ * Opaque prefix + canonical tuple of candidate, need, and sorted exact members.
  */
 export function buildAttentionObservationCapabilityRequirementSetKey(
   candidateKey: string,
@@ -33,10 +35,9 @@ export function buildAttentionObservationCapabilityRequirementSetKey(
   const canonicalKeys = canonicalizeCapabilityRequirementKeys(
     capabilityRequirementKeys
   );
-  return [
-    "capability-requirement-set",
+  return "capability-requirement-set|" + canonicalValueKey([
     candidateKey,
     observationNeedKey,
-    canonicalKeys.join(","),
-  ].join("|");
+    canonicalKeys,
+  ]);
 }

@@ -42,3 +42,15 @@ GROUND-132 isolation while allowing only the pure JSON identity helper.
 Focused Requirement/Intervention/Feasibility Basis/Decision tests: 152 PASS.
 Full suite: 3,839 PASS with zero failures or skips. Typecheck/build PASS.
 Schema stays 0.1.25; schema/dependency files are unchanged in this checkpoint.
+
+
+## Capability Requirement exact-set boundary
+
+The GROUND-076/077 shared exact-set identity must preserve the membership
+produced by GROUND-048. A capability semantic name may contain commas and other
+requirement keys. Joining member keys with a comma made a singleton and a
+two-member set share the same identity. The shared builder now uses the existing
+canonical JSON tuple primitive for candidate, ObservationNeed, and sorted member
+array. Ordering remains presentation-only; no new duplicate or empty-set policy
+is introduced. Runtime references must be rebuilt with the canonical builder.
+There is no persisted schema change or new satisfaction/selection authority.

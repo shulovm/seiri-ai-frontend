@@ -602,3 +602,29 @@ describe("Attention Observation Capability Requirement (GROUND-048)", () => {
     });
   });
 });
+
+
+it("exact capability requirement set identity preserves member boundaries from the canonical producer", async () => {
+  const { buildAttentionObservationCapabilityRequirementSetKey } = await import("../reality/attention-observation-capability-requirement-set-identity.js");
+  const { buildAttentionObservationCapabilityRequirementSetCompositionPolicySet } = await import("../reality/attention-observation-capability-requirement-set-composition-policy-core.js");
+  const planning = planningSetFor([baseCandidate("OBSERVATION_NEED")], [sampleObservationNeed(NEED_KEY)]);
+  const produce = (names: string[]) => buildAttentionObservationCapabilityRequirementSet({
+    planning_set: planning,
+    specification: { requirements: names.map(capability_semantic_key => ({ observation_need_key: NEED_KEY, capability_semantic_key })) },
+  });
+  const two = produce(["a", "b"]);
+  const one = produce(["a," + attentionObservationCapabilityRequirementKey(NEED_KEY, "b")]);
+  const candidate = two.candidate_requirements[0]!.candidate_key;
+  const keys = (set: typeof two) => set.candidate_requirements[0]!.capability_requirement_basis!.requirements.map(r => r.key);
+  assert.equal(keys(two).length, 2);
+  assert.equal(keys(one).length, 1);
+  const identity = (set: typeof two) => buildAttentionObservationCapabilityRequirementSetKey(candidate, NEED_KEY, keys(set));
+  assert.notEqual(identity(two), identity(one));
+  assert.equal(identity(two), buildAttentionObservationCapabilityRequirementSetKey(candidate, NEED_KEY, keys(two).reverse()));
+  assert.equal(identity(two), identity(JSON.parse(JSON.stringify(two))));
+  const policy = (set: typeof two) => buildAttentionObservationCapabilityRequirementSetCompositionPolicySet({
+    capability_requirement_set: set,
+    specification: { policies: [{ candidate_key: candidate, composition_kind: "ALL_CAPABILITY_REQUIREMENT_SATISFACTION_STATES_ARE_SATISFIED" }] },
+  });
+  assert.notDeepEqual(policy(two), policy(one));
+});
