@@ -3633,3 +3633,13 @@ export type {
   ContributionAvailabilityApplicabilitySpecification,
   ContributionQuantityEvaluationState,
 } from "./reality/contribution-availability-applicability-types.js";
+export {
+  resolveContributionAvailabilityReference,
+  composeContributionQuantityAvailabilityEvidence,
+} from "./reality/contribution-availability-composition-core.js";
+export type {
+  ContributionAvailabilityReferenceStatus,
+  ContributionAvailabilityReferenceAssessment,
+  ContributionQuantityAvailabilityEvidenceComposition,
+  ContributionQuantityAvailabilityCompositionAssessment,
+} from "./reality/contribution-availability-composition-types.js";

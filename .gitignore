@@ -38,5 +38,5 @@ dist-ssr
 
 .vercel
 
-# GROUND Core local project state (Phase B file store)
-ground-core/storage/projects/
+# GROUND Core runtime project state and generated test scratch files
+ground-core/storage/

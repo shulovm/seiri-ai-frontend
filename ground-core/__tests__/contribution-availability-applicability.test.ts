@@ -2,69 +2,8 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { readFileSync } from "node:fs";
 import { SCHEMA_VERSION } from "../types.js";
-import type { ResourceDeclaration, ResourceAvailabilityDeclaration } from "../types.js";
-import { buildDeclaredResourceAvailabilitySourceAggregationPolicySet } from "../reality/declared-resource-availability-source-aggregation-policy-core.js";
-import { buildDeclaredResourceAvailabilitySourceAggregationResultInterpretationPolicySet } from "../reality/declared-resource-availability-source-aggregation-result-interpretation-policy-core.js";
-import {
-  buildAvailabilityEvidenceContract, contributionAvailabilityContext,
-  contributionAvailabilityContextKey, declareContributionAvailabilityApplicability,
-} from "../reality/contribution-availability-applicability-core.js";
-import type { AvailabilityEvidenceContract, ContributionQuantityEvaluationState } from "../reality/contribution-availability-applicability-types.js";
-
-const at = "2026-09-02T12:00:00.000Z";
-const resource: ResourceDeclaration = {
-  id: "r", project_id: "p", holder_entity_id: "h", resource_key: "water", unit: "litre",
-  scope: { kind: "UNSCOPED" }, resource_entity_id: null, description: null,
-  valid_from: at, valid_until: null, declared_by: { kind: "human" }, recorded_at: at,
-  created_at: at, updated_at: at,
-};
-const source: ResourceAvailabilityDeclaration = {
-  id: "s", project_id: "p", resource_declaration_id: "r", status: "AVAILABLE",
-  valid_from: at, valid_until: null, declared_by: { kind: "human" }, recorded_at: at,
-  note: null, created_at: at, updated_at: at,
-};
-function policy(options: { inverted?: boolean; empty?: boolean; absent?: boolean; operator?: "ANY" | "ALL" } = {}) {
-  const aggregation = buildDeclaredResourceAvailabilitySourceAggregationPolicySet({
-    resource_declarations: [resource], resource_availability_declarations: [source],
-    specification: { policies: [{ resource_declaration_id: "r", selected_availability_declaration_ids: ["s"], operator: options.operator ?? "ANY" }] },
-  });
-  return buildDeclaredResourceAvailabilitySourceAggregationResultInterpretationPolicySet({
-    availability_source_aggregation_policy_set: aggregation,
-    specification: { policies: options.absent ? [] : [{
-      availability_source_aggregation_policy_key: aggregation.aggregation_policies[0]!.key,
-      mappings: options.empty ? [] : [{
-        source_result_value: "SELECTED_AVAILABILITY_SOURCE_EVIDENCE_COMPOSITION_CONDITION_HOLDS",
-        interpretation: options.inverted
-          ? "INTERPRET_AS_CONTRADICTING_SELECTED_SOURCE_AGGREGATED_DECLARED_RESOURCE_AVAILABILITY_EVIDENCE"
-          : "INTERPRET_AS_SUPPORTING_SELECTED_SOURCE_AGGREGATED_DECLARED_RESOURCE_AVAILABILITY_EVIDENCE",
-      }],
-    }] },
-  }).resource_assessments[0]!.interpretation_policy;
-}
-function quantity(): ContributionQuantityEvaluationState {
-  return {
-    key: "177-current-evidence", candidate_key: "candidate", observation_need_key: "need",
-    capability_requirement_set_key: "requirements", dimension: "RESOURCE_READINESS",
-    observation_resource_requirement_key: "requirement", resource_readiness_observation_context_binding_key: "binding",
-    resource_declaration_id: "r", evaluation_at: at, physical_potential_contribution_declaration_key: "contribution",
-    capacity_compatibility_dimension: {
-      canonical_capacity_compatibility_evidence_state_key: "capacity-state",
-      canonical_capacity_compatibility_evidence_state_value: "EXPLICITLY_INTERPRETED_AGGREGATED_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_COMPATIBILITY_EVIDENCE_SUPPORTING",
-      category: "SUPPORTING",
-    },
-    required_amount_compatibility_dimension: {
-      canonical_required_amount_compatibility_evidence_state_key: "required-state",
-      canonical_required_amount_compatibility_evidence_state_value: "EXPLICITLY_DERIVED_DECLARED_POTENTIAL_CONTRIBUTION_REQUIRED_AMOUNT_COMPATIBILITY_EVIDENCE_SUPPORTING",
-      category: "SUPPORTING",
-    },
-  };
-}
-function specification(q: ContributionQuantityEvaluationState, c: AvailabilityEvidenceContract) {
-  return { contribution_context_key: contributionAvailabilityContextKey(contributionAvailabilityContext(q)), availability_evidence_contract_key: c.key };
-}
-function declare(q = quantity(), c = buildAvailabilityEvidenceContract(policy()!)) {
-  return declareContributionAvailabilityApplicability({ quantity_evaluation_state: q, availability_evidence_contract: c, specification: specification(q, c) });
-}
+import { buildAvailabilityEvidenceContract, contributionAvailabilityContext, declareContributionAvailabilityApplicability } from "../reality/contribution-availability-applicability-core.js";
+import { policy, quantity, specification, declare } from "./fixtures/contribution-availability.js";
 
 describe("Stable availability contract and explicit contribution applicability", () => {
   it("preserves the exact 185 policy and nested 180 authority", () => {

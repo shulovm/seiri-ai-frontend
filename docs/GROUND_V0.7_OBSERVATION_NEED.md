@@ -1,19 +1,24 @@
-# GROUND Observation Need — next gate pointer
+# GROUND Observation Need — frontier pointer
 
-## Completed
+## Recovered baseline
 
-GROUND-187 — Observation Core CXLI / Canonical Selected-source Aggregated Declared Resource Availability Evidence State Foundation
+GROUND-187 — Canonical Selected-source Aggregated Declared Resource Availability
+Evidence State remains the availability authority. GROUND-177 remains the
+heterogeneous quantity-compatibility authority.
 
-## Next
+## Completed semantic region
 
-GROUND-188 — Observation Core CXLII / Quantity + Availability Physical Evidence Dimension Composition Discovery
+Contribution / Binding → explicit runtime Applicability → stable Aggregation +
+Interpretation Policy contract reference → current GROUND-187 evidence resolution
+→ independent capacity / required-amount / availability evidence composition.
 
-```text
-READ-ONLY discovery
+See GROUND_CONTRIBUTION_AVAILABILITY_APPLICABILITY.md for the adopted human decisions,
+implemented contract, lineage, absence and exact-time boundaries, and validation.
+Numbers do not prescribe the next implementation.
 
-GROUND-177 quantity compatibility
-+
-GROUND-187 canonical aggregated availability evidence
-```
+## Next possible frontier (not authorized or predetermined)
 
-Do not predetermine join / Required-Dimension Policy / Resource Ready.
+Required-dimension semantics or downstream use of the preserved evidence vector.
+The current evidence contract does not select necessary/sufficient dimensions,
+create an overall polarity, establish Resource Ready or grant execution authority.
+No unique additional semantic primitive follows from the completed region.
