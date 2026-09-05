@@ -1,3 +1,4 @@
+import { assessObservationRecency, requireObservationRecency } from "../observation-recency.js";
 import type { DirectorReport } from "../director/types.js";
 import type { PortfolioReport } from "../director/portfolio-types.js";
 import type { BlockerSeverity, ProjectState } from "../types.js";
@@ -107,10 +108,7 @@ export function hasRecentObservation(state: ProjectState | undefined, days = 30)
     return false;
   }
 
-  const threshold = Date.now() - days * 24 * 60 * 60 * 1000;
-  return (state.observations ?? []).some(
-    (observation) => new Date(observation.created_at).getTime() >= threshold
-  );
+  return requireObservationRecency(assessObservationRecency(state.observations ?? [], days));
 }
 
 export function highestOpenBlockerSeverity(

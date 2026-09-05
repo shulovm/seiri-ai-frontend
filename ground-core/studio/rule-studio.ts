@@ -1,3 +1,4 @@
+import { compareTemporalInstants } from "../temporal.js";
 import type { ProjectState } from "../types.js";
 import {
   buildSituationSummary,
@@ -36,9 +37,10 @@ function buildDecisionMaterials(
 
   const materials: StudioDecisionMaterial[] = [];
   const observationThreshold =
-    Date.now() - OBSERVATION_RECENCY_DAYS * 24 * 60 * 60 * 1000;
+    new Date(Date.now() - OBSERVATION_RECENCY_DAYS * 24 * 60 * 60 * 1000).toISOString();
 
   for (const state of states) {
+    if (materials.length >= MAX_DECISION_MATERIALS) break;
     const projectTitle = state.project.title;
 
     for (const decision of state.decisions) {
@@ -73,14 +75,16 @@ function buildDecisionMaterials(
       });
     }
 
+    if (materials.length >= MAX_DECISION_MATERIALS) break;
     const recentObservations = [...(state.observations ?? [])]
       .filter(
         (observation) =>
-          new Date(observation.created_at).getTime() >= observationThreshold
+          compareTemporalInstants(observation.created_at, observationThreshold,
+            `Observation ${observation.id}: recent decision material membership`) >= 0
       )
       .sort(
         (a, b) =>
-          new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+          compareTemporalInstants(b.created_at, a.created_at, "recent decision material ordering")
       );
 
     for (const observation of recentObservations.slice(0, 2)) {
