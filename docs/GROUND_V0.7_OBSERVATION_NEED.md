@@ -39,6 +39,13 @@ select/aggregate multiple Binding or availability contracts.
 Equivalent instant spellings now compare and identify equally in Reality read
 models. Temporal resolution remains distinct from syntax validity; unresolved leap
 seconds propagate a dedicated error at existing Worldline/identity boundaries.
-See GROUND_TEMPORAL_INSTANT_RESOLUTION.md for scope and verification. The next
-repository-exposed boundary is temporal admission in state-engine whole-project
-invariant checks, not a new contribution verdict or Candidate B.
+See GROUND_TEMPORAL_INSTANT_RESOLUTION.md for scope and verification.
+
+## Temporal patch admission checkpoint
+
+The human Option A decision separates persistence from temporal verification.
+Whole-state checks reject proven temporal violations and preserve schema-valid
+unresolved declarations without claiming validity. Strict Worldline and instant
+identity boundaries remain. See GROUND_TEMPORAL_PATCH_ADMISSION.md.
+Global frontier discovery resumes from this checkpoint; it does not establish a
+contribution verdict or activate Candidate B.

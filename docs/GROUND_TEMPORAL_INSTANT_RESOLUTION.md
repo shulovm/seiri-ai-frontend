@@ -81,18 +81,12 @@ unit introduces no stored-key rewrite, schema change or migration. Raw timestamp
 checks for append-only declaration representation are not converted into permission
 to rewrite the original declaration.
 
-## Remaining write-side frontier
+## Subsequent write-side resolution
 
-state-engine.ts has a distinct admission/invariant authority. assertStateInvariants
-runs assertRealityInvariants and other whole-project checks on patch application;
-some of those still compare interval boundaries lexically. Applying strict instant
-resolution there blindly would also reject an unrelated patch when a stored
-schema-valid leap declaration has an unresolved boundary. That would create eager
-project-admission semantics beyond this read-model/error-consumption decision.
-
-This write-side boundary remains for immediate post-checkpoint discovery. The
-read-model correction does not claim that schema acceptance proves interval
-well-formedness, or that all accepted declarations must be globally instant-resolved.
+The distinct ProjectState admission frontier was resolved by the human Option A
+contract. See GROUND_TEMPORAL_PATCH_ADMISSION.md. Persistence can retain unresolved
+source declarations; temporal evaluation and canonical instant identity stay strict.
+The following verification records this earlier read-model checkpoint only.
 
 ## Verification
 
