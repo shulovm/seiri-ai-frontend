@@ -54,3 +54,17 @@ canonical JSON tuple primitive for candidate, ObservationNeed, and sorted member
 array. Ordering remains presentation-only; no new duplicate or empty-set policy
 is introduced. Runtime references must be rebuilt with the canonical builder.
 There is no persisted schema change or new satisfaction/selection authority.
+
+
+## ObservationNeed and capability name boundary
+
+Canonical Needs with predicates `condition` and `condition||x`, without a point
+time, combined with capability names `x||inspect` and `inspect`, previously shared
+a delimiter-concatenated pair identity. GROUND-048 normalization consequently
+discarded one explicit declaration. The requirement builder now preserves the
+Need/name tuple with canonical JSON; normalization reuses that same builder.
+Existing duplicate semantics remain exact-pair deduplication. Source fields,
+Need construction, ordering and requirement authority are unchanged. These derived
+keys are runtime references and must be rebuilt, not parsed or migrated as stored
+facts. The regression derives Needs through the canonical Question mapping and
+passes both through Eligibility, Planning and Requirement normalization.

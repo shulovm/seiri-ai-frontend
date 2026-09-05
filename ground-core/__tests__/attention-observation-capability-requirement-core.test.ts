@@ -628,3 +628,26 @@ it("exact capability requirement set identity preserves member boundaries from t
   });
   assert.notDeepEqual(policy(two), policy(one));
 });
+it("independent Need and capability names cannot erase an explicit requirement", async () => {
+  const {deriveObservationNeedsForQuestion} = await import("../reality/observation-need.js");
+  const {formulateInquiryAt} = await import("../reality/inquiry.js");
+  const {createEmptyProject} = await import("../state-engine.js");
+  const p=createEmptyProject({title:"Requirement identity",summary:""});
+  p.reality_entities.push({id:SUBJECT,project_id:p.project.id,kind:"asset",label:"asset",created_at:AT,updated_at:AT});
+  const q=formulateInquiryAt(p,{subjectId:SUBJECT,predicateKind:"state",predicate:"condition",at:AT})!.questions[0]!;
+  const a=deriveObservationNeedsForQuestion({...q,at:null,predicate:"condition"})[0]!;
+  const b=deriveObservationNeedsForQuestion({...q,at:null,predicate:"condition||x"})[0]!;
+  assert.notEqual(a.key,b.key);
+  const planning=planningSetFor([
+    baseCandidate("OBSERVATION_NEED",{signalKey:"first",observationNeedKeys:[a.key]}),
+    baseCandidate("OBSERVATION_NEED",{signalKey:"second",observationNeedKeys:[b.key]}),
+  ],[a,b]);
+  const result=buildAttentionObservationCapabilityRequirementSet({planning_set:planning,specification:{requirements:[
+    {observation_need_key:a.key,capability_semantic_key:"x||inspect"},
+    {observation_need_key:b.key,capability_semantic_key:"inspect"},
+  ]}});
+  assert.equal(result.specification.requirements.length,2);
+  const requirements=result.candidate_requirements.flatMap(c=>c.capability_requirement_basis?.requirements??[]);
+  assert.equal(requirements.length,2);
+  assert.notEqual(requirements[0]!.key,requirements[1]!.key);
+});
