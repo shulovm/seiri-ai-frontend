@@ -22,7 +22,13 @@ export function canonicalizeSemanticValue(value: unknown): unknown {
     const keys = Object.keys(record).sort();
     const out: Record<string, unknown> = {};
     for (const key of keys) {
-      out[key] = canonicalizeSemanticValue(record[key]);
+      // JSON member names are data, including __proto__; never invoke setters.
+      Object.defineProperty(out, key, {
+        value: canonicalizeSemanticValue(record[key]),
+        enumerable: true,
+        configurable: true,
+        writable: true,
+      });
     }
     return out;
   }
