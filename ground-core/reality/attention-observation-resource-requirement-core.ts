@@ -189,8 +189,8 @@ function requirementInputSignature(
     input.unit,
     resourceScopeKey(input.resource_scope),
     resourceRequirementAmountKey(input.required_amount),
-    input.valid_from ?? "NONE",
-    input.valid_until ?? "NONE",
+    input.valid_from == null ? "NONE" : temporalInstantKey(input.valid_from),
+    input.valid_until == null ? "NONE" : temporalInstantKey(input.valid_until),
   ].join("|");
 }
 

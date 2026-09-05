@@ -97,3 +97,18 @@ The two existing tests using non-timestamp placeholders for a different evaluati
 instant now use an actually different valid timestamp. No evidence polarity,
 requiredness, coverage, readiness, satisfaction, quantity arithmetic or execution
 policy was introduced.
+
+## Subsequent derived identity completion
+
+Post-admission global discovery found remaining raw-time contributions in Inquiry
+branch keys, ObservationNeed mapping/merge keys, Structural/Normative Finding keys
+and the internal GROUND-132 requirement deduplication signature. Those existing
+instant-valued components now use the same strict temporalInstantKey authority.
+No time component is added to identities that intentionally omit it. Returned
+source timestamps and absent-time markers remain unchanged. Equivalent offset and
+fraction spellings merge consistently; distinct precise instants remain distinct.
+
+Ten regression tests reproduced the previous mismatches. Focused Inquiry/Need/
+Finding/requirement tests: 84 PASS. Full suite: 3,821 PASS with zero failures/skips.
+Typecheck/build PASS, schema 0.1.24. No new observation, satisfaction or resource
+policy is introduced. This supplements, rather than replaces, the earlier audit.

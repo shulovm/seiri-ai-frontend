@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Structural Finding detection (GROUND-010).
  *
@@ -261,7 +262,7 @@ export function discoverStructuralFindings(
           belief.subject_id,
           belief.predicate_kind,
           belief.predicate,
-          belief.at,
+          temporalInstantKey(belief.at),
           ...positionKeys,
         ].join("|"),
         kind: "EPISTEMIC_POSITION_CONFLICT",
@@ -305,7 +306,7 @@ export function discoverStructuralFindings(
             gap.subject_id,
             gap.predicate_kind,
             gap.predicate,
-            gap.at,
+            temporalInstantKey(gap.at),
           ].join("|"),
           kind: "KNOWLEDGE_GAP",
           subject_id: gap.subject_id,
@@ -341,7 +342,7 @@ export function discoverStructuralFindings(
             gap.subject_id,
             gap.predicate_kind,
             gap.predicate,
-            gap.at,
+            temporalInstantKey(gap.at),
             ...gap.claim_ids,
           ].join("|"),
           kind: "EVIDENCE_DEFICIT",
@@ -378,7 +379,7 @@ export function discoverStructuralFindings(
             gap.subject_id,
             gap.predicate_kind,
             gap.predicate,
-            gap.at,
+            temporalInstantKey(gap.at),
             ...gap.claim_ids,
           ].join("|"),
           kind: "EVIDENCE_TENSION",
@@ -421,7 +422,7 @@ export function discoverStructuralFindings(
             gap.subject_id,
             gap.predicate_kind,
             gap.predicate,
-            gap.at,
+            temporalInstantKey(gap.at),
           ].join("|"),
           kind: "TEMPORAL_KNOWLEDGE_GAP",
           subject_id: gap.subject_id,
@@ -486,7 +487,7 @@ export function discoverStructuralFindings(
           "finding",
           "OBSERVATION_NEED_PRESENT",
           subjectId,
-          at,
+          temporalInstantKey(at),
           ...needKeys,
         ].join("|"),
         kind: "OBSERVATION_NEED_PRESENT",

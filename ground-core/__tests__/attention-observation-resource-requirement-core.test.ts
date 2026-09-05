@@ -980,3 +980,13 @@ describe("GROUND-132 Observation Resource Requirement", () => {
     );
   });
 });
+
+it("normalization deduplicates equivalent temporal requirement declarations", () => {
+  const spec = normalizeAttentionObservationResourceRequirementSpecification(mockRequirementSet(), {
+    candidate_requirement_sets: [{ candidate_key: CAND, requirements: [
+      mockRequirement({ valid_from: AT_FROM, valid_until: AT_UNTIL }),
+      mockRequirement({ valid_from: "2026-09-01T19:00:00+09:00", valid_until: "2026-09-02T19:00:00+09:00" }),
+    ] }],
+  });
+  assert.equal(spec.candidate_requirement_sets[0]!.requirements.length, 1);
+});
