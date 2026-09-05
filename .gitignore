@@ -37,3 +37,6 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# GROUND Core local project state (Phase B file store)
+ground-core/storage/projects/

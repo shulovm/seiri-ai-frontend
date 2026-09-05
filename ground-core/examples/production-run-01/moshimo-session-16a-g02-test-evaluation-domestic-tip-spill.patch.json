@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "68c11e59-ebdc-42ac-80c4-e660e5fa83c4",
+      "payload": {
+        "id": "68c11e59-ebdc-42ac-80c4-e660e5fa83c4",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "G02コップ落下は、Domestic Tip-Spill Primitive v0.1として継続採用候補にする。",
+        "rationale": "G02の初回テストでは、手から落とす案、テーブル端から落ちる案、スプーンでぶつける案、透明人形や膜のようなトリガーを入れる案を試したが、いずれも主現象である「日常物体の落下が重力半分で遅くなる」読解を弱める可能性があった。評価の結果、G02は、テーブル端のグラスが支えを失い、横向きに倒れながら落下し、飲み口から水が自然に“ぱしゃっ”とこぼれ、床に当たる直前で切る構造が最も自然と判断した。この構造はDomestic Tip-Spill Primitive v0.1として、他の家庭内物体や別テーマにも流用できるため、1000本工場の現象プリミティブとして保存する。ただし、現在の生成結果はまだ少し浮遊気味に見える問題と、水のこぼれ方の自然さに改善余地があるため、本番採用確定ではなくAdopt候補 / Retry継続とする。また、G02ではText-to-Video一発生成より、良かったフレームを参照してCorrection / Improvement / NGAで動作だけを修正するFrame-guided correction方式が、1000本工場に向いていると判断した。",
+        "alternatives_considered": [
+          "手からコップを落とす案を継続する",
+          "スプーンでぶつける案を継続する",
+          "透明人形・膜のようなトリガーをG02に入れる",
+          "G02を本番採用確定する",
+          "G02をDropする"
+        ],
+        "status": "active",
+        "decided_at": "2026-06-29T15:00:00.000Z",
+        "created_at": "2026-06-29T15:00:00.000Z",
+        "updated_at": "2026-06-29T15:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "58481304-78a4-4013-badd-1c5ece6a41b4",
+      "payload": {
+        "id": "58481304-78a4-4013-badd-1c5ece6a41b4",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "session-16A: G02初回テスト評価 / Domestic Tip-Spill Primitive v0.1 / Frame-guided correction",
+        "body": "session-16A。\n\nsession-15で作成した初回テスト生成プロンプトを使い、G02コップ落下テストを複数回行った。その結果、G02は「手から落とす」よりも「家庭のテーブル端からグラスが落ちる」方が、1000本工場の構造に合うと判断した。\n\n学び:\n手から落とすと、人物動作が主役になり、G02の役割からズレる。\nスプーンを入れると因果は分かりやすいが、情報が増えて主現象が散る。\n透明人形はシリーズ記号として可能性はあるが、G02ではキャラ化・妖精化・魔法化のリスクがある。\n膜のような透明存在は可能性があるが、G02では必須ではない。\nG02の主役は、日常のテーブルからグラスが落ちる、しかし落下が遅い、水が自然にこぼれる、でよい。\n縦のまま落ちると水が出る理由が弱く、浮遊にも見えやすい。\nテーブル端でグラスが倒れて横向きになり、飲み口から水が自然に“ぱしゃっ”とこぼれる構造が最も自然。\n\n現在のG02判定:\nAdopt候補 / Retry継続。\n本番採用はまだ確定しない。\n構造はかなり近づいたが、落下が少し浮遊気味に見える問題と、水のこぼれ方の自然さに改善余地がある。\n\nG02構造名:\nDomestic Tip-Spill Primitive v0.1。\n家庭内・傾倒こぼれプリミティブ。\n\n構造:\nOrdinary Support Surface\nObject Near Edge\nSupport Loss\nTip / Rotate\nContent Response\nAltered Rule Read\nPre-impact Cut\n\n重力半分回での具体化:\nテーブル端のグラス\n↓\nグラスが支えを失う\n↓\n縦ではなく横向きに倒れながら落ちる\n↓\n飲み口から水が自然にぱしゃっとこぼれる\n↓\nグラスと水が通常より遅く落ちる\n↓\n床に当たる直前で切る\n\nFrame-guided correction:\nG02ではText-to-Video一発生成だけでは、構図、物体、水、落下、床、衝突直前カットを同時に制御するのが難しかった。途中から、良かった生成フレームを参照し、プロンプト全文を作り直すのではなく、訂正文・改善文・NGAで動作だけを修正するFrame-guided correction方式へ移行した。この方式は、構図を固定したまま生成結果を育てられるため、1000本工場の制作運用に適している。\n\n水表現:\n水は主役ではなく、重力半分を補助的に読ませる証拠として扱う。細かい物理説明より、small realistic splash / gentle pasha spill / natural domestic water spill のように、家庭で起きる自然な小さい“ぱしゃっ”として扱う方が生成に通りやすい。\n\n次回の改善軸:\n1. 浮遊ではなく、常に床へ近づくゆっくり落下\n2. グラスは縦のまま落ちず、横に倒れながら落ちる\n3. 水は少量だけ自然に“ぱしゃっ”とこぼれる\n4. 割れる直前で切る\n\nこのG02は、単発のコップ生成ではなく、1000本工場の現象プリミティブとして保存する。\n\n規格本文:\ndocs/MOSHIMO_VIDEO_01_GRAVITY_HALF_G02_TEST_EVALUATION_V0.1.md（G02初回テスト評価v0.1完全版）\ndocs/MOSHIMO_VIDEO_01_GRAVITY_HALF_TEST_GENERATION_PROMPTS_V0.1.md（G02評価記録済みの注記を追記）",
+        "source": "manual",
+        "observed_at": "2026-06-29T15:00:00.000Z",
+        "created_at": "2026-06-29T15:00:00.000Z",
+        "updated_at": "2026-06-29T15:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "bac1b350-a506-4c82-9cfd-f4128c616ffd",
+      "payload": {
+        "summary": "第1本目のテーマ「もしも地球の重力が半分になったら？」は、もしも動画シリーズ文法 v0.2.1 により Global Physical Field / Body-first / Portal不要として分類済み。session-12では11カット版v0.2を作成し、session-13では生成用カット仕様v0.1、session-14では生成素材方針v0.1、session-15ではG02/G06/G04-A/B/C/G11のテスト生成プロンプトv0.1を作成した。session-16AではG02コップ落下テストの途中評価を行い、手から落とす案、スプーン案、透明人形・膜案を経て、G02は「テーブル端のグラスが横向きに倒れながら遅く落ち、水が自然にぱしゃっとこぼれ、床に当たる直前で切る」Domestic Tip-Spill Primitive v0.1として保存する方針にした。G02はAdopt候補 / Retry継続であり、本番採用はまだ確定しない。また、G02ではText-to-Video一発生成より、良かった生成フレームを参照してCorrection / Improvement / NGAで動作だけを修正するFrame-guided correction方式が、1000本工場に向いていると判断した。現在のprimary action「重力半分回の初回テスト生成結果を評価する」はまだpendingのまま維持する。次はG02の追加RetryまたはG06バスケ / G04自然カット / G11寝室シーツ残像の評価へ進む。"
+      }
+    }
+  ]
+}

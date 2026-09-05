@@ -1,0 +1,130 @@
+/**
+ * Reality Core v0.7 — Attention Observation Operational Eligibility
+ * Canonical per-binding RESOURCE_READINESS Evidence State types (GROUND-141).
+ *
+ * Derived only. Not persisted.
+ *
+ * GROUND-140 RESOURCE_READINESS Evidence Evaluation State Interpretation Basis
+ * → Canonical per-binding RESOURCE_READINESS Evidence State only.
+ *
+ * EXPLICITLY_INTERPRETED_* ≠ RESOURCE_READY / requirement satisfied
+ * UNRESOLVED_NO_POLICY ≠ NEGATIVE evidence / RESOURCE_NOT_READY
+ * UNRESOLVED_NO_MAPPING ≠ NEGATIVE evidence / RESOURCE_NOT_READY
+ * per-binding Evidence State ≠ per-requirement Resource Readiness
+ * per-binding Evidence State ≠ OE RESOURCE_READINESS Source / Dimension Satisfaction
+ */
+
+import type {
+  AttentionCandidateObservationOperationalEligibilityResourceReadinessEvidenceInterpretationBasisAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessEvidenceInterpretationBasisBindingAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessEvidenceInterpretationBasisSetAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessEvidenceInterpretationBasisStatus,
+} from "./attention-observation-operational-eligibility-resource-readiness-evidence-evaluation-state-interpretation-basis-types.js";
+import type { AttentionObservationOperationalEligibilityResourceReadinessEvidenceEvaluationStateInterpretation } from "./attention-observation-operational-eligibility-resource-readiness-evidence-evaluation-state-interpretation-policy-types.js";
+
+export type AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateValue =
+  | "EXPLICITLY_INTERPRETED_RESOURCE_READINESS_EVIDENCE_POSITIVE"
+  | "EXPLICITLY_INTERPRETED_RESOURCE_READINESS_EVIDENCE_NEGATIVE"
+  | "UNRESOLVED_NO_EXPLICIT_RESOURCE_READINESS_EVIDENCE_INTERPRETATION_POLICY"
+  | "UNRESOLVED_NO_EXPLICIT_RESOURCE_READINESS_EVIDENCE_INTERPRETATION_MAPPING_FOR_CURRENT_EVALUATION_STATE";
+
+export interface AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateBasis {
+  key: string;
+  candidate_key: string;
+  observation_need_key: string;
+  capability_requirement_set_key: string;
+  dimension: "RESOURCE_READINESS";
+  observation_resource_requirement_key: string;
+  resource_readiness_observation_context_binding_key: string;
+  resource_declaration_id: string;
+  resource_readiness_evidence_interpretation_basis_status: AttentionObservationOperationalEligibilityResourceReadinessEvidenceInterpretationBasisStatus;
+  resource_readiness_evidence_interpretation_basis_key: string | null;
+  resource_readiness_evidence_evaluation_state_key: string;
+  resource_readiness_evidence_evaluation_state_basis_key: string;
+  resource_readiness_evidence_interpretation_policy_key: string | null;
+  matched_interpretation_mapping_key: string | null;
+  interpretation: AttentionObservationOperationalEligibilityResourceReadinessEvidenceEvaluationStateInterpretation | null;
+  canonical_state: AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateValue;
+}
+
+export interface AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceState {
+  key: string;
+  basis_key: string;
+  candidate_key: string;
+  observation_need_key: string;
+  capability_requirement_set_key: string;
+  dimension: "RESOURCE_READINESS";
+  observation_resource_requirement_key: string;
+  resource_readiness_observation_context_binding_key: string;
+  resource_declaration_id: string;
+  state: AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateValue;
+}
+
+export type AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateStatus =
+  | "NOT_APPLICABLE_NO_OBSERVATION_PLANNING_BASIS"
+  | "NOT_APPLICABLE_NO_EXPLICIT_CAPABILITY_REQUIREMENTS"
+  | "NO_EXPLICIT_OBSERVATION_RESOURCE_REQUIREMENT_SET_DECLARED"
+  | "EXPLICIT_OBSERVATION_RESOURCE_REQUIREMENT_SET_EMPTY"
+  | "NO_EXPLICIT_RESOURCE_READINESS_OBSERVATION_CONTEXT_BINDINGS_DECLARED"
+  | "NO_EXPLICIT_RESOURCE_READINESS_EVALUATION_INSTANT_DECLARED"
+  | "CANONICAL_PER_BINDING_RESOURCE_READINESS_EVIDENCE_STATES_PRESENT";
+
+export type AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateModelLimitation =
+  | "PER_REQUIREMENT_RESOURCE_READINESS_BINDING_COMPOSITION_POLICY_NOT_MODELED"
+  | "PER_REQUIREMENT_RESOURCE_READINESS_BINDING_COMPOSITION_READINESS_NOT_MODELED"
+  | "PER_REQUIREMENT_RESOURCE_READINESS_BINDING_COMPOSITION_RESULT_NOT_MODELED"
+  | "PER_REQUIREMENT_CANONICAL_RESOURCE_READINESS_STATE_NOT_MODELED"
+  | "OBSERVATION_RESOURCE_QUANTITY_RELATION_NOT_MODELED"
+  | "OBSERVATION_RESOURCE_RESERVATION_EVIDENCE_NOT_INCLUDED"
+  | "OBSERVATION_RESOURCE_COMMITMENT_EVIDENCE_NOT_INCLUDED"
+  | "OBSERVATION_RESOURCE_CONTENTION_EVIDENCE_NOT_INCLUDED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_DIMENSION_SATISFACTION_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_FEASIBILITY_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_CROSS_DIMENSION_COMPOSITION_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_STATE_NOT_MODELED"
+  | "CAN_EXECUTE_NOT_MODELED"
+  | "EXECUTION_NOT_MODELED";
+
+export interface AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateAssessment {
+  resource_readiness_observation_context_binding_key: string;
+  resource_readiness_evidence_interpretation_basis_assessment: AttentionObservationOperationalEligibilityResourceReadinessEvidenceInterpretationBasisBindingAssessment;
+  canonical_state_basis: AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateBasis;
+  canonical_state: AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceState;
+  has_canonical_per_binding_resource_readiness_evidence_state: true;
+  has_resolved_canonical_per_binding_resource_readiness_evidence_state: boolean;
+  has_unresolved_canonical_per_binding_resource_readiness_evidence_state: boolean;
+}
+
+export interface AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateRequirementAssessment {
+  observation_resource_requirement_key: string;
+  canonical_binding_state_assessments: AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateAssessment[];
+  has_canonical_per_binding_resource_readiness_evidence_states: boolean;
+  has_resolved_canonical_per_binding_resource_readiness_evidence_states: boolean;
+  has_unresolved_canonical_per_binding_resource_readiness_evidence_states: boolean;
+}
+
+export interface AttentionCandidateObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateAssessment {
+  candidate_key: string;
+  resource_readiness_evidence_interpretation_basis_assessment: AttentionCandidateObservationOperationalEligibilityResourceReadinessEvidenceInterpretationBasisAssessment;
+  status: AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateStatus;
+  requirement_state_assessments: AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateRequirementAssessment[];
+  canonical_binding_state_assessments: AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateAssessment[];
+  has_canonical_per_binding_resource_readiness_evidence_states: boolean;
+  has_resolved_canonical_per_binding_resource_readiness_evidence_states: boolean;
+  has_unresolved_canonical_per_binding_resource_readiness_evidence_states: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateModelLimitation[];
+}
+
+export interface AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateInput {
+  resource_readiness_evidence_interpretation_basis_set: AttentionObservationOperationalEligibilityResourceReadinessEvidenceInterpretationBasisSetAssessment;
+}
+
+export interface AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateSetAssessment {
+  resource_readiness_evidence_interpretation_basis_set: AttentionObservationOperationalEligibilityResourceReadinessEvidenceInterpretationBasisSetAssessment;
+  candidate_assessments: AttentionCandidateObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateAssessment[];
+  has_canonical_per_binding_resource_readiness_evidence_states: boolean;
+  has_resolved_canonical_per_binding_resource_readiness_evidence_states: boolean;
+  has_unresolved_canonical_per_binding_resource_readiness_evidence_states: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityCanonicalPerBindingResourceReadinessEvidenceStateModelLimitation[];
+}

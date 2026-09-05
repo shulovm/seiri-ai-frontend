@@ -1,0 +1,12 @@
+{
+  "type": "clarification",
+  "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+  "input_text": "桃太郎はまずキャラ固定からやる",
+  "reason": "Semantic Event を検出できませんでした",
+  "questions": [
+    "候補・決定・保留・停止のどれに近いですか？",
+    "もう少し具体的に書けますか？"
+  ],
+  "risk_level": "medium",
+  "created_at": "2026-06-07T05:33:34.326Z"
+}

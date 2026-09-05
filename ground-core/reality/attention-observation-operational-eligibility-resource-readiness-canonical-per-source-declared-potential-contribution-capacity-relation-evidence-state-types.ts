@@ -1,0 +1,139 @@
+/**
+ * Reality Core v0.7 — Attention Observation Operational Eligibility
+ * Canonical Per-source Declared Potential Contribution
+ * Capacity-Relation Evidence State types (GROUND-161).
+ *
+ * Derived only. Not persisted.
+ *
+ * GROUND-160 Per-source Interpretation Basis
+ * → Canonical Per-source Capacity-Relation Evidence State
+ *
+ * Normalization only. Sole runtime authority: GROUND-160.
+ *
+ * SUPPORTING ≠ compatibility HOLDS
+ * CONTRADICTING ≠ compatibility DOES_NOT_HOLD
+ * NO_POLICY ≠ CONTRADICTING; NO_MAPPING ≠ CONTRADICTING
+ * zero capacity sources → zero canonical States
+ * capacity-source aggregation NOT MODELED
+ * Resource Ready NOT MODELED
+ */
+
+import type {
+  AttentionCandidateObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityRelationInterpretationBasisAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityRelationInterpretationBasisBindingAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityRelationInterpretationBasisSetAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityRelationInterpretationBasisSourceAssessment,
+} from "./attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-relation-interpretation-basis-types.js";
+
+/**
+ * Exactly one semantic runtime input.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessCanonicalPerSourceDeclaredPotentialContributionCapacityRelationEvidenceStateEvalInput {
+  resource_readiness_declared_potential_contribution_capacity_relation_interpretation_basis_set: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityRelationInterpretationBasisSetAssessment;
+}
+
+/**
+ * Exactly four canonical per-source evidence States.
+ * Never HOLDS / DOES_NOT_HOLD / READY / AVAILABLE.
+ */
+export type AttentionObservationOperationalEligibilityResourceReadinessCanonicalPerSourceDeclaredPotentialContributionCapacityRelationEvidenceStateValue =
+  | "EXPLICITLY_INTERPRETED_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_COMPATIBILITY_SUPPORTING"
+  | "EXPLICITLY_INTERPRETED_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_COMPATIBILITY_CONTRADICTING"
+  | "UNRESOLVED_NO_EXPLICIT_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_RELATION_INTERPRETATION_POLICY"
+  | "UNRESOLVED_NO_EXPLICIT_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_RELATION_INTERPRETATION_MAPPING_FOR_CURRENT_RAW_RELATION";
+
+export type AttentionObservationOperationalEligibilityResourceReadinessCanonicalPerSourceDeclaredPotentialContributionCapacityRelationEvidenceStateModelLimitation =
+  | "CAPACITY_SOURCE_MEMBER_SET_NOT_MODELED"
+  | "CAPACITY_SOURCE_AGGREGATION_POLICY_NOT_MODELED"
+  | "CAPACITY_SOURCE_AGGREGATION_READINESS_POLICY_NOT_MODELED"
+  | "CAPACITY_SOURCE_AGGREGATION_READINESS_BASIS_NOT_MODELED"
+  | "CAPACITY_SOURCE_AGGREGATION_RESULT_NOT_MODELED"
+  | "CAPACITY_COMPATIBILITY_PROPOSITION_STATE_NOT_MODELED"
+  | "REQUIRED_AMOUNT_RELATION_INTERPRETATION_NOT_MODELED"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_VERIFICATION_NOT_MODELED"
+  | "PHYSICAL_CONTRIBUTION_EVIDENCE_EVALUATION_STATE_NOT_MODELED"
+  | "PHYSICAL_CONTRIBUTION_EVIDENCE_COMPOSITION_NOT_MODELED"
+  | "RESOURCE_AVAILABILITY_INTERPRETATION_NOT_MODELED"
+  | "RESOURCE_RESERVATION_SEMANTIC_EXTENSION_NOT_MODELED"
+  | "RESERVATION_AWARE_FREE_QUANTITY_NOT_MODELED"
+  | "EFFECTIVE_POTENTIAL_CONTRIBUTION_NOT_MODELED"
+  | "RESOURCE_DIVISIBILITY_NOT_MODELED"
+  | "RESOURCE_QUANTITY_CARDINALITY_NOT_MODELED"
+  | "RESOURCE_REQUIRED_AMOUNT_STOCK_VS_FLOW_SEMANTICS_NOT_MODELED"
+  | "RESOURCE_CAPACITY_RANGE_SEMANTICS_NOT_FULLY_MODELED"
+  | "RESOURCE_REQUIRED_AMOUNT_RANGE_SEMANTICS_NOT_FULLY_MODELED"
+  | "LOGICAL_PHYSICAL_EVIDENCE_CONVERGENCE_NOT_MODELED"
+  | "PHYSICAL_RESOURCE_BINDING_GROUP_NOT_MODELED"
+  | "RESOURCE_FUNGIBILITY_NOT_MODELED"
+  | "RESOURCE_SUBSTITUTION_NOT_MODELED"
+  | "CROSS_BINDING_QUANTITY_COMPOSITION_NOT_MODELED"
+  | "PHYSICAL_RESOURCE_COMPOSITION_NOT_MODELED"
+  | "TRUE_PER_REQUIREMENT_RESOURCE_READINESS_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_DIMENSION_SATISFACTION_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_FEASIBILITY_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_STATE_NOT_MODELED"
+  | "CAN_EXECUTE_NOT_MODELED"
+  | "EXECUTION_NOT_MODELED";
+
+/**
+ * Canonical per-source Capacity-Relation Evidence State.
+ * One exact current capacity source → one State.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessCanonicalPerSourceDeclaredPotentialContributionCapacityRelationEvidenceState {
+  key: string;
+  candidate_key: string;
+  observation_need_key: string;
+  capability_requirement_set_key: string;
+  dimension: "RESOURCE_READINESS";
+  observation_resource_requirement_key: string;
+  resource_readiness_observation_context_binding_key: string;
+  resource_declaration_id: string;
+  evaluation_at: string;
+  capacity_relation_entry_key: string;
+  capacity_declaration_key: string;
+  value: AttentionObservationOperationalEligibilityResourceReadinessCanonicalPerSourceDeclaredPotentialContributionCapacityRelationEvidenceStateValue;
+  capacity_relation_interpretation_basis_key: string | null;
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessCanonicalPerSourceDeclaredPotentialContributionCapacityRelationEvidenceStateSourceAssessment {
+  capacity_relation_interpretation_basis_source_assessment: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityRelationInterpretationBasisSourceAssessment;
+  canonical_state: AttentionObservationOperationalEligibilityResourceReadinessCanonicalPerSourceDeclaredPotentialContributionCapacityRelationEvidenceState;
+  canonical_state_value: AttentionObservationOperationalEligibilityResourceReadinessCanonicalPerSourceDeclaredPotentialContributionCapacityRelationEvidenceStateValue;
+}
+
+/**
+ * Binding-level assessment. Summary booleans are existence-only.
+ * No Binding-level compatibility proposition verdict / aggregate State.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessCanonicalPerSourceDeclaredPotentialContributionCapacityRelationEvidenceStateBindingAssessment {
+  observation_resource_requirement_key: string;
+  resource_readiness_observation_context_binding_key: string;
+  resource_declaration_id: string;
+  capacity_relation_interpretation_basis_binding_assessment: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityRelationInterpretationBasisBindingAssessment;
+  source_state_assessments: AttentionObservationOperationalEligibilityResourceReadinessCanonicalPerSourceDeclaredPotentialContributionCapacityRelationEvidenceStateSourceAssessment[];
+  capacity_source_count: number;
+  canonical_state_count: number;
+  has_supporting_capacity_relation_evidence_states: boolean;
+  has_contradicting_capacity_relation_evidence_states: boolean;
+  has_unresolved_capacity_relation_evidence_states: boolean;
+}
+
+export interface AttentionCandidateObservationOperationalEligibilityResourceReadinessCanonicalPerSourceDeclaredPotentialContributionCapacityRelationEvidenceStateAssessment {
+  candidate_key: string;
+  capacity_relation_interpretation_basis_assessment: AttentionCandidateObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityRelationInterpretationBasisAssessment;
+  binding_state_assessments: AttentionObservationOperationalEligibilityResourceReadinessCanonicalPerSourceDeclaredPotentialContributionCapacityRelationEvidenceStateBindingAssessment[];
+  has_supporting_capacity_relation_evidence_states: boolean;
+  has_contradicting_capacity_relation_evidence_states: boolean;
+  has_unresolved_capacity_relation_evidence_states: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityResourceReadinessCanonicalPerSourceDeclaredPotentialContributionCapacityRelationEvidenceStateModelLimitation[];
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessCanonicalPerSourceDeclaredPotentialContributionCapacityRelationEvidenceStateSetAssessment {
+  resource_readiness_declared_potential_contribution_capacity_relation_interpretation_basis_set: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityRelationInterpretationBasisSetAssessment;
+  candidate_assessments: AttentionCandidateObservationOperationalEligibilityResourceReadinessCanonicalPerSourceDeclaredPotentialContributionCapacityRelationEvidenceStateAssessment[];
+  has_supporting_capacity_relation_evidence_states: boolean;
+  has_contradicting_capacity_relation_evidence_states: boolean;
+  has_unresolved_capacity_relation_evidence_states: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityResourceReadinessCanonicalPerSourceDeclaredPotentialContributionCapacityRelationEvidenceStateModelLimitation[];
+}

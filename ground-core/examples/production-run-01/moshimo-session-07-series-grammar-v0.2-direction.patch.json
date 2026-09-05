@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "1ee0e57e-bee6-47ab-91e1-133b5868dc21",
+      "payload": {
+        "id": "1ee0e57e-bee6-47ab-91e1-133b5868dc21",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "ナレーション台本へ進む前に、Production Run 01で得た制作文法を1000本用シリーズ文法v0.2として定義する方針に決定する。",
+        "rationale": "現在のProduction Runは1本目の制作設計としては進んでいるが、異なるテーマを同じ工程で60秒映像へ変換する量産構造はまだ固定されていないため。UIやナレーション台本へ進む前に、Rule Change、Normal Anchor、First Distortion、First Event、System Failure、Residual Sceneなどの変換文法を定義することで、1000本制作に耐える骨組みを作る必要があるため。",
+        "alternatives_considered": [
+          "A案: 先にUI（太陽系メタファー/管理ページ/制作進行UI）を作る",
+          "C案: そのままナレーション台本へ進む"
+        ],
+        "status": "active",
+        "decided_at": "2026-06-26T11:34:09.220Z",
+        "created_at": "2026-06-26T11:34:09.220Z",
+        "updated_at": "2026-06-26T11:34:09.220Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "989fb3bf-8ca5-4b7e-b236-a38ff4f58d13",
+      "payload": {
+        "id": "989fb3bf-8ca5-4b7e-b236-a38ff4f58d13",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "次方向レビュー（B案: 1000本用シリーズ構造へ）",
+        "body": "次方向レビュー:\nUI作りではなく、1000本用シリーズ構造作りへ進むB案が合理的と判断した。\n\n理由:\nUIは操作対象となる制作構造が固まってから作るべきである。\n現時点では、重力半分の1本目としては映像内容まで決定済みだが、異なるテーマでも同じ工程で作れる量産構造はまだ十分に固定されていない。\nこのままナレーション台本へ進むと、1本目は進むが、1000本用の制作エンジンが曖昧なままになる。\n\n次に定義すべき骨組み:\nもしもテーマ → Rule Change → Normal Anchor → First Distortion → First Event → Human Reaction → Public Spread → System Failure → Macro View → Residual Scene → Cut to Black。\n\n1カットの固定構造:\nNormal → Distortion → Event → Cut Trigger。\n\n方針:\nナレーションは原則なし。意味や教訓を語らない。見せるだけ。解釈は視聴者に残す。\n人間の体感だけで伝わりづらいテーマでは、Screen Portal（スマホ/テレビ/PC/監視カメラの画面へ吸い込まれる動作）をオプション部品として使う。\n\nUI:\n太陽系メタファーや管理ページの本格UIはまだ作らない。\n必要なら後で、シリーズ文法v0.2を検証するための薄いビューから検討する。\n\n次Actionのintentについて:\n新Action「1000本用シリーズ文法v0.2を定義する」のintentは design 相当として扱う。\nただし action_intent は現状seedからのintake時のみ extensions.intake.action_intents に記録される仕様であり、StatePatchではextensionsを更新できないため、今回はintentをAction descriptionとdecision/observation上に明記する形で扱う（schema変更・新機能追加はしない）。\n\n既存Action「ナレーション台本を書く」の扱い:\n削除せず後続Actionとして残す。ただし、1000本用シリーズ文法v0.2を定義した後に再開する。それまではprimaryから外す。",
+        "source": "manual",
+        "observed_at": "2026-06-26T11:34:09.220Z",
+        "created_at": "2026-06-26T11:34:09.220Z",
+        "updated_at": "2026-06-26T11:34:09.220Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "993f7566-7450-4417-826e-50c4610c5f00",
+      "payload": {
+        "id": "993f7566-7450-4417-826e-50c4610c5f00",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "blocker_id": null,
+        "depends_on_action_id": null,
+        "title": "1000本用シリーズ文法v0.2を定義する",
+        "description": "intent: design。Production Run 01で得た制作文法を、異なるテーマでも同じ工程で60秒映像へ変換できる1000本用シリーズ文法v0.2へ抽象化する設計Action。もしもテーマ→Rule Change→Normal Anchor→First Distortion→First Event→Human Reaction→Public Spread→System Failure→Macro View→Residual Scene→Cut to Black、および1カット固定構造（Normal→Distortion→Event→Cut Trigger）、Screen Portalオプション、ナレーション原則なし方針を定義する。",
+      "status": "pending",
+      "due_at": null,
+      "sort_order": 6,
+        "created_at": "2026-06-26T11:34:09.220Z",
+        "updated_at": "2026-06-26T11:34:09.220Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "bac1b350-a506-4c82-9cfd-f4128c616ffd",
+      "payload": {
+        "primary_next_action_id": "993f7566-7450-4417-826e-50c4610c5f00",
+        "summary": "第1本目のテーマは「もしも地球の重力が半分になったら？」に決定済み。1行コンセプト、60秒構成、冒頭3秒フック、13個の短い現象カット、13カットそれぞれの映像内容は決定済み。ただし、次にナレーション台本へ進む前に、Production Run 01で得た制作文法を1000本用シリーズ文法v0.2として抽象化する方針に変更した。次は「1000本用シリーズ文法v0.2を定義する」。"
+      }
+    }
+  ]
+}

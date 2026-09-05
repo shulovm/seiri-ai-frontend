@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "2b99a963-bebf-4f3f-89e7-70621c3ba78c",
+      "payload": {
+        "id": "2b99a963-bebf-4f3f-89e7-70621c3ba78c",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "session-09C補強として、Screen Target Coherence RuleとScreen Dependencyを定義し、Screen-first後半カットを再整理する。",
+        "rationale": "Theme Validation 03「もしも画面だけ、5秒先を映したら」では、Screen-first / Information Rule / Screen Portal / Time Offset Compression を検証した。しかし、後半のWide Field / Macro Field / After Fieldにおいて、「街頭ビジョンに街の5秒後」「都市の画面網全体」「誰もいない廊下の小モニター」などは、画面の中で先に変化する対象と、現実で後から追いつく対象が曖昧になりやすかった。Screen-firstでは、Screen TargetとReal Targetを同じものとして読める必要があるため、Screen Target Coherence Ruleを追加する。また、画面が5秒先を映すことで人間が現実より画面を信頼し始める結果として、Screen Dependency / Reality Delegationを追加し、後半カットとして街で人々が携帯画面を見ながら歩くPhone-Walk After Fieldを採用候補にする。Wide/Macroでは、抽象的な都市画面網ではなく、サッカーの同じゴールなど単一イベントを複数画面が先に映すShared Event Screenを優先する。",
+        "alternatives_considered": [
+          "後半のWide/Macro/Afterを前回案（街頭ビジョン・都市画面網・廊下モニター）のまま維持する",
+          "Network Drift Screenとして抽象的な都市画面網を後半の主軸にする"
+        ],
+        "status": "active",
+        "decided_at": "2026-06-27T00:00:00.000Z",
+        "created_at": "2026-06-27T00:00:00.000Z",
+        "updated_at": "2026-06-27T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "0c1536a1-3c58-4e2c-ba4a-11f4cc2e5714",
+      "payload": {
+        "id": "0c1536a1-3c58-4e2c-ba4a-11f4cc2e5714",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "session-09C補強: Screen Target Coherence / Screen Dependency / 後半カット再整理",
+        "body": "session-09C補強。\n\n問題:\n前回のTheme Validation 03「もしも画面だけ、5秒先を映したら」では、Cut01〜Cut06は分かりやすかった。防犯モニターのドア、スマホ画面の紙コップ、インターホンの配達員、バックモニターの自転車、駅の監視モニター、交通管制モニターは、画面の中で先に変化している対象と、現実で後から追いつく対象が同じものとして読めるためである。\n\n一方で、後半の「街頭ビジョンに街の5秒後」「都市の画面網全体が現実より少し先に進んでいる」「誰もいない廊下の小さな監視モニターだけが5秒後の人影を映す」は、対象が広がりすぎて、何が5秒先で、何が現実で追いついたのかが分かりづらい。\n\n追加ルール:\nScreen Target Coherence Rule。\nScreen-firstでは、画面の中で先に変化する対象と、現実で後から追いつく対象を、同じものとして読める必要がある。\n\n今後のScreen-firstカット項目:\nScreen Target = 画面の中で先に変化している対象。\nReal Target = 現実で後から追いつく対象。\nCatch-up Moment = 現実が画面内の未来に追いつく瞬間。\nViewer Effect = 人間の判断や視線が、どう画面に引っ張られるか。\n\nScreen-firstの3分類:\n1. Direct Pair Screen\n画面に映る対象と現実の対象が同じ場所にあり、視聴者が両方を見比べられるタイプ。例: 防犯モニターのドア、スマホ画面の紙コップ、インターホンの配達員、バックモニターの自転車、駅モニターの電車、交通管制モニターの車列。\n2. Shared Event Screen\n複数の画面が、同じひとつの出来事を5秒先に映すタイプ。例: サッカーの1本のシュート、1つのゴール、電車の発車、交差点で特定の人流が割れる瞬間。\n3. Network Drift Screen\n都市中の画面が、それぞれ別々の5秒後を映すタイプ。これは分かりづらくなりやすいため、原則として後半では避ける。使う場合は最後の抽象的な残像としてのみ扱う。\n\n追加部品:\nScreen Dependency / Reality Delegation。\n画面が現実より5秒先を映すことで、人間が現実を見るより画面を見る方が安全・早い・正確だと判断し始める状態。これはスマホ依存ではなく、現実判断が画面へ委託される現象である。\n\nPhone-Walk After Field:\n街で多くの人が前を見ず、携帯画面を見ながら歩いている。画面には、5秒後に空く人混みの隙間や、5秒後に割れる横断歩道の人流が映っている。現実の人流が画面通りに割れ、人々は顔を上げないままその隙間を通る。誰もぶつからないが、全員が現実を見ていない。このカットは、画面が現実より信頼され始めた世界の結果を、説明なしで見せるAfter Fieldとして強い。\n\nCut07修正候補:\nWide Fieldは、抽象的な街頭ビジョンではなく、サッカー観戦などのShared Event Screenを使う。大型ビジョンにはボールがゴールネットを揺らす映像が先に映る。現実のピッチでは、ボールはまだ選手の足元にある。一部の観客が画面を見て先に立ち上がる。少し後、現実のシュートが決まり、歓声が遅れて爆発する。\n\nCut08修正候補:\nMacro Fieldは、都市の画面網がそれぞれ別々の未来を映すのではなく、都市中の複数画面が同じ試合の同じゴールを5秒先に映す。スポーツバー、電車内のスマホ、街頭ビジョン、家のテレビなどが同じゴールを先に映し、画面を見ていた人々が先に反応する。現実のゴールに都市中の歓声が追いつく。\n\nCut09修正候補:\nAfter Fieldは、誰もいない廊下の小モニターではなく、街で皆が携帯画面を見ながら歩くPhone-Walk After Fieldを本命候補とする。人々は現実を見ることをやめ、画面の5秒先に判断を預けている。\n\nCut10:\nEnd Residualとして、画面だけが先に暗くなり、現実が後から黒に追いつくカットは維持してよい。Screen Targetは暗くなる画面、Real Targetは後から暗くなる現実の空間、Catch-up Momentは現実の照明が落ち、画面の黒に追いつく瞬間である。\n\n規格本文:\ndocs/MOSHIMO_VIDEO_THEME_VALIDATION_03_SCREEN_5_SECONDS_AHEAD.md（Screen Target Coherence / 3分類 / 後半カット再整理追記）\ndocs/MOSHIMO_VIDEO_OPENING_ENTRY_SELECTOR_V0.1.md（Screen-first補強追記）\ndocs/MOSHIMO_VIDEO_RULE_SCOPE_CLASSIFIER_V0.1.md（session-09C補強追記）",
+        "source": "manual",
+        "observed_at": "2026-06-27T00:00:00.000Z",
+        "created_at": "2026-06-27T00:00:00.000Z",
+        "updated_at": "2026-06-27T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "bac1b350-a506-4c82-9cfd-f4128c616ffd",
+      "payload": {
+        "summary": "第1本目のテーマ「もしも地球の重力が半分になったら？」は制作設計済み。1000本用の「もしも動画 60秒拡大型カット構造 v0.2」も定義済み。現在はv0.2を複数テーマで検証中。Theme Validation 01「もしも水だけが上に落ちたら」では、Material-specific Rule / Environment-first / Aperture Match Cut を検証済み。session-09A補強では、家スタートの扱いと Rule Scope Classifier v0.1 を定義し、Theme → Rule Scope → Entry Type → Portal Type → v0.2 Phase の判断順を記録した。Theme Validation 02「もしも街じゅうの信号が全部青になったら」では、Social System Rule / System-first / No-Portal Opening を検証済み。Theme Validation 03「もしも画面だけ、5秒先を映したら」では、Information Rule / Screen-first / Screen Portal / Time Offset Compression を検証済み。session-09C補強として、Screen-firstでは画面内で先に変化する対象と現実で後から追いつく対象を同じものとして読ませる Screen Target Coherence Rule を追加した。また、画面が現実より信頼され始める結果として Screen Dependency / Reality Delegation を追加し、後半では街で人々が携帯画面の5秒先を見ながら歩く Phone-Walk After Field を有効なカットとして整理した。Wide/Macroでは抽象的な都市の画面網より、サッカーの同じゴールなど単一対象を複数画面が先に映す Shared Event Screen を優先する。"
+      }
+    }
+  ]
+}

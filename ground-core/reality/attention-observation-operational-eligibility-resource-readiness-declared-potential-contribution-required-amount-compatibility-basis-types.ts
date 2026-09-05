@@ -1,0 +1,198 @@
+/**
+ * Reality Core v0.7 — Attention Observation Operational Eligibility
+ * Deterministic POINT-STOCK Declared Potential Contribution
+ * Required-Amount Compatibility Relation Basis types (GROUND-174).
+ *
+ * Derived only. Not persisted.
+ *
+ * GROUND-157 current contribution↔required_amount raw relation
+ * + GROUND-171 Required Amount Semantic Declaration
+ * + GROUND-173 Contribution Quantity-Kind Semantic Declaration
+ * → Deterministic Required-Amount Compatibility Relation Basis
+ *
+ * Proposition:
+ *   DECLARED_POTENTIAL_CONTRIBUTION_REQUIRED_AMOUNT_COMPATIBILITY
+ *
+ * Supported subset only:
+ *   contribution POINT + STOCK
+ *   required POINT + STOCK
+ *   amount_role MINIMUM | EXACT
+ *
+ * No arbitrary Interpretation Policy.
+ * SUPPORTING ≠ Requirement satisfied; CONTRADICTING ≠ Requirement failed.
+ * BASIS_PRESENT ≠ canonical evidence State / Resource Ready.
+ */
+
+import type {
+  AttentionCandidateObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBasisAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawQuantityRelation,
+  AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBasisSetAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBindingAssessment,
+} from "./attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-raw-relation-basis-types.js";
+import type {
+  AttentionCandidateObservationResourceRequiredAmountSemanticDeclarationAssessment,
+  AttentionObservationResourceRequiredAmountRole,
+  AttentionObservationResourceRequiredAmountSemanticDeclarationRequirementAssessment,
+  AttentionObservationResourceRequiredAmountSemanticDeclarationSetAssessment,
+} from "./attention-observation-resource-required-amount-semantic-declaration-types.js";
+import type {
+  AttentionCandidateObservationResourceDeclaredPotentialContributionQuantityKindSemanticDeclarationAssessment,
+  AttentionObservationResourceDeclaredPotentialContributionQuantityKindSemanticDeclarationBindingAssessment,
+  AttentionObservationResourceDeclaredPotentialContributionQuantityKindSemanticDeclarationSetAssessment,
+} from "./attention-observation-resource-declared-potential-contribution-quantity-kind-semantic-declaration-types.js";
+
+/**
+ * Exactly three semantic runtime inputs.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityBasisEvalInput {
+  physical_potential_contribution_raw_relation_basis_set: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBasisSetAssessment;
+  required_amount_semantic_declaration_set: AttentionObservationResourceRequiredAmountSemanticDeclarationSetAssessment;
+  declared_potential_contribution_quantity_kind_semantic_declaration_set: AttentionObservationResourceDeclaredPotentialContributionQuantityKindSemanticDeclarationSetAssessment;
+}
+
+/**
+ * Evidence polarity for DECLARED_POTENTIAL_CONTRIBUTION_REQUIRED_AMOUNT_COMPATIBILITY.
+ * Never SATISFIED / SUFFICIENT / READY.
+ */
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityInterpretation =
+  | "SUPPORTING_DECLARED_POTENTIAL_CONTRIBUTION_REQUIRED_AMOUNT_COMPATIBILITY_EVIDENCE"
+  | "CONTRADICTING_DECLARED_POTENTIAL_CONTRIBUTION_REQUIRED_AMOUNT_COMPATIBILITY_EVIDENCE";
+
+/**
+ * Outer Binding status. Unresolved causes are also listed in unresolved_reasons.
+ * Primary unresolved status uses deterministic precedence when multiple causes apply.
+ */
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityBasisStatus =
+  | "NOT_APPLICABLE_NO_EXPLICIT_DECLARED_POTENTIAL_CONTRIBUTION_SPECIFICATION"
+  | "UNRESOLVED_NO_EXPLICIT_DECLARED_POTENTIAL_CONTRIBUTION_QUANTITY_KIND_SEMANTIC_DECLARATION"
+  | "UNRESOLVED_NO_EXPLICIT_REQUIRED_AMOUNT_SEMANTIC_DECLARATION"
+  | "UNRESOLVED_CONTRIBUTION_QUANTITY_KIND_UNDECLARED"
+  | "UNRESOLVED_REQUIRED_AMOUNT_QUANTITY_KIND_UNDECLARED"
+  | "UNRESOLVED_CONTRIBUTION_REQUIRED_AMOUNT_QUANTITY_KIND_MISMATCH"
+  | "UNRESOLVED_CONTRIBUTION_RANGE_SEMANTICS_NOT_MODELED"
+  | "UNRESOLVED_REQUIRED_AMOUNT_RANGE_SEMANTICS_NOT_MODELED"
+  | "UNRESOLVED_TARGET_REQUIRED_AMOUNT_ACCEPTANCE_SEMANTICS_NOT_MODELED"
+  | "UNRESOLVED_FLOW_TIME_BASIS_SEMANTICS_NOT_MODELED"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_REQUIRED_AMOUNT_COMPATIBILITY_BASIS_PRESENT";
+
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityUnresolvedReason =
+  | "NO_EXPLICIT_CONTRIBUTION_QUANTITY_KIND_DECLARATION"
+  | "NO_EXPLICIT_REQUIRED_AMOUNT_SEMANTIC_DECLARATION"
+  | "CONTRIBUTION_QUANTITY_KIND_UNDECLARED"
+  | "REQUIRED_AMOUNT_QUANTITY_KIND_UNDECLARED"
+  | "CONTRIBUTION_REQUIRED_AMOUNT_QUANTITY_KIND_MISMATCH"
+  | "CONTRIBUTION_RANGE_SEMANTICS_NOT_MODELED"
+  | "REQUIRED_AMOUNT_RANGE_SEMANTICS_NOT_MODELED"
+  | "TARGET_ACCEPTANCE_SEMANTICS_NOT_MODELED"
+  | "FLOW_TIME_BASIS_SEMANTICS_NOT_MODELED";
+
+/**
+ * POINT×POINT supported raw relation tokens (GROUND-157 vocabulary).
+ */
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilitySupportedRawRelation =
+  | "DECLARED_POTENTIAL_CONTRIBUTION_INTERVAL_STRICTLY_BELOW_REFERENCE_INTERVAL"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_INTERVAL_EXACTLY_EQUALS_REFERENCE_INTERVAL"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_INTERVAL_STRICTLY_ABOVE_REFERENCE_INTERVAL";
+
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilitySupportedRole =
+  | "MINIMUM_REQUIRED_AMOUNT"
+  | "EXACT_REQUIRED_AMOUNT";
+
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityBasisModelLimitation =
+  | "TARGET_REQUIRED_AMOUNT_ACCEPTANCE_SEMANTICS_NOT_MODELED"
+  | "REQUIRED_AMOUNT_RANGE_SEMANTICS_NOT_MODELED"
+  | "POTENTIAL_CONTRIBUTION_RANGE_SEMANTICS_NOT_FULLY_MODELED"
+  | "FLOW_TIME_BASIS_NOT_MODELED"
+  | "FLOW_INTEGRATION_WINDOW_NOT_MODELED"
+  | "CANONICAL_REQUIRED_AMOUNT_COMPATIBILITY_EVIDENCE_STATE_NOT_MODELED"
+  | "REQUIREMENT_SATISFACTION_NOT_MODELED"
+  | "RESOURCE_DIVISIBILITY_NOT_MODELED"
+  | "RESOURCE_QUANTITY_CARDINALITY_NOT_MODELED"
+  | "RESOURCE_AVAILABILITY_INTERPRETATION_NOT_MODELED"
+  | "RESOURCE_RESERVATION_SEMANTIC_EXTENSION_NOT_MODELED"
+  | "RESERVATION_AWARE_FREE_QUANTITY_NOT_MODELED"
+  | "EFFECTIVE_POTENTIAL_CONTRIBUTION_NOT_MODELED"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_VERIFICATION_NOT_MODELED"
+  | "LOGICAL_PHYSICAL_EVIDENCE_CONVERGENCE_NOT_MODELED"
+  | "PHYSICAL_RESOURCE_BINDING_GROUP_NOT_MODELED"
+  | "RESOURCE_FUNGIBILITY_NOT_MODELED"
+  | "RESOURCE_SUBSTITUTION_NOT_MODELED"
+  | "CROSS_BINDING_QUANTITY_COMPOSITION_NOT_MODELED"
+  | "TRUE_PER_REQUIREMENT_RESOURCE_READINESS_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_DIMENSION_SATISFACTION_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_FEASIBILITY_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_STATE_NOT_MODELED"
+  | "CAN_EXECUTE_NOT_MODELED"
+  | "EXECUTION_NOT_MODELED";
+
+/**
+ * Exists only for the exact supported POINT×STOCK×MINIMUM|EXACT subset.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityBasis {
+  key: string;
+  candidate_key: string;
+  observation_need_key: string;
+  capability_requirement_set_key: string;
+  dimension: "RESOURCE_READINESS";
+  observation_resource_requirement_key: string;
+  resource_readiness_observation_context_binding_key: string;
+  resource_declaration_id: string;
+  evaluation_at: string;
+  physical_potential_contribution_declaration_key: string;
+  contribution_quantity_kind_semantic_declaration_key: string;
+  required_amount_semantic_declaration_key: string;
+  raw_relation_basis_key: string;
+  contribution_quantity_kind: "STOCK_QUANTITY";
+  required_amount_quantity_kind: "STOCK_QUANTITY";
+  required_amount_role: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilitySupportedRole;
+  contribution_required_amount_relation: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilitySupportedRawRelation;
+  interpretation: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityInterpretation;
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityBasisBindingAssessment {
+  observation_resource_requirement_key: string;
+  resource_readiness_observation_context_binding_key: string;
+  resource_declaration_id: string;
+  raw_relation_binding_assessment: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBindingAssessment;
+  required_amount_semantic_declaration_assessment: AttentionObservationResourceRequiredAmountSemanticDeclarationRequirementAssessment | null;
+  contribution_quantity_kind_semantic_declaration_assessment: AttentionObservationResourceDeclaredPotentialContributionQuantityKindSemanticDeclarationBindingAssessment | null;
+  status: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityBasisStatus;
+  unresolved_reasons: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityUnresolvedReason[];
+  compatibility_basis: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityBasis | null;
+  interpretation: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityInterpretation | null;
+  has_compatibility_basis: boolean;
+}
+
+export interface AttentionCandidateObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityBasisAssessment {
+  candidate_key: string;
+  declared_potential_contribution_raw_relation_assessment: AttentionCandidateObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBasisAssessment;
+  required_amount_semantic_declaration_assessment: AttentionCandidateObservationResourceRequiredAmountSemanticDeclarationAssessment | null;
+  contribution_quantity_kind_semantic_declaration_assessment: AttentionCandidateObservationResourceDeclaredPotentialContributionQuantityKindSemanticDeclarationAssessment | null;
+  binding_compatibility_basis_assessments: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityBasisBindingAssessment[];
+  has_required_amount_compatibility_bases: boolean;
+  has_supporting_required_amount_compatibility_evidence: boolean;
+  has_contradicting_required_amount_compatibility_evidence: boolean;
+  has_unresolved_required_amount_compatibility_assessments: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityBasisModelLimitation[];
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityBasisSetAssessment {
+  physical_potential_contribution_raw_relation_basis_set: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBasisSetAssessment;
+  required_amount_semantic_declaration_set: AttentionObservationResourceRequiredAmountSemanticDeclarationSetAssessment;
+  declared_potential_contribution_quantity_kind_semantic_declaration_set: AttentionObservationResourceDeclaredPotentialContributionQuantityKindSemanticDeclarationSetAssessment;
+  candidate_assessments: AttentionCandidateObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityBasisAssessment[];
+  has_required_amount_compatibility_bases: boolean;
+  has_supporting_required_amount_compatibility_evidence: boolean;
+  has_contradicting_required_amount_compatibility_evidence: boolean;
+  has_unresolved_required_amount_compatibility_assessments: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityBasisModelLimitation[];
+}
+
+/** Re-export role union for consumers that need GROUND-171 role alongside Basis. */
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityAmountRole =
+  AttentionObservationResourceRequiredAmountRole;
+
+/** Re-export raw relation union for malformed-token audits. */
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountCompatibilityRawRelation =
+  AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawQuantityRelation;

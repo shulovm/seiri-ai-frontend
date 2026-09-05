@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "88525602-ac82-4208-8e47-a7bd5372744e",
+      "payload": {
+        "id": "88525602-ac82-4208-8e47-a7bd5372744e",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "重力半分回では、説明ナレーションではなく、60秒映像台本とMinimal Text Layerを採用する。",
+        "rationale": "Production Run 01では、もしも動画を説明動画ではなく、異常な世界を60秒で目撃させる映像として設計している。そのため、既存Action名は「ナレーション台本を書く」だが、実際には説明ナレーションや教訓ではなく、ナレーションなしの60秒映像台本とMinimal Text Layerを作る方がシリーズ文法 v0.2.1と一致する。冒頭タイトルのみを基本とし、以降は映像、音、カット点、残像で伝える。",
+        "alternatives_considered": [
+          "説明ナレーション台本を書く",
+          "終盤に教訓・意味回収の一文を置く",
+          "各カットに説明テロップを付ける"
+        ],
+        "status": "active",
+        "decided_at": "2026-06-27T00:55:00.000Z",
+        "created_at": "2026-06-27T00:55:00.000Z",
+        "updated_at": "2026-06-27T00:55:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "7771528a-bd09-4a5b-9062-c80a16481882",
+      "payload": {
+        "id": "7771528a-bd09-4a5b-9062-c80a16481882",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "session-11: 重力半分回 60秒映像台本 v0.1 / Minimal Text Layer",
+        "body": "session-11。\n\n次のAction「ナレーション台本を書く」に入ったが、Production Run 01の方針では説明ナレーションを置かない。そのため、今回はナレーション台本を、60秒映像台本 / Minimal Text Layerとして扱う。\n\nTheme:\nもしも地球の重力が半分になったら？\n\nv0.2.1分類:\nRule Scope = Global Physical Field\nEntry Type = Body-first\nPortal Type = 不要\nOpening = 人間の起床 / 立ち上がり / 身体が最初の測定器\n\nText Layer:\n冒頭0.0〜1.8秒に「もしも地球の重力が半分になったら？」を置く。\n以降、原則テロップなし。説明字幕、章タイトル、科学解説、締めの一文、教訓、意味回収は置かない。\n\nVoice Over:\nNone。\n\n60秒映像台本 v0.1:\n0:00-0:03 起床 / 体が浮く\n0:03-0:07 コップ / 落下が遅い\n0:07-0:11 階段 / 跳ねすぎる\n0:11-0:16 通り / バッグや小物が舞う\n0:16-0:22 交差点 / 車が曲がれない\n0:22-0:28 バスケ / 飛びすぎる\n0:28-0:34 サッカー / ボールが落ちない\n0:34-0:41 工事現場 / 鉄骨が跳ねる\n0:41-0:48 高架道路 / 交通の流れが壊れる\n0:48-0:53 都市遠景 / 全体が軽くなる\n0:53-0:55 周辺の静けさ / 紙が落ちきらない\n0:55-0:58 街の端 / 浮いた傘と止まった車列\n0:58-1:00 残像 / 黒\n\n評価:\nこのv0.1は、v0.2.1のBody-first判定に従い、身体から始めて生活、街、スポーツ、インフラ、都市、周辺の静けさ、残像へ拡大する。ナレーションではなく、映像と音で異常を見せる設計である。\n\n次にレビューすべき論点:\n冒頭3秒の強さ、生活カットの弱さ、スポーツ2連続の必要性、事故中心に寄りすぎていないか、終盤が意味回収ではなく残像になっているか、13カットが多すぎないか、生成工程へ進む前に10〜12カットへ圧縮すべきか。\n\n規格本文:\ndocs/MOSHIMO_VIDEO_01_GRAVITY_HALF_60SEC_VISUAL_SCRIPT_V0.1.md（60秒映像台本 v0.1完全版）",
+        "source": "manual",
+        "observed_at": "2026-06-27T00:55:00.000Z",
+        "created_at": "2026-06-27T00:55:00.000Z",
+        "updated_at": "2026-06-27T00:55:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "7288187e-0ec4-4a88-acf8-8e8df864d453",
+      "payload": {
+        "id": "7288187e-0ec4-4a88-acf8-8e8df864d453",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "blocker_id": null,
+        "depends_on_action_id": "c9d31fde-cd7c-4c17-989e-597fe343944f",
+        "title": "重力半分回の映像台本v0.1をレビューし、カット仕様へ進む",
+        "description": "intent: review。60秒映像台本v0.1（Minimal Text Layer）を人間がレビューし、冒頭3秒の強さ・生活カットの弱さ・スポーツ2連続・事故中心化・終盤残像・カット数(13→10〜12圧縮)を確認する。必要な修正を入れた後、生成用カット仕様・素材方針・制作順へ進む。まだ生成プロンプト作成には進まない。",
+        "status": "pending",
+        "due_at": null,
+        "sort_order": 7,
+        "created_at": "2026-06-27T00:55:00.000Z",
+        "updated_at": "2026-06-27T00:55:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "97700398-e2e7-4095-9381-73b518c153ab",
+      "payload": {
+        "id": "97700398-e2e7-4095-9381-73b518c153ab",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "blocker_id": null,
+        "depends_on_action_id": "7288187e-0ec4-4a88-acf8-8e8df864d453",
+        "title": "生成素材の方針を決める",
+        "description": null,
+        "status": "pending",
+        "due_at": null,
+        "sort_order": 8,
+        "created_at": "2026-06-24T15:21:05.099Z",
+        "updated_at": "2026-06-27T00:55:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "bac1b350-a506-4c82-9cfd-f4128c616ffd",
+      "payload": {
+        "primary_next_action_id": "7288187e-0ec4-4a88-acf8-8e8df864d453",
+        "summary": "第1本目のテーマ「もしも地球の重力が半分になったら？」は、もしも動画シリーズ文法 v0.2.1 により Global Physical Field / Body-first / Portal不要として分類済み。session-11では、既存Action「ナレーション台本を書く」に戻ったが、Production Run 01の方針に合わせ、説明ナレーションではなく、ナレーションなしの60秒映像台本 v0.1 / Minimal Text Layerとして作成した。Text Layerは冒頭タイトルのみを基本とし、以降は映像、音、カット点、残像で伝える。60秒構成は、起床、コップ、階段、通り、交差点、バスケ、サッカー、工事現場、高架道路、都市遠景、周辺の静けさ、街の端、残像の13カット。次はこのv0.1をレビューし、カット数・弱いカット・事故中心化・終盤残像を確認したうえで、生成用カット仕様へ進む。"
+      }
+    },
+    {
+      "op": "status_change",
+      "entity": "next_action",
+      "entity_id": "c9d31fde-cd7c-4c17-989e-597fe343944f",
+      "status": "done"
+    }
+  ]
+}

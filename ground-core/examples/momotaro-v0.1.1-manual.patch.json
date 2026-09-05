@@ -1,0 +1,103 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "c3333333-3333-4333-8333-333333333302",
+      "payload": {
+        "depends_on_action_id": "c3333333-3333-4333-8333-333333333301"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "c3333333-3333-4333-8333-333333333303",
+      "payload": {
+        "depends_on_action_id": "c3333333-3333-4333-8333-333333333302"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "c3333333-3333-4333-8333-333333333304",
+      "payload": {
+        "depends_on_action_id": "c3333333-3333-4333-8333-333333333303"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "451327f0-6f56-4d92-9a42-64ca6b955991",
+      "payload": {
+        "primary_next_action_id": "c3333333-3333-4333-8333-333333333301"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reference_doc",
+      "entity_id": "dd45038a-7fb4-40d4-b04f-4d663dd58a92",
+      "payload": {
+        "id": "dd45038a-7fb4-40d4-b04f-4d663dd58a92",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "title": "Momotaro Trial v1 Production",
+        "path": "docs/MOMOTARO_TRIAL_V1_PRODUCTION.md",
+        "kind": "design",
+        "summary": "桃太郎試作 v1 の制作手順、シーン、生成指示、監査観点をまとめた中核ドキュメント。",
+        "status": "active",
+        "created_at": "2026-06-07T04:07:19.000Z",
+        "updated_at": "2026-06-07T04:07:19.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reference_doc",
+      "entity_id": "023d26b6-e5a4-4ea3-884a-5d942fa2c30d",
+      "payload": {
+        "id": "023d26b6-e5a4-4ea3-884a-5d942fa2c30d",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "title": "Japanese Folktale Constitution v1 Light",
+        "path": "docs/JAPANESE_FOLKTALE_CONSTITUTION_V1_LIGHT.md",
+        "kind": "design",
+        "summary": "昔話制作における軽量憲法。AI非自治、禁止理由、チェックリストを定義する。",
+        "status": "active",
+        "created_at": "2026-06-07T04:07:19.000Z",
+        "updated_at": "2026-06-07T04:07:19.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reference_doc",
+      "entity_id": "b0c267c7-05fe-4e86-84d8-732b42fb33f2",
+      "payload": {
+        "id": "b0c267c7-05fe-4e86-84d8-732b42fb33f2",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "title": "Japanese Folktale Governance v2 Future",
+        "path": "docs/JAPANESE_FOLKTALE_GOVERNANCE_V2_FUTURE.md",
+        "kind": "design",
+        "summary": "将来の統治設計。外部監査、二鍵、例外台帳などを定義する。",
+        "status": "active",
+        "created_at": "2026-06-07T04:07:19.000Z",
+        "updated_at": "2026-06-07T04:07:19.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "39787a9f-c487-48d3-a570-7c442ffa5677",
+      "payload": {
+        "id": "39787a9f-c487-48d3-a570-7c442ffa5677",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "goal_id": "c1111111-1111-4111-8111-111111111111",
+        "title": "Momotaro v0.1.1 制作管理メモ",
+        "body": "制作系プロジェクトでは、reference_docs により制作 bible との接続は表現しやすくなった。一方で、キャラクター roster、年齢別ビジュアル、視覚ルール、ツール別制約はまだ独立 entity がなく、現時点では docs と next_action に分散して管理する。",
+        "source": "manual",
+        "observed_at": "2026-06-07T04:07:19.000Z",
+        "created_at": "2026-06-07T04:07:19.000Z",
+        "updated_at": "2026-06-07T04:07:19.000Z"
+      }
+    }
+  ]
+}

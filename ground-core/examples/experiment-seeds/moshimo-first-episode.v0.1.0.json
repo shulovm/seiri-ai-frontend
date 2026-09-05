@@ -1,0 +1,118 @@
+{
+  "id": "moshimo-first-episode-v0.1.0",
+  "kind": "content",
+  "title": "もしも動画 1本目制作",
+  "summary": "もしも動画シリーズの第1本目を、テーマ決定から60秒動画完成後の観測記録までGROUND上で進める最初の本番運用Project。",
+  "description": "まだ第1本目のテーマは未決定。まずは「もしも〇〇だったら？」形式のテーマを1つ決める。1本目は作品完成だけでなく、GROUND上で制作ループを回せるかを検証する。",
+  "goal": "もしも動画の第1本目を、テーマ決定・約束文・60秒構成・フック・カット分解・台本・素材方針・編集手順・完成後の観測記録までGROUND上で完了させる。",
+  "target_output": "60秒前後のもしも動画1本目と完成後観測記録",
+  "assumptions": [
+    "最初の1本は量産ではなく、制作ループ検証を優先する",
+    "1本目は完成度より、テーマ → 構成 → 制作 → 観測の流れを通すことを優先する",
+    "専用UIや専用DBは作らず、既存GROUND Coreのループで進める"
+  ],
+  "constraints": [
+    "まず1本完成を優先する",
+    "もしも専用DB/API/UIは作らない",
+    "100本ネタ出しやランキングは後回し",
+    "テーマは1つに絞る",
+    "各Actionはpatch previewで完了記録できる粒度にする"
+  ],
+  "risks": [
+    "1本目から完成度を求めすぎると、制作ループ検証が進まない",
+    "途中で専用システムやランキングを作りたくなると、1本完成から逸れる",
+    "テーマを広げすぎると、最初のsessionが重くなる"
+  ],
+  "initial_next_actions": [
+    "第1本目のテーマを1つ決める",
+    "視聴者への約束を1行で書く",
+    "60秒構成を作る",
+    "冒頭3秒のフックを作る",
+    "6〜8カットに分解する",
+    "各カットの映像内容を決める",
+    "ナレーション台本を書く",
+    "生成素材の方針を決める",
+    "編集順序を決める",
+    "1本目を完成させる",
+    "完成後の観測項目を記録する"
+  ],
+  "action_intents": [
+    {
+      "action_index": 0,
+      "intent": "decision",
+      "rationale": "第1本目の「もしも〇〇だったら？」テーマを1つに絞る判断"
+    },
+    {
+      "action_index": 1,
+      "intent": "design",
+      "rationale": "視聴者への約束を1行で設計する"
+    },
+    {
+      "action_index": 2,
+      "intent": "deep_work",
+      "rationale": "60秒全体の流れを時間配分つきで構造化する集中作業だから"
+    },
+    {
+      "action_index": 3,
+      "intent": "design",
+      "rationale": "冒頭3秒のフック案を設計する"
+    },
+    {
+      "action_index": 4,
+      "intent": "deep_work",
+      "rationale": "60秒を生成・編集しやすいカット単位に分解する集中作業だから"
+    },
+    {
+      "action_index": 5,
+      "intent": "design",
+      "rationale": "各カットの映像内容を設計する"
+    },
+    {
+      "action_index": 6,
+      "intent": "deep_work",
+      "rationale": "60秒前後のナレーション台本を書く集中作業だから"
+    },
+    {
+      "action_index": 7,
+      "intent": "execution",
+      "rationale": "画像・動画・図解など生成素材の方針を実行条件として決める"
+    },
+    {
+      "action_index": 8,
+      "intent": "design",
+      "rationale": "素材生成から書き出しまでの編集順序を設計する"
+    },
+    {
+      "action_index": 9,
+      "intent": "execution",
+      "rationale": "60秒動画として完成させる制作実行"
+    },
+    {
+      "action_index": 10,
+      "intent": "validation",
+      "rationale": "完成後の観測項目を記録し次回制作へ戻す検証"
+    }
+  ],
+  "initial_hypotheses": [
+    "「もしも〇〇だったら？」形式は、短尺動画でも一瞬で前提を理解させやすい",
+    "60秒動画は、6〜8カットに分けると生成・編集しやすい",
+    "テーマ決定から完成後観測までをGROUND上で進めることで、2本目以降の制作速度が上がる"
+  ],
+  "initial_decisions": [
+    "もしも動画はGROUND外に専用システムを作らず、GROUND上の本番運用Projectとして進める — 制作ループ検証を既存Coreで回すため",
+    "第1フェーズでは、ネタ量産ではなく1本完成を成功条件にする — Production Run 01の目的はループ実証のため"
+  ],
+  "notes": [
+    "制作ルート: テーマ決定 → 約束文 → 60秒構成 → フック → 6〜8カット → 映像内容 → ナレーション → 素材方針 → 編集順序 → 完成 → 観測記録",
+    "このProjectは、GROUNDの最初の本番運用Projectである。成功条件は、1本の動画完成と、完成後の観測をGROUNDへ戻すこと。"
+  ],
+  "tags": [
+    "content-experiment",
+    "video-production",
+    "production-run-01",
+    "first-production-run",
+    "ground-production-test",
+    "hypothetical-video"
+  ],
+  "created_at": "2026-06-21T00:00:00.000Z"
+}

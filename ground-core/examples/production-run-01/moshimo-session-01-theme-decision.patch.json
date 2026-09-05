@@ -1,0 +1,55 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "status_change",
+      "entity": "next_action",
+      "entity_id": "6464ebd7-1eb4-42d5-94cf-3a573f0fbb66",
+      "status": "done"
+    },
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "a104f9b9-ec0c-4140-89a0-74d947364355",
+      "payload": {
+        "id": "a104f9b9-ec0c-4140-89a0-74d947364355",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "第1本目のテーマを「もしも地球の重力が半分になったら？」に決定する。",
+        "rationale": "前提が一瞬で伝わり、生活・都市・スポーツ・危険性などを60秒内で展開しやすい。映像化もしやすく、1本目の制作ループ検証に向いているため。",
+        "alternatives_considered": [],
+        "status": "active",
+        "decided_at": "2026-06-24T15:27:36.492Z",
+        "created_at": "2026-06-24T15:27:36.492Z",
+        "updated_at": "2026-06-24T15:27:36.492Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "f0521a07-a718-42c2-b769-1d112a94e79e",
+      "payload": {
+        "id": "f0521a07-a718-42c2-b769-1d112a94e79e",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "Production Run 01 制作方針",
+        "body": "1本目では、テーマの独創性や完成度を追いすぎるよりも、GROUND上でテーマ決定 → 約束文 → 60秒構成 → カット分解 → 台本 → 素材方針 → 完成後観測まで通すことを優先する。",
+        "source": "manual",
+        "observed_at": "2026-06-24T15:27:36.492Z",
+        "created_at": "2026-06-24T15:27:36.492Z",
+        "updated_at": "2026-06-24T15:27:36.492Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "bac1b350-a506-4c82-9cfd-f4128c616ffd",
+      "payload": {
+        "primary_next_action_id": "f9e7db6a-b29b-4df4-b61e-b061804dcfbf",
+        "summary": "第1本目のテーマは「もしも地球の重力が半分になったら？」に決定済み。次は、この動画を見る視聴者への約束を1行で書く。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "f9ca09c6-34fd-4757-b76d-94f6026cdef7",
+      "payload": {
+        "id": "f9ca09c6-34fd-4757-b76d-94f6026cdef7",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "assistant/userの観察はevidence、工場評価とPrimitive抽象化の主体はGROUNDとする。",
+        "rationale": "session-16Bで定義したVideo Generation Factory Rule v0.1は、G02評価のevidence（手落としの過剰、スプーン情報過多、透明人形の魔法化リスク、テーブル端Tip-Spillの再利用性、T2V一発の同時制御失敗、Frame-guided correctionの有効性）を根拠に導出された。ただしassistantの結論をそのまま正本にしては、1000本工場の自動評価にならない。したがって、観測文・生成結果・既存docsはevidenceとして扱い、Adopt/Retry/Redesign/Drop判定、Primitive命名、次評価方向の導出はGROUNDがProjectStateへ書くことで確定する。G02はAdopt候補/Retry継続のままとし、本番Adopt確定やツール役割の恒久固定は、証拠不足のため行わない。",
+        "alternatives_considered": [
+          "assistantの結論をそのまま工場ルールとして正本化する",
+          "G02を本番Adopt確定にする",
+          "ツール役割を恒久固定する",
+          "G02をさらに深掘りしてからG06へ進む"
+        ],
+        "status": "active",
+        "decided_at": "2026-08-11T05:00:00.000Z",
+        "created_at": "2026-08-11T05:00:00.000Z",
+        "updated_at": "2026-08-11T05:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "49eefeb0-e14a-4df7-9976-c9d4ac8f366d",
+      "payload": {
+        "id": "49eefeb0-e14a-4df7-9976-c9d4ac8f366d",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "session-16B補強: GROUND-led evaluation protocol / Factory Rule v0.1 再評価",
+        "body": "session-16B補強。\n\n既存のsession-16B（decision 99e35c98 / observation 8076bf34 / Factory Rule docs）は維持したうえで、GROUND評価主体としての補強を行った。\n\n評価フロー:\nEvidence → GROUND evaluation → Primitive abstraction → Decision / Observation → Reusable factory rule → Next action guidance。\n\nG02 evidenceの読み:\n手落とし・スプーントリガー・透明人形/膜は、G02主現象を弱めるか必須ではない。最も再利用可能な構造はテーブル端Support Loss → Tip/Rotate → Content Response → Pre-impact Cut。命名はDomestic Tip-Spill Primitive v0.1で既存docsと衝突なし。判定はAdopt候補/Retry継続のまま。本番Adopt確定には浮遊感と水のこぼれ自然さの証拠がまだ不足。\n\n工場ルールの確認:\nT2V一発を標準にしない。\nPrimitiveを先に定義する。\nReference Frameを保存する。\nCorrection / Improvement / NGAで動作を直す。\nAdopt / Retry / Redesign / Dropで評価する。\n失敗もFactory Logとして保存する。\nツール役割はworking assumptionであり恒久固定しない。\n\nOpen uncertainties:\n1. ツール役割はモデル更新で変わりうる。\n2. G02は最終Adoptではない。\n3. G06/G04/G11は未評価。\n4. Frame-guided correctionは身体・自然・残像で未検証。\n5. 透明人形/膜はシリーズ記号として保留。\n\n次評価方向:\nG02局所最適化より、身体運動系のG06（Low Gravity Jump Primitive候補）へ進む。primary actionは評価全体なのでpending維持。\n\n規格本文更新:\ndocs/MOSHIMO_VIDEO_GENERATION_FACTORY_RULE_V0.1.md（Purpose〜Open uncertaintiesの12章へ再構成）\ndocs/MOSHIMO_VIDEO_01_GRAVITY_HALF_G02_TEST_EVALUATION_V0.1.md（GROUND評価主体の注記を追記）",
+        "source": "manual",
+        "observed_at": "2026-08-11T05:00:00.000Z",
+        "created_at": "2026-08-11T05:00:00.000Z",
+        "updated_at": "2026-08-11T05:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "bac1b350-a506-4c82-9cfd-f4128c616ffd",
+      "payload": {
+        "summary": "第1本目のテーマ「もしも地球の重力が半分になったら？」は、もしも動画シリーズ文法 v0.2.1 により Global Physical Field / Body-first / Portal不要として分類済み。session-12〜15で11カット版v0.2、生成用カット仕様、生成素材方針、テスト生成プロンプトv0.1まで進めた。session-16AではG02をDomestic Tip-Spill Primitive v0.1としてAdopt候補/Retry継続で保存した。session-16BではVideo Generation Factory Rule v0.1を定義し、T2V一発を標準にせず、Primitive + Reference Frame + Correction / Improvement / NGA + Adopt/Retry/Redesign/Dropを工場運用にした。補強として、assistant/user観察はevidence、評価とPrimitive抽象化の主体はGROUNDと明示し、Open uncertainties（G02未最終Adopt、G06/G04/G11未評価、Frame-guided correctionの他カット未検証、ツール役割はworking assumption）を残した。現在のprimary action「重力半分回の初回テスト生成結果を評価する」はpendingのまま。次の実践評価対象はG06バスケ / Low Gravity Jump Primitive候補。"
+      }
+    }
+  ]
+}

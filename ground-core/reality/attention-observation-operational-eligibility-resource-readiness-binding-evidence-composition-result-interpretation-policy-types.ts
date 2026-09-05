@@ -1,0 +1,138 @@
+/**
+ * Reality Core v0.7 — Attention Observation Operational Eligibility
+ * RESOURCE_READINESS Binding Evidence Composition Result Interpretation Policy
+ * types (GROUND-149).
+ *
+ * Derived only. Not persisted.
+ *
+ * stable GROUND-148 Binding Evidence Composition result context
+ * + explicit Result Interpretation Policy Specification
+ * → Explicit Result Interpretation Policy only.
+ *
+ * Does NOT consume current GROUND-148 Result values.
+ * Interpretation Policy ≠ Interpretation Basis ≠ canonical per-requirement State
+ * INTERPRET_AS_*_COMPOSITION_POSITIVE/NEGATIVE ≠ RESOURCE_READY / NOT_READY
+ * policy absence ≠ explicit empty policy
+ * unusual mappings are valid; partial policy is valid
+ * HOLDS ≠ POSITIVE; DOES_NOT_HOLD ≠ NEGATIVE (unless explicitly mapped)
+ */
+
+import type {
+  AttentionCandidateObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionCondition,
+  AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultRequirementAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultSetAssessment,
+} from "./attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-result-types.js";
+
+/**
+ * Narrow Binding Evidence Composition interpretation targets only.
+ * Not RESOURCE_READY / SATISFIED / AVAILABLE / FEASIBLE.
+ */
+export type AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretation =
+  | "INTERPRET_AS_RESOURCE_READINESS_BINDING_EVIDENCE_COMPOSITION_POSITIVE"
+  | "INTERPRET_AS_RESOURCE_READINESS_BINDING_EVIDENCE_COMPOSITION_NEGATIVE";
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationMappingInput {
+  composition_condition: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionCondition;
+  interpretation: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretation;
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationMapping {
+  key: string;
+  composition_condition: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionCondition;
+  interpretation: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretation;
+}
+
+/**
+ * Specification targets exact stable GROUND-145 Composition Policy key.
+ * Does NOT target current GROUND-148 Result key / readiness Basis key.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicyInput {
+  resource_readiness_binding_evidence_composition_policy_key: string;
+  mappings: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationMappingInput[];
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicySpecification {
+  requirement_policies: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicyInput[];
+}
+
+/**
+ * Combined evaluation input.
+ * Consumes GROUND-148 set + specification — not current Result values for policy identity.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicyEvalInput {
+  resource_readiness_binding_evidence_composition_result_set: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultSetAssessment;
+  specification: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicySpecification;
+}
+
+/**
+ * Runtime-only Result Interpretation Policy declaration.
+ * No current_result / current_basis / composition_condition lookup.
+ * readiness_policy_key excluded — interprets Result domain of composition policy, not readiness gate.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicy {
+  key: string;
+  candidate_key: string;
+  observation_need_key: string;
+  capability_requirement_set_key: string;
+  dimension: "RESOURCE_READINESS";
+  observation_resource_requirement_key: string;
+  resource_readiness_binding_evidence_composition_policy_key: string;
+  mappings: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationMapping[];
+}
+
+export type AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicyStatus =
+  | "NOT_APPLICABLE_NO_EXPLICIT_RESOURCE_READINESS_BINDING_EVIDENCE_COMPOSITION_POLICY"
+  | "NO_EXPLICIT_RESOURCE_READINESS_BINDING_EVIDENCE_COMPOSITION_RESULT_INTERPRETATION_POLICY_DECLARED"
+  | "EXPLICIT_RESOURCE_READINESS_BINDING_EVIDENCE_COMPOSITION_RESULT_INTERPRETATION_POLICY_PRESENT";
+
+export type AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicyModelLimitation =
+  | "CURRENT_RESOURCE_READINESS_BINDING_EVIDENCE_COMPOSITION_RESULT_NOT_INTERPRETED"
+  | "RESOURCE_READINESS_BINDING_EVIDENCE_COMPOSITION_RESULT_INTERPRETATION_BASIS_NOT_MODELED"
+  | "PER_REQUIREMENT_CANONICAL_RESOURCE_READINESS_BINDING_EVIDENCE_STATE_NOT_MODELED"
+  | "MULTIPLE_BINDING_COMPOSITION_GROUPS_PER_REQUIREMENT_NOT_MODELED"
+  | "NESTED_BOOLEAN_BINDING_COMPOSITION_NOT_MODELED"
+  | "PHYSICAL_RESOURCE_BINDING_ROLE_NOT_MODELED"
+  | "OBSERVATION_RESOURCE_QUANTITY_RELATION_NOT_MODELED"
+  | "RESOURCE_QUANTITY_CONTRIBUTION_NOT_MODELED"
+  | "RESOURCE_FUNGIBILITY_NOT_MODELED"
+  | "RESOURCE_SUBSTITUTION_NOT_MODELED"
+  | "OBSERVATION_RESOURCE_RESERVATION_EVIDENCE_NOT_INCLUDED"
+  | "OBSERVATION_RESOURCE_COMMITMENT_EVIDENCE_NOT_INCLUDED"
+  | "OBSERVATION_RESOURCE_CONTENTION_EVIDENCE_NOT_INCLUDED"
+  | "TRUE_PER_REQUIREMENT_RESOURCE_READINESS_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_DIMENSION_SATISFACTION_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_FEASIBILITY_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_CROSS_DIMENSION_COMPOSITION_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_STATE_NOT_MODELED"
+  | "CAN_EXECUTE_NOT_MODELED"
+  | "EXECUTION_NOT_MODELED";
+
+/**
+ * Nested GROUND-148 assessment is lineage/context only.
+ * Do not use its current composition_condition to construct policy identity.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicyRequirementAssessment {
+  observation_resource_requirement_key: string;
+  binding_evidence_composition_result_assessment: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultRequirementAssessment;
+  status: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicyStatus;
+  interpretation_policy: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicy | null;
+  has_explicit_resource_readiness_binding_evidence_composition_result_interpretation_policy: boolean;
+}
+
+export interface AttentionCandidateObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicyAssessment {
+  candidate_key: string;
+  resource_readiness_binding_evidence_composition_result_assessment: AttentionCandidateObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultAssessment;
+  requirement_interpretation_policy_assessments: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicyRequirementAssessment[];
+  has_explicit_resource_readiness_binding_evidence_composition_result_interpretation_policies: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicyModelLimitation[];
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicySetAssessment {
+  resource_readiness_binding_evidence_composition_result_set: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultSetAssessment;
+  specification: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicySpecification;
+  candidate_assessments: AttentionCandidateObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicyAssessment[];
+  has_explicit_resource_readiness_binding_evidence_composition_result_interpretation_policies: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationPolicyModelLimitation[];
+}

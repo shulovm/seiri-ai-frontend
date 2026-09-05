@@ -1,0 +1,55 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "<PROJECT_ID>",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "status_change",
+      "entity": "next_action",
+      "entity_id": "<COMPLETED_ACTION_ID>",
+      "status": "done"
+    },
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "<DECISION_ID>",
+      "payload": {
+        "id": "<DECISION_ID>",
+        "project_id": "<PROJECT_ID>",
+        "goal_id": "<GOAL_ID>",
+        "title": "決定タイトル",
+        "rationale": "判断理由",
+        "alternatives_considered": [],
+        "status": "active",
+        "decided_at": "<ISO_TIMESTAMP>",
+        "created_at": "<ISO_TIMESTAMP>",
+        "updated_at": "<ISO_TIMESTAMP>"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "<OBSERVATION_ID>",
+      "payload": {
+        "id": "<OBSERVATION_ID>",
+        "project_id": "<PROJECT_ID>",
+        "goal_id": "<GOAL_ID>",
+        "title": "作業メモ",
+        "body": "観測・メモ本文",
+        "source": "manual",
+        "observed_at": "<ISO_TIMESTAMP>",
+        "created_at": "<ISO_TIMESTAMP>",
+        "updated_at": "<ISO_TIMESTAMP>"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "<CURRENT_STATE_ID>",
+      "payload": {
+        "primary_next_action_id": "<NEXT_PRIMARY_ACTION_ID>",
+        "summary": "作業完了後の現在地サマリー"
+      }
+    }
+  ]
+}

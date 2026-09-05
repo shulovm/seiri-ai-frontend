@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "22cd81b2-4971-462a-a04d-d54defcfec06",
+      "payload": {
+        "id": "22cd81b2-4971-462a-a04d-d54defcfec06",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "Theme Validation 01として「もしも水だけが上に落ちたら」を採用し、Environment-first Themeとしてv0.2を検証する。",
+        "rationale": "このテーマは、重力回とは異なり「水だけが世界の上下ルールから外れる」という明確なRule Changeを持つ。人間の身体やコップなどの小実験カットで始めると、テーマの本質である「人間が気づく前に環境が壊れている感覚」が弱くなるため、Environment-first Themeとして扱う。家の蛇口から外のマンホール/排水口へAperture Match Cutで接続し、街、消防、川、海、周辺、自然、残像へ拡大することで、v0.2のPhase構造と1000本用のOpening Entry Selectorを同時に検証できるため。",
+        "alternatives_considered": [
+          "Body-first（コップ/手洗い/風呂などの体感・実験カットから始める）として扱う",
+          "重力回の派生テーマとして扱う"
+        ],
+        "status": "active",
+        "decided_at": "2026-06-26T21:08:45.750Z",
+        "created_at": "2026-06-26T21:08:45.750Z",
+        "updated_at": "2026-06-26T21:08:45.750Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "35cd812e-b61c-4554-a0e8-fbaf23a47fd0",
+      "payload": {
+        "id": "35cd812e-b61c-4554-a0e8-fbaf23a47fd0",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "Theme Validation 01: 水だけが上に落ちたら / Opening Entry Selector v0.1",
+        "body": "Theme Validation 01として「もしも水だけが上に落ちたら」を扱う。\n\nRule Change:\n世界全体の重力は変わらず、人間も物も普通に落ちる。ただし、外に出た液体の水だけが下ではなく上へ落ちる。\n\n対象:\n蛇口、放水、雨、水たまり、排水、噴水、川、港、海面。\n\n対象外:\n体内の水、血液、植物内部の水分、空気中の湿気、雲の細かい物理。\n\nEntry Type:\nEnvironment-first。\n\n理由:\nこのテーマは、人間の身体で最初に体感するテーマではない。人間が触れる前に、水という環境要素だけが世界の上下ルールから外れているテーマである。したがって、冒頭で人間・コップ・手洗い・風呂・飲む動作などを置かない。コップを使うと小さな理科実験映像になり、テーマの規模が弱くなる。\n\nOpening Entry Selector v0.1:\nテーマを受け取った直後に、最初のカットを Body-first / Environment-first / Screen-first / System-first / Nature-first のどれで始めるべきか判定する工場部品。1000本制作では、毎回人間・コップ・手元から始めるのではなく、テーマのRule Behaviorに合わせて入口を選ぶ必要がある。\n\nEnvironment Portal Hook:\n家という個人空間を、体感の場所ではなく外界の異常へ接続する入口として使う。今回の水回では、テレビの港/街映像、出しっぱなしの蛇口、水が蛇口の口へ吸い込まれる局所異常、蛇口の円形暗部から外のマンホール/排水口の円形へつなぐAperture Match Cutを使う。\n\nPortal Type:\n今回採用するのはFlood/Stream PortalではなくAperture Match Cut。理由は、水が画面側へ広がるのではなく、蛇口の口へ吸い込まれるRule Behaviorだから。Portalは見た目の好みではなく、Rule Behaviorに合わせて選ぶ。\n\nv0.2適用:\nMomentは家の蛇口で水が蛇口の口へ吸い込まれるEnvironment Portal Hook。\nImmediateは蛇口の円形暗部から外のマンホール/排水口へつなぐAperture Match Cut。\nInitial Spreadは雨、水たまり、路上の水。\nAdapted Fieldは噴水。\nSystem Fieldは消防。\nWide Fieldは川。\nMacro Fieldは海が山のように分厚く上へ崩れ、船を飲み込む。\nAfter Fieldは港町周辺。\nResidual Fieldは山や空、地上から空へ伸びる水の線。\nEnd Residualは乾いた街と空に残る水。\n\n評価:\n水回はv0.2にかなり自然に乗る。ただし、海のMacro Fieldが強いため、前半が単なる前座にならないよう、冒頭のEnvironment Portal Hookと街への接続で十分に異常の侵食感を出す必要がある。\n\nv0.2.1候補:\nOpening Entry Selector、Environment Portal Hook、Portal Type Selector、Aperture Match Cut。\n\n規格本文:\ndocs/MOSHIMO_VIDEO_OPENING_ENTRY_SELECTOR_V0.1.md にOpening Entry Selector v0.1の完全版を保存した。",
+        "source": "manual",
+        "observed_at": "2026-06-26T21:08:45.750Z",
+        "created_at": "2026-06-26T21:08:45.750Z",
+        "updated_at": "2026-06-26T21:08:45.750Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "bac1b350-a506-4c82-9cfd-f4128c616ffd",
+      "payload": {
+        "summary": "第1本目のテーマ「もしも地球の重力が半分になったら？」は制作設計済み。1000本用の「もしも動画 60秒拡大型カット構造 v0.2」も定義済み。現在はv0.2を複数テーマで検証中。Theme Validation 01として「もしも水だけが上に落ちたら」を採用し、Environment-first Themeとして検証した。水回では、人間・コップ・手洗いなどの体感/実験カットから始めず、人間が気づく前に水だけが環境として世界の上下ルールから外れている状態を入口にする。家のテレビ/蛇口から始め、蛇口の口へ水が吸い込まれる局所異常を、蛇口の円形暗部から外のマンホール/排水口の円形へつなぐAperture Match Cutで外界へ接続し、街、消防、川、海、周辺、自然、残像へ拡大する構造を検証した。今回の発見として、1000本制作に必要なOpening Entry Selector v0.1、Environment Portal Hook、Portal Type Selector、Aperture Match Cutをv0.2.1候補として記録した。次も引き続きv0.2を別テーマで検証する。"
+      }
+    }
+  ]
+}

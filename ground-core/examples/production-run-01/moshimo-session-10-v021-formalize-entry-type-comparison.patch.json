@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "497135f3-6481-402f-8411-ac405cc073ff",
+      "payload": {
+        "id": "497135f3-6481-402f-8411-ac405cc073ff",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "主要5 Entry Type検証を完了し、もしも動画シリーズ文法 v0.2.1 を正式昇格する。",
+        "rationale": "Production Run 01では、1本目のテーマ「もしも地球の重力が半分になったら？」をBody-first / Global Physical Fieldとして設計した後、Theme Validation 01「水だけ上に落ちる」でEnvironment-first / Material-specific Rule、Theme Validation 02「信号全部青」でSystem-first / Social System Rule、Theme Validation 03「画面だけ5秒先」でScreen-first / Information Rule、Theme Validation 04「月が少し近づく」でNature-first / Nature-scale Ruleを検証した。これにより、主要5 Entry Typeである Body / Environment / System / Screen / Nature の検証が揃った。各テーマで、Rule Scope Classifier、Opening Entry Selector、Portal Type Selector、v0.2 Phaseの判断パイプラインが有効に機能したため、v0.2を置き換えるのではなく、v0.2をテーマごとに正しく運用するための判断レイヤーとして、もしも動画シリーズ文法 v0.2.1 を正式昇格する。",
+        "alternatives_considered": [
+          "v0.2.1を正式化せず、各Theme Validationを個別メモのまま残す",
+          "v0.2を置き換える新しい動画形式としてv0.2.1を扱う"
+        ],
+        "status": "active",
+        "decided_at": "2026-06-27T00:45:00.000Z",
+        "created_at": "2026-06-27T00:45:00.000Z",
+        "updated_at": "2026-06-27T00:45:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "0b86a9de-436f-4af5-ac71-38803cbf19e8",
+      "payload": {
+        "id": "0b86a9de-436f-4af5-ac71-38803cbf19e8",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "Action「シリーズ文法v0.2を複数テーマで検証する」を完了し、次にナレーション台本作成へ戻る。",
+        "rationale": "複数テーマ検証Actionの目的は、v0.2が単一テーマだけでなく複数タイプのもしもテーマにも使えるかを確認することだった。Body-first、Environment-first、System-first、Screen-first、Nature-firstの5入口タイプで検証し、v0.2.1として判断レイヤーを正式化できたため、このActionは完了条件を満たした。次は、当初後続に残していた既存Action「ナレーション台本を書く」へ戻る。",
+        "alternatives_considered": [
+          "さらに別テーマ検証を続けてActionをpendingのまま残す",
+          "ナレーション台本を書くActionを新規作成する"
+        ],
+        "status": "active",
+        "decided_at": "2026-06-27T00:45:00.000Z",
+        "created_at": "2026-06-27T00:45:00.000Z",
+        "updated_at": "2026-06-27T00:45:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "fa1f16b6-a2c0-40c0-8e91-49fce631d125",
+      "payload": {
+        "id": "fa1f16b6-a2c0-40c0-8e91-49fce631d125",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "session-10: 5 Entry Type比較 / v0.2.1正式昇格 / 複数テーマ検証Action完了",
+        "body": "session-10。\n\nProduction Run 01では、もしも動画 60秒拡大型カット構造 v0.2を複数テーマで検証した。\n\n検証済みテーマ:\n1. もしも地球の重力が半分になったら？\nGlobal Physical Field / Body-first / Portal不要。\n身体が最初の測定器になるため、起床・立ち上がり・一歩目から始める。\n\n2. もしも水だけが上に落ちたら？\nMaterial-specific Rule / Environment-first / Aperture Match Cut。\n水回では家スタートを採用できるが、Body-firstとして使わない。家は外界異常へ接続する入口であり、外すべきなのは人間・コップ・手洗い・風呂を使った体感/小実験スタートである。\n\n3. もしも街じゅうの信号が全部青になったら？\nSocial System Rule / System-first / No-Portal Opening。\n信号という社会装置が壊れるため、交差点そのものが入口になる。派手なPortalは不要で、Signal Match Cut / Blue Cascade Cutが補助として有効。\n\n4. もしも画面だけ、5秒先を映したら？\nInformation Rule / Screen-first / Screen Portal。\n画面を説明装置ではなくスケール拡大の入口として使う。Time Offset Compression、Screen Target Coherence Rule、Screen Dependency / Reality Delegation、Phone-Walk After Fieldを追加した。画面が未来を映すことより、人間が現実を見なくなることが重要。\n\n5. もしも月が少し近づいたら？\nNature-scale Rule / Nature-first / No-Portal Nature Opening。\n自然そのものが入口になる。Nature-firstでは自然を背景ではなく、人間が止められないルールそのものとして扱う。Moon Match Cut、Tide Pull Cut、Reflection Cutが補助Transitionとして有効。\n\n判断パイプライン:\nTheme → Rule Scope Classifier → Opening Entry Selector → Portal Type Selector / Transition Selector → v0.2 Phase。\n\nv0.2.1の位置づけ:\nv0.2.1は、v0.2を置き換える新しい動画形式ではない。v0.2をテーマごとに正しく使うための判断・入口・接続レイヤーである。\n\n正式採用する主要部品:\nRule Scope Classifier v0.1、Opening Entry Selector v0.1、Portal Type Selector / Transition Selector、Body-first Entry、Environment-first Entry、System-first Entry、Screen-first Entry、Nature-first Entry、No-Portal Opening、No-Portal Nature Opening、Aperture Match Cut、Signal Match Cut / Blue Cascade Cut、Screen Portal、Screen Lead Cut、Reality Catch-up Cut、Moon Match Cut、Tide Pull Cut、Reflection Cut、Time Offset Compression、Screen Target Coherence Rule、Screen Dependency / Reality Delegation、Phone-Walk After Field、Nature Dominance Rule、Peripheral Residual、No Meaning Closure。\n\n結論:\n主要5 Entry Typeの検証が揃ったため、もしも動画シリーズ文法 v0.2.1 を正式昇格できる。複数テーマ検証Action「シリーズ文法v0.2を複数テーマで検証する」は完了条件を満たしたためdone化し、次は既存Action「ナレーション台本を書く」へ戻る。\n\n規格本文:\ndocs/MOSHIMO_VIDEO_SERIES_GRAMMAR_V0.2.1.md（v0.2.1正式版）\ndocs/MOSHIMO_VIDEO_ENTRY_TYPE_COMPARISON_V0.2.1.md（5 Entry Type比較表）\ndocs/MOSHIMO_VIDEO_EXPANSION_CUT_GRAMMAR_V0.2.md（v0.2とv0.2.1の関係追記）\ndocs/MOSHIMO_VIDEO_OPENING_ENTRY_SELECTOR_V0.1.md（v0.2.1正式部品化追記）\ndocs/MOSHIMO_VIDEO_RULE_SCOPE_CLASSIFIER_V0.1.md（v0.2.1正式部品化追記）",
+        "source": "manual",
+        "observed_at": "2026-06-27T00:45:00.000Z",
+        "created_at": "2026-06-27T00:45:00.000Z",
+        "updated_at": "2026-06-27T00:45:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "bac1b350-a506-4c82-9cfd-f4128c616ffd",
+      "payload": {
+        "primary_next_action_id": "c9d31fde-cd7c-4c17-989e-597fe343944f",
+        "summary": "第1本目のテーマ「もしも地球の重力が半分になったら？」は制作設計済み。1000本用の「もしも動画 60秒拡大型カット構造 v0.2」も定義済み。Production Run 01では、v0.2を複数テーマで検証し、主要5 Entry Typeの比較を完了した。重力半分では Global Physical Field / Body-first、水だけ上に落ちるでは Material-specific Rule / Environment-first、信号全部青では Social System Rule / System-first、画面だけ5秒先では Information Rule / Screen-first、月が少し近づくでは Nature-scale Rule / Nature-first を検証した。これにより、Theme → Rule Scope Classifier → Opening Entry Selector → Portal Type Selector / Transition Selector → v0.2 Phase の判断パイプラインが有効であると確認し、v0.2を置き換えるのではなく、v0.2をテーマごとに正しく使う判断レイヤーとして、もしも動画シリーズ文法 v0.2.1 を正式昇格した。現在のAction「シリーズ文法v0.2を複数テーマで検証する」は完了条件を満たしたためdone化し、次は既存Action「ナレーション台本を書く」へ戻る。"
+      }
+    },
+    {
+      "op": "status_change",
+      "entity": "next_action",
+      "entity_id": "921c82fb-f128-49df-8628-6359b979320c",
+      "status": "done"
+    }
+  ]
+}

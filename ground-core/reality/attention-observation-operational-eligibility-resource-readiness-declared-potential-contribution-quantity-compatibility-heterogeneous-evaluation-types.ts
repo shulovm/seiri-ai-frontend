@@ -1,0 +1,173 @@
+/**
+ * Reality Core v0.7 — Attention Observation Operational Eligibility
+ * Declared Potential Contribution Quantity-Compatibility
+ * Heterogeneous Evaluation State types (GROUND-177).
+ *
+ * Derived only. Not persisted.
+ *
+ * GROUND-169 Canonical Aggregated Capacity-Compatibility Evidence State
+ * + GROUND-175 Canonical Required-Amount Compatibility Evidence State
+ * → Heterogeneous Quantity-Compatibility Evaluation State
+ *
+ * Preserves both canonical evidence dimensions together.
+ * No scalar composition Result. No ANY/ALL. No Policy.
+ *
+ * Domain: DECLARED_POTENTIAL_CONTRIBUTION_QUANTITY_COMPATIBILITY
+ *
+ * capacity NOT_APPLICABLE ≠ whole evaluation NOT_APPLICABLE
+ * required-amount NOT_APPLICABLE (no contribution) → whole NOT_APPLICABLE
+ * both SUPPORTING ≠ deliverable / verified / Resource Ready
+ */
+
+import type {
+  AttentionCandidateObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateBindingAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateSetAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateValue,
+} from "./attention-observation-operational-eligibility-resource-readiness-canonical-aggregated-declared-potential-contribution-capacity-compatibility-evidence-state-types.js";
+import type {
+  AttentionCandidateObservationOperationalEligibilityResourceReadinessCanonicalDeclaredPotentialContributionRequiredAmountCompatibilityEvidenceStateAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessCanonicalDeclaredPotentialContributionRequiredAmountCompatibilityEvidenceStateBindingAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessCanonicalDeclaredPotentialContributionRequiredAmountCompatibilityEvidenceStateSetAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessCanonicalDeclaredPotentialContributionRequiredAmountCompatibilityEvidenceStateValue,
+} from "./attention-observation-operational-eligibility-resource-readiness-canonical-declared-potential-contribution-required-amount-compatibility-evidence-state-types.js";
+
+/**
+ * Exactly two semantic runtime inputs — GROUND-169 + GROUND-175 only.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityHeterogeneousEvaluationEvalInput {
+  canonical_capacity_compatibility_evidence_state_set: AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateSetAssessment;
+  canonical_required_amount_compatibility_evidence_state_set: AttentionObservationOperationalEligibilityResourceReadinessCanonicalDeclaredPotentialContributionRequiredAmountCompatibilityEvidenceStateSetAssessment;
+}
+
+/**
+ * Narrow descriptive category per canonical axis.
+ * Does not replace exact canonical State values.
+ */
+export type AttentionObservationOperationalEligibilityResourceReadinessQuantityCompatibilityEvidenceDimensionCategory =
+  | "NOT_APPLICABLE"
+  | "UNRESOLVED"
+  | "SUPPORTING"
+  | "CONTRADICTING";
+
+/**
+ * Outer evaluation status only.
+ * No whole-state UNRESOLVED / SUPPORTING / CONTRADICTING / MIXED.
+ */
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityHeterogeneousEvaluationStatus =
+  | "NOT_APPLICABLE_NO_EXPLICIT_DECLARED_POTENTIAL_CONTRIBUTION_SPECIFICATION"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_QUANTITY_COMPATIBILITY_HETEROGENEOUS_EVALUATION_STATE_PRESENT";
+
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityHeterogeneousEvaluationModelLimitation =
+  | "QUANTITY_COMPATIBILITY_SCALAR_COMPOSITION_NOT_MODELED"
+  | "PHYSICAL_EVIDENCE_REQUIRED_DIMENSION_POLICY_NOT_MODELED"
+  | "PHYSICAL_EVIDENCE_DIMENSION_READINESS_NOT_MODELED"
+  | "TARGET_REQUIRED_AMOUNT_ACCEPTANCE_SEMANTICS_NOT_MODELED"
+  | "REQUIRED_AMOUNT_RANGE_SEMANTICS_NOT_MODELED"
+  | "POTENTIAL_CONTRIBUTION_RANGE_SEMANTICS_NOT_FULLY_MODELED"
+  | "FLOW_TIME_BASIS_NOT_MODELED"
+  | "FLOW_INTEGRATION_WINDOW_NOT_MODELED"
+  | "RESOURCE_AVAILABILITY_INTERPRETATION_NOT_MODELED"
+  | "CANONICAL_RESOURCE_AVAILABILITY_EVIDENCE_STATE_NOT_MODELED"
+  | "RESOURCE_RESERVATION_SEMANTIC_EXTENSION_NOT_MODELED"
+  | "RESERVATION_AWARE_FREE_QUANTITY_NOT_MODELED"
+  | "EFFECTIVE_POTENTIAL_CONTRIBUTION_NOT_MODELED"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_VERIFICATION_NOT_MODELED"
+  | "PHYSICAL_DELIVERABILITY_NOT_MODELED"
+  | "REQUIREMENT_SATISFACTION_NOT_MODELED"
+  | "LOGICAL_PHYSICAL_EVIDENCE_CONVERGENCE_NOT_MODELED"
+  | "PHYSICAL_RESOURCE_BINDING_GROUP_NOT_MODELED"
+  | "RESOURCE_FUNGIBILITY_NOT_MODELED"
+  | "RESOURCE_SUBSTITUTION_NOT_MODELED"
+  | "CROSS_BINDING_QUANTITY_COMPOSITION_NOT_MODELED"
+  | "TRUE_PER_REQUIREMENT_RESOURCE_READINESS_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_DIMENSION_SATISFACTION_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_FEASIBILITY_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_STATE_NOT_MODELED"
+  | "CAN_EXECUTE_NOT_MODELED"
+  | "EXECUTION_NOT_MODELED";
+
+/**
+ * Capacity evidence dimension — exact GROUND-169 State preserved.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityCapacityDimension {
+  canonical_capacity_compatibility_evidence_state_key: string;
+  canonical_capacity_compatibility_evidence_state_value: AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateValue;
+  category: AttentionObservationOperationalEligibilityResourceReadinessQuantityCompatibilityEvidenceDimensionCategory;
+}
+
+/**
+ * Required-amount evidence dimension — exact GROUND-175 State preserved.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityRequiredAmountDimension {
+  canonical_required_amount_compatibility_evidence_state_key: string;
+  canonical_required_amount_compatibility_evidence_state_value: AttentionObservationOperationalEligibilityResourceReadinessCanonicalDeclaredPotentialContributionRequiredAmountCompatibilityEvidenceStateValue;
+  category: AttentionObservationOperationalEligibilityResourceReadinessQuantityCompatibilityEvidenceDimensionCategory;
+}
+
+/**
+ * Heterogeneous Evaluation State — multidimensional only.
+ * No scalar result field and no overall resolvedness flag.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityHeterogeneousEvaluationState {
+  key: string;
+  candidate_key: string;
+  observation_need_key: string;
+  capability_requirement_set_key: string;
+  dimension: "RESOURCE_READINESS";
+  observation_resource_requirement_key: string;
+  resource_readiness_observation_context_binding_key: string;
+  resource_declaration_id: string;
+  evaluation_at: string;
+  physical_potential_contribution_declaration_key: string;
+  capacity_compatibility_dimension: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityCapacityDimension;
+  required_amount_compatibility_dimension: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityRequiredAmountDimension;
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityHeterogeneousEvaluationBindingAssessment {
+  observation_resource_requirement_key: string;
+  resource_readiness_observation_context_binding_key: string;
+  resource_declaration_id: string;
+  capacity_compatibility_state_assessment: AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateBindingAssessment;
+  required_amount_compatibility_state_assessment: AttentionObservationOperationalEligibilityResourceReadinessCanonicalDeclaredPotentialContributionRequiredAmountCompatibilityEvidenceStateBindingAssessment;
+  status: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityHeterogeneousEvaluationStatus;
+  evaluation_state: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityHeterogeneousEvaluationState | null;
+  has_evaluation_state: boolean;
+}
+
+/**
+ * Candidate assessment. Per-axis existence flags only — no overall verdict.
+ */
+export interface AttentionCandidateObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityHeterogeneousEvaluationAssessment {
+  candidate_key: string;
+  canonical_capacity_compatibility_evidence_state_assessment: AttentionCandidateObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateAssessment;
+  canonical_required_amount_compatibility_evidence_state_assessment: AttentionCandidateObservationOperationalEligibilityResourceReadinessCanonicalDeclaredPotentialContributionRequiredAmountCompatibilityEvidenceStateAssessment;
+  binding_heterogeneous_evaluation_assessments: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityHeterogeneousEvaluationBindingAssessment[];
+  has_quantity_compatibility_heterogeneous_evaluation_states: boolean;
+  has_capacity_supporting_dimensions: boolean;
+  has_capacity_contradicting_dimensions: boolean;
+  has_capacity_unresolved_dimensions: boolean;
+  has_capacity_not_applicable_dimensions: boolean;
+  has_required_amount_supporting_dimensions: boolean;
+  has_required_amount_contradicting_dimensions: boolean;
+  has_required_amount_unresolved_dimensions: boolean;
+  has_required_amount_not_applicable_dimensions: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityHeterogeneousEvaluationModelLimitation[];
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityHeterogeneousEvaluationSetAssessment {
+  canonical_capacity_compatibility_evidence_state_set: AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateSetAssessment;
+  canonical_required_amount_compatibility_evidence_state_set: AttentionObservationOperationalEligibilityResourceReadinessCanonicalDeclaredPotentialContributionRequiredAmountCompatibilityEvidenceStateSetAssessment;
+  candidate_assessments: AttentionCandidateObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityHeterogeneousEvaluationAssessment[];
+  has_quantity_compatibility_heterogeneous_evaluation_states: boolean;
+  has_capacity_supporting_dimensions: boolean;
+  has_capacity_contradicting_dimensions: boolean;
+  has_capacity_unresolved_dimensions: boolean;
+  has_capacity_not_applicable_dimensions: boolean;
+  has_required_amount_supporting_dimensions: boolean;
+  has_required_amount_contradicting_dimensions: boolean;
+  has_required_amount_unresolved_dimensions: boolean;
+  has_required_amount_not_applicable_dimensions: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionQuantityCompatibilityHeterogeneousEvaluationModelLimitation[];
+}

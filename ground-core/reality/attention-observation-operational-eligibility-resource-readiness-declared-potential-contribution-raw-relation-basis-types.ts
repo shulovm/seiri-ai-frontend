@@ -1,0 +1,180 @@
+/**
+ * Reality Core v0.7 — Attention Observation Operational Eligibility
+ * Declared Potential Contribution Raw Capacity & Required-Amount
+ * Relation Basis types (GROUND-157).
+ *
+ * Derived only. Not persisted.
+ *
+ * Physical quantity branch:
+ *   GROUND-153 Quantity Relation Binding context
+ *   + GROUND-155 Explicit Potential Contribution Declaration
+ *   → raw contribution↔capacity and contribution↔required_amount relations
+ *
+ * raw relation ≠ consistency / sufficiency / availability / free /
+ * effective / verified / Resource Ready
+ * No GROUND-141 / GROUND-151 logical-branch runtime authority
+ */
+
+import type {
+  AttentionCandidateObservationOperationalEligibilityResourceReadinessPerBindingDeclaredCapacityRequiredAmountQuantityRelationBasisAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessPerBindingDeclaredCapacityRequiredAmountQuantityRelationBasisSetAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessPerBindingDeclaredCapacityRequiredAmountQuantityRelationBindingAssessment,
+} from "./attention-observation-operational-eligibility-resource-readiness-per-binding-declared-capacity-required-amount-quantity-relation-basis-types.js";
+import type {
+  AttentionCandidateObservationOperationalEligibilityResourceReadinessPhysicalPotentialContributionDeclarationAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessPhysicalPotentialContributionDeclaration,
+  AttentionObservationOperationalEligibilityResourceReadinessPhysicalPotentialContributionDeclarationBindingAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessPhysicalPotentialContributionDeclarationSetAssessment,
+} from "./attention-observation-operational-eligibility-resource-readiness-physical-potential-contribution-declaration-types.js";
+import type {
+  ResourceCapacity,
+  ResourceRequirementAmount,
+} from "../types.js";
+
+/**
+ * Exactly two semantic runtime inputs.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBasisEvalInput {
+  resource_readiness_declared_capacity_required_amount_quantity_relation_set: AttentionObservationOperationalEligibilityResourceReadinessPerBindingDeclaredCapacityRequiredAmountQuantityRelationBasisSetAssessment;
+  resource_readiness_physical_potential_contribution_declaration_set: AttentionObservationOperationalEligibilityResourceReadinessPhysicalPotentialContributionDeclarationSetAssessment;
+}
+
+/**
+ * Raw closed-interval topology of declared potential contribution vs a reference interval.
+ * Never CONSISTENT / SUFFICIENT / READY.
+ */
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawQuantityRelation =
+  | "DECLARED_POTENTIAL_CONTRIBUTION_INTERVAL_STRICTLY_BELOW_REFERENCE_INTERVAL"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_INTERVAL_EXACTLY_EQUALS_REFERENCE_INTERVAL"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_INTERVAL_IS_STRICT_SUBINTERVAL_OF_REFERENCE_INTERVAL"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_INTERVAL_STRICTLY_CONTAINS_REFERENCE_INTERVAL"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_INTERVAL_PARTIALLY_OVERLAPS_REFERENCE_INTERVAL"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_INTERVAL_STRICTLY_ABOVE_REFERENCE_INTERVAL";
+
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationReferenceKind =
+  | "DECLARED_CAPACITY"
+  | "REQUIRED_AMOUNT";
+
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBasisStatus =
+  | "NO_EXPLICIT_RESOURCE_READINESS_PHYSICAL_POTENTIAL_CONTRIBUTION_DECLARATION"
+  | "RESOURCE_READINESS_DECLARED_POTENTIAL_CONTRIBUTION_RAW_RELATION_BASIS_PRESENT";
+
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBasisModelLimitation =
+  | "DECLARED_POTENTIAL_CONTRIBUTION_RAW_RELATION_IS_NOT_CONSISTENCY_VERDICT"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_RAW_RELATION_IS_NOT_SUFFICIENCY_VERDICT"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_IS_NOT_VERIFIED_PHYSICAL_CONTRIBUTION"
+  | "DECLARED_CAPACITY_IS_NOT_CURRENT_AVAILABLE_QUANTITY"
+  | "DECLARED_CAPACITY_IS_NOT_RESERVATION_AWARE_FREE_QUANTITY"
+  | "CONTRIBUTION_CAPACITY_CONSISTENCY_INTERPRETATION_POLICY_NOT_MODELED"
+  | "CONTRIBUTION_REQUIRED_AMOUNT_INTERPRETATION_POLICY_NOT_MODELED"
+  | "RESOURCE_AVAILABILITY_INTERPRETATION_NOT_MODELED"
+  | "RESOURCE_RESERVATION_EFFECT_ON_CAPACITY_NOT_MODELED"
+  | "RESERVATION_AWARE_FREE_QUANTITY_NOT_MODELED"
+  | "RESOURCE_DIVISIBILITY_NOT_MODELED"
+  | "RESOURCE_QUANTITY_CARDINALITY_NOT_MODELED"
+  | "RESOURCE_REQUIRED_AMOUNT_STOCK_VS_FLOW_SEMANTICS_NOT_MODELED"
+  | "RESOURCE_CAPACITY_RANGE_SEMANTICS_NOT_FULLY_MODELED"
+  | "RESOURCE_REQUIRED_AMOUNT_RANGE_SEMANTICS_NOT_FULLY_MODELED"
+  | "EFFECTIVE_POTENTIAL_CONTRIBUTION_NOT_MODELED"
+  | "PHYSICAL_CONTRIBUTION_VERIFICATION_NOT_MODELED"
+  | "PHYSICAL_RESOURCE_BINDING_GROUP_NOT_MODELED"
+  | "RESOURCE_FUNGIBILITY_NOT_MODELED"
+  | "RESOURCE_SUBSTITUTION_NOT_MODELED"
+  | "CROSS_BINDING_QUANTITY_SUMMATION_NOT_MODELED"
+  | "SHARED_RESOURCE_SIMULTANEOUS_SATISFIABILITY_NOT_MODELED"
+  | "PHYSICAL_RESOURCE_COMPOSITION_NOT_MODELED"
+  | "TRUE_PER_REQUIREMENT_RESOURCE_READINESS_NOT_MODELED"
+  | "LOGICAL_PHYSICAL_EVIDENCE_CONVERGENCE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_DIMENSION_SATISFACTION_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_FEASIBILITY_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_STATE_NOT_MODELED"
+  | "CAN_EXECUTE_NOT_MODELED"
+  | "EXECUTION_NOT_MODELED";
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityRawRelationEntry {
+  key: string;
+  capacity_declaration_id: string;
+  resource_declaration_id: string;
+  reference_kind: "DECLARED_CAPACITY";
+  declared_potential_contribution_quantity: ResourceRequirementAmount;
+  contribution_lower_bound: number;
+  contribution_upper_bound: number;
+  declared_capacity: ResourceCapacity;
+  declared_capacity_lower_bound: number;
+  declared_capacity_upper_bound: number;
+  relation: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawQuantityRelation;
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountRawRelation {
+  key: string;
+  reference_kind: "REQUIRED_AMOUNT";
+  declared_potential_contribution_quantity: ResourceRequirementAmount;
+  contribution_lower_bound: number;
+  contribution_upper_bound: number;
+  required_amount: ResourceRequirementAmount;
+  required_amount_lower_bound: number;
+  required_amount_upper_bound: number;
+  relation: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawQuantityRelation;
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBasis {
+  key: string;
+  candidate_key: string;
+  observation_need_key: string;
+  capability_requirement_set_key: string;
+  dimension: "RESOURCE_READINESS";
+  observation_resource_requirement_key: string;
+  resource_readiness_observation_context_binding_key: string;
+  resource_declaration_id: string;
+  resource_readiness_evaluation_instant_key: string;
+  evaluation_at: string;
+  resource_readiness_declared_capacity_required_amount_quantity_relation_binding_context_key: string;
+  physical_potential_contribution_declaration_key: string;
+  declared_potential_contribution_quantity: ResourceRequirementAmount;
+  contribution_required_amount_relation: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRequiredAmountRawRelation;
+  contribution_capacity_relation_entries: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityRawRelationEntry[];
+  capacity_relation_entry_count: number;
+  has_capacity_relation_entries: boolean;
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBindingAssessment {
+  observation_resource_requirement_key: string;
+  resource_readiness_observation_context_binding_key: string;
+  resource_declaration_id: string;
+  resource_readiness_declared_capacity_required_amount_quantity_relation_binding_context_key: string;
+  physical_potential_contribution_declaration_assessment: AttentionObservationOperationalEligibilityResourceReadinessPhysicalPotentialContributionDeclarationBindingAssessment;
+  quantity_relation_binding_assessment: AttentionObservationOperationalEligibilityResourceReadinessPerBindingDeclaredCapacityRequiredAmountQuantityRelationBindingAssessment;
+  status: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBasisStatus;
+  raw_relation_basis: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBasis | null;
+  has_declared_potential_contribution_raw_relation_basis: boolean;
+  capacity_relation_entry_count: number;
+  has_capacity_relation_entries: boolean;
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationRequirementAssessment {
+  observation_resource_requirement_key: string;
+  binding_raw_relation_assessments: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBindingAssessment[];
+  has_declared_potential_contribution_raw_relation_bases: boolean;
+  has_capacity_relation_entries: boolean;
+}
+
+export interface AttentionCandidateObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBasisAssessment {
+  candidate_key: string;
+  resource_readiness_declared_capacity_required_amount_quantity_relation_assessment: AttentionCandidateObservationOperationalEligibilityResourceReadinessPerBindingDeclaredCapacityRequiredAmountQuantityRelationBasisAssessment;
+  resource_readiness_physical_potential_contribution_declaration_assessment: AttentionCandidateObservationOperationalEligibilityResourceReadinessPhysicalPotentialContributionDeclarationAssessment;
+  requirement_raw_relation_assessments: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationRequirementAssessment[];
+  binding_raw_relation_assessments: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBindingAssessment[];
+  has_declared_potential_contribution_raw_relation_bases: boolean;
+  has_capacity_relation_entries: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBasisModelLimitation[];
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBasisSetAssessment {
+  resource_readiness_declared_capacity_required_amount_quantity_relation_set: AttentionObservationOperationalEligibilityResourceReadinessPerBindingDeclaredCapacityRequiredAmountQuantityRelationBasisSetAssessment;
+  resource_readiness_physical_potential_contribution_declaration_set: AttentionObservationOperationalEligibilityResourceReadinessPhysicalPotentialContributionDeclarationSetAssessment;
+  candidate_assessments: AttentionCandidateObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBasisAssessment[];
+  has_declared_potential_contribution_raw_relation_bases: boolean;
+  has_capacity_relation_entries: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionRawRelationBasisModelLimitation[];
+}

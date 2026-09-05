@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "0444214c-3eae-42a9-aeda-883e6ebeb2d3",
+      "payload": {
+        "id": "0444214c-3eae-42a9-aeda-883e6ebeb2d3",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "session-09A補強として、家スタートの扱いとRule Scope Classifier v0.1を定義する。",
+        "rationale": "Theme Validation 01「もしも水だけが上に落ちたら」では、水回をEnvironment-first Themeとして扱う一方で、家スタート自体は捨てず、個人空間から外界の異常へ接続する入口として使う必要がある。水回で外すべきなのは家ではなく、人間・コップ・手洗い・風呂などのBody-first/小実験カットである。また、前回の重力半分テーマも含めて1000本制作へ展開するには、Entry Typeだけでなく、Rule Changeが何にかかるかを分類するRule Scope Classifier v0.1が必要であるため。",
+        "alternatives_considered": [
+          "水回では家スタート自体を捨て、街や公共空間から始める",
+          "Entry Typeのみで判定しRule Scope分類は省略する"
+        ],
+        "status": "active",
+        "decided_at": "2026-06-26T21:32:51.301Z",
+        "created_at": "2026-06-26T21:32:51.301Z",
+        "updated_at": "2026-06-26T21:32:51.301Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "5d48d0ee-91fb-46be-a7f2-ad59e565914a",
+      "payload": {
+        "id": "5d48d0ee-91fb-46be-a7f2-ad59e565914a",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "session-09A補強: 家スタートの扱い / Rule Scope Classifier v0.1",
+        "body": "session-09A補強。\n\n水回では、家スタートを採用する。\nただし、Body-firstとして使わない。\n家は、手洗い・コップ・風呂・飲む動作で人間に体感させる場所ではなく、個人空間から外界の異常へ接続する入口として使う。\n\n水回で外すのは「家」ではない。\n外すのは「人間の身体・コップ・手洗い・風呂を使った体感/実験スタート」である。\n\n水回の正しい分類:\nTheme: もしも水だけが上に落ちたら？\nRule Scope: Material-specific Rule\nEntry Type: Environment-first\nOpening Location: 家から始めてよい\nHuman Role: 人間は最初に体感しない。気づいていない、背中だけ、または画面外でよい。\nOpening Function: 個人空間から外界異常へ接続する入口\nPortal Type: Aperture Match Cut\nPortal Path: 蛇口の円形暗部 → 外のマンホール/排水口の円形\n\n家スタートの使い方:\nテレビで外界の異常を匂わせる。\n出しっぱなしの蛇口を置く。\n人物は気づいていない。\n水が蛇口の口へ吸い込まれている。\nカメラが蛇口の円形暗部へ寄る。\n外のマンホール/排水口の円形へAperture Match Cutする。\n外ではすでに水だけが空へ引き抜かれている。\n\nやらないこと:\n手を洗う、コップを倒す、風呂の水を見る、水を飲む、人物が水に触れて驚く、家の中だけで異常を説明する。\n\nRule Scope Classifier v0.1:\nThemeのRule Changeが何にかかっているかを分類する部品。\n\nRule Scope:\n1. Global Physical Field — 世界全体の物理ルールが変わる。\n2. Material-specific Rule — 特定の物質・素材だけが変わる。\n3. Body-specific Rule — 人間の身体や感覚だけが変わる。\n4. Information Rule — 画面、記録、名前、数字、未来、表示などが変わる。\n5. Social System Rule — 制度、交通、信号、改札、病院、学校、銀行などの社会装置が変わる。\n6. Nature-scale Rule — 海、空、雲、月、山、川など、自然スケールが変わる。\n\n処理順:\nTheme → Rule Scope Classifier → Opening Entry Selector → Portal Type Selector → v0.2 Phase。\n\n重力半分の分類:\nTheme: もしも地球の重力が半分になったら？\nRule Scope: Global Physical Field\nEntry Type: Body-first\nOpening Location: 家/寝室でよい\nOpening: 人間の起床・立ち上がり・一歩目\nHuman Role: 人間の身体が最初の測定器になる\nPortal Type: 不要\n理由: 重力は人間・物体・車・スポーツ・都市活動すべてにかかるため、人間の身体が最初に変化を体感できる。\n\n水回との比較:\n重力半分は Global Physical Field / Body-first。\n水だけ上に落ちるは Material-specific Rule / Environment-first。\n重力半分で家/人間スタートが正しく、水回で家スタートは採用しつつ人間・コップ・手洗いを外すのも正しい。\nこれは矛盾ではなく、Rule Scope と Entry Type の違いによる判断結果である。\n\nPortal Type Selector補強:\nPortalは見た目の好みで選ばず、Rule Behaviorに合わせて選ぶ。\n水回では、水が蛇口の口へ吸い込まれるため、Flood/Stream PortalではなくAperture Match Cutを採用する。\n\n規格本文:\ndocs/MOSHIMO_VIDEO_OPENING_ENTRY_SELECTOR_V0.1.md（家スタート・比較・パイプライン追記）\ndocs/MOSHIMO_VIDEO_RULE_SCOPE_CLASSIFIER_V0.1.md（Rule Scope Classifier完全版）",
+        "source": "manual",
+        "observed_at": "2026-06-26T21:32:51.301Z",
+        "created_at": "2026-06-26T21:32:51.301Z",
+        "updated_at": "2026-06-26T21:32:51.301Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "bac1b350-a506-4c82-9cfd-f4128c616ffd",
+      "payload": {
+        "summary": "第1本目のテーマ「もしも地球の重力が半分になったら？」は制作設計済み。1000本用の「もしも動画 60秒拡大型カット構造 v0.2」も定義済み。現在はv0.2を複数テーマで検証中。Theme Validation 01「もしも水だけが上に落ちたら」の補強として、家スタートの扱いを明確化した。水回では家スタートを採用するが、Body-firstとしては使わない。家は手洗い・コップ・風呂などで人間に体感させる場所ではなく、個人空間から外界の異常へ接続する入口として使う。水回で外すのは家ではなく、人間の身体・コップ・手洗い・風呂を使った体感/実験スタートである。また、前回の重力半分も分類できるよう Rule Scope Classifier v0.1 を追加し、Theme → Rule Scope → Entry Type → Portal Type → v0.2 Phase の判断順を定義した。重力半分は Global Physical Field / Body-first、水だけ上に落ちるは Material-specific Rule / Environment-first と分類される。次も引き続きv0.2を別テーマで検証する。"
+      }
+    }
+  ]
+}

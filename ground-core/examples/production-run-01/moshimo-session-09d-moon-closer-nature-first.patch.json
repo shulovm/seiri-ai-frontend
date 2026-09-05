@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "d0f05c21-1a55-4129-9249-90e503d0cd20",
+      "payload": {
+        "id": "d0f05c21-1a55-4129-9249-90e503d0cd20",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "Theme Validation 04として「もしも月が少し近づいたら」を採用し、Nature-first Themeとしてv0.2を検証する。",
+        "rationale": "このテーマは、重力半分のようなBody-first、水だけ上に落ちるようなEnvironment-first、信号全部青のようなSystem-first、画面だけ5秒先のようなScreen-firstとは異なり、月という自然スケールの存在が変化するNature-scale Ruleである。異常の起点が人間、家、画面、社会装置ではなく、夜空の月そのものであるため、Nature-first検証に適している。月が近づくことで、海、潮、港、川、低地の街、防潮設備、沿岸都市、周辺の静けさへ拡大でき、v0.2の拡大型Phaseが自然スケール起点にも使えるかを確認できる。",
+        "alternatives_considered": [
+          "月の科学解説/天文学ニュース動画として作る",
+          "災害パニック映画・避難劇として人間ドラマ中心に作る",
+          "家や画面（テレビ速報）から始めてEnvironment-first/Screen-firstとして扱う"
+        ],
+        "status": "active",
+        "decided_at": "2026-06-27T00:30:00.000Z",
+        "created_at": "2026-06-27T00:30:00.000Z",
+        "updated_at": "2026-06-27T00:30:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "89211ded-3c21-4522-ad96-c5abf917240c",
+      "payload": {
+        "id": "89211ded-3c21-4522-ad96-c5abf917240c",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "Theme Validation 04: 月が少し近づいたら / Nature-first検証",
+        "body": "Theme Validation 04として「もしも月が少し近づいたら」を扱う。\n\nRule Change:\n月が、地球にいつもより近づく。夜空では、月が通常より明らかに大きく見える。ただし、月が地球に衝突するわけではなく、地球が即座に終末状態になるわけでもない。\n\n影響範囲:\n潮の動き、海面、港、川、低地の街、夜の明るさ、人間の設備。\n\n対象外:\n月の衝突、地球崩壊、全面的な終末、巨大隕石のような演出、ニュース解説、専門家の説明、宇宙物理の長い説明、人間ドラマ中心の避難劇。\n\nRule Scope:\nNature-scale Rule。\n\nEntry Type:\nNature-first。\n\n理由:\n変化するのは、人間の身体でも、特定物質でも、社会装置でも、画面情報でもない。月という自然スケールの存在が変わり、その影響が海、潮、川、街へ広がる。最初に見せるべきは、人間の反応やニュースではなく、夜空の月そのものである。\n\nPortal Type:\nNo-Portal Nature Opening。\n月そのものが入口になるため、強いPortalは不要。\n\n補助Transition:\nMoon Match Cut、Tide Pull Cut、Reflection Cut。\n夜空の月から海面に映る月へ、水面の反射から港や川へ、月の引きから潮の変化へつなぐ。\n\nNature Dominance Rule:\nNature-firstでは、自然を背景として置かない。自然そのものが最初の異常であり、人間社会はその後から影響を受ける。\n\nv0.2適用:\nMomentは、夜空に大きすぎる月がある状態。\nImmediateは、海面に大きな月が映り、水面が不自然に引かれ始める状態。\nInitial Spreadは、港の水位が上がり、船や係留ロープに異常が出る状態。\nAdapted Fieldは、河口や川で水が押し戻され、街の内側へ入ってくる状態。\nSystem Fieldは、防潮扉や排水ポンプが水位変化に追いつかない状態。\nWide Fieldは、低地の街の道路に水が広がり、月が反射する状態。\nMacro Fieldは、沿岸都市全体で海、川、低地の境界が曖昧になる状態。\nAfter Fieldは、水が少し引いた後の路地や港町の端に、濡れた跡と月の反射が残る状態。\nResidual Fieldは、人間の設備や作業灯より、月と水面の存在感が大きく、人間が小さく見える状態。\nEnd Residualは、大きすぎる月だけが空に残り、静かな海に映って終わる状態。\n\n評価:\nこのテーマはv0.2のPhase構造に乗る可能性が高い。特に、自然そのものから始め、人間や設備を後から出すことでNature-first性を保てる。ニュース、テレビ、避難劇、人間の驚きから始めると別Entry Typeに寄るため避ける。System Fieldも人間中心ではなく、自然が設備を超える形で作る。Residual Fieldは大きすぎる月と水面の静けさで処理する。これによりBody / Environment / System / Screen / Natureの主要Entry Type検証が揃う見込み。\n\nv0.2.1候補:\nNature-first Entry、Nature-scale Rule、No-Portal Nature Opening、Nature Dominance Rule、Moon Match Cut、Tide Pull Cut、Reflection Cut。\n\n規格本文:\ndocs/MOSHIMO_VIDEO_THEME_VALIDATION_04_MOON_CLOSER_NATURE_FIRST.md（月回の完全版）\ndocs/MOSHIMO_VIDEO_OPENING_ENTRY_SELECTOR_V0.1.md（Nature-first / No-Portal Nature Opening / Nature Dominance Rule / Moon・Tide・Reflection Cut追記）\ndocs/MOSHIMO_VIDEO_RULE_SCOPE_CLASSIFIER_V0.1.md（月回分類・5テーマ比較追記）",
+        "source": "manual",
+        "observed_at": "2026-06-27T00:30:00.000Z",
+        "created_at": "2026-06-27T00:30:00.000Z",
+        "updated_at": "2026-06-27T00:30:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "bac1b350-a506-4c82-9cfd-f4128c616ffd",
+      "payload": {
+        "summary": "第1本目のテーマ「もしも地球の重力が半分になったら？」は制作設計済み。1000本用の「もしも動画 60秒拡大型カット構造 v0.2」も定義済み。現在はv0.2を複数テーマで検証中。Theme Validation 01「もしも水だけが上に落ちたら」では、Material-specific Rule / Environment-first / Aperture Match Cut を検証済み。session-09A補強では、家スタートの扱いと Rule Scope Classifier v0.1 を定義し、Theme → Rule Scope → Entry Type → Portal Type → v0.2 Phase の判断順を記録した。Theme Validation 02「もしも街じゅうの信号が全部青になったら」では、Social System Rule / System-first / No-Portal Opening を検証済み。Theme Validation 03「もしも画面だけ、5秒先を映したら」では、Information Rule / Screen-first / Screen Portal / Time Offset Compression を検証済み。session-09C補強では、Screen Target Coherence Rule、Screen Dependency / Reality Delegation、Phone-Walk After Field を追加した。Theme Validation 04として「もしも月が少し近づいたら」を採用し、Nature-scale Rule / Nature-first / No-Portal Nature Opening としてv0.2を検証した。月回では、人間・家・画面・社会装置から始めず、夜空の大きすぎる月から入り、海、潮、港、川、低地の街、防潮設備、沿岸都市、周辺の静けさ、大きすぎる月だけが残る残像へ拡大する。これにより、Body / Environment / System / Screen / Nature の主要Entry Type検証が揃う見込み。"
+      }
+    }
+  ]
+}

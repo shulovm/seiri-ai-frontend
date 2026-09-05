@@ -1,0 +1,12 @@
+{
+  "schema_version": "0.2.3",
+  "proposal_id": "63e12eb1-bab5-47dc-8723-464f2c844cc9",
+  "project_id": "28d83a68-2064-43d7-94cb-72656b9006de",
+  "event_id": "acb17146-88af-41df-96bb-2c1e8f9345b0",
+  "selected_entity_type": "next_action",
+  "selected_entity_id": "f3333333-3333-4333-8333-333333333301",
+  "reviewer": "human",
+  "decision": "approve_resolution",
+  "note": "E2E manual run: 配布場所を最優先にする",
+  "created_at": "2026-06-07T06:22:40.000Z"
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "f9c17630-461f-4ed9-a35c-bca7ee124204",
+      "payload": {
+        "id": "f9c17630-461f-4ed9-a35c-bca7ee124204",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "重力半分回の11カット版v0.2を、生成用カット仕様v0.1へ分解する。",
+        "rationale": "session-12で、重力半分回の60秒映像台本は11カット版v0.2へ更新された。次に生成素材やプロンプトへ進む前に、各カットの目的、必ず映すもの、物理挙動、避ける表現、成功条件、失敗例を明確にする必要がある。特に、重力半分はただのスローモーションではなく、身体、生活物、自然、交通、スポーツ、インフラ、都市、終盤の残像それぞれで異なる挙動として見せる必要があるため、11カットを生成・編集に渡せる仕様へ分解する。",
+        "alternatives_considered": [
+          "仕様化を飛ばして直接生成プロンプトを書く",
+          "Must Show / Avoid / Success Criteria を整理せず、映像台本v0.2のまま生成へ渡す"
+        ],
+        "status": "active",
+        "decided_at": "2026-06-29T13:40:00.000Z",
+        "created_at": "2026-06-29T13:40:00.000Z",
+        "updated_at": "2026-06-29T13:40:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "afbf523d-8586-4d27-8017-7469d2e5aefa",
+      "payload": {
+        "id": "afbf523d-8586-4d27-8017-7469d2e5aefa",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "session-13: 重力半分回 生成用カット仕様 v0.1",
+        "body": "session-13。\n\nsession-12で作成した重力半分回の11カット版60秒映像台本v0.2を、生成用カット仕様v0.1へ分解した。\n\n今回の目的:\n画像生成プロンプトや動画生成プロンプトを書くことではなく、各カットを生成・編集へ渡せる仕様として整理すること。\n\n仕様テンプレート:\nCut ID、Time、Phase、Role、Scale、Must Show、Physics Behavior、Composition、Camera、Motion、Sound、Text、Avoid、Success Criteria、Failure Modes、Continuity Hook、Generation Notes。\n\n11カット:\nG01 起床 / 体が浮く\nG02 コップ / 落下が遅い\nG03 通り / バッグや小物が舞う\nG04 公園の噴水 / 水滴・鳥・落ち葉が軽い\nG05 交差点 / 車が曲がれない\nG06 バスケ / 飛びすぎる\nG07 工事現場 / 鉄骨が跳ねる\nG08 都市遠景 / 街全体が軽い\nG09 周辺の静けさ / 紙と落ち葉が落ちきらない\nG10 街の端 / 浮いた傘と止まった車列\nG11 残像 / 小物またはシーツがまだ宙にある → 黒\n\n横断ルール:\n事故中心にしない。\n自然を忘れない。\nスローモーションだけにしない。\nテキストで説明しない。\n最後に意味回収しない。\nCut09〜11は差別化する。\n\n次に素材方針で決めること:\n11カットを静止画生成、動画生成、編集素材、音素材のどれで扱うか。どのカットを1素材で作るか、複数素材に分けるか。Cut04公園自然カットの情報量をどう分解するか。Cut08都市遠景をどう作るか。Cut09〜11の終盤残像候補をどれにするか。どのカットを最初にテスト生成するか。生成失敗リスクが高いカットをどれと見るか。\n\n規格本文:\ndocs/MOSHIMO_VIDEO_01_GRAVITY_HALF_GENERATION_CUT_SPEC_V0.1.md（生成用カット仕様v0.1完全版）\ndocs/MOSHIMO_VIDEO_01_GRAVITY_HALF_60SEC_VISUAL_SCRIPT_V0.2.md（生成用カット仕様へ分解済みの注記を追記）",
+        "source": "manual",
+        "observed_at": "2026-06-29T13:40:00.000Z",
+        "created_at": "2026-06-29T13:40:00.000Z",
+        "updated_at": "2026-06-29T13:40:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "bac1b350-a506-4c82-9cfd-f4128c616ffd",
+      "payload": {
+        "primary_next_action_id": "97700398-e2e7-4095-9381-73b518c153ab",
+        "summary": "第1本目のテーマ「もしも地球の重力が半分になったら？」は、もしも動画シリーズ文法 v0.2.1 により Global Physical Field / Body-first / Portal不要として分類済み。session-12では、60秒映像台本v0.1をレビューし、階段・サッカー・高架道路を削除、公園の噴水・鳥・落ち葉の自然カットを追加して、11カット版v0.2を作成した。session-13では、この11カット版v0.2を生成用カット仕様v0.1へ分解した。各カットについて、Role、Must Show、Physics Behavior、Composition、Camera、Motion、Sound、Text、Avoid、Success Criteria、Failure Modes、Continuity Hook、Generation Notesを整理した。まだ画像生成プロンプトや動画生成プロンプトは作成していない。次は、生成素材の方針を決める。"
+      }
+    },
+    {
+      "op": "status_change",
+      "entity": "next_action",
+      "entity_id": "35cdad4d-9688-4754-8ea4-9781048214be",
+      "status": "done"
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "schema_version": "0.1.0",
+  "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "project",
+      "entity_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+      "payload": {
+        "summary": "日本昔話「桃太郎」を、AI画像・映像生成を使って再構成する創作制作プロジェクト。人物一貫性、物語骨格、世界観、視覚ルールを固定しながら制作する。"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "goal",
+      "entity_id": "c1111111-1111-4111-8111-111111111111",
+      "payload": {
+        "id": "c1111111-1111-4111-8111-111111111111",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "parent_goal_id": null,
+        "title": "桃太郎 trial v1 の制作設計を安定させる",
+        "description": "主人公・老人・犬猿雉・鬼・背景世界の視覚ルールと制作手順を固定し、画像生成や映像生成に進める状態にする。",
+        "status": "active",
+        "priority": 1,
+        "sort_order": 0,
+        "created_at": "2026-06-07T03:38:52.868Z",
+        "updated_at": "2026-06-07T03:38:52.868Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "451327f0-6f56-4d92-9a42-64ca6b955991",
+      "payload": {
+        "primary_goal_id": "c1111111-1111-4111-8111-111111111111",
+        "phase": "production_design",
+        "summary": "試作 v1 の制作ドキュメント群は存在している。現在の焦点は、キャラクターの一貫性、年齢ごとの見た目、ブラッドライン、背景世界、Midjourneyに投げる文の精度を安定させること。",
+        "confidence": 0.75
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "blocker",
+      "entity_id": "c2222222-2222-4222-8222-222222222201",
+      "payload": {
+        "id": "c2222222-2222-4222-8222-222222222201",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "goal_id": "c1111111-1111-4111-8111-111111111111",
+        "title": "キャラクター一貫性が未確定",
+        "description": "桃太郎・老人・犬猿雉・鬼など、年齢や場面が変わっても同一人物・同一世界に見える基準がまだ完全には固定されていない。",
+        "severity": "high",
+        "status": "open",
+        "created_at": "2026-06-07T03:38:52.868Z",
+        "updated_at": "2026-06-07T03:38:52.868Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "blocker",
+      "entity_id": "c2222222-2222-4222-8222-222222222202",
+      "payload": {
+        "id": "c2222222-2222-4222-8222-222222222202",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "goal_id": "c1111111-1111-4111-8111-111111111111",
+        "title": "年齢ごとの見た目ルールが未整理",
+        "description": "桃太郎を18歳固定だけでなく、幼少期から成長までどう見せるかのルールが必要。",
+        "severity": "medium",
+        "status": "open",
+        "created_at": "2026-06-07T03:38:52.868Z",
+        "updated_at": "2026-06-07T03:38:52.868Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "blocker",
+      "entity_id": "c2222222-2222-4222-8222-222222222203",
+      "payload": {
+        "id": "c2222222-2222-4222-8222-222222222203",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "goal_id": "c1111111-1111-4111-8111-111111111111",
+        "title": "Midjourney用プロンプトの運用ルールが揺れやすい",
+        "description": "長すぎる文、作家名依存、不要な改行、画像自動生成の誤作動などを避ける必要がある。",
+        "severity": "medium",
+        "status": "open",
+        "created_at": "2026-06-07T03:38:52.868Z",
+        "updated_at": "2026-06-07T03:38:52.868Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "c3333333-3333-4333-8333-333333333301",
+      "payload": {
+        "id": "c3333333-3333-4333-8333-333333333301",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "goal_id": "c1111111-1111-4111-8111-111111111111",
+        "blocker_id": "c2222222-2222-4222-8222-222222222201",
+        "title": "桃太郎のキャラクター固定ルールを整理する",
+        "description": "顔、目、表情、髪、衣装、体格、年齢変化の基準をまとめる。",
+        "status": "pending",
+        "due_at": null,
+        "sort_order": 0,
+        "created_at": "2026-06-07T03:38:52.868Z",
+        "updated_at": "2026-06-07T03:38:52.868Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "c3333333-3333-4333-8333-333333333302",
+      "payload": {
+        "id": "c3333333-3333-4333-8333-333333333302",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "goal_id": "c1111111-1111-4111-8111-111111111111",
+        "blocker_id": "c2222222-2222-4222-8222-222222222202",
+        "title": "年齢別の桃太郎ビジュアルラインを作る",
+        "description": "幼少期、少年期、青年期の見た目の連続性を設計する。",
+        "status": "pending",
+        "due_at": null,
+        "sort_order": 1,
+        "created_at": "2026-06-07T03:38:52.868Z",
+        "updated_at": "2026-06-07T03:38:52.868Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "c3333333-3333-4333-8333-333333333303",
+      "payload": {
+        "id": "c3333333-3333-4333-8333-333333333303",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "goal_id": "c1111111-1111-4111-8111-111111111111",
+        "blocker_id": "c2222222-2222-4222-8222-222222222201",
+        "title": "犬・猿・雉のブラッドラインを整理する",
+        "description": "仲間たちの出自、性格、見た目、役割を固定する。",
+        "status": "pending",
+        "due_at": null,
+        "sort_order": 2,
+        "created_at": "2026-06-07T03:38:52.868Z",
+        "updated_at": "2026-06-07T03:38:52.868Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "c3333333-3333-4333-8333-333333333304",
+      "payload": {
+        "id": "c3333333-3333-4333-8333-333333333304",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "goal_id": "c1111111-1111-4111-8111-111111111111",
+        "blocker_id": "c2222222-2222-4222-8222-222222222203",
+        "title": "Midjourneyに投げる本文ルールを確定する",
+        "description": "短く、無駄な改行なし、画像生成ではなくプロンプト文のみを出力する運用にする。",
+        "status": "pending",
+        "due_at": null,
+        "sort_order": 3,
+        "created_at": "2026-06-07T03:38:52.868Z",
+        "updated_at": "2026-06-07T03:38:52.868Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "c4444444-4444-4444-8444-444444444401",
+      "payload": {
+        "id": "c4444444-4444-4444-8444-444444444401",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "goal_id": "c1111111-1111-4111-8111-111111111111",
+        "title": "画像は勝手に生成せず、まずは生成AIに投げる文を作る",
+        "rationale": "ユーザーは画像自動生成を明確に嫌がっており、制作では文面設計と確認を優先するため。",
+        "alternatives_considered": [],
+        "status": "active",
+        "decided_at": "2026-06-07T03:38:52.868Z",
+        "created_at": "2026-06-07T03:38:52.868Z",
+        "updated_at": "2026-06-07T03:38:52.868Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "c4444444-4444-4444-8444-444444444403",
+      "payload": {
+        "id": "c4444444-4444-4444-8444-444444444403",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "goal_id": "c1111111-1111-4111-8111-111111111111",
+        "title": "作家名依存ではなく、要素分解で視覚ルールを作る",
+        "rationale": "特定作家の模倣ではなく、自然、静寂、土、神秘、奥行きなどの構成要素として扱うため。",
+        "alternatives_considered": [],
+        "status": "active",
+        "decided_at": "2026-06-07T03:38:52.868Z",
+        "created_at": "2026-06-07T03:38:52.868Z",
+        "updated_at": "2026-06-07T03:38:52.868Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "c4444444-4444-4444-8444-444444444402",
+      "payload": {
+        "id": "c4444444-4444-4444-8444-444444444402",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "goal_id": "c1111111-1111-4111-8111-111111111111",
+        "title": "昔話の必須骨格は省略しない",
+        "rationale": "芝刈り、洗濯、桃流下、持帰、誕生、命名育成、旅立ち、犬猿雉、黍団子、鬼ヶ島、勝利、宝、帰還は物語の骨格として必要なため。",
+        "alternatives_considered": [],
+        "status": "active",
+        "decided_at": "2026-06-07T03:38:52.868Z",
+        "created_at": "2026-06-07T03:38:52.868Z",
+        "updated_at": "2026-06-07T03:38:52.868Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "hypothesis",
+      "entity_id": "c5555555-5555-4555-8555-555555555501",
+      "payload": {
+        "id": "c5555555-5555-4555-8555-555555555501",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "goal_id": "c1111111-1111-4111-8111-111111111111",
+        "statement": "創作制作プロジェクトでも、Project / Goal / Current State / Blocker / Next Action / Decision / Hypothesis の7要素で状態管理できる。",
+        "status": "untested",
+        "evidence_for": [],
+        "evidence_against": [],
+        "created_at": "2026-06-07T03:38:52.868Z",
+        "updated_at": "2026-06-07T03:38:52.868Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "hypothesis",
+      "entity_id": "c5555555-5555-4555-8555-555555555502",
+      "payload": {
+        "id": "c5555555-5555-4555-8555-555555555502",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "goal_id": "c1111111-1111-4111-8111-111111111111",
+        "statement": "キャラクター一貫性と制作ルールは、ProjectState の Blocker / Decision / NextAction で十分に管理できる。",
+        "status": "untested",
+        "evidence_for": [],
+        "evidence_against": [],
+        "created_at": "2026-06-07T03:38:52.868Z",
+        "updated_at": "2026-06-07T03:38:52.868Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "hypothesis",
+      "entity_id": "c5555555-5555-4555-8555-555555555503",
+      "payload": {
+        "id": "c5555555-5555-4555-8555-555555555503",
+        "project_id": "839578f5-36e1-4b6f-9be5-a97520f52b66",
+        "goal_id": "c1111111-1111-4111-8111-111111111111",
+        "statement": "GROUND Core は、事業系プロジェクトだけでなく創作制作系プロジェクトにも使える。",
+        "status": "untested",
+        "evidence_for": [],
+        "evidence_against": [],
+        "created_at": "2026-06-07T03:38:52.868Z",
+        "updated_at": "2026-06-07T03:38:52.868Z"
+      }
+    }
+  ]
+}

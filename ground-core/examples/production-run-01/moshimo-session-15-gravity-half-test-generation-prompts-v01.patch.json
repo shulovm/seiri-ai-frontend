@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "9b9509c8-b861-4f7b-9597-eb52ad965d8b",
+      "payload": {
+        "id": "9b9509c8-b861-4f7b-9597-eb52ad965d8b",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "重力半分回の初回テスト生成プロンプトv0.1を、G02/G06/G04分割/G11に限定して作成する。",
+        "rationale": "session-14で、重力半分回の初回テスト生成候補はG02コップ、G04公園の噴水、G06バスケ、補助G11寝室シーツ残像に整理された。今回、全11カットの本番プロンプトへ進む前に、まず重力半分の物理挙動、人体運動、自然挙動、終盤残像が成立するかを確認するため、G02、G06、G04-A/B/C、G11のテスト生成プロンプトv0.1を作成する。G04は噴水・鳥・落ち葉を一発で扱うと情報過多になるため、テスト段階では分割する。",
+        "alternatives_considered": [
+          "本番11カット全てのプロンプトを一度に作成する",
+          "G04を一発でテスト生成する",
+          "G01起床やG03通りなど高リスクカットから先にテストする"
+        ],
+        "status": "active",
+        "decided_at": "2026-06-29T14:30:00.000Z",
+        "created_at": "2026-06-29T14:30:00.000Z",
+        "updated_at": "2026-06-29T14:30:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "544172fb-6d21-4f92-8b93-7b2f09bed9a3",
+      "payload": {
+        "id": "544172fb-6d21-4f92-8b93-7b2f09bed9a3",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "session-15: 重力半分回 テスト生成プロンプト v0.1",
+        "body": "session-15。\n\nsession-14で定義した生成素材方針v0.1をもとに、初回テスト生成プロンプトv0.1を作成した。\n\n今回の目的:\n本番11カット全てのプロンプトを作ることではなく、まず重力半分の映像表現が成立するかを確認するため、G02/G06/G04/G11に限定したテストプロンプトを作ること。\n\nテスト生成順:\n1. G02 コップ / 落下が遅い\n2. G06 バスケ / 飛びすぎる\n3. G04-A 公園の噴水と水滴\n4. G04-B 鳥の飛び立ち\n5. G04-C 落ち葉の滞空\n6. G11 寝室シーツ残像\n\nG04の扱い:\n本番では1カットだが、テストでは噴水と水滴、鳥の飛び立ち、落ち葉の滞空へ分割する。理由は、自然にも重力半分が効いていることを示す重要カットだが、一発で噴水・鳥・落ち葉を入れると情報量が多く破綻しやすいため。\n\n評価項目:\nRule Readability、Motion Clarity、Not Just Slow Motion、Cinematic Quality、Failure Risk、Reusability。各1〜5点で評価する。\n\n判断分類:\nAdopt、Retry、Redesign、Drop。\n\n次に評価時に見ること:\nG02は重力半分の基準映像として成立するか。G06は人体破綻せず、バスケとして読めるか。G04-Aは水だけ上に落ちるテーマと混ざっていないか。G04-Bは鳥が破綻せず、自然の軽さとして読めるか。G04-Cは風ではなく重力半分として読めるか。G11はホラーではなく、静かな残像として成立するか。\n\n規格本文:\ndocs/MOSHIMO_VIDEO_01_GRAVITY_HALF_TEST_GENERATION_PROMPTS_V0.1.md（テスト生成プロンプトv0.1完全版）\ndocs/MOSHIMO_VIDEO_01_GRAVITY_HALF_MATERIAL_POLICY_V0.1.md（テスト生成プロンプト作成済みの注記を追記）",
+        "source": "manual",
+        "observed_at": "2026-06-29T14:30:00.000Z",
+        "created_at": "2026-06-29T14:30:00.000Z",
+        "updated_at": "2026-06-29T14:30:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "dc1b9792-0b99-4177-8b10-c20a34f6d7f1",
+      "payload": {
+        "id": "dc1b9792-0b99-4177-8b10-c20a34f6d7f1",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "blocker_id": null,
+        "depends_on_action_id": "f171bd5c-4d79-43ef-872c-adf82ec828b7",
+        "title": "重力半分回の初回テスト生成結果を評価する",
+        "description": "intent: design。session-15で作成したテスト生成プロンプトv0.1（G02/G06/G04-A/B/C/G11）を使って、外部生成ツール等でテスト生成した結果を評価し、どの表現が成立するか、どのカットを修正するかを判断する。評価項目はRule Readability、Motion Clarity、Not Just Slow Motion、Cinematic Quality、Failure Risk、Reusability。判断分類はAdopt/Retry/Redesign/Drop。ProjectState内で実際の生成は行わない。生成結果を受け取った後に評価するAction。",
+        "status": "pending",
+        "due_at": null,
+        "sort_order": 10,
+        "created_at": "2026-06-29T14:30:00.000Z",
+        "updated_at": "2026-06-29T14:30:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "d6b9b143-829b-494f-970c-d0010164c922",
+      "payload": {
+        "id": "d6b9b143-829b-494f-970c-d0010164c922",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "blocker_id": null,
+        "depends_on_action_id": "dc1b9792-0b99-4177-8b10-c20a34f6d7f1",
+        "title": "編集順序を決める",
+        "description": null,
+        "status": "pending",
+        "due_at": null,
+        "sort_order": 11,
+        "created_at": "2026-06-24T15:21:05.099Z",
+        "updated_at": "2026-06-29T14:30:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "bac1b350-a506-4c82-9cfd-f4128c616ffd",
+      "payload": {
+        "primary_next_action_id": "dc1b9792-0b99-4177-8b10-c20a34f6d7f1",
+        "summary": "第1本目のテーマ「もしも地球の重力が半分になったら？」は、もしも動画シリーズ文法 v0.2.1 により Global Physical Field / Body-first / Portal不要として分類済み。session-12では、60秒映像台本v0.1をレビューし、階段・サッカー・高架道路を削除、公園の噴水・鳥・落ち葉の自然カットを追加して、11カット版v0.2を作成した。session-13では、この11カット版v0.2を生成用カット仕様v0.1へ分解した。session-14では、生成素材方針v0.1を定義し、初回テスト生成候補をG02コップ、G04公園の噴水、G06バスケ、補助G11寝室シーツ残像に絞った。session-15では、G02、G06、G04-A/B/C、G11のテスト生成プロンプトv0.1を作成した。G04は情報量が多いため、テスト段階では噴水と水滴、鳥の飛び立ち、落ち葉の滞空へ分割した。まだ実際の画像生成・動画生成は行っていない。次は、テスト生成結果を評価する。"
+      }
+    },
+    {
+      "op": "status_change",
+      "entity": "next_action",
+      "entity_id": "f171bd5c-4d79-43ef-872c-adf82ec828b7",
+      "status": "done"
+    }
+  ]
+}
