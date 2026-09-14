@@ -2,6 +2,10 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
+    { "source": "/reality", "destination": "/index.html" },
+    { "source": "/reality/:projectId", "destination": "/index.html" },
+    { "source": "/ma/reality", "destination": "/index.html" },
+    { "source": "/ma/reality/:projectId", "destination": "/index.html" },
     { "source": "/reality/:projectId/:entityId", "destination": "/index.html" },
     { "source": "/ma/reality/:projectId/:entityId", "destination": "/index.html" },
     { "source": "/", "destination": "/index.html" },

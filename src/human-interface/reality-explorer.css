@@ -53,3 +53,9 @@
 @media (max-width: 720px) {
   .hi-core-read { padding: 14px; }
 }
+
+.hi-navigation { max-width: 1040px; margin: 0 auto; padding: 16px 18px; font: 14px system-ui, sans-serif; }
+.hi-navigation a { color: #294955; }
+.hi-browse-list { list-style: none; padding: 0; margin: 0; }
+.hi-browse-list > li { padding: 18px 0; border-bottom: 1px solid #cdd1d1; overflow-wrap: anywhere; }
+.hi-explorer h1 { overflow-wrap: anywhere; }

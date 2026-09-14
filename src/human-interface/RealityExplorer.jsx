@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { fetchReality } from './read-client.js';
 import RealityReadView, { RealityReadFailure } from './RealityReadView.jsx';
 import './reality-explorer.css';
+import { BrowseNavigation } from './Browse.jsx';
 
 export default function RealityExplorer() {
   const { projectId, entityId } = useParams();
@@ -18,6 +19,6 @@ export default function RealityExplorer() {
   if (!request || request.projectId !== projectId || request.entityId !== entityId) {
     return <main className="hi-explorer" role="status"><p>GROUND Human Interface · read-only</p><h1>Reality Explorer</h1><p>Canonical read response を取得しています…</p></main>;
   }
-  if (request.error) return <RealityReadFailure error={request.error} />;
-  return <RealityReadView response={request.response} />;
+  if (request.error) return <><BrowseNavigation projectId={projectId} /><RealityReadFailure error={request.error} /></>;
+  return <><BrowseNavigation projectId={projectId} /><RealityReadView response={request.response} /></>;
 }

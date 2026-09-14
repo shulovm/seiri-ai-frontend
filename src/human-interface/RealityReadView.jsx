@@ -61,16 +61,17 @@ function EvidenceRead({ result }) {
   </details>;
 }
 
-export function RealityReadFailure({ error }) {
+export function RealityReadFailure({ error, context = 'Reality Explorer' }) {
   const integrity = error.code === 'FIXTURE_INTEGRITY_FAILURE';
   const scopeExplanation = {
     PROJECT_SCOPE_MISMATCH: 'この Project ID に登録された読取 source を解決できません。Reality の不存在を示す判定ではありません。',
+    ENTITY_NOT_IN_SNAPSHOT: 'この検証済みsnapshotのRealityEntity collectionに、そのIDは存在しません。他のsnapshotや世界での不存在を意味しません。',
     ENTITY_NOT_FOUND: 'この Entity ID は登録された proof read scope の対象ではありません。ProjectState 内に Entity が存在しないという判定ではありません。',
   }[error.code];
-  return <main className="hi-explorer"><header><p>GROUND Human Interface · read-only</p><h1>Reality Explorer</h1></header>
+  return <main className="hi-explorer"><header><p>GROUND Human Interface · read-only</p><h1>{context}</h1></header>
     <section role="alert" className="hi-section"><h2>{integrity ? '読取基盤の異常 · fixture integrity failure' : error.status === 404 ? '読取 scope を解決できません' : 'Server read error'}</h2>
       <p>HTTP status: <code>{error.status ?? 'unavailable'}</code></p><p>Transport error: <code>{error.code ?? 'NETWORK_READ_FAILURE'}</code></p>
-      <p>{integrity ? 'Fixture の整合性検証が失敗したため、canonical records は表示していません。' : 'この request の canonical read response を取得できませんでした。'}</p>
+      <p>{integrity ? 'Fixture の整合性検証が失敗したため、canonical records は表示していません。' : context === 'Project catalog' ? 'Registry catalog を取得できませんでした。snapshot の読取結果ではありません。' : 'この request の canonical read response を取得できませんでした。'}</p>
       {scopeExplanation && <p>{scopeExplanation}</p>}
       <p className="hi-note">読取エラーは、canonical records が0件という結果ではありません。</p>
     </section></main>;
