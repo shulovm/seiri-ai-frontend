@@ -4,6 +4,7 @@ import type {PatchProposal,ClarificationResponse} from '../extraction/types.js';
 import {validateStatePatch} from '../validate.js';
 import {dryRunPatch} from '../extraction/dry-run.js';
 import type {RealityProposeInput} from './types.js';
+import {stripDeclaredTimePrefix} from './semantic-times.js';
 import {statedSourceRoles} from './source-roles.js';
 import {ownershipRoles,quantityRole} from './semantic-roles.js';
 import {semanticClauses} from './semantic-clauses.js';
@@ -109,10 +110,12 @@ export function proposeCanonicalTranslation(state:ProjectState,input:RealityProp
   ids.push(addState(record,'interpretation_status',u.status,key+'|status'));
   if(u.timeExpression)ids.push(addState(record,'declared_time_expression',u.timeExpression,key+'|localtime'));
   for(const [kind,value] of Object.entries(u.properties))ids.push(addState(record,kind,value,key+'|'+kind));
-  const targetText=u.span.replace(/^\d{4}-\d{2}-\d{2}T\S+\s*/, '');
+  const targetText=stripDeclaredTimePrefix(u.span);
   const observedObject=targetText.match(/(?:が|は)\s*([^「『」、。]{1,35}?)(?:の|を)[^「『」、。]*(?:直接見た|目撃した|直接確認した)/)?.[1];
-  const subjectName=typeof u.properties.resolved_referent==='string'?u.properties.resolved_referent:u.observer&&observedObject?observedObject:targetText.match(/^(.{1,35}?)(?:の測定値|の法的所有者|の所有者|には|は|が)/)?.[1];
-  const target=subjectName&&!/^(それ|この件|その人|同社)$/.test(clean(subjectName))?entity(clean(subjectName),clean(subjectName)===u.observer?'person':'unspecified'):null;
+  const ownedObject=u.families.includes('ownership')?targetText.match(/(?:が|は)\s*([^「『」、。]{1,35}?)を所有/)?.[1]:undefined;
+  const namedFront=ownedObject??targetText.match(/^([^\s「『」、。はがをに]+[A-Z][0-9]*(?:センサー)?)(?=の|を|に|は|が)/)?.[1];
+  const subjectName=typeof u.properties.resolved_referent==='string'?u.properties.resolved_referent:u.observer&&observedObject?observedObject:namedFront??targetText.match(/^(.{1,35}?)(?:の測定値|の法的所有者|の所有者|には|は|が)/)?.[1];
+  const target=subjectName&&!/^(それ|この件|その人|同社)$/.test(clean(subjectName))?entity(clean(subjectName),clean(subjectName)===u.observer?'person':clean(subjectName)===u.reporter?(u.properties.source_organization_name?'organization':'person'):'unspecified'):null;
   if(target)ids.push(addState(record,'target_entity',target,key+'|target'));
   if(target&&u.qualification==='verified'&&u.time&&typeof u.properties.verified_reality_value==='number'){const uid=fingerprint(state.project.id+'|verified-target|'+key);ids.push(uid);operations.push({op:'upsert',entity:'reality_state',entity_id:uid,payload:{...common(uid),subject_id:target,kind:'measured_reality_value',value:u.properties.verified_reality_value,valid_from:u.time,valid_until:null,recorded_at:now}});}
   for(const [name,role] of [['owner_name','owner'],['custodian_name','custodian'],['selected_plan_name','selected_plan']] as const){const label=u.properties[name];if(typeof label==='string')ids.push(addState(record,role,entity(label,role==='selected_plan'?'plan':'unspecified'),key+'|role-'+role));}
@@ -134,7 +137,7 @@ export function proposeCanonicalTranslation(state:ProjectState,input:RealityProp
   const observation=fingerprint(state.project.id+'|nl-obs|'+key);ids.push(observation);operations.push({op:'upsert',entity:'epistemic_observation',entity_id:observation,payload:{...common(observation),kind:u.families.includes('record-review')?'record_review':u.qualification==='verified'?'verification':u.families.includes('measurement')?'measurement_record':u.observer?'direct_visual':'textual_report',content:u.span,provenance,subject_ids:target?[record,target]:[record],observed_at:u.time,recorded_at:now}});
   if(u.families.includes('verification')||u.families.includes('measurement')||u.families.includes('report')){const evidence=fingerprint(state.project.id+'|nl-evidence|'+key);ids.push(evidence);operations.push({op:'upsert',entity:'evidence',entity_id:evidence,payload:{...common(evidence),kind:'observation_ref',observation_id:observation,external_ref:null,summary:u.span,provenance,recorded_at:now}});}
   // Only the bounded declared occurrence, never selected→executed or after→caused.
-  if(!u.reporter&&!['hypothetical','predicted','unknown','unresolved'].includes(u.qualification)) for(const kind of u.eventKinds){const uid=fingerprint(state.project.id+'|nl-event|'+key+'|'+kind);ids.push(uid);operations.push({op:'upsert',entity:'reality_event',entity_id:uid,payload:{...common(uid),kind,subject_ids:target?[target]:[],summary:u.span,occurred_at:u.time,recorded_at:now}});}
+  if(!u.reporter&&!['hypothetical','predicted','unknown','unresolved'].includes(u.qualification)) for(const kind of u.eventKinds){const uid=fingerprint(state.project.id+'|nl-event|'+key+'|'+kind);ids.push(uid);operations.push({op:'upsert',entity:'reality_event',entity_id:uid,payload:{...common(uid),kind,subject_ids:target?[target]:Array.isArray(u.properties.referenced_plan_names)&&u.properties.referenced_plan_names.length===1?[entity(String(u.properties.referenced_plan_names[0]),'plan')]:[],summary:u.span,occurred_at:u.time,recorded_at:now}});}
   targets.push({unit:index,ids});
  });
  const legacy=randomUUID();operations.push({op:'upsert',entity:'observation',entity_id:legacy,payload:{...common(legacy),goal_id:null,title:'Reality semantic composition',body:input.input_text,source:input.source??'manual',observed_at:now}});

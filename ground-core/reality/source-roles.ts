@@ -1,6 +1,7 @@
+import {stripDeclaredTimePrefix} from './semantic-times.js';
 /** Explicit grammatical source chains. Claimed observers never become direct observations. */
 export function statedSourceRoles(text:string):{reporter?:string,reportedObserver?:string,intermediaries:string[],organization?:string,socialRecord?:boolean}{
- const normalized=text.replace(/^\d{4}-\d{2}-\d{2}T\S+\s*/,'').trim();
+ const normalized=stripDeclaredTimePrefix(text).trim();
  const leading=normalized.match(/^([^「『」、。]{1,40}?)(?:が|は)/)?.[1];
  const organization=normalized.match(/^([^「『」、。]{1,40}?)(?:の公式発表|の発表|の声明|の説明)(?:では|によると|は)/)?.[1];
  const attributed=/[「『]|報告した|伝えた|聞いた|発表|声明|SNS|投稿/.test(normalized);
