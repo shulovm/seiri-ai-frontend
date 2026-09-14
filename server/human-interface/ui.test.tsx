@@ -175,6 +175,6 @@ test('E scope and read error explanations do not assert canonical absence', () =
     assert.ok(html.includes('読取エラーは、canonical records が0件という結果ではありません'));
     assert.doesNotMatch(html,/data-record-type=|Records in this read scope|Claim records: 0/);
     if(code==='ENTITY_NOT_FOUND') assert.ok(html.includes('ProjectState 内に Entity が存在しないという判定ではありません'));
-    if(code==='PROJECT_SCOPE_MISMATCH') assert.ok(html.includes('Reality の不存在を示す判定ではありません'));
+    if(code==='PROJECT_SCOPE_MISMATCH') assert.ok(html.includes('GROUND全体でのProjectやRealityの不存在を示す判定ではありません'));
   }
 });
