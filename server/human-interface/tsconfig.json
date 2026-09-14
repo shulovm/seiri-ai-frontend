@@ -4,5 +4,5 @@
     "strict": true, "skipLibCheck": true, "noEmit": true,
     "esModuleInterop": true, "types": ["node"]
   },
-  "include": ["read-adapter.ts", "read-boundary.test.ts"]
+  "include": ["read-adapter.ts", "read-boundary.test.ts", "source-registry.ts", "source-registry.test.ts"]
 }
