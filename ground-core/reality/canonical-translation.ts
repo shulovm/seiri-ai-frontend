@@ -4,6 +4,7 @@ import type {PatchProposal,ClarificationResponse} from '../extraction/types.js';
 import {validateStatePatch} from '../validate.js';
 import {dryRunPatch} from '../extraction/dry-run.js';
 import type {RealityProposeInput} from './types.js';
+import {wholeTimeEdges,compareSourceTimes} from './whole-time.js';
 import {wholeRecordSource,wholeQuantityHolder} from './whole-source.js';
 import {wholeIdentityRegistry,resolveWholeName} from './whole-identity.js';
 import {segmentWholeReality,timelineEntry} from './whole-sections.js';
@@ -104,7 +105,7 @@ export function proposeCanonicalTranslation(state:ProjectState,input:RealityProp
  if(sections.recognized){
   const whole=(span:string,family:string,qualification:TranslationUnit['qualification'],properties:Record<string,RealityStateValue>):TranslationUnit=>({span,sourceSentence:span,families:[family],qualification,properties,eventKinds:[],time:null,status:'preserved',disposition:qualification==='unknown'||qualification==='unresolved'?'safely unresolved':'compositionally canonicalized'});
   for(const span of sections.unknown)units.push(whole(span,'whole-unknown','unknown',{knowledge_scope:span,knowledge_status:'unknown'}));
-  for(const span of sections.timeline){const e=timelineEntry(span);if(e&&e.description!=='現在')units.push(whole(span,'whole-timeline','reported',{event_description:e.description,event_time_expression:e.expression,event_time_basis:'explicit source timeline; absolute year/timezone unresolved'}));}
+  for(const span of sections.timeline){const e=timelineEntry(span);if(e&&e.description!=='現在'){const u=whole(span,'whole-timeline','reported',{event_description:e.description,event_time_expression:e.expression,event_time_basis:'explicit source timeline; absolute year/timezone unresolved'});if(/報告|通知|判明|受領|受け取|問い合わせ|連絡|共有/.test(e.description)){u.properties.knowledge_time_expression=e.expression;u.properties.knowledge_time_basis='reported information arrival, no recipient/maker knowledge inferred';}units.push(u);}}
   if(sections.decision.length)units.push(whole(sections.decision.join('\n'),'whole-options','unresolved',{decision_scope:sections.decision.join('\n'),selection_status:'unselected',selection_scope:'open alternatives query, not a declaration about past actor decisions'}));
  }
 
@@ -158,6 +159,14 @@ export function proposeCanonicalTranslation(state:ProjectState,input:RealityProp
   if(!u.reporter&&!['hypothetical','predicted','unknown','unresolved'].includes(u.qualification)) for(const kind of u.eventKinds){const uid=fingerprint(state.project.id+'|nl-event|'+key+'|'+kind);ids.push(uid);operations.push({op:'upsert',entity:'reality_event',entity_id:uid,payload:{...common(uid),kind,subject_ids:target?[target]:Array.isArray(u.properties.referenced_plan_names)&&u.properties.referenced_plan_names.length===1?[entity(String(u.properties.referenced_plan_names[0]),'plan')]:[],summary:u.span,occurred_at:u.time,recorded_at:now}});}
   targets.push({unit:index,ids});
  });
+ if(wholeRegistry){
+  const records=new Map(targets.map(t=>[t.unit,t.ids[0]]));
+  const times=units.flatMap((u,index)=>typeof u.properties.event_time_expression==='string'?[{index,expression:u.properties.event_time_expression}]:[]);
+  for(const edge of wholeTimeEdges(times)){const key=episode+'|whole-before|'+edge.from+'|'+edge.to;const r=entity('Temporal relation '+fingerprint(key),'semantic_record');addState(r,'relation_kind','before',key+'|kind');addState(r,'from_record',records.get(edge.from)!,key+'|from');addState(r,'to_record',records.get(edge.to)!,key+'|to');}
+  for(const [decisionIndex,decision] of units.entries())if(decision.properties.plan_lifecycle_stage==='selected'&&decision.timeExpression)for(const t of times)if(units[t.index].properties.knowledge_time_expression&&compareSourceTimes(t.expression,decision.timeExpression)==='after'){const key=episode+'|later-report-excluded|'+decisionIndex+'|'+t.index;const r=entity('Later information exclusion '+fingerprint(key),'semantic_record');addState(r,'relation_kind','reported_after_decision',key+'|kind');addState(r,'from_record',records.get(decisionIndex)!,key+'|from');addState(r,'to_record',records.get(t.index)!,key+'|to');addState(r,'later_report_excluded',true,key+'|excluded');}
+  const current=sections.timeline.map(timelineEntry).find(e=>e?.description==='現在');const query=units.findIndex(u=>u.families.includes('whole-options'));
+  if(current&&query>=0)for(const t of times)if(units[t.index].properties.knowledge_time_expression&&compareSourceTimes(t.expression,current.expression)==='before'){const key=episode+'|reported-before-query|'+t.index;const r=entity('Knowledge chronology '+fingerprint(key),'semantic_record');addState(r,'relation_kind','reported_before_query',key+'|kind');addState(r,'from_record',records.get(t.index)!,key+'|from');addState(r,'to_record',records.get(query)!,key+'|to');}
+ }
  const legacy=randomUUID();operations.push({op:'upsert',entity:'observation',entity_id:legacy,payload:{...common(legacy),goal_id:null,title:'Reality semantic composition',body:input.input_text,source:input.source??'manual',observed_at:now}});
  // Local bounded proposal budget; do not broaden the legacy 8-op core/extraction safety limit.
  if(operations.length>512){
