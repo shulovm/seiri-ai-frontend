@@ -39,12 +39,14 @@ export function decomposeReality(text:string):TranslationUnit[]{
  if(denied){u.families.push('inspection');u.properties.inspection_performed=true;u.properties.X_present=false;}
  if(/異常なし/.test(span)){u.families.push('inspection-scope');u.properties.inspection_result='異常なし';u.properties.inspection_scope=span;}
  if(/未検査|検査していない|調べていない|検査(?:を|は).*(?:行って|実施して|行っておらず|実施しておらず).*(?:ない|おらず)/.test(span)){u.families.push('inspection','knowledge');u.properties.inspection_performed=false;u.properties.knowledge_of_X='不明';if(!/[「『]|報告した|聞いた/.test(span))u.qualification='unknown';}
- const quoted=/[「『]|(?:が|から).*(?:報告した|報告している|話した|聞いた|伝えた|言った)/.test(span)&&!/報告(?:は|が)ない/.test(span);
+ const nominalReport=/(?:という|との|と)(?:連絡|報告|通知|説明|申告)(?:がある|があった|を受け|が届)/.test(span);
+ const quoted=nominalReport||/[「『]|(?:が|から).*(?:報告した|報告している|話した|聞いた|伝えた|言った)/.test(span)&&!/報告(?:は|が)ない/.test(span);
  const actor=span.match(/^(.{1,35}?)(?:が|は|から)/)?.[1];
  const innerObserver=span.match(/(?:が[、\s「『]*|「)(.{1,30}?)(?:が|は).*(?:目撃|直接見|直接確認|確認した)/)?.[1];
  if(/直接見|直接確認|直接見た|目撃した/.test(span)&&!quoted){u.families.push('observation');u.qualification='observed';if(actor)u.observer=clean(actor);}
  if(quoted){u.families.push('report');if(actor)u.reporter=clean(actor);if(innerObserver&&clean(innerObserver)!==u.reporter)u.properties.reported_observer_name=clean(innerObserver);if(/から.*聞いた/.test(span)&&actor){u.intermediary=clean(actor);const from=span.match(/が[、\s]*(.{1,25}?)から/);if(from)u.reporter=clean(from[1]);const witness=span.match(/から(.{1,20}?)の目撃/);if(witness)u.properties.reported_observer_name=clean(witness[1]);}}
  const sourceRoles=statedSourceRoles(span);
+ if(nominalReport){u.reporter=undefined;u.properties.reported_source_scope=span;}
  if(quoted||sourceRoles.organization||sourceRoles.socialRecord){u.families.push('report');if(sourceRoles.reporter)u.reporter=sourceRoles.reporter;if(sourceRoles.reportedObserver&&sourceRoles.reportedObserver!==u.reporter)u.properties.reported_observer_name=sourceRoles.reportedObserver;if(sourceRoles.intermediaries.length)u.properties.intermediary_names=sourceRoles.intermediaries;if(sourceRoles.organization)u.properties.source_organization_name=sourceRoles.organization;if(sourceRoles.socialRecord){u.families.push('record');u.record='social-media post';u.properties.source_identity_verified=false;}}
  if(/SNS.*(?:投稿|書か)|投稿.*書|記録|資料|台帳|名簿|ラベル|監視カメラ/.test(span)){u.families.push('record');u.record=span.match(/(?:SNS投稿|監視カメラ記録|電子管理記録|電子台帳|紙名簿|ラベル|台帳|記録|資料)/)?.[0];}
  if(/カメラ.*(?:記録|映像).*(?:確認|見た)|記録を.*確認/.test(span)){u.families.push('record-review');u.properties.record_review_completed=true;u.properties.direct_world_observation=false;const reviewer=span.match(/(?:記録|映像)を(.{1,25}?)が/)?.[1]??actor;if(reviewer)u.observer=clean(reviewer);}
@@ -60,7 +62,7 @@ export function decomposeReality(text:string):TranslationUnit[]{
  if(/所有者|所有権|法的.*所有|所有している/.test(span)){u.families.push('ownership');if(roles.owner)u.properties.owner_name=roles.owner;}
  if(/保管している|保管しており|保管者|現物.*保管|物理.*保管/.test(span)){u.families.push('custody');if(roles.custodian)u.properties.custodian_name=roles.custodian;}
  if(/処分|売却|引渡|引き渡|移転/.test(span)&&/禁止|できない|許されない|制限|不明|確認していない|とは限らない/.test(span)){u.families.push('disposal-authority');u.properties.disposal_authority=unknown?'unknown':/禁止|できない|許されない/.test(span)?'prohibited':'restricted';}
- if(/許可|撤回|取り消|取消/.test(span)){u.families.push('permission');u.properties.permission_status=/撤回|取り消|取消/.test(span)?'revoked':unknown?'unknown':/許可.*(?:された|されていた|あった|認められた)/.test(span)?'permitted':'unresolved';if(u.properties.permission_status==='revoked')u.eventKinds.push('permission_revoked');}
+ if(/許可|撤回|取り消|取消/.test(span)){u.families.push('permission');u.properties.permission_status=/(?:撤回|取り消|取消)(?:が|を|は)?(?:された|した|済み|されていた|されている)/.test(span)?'revoked':unknown?'unknown':/許可.*(?:された|されていた|あった|認められた)/.test(span)?'permitted':'unresolved';if(u.properties.permission_status==='revoked')u.eventKinds.push('permission_revoked');}
  if(/実行要求|実施要求/.test(span)){u.families.push('execution-request');u.eventKinds.push('execution_requested');}
  if(/Evidence|証拠|検査結果|追加資料/.test(span)&&/受領|到着|受け取|届い/.test(span)){u.families.push('evidence-arrival');u.eventKinds.push('evidence_received');u.properties.evidence_received=true;}
  if(/判明|分かった/.test(span)&&!unknown){u.families.push('knowledge');u.properties.knowledge_of_X=true;}
