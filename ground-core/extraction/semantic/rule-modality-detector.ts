@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+import { interpretDecisionLifecycle } from "../../reality/decision-lifecycle.js";
 import type { ExtractionInput } from "../types.js";
 import type { EventDetector } from "./event-detector.js";
 import type {
@@ -156,6 +157,10 @@ function buildEvent(
 
 function detectEvent(input: ExtractionInput): SemanticEvent | null {
   const text = input.input_text;
+  const lifecycle = interpretDecisionLifecycle(text);
+  if (lifecycle && lifecycle !== "selected") {
+    return buildEvent(input, "CandidateCreated", "intent", [`lifecycle:${lifecycle}`]);
+  }
 
   const negative = matchPatterns(text, NEGATIVE_PATTERNS);
   if (negative.length > 0) {
