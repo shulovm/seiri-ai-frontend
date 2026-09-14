@@ -14,13 +14,31 @@ function FieldValue({ name, value }) {
 }
 
 function RecordPanel({ record, title }) {
+  const claimGroups = [
+    ['Identity / predicate', ['id', 'project_id', 'subject_id', 'predicate_kind', 'predicate']],
+    ['Claim content', ['value']],
+    ['Provenance · canonical fields', ['provenance']],
+    ['Confidence · declared value', ['confidence']],
+    ['Applicability · proposition scope', ['applicable_from', 'applicable_until']],
+    ['Record / storage fields', ['recorded_at', 'created_at', 'updated_at']],
+  ];
+  const groups = title === 'Claim' ? [...claimGroups,
+    ['Other canonical fields', Object.keys(record).filter(name => !claimGroups.some(([, names]) => names.includes(name)))]]
+    : [['Canonical fields', Object.keys(record)]];
   return <section className="hi-record">
     <h3>{title}</h3>
     <p className="hi-kind">Canonical record · field names and declared values</p>
-    <dl className="hi-fields">{Object.entries(record).map(([name, value]) => <div key={name}>
-      <dt>{name}</dt><dd><FieldValue name={name} value={value} /></dd>
-    </div>)}</dl>
     <RawView value={record} />
+    {title === 'Claim' && <p className="hi-note">Claim は命題を表す canonical record です。この表示は命題の真偽判定ではありません。</p>}
+    {groups.filter(([, names]) => names.some(name => Object.hasOwn(record, name))).map(([label, names]) => <section key={label} className="hi-field-group">
+      {title === 'Claim' && <h4>{label}</h4>}
+      {label.startsWith('Applicability') && <p className="hi-note">命題の applicability fields。出来事の occurred_at とは異なる役割です。</p>}
+      <dl className="hi-fields">{names.filter(name => Object.hasOwn(record, name)).map(name => <div key={name}>
+        <dt>{name}</dt><dd><FieldValue name={name} value={record[name]} /></dd>
+      </div>)}</dl>
+      {names.includes('confidence') && <p className="hi-note">confidence は canonical field value をそのまま表示しています。UI は真実確率や source ranking として解釈していません。</p>}
+      {names.includes('external_ref') && <p className="hi-note">external_ref は参照先です。このリンク表示は source quality の評価ではありません。</p>}
+    </section>)}
   </section>;
 }
 
@@ -28,6 +46,7 @@ function EvidenceRead({ result }) {
   return <details className="hi-evidence" open>
     <summary>Claim → ClaimEvidenceLink → Evidence</summary>
     <p className="hi-kind">Existing core read result · getEvidenceForClaim</p>
+    <p className="hi-note">Link の relation 名をそのまま表示します。SUPPORTS はここでの真偽判定を示す UI label ではありません。</p>
     <p>claim_id: <code>{result.claim_id}</code></p>
     {result.links.map(link => <RecordPanel key={link.id} record={link} title={`ClaimEvidenceLink · ${link.relation}`} />)}
     {['supports', 'contradicts'].map(group => <section key={group}>
@@ -59,23 +78,32 @@ export default function RealityReadView({ response }) {
     ['Claim', transport.returned_counts.claims, records.claims],
   ];
   return <main className="hi-explorer">
-    <header className="hi-context"><p className="hi-eyebrow">GROUND Human Interface · read-only · HUMAN-001C</p>
+    <header className="hi-context"><p className="hi-eyebrow">GROUND Human Interface · read-only · HUMAN-001D</p>
       <h1>{records.entity.label}</h1><p>Reality Explorer · canonical records / existing core read results</p>
+      <p>保存済み ProjectState の一つの RealityEntityと、その scope に対する既存 core 読取結果を見ています。</p>
+      <h2>Canonical records · context</h2>
       <dl className="hi-fields">
         <div><dt>project.id</dt><dd><code>{records.project.id}</code></dd></div>
         <div><dt>project.title</dt><dd>{records.project.title}</dd></div>
         <div><dt>entity.id</dt><dd><code>{records.entity.id}</code></dd></div>
         <div><dt>entity.kind</dt><dd><code>{records.entity.kind}</code></dd></div>
+      </dl>
+      <RawView value={records.project} label="Canonical / raw · Project" />
+      <section className="hi-transport"><h2>Transport metadata · read source</h2>
+      <p className="hi-note">読取 source と schema の情報です。canonical record の field ではありません。成功 response は server の fixture hash 検証後に返されています。</p>
+      <dl className="hi-fields">
         <div><dt>stored_schema_version</dt><dd><code>{source.stored_schema_version}</code></dd></div>
         <div><dt>read_schema_version</dt><dd><code>{source.read_schema_version}</code></dd></div>
         <div><dt>fixture</dt><dd><code>{source.fixture}</code></dd></div>
         <div><dt>sha256</dt><dd><code>{source.sha256}</code></dd></div>
       </dl>
       <RawView value={transport} label="Raw · transport metadata (not a canonical record)" />
-      <RawView value={records.project} label="Canonical / raw · Project" />
+      </section>
     </header>
-    <section className="hi-section"><h2>Reality Overview</h2>
+    <section className="hi-section"><h2>Records in this read scope</h2>
+      <p className="hi-kind">Transport-level returned counts / existing core entry count</p>
       <p>件数は、この read scope で返された records / core read entries の件数です。</p>
+      <p className="hi-note">件数は Reality の completeness や歴史上の存在・不在を示しません。</p>
       <p className="hi-scope"><code>{transport.requested_scope.project_id}</code> / <code>{transport.requested_scope.entity_id}</code></p>
       <ul className="hi-collections">{collections.map(([label, count, value]) => <li key={label}>
         <strong>{label}</strong><span>この read scope で返された件数: {count}</span>
@@ -84,6 +112,7 @@ export default function RealityReadView({ response }) {
     </section>
     <section className="hi-section"><h2>Canonical Entity</h2><RecordPanel record={records.entity} title="RealityEntity" /></section>
     <section className="hi-section"><h2>Worldline</h2><p className="hi-kind">Existing core read result · getRealityWorldline</p>
+      <p className="hi-note">この Entity scope の既存 core 読取結果です。空の entries は、歴史上何も起きなかったという判定ではありません。</p>
       <RawView value={reads.worldline} label="Raw · complete getRealityWorldline result" />
     </section>
     <section className="hi-section"><h2>Observations</h2><p>この read scope で返された EpistemicObservation records: {records.observations.length}</p>
@@ -95,6 +124,6 @@ export default function RealityReadView({ response }) {
         {reads.evidence_for_claim.filter(result => result.claim_id === claim.id).map(result => <EvidenceRead key={result.claim_id} result={result} />)}
       </article>)}
     </section>
-    <footer>Human-readable presentation · canonical field values are retained. No semantic summary.</footer>
+    <footer>Human-readable presentation · canonical fields / existing core read results / transport metadata</footer>
   </main>;
 }

@@ -63,11 +63,25 @@ test('HTTP integrity failure remains a distinct transport error, not an empty Re
   const html = renderToStaticMarkup(<RealityReadFailure error={error} />);
   assert.ok(html.includes('FIXTURE_INTEGRITY_FAILURE') && html.includes('503'));
   assert.ok(html.includes('読取基盤の異常'));
-  assert.ok(!html.includes('Reality Overview') && !html.includes('件数: 0'));
+  assert.ok(!html.includes('Records in this read scope') && !html.includes('件数: 0'));
   for (const code of ['PROJECT_SCOPE_MISMATCH', 'ENTITY_NOT_FOUND', 'SERVER_READ_FAILURE']) {
     const failure = renderToStaticMarkup(<RealityReadFailure error={{ code, status: code === 'SERVER_READ_FAILURE' ? 503 : 404 }} />);
     assert.ok(failure.includes(code));
   }
+});
+
+test('D separates transport, canonical records and core results with field-role notes', () => {
+  const html = renderToStaticMarkup(<View response={response} />);
+  for (const label of ['Canonical records · context', 'Transport metadata · read source',
+    'Existing core read result · getRealityWorldline', 'Records in this read scope',
+    'Identity / predicate', 'Claim content', 'Provenance · canonical fields',
+    'Confidence · declared value', 'Applicability · proposition scope', 'Record / storage fields']) {
+    assert.ok(html.includes(label));
+  }
+  assert.ok(html.includes('SUPPORTS はここでの真偽判定を示す UI label ではありません'));
+  assert.ok(html.includes('source quality の評価ではありません'));
+  assert.ok(html.includes('出来事の occurred_at とは異なる役割'));
+  assert.ok(html.includes('fixture hash 検証後'));
 });
 
 test('client dependency boundary contains no fixture/core imports or temporal resolution', () => {
