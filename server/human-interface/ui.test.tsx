@@ -90,3 +90,56 @@ test('client dependency boundary contains no fixture/core imports or temporal re
     assert.doesNotMatch(source, /from\s+['"][^'"]*(?:ground-core|fixtures)|import\([^)]*(?:ground-core|fixtures)|new Date|Date\.(?:parse|now)|getRealityWorldline\s*\(|getEvidenceForClaim\s*\(/);
   }
 });
+
+test('B15 populated panels retain full raw fields, temporal roles and core entry order', () => {
+  const body = readHumanReality('b7c4492f-955a-4189-a913-5ece6c6a876a','3b35ea51-6db5-4dee-8759-bb17377cbc0c');
+  const html = renderToStaticMarkup(<View response={body} />);
+  for (const [type, count] of [['RealityEvent',1],['RealityState',2],['EpistemicObservation',2]] as const) {
+    assert.equal(html.split(`data-record-type="${type}"`).length - 1, count);
+  }
+  const w=body.core_read_results.worldline;
+  for(const record of [...w.events,...w.states,...body.canonical_records.observations]) {
+    assert.ok(html.includes(escape(JSON.stringify(record,null,2))));
+    for(const name of Object.keys(record)) assert.ok(html.includes(`<dt>${name}</dt>`));
+  }
+  assert.ok(html.includes('controlled-experiment-canonical-snapshot'));
+  assert.ok(html.includes('<dt>valid_until</dt><dd><code>null</code>'));
+  assert.ok(html.includes('<dt>value</dt><dd><code>false</code>'));
+  assert.ok(html.includes('<dt>value</dt><dd><code>true</code>'));
+  assert.ok(html.includes('<dt>latest_time</dt><dd><code>2026-09-01T11:00:00.000Z</code>'));
+  assert.ok(html.includes('<dt>observed_at</dt><dd><code>2026-09-01T12:00:00.000Z</code>'));
+  const order=[...html.matchAll(/data-worldline-entry="([^"]+)"/g)].map(x=>x[1]);
+  assert.deepEqual(order,w.ordered_entries.map((x:{record_id:string})=>x.record_id));
+  assert.equal(order.length,4);
+  assert.ok(html.includes('Claim records: 0'));
+  assert.ok(html.includes('Claim-linked Evidence bundles: 0'));
+  assert.ok(html.includes('ProjectState 全体の Evidence 件数ではありません'));
+  assert.doesNotMatch(html,/Unique linked Evidence returned in this scope: 0|Evidence: 0|ready \/ not ready/);
+});
+
+test('Round4 preserves all 23 Claim identities and shared Evidence identity in disclosures', () => {
+  const body=readHumanReality('19041904-1904-4904-8904-190419044004','466b098e-ae25-5b28-ad11-a5dc931eeb75');
+  const html=renderToStaticMarkup(<View response={body}/>);
+  assert.equal(html.split('class="hi-claim"').length-1,23);
+  assert.ok(html.includes('Claim records: 23'));
+  assert.ok(html.includes('ClaimEvidenceLink records returned: 23'));
+  assert.ok(html.includes('Unique linked Evidence returned in this scope: 1'));
+  assert.deepEqual([...html.matchAll(/data-record-type="Claim" data-record-id="([^"]+)"/g)].map(x=>x[1]),body.canonical_records.claims.map((x:{id:string})=>x.id));
+  for(const c of body.canonical_records.claims) assert.ok(html.includes(escape(JSON.stringify(c,null,2))));
+  const evidenceIds=[...html.matchAll(/data-record-type="Evidence" data-record-id="([^"]+)"/g)].map(x=>x[1]);
+  assert.equal(evidenceIds.length,23); assert.equal(new Set(evidenceIds).size,1);
+  assert.equal(html.split('data-record-type="ClaimEvidenceLink · SUPPORTS"').length-1,23);
+});
+
+test('presentation never branches by source/domain or reorders canonical collections', () => {
+  const source=readFileSync(new URL('../../src/human-interface/RealityReadView.jsx',import.meta.url),'utf8');
+  assert.doesNotMatch(source,/human-001|e2-b15|historical-round4|controlled-experiment|if\s*\([^)]*(?:source|document|historical|BTC)|\.sort\(|\.reverse\(/);
+});
+
+test('all required read failures remain errors with no empty Reality rendering', () => {
+  for(const code of ['PROJECT_SCOPE_MISMATCH','ENTITY_NOT_FOUND','FIXTURE_INTEGRITY_FAILURE','CANONICAL_READ_FAILURE']) {
+    const html=renderToStaticMarkup(<RealityReadFailure error={{code,status:code.endsWith('FAILURE')?503:404}}/>);
+    assert.ok(html.includes(code));assert.ok(html.includes('role="alert"'));
+    assert.doesNotMatch(html,/Records in this read scope|Claim records: 0/);
+  }
+});

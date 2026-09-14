@@ -25,10 +25,13 @@ function RecordPanel({ record, title }) {
   const groups = title === 'Claim' ? [...claimGroups,
     ['Other canonical fields', Object.keys(record).filter(name => !claimGroups.some(([, names]) => names.includes(name)))]]
     : [['Canonical fields', Object.keys(record)]];
-  return <section className="hi-record">
+  return <section className="hi-record" data-record-type={title} data-record-id={record.id}>
     <h3>{title}</h3>
     <p className="hi-kind">Canonical record · field names and declared values</p>
     <RawView value={record} />
+    {title === 'RealityState' && <p className="hi-note">valid_from / valid_until は State の validity fields です。valid_until: null は終了時刻を限定しない open-ended interval を表します。value は保存値のままです。</p>}
+    {title === 'RealityEvent' && <p className="hi-note">occurred_at は occurrence、recorded_at は recording の field です。</p>}
+    {title === 'EpistemicObservation' && <p className="hi-note">observed_at は observation、recorded_at は recording の field です。subject_ids をそのまま保持しています。</p>}
     {title === 'Claim' && <p className="hi-note">Claim は命題を表す canonical record です。この表示は命題の真偽判定ではありません。</p>}
     {groups.filter(([, names]) => names.some(name => Object.hasOwn(record, name))).map(([label, names]) => <section key={label} className="hi-field-group">
       {title === 'Claim' && <h4>{label}</h4>}
@@ -70,6 +73,10 @@ export function RealityReadFailure({ error }) {
 export default function RealityReadView({ response }) {
   const { transport, canonical_records: records, core_read_results: reads } = response;
   const source = transport.source;
+  const worldline = reads.worldline;
+  const linkedEvidenceIds = new Set(reads.evidence_for_claim.flatMap(bundle =>
+    [...bundle.supports, ...bundle.contradicts].map(evidence => evidence.id)));
+  const linkCount = reads.evidence_for_claim.reduce((count, bundle) => count + bundle.links.length, 0);
   const collections = [
     ['RealityEvent', transport.returned_counts.events, reads.worldline.events],
     ['RealityState', transport.returned_counts.states, reads.worldline.states],
@@ -78,7 +85,7 @@ export default function RealityReadView({ response }) {
     ['Claim', transport.returned_counts.claims, records.claims],
   ];
   return <main className="hi-explorer">
-    <header className="hi-context"><p className="hi-eyebrow">GROUND Human Interface · read-only · HUMAN-001D</p>
+    <header className="hi-context"><p className="hi-eyebrow">GROUND Human Interface · read-only · HUMAN-002D</p>
       <h1>{records.entity.label}</h1><p>Reality Explorer · canonical records / existing core read results</p>
       <p>保存済み ProjectState の一つの RealityEntityと、その scope に対する既存 core 読取結果を見ています。</p>
       <h2>Canonical records · context</h2>
@@ -90,10 +97,12 @@ export default function RealityReadView({ response }) {
       </dl>
       <RawView value={records.project} label="Canonical / raw · Project" />
       <section className="hi-transport"><h2>Transport metadata · read source</h2>
-      <p className="hi-note">読取 source と schema の情報です。canonical record の field ではありません。成功 response は server の fixture hash 検証後に返されています。</p>
+      <p className="hi-note">読取 source と schema の情報です。canonical record の field や真偽の評価ではありません。source_qualification は読取 source の由来です。成功 response は server の fixture hash 検証後に返されています。</p>
       <dl className="hi-fields">
         <div><dt>stored_schema_version</dt><dd><code>{source.stored_schema_version}</code></dd></div>
         <div><dt>read_schema_version</dt><dd><code>{source.read_schema_version}</code></dd></div>
+        <div><dt>source_key</dt><dd><code>{source.source_key}</code></dd></div>
+        <div><dt>source_qualification</dt><dd><code>{source.source_qualification}</code></dd></div>
         <div><dt>fixture</dt><dd><code>{source.fixture}</code></dd></div>
         <div><dt>sha256</dt><dd><code>{source.sha256}</code></dd></div>
       </dl>
@@ -113,16 +122,38 @@ export default function RealityReadView({ response }) {
     <section className="hi-section"><h2>Canonical Entity</h2><RecordPanel record={records.entity} title="RealityEntity" /></section>
     <section className="hi-section"><h2>Worldline</h2><p className="hi-kind">Existing core read result · getRealityWorldline</p>
       <p className="hi-note">この Entity scope の既存 core 読取結果です。空の entries は、歴史上何も起きなかったという判定ではありません。</p>
+      <p className="hi-note">この section は既存 core の Worldline result を表示します。この read scope の全recordを並べ直した chronology ではなく、latest_time は Reality 全体の最新時刻を示す表示ではありません。Observation collection は別に表示しています。</p>
+      <h3>temporal_summary · core read result</h3>
+      <dl className="hi-fields">{Object.entries(worldline.temporal_summary).map(([name, value]) => <div key={name}><dt>{name}</dt><dd><FieldValue name={name} value={value} /></dd></div>)}</dl>
+      <h3>ordered_entries · core order · {worldline.ordered_entries.length}</h3>
+      <ol className="hi-worldline">{worldline.ordered_entries.map((entry, index) => <li key={index} data-worldline-entry={entry.record_id}>
+        <dl className="hi-fields">{Object.entries(entry).map(([name, value]) => <div key={name}><dt>{name}</dt><dd><FieldValue name={name} value={value} /></dd></div>)}</dl>
+        <RawView value={entry} label="Raw · core worldline entry" />
+      </li>)}</ol>
+      <h3>unplaced_events · {worldline.unplaced_events.length}</h3>
+      <RawView value={worldline.unplaced_events} label="Raw · core unplaced_events" />
       <RawView value={reads.worldline} label="Raw · complete getRealityWorldline result" />
+    </section>
+    <section className="hi-section"><h2>RealityEvents</h2><p>この read scope で返された RealityEvent records: {worldline.events.length}</p>
+      {worldline.events.map(record => <RecordPanel key={record.id} record={record} title="RealityEvent" />)}
+    </section>
+    <section className="hi-section"><h2>RealityStates</h2><p>この read scope で返された RealityState records: {worldline.states.length}</p>
+      {worldline.states.map(record => <RecordPanel key={record.id} record={record} title="RealityState" />)}
     </section>
     <section className="hi-section"><h2>Observations</h2><p>この read scope で返された EpistemicObservation records: {records.observations.length}</p>
       {records.observations.map(record => <RecordPanel key={record.id} record={record} title="EpistemicObservation" />)}
     </section>
     <section className="hi-section"><h2>Claims</h2><p>この read scope で返された Claim records: {records.claims.length}</p>
-      {records.claims.map(claim => <article key={claim.id}>
+      <div className="hi-linked-scope"><h3>Claim-linked Evidence · read scope</h3>
+      <p>この read path の Claim-linked Evidence bundles: {reads.evidence_for_claim.length}</p>
+      <p className="hi-note">ProjectState 全体の Evidence 件数ではありません。各Claimの bundle が同じ Evidence id を参照する場合があります。</p>
+      {reads.evidence_for_claim.length > 0 && <p>ClaimEvidenceLink records returned: {linkCount}<br />Unique linked Evidence returned in this scope: {linkedEvidenceIds.size}</p>}
+      </div>
+      {records.claims.map(claim => <details className="hi-claim" key={claim.id} open={records.claims.length === 1}>
+        <summary>Claim · <code>{claim.id}</code><span>{claim.predicate}</span></summary>
         <RecordPanel record={claim} title="Claim" />
         {reads.evidence_for_claim.filter(result => result.claim_id === claim.id).map(result => <EvidenceRead key={result.claim_id} result={result} />)}
-      </article>)}
+      </details>)}
     </section>
     <footer>Human-readable presentation · canonical fields / existing core read results / transport metadata</footer>
   </main>;

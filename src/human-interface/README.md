@@ -141,3 +141,92 @@ schema is 0.1.25; B contract and core are unchanged.
 HUMAN-001's single-Entity read-only proof is complete within this audited scope.
 No implementation blocker remains for that proof. Independent human usability
 validation and other datasets remain limitations; no HUMAN-002 work is started.
+
+## HUMAN-002D — Cross-Shape Explorer (current checkpoint)
+
+The sections above document HUMAN-001 history. The current presentation consumes
+HUMAN-002C's unchanged registry-resolved GET contract, with no registry/fixture
+imports and no source picker. Open the three registered project/entity routes
+directly. HUMAN-002C edd945421cd0bc05ca693d1aa6a47d12d74d7233 was pushed and
+confirmed on origin/ground/human-002 before this implementation.
+
+RecordPanel/FieldValue/RawView remain presentation primitives. Event and State
+now have dedicated canonical record sections using the same full-field panel;
+Observation retains subject_ids as an array and displays all existing fields.
+Only canonical record type determines field-role notes. There are no source-key,
+domain, controlled, document-kind or Historical rendering branches.
+
+Worldline renders all existing temporal_summary fields, each ordered entry's
+fields in core order, unplaced_events, and the complete raw result. Entries use
+an ordered list, not a reconstructed Timeline. No sorting, Date parsing or
+inferred relations occur. Scope wording distinguishes this worldline result from
+all returned temporal records. State valid_until:null remains null with its
+open-ended interval role explained; true/false stay literal stored values.
+
+Transport context displays source_key and source_qualification separately from
+canonical fields, with neutral source-origin wording. No confidence/trust/status
+classification is inferred from controlled provenance.
+
+Claims remain in response order. One Claim starts expanded; multiple Claims use
+native details/summary with each full canonical ID and predicate visible. Every
+record stays in the DOM and can be expanded, including complete raw JSON and
+its unchanged per-Claim Evidence bundle. No selection, ranking, aggregation,
+pagination or deduplication of canonical records occurs. The existing response's
+Evidence IDs are counted in a presentation-only Set to show unique linked
+Evidence for this read scope, separately from link and bundle counts.
+When no bundles are returned, the UI shows only that bundle count and explicitly
+states it is not the ProjectState's total Evidence count.
+
+### Browser and semantic audit
+
+The implementation author opened all three live routes on the dedicated
+worktree server (localhost:3002); the existing HUMAN-001 server was untouched.
+
+- HUMAN-001: the single Claim remains expanded; canonical IDs, full fields,
+  provenance, confidence/applicability notes and Claim-Link-Evidence path remain
+  accessible. Empty collections retain scope-only language.
+- B15: Event 1, State 2, Observation 2, Claim 0, worldline entries 4 and unplaced 0
+  are visible. Controlled qualification is displayed as transport metadata.
+  Both bounded and open-ended State fields and literal true/false were inspected.
+  The core returns the open-ended State panel first; the UI preserves that order
+  instead of forcing a chronological State list. Worldline ordering stays core
+  ordering. Observation 12:00 coexists with worldline latest_time 11:00.
+- Round 4: all 23 Claim summaries were present and all 23 disclosures were
+  actually opened. The last Claim's raw JSON was opened. The 23 links retain
+  their IDs and all Evidence panels reference the single ID
+  7cc1cc55-845a-55ad-ac87-1293c016c0a0. Scope counts show 23 links / unique linked
+  Evidence 1. No record was omitted or replaced by a summary.
+- Normal viewport and 390x844 viewport checked. B15 and Round 4 had document
+  scrollWidth 390 at width 390, including all expanded Round 4 Claims. Long IDs,
+  source qualification and raw JSON wrap; narrow field labels stack with values.
+  Viewport override was reset after checking.
+- Unknown project and entity scope mismatch were opened against the real server.
+  Integrity and canonical read failure pages were opened using a temporary
+  error-only server and the existing router's injection seam, without changing
+  fixtures or adding canonical records. All four show explicit transport errors,
+  no empty Reality or zero-record replacement.
+
+The audit addressed three presentation risks: previously raw-only Event/State
+and Worldline results, shared Evidence being mistaken for distinct records per
+Claim, and 23 fully expanded Claims producing an unwieldy initial page. Dedicated
+full-field panels, explicit worldline/Evidence scope wording and lossless Claim
+disclosures address those risks within this checkpoint. No new canonical
+semantic interpretation was found in this implementation audit. This is not an
+independent third-party comprehension study.
+
+Verification: registry 9 + HTTP boundary 18 + UI 10 = 37 tests PASS; UI-test,
+adapter and core typechecks PASS; Human Interface lint and Vite build PASS;
+HUMAN-001 Foundation verifier PASS. Registry tests verify all three immutable
+hashes and baseline shapes. Frontend-wide lint reproduces exactly the prior
+36 diagnostics. Fixture bytes, registry, HTTP/read contract, schema 0.1.25 and
+core have no diff from HUMAN-002C. Core suite was not rerun for presentation-only
+changes; the C verified baseline remains 3,753 PASS / 104 FAIL (missing storage
+fixtures). No new failure occurred in the checks run for D.
+
+HUMAN-002E should audit independent human understanding of qualification,
+field-specific nulls, State collection order versus Worldline order, latest_time
+scope, shared Evidence identity, and the cost of repeated disclosure on long
+pages. Populated conflicts, unplaced/unresolved temporal cases, multi-subject
+Observation browser proof, larger datasets and natural-domain populated
+Event/State/Observation remain unproven by these three snapshots. No E work,
+new read scope, navigation, Lens, source ranking or write/action is included.
