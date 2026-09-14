@@ -36,3 +36,14 @@
   .hi-record, .hi-transport { padding: 14px; }
   .hi-evidence { padding-left: 12px; padding-right: 0; }
 }
+
+.hi-claim { margin: 12px 0; border: 1px solid #cdd1d1; padding: 0 16px; }
+.hi-claim > summary { padding: 16px 0; overflow-wrap: anywhere; }
+.hi-claim > summary > span { display: block; color: #535a5d; padding-top: 4px; }
+.hi-linked-scope { padding: 16px; border-left: 2px solid #a8b0b0; margin-bottom: 24px; }
+.hi-worldline { padding-left: 24px; }
+.hi-worldline > li { border-bottom: 1px solid #cdd1d1; padding: 8px 0 16px; }
+@media (max-width: 720px) {
+  .hi-claim { padding: 0 10px; }
+  .hi-worldline { padding-left: 20px; }
+}
