@@ -1,0 +1,223 @@
+{
+  "purpose": "NON-PUBLISHABLE review candidate; no owner or save acquired",
+  "policy": {
+    "version": "frus-392-review-policy-v1",
+    "status": "BLOCKED_CONFIDENCE_AND_APPLICABILITY_AUTHORITY",
+    "confidence": 0.95,
+    "confidence_qualification": "Legacy experimental value retained ONLY in a non-publishable review candidate; not approved or empirically justified.",
+    "applicability_qualification": "null/null means no lower or upper bound in canonical belief readers, NOT unknown. Unbounded applicability remains unapproved for this source assertion.",
+    "applicable_from": null,
+    "applicable_until": null
+  },
+  "execution_time": "2026-09-14T12:19:06.609Z",
+  "timing": "Candidate recorded_at equals this dry execution clock for inspection only. Future approved ingestion must explicitly fix its own timestamp and regenerate the reviewed patch.",
+  "before_fingerprint": "724f01bfdeeed0414d8e1c360195b84439ce9e30f15cb35909a7f5aca0b0f169",
+  "live_after_fingerprint": "724f01bfdeeed0414d8e1c360195b84439ce9e30f15cb35909a7f5aca0b0f169",
+  "target_project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+  "stored_schema": "0.1.25",
+  "read_schema": "0.1.25",
+  "preflight": "NOT_APPLIED",
+  "patch_validation": {
+    "valid": true
+  },
+  "memory_state_validation": {
+    "valid": true
+  },
+  "counts": {
+    "reality_entities": {
+      "before": 0,
+      "memory_preview": 1
+    },
+    "claims": {
+      "before": 0,
+      "memory_preview": 1
+    },
+    "evidence": {
+      "before": 0,
+      "memory_preview": 1
+    },
+    "claim_evidence_links": {
+      "before": 0,
+      "memory_preview": 1
+    },
+    "reality_events": {
+      "before": 0,
+      "memory_preview": 0
+    },
+    "reality_states": {
+      "before": 0,
+      "memory_preview": 0
+    },
+    "epistemic_observations": {
+      "before": 0,
+      "memory_preview": 0
+    },
+    "observations": {
+      "before": 0,
+      "memory_preview": 0
+    }
+  },
+  "project_title_summary_unchanged": true,
+  "publication_allowed": false,
+  "patch": {
+    "schema_version": "0.1.25",
+    "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+    "source": "import",
+    "operations": [
+      {
+        "op": "upsert",
+        "entity": "reality_entity",
+        "entity_id": "e1aa20fc-42ab-546b-a01c-7f610d67e707",
+        "payload": {
+          "id": "e1aa20fc-42ab-546b-a01c-7f610d67e707",
+          "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+          "kind": "document",
+          "label": "FRUS 1904, document 392",
+          "attrs": {
+            "experimental_source_identity": "frus:1904:392"
+          },
+          "created_at": "2026-09-14T12:19:06.609Z",
+          "updated_at": "2026-09-14T12:19:06.609Z"
+        }
+      },
+      {
+        "op": "upsert",
+        "entity": "evidence",
+        "entity_id": "ec285b6a-10d1-5d61-a32c-8118fddbef88",
+        "payload": {
+          "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+          "recorded_at": "2026-09-14T12:19:06.609Z",
+          "created_at": "2026-09-14T12:19:06.609Z",
+          "updated_at": "2026-09-14T12:19:06.609Z",
+          "id": "ec285b6a-10d1-5d61-a32c-8118fddbef88",
+          "kind": "external_ref",
+          "observation_id": null,
+          "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d392",
+          "summary": "edition_text_inspected; locator {\"document_number\":\"392\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+          "provenance": {
+            "kind": "document",
+            "entity_id": "e1aa20fc-42ab-546b-a01c-7f610d67e707",
+            "external_id": "frus:1904:392",
+            "label": "FRUS 1904, document 392"
+          }
+        }
+      },
+      {
+        "op": "upsert",
+        "entity": "claim",
+        "entity_id": "23d2f2a5-ba7a-5203-a05c-67334501f8fa",
+        "payload": {
+          "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+          "recorded_at": "2026-09-14T12:19:06.609Z",
+          "created_at": "2026-09-14T12:19:06.609Z",
+          "updated_at": "2026-09-14T12:19:06.609Z",
+          "id": "23d2f2a5-ba7a-5203-a05c-67334501f8fa",
+          "subject_id": "e1aa20fc-42ab-546b-a01c-7f610d67e707",
+          "predicate_kind": "attribute",
+          "predicate": "inspected_source_assertion",
+          "value": {
+            "experimental_claim_id": "c392-instruction",
+            "proposition": "present termination note and break diplomatic relations",
+            "predicate": "instructed_to",
+            "extraction_context": "d392 parenthetical paraphrase; instruction is not proof of delivery"
+          },
+          "provenance": {
+            "kind": "document",
+            "entity_id": "e1aa20fc-42ab-546b-a01c-7f610d67e707",
+            "external_id": "frus:1904:392"
+          },
+          "confidence": 0.95,
+          "applicable_from": null,
+          "applicable_until": null
+        }
+      },
+      {
+        "op": "upsert",
+        "entity": "claim_evidence_link",
+        "entity_id": "45376e57-af27-5d4b-ab07-827e5702b4cc",
+        "payload": {
+          "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+          "recorded_at": "2026-09-14T12:19:06.609Z",
+          "created_at": "2026-09-14T12:19:06.609Z",
+          "updated_at": "2026-09-14T12:19:06.609Z",
+          "id": "45376e57-af27-5d4b-ab07-827e5702b4cc",
+          "claim_id": "23d2f2a5-ba7a-5203-a05c-67334501f8fa",
+          "evidence_id": "ec285b6a-10d1-5d61-a32c-8118fddbef88",
+          "relation": "SUPPORTS"
+        }
+      }
+    ]
+  },
+  "memory_applied_records": {
+    "reality_entities": [
+      {
+        "id": "e1aa20fc-42ab-546b-a01c-7f610d67e707",
+        "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+        "kind": "document",
+        "label": "FRUS 1904, document 392",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:392"
+        },
+        "created_at": "2026-09-14T12:19:06.609Z",
+        "updated_at": "2026-09-14T12:19:06.619Z"
+      }
+    ],
+    "claims": [
+      {
+        "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+        "recorded_at": "2026-09-14T12:19:06.609Z",
+        "created_at": "2026-09-14T12:19:06.609Z",
+        "updated_at": "2026-09-14T12:19:06.619Z",
+        "id": "23d2f2a5-ba7a-5203-a05c-67334501f8fa",
+        "subject_id": "e1aa20fc-42ab-546b-a01c-7f610d67e707",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c392-instruction",
+          "proposition": "present termination note and break diplomatic relations",
+          "predicate": "instructed_to",
+          "extraction_context": "d392 parenthetical paraphrase; instruction is not proof of delivery"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "e1aa20fc-42ab-546b-a01c-7f610d67e707",
+          "external_id": "frus:1904:392"
+        },
+        "confidence": 0.95,
+        "applicable_from": null,
+        "applicable_until": null
+      }
+    ],
+    "evidence": [
+      {
+        "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+        "recorded_at": "2026-09-14T12:19:06.609Z",
+        "created_at": "2026-09-14T12:19:06.609Z",
+        "updated_at": "2026-09-14T12:19:06.619Z",
+        "id": "ec285b6a-10d1-5d61-a32c-8118fddbef88",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d392",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"392\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "e1aa20fc-42ab-546b-a01c-7f610d67e707",
+          "external_id": "frus:1904:392",
+          "label": "FRUS 1904, document 392"
+        }
+      }
+    ],
+    "claim_evidence_links": [
+      {
+        "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+        "recorded_at": "2026-09-14T12:19:06.609Z",
+        "created_at": "2026-09-14T12:19:06.609Z",
+        "updated_at": "2026-09-14T12:19:06.619Z",
+        "id": "45376e57-af27-5d4b-ab07-827e5702b4cc",
+        "claim_id": "23d2f2a5-ba7a-5203-a05c-67334501f8fa",
+        "evidence_id": "ec285b6a-10d1-5d61-a32c-8118fddbef88",
+        "relation": "SUPPORTS"
+      }
+    ]
+  }
+}
