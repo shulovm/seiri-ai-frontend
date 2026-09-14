@@ -10,8 +10,10 @@ export {
   getStorageDir,
   listProjects,
   loadProject,
+  loadProjectSnapshot,
   saveProject,
   type FileStoreOptions,
+  type ProjectSnapshot,
 } from "./file-store.js";
 export {
   migrateProjectState,
