@@ -4,6 +4,7 @@ import type {PatchProposal,ClarificationResponse} from '../extraction/types.js';
 import {validateStatePatch} from '../validate.js';
 import {dryRunPatch} from '../extraction/dry-run.js';
 import type {RealityProposeInput} from './types.js';
+import {wholeRecordSource,wholeQuantityHolder} from './whole-source.js';
 import {wholeIdentityRegistry,resolveWholeName} from './whole-identity.js';
 import {segmentWholeReality,timelineEntry} from './whole-sections.js';
 import {stripDeclaredTimePrefix} from './semantic-times.js';
@@ -128,7 +129,9 @@ export function proposeCanonicalTranslation(state:ProjectState,input:RealityProp
   const observedObject=targetText.match(/(?:が|は)\s*([^「『」、。]{1,35}?)(?:の|を)[^「『」、。]*(?:直接見た|目撃した|直接確認した)/)?.[1];
   const ownedObject=u.families.includes('ownership')?targetText.match(/(?:が|は)\s*([^「『」、。]{1,35}?)を所有/)?.[1]:undefined;
   const namedFront=ownedObject??targetText.match(/^([^\s「『」、。はがをに]+[A-Z][0-9]*(?:センサー)?)(?=の|を|に|は|が)/)?.[1];
-  const subjectName=typeof u.properties.resolved_referent==='string'?u.properties.resolved_referent:u.observer&&observedObject?observedObject:namedFront??targetText.match(/^(.{1,35}?)(?:の測定値|の法的所有者|の所有者|には|は|が)/)?.[1];
+  const wholeSource=wholeRegistry?wholeRecordSource(u.span):null;
+  const quantityHolder=wholeRegistry&&u.families.includes('quantity')&&!wholeSource&&!u.reporter?wholeQuantityHolder(u.span):undefined;
+  const subjectName=quantityHolder??(typeof u.properties.resolved_referent==='string'?u.properties.resolved_referent:u.observer&&observedObject?observedObject:namedFront??targetText.match(/^(.{1,35}?)(?:の測定値|の法的所有者|の所有者|には|は|が)/)?.[1]);
   const target=subjectName&&!/^(それ|この件|その人|同社)$/.test(clean(subjectName))?entity(clean(subjectName),clean(subjectName)===u.observer?'person':clean(subjectName)===u.reporter?(u.properties.source_organization_name?'organization':'person'):'unspecified'):null;
   if(target)ids.push(addState(record,'target_entity',target,key+'|target'));
   if(target&&u.qualification==='verified'&&u.time&&typeof u.properties.verified_reality_value==='number'){const uid=fingerprint(state.project.id+'|verified-target|'+key);ids.push(uid);operations.push({op:'upsert',entity:'reality_state',entity_id:uid,payload:{...common(uid),subject_id:target,kind:'measured_reality_value',value:u.properties.verified_reality_value,valid_from:u.time,valid_until:null,recorded_at:now}});}
@@ -136,6 +139,7 @@ export function proposeCanonicalTranslation(state:ProjectState,input:RealityProp
   let provenance:EpistemicProvenance={kind:'document',entity_id:document};
   if(u.reporter){const reporter=entity(u.reporter,u.properties.source_organization_name?'organization':'person');provenance={kind:u.properties.source_organization_name?'organization':'human',entity_id:reporter};ids.push(addState(record,'reporter',reporter,key+'|reporter'));}
   else if(u.observer){const observer=entity(u.observer,'person');provenance={kind:'human',entity_id:observer};ids.push(addState(record,u.families.includes('record-review')?'record_reviewer':'direct_observer',observer,key+'|observer'));}
+  if(wholeSource){const source=entity(wholeSource.record,'document');provenance={kind:'document',entity_id:source};ids.push(addState(record,'statement_record_source',source,key+'|source-record'));if(wholeSource.attributedTo)ids.push(addState(source,'record_attribution',entity(wholeSource.attributedTo,'unspecified'),key+'|record-attribution'));}
   if(typeof u.properties.verifier_name==='string'&&!u.reporter)provenance={kind:'human',entity_id:entity(u.properties.verifier_name,'person')};
   const sensor=u.span.match(/(?:^|[、\s])([^、。]{1,25}?センサー)/)?.[1];
   if(u.families.includes('measurement')&&sensor&&!u.reporter&&u.qualification!=='verified')provenance={kind:'sensor',entity_id:entity(clean(sensor),'device')};
