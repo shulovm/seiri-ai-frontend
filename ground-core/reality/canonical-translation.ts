@@ -4,6 +4,7 @@ import type {PatchProposal,ClarificationResponse} from '../extraction/types.js';
 import {validateStatePatch} from '../validate.js';
 import {dryRunPatch} from '../extraction/dry-run.js';
 import type {RealityProposeInput} from './types.js';
+import {unassertedOccurrenceReason} from './assertion-scope.js';
 import {interpretDecisionLifecycle} from './decision-lifecycle.js';
 
 /** Ingestion trace only. None of these types extend canonical primitives. */
@@ -72,6 +73,8 @@ export function decomposeReality(text:string):TranslationUnit[]{
    for(const key of ['verification_completed','verified_reality_value','selection_completed','causality_verified'])if(key in u.properties){u.properties['reported_'+key]=u.properties[key];delete u.properties[key];}
    u.eventKinds=[];
  }
+ const withheld=unassertedOccurrenceReason(span);
+ if(withheld){u.eventKinds=[];u.qualification='unknown';u.families.push('uncertainty-scope');u.properties.assertion_status='not asserted';u.properties.unresolved_occurrence_scope=span;delete u.properties.equipment_operating_status;delete u.properties.verified_reality_value;delete u.properties.verification_completed;delete u.properties.instruction_issued;if(u.properties.selection_completed===true)delete u.properties.selection_completed;}
  u.families=Array.from(new Set(u.families));u.eventKinds=Array.from(new Set(u.eventKinds));
  if(!u.families.length){u.status='unsupported';u.reason='No supported semantic grammar; preserved as residual input, no world assertion made.';}
  if(/^(?:それ|その人|この件|担当者がそれ)/.test(span)&&!units.some(x=>x.observer||x.reporter||x.record)){u.status='clarification required';u.reason='Unresolved referent materially changes the observation subject.';}
