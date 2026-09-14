@@ -648,7 +648,7 @@ describe("GROUND-104 Explicit Permission Dimension Evaluation State Interpretati
 
   describe("static / architectural boundaries", () => {
     it("schema 0.1.24; 084+spec only; type-only 103; no current 103/Satisfaction", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.equal(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_PERMISSION_DIMENSION_EVALUATION_STATE_INTERPRETATION_POLICY_MODEL_LIMITATIONS[0],
         "OPERATIONAL_ELIGIBILITY_PERMISSION_DIMENSION_EVALUATION_STATE_INTERPRETATION_BASIS_NOT_MODELED"

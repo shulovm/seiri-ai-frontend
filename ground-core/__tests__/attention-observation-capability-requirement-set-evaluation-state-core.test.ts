@@ -858,7 +858,7 @@ describe("GROUND-080 Capability Requirement Set Evaluation State", () => {
     });
 
     it("schema 0.1.24; 079-only runtime; no recomputation", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

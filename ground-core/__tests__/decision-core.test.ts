@@ -237,7 +237,7 @@ describe("Decision Core (GROUND-025)", () => {
   it("migrates 0.1.14 → 0.1.16 with empty decision arrays", () => {
     assert.ok(validateProjectStateV0114(validProjectStateV0114).valid);
     const migrated = migrateProjectState(validProjectStateV0114);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.decision_space_declarations, []);
     assert.deepEqual(migrated.decision_option_declarations, []);
     assert.deepEqual(migrated.decision_option_actor_candidate_declarations, []);

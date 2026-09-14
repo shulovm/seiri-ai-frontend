@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Declared Resource Availability
  * Source Aggregation Result (GROUND-183).
@@ -163,7 +164,7 @@ export function declaredResourceAvailabilitySourceAggregationResultKey(params: {
   return [
     "declared-resource-availability-source-aggregation-result",
     params.resource_declaration_id,
-    params.evaluation_at,
+    temporalInstantKey(params.evaluation_at),
     params.availability_source_aggregation_policy_key,
     params.availability_source_aggregation_readiness_policy_key,
     params.availability_source_aggregation_readiness_basis_key,

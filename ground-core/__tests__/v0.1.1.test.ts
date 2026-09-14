@@ -19,7 +19,7 @@ import {
   validProjectStateV013,
   validProjectStateV014,
   validProjectStateV015,
-  validProjectStateV0124,
+  validProjectStateV0125,
 } from "./fixtures.js";
 
 const TS = "2026-06-07T12:00:00.000Z";
@@ -27,7 +27,7 @@ const TS = "2026-06-07T12:00:00.000Z";
 describe("v0.1.1→v0.1.6 migration", () => {
   it("migrates legacy fixture to v0.1.6", () => {
     const migrated = migrateProjectState(validProjectStateV010);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.equal(migrated.reference_docs.length, 0);
     assert.equal(migrated.reality_entities.length, 0);
     assert.equal(migrated.reference_conditions.length, 0);
@@ -39,7 +39,7 @@ describe("v0.1.1→v0.1.6 migration", () => {
 
   it("migrates v0.1.1 fixture to v0.1.6 with empty Reality collections", () => {
     const migrated = migrateProjectState(validProjectStateV011);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.reality_entities, []);
     assert.deepEqual(migrated.reality_events, []);
     assert.deepEqual(migrated.reality_states, []);
@@ -49,7 +49,7 @@ describe("v0.1.1→v0.1.6 migration", () => {
 
   it("migrates v0.1.2 fixture to v0.1.5 with empty epistemic collections", () => {
     const migrated = migrateProjectState(validProjectStateV012);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.epistemic_observations, []);
     assert.deepEqual(migrated.evidence, []);
     assert.deepEqual(migrated.claims, []);
@@ -59,14 +59,14 @@ describe("v0.1.1→v0.1.6 migration", () => {
 
   it("migrates v0.1.3 fixture to v0.1.5 with empty reference_conditions", () => {
     const migrated = migrateProjectState(validProjectStateV013);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.reference_conditions, []);
     assert.deepEqual(migrated.reality_objectives, []);
   });
 
   it("migrates v0.1.4 fixture to v0.1.6 with empty objective collections", () => {
     const migrated = migrateProjectState(validProjectStateV014);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.reality_objectives, []);
     assert.deepEqual(migrated.objective_requirements, []);
     assert.deepEqual(migrated.objective_dependencies, []);
@@ -75,7 +75,7 @@ describe("v0.1.1→v0.1.6 migration", () => {
 
   it("migrates v0.1.5 fixture to v0.1.6 with empty prospective collections", () => {
     const migrated = migrateProjectState(validProjectStateV015);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.future_scenarios, []);
     assert.deepEqual(migrated.scenario_state_projections, []);
     assert.deepEqual(migrated.scenario_likelihood_estimates, []);
@@ -87,10 +87,10 @@ describe("v0.1.1→v0.1.6 migration", () => {
 describe("v0.1.1 FK invariants", () => {
   it("accepts primary_next_action_id when action exists", () => {
     assert.equal(
-      validProjectStateV0124.current_state.primary_next_action_id,
+      validProjectStateV0125.current_state.primary_next_action_id,
       NEXT_ACTION_ID
     );
-    const validation = validateProjectState(validProjectStateV0124);
+    const validation = validateProjectState(validProjectStateV0125);
     assert.equal(validation.valid, true);
   });
 

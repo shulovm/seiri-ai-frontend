@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Resource Contention Discovery (GROUND-038).
  *
@@ -84,7 +85,7 @@ export function resourceContentionFindingKey(
   resourceDeclarationId: string,
   at: string
 ): string {
-  return ["resource-contention-finding", kind, resourceDeclarationId, at].join(
+  return ["resource-contention-finding", kind, resourceDeclarationId, temporalInstantKey(at)].join(
     "|"
   );
 }

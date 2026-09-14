@@ -168,7 +168,7 @@ describe("Reference State Core (GROUND-011)", () => {
     });
     assert.equal(next.reference_conditions.length, 1);
     assert.equal(next.reference_conditions[0]?.reference_kind, "EXPECTED");
-    assert.equal(next.schema_version, "0.1.24");
+    assert.equal(next.schema_version, "0.1.25");
 
     const dir = join(process.cwd(), "ground-core/storage/.ref-test-tmp");
     saveProject(next, { storageDir: dir });
@@ -180,7 +180,7 @@ describe("Reference State Core (GROUND-011)", () => {
     assert.equal(validProjectStateV013.schema_version, "0.1.3");
     assert.ok(validateProjectStateV013(validProjectStateV013).valid);
     const migrated = migrateProjectState(validProjectStateV013);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.reference_conditions, []);
     assert.ok(validateProjectState(migrated).valid);
   });

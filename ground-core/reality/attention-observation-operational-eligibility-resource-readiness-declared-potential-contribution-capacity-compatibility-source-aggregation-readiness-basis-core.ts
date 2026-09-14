@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * Current Declared Potential Contribution Capacity-Compatibility
@@ -173,7 +174,7 @@ export function attentionObservationOperationalEligibilityResourceReadinessDecla
     params.observation_resource_requirement_key,
     params.resource_readiness_observation_context_binding_key,
     params.resource_declaration_id,
-    params.evaluation_at,
+    temporalInstantKey(params.evaluation_at),
     params.capacity_compatibility_source_aggregation_policy_key,
     params.capacity_compatibility_source_aggregation_readiness_policy_key,
     params.selected_capacity_declaration_keys.join(","),
@@ -521,7 +522,7 @@ function buildReadinessBasis(
       continue;
     }
     const state = statesByCapacityKey.get(assessment.capacity_declaration_key);
-    if (state && state.evaluation_at !== evaluation_at) {
+    if (state && compareTemporalInstants(state.evaluation_at, evaluation_at) !== 0) {
       throw new Error(
         `Cross-instant source mixing for selected capacity ${assessment.capacity_declaration_key} on Binding ${aggregationPolicy.resource_readiness_observation_context_binding_key}`
       );

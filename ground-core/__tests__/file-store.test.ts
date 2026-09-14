@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -53,7 +54,7 @@ describe("file-store", () => {
     saveProject(state, { storageDir: tempDir });
 
     const raw = readFileSync(join(tempDir, `${state.project.id}.json`), "utf8");
-    assert.match(raw, /\{\n  "schema_version": "0.1.24"/);
+    assert.match(raw, /\{\n  "schema_version": "0.1.25"/);
   });
 
   it("loads and migrates legacy v0.1.0 project files", () => {
@@ -64,7 +65,7 @@ describe("file-store", () => {
       storageDir: tempDir,
     });
 
-    assert.equal(loaded.schema_version, "0.1.24");
+    assert.equal(loaded.schema_version, "0.1.25");
     assert.ok(Array.isArray(loaded.reference_docs));
     assert.ok(Array.isArray(loaded.reality_entities));
     assert.equal(loaded.current_state.primary_next_action_id, null);
@@ -73,8 +74,11 @@ describe("file-store", () => {
 });
 
 describe("gitignore", () => {
-  it("includes ground-core storage projects path", () => {
-    const gitignore = readFileSync(join(process.cwd(), ".gitignore"), "utf8");
-    assert.match(gitignore, /ground-core\/storage\/projects\//);
+  it("excludes runtime projects and generated storage scratch from Git", () => {
+    const paths = ["ground-core/storage/projects/ignore-probe.json", "ground-core/storage/ignore-probe.json"];
+    const ignored = execFileSync("git", ["check-ignore", "--no-index", "--stdin"], {
+      cwd: process.cwd(), input: paths.join("\n") + "\n", encoding: "utf8",
+    });
+    assert.deepEqual(ignored.trim().split("\n"), paths);
   });
 });

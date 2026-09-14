@@ -789,7 +789,7 @@ describe("GROUND-084 Explicit Operational Eligibility Dimension Policy", () => {
     });
 
     it("schema 0.1.24; 048-only runtime; no 083 / current-state / eligibility / execution", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

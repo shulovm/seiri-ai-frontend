@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility Permission
  * Source Resolution Classification core (GROUND-095).
@@ -88,7 +89,7 @@ export function attentionObservationOperationalEligibilityPermissionSourceResolu
     encodeSegment(params.permission_context_binding_key),
     encodeSegment(params.permission_state_source_key),
     encodeSegment(params.permission_state_basis_key),
-    encodeSegment(params.permission_evaluation_at),
+    encodeSegment(temporalInstantKey(params.permission_evaluation_at)),
     encodeSegment(params.permission_state),
     encodeSegment(params.resolution),
     encodeSegment(params.unresolved_reason ?? "none"),

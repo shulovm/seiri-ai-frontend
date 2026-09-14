@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * Declared Potential Contribution Raw Capacity & Required-Amount
@@ -185,7 +186,7 @@ export function attentionObservationOperationalEligibilityResourceReadinessDecla
     params.observation_resource_requirement_key,
     params.resource_readiness_observation_context_binding_key,
     params.resource_declaration_id,
-    params.evaluation_at,
+    temporalInstantKey(params.evaluation_at),
     params.physical_potential_contribution_declaration_key,
     params.required_amount_relation_key,
     params.canonical_capacity_relation_entry_set_key,
@@ -228,8 +229,7 @@ function assertBindingContextsMatch(
     nested.observation_resource_requirement_key !==
       quantityBinding.observation_resource_requirement_key ||
     nested.resource_declaration_id !== quantityBinding.resource_declaration_id ||
-    nested.raw_binding_evidence_assessment.evaluation_at !==
-      quantityBinding.raw_binding_evidence_assessment.evaluation_at ||
+    compareTemporalInstants(nested.raw_binding_evidence_assessment.evaluation_at, quantityBinding.raw_binding_evidence_assessment.evaluation_at) !== 0 ||
     nested.raw_binding_evidence_assessment.candidate_key !==
       quantityBinding.raw_binding_evidence_assessment.candidate_key
   ) {
@@ -262,8 +262,7 @@ function assertBindingContextsMatch(
         quantityBinding.resource_readiness_observation_context_binding_key ||
       declaration.resource_declaration_id !==
         quantityBinding.resource_declaration_id ||
-      declaration.evaluation_at !==
-        quantityBinding.raw_binding_evidence_assessment.evaluation_at ||
+      compareTemporalInstants(declaration.evaluation_at, quantityBinding.raw_binding_evidence_assessment.evaluation_at) !== 0 ||
       declaration.observation_resource_requirement_key !==
         quantityBinding.observation_resource_requirement_key
     ) {

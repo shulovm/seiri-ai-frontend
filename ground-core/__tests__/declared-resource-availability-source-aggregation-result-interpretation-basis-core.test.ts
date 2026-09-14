@@ -278,7 +278,7 @@ function typesSource(): string {
 
 describe("GROUND-186 Declared Resource Availability Source Aggregation Result Interpretation Basis", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("model limitations fixed", () => {

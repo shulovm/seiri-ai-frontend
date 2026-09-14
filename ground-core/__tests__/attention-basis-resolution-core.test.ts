@@ -305,7 +305,7 @@ function assertNoForbidden(payload: unknown): void {
 describe("Attention Basis Resolution Pathway (GROUND-044)", () => {
   describe("Schema / purity", () => {
     it("schema 0.1.24; pure 043 transform; no enrichment runtimes", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(__dirnameTest, "../reality/attention-basis-resolution-core.ts"),
         "utf8"

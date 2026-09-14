@@ -1,3 +1,5 @@
+import { canonicalValueKey } from "./semantic-equality.js";
+import { compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Capability Core I assessment (GROUND-021).
  *
@@ -33,12 +35,7 @@ function sortUniqueIds(ids: string[]): string[] {
 }
 
 function declarerKey(declarer: ReferenceDeclarer): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function sortDeclarers(declarers: ReferenceDeclarer[]): ReferenceDeclarer[] {
@@ -69,13 +66,13 @@ export function isCapabilityDeclarationActiveAt(
   declaration: CapabilityDeclaration,
   at: string
 ): boolean {
-  if (declaration.valid_from > at) {
+  if (compareTemporalInstants(declaration.valid_from, at) > 0) {
     return false;
   }
   if (declaration.valid_until === null) {
     return true;
   }
-  return at < declaration.valid_until;
+  return compareTemporalInstants(at, declaration.valid_until) < 0;
 }
 
 /** Verification interval: [verified_at, valid_until) */
@@ -83,26 +80,26 @@ export function isCapabilityVerificationActiveAt(
   declaration: CapabilityVerificationDeclaration,
   at: string
 ): boolean {
-  if (declaration.verified_at > at) {
+  if (compareTemporalInstants(declaration.verified_at, at) > 0) {
     return false;
   }
   if (declaration.valid_until === null) {
     return true;
   }
-  return at < declaration.valid_until;
+  return compareTemporalInstants(at, declaration.valid_until) < 0;
 }
 
 export function isCapabilityAvailabilityActiveAt(
   declaration: CapabilityAvailabilityDeclaration,
   at: string
 ): boolean {
-  if (declaration.valid_from > at) {
+  if (compareTemporalInstants(declaration.valid_from, at) > 0) {
     return false;
   }
   if (declaration.valid_until === null) {
     return true;
   }
-  return at < declaration.valid_until;
+  return compareTemporalInstants(at, declaration.valid_until) < 0;
 }
 
 function compareCapabilityDeclarations(
@@ -121,8 +118,8 @@ function compareCapabilityDeclarations(
   if (scopeCmp !== 0) {
     return scopeCmp;
   }
-  if (a.valid_from !== b.valid_from) {
-    return a.valid_from < b.valid_from ? -1 : 1;
+  if (compareTemporalInstants(a.valid_from, b.valid_from) !== 0) {
+    return compareTemporalInstants(a.valid_from, b.valid_from) < 0 ? -1 : 1;
   }
   return compareIds(a.id, b.id);
 }
@@ -131,8 +128,8 @@ function compareVerifications(
   a: CapabilityVerificationDeclaration,
   b: CapabilityVerificationDeclaration
 ): number {
-  if (a.verified_at !== b.verified_at) {
-    return a.verified_at < b.verified_at ? -1 : 1;
+  if (compareTemporalInstants(a.verified_at, b.verified_at) !== 0) {
+    return compareTemporalInstants(a.verified_at, b.verified_at) < 0 ? -1 : 1;
   }
   return compareIds(a.id, b.id);
 }
@@ -141,8 +138,8 @@ function compareAvailabilities(
   a: CapabilityAvailabilityDeclaration,
   b: CapabilityAvailabilityDeclaration
 ): number {
-  if (a.valid_from !== b.valid_from) {
-    return a.valid_from < b.valid_from ? -1 : 1;
+  if (compareTemporalInstants(a.valid_from, b.valid_from) !== 0) {
+    return compareTemporalInstants(a.valid_from, b.valid_from) < 0 ? -1 : 1;
   }
   if (a.status !== b.status) {
     return a.status < b.status ? -1 : 1;

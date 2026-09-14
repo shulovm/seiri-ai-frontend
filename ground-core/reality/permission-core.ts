@@ -1,3 +1,5 @@
+import { canonicalValueKey } from "./semantic-equality.js";
+import { compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Permission Core I assessment (GROUND-024).
  *
@@ -27,12 +29,7 @@ function compareIds(a: string, b: string): number {
 }
 
 function declarerKey(declarer: ReferenceDeclarer): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function sortDeclarers(declarers: ReferenceDeclarer[]): ReferenceDeclarer[] {
@@ -45,13 +42,13 @@ export function isInterventionPermissionActiveAt(
   declaration: InterventionPermissionDeclaration,
   at: string
 ): boolean {
-  if (declaration.valid_from > at) {
+  if (compareTemporalInstants(declaration.valid_from, at) > 0) {
     return false;
   }
   if (declaration.valid_until === null) {
     return true;
   }
-  return at < declaration.valid_until;
+  return compareTemporalInstants(at, declaration.valid_until) < 0;
 }
 
 function comparePermissionDeclarations(
@@ -64,8 +61,8 @@ function comparePermissionDeclarations(
   if (a.intervention_id !== b.intervention_id) {
     return compareIds(a.intervention_id, b.intervention_id);
   }
-  if (a.valid_from !== b.valid_from) {
-    return a.valid_from < b.valid_from ? -1 : 1;
+  if (compareTemporalInstants(a.valid_from, b.valid_from) !== 0) {
+    return compareTemporalInstants(a.valid_from, b.valid_from) < 0 ? -1 : 1;
   }
   if (a.effect !== b.effect) {
     return a.effect < b.effect ? -1 : 1;

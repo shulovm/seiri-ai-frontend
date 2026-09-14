@@ -222,7 +222,7 @@ describe("Prospective Core (GROUND-015)", () => {
       ],
     });
     assert.equal(next.future_scenarios.length, 1);
-    assert.equal(next.schema_version, "0.1.24");
+    assert.equal(next.schema_version, "0.1.25");
 
     const dir = join(process.cwd(), "ground-core/storage/.prosp-test-tmp");
     saveProject(next, { storageDir: dir });
@@ -233,7 +233,7 @@ describe("Prospective Core (GROUND-015)", () => {
   it("migrates 0.1.5 → 0.1.6 with empty prospective collections", () => {
     assert.ok(validateProjectStateV015(validProjectStateV015).valid);
     const migrated = migrateProjectState(validProjectStateV015);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.future_scenarios, []);
     assert.deepEqual(migrated.scenario_state_projections, []);
     assert.deepEqual(migrated.scenario_likelihood_estimates, []);

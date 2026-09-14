@@ -1,3 +1,5 @@
+export { getDecisionSnapshotVerification, getDecisionHistoricalSnapshot } from "./decision-snapshot-verification.js";
+export type { DecisionSnapshotVerification } from "./types.js";
 export {
   GroundCoreError,
   NotFoundError,
@@ -3618,3 +3620,34 @@ export type {
   CommitmentConditionRole,
   CommitmentBasisReference,
 } from "./types.js";
+
+export {
+  availabilityEvidenceContractKey,
+  buildAvailabilityEvidenceContract,
+  contributionAvailabilityContext,
+  contributionAvailabilityContextKey,
+  declareContributionAvailabilityApplicability,
+} from "./reality/contribution-availability-applicability-core.js";
+export type {
+  AvailabilityEvidenceContract,
+  ContributionAvailabilityContext,
+  ContributionAvailabilityApplicabilityDeclaration,
+  ContributionAvailabilityApplicabilitySpecification,
+  ContributionQuantityEvaluationState,
+} from "./reality/contribution-availability-applicability-types.js";
+export {
+  resolveContributionAvailabilityReference,
+  composeContributionQuantityAvailabilityEvidence,
+} from "./reality/contribution-availability-composition-core.js";
+export type {
+  ContributionAvailabilityReferenceStatus,
+  ContributionAvailabilityReferenceAssessment,
+  ContributionQuantityAvailabilityEvidenceComposition,
+  ContributionQuantityAvailabilityCompositionAssessment,
+} from "./reality/contribution-availability-composition-types.js";
+
+export { declareContributionRequiredEvidence, assessContributionRequiredEvidence } from "./reality/contribution-required-evidence-core.js";
+export type { ContributionEvidenceBinding, ContributionRequiredEvidenceDimension, ContributionRequiredEvidenceSpecification, ContributionRequiredEvidenceDeclaration, ContributionRequiredEvidenceInput, ContributionEvidenceCanonicalClassification, ContributionRequiredEvidenceDimensionAssessment, ContributionRequiredEvidenceAssessment } from "./reality/contribution-required-evidence-types.js";
+
+export { resolveTemporalInstant, requireTemporalInstant, temporalInstantKey, compareTemporalInstants, TemporalResolutionError } from "./temporal.js";
+export type { ExactTemporalInstant, TemporalResolution } from "./temporal.js";

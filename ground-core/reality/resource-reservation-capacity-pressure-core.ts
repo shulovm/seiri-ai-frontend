@@ -1,3 +1,5 @@
+import { canonicalValueKey } from "./semantic-equality.js";
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Declared Capacity Pressure Basis (GROUND-037).
  *
@@ -35,12 +37,7 @@ function compareIds(a: string, b: string): number {
 }
 
 function declarerKey(declarer: ReferenceDeclarer): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function sortDeclarers(declarers: ReferenceDeclarer[]): ReferenceDeclarer[] {
@@ -102,7 +99,7 @@ export function resourceReservationCapacityComparisonKey(
   return [
     "reservation-capacity-comparison",
     resourceDeclarationId,
-    at,
+    temporalInstantKey(at),
     capacityRepresentationKey,
   ].join("|");
 }
@@ -114,7 +111,7 @@ export function resourceReservationCapacityRelationDivergenceKey(
   return [
     "reservation-capacity-relation-divergence",
     resourceDeclarationId,
-    at,
+    temporalInstantKey(at),
   ].join("|");
 }
 
@@ -228,7 +225,7 @@ export function compareDeclaredReservationLoadToCapacityRepresentation(
   ) {
     return null;
   }
-  if (reservationLoad.at !== capacityRepresentation.at) {
+  if (compareTemporalInstants(reservationLoad.at, capacityRepresentation.at) !== 0) {
     return null;
   }
 

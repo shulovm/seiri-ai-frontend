@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Observation Need derivation (GROUND-008).
  *
@@ -102,7 +103,7 @@ function mapQuestion(
           question.subject_id,
           question.predicate_kind,
           question.predicate,
-          question.at ?? "",
+          question.at == null ? "" : temporalInstantKey(question.at),
         ].join("|"),
         target,
         temporal_scope,
@@ -144,7 +145,7 @@ function mapQuestion(
           question.subject_id,
           question.predicate_kind,
           question.predicate,
-          question.at ?? "",
+          question.at == null ? "" : temporalInstantKey(question.at),
         ].join("|"),
         target,
         temporal_scope,
@@ -186,7 +187,7 @@ function mapQuestion(
           question.subject_id,
           question.predicate_kind,
           question.predicate,
-          question.at ?? "",
+          question.at == null ? "" : temporalInstantKey(question.at),
           ...candidates,
         ].join("|"),
         target,
@@ -419,7 +420,7 @@ export function deriveObservationNeedsForInquiry(
               need.predicate_kind ?? "",
               need.predicate ?? "",
               need.temporal_scope.kind === "POINT"
-                ? need.temporal_scope.at
+                ? temporalInstantKey(need.temporal_scope.at)
                 : "",
             ].join("|")
           : need.key;

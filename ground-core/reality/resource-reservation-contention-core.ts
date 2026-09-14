@@ -1,3 +1,5 @@
+import { canonicalValueKey } from "./semantic-equality.js";
+import { compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Resource Reservation Structural Contention (GROUND-036).
  *
@@ -46,12 +48,7 @@ function compareIds(a: string, b: string): number {
 }
 
 function declarerKey(declarer: ReferenceDeclarer): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function sortDeclarers(declarers: ReferenceDeclarer[]): ReferenceDeclarer[] {
@@ -169,7 +166,7 @@ export function doReservationWindowsOverlap(
   left: ResourceReservationWindow,
   right: ResourceReservationWindow
 ): boolean {
-  const start = left.reserved_from > right.reserved_from
+  const start = compareTemporalInstants(left.reserved_from, right.reserved_from) > 0
     ? left.reserved_from
     : right.reserved_from;
   const leftEnd = left.reserved_until;
@@ -178,13 +175,13 @@ export function doReservationWindowsOverlap(
     return true;
   }
   if (leftEnd === null) {
-    return start < (rightEnd as string);
+    return compareTemporalInstants(start, (rightEnd as string)) < 0;
   }
   if (rightEnd === null) {
-    return start < leftEnd;
+    return compareTemporalInstants(start, leftEnd) < 0;
   }
-  const end = leftEnd < rightEnd ? leftEnd : rightEnd;
-  return start < end;
+  const end = compareTemporalInstants(leftEnd, rightEnd) < 0 ? leftEnd : rightEnd;
+  return compareTemporalInstants(start, end) < 0;
 }
 
 export function getReservationWindowOverlap(
@@ -195,7 +192,7 @@ export function getReservationWindowOverlap(
     return null;
   }
   const overlap_from =
-    left.reserved_from > right.reserved_from
+    compareTemporalInstants(left.reserved_from, right.reserved_from) > 0
       ? left.reserved_from
       : right.reserved_from;
   let overlap_until: string | null;
@@ -207,7 +204,7 @@ export function getReservationWindowOverlap(
     overlap_until = left.reserved_until;
   } else {
     overlap_until =
-      left.reserved_until < right.reserved_until
+      compareTemporalInstants(left.reserved_until, right.reserved_until) < 0
         ? left.reserved_until
         : right.reserved_until;
   }

@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Objective Discovery (GROUND-014).
  *
@@ -80,11 +81,11 @@ function dedupeFindings(
 }
 
 function needKey(objectiveId: string, requirementId: string, at: string): string {
-  return ["need", objectiveId, requirementId, at].join("|");
+  return ["need", objectiveId, requirementId, temporalInstantKey(at)].join("|");
 }
 
 function blockerKey(dependencyId: string, at: string): string {
-  return ["blocker", dependencyId, at].join("|");
+  return ["blocker", dependencyId, temporalInstantKey(at)].join("|");
 }
 
 function findObjective(

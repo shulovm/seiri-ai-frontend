@@ -584,7 +584,7 @@ const conventionalMappings = [
 
 describe("GROUND-168 Aggregation Result Interpretation Basis", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("model limitations fixed order including provenance cardinality debt", () => {

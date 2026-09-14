@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Declared Potential Contribution
  * Quantity-Kind Semantic Declaration (GROUND-173).
@@ -111,7 +112,7 @@ export function attentionObservationResourceDeclaredPotentialContributionQuantit
     params.observation_resource_requirement_key,
     params.resource_readiness_observation_context_binding_key,
     params.resource_declaration_id,
-    params.evaluation_at,
+    temporalInstantKey(params.evaluation_at),
     params.physical_potential_contribution_declaration_key,
     params.quantity_kind,
   ].join("|");

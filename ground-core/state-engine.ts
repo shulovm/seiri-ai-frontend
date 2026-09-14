@@ -1,3 +1,8 @@
+import { canonicalValueKey } from "./reality/semantic-equality.js";
+import { decisionSnapshotContentDigest, getDecisionSnapshotVerification } from "./decision-snapshot-verification.js";
+import type { DecisionSnapshotVerification } from "./types.js";
+import { compareTemporalInstants, temporalInstantKey } from "./temporal.js";
+import { assessTemporalPrerequisite, isAdmissionTemporalRelationProven, haveVerifiedEqualValues } from "./temporal-admission.js";
 import { randomUUID } from "node:crypto";
 import { PatchError, ValidationError } from "./errors.js";
 import { normalizeProjectState } from "./migrate.js";
@@ -534,7 +539,8 @@ function applyUpsert(
   }
 
   if (operation.entity === "reality_decision_declaration") {
-    assertRealityDecisionDeclarationUpsert(state, operation, now);
+    const fact = assertRealityDecisionDeclarationUpsert(state, operation, now);
+    operation = { ...operation, payload: { ...operation.payload, snapshot_verification: fact } };
   }
 
   if (operation.entity === "intervention_intent_declaration") {
@@ -2083,7 +2089,7 @@ function assertRealityInvariants(state: ProjectState): void {
     }
     if (
       realityState.valid_until !== null &&
-      realityState.valid_until < realityState.valid_from
+      isAdmissionTemporalRelationProven(realityState.valid_until, realityState.valid_from, "<")
     ) {
       throw new PatchError(
         `reality_state ${realityState.id} has valid_until before valid_from`
@@ -2182,7 +2188,7 @@ function assertEpistemicInvariants(state: ProjectState): void {
     if (
       claim.applicable_from !== null &&
       claim.applicable_until !== null &&
-      claim.applicable_until < claim.applicable_from
+      isAdmissionTemporalRelationProven(claim.applicable_until, claim.applicable_from, "<")
     ) {
       throw new PatchError(
         `claim ${claim.id} has applicable_until before applicable_from`
@@ -2287,7 +2293,7 @@ function assertReferenceConditionUpsert(
   }
   if (
     merged.valid_until !== null &&
-    merged.valid_until < merged.valid_from
+    isAdmissionTemporalRelationProven(merged.valid_until, merged.valid_from, "<")
   ) {
     throw new PatchError(
       `reference_condition ${merged.id} has valid_until before valid_from`
@@ -2321,7 +2327,7 @@ function assertReferenceInvariants(state: ProjectState): void {
         `reference_condition ${ref.id} declared_by.entity_id missing`
       );
     }
-    if (ref.valid_until !== null && ref.valid_until < ref.valid_from) {
+    if (ref.valid_until !== null && isAdmissionTemporalRelationProven(ref.valid_until, ref.valid_from, "<")) {
       throw new PatchError(
         `reference_condition ${ref.id} has valid_until before valid_from`
       );
@@ -2330,15 +2336,16 @@ function assertReferenceInvariants(state: ProjectState): void {
   }
 }
 
-function intervalsOverlap(
+function intervalOverlapIsProven(
   aFrom: string,
   aUntil: string | null,
   bFrom: string,
   bUntil: string | null
 ): boolean {
-  const aEnd = aUntil ?? "\uffff";
-  const bEnd = bUntil ?? "\uffff";
-  return aFrom < bEnd && bFrom < aEnd;
+  const starts = assessTemporalPrerequisite(() => compareTemporalInstants(aFrom, bFrom, "patch interval overlap"));
+  if (starts.status === "UNRESOLVED") return false; // overlap was not established
+  return (bUntil === null || isAdmissionTemporalRelationProven(aFrom, bUntil, "<")) &&
+    (aUntil === null || isAdmissionTemporalRelationProven(bFrom, aUntil, "<"));
 }
 
 function assertRealityObjectiveUpsert(
@@ -2496,7 +2503,7 @@ function assertRealityObjectiveShape(
   }
   if (
     objective.valid_until !== null &&
-    objective.valid_until < objective.valid_from
+    isAdmissionTemporalRelationProven(objective.valid_until, objective.valid_from, "<")
   ) {
     throw new PatchError(
       `reality_objective ${objective.id} has valid_until before valid_from`
@@ -2529,7 +2536,7 @@ function assertObjectiveRequirementShape(
   }
   if (
     requirement.valid_until !== null &&
-    requirement.valid_until < requirement.valid_from
+    isAdmissionTemporalRelationProven(requirement.valid_until, requirement.valid_from, "<")
   ) {
     throw new PatchError(
       `objective_requirement ${requirement.id} has valid_until before valid_from`
@@ -2578,7 +2585,7 @@ function assertObjectiveDependencyShape(
   }
   if (
     dependency.valid_until !== null &&
-    dependency.valid_until < dependency.valid_from
+    isAdmissionTemporalRelationProven(dependency.valid_until, dependency.valid_from, "<")
   ) {
     throw new PatchError(
       `objective_dependency ${dependency.id} has valid_until before valid_from`
@@ -2592,7 +2599,7 @@ function assertObjectiveDependencyShape(
     if (
       other.objective_id === dependency.objective_id &&
       other.requirement_id === dependency.requirement_id &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         dependency.valid_from,
@@ -2942,12 +2949,7 @@ function normalizeImpactDimension(value: string): string {
 function impactDeclarerKey(
   declarer: ImpactDeclaration["declared_by"]
 ): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function assertImpactDirection(value: unknown): ImpactDirection {
@@ -3055,7 +3057,7 @@ function assertImpactDeclarationShape(
   }
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `impact_declaration ${declaration.id} valid_until must be after valid_from`
@@ -3072,8 +3074,10 @@ function assertImpactDeclarationShape(
       other.affected_entity_id === declaration.affected_entity_id &&
       other.dimension === declaration.dimension &&
       other.direction === declaration.direction &&
-      other.valid_from === declaration.valid_from &&
-      other.valid_until === declaration.valid_until &&
+      isAdmissionTemporalRelationProven(other.valid_from, declaration.valid_from, "===") &&
+      (other.valid_until === null || declaration.valid_until === null
+        ? other.valid_until === declaration.valid_until
+        : isAdmissionTemporalRelationProven(other.valid_until, declaration.valid_until, "===")) &&
       impactDeclarerKey(other.declared_by) ===
         impactDeclarerKey(declaration.declared_by)
     ) {
@@ -3239,7 +3243,7 @@ function assertImpactMeasureDeclarationShape(
   }
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `impact_measure_declaration ${declaration.id} valid_until must be after valid_from`
@@ -3254,8 +3258,10 @@ function assertImpactMeasureDeclarationShape(
       other.impact_declaration_id === declaration.impact_declaration_id &&
       other.metric_key === declaration.metric_key &&
       other.unit === declaration.unit &&
-      other.valid_from === declaration.valid_from &&
-      other.valid_until === declaration.valid_until &&
+      isAdmissionTemporalRelationProven(other.valid_from, declaration.valid_from, "===") &&
+      (other.valid_until === null || declaration.valid_until === null
+        ? other.valid_until === declaration.valid_until
+        : isAdmissionTemporalRelationProven(other.valid_until, declaration.valid_until, "===")) &&
       impactMeasureSemanticKey(other.measure) ===
         impactMeasureSemanticKey(declaration.measure) &&
       impactDeclarerKey(other.declared_by) ===
@@ -3309,12 +3315,7 @@ const AUTHORITY_POWER_SCOPE_KINDS: Record<
 const VALID_STANDING_RIGHTS = new Set<StandingRight>(["PARTICIPATE", "CONTEST"]);
 
 function governanceDeclarerKey(declarer: AuthorityDeclaration["declared_by"]): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function standingRightsKey(rights: StandingRight[]): string {
@@ -3492,7 +3493,7 @@ function assertAuthorityDeclarationShape(
 
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `authority_declaration ${declaration.id} valid_until must be after valid_from`
@@ -3509,7 +3510,7 @@ function assertAuthorityDeclarationShape(
       governanceScopesEqual(other.scope, declaration.scope) &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(declaration.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         declaration.valid_from,
@@ -3609,7 +3610,7 @@ function assertStandingDeclarationShape(
 
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `standing_declaration ${declaration.id} valid_until must be after valid_from`
@@ -3626,7 +3627,7 @@ function assertStandingDeclarationShape(
       standingRightsKey(other.rights) === standingRightsKey(declaration.rights) &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(declaration.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         declaration.valid_from,
@@ -3714,7 +3715,7 @@ function assertMandateDeclarationShape(
 
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `mandate_declaration ${declaration.id} valid_until must be after valid_from`
@@ -3731,7 +3732,7 @@ function assertMandateDeclarationShape(
       other.kind === declaration.kind &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(declaration.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         declaration.valid_from,
@@ -3893,7 +3894,7 @@ function assertAuthorityDelegationDeclarationShape(
 
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `authority_delegation_declaration ${declaration.id} valid_until must be after valid_from`
@@ -3913,7 +3914,7 @@ function assertAuthorityDelegationDeclarationShape(
         sourceAuthorityIdsKey(declaration.source_authority_declaration_ids) &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(declaration.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         declaration.valid_from,
@@ -4060,7 +4061,7 @@ function assertAuthorityContestDeclarationShape(
 
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `authority_contest_declaration ${declaration.id} valid_until must be after valid_from`
@@ -4076,7 +4077,7 @@ function assertAuthorityContestDeclarationShape(
       contestTargetKey(other.target) === contestTargetKey(declaration.target) &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(declaration.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         declaration.valid_from,
@@ -4302,7 +4303,7 @@ function assertCapabilityDeclarationShape(
 
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `capability_declaration ${declaration.id} valid_until must be after valid_from`
@@ -4319,7 +4320,7 @@ function assertCapabilityDeclarationShape(
       capabilityScopesEqual(other.scope, declaration.scope) &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(declaration.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         declaration.valid_from,
@@ -4429,7 +4430,7 @@ function assertCapabilityVerificationDeclarationShape(
 
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.verified_at
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.verified_at, "<=")
   ) {
     throw new PatchError(
       `capability_verification_declaration ${declaration.id} valid_until must be after verified_at`
@@ -4447,7 +4448,7 @@ function assertCapabilityVerificationDeclarationShape(
         evidenceIdsKey(declaration.evidence_ids) &&
       governanceDeclarerKey(other.verified_by) ===
         governanceDeclarerKey(declaration.verified_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.verified_at,
         other.valid_until,
         declaration.verified_at,
@@ -4541,7 +4542,7 @@ function assertCapabilityAvailabilityDeclarationShape(
 
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `capability_availability_declaration ${declaration.id} valid_until must be after valid_from`
@@ -4558,7 +4559,7 @@ function assertCapabilityAvailabilityDeclarationShape(
       other.status === declaration.status &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(declaration.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         declaration.valid_from,
@@ -4808,7 +4809,7 @@ function assertResourceDeclarationShape(
   );
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `resource_declaration ${declaration.id} valid_until must be after valid_from`
@@ -4827,7 +4828,7 @@ function assertResourceDeclarationShape(
       other.resource_entity_id === declaration.resource_entity_id &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(declaration.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         declaration.valid_from,
@@ -4904,7 +4905,7 @@ function assertResourceCapacityDeclarationShape(
 
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `resource_capacity_declaration ${declaration.id} valid_until must be after valid_from`
@@ -4921,7 +4922,7 @@ function assertResourceCapacityDeclarationShape(
         resourceCapacityKey(declaration.capacity) &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(declaration.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         declaration.valid_from,
@@ -5015,7 +5016,7 @@ function assertResourceAvailabilityDeclarationShape(
 
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `resource_availability_declaration ${declaration.id} valid_until must be after valid_from`
@@ -5031,7 +5032,7 @@ function assertResourceAvailabilityDeclarationShape(
       other.status === declaration.status &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(declaration.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         declaration.valid_from,
@@ -5246,7 +5247,7 @@ function assertInterventionDeclarationShape(
   );
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `intervention_declaration ${declaration.id} valid_until must be after valid_from`
@@ -5262,7 +5263,7 @@ function assertInterventionDeclarationShape(
       interventionScopesEqual(other.target_scope, declaration.target_scope) &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(declaration.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         declaration.valid_from,
@@ -5359,7 +5360,7 @@ function assertInterventionCapabilityRequirementDeclarationShape(
   );
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `intervention_capability_requirement_declaration ${declaration.id} valid_until must be after valid_from`
@@ -5379,7 +5380,7 @@ function assertInterventionCapabilityRequirementDeclarationShape(
       ) &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(declaration.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         declaration.valid_from,
@@ -5489,7 +5490,7 @@ function assertInterventionResourceRequirementDeclarationShape(
   );
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `intervention_resource_requirement_declaration ${declaration.id} valid_until must be after valid_from`
@@ -5511,7 +5512,7 @@ function assertInterventionResourceRequirementDeclarationShape(
       ) &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(declaration.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         declaration.valid_from,
@@ -5693,7 +5694,7 @@ function assertInterventionPermissionDeclarationShape(
 
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `intervention_permission_declaration ${declaration.id} valid_until must be after valid_from`
@@ -5710,7 +5711,7 @@ function assertInterventionPermissionDeclarationShape(
       other.effect === declaration.effect &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(declaration.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         declaration.valid_from,
@@ -5878,7 +5879,7 @@ function assertDecisionSpaceDeclarationShape(
 
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `decision_space_declaration ${declaration.id} valid_until must be after valid_from`
@@ -5951,7 +5952,7 @@ function assertDecisionOptionDeclarationShape(
 
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `decision_option_declaration ${declaration.id} valid_until must be after valid_from`
@@ -5981,7 +5982,7 @@ function assertDecisionOptionDeclarationShape(
         decisionOptionSemanticKey(declaration.option) &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(declaration.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         declaration.valid_from,
@@ -6092,7 +6093,7 @@ function assertDecisionOptionActorCandidateDeclarationShape(
 
   if (
     declaration.valid_until !== null &&
-    declaration.valid_until <= declaration.valid_from
+    isAdmissionTemporalRelationProven(declaration.valid_until, declaration.valid_from, "<=")
   ) {
     throw new PatchError(
       `decision_option_actor_candidate_declaration ${declaration.id} valid_until must be after valid_from`
@@ -6127,7 +6128,7 @@ function assertDecisionOptionActorCandidateDeclarationShape(
       otherKey === semanticKey &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(declaration.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.valid_from,
         other.valid_until,
         declaration.valid_from,
@@ -6305,21 +6306,21 @@ function assertRealityDecisionDeclarationShape(
   }
 
   // decided_at <= recorded_at
-  if (decl.decided_at > decl.recorded_at) {
+  if (isAdmissionTemporalRelationProven(decl.decided_at, decl.recorded_at, ">")) {
     throw new PatchError(
       `reality_decision_declaration ${selfId}: decided_at must not be after recorded_at`
     );
   }
 
   // context_snapshot.assessed_at must equal decided_at
-  if (decl.context_snapshot.assessed_at !== decl.decided_at) {
+  if (isAdmissionTemporalRelationProven(decl.context_snapshot.assessed_at, decl.decided_at, "!==")) {
     throw new PatchError(
       `reality_decision_declaration ${selfId}: context_snapshot.assessed_at must equal decided_at`
     );
   }
 
   // context_snapshot.captured_at must equal recorded_at
-  if (decl.context_snapshot.captured_at !== decl.recorded_at) {
+  if (isAdmissionTemporalRelationProven(decl.context_snapshot.captured_at, decl.recorded_at, "!==")) {
     throw new PatchError(
       `reality_decision_declaration ${selfId}: context_snapshot.captured_at must equal recorded_at`
     );
@@ -6379,6 +6380,7 @@ function assertRealityDecisionDeclarationInvariants(
     }
     // Shape validation (referential integrity, temporal, snapshot field checks)
     assertRealityDecisionDeclarationShape(state, decl, decl.id);
+    getDecisionSnapshotVerification(decl);
   }
 }
 
@@ -6386,7 +6388,7 @@ function assertRealityDecisionDeclarationUpsert(
   state: ProjectState,
   operation: Extract<PatchOperation, { entity: "reality_decision_declaration" }>,
   now: string
-): void {
+): DecisionSnapshotVerification {
   const payload = operation.payload ?? {};
   const existing = state.reality_decision_declarations.find(
     (d) => d.id === operation.entity_id
@@ -6397,6 +6399,10 @@ function assertRealityDecisionDeclarationUpsert(
     throw new PatchError(
       `Cannot update reality_decision_declaration ${operation.entity_id}: Decision Memory is append-only`
     );
+  }
+
+  if (Object.hasOwn(payload, "snapshot_verification")) {
+    throw new PatchError("snapshot_verification is generated only by Decision persistence");
   }
 
   // Build merged record from payload for creation-only validation
@@ -6429,14 +6435,23 @@ function assertRealityDecisionDeclarationUpsert(
   assertRealityDecisionDeclarationShape(state, decl, operation.entity_id);
 
   // Snapshot integrity: recompute expected snapshot and deepEqual compare
-  const expectedSnapshot = buildDecisionContextSnapshot(
+  const expectedSnapshot = assessTemporalPrerequisite(() => buildDecisionContextSnapshot(
     state,
     decl.decision_space_id,
     decl.decided_at,
     decl.recorded_at
-  );
+  ));
 
-  if (JSON.stringify(decl.context_snapshot) !== JSON.stringify(expectedSnapshot)) {
+  const snapshotMatch = assessTemporalPrerequisite(() => {
+    if (expectedSnapshot.status === "UNRESOLVED") throw expectedSnapshot.error;
+    const semanticSnapshot = (snapshot: DecisionContextSnapshotV1) => ({
+      ...snapshot, assessed_at: temporalInstantKey(snapshot.assessed_at),
+      captured_at: temporalInstantKey(snapshot.captured_at),
+    });
+    return canonicalValueKey(semanticSnapshot(decl.context_snapshot)) ===
+      canonicalValueKey(semanticSnapshot(expectedSnapshot.value));
+  });
+  if (snapshotMatch.status === "VERIFIED" && !snapshotMatch.value) {
     throw new PatchError(
       `reality_decision_declaration ${operation.entity_id}: context_snapshot does not match deterministic expected snapshot. ` +
       `Use buildDecisionContextSnapshot(state, decisionSpaceId, decidedAt, recordedAt) to obtain the correct snapshot.`
@@ -6444,38 +6459,28 @@ function assertRealityDecisionDeclarationUpsert(
   }
 
   // Semantic duplicate check: same declarer + semantic key = reject
-  const semanticKey = realityDecisionSemanticKey(
+  const semanticKey = assessTemporalPrerequisite(() => realityDecisionSemanticKey(
     decl.decision_space_id,
     decl.decision_maker_entity_id,
     decl.decided_at,
     decl.selected_option,
     decl.selected_actor_entity_id
-  );
+  ));
 
-  const declarerK = [
-    decl.declared_by.kind,
-    decl.declared_by.entity_id ?? "",
-    decl.declared_by.external_id ?? "",
-    decl.declared_by.label ?? "",
-  ].join("|");
+  const declarerK = canonicalValueKey([decl.declared_by.kind, decl.declared_by.entity_id ?? "", decl.declared_by.external_id ?? "", decl.declared_by.label ?? ""]);
 
   const duplicate = state.reality_decision_declarations.some((d) => {
-    const existingKey = realityDecisionSemanticKey(
+    const existingKey = assessTemporalPrerequisite(() => realityDecisionSemanticKey(
       d.decision_space_id,
       d.decision_maker_entity_id,
       d.decided_at,
       d.selected_option,
       d.selected_actor_entity_id
-    );
-    if (existingKey !== semanticKey) {
+    ));
+    if (!haveVerifiedEqualValues(existingKey, semanticKey)) {
       return false;
     }
-    const dDeclarerK = [
-      d.declared_by.kind,
-      d.declared_by.entity_id ?? "",
-      d.declared_by.external_id ?? "",
-      d.declared_by.label ?? "",
-    ].join("|");
+    const dDeclarerK = canonicalValueKey([d.declared_by.kind, d.declared_by.entity_id ?? "", d.declared_by.external_id ?? "", d.declared_by.label ?? ""]);
     return dDeclarerK === declarerK;
   });
 
@@ -6484,6 +6489,14 @@ function assertRealityDecisionDeclarationUpsert(
       `reality_decision_declaration ${operation.entity_id}: semantic duplicate from same declarer already exists`
     );
   }
+  const identity = { decision_id: decl.id, snapshot_content_digest: decisionSnapshotContentDigest(decl), persisted_at: now };
+  if (snapshotMatch.status === "UNRESOLVED") {
+    return { ...identity, status: "UNVERIFIED", reason: "TEMPORAL_RESOLUTION_UNAVAILABLE",
+      temporal_declaration: snapshotMatch.error.declaration,
+      temporal_operation: snapshotMatch.error.operation, temporal_reason: snapshotMatch.error.reason };
+  }
+  return { ...identity, status: "VERIFIED" };
+
 }
 
 const VALID_INTERVENTION_INTENT_DISPOSITIONS = new Set<InterventionIntentDisposition>([
@@ -6536,13 +6549,13 @@ function assertInterventionIntentDeclarationShape(
     );
   }
 
-  if (decl.intent_formed_at > decl.recorded_at) {
+  if (isAdmissionTemporalRelationProven(decl.intent_formed_at, decl.recorded_at, ">")) {
     throw new PatchError(
       `intervention_intent_declaration ${selfId}: intent_formed_at must not be after recorded_at`
     );
   }
 
-  if (decl.valid_until !== null && !(decl.intent_formed_at < decl.valid_until)) {
+  if (decl.valid_until !== null && isAdmissionTemporalRelationProven(decl.intent_formed_at, decl.valid_until, ">=")) {
     throw new PatchError(
       `intervention_intent_declaration ${selfId}: valid_until must be after intent_formed_at`
     );
@@ -6574,7 +6587,7 @@ function assertInterventionIntentDeclarationShape(
       );
     }
 
-    if (decl.intent_formed_at < decision.decided_at) {
+    if (isAdmissionTemporalRelationProven(decl.intent_formed_at, decision.decided_at, "<")) {
       throw new PatchError(
         `intervention_intent_declaration ${selfId}: intent_formed_at must not predate linked Decision decided_at`
       );
@@ -6593,7 +6606,7 @@ function assertInterventionIntentDeclarationShape(
         decisionBasisIdKey(decl.decision_basis_declaration_id) &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(decl.declared_by) &&
-      intervalsOverlap(
+      intervalOverlapIsProven(
         other.intent_formed_at,
         other.valid_until,
         decl.intent_formed_at,
@@ -6714,13 +6727,13 @@ function assertInterventionCommitmentDeclarationShape(
     );
   }
 
-  if (decl.committed_at > decl.recorded_at) {
+  if (isAdmissionTemporalRelationProven(decl.committed_at, decl.recorded_at, ">")) {
     throw new PatchError(
       `intervention_commitment_declaration ${selfId}: committed_at must not be after recorded_at`
     );
   }
 
-  if (decl.valid_until !== null && !(decl.committed_at < decl.valid_until)) {
+  if (decl.valid_until !== null && isAdmissionTemporalRelationProven(decl.committed_at, decl.valid_until, ">=")) {
     throw new PatchError(
       `intervention_commitment_declaration ${selfId}: valid_until must be after committed_at`
     );
@@ -6766,7 +6779,7 @@ function assertInterventionCommitmentDeclarationShape(
           `intervention_commitment_declaration ${selfId}: decision basis must select the same Intervention`
         );
       }
-      if (decl.committed_at < decision.decided_at) {
+      if (isAdmissionTemporalRelationProven(decl.committed_at, decision.decided_at, "<")) {
         throw new PatchError(
           `intervention_commitment_declaration ${selfId}: committed_at must not predate linked Decision decided_at`
         );
@@ -6797,7 +6810,7 @@ function assertInterventionCommitmentDeclarationShape(
           `intervention_commitment_declaration ${selfId}: REFRAIN Intent cannot be Intervention Commitment basis`
         );
       }
-      if (decl.committed_at < intent.intent_formed_at) {
+      if (isAdmissionTemporalRelationProven(decl.committed_at, intent.intent_formed_at, "<")) {
         throw new PatchError(
           `intervention_commitment_declaration ${selfId}: committed_at must not predate linked Intent intent_formed_at`
         );
@@ -6816,7 +6829,7 @@ function assertInterventionCommitmentDeclarationShape(
     if (
       other.commitment_holder_entity_id === decl.commitment_holder_entity_id &&
       other.intervention_id === decl.intervention_id &&
-      other.committed_at === decl.committed_at &&
+      isAdmissionTemporalRelationProven(other.committed_at, decl.committed_at, "===") &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(decl.declared_by)
     ) {
@@ -6918,23 +6931,23 @@ function assertInterventionCommitmentAcceptanceDeclarationShape(
     );
   }
 
-  if (decl.accepted_at < commitment.committed_at) {
+  if (isAdmissionTemporalRelationProven(decl.accepted_at, commitment.committed_at, "<")) {
     throw new PatchError(
       `intervention_commitment_acceptance_declaration ${selfId}: accepted_at must not predate commitment.committed_at`
     );
   }
 
-  if (decl.accepted_at > decl.recorded_at) {
+  if (isAdmissionTemporalRelationProven(decl.accepted_at, decl.recorded_at, ">")) {
     throw new PatchError(
       `intervention_commitment_acceptance_declaration ${selfId}: accepted_at must not be after recorded_at`
     );
   }
 
-  const semanticKey = interventionCommitmentSemanticKey(
+  const semanticKey = assessTemporalPrerequisite(() => interventionCommitmentSemanticKey(
     commitment.commitment_holder_entity_id,
     commitment.intervention_id,
     commitment.committed_at
-  );
+  ));
 
   for (const other of state.intervention_commitment_acceptance_declarations) {
     if (other.id === selfId) {
@@ -6946,14 +6959,14 @@ function assertInterventionCommitmentAcceptanceDeclarationShape(
     if (!otherCommitment) {
       continue;
     }
-    const otherKey = interventionCommitmentSemanticKey(
+    const otherKey = assessTemporalPrerequisite(() => interventionCommitmentSemanticKey(
       otherCommitment.commitment_holder_entity_id,
       otherCommitment.intervention_id,
       otherCommitment.committed_at
-    );
+    ));
     if (
-      otherKey === semanticKey &&
-      other.accepted_at === decl.accepted_at &&
+      haveVerifiedEqualValues(otherKey, semanticKey) &&
+      isAdmissionTemporalRelationProven(other.accepted_at, decl.accepted_at, "===") &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(decl.declared_by)
     ) {
@@ -7070,17 +7083,17 @@ function assertInterventionCommitmentTemporalTermDeclarationShape(
     );
   }
 
-  if (decl.deadline_at < commitment.committed_at) {
+  if (isAdmissionTemporalRelationProven(decl.deadline_at, commitment.committed_at, "<")) {
     throw new PatchError(
       `intervention_commitment_temporal_term_declaration ${selfId}: deadline_at must not predate commitment.committed_at`
     );
   }
 
-  const semanticKey = interventionCommitmentSemanticKey(
+  const semanticKey = assessTemporalPrerequisite(() => interventionCommitmentSemanticKey(
     commitment.commitment_holder_entity_id,
     commitment.intervention_id,
     commitment.committed_at
-  );
+  ));
 
   for (const other of state.intervention_commitment_temporal_term_declarations) {
     if (other.id === selfId) {
@@ -7092,15 +7105,15 @@ function assertInterventionCommitmentTemporalTermDeclarationShape(
     if (!otherCommitment) {
       continue;
     }
-    const otherKey = interventionCommitmentSemanticKey(
+    const otherKey = assessTemporalPrerequisite(() => interventionCommitmentSemanticKey(
       otherCommitment.commitment_holder_entity_id,
       otherCommitment.intervention_id,
       otherCommitment.committed_at
-    );
+    ));
     if (
-      otherKey === semanticKey &&
+      haveVerifiedEqualValues(otherKey, semanticKey) &&
       other.term_kind === decl.term_kind &&
-      other.deadline_at === decl.deadline_at &&
+      isAdmissionTemporalRelationProven(other.deadline_at, decl.deadline_at, "===") &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(decl.declared_by)
     ) {
@@ -7221,11 +7234,11 @@ function assertInterventionCommitmentConditionalTermDeclarationShape(
     );
   }
 
-  const semanticKey = interventionCommitmentSemanticKey(
+  const semanticKey = assessTemporalPrerequisite(() => interventionCommitmentSemanticKey(
     commitment.commitment_holder_entity_id,
     commitment.intervention_id,
     commitment.committed_at
-  );
+  ));
 
   for (const other of state.intervention_commitment_conditional_term_declarations) {
     if (other.id === selfId) {
@@ -7237,13 +7250,13 @@ function assertInterventionCommitmentConditionalTermDeclarationShape(
     if (!otherCommitment) {
       continue;
     }
-    const otherKey = interventionCommitmentSemanticKey(
+    const otherKey = assessTemporalPrerequisite(() => interventionCommitmentSemanticKey(
       otherCommitment.commitment_holder_entity_id,
       otherCommitment.intervention_id,
       otherCommitment.committed_at
-    );
+    ));
     if (
-      otherKey === semanticKey &&
+      haveVerifiedEqualValues(otherKey, semanticKey) &&
       other.condition_key === decl.condition_key &&
       other.condition_role === decl.condition_role &&
       governanceDeclarerKey(other.declared_by) ===
@@ -7422,12 +7435,12 @@ function assertInterventionResourceCommitmentDeclarationShape(
     );
   }
 
-  if (decl.resource_committed_at < commitment.committed_at) {
+  if (isAdmissionTemporalRelationProven(decl.resource_committed_at, commitment.committed_at, "<")) {
     throw new PatchError(
       `intervention_resource_commitment_declaration ${selfId}: resource_committed_at must be >= commitment.committed_at`
     );
   }
-  if (decl.resource_committed_at > decl.recorded_at) {
+  if (isAdmissionTemporalRelationProven(decl.resource_committed_at, decl.recorded_at, ">")) {
     throw new PatchError(
       `intervention_resource_commitment_declaration ${selfId}: resource_committed_at must be <= recorded_at`
     );
@@ -7438,11 +7451,11 @@ function assertInterventionResourceCommitmentDeclarationShape(
     `intervention_resource_commitment_declaration ${selfId}`
   );
 
-  const semanticKey = interventionCommitmentSemanticKey(
+  const semanticKey = assessTemporalPrerequisite(() => interventionCommitmentSemanticKey(
     commitment.commitment_holder_entity_id,
     commitment.intervention_id,
     commitment.committed_at
-  );
+  ));
 
   for (const other of state.intervention_resource_commitment_declarations) {
     if (other.id === selfId) {
@@ -7454,16 +7467,16 @@ function assertInterventionResourceCommitmentDeclarationShape(
     if (!otherCommitment) {
       continue;
     }
-    const otherKey = interventionCommitmentSemanticKey(
+    const otherKey = assessTemporalPrerequisite(() => interventionCommitmentSemanticKey(
       otherCommitment.commitment_holder_entity_id,
       otherCommitment.intervention_id,
       otherCommitment.committed_at
-    );
+    ));
     if (
-      otherKey === semanticKey &&
+      haveVerifiedEqualValues(otherKey, semanticKey) &&
       other.resource_declaration_id === decl.resource_declaration_id &&
       other.resource_committer_entity_id === decl.resource_committer_entity_id &&
-      other.resource_committed_at === decl.resource_committed_at &&
+      isAdmissionTemporalRelationProven(other.resource_committed_at, decl.resource_committed_at, "===") &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(decl.declared_by)
     ) {
@@ -7694,34 +7707,34 @@ function assertInterventionResourceReservationDeclarationShape(
     );
   }
 
-  if (decl.reservation_made_at < resourceCommitment.resource_committed_at) {
+  if (isAdmissionTemporalRelationProven(decl.reservation_made_at, resourceCommitment.resource_committed_at, "<")) {
     throw new PatchError(
       `intervention_resource_reservation_declaration ${selfId}: reservation_made_at must be >= resource_commitment.resource_committed_at`
     );
   }
-  if (decl.reservation_made_at > decl.recorded_at) {
+  if (isAdmissionTemporalRelationProven(decl.reservation_made_at, decl.recorded_at, ">")) {
     throw new PatchError(
       `intervention_resource_reservation_declaration ${selfId}: reservation_made_at must be <= recorded_at`
     );
   }
-  if (decl.reserved_from < decl.reservation_made_at) {
+  if (isAdmissionTemporalRelationProven(decl.reserved_from, decl.reservation_made_at, "<")) {
     throw new PatchError(
       `intervention_resource_reservation_declaration ${selfId}: reserved_from must be >= reservation_made_at`
     );
   }
   if (
     decl.reserved_until !== null &&
-    !(decl.reserved_from < decl.reserved_until)
+    isAdmissionTemporalRelationProven(decl.reserved_from, decl.reserved_until, ">=")
   ) {
     throw new PatchError(
       `intervention_resource_reservation_declaration ${selfId}: reserved_until must be null or after reserved_from`
     );
   }
 
-  const semanticKey = resourceCommitmentSemanticKeyFromState(
+  const semanticKey = assessTemporalPrerequisite(() => resourceCommitmentSemanticKeyFromState(
     state,
     resourceCommitment
-  );
+  ));
 
   for (const other of state.intervention_resource_reservation_declarations) {
     if (other.id === selfId) {
@@ -7733,11 +7746,11 @@ function assertInterventionResourceReservationDeclarationShape(
     if (!otherRc) {
       continue;
     }
-    const otherKey = resourceCommitmentSemanticKeyFromState(state, otherRc);
+    const otherKey = assessTemporalPrerequisite(() => resourceCommitmentSemanticKeyFromState(state, otherRc));
     if (
-      otherKey === semanticKey &&
+      haveVerifiedEqualValues(otherKey, semanticKey) &&
       other.reserved_by_entity_id === decl.reserved_by_entity_id &&
-      other.reservation_made_at === decl.reservation_made_at &&
+      isAdmissionTemporalRelationProven(other.reservation_made_at, decl.reservation_made_at, "===") &&
       governanceDeclarerKey(other.declared_by) ===
         governanceDeclarerKey(decl.declared_by)
     ) {

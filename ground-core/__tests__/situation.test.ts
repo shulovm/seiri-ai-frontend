@@ -511,7 +511,7 @@ describe("Situation / Salience (GROUND-009)", () => {
         },
       ],
     });
-    assert.equal(next.schema_version, "0.1.24");
+    assert.equal(next.schema_version, "0.1.25");
     assert.equal(
       (next as ProjectState & { situations?: unknown }).situations,
       undefined

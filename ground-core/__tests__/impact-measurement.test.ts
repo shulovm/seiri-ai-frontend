@@ -256,7 +256,7 @@ describe("Impact Measurement (GROUND-018)", () => {
   it("migrates 0.1.7 → 0.1.13 with empty impact_measure_declarations and governance collections", () => {
     assert.ok(validateProjectStateV017(validProjectStateV017).valid);
     const migrated = migrateProjectState(validProjectStateV017);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.impact_measure_declarations, []);
     assert.deepEqual(migrated.authority_declarations, []);
     assert.deepEqual(migrated.standing_declarations, []);

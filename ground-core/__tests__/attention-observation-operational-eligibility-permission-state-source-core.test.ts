@@ -527,7 +527,7 @@ describe("GROUND-093 Operational Eligibility Permission State Source Bridge", ()
     });
 
     it("schema 0.1.24; no 084/085/024–090 cores; no acceptance/aggregation/OE result", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_PERMISSION_STATE_SOURCE_MODEL_LIMITATIONS.slice(
           0,

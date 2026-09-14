@@ -417,7 +417,7 @@ function deepClone<T>(value: T): T {
 
 describe("GROUND-163 Explicit Capacity-Compatibility Source Aggregation Policy", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("model limitations fixed order", () => {

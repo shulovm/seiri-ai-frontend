@@ -781,7 +781,7 @@ describe("GROUND-095 Operational Eligibility Permission Source Resolution Classi
     });
 
     it("schema 0.1.24; no 094/084/091-direct/090–024/085; no acceptance/aggregation/OE", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_PERMISSION_SOURCE_RESOLUTION_CLASSIFICATION_MODEL_LIMITATIONS.slice(
           0,

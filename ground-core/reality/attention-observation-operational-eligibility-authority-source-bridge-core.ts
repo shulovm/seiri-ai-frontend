@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * AUTHORITY Source Bridge (GROUND-117).
@@ -79,7 +80,7 @@ export function attentionObservationOperationalEligibilityAuthoritySourceKey(par
     params.authority_power,
     params.governance_scope_key,
     params.authority_evaluation_instant_key,
-    params.authority_evaluation_at,
+    temporalInstantKey(params.authority_evaluation_at),
     params.canonical_authority_state_key,
     params.canonical_authority_state_basis_key,
     params.canonical_authority_state_value,
@@ -254,7 +255,7 @@ function assertCanonicalAuthorityStateContext(
     state.authority_holder_entity_id !== basis.authority_holder_entity_id ||
     state.authority_power !== basis.authority_power ||
     state.governance_scope_key !== basis.governance_scope_key ||
-    state.authority_evaluation_at !== basis.authority_evaluation_at
+    compareTemporalInstants(state.authority_evaluation_at, basis.authority_evaluation_at) !== 0
   ) {
     throw new Error(
       `Operational Eligibility AUTHORITY Source invariant violated: State/Basis context mismatch for State ${state.key}`

@@ -230,7 +230,7 @@ function deepClone<T>(value: T): T {
 
 describe("GROUND-146 RESOURCE_READINESS Binding Evidence Composition Readiness Policy", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("model limitations and readiness vocabulary fixed order", () => {

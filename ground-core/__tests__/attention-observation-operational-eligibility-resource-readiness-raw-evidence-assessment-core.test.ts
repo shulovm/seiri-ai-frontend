@@ -283,7 +283,7 @@ function assertNoReadinessPolarity(payload: unknown): void {
 
 describe("GROUND-135 RESOURCE_READINESS Raw Evidence Assessment", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("model limitations fixed order", () => {

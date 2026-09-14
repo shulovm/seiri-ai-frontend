@@ -727,7 +727,7 @@ describe("GROUND-091 Permission State Foundation", () => {
     });
 
     it("schema 0.1.24; no 024/087/088/089 cores; no raw inference; no OE/wall-clock", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_PERMISSION_STATE_MODEL_LIMITATIONS.slice(0, 4),
         [

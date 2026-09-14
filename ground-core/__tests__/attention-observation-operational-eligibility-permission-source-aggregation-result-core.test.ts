@@ -1087,7 +1087,7 @@ describe("GROUND-101 Operational Eligibility Permission Source Aggregation Resul
 
   describe("static / architectural boundaries", () => {
     it("schema 0.1.24; model limitations fixed; no ProjectState/wall-clock/forbidden deps", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_PERMISSION_SOURCE_AGGREGATION_RESULT_MODEL_LIMITATIONS,
         [

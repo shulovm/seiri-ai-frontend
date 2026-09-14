@@ -1,3 +1,4 @@
+import { assessObservationRecency } from "../observation-recency.js";
 import { countDownstreamUnlocks } from "./scoring.js";
 import type { DirectorReport } from "./types.js";
 import type {
@@ -217,22 +218,6 @@ export function computeMomentumScore(context: ProjectScoreContext): number {
     });
   }
 
-  const recentObservation = (context.state.observations ?? []).some((observation) => {
-    const createdAt = new Date(observation.created_at).getTime();
-    const thirtyDaysAgo = Date.now() - 30 * 24 * 60 * 60 * 1000;
-    return createdAt >= thirtyDaysAgo;
-  });
-
-  if (recentObservation) {
-    score += 0.1;
-    reasons.push({
-      kind: "momentum_signal",
-      message: "30 日以内の observation がある",
-      weight: 1,
-      score_delta: 0.1,
-    });
-  }
-
   if (context.eligible && context.pending_count > 0) {
     score += 0.05;
   }
@@ -249,7 +234,13 @@ export function computeMomentumScore(context: ProjectScoreContext): number {
     score -= 0.4;
   }
 
-  return clamp(score);
+  const recency = assessObservationRecency(context.state.observations ?? []);
+  if (recency.status === "UNRESOLVED") {
+    // The public score is fixed only if both possible bonuses yield the same score.
+    if (clamp(score) === clamp(score + 0.1)) return clamp(score);
+    throw recency.error;
+  }
+  return clamp(score + (recency.value ? 0.1 : 0));
 }
 
 export function computeUrgencyScore(context: ProjectScoreContext): number {

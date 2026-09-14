@@ -1,3 +1,5 @@
+import { canonicalValueKey } from "./semantic-equality.js";
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Resource Requirement (GROUND-132).
  *
@@ -11,8 +13,6 @@
  * InterventionResourceRequirement assessment, Commitment, Reservation, Feasibility.
  */
 
-import { resourceRequirementAmountKey } from "./intervention-core.js";
-import { resourceScopeKey } from "./resource-core.js";
 import type {
   ResourceRequirementAmount,
   ResourceScope,
@@ -152,7 +152,7 @@ function assertRequirementInterval(
   if (
     validFrom !== null &&
     validUntil !== null &&
-    validUntil <= validFrom
+    compareTemporalInstants(validUntil, validFrom) <= 0
   ) {
     throw new Error("valid_until must be after valid_from");
   }
@@ -183,14 +183,14 @@ function normalizeRequirementInput(
 function requirementInputSignature(
   input: AttentionObservationResourceRequirementInput
 ): string {
-  return [
+  return canonicalValueKey([
     input.resource_key,
     input.unit,
-    resourceScopeKey(input.resource_scope),
-    resourceRequirementAmountKey(input.required_amount),
-    input.valid_from ?? "NONE",
-    input.valid_until ?? "NONE",
-  ].join("|");
+    input.resource_scope,
+    input.required_amount,
+    input.valid_from == null ? "NONE" : temporalInstantKey(input.valid_from),
+    input.valid_until == null ? "NONE" : temporalInstantKey(input.valid_until),
+  ]);
 }
 
 function canonicalizeRequirementInputs(
@@ -246,18 +246,12 @@ export function attentionObservationResourceRequirementKey(
   validFrom: string | null,
   validUntil: string | null
 ): string {
-  return [
-    "attention-observation-resource-requirement",
-    candidateKey,
-    observationNeedKey,
-    capabilityRequirementSetKey,
-    resourceKey,
-    unit,
-    resourceScopeKey(resourceScope),
-    resourceRequirementAmountKey(requiredAmount),
-    validFrom ?? "NONE",
-    validUntil ?? "NONE",
-  ].join("|");
+  return "attention-observation-resource-requirement|" + canonicalValueKey([
+    candidateKey, observationNeedKey, capabilityRequirementSetKey,
+    resourceKey, unit, resourceScope, requiredAmount,
+    validFrom == null ? null : temporalInstantKey(validFrom),
+    validUntil == null ? null : temporalInstantKey(validUntil),
+  ]);
 }
 
 export function buildAttentionObservationResourceRequirementSetKey(
@@ -266,17 +260,12 @@ export function buildAttentionObservationResourceRequirementSetKey(
   capabilityRequirementSetKey: string,
   requirementKeys: readonly string[]
 ): string {
-  const canonicalRequirementKeySet =
-    requirementKeys.length === 0
-      ? EMPTY_OBSERVATION_RESOURCE_REQUIREMENT_SET
-      : canonicalizeResourceRequirementKeys(requirementKeys).join(",");
-  return [
-    "attention-observation-resource-requirement-set",
-    candidateKey,
-    observationNeedKey,
-    capabilityRequirementSetKey,
-    canonicalRequirementKeySet,
-  ].join("|");
+  const members = requirementKeys.length === 0
+    ? { empty: EMPTY_OBSERVATION_RESOURCE_REQUIREMENT_SET }
+    : canonicalizeResourceRequirementKeys(requirementKeys);
+  return "attention-observation-resource-requirement-set|" + canonicalValueKey([
+    candidateKey, observationNeedKey, capabilityRequirementSetKey, members,
+  ]);
 }
 
 interface RequirementSetContext {

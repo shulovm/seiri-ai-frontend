@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * Observation-Context Declared AUTHORITY Assessment (GROUND-110).
@@ -110,7 +111,7 @@ export function attentionObservationOperationalEligibilityObservationContextDecl
     authorityPower,
     governanceScopeKeyValue,
     authorityEvaluationInstantKey,
-    authorityEvaluationAt,
+    temporalInstantKey(authorityEvaluationAt),
     declaredAuthorityAssessmentCanonicalKey,
   ].join("|");
 }
@@ -177,7 +178,7 @@ function assertDeclaredAuthorityContextConsistency(
       `Declared AUTHORITY Assessment context mismatch for binding ${binding.key}: scope differs from GROUND-108 binding`
     );
   }
-  if (declared.at !== authorityEvaluationAt) {
+  if (compareTemporalInstants(declared.at, authorityEvaluationAt) !== 0) {
     throw new Error(
       `Declared AUTHORITY Assessment invariant violated: evaluation instant drift for binding ${binding.key}`
     );
@@ -430,7 +431,7 @@ export function assessAttentionCandidateObservationOperationalEligibilityObserva
         `Declared AUTHORITY Assessment binding lineage mismatch for candidate ${candidate_key}`
       );
     }
-    if (wrapper.authority_evaluation_at !== instantAssessment.authority_evaluation_instant!.authority_evaluation_at) {
+    if (compareTemporalInstants(wrapper.authority_evaluation_at, instantAssessment.authority_evaluation_instant!.authority_evaluation_at) !== 0) {
       throw new Error(
         `Declared AUTHORITY Assessment instant mismatch for binding ${binding.key}`
       );

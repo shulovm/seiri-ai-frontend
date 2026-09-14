@@ -249,7 +249,7 @@ describe("Capability Core (GROUND-021)", () => {
   it("migrates 0.1.10 → 0.1.16 with empty capability collections", () => {
     assert.ok(validateProjectStateV0110(validProjectStateV0110).valid);
     const migrated = migrateProjectState(validProjectStateV0110);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.capability_declarations, []);
     assert.deepEqual(migrated.capability_verification_declarations, []);
     assert.deepEqual(migrated.capability_availability_declarations, []);

@@ -1090,7 +1090,7 @@ describe("GROUND-140 RESOURCE_READINESS Evidence Interpretation Basis", () => {
     });
 
     it("schema 0.1.24; 137+139 only; no wildcard/criteria/canonical State", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

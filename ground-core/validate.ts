@@ -1,6 +1,6 @@
 /**
  * Validation for GROUND Core ProjectState / StatePatch.
- * Canonical schema: v0.1.24. Intermediate validators support migration.
+ * Canonical schema: v0.1.25. Intermediate validators support migration.
  */
 
 import Ajv2020Import from "ajv/dist/2020.js";
@@ -13,6 +13,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SCHEMA_DIR = join(__dirname, "../docs/schemas");
 
+const PROJECT_STATE_SCHEMA_V0125 = "ground-core-project-state.v0.1.25.schema.json";
 const PROJECT_STATE_SCHEMA_V0124 = "ground-core-project-state.v0.1.24.schema.json";
 const PROJECT_STATE_SCHEMA_V0123 = "ground-core-project-state.v0.1.23.schema.json";
 const PROJECT_STATE_SCHEMA_V0122 = "ground-core-project-state.v0.1.22.schema.json";
@@ -38,6 +39,7 @@ const PROJECT_STATE_SCHEMA_V013 = "ground-core-project-state.v0.1.3.schema.json"
 const PROJECT_STATE_SCHEMA_V012 = "ground-core-project-state.v0.1.2.schema.json";
 const PROJECT_STATE_SCHEMA_V011 = "ground-core-project-state.v0.1.1.schema.json";
 const PROJECT_STATE_SCHEMA_V010 = "ground-core-project-state.v0.1.schema.json";
+const STATE_PATCH_SCHEMA_V0125 = "ground-core-state-patch.v0.1.25.schema.json";
 const STATE_PATCH_SCHEMA_V0124 = "ground-core-state-patch.v0.1.24.schema.json";
 const STATE_PATCH_SCHEMA_V0123 = "ground-core-state-patch.v0.1.23.schema.json";
 const STATE_PATCH_SCHEMA_V0122 = "ground-core-state-patch.v0.1.22.schema.json";
@@ -87,6 +89,7 @@ function loadSchema(filename: string): object {
   return JSON.parse(readFileSync(path, "utf8")) as object;
 }
 
+let projectStateValidatorV0125: ValidateFunction | undefined;
 let projectStateValidatorV0124: ValidateFunction | undefined;
 let projectStateValidatorV0123: ValidateFunction | undefined;
 let projectStateValidatorV0122: ValidateFunction | undefined;
@@ -112,6 +115,7 @@ let projectStateValidatorV013: ValidateFunction | undefined;
 let projectStateValidatorV012: ValidateFunction | undefined;
 let projectStateValidatorV011: ValidateFunction | undefined;
 let projectStateValidatorV010: ValidateFunction | undefined;
+let statePatchValidatorV0125: ValidateFunction | undefined;
 let statePatchValidatorV0124: ValidateFunction | undefined;
 let statePatchValidatorV0123: ValidateFunction | undefined;
 let statePatchValidatorV0122: ValidateFunction | undefined;
@@ -138,6 +142,14 @@ function compileSchema(ajv: AjvLike, filename: string): ValidateFunction {
   return compiled;
 }
 
+function getProjectStateValidatorV0125(): ValidateFunction {
+  projectStateValidatorV0125 ??= compileSchema(createAjv(), PROJECT_STATE_SCHEMA_V0125);
+  return projectStateValidatorV0125;
+}
+function getStatePatchValidatorV0125(): ValidateFunction {
+  statePatchValidatorV0125 ??= compileSchema(createAjv(), STATE_PATCH_SCHEMA_V0125);
+  return statePatchValidatorV0125;
+}
 function getProjectStateValidatorV0124(): ValidateFunction {
   projectStateValidatorV0124 ??= compileSchema(createAjv(), PROJECT_STATE_SCHEMA_V0124);
   return projectStateValidatorV0124;
@@ -348,9 +360,14 @@ function getStatePatchValidatorV0118(): ValidateFunction {
   return statePatchValidatorV0118;
 }
 
-/** Canonical ProjectState validation (v0.1.24). */
-export function validateProjectState(data: unknown): ValidationResult {
+/** Historical ProjectState validation (v0.1.24). */
+export function validateProjectStateV0124(data: unknown): ValidationResult {
   const validate = getProjectStateValidatorV0124();
+  return validate(data) ? { valid: true } : { valid: false, errors: validate.errors ?? [] };
+}
+
+export function validateProjectState(data: unknown): ValidationResult {
+  const validate = getProjectStateValidatorV0125();
   const valid = validate(data);
   if (valid) {
     return { valid: true };
@@ -592,9 +609,9 @@ export function validateLegacyProjectState(data: unknown): ValidationResult {
   return { valid: false, errors: validate.errors ?? [] };
 }
 
-/** Canonical StatePatch validation (v0.1.24; accepts historical patch schema versions). */
+/** Canonical StatePatch validation (v0.1.25; accepts historical patch schema versions). */
 export function validateStatePatch(data: unknown): ValidationResult {
-  const validate = getStatePatchValidatorV0124();
+  const validate = getStatePatchValidatorV0125();
   const valid = validate(data);
   if (valid) {
     return { valid: true };

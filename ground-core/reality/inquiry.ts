@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Inquiry / Question Formation (GROUND-007).
  *
@@ -56,7 +57,7 @@ function propositionKey(
   predicate: string | null,
   at: string | null
 ): string {
-  return ["prop", subjectId ?? "", predicateKind ?? "", predicate ?? "", at ?? ""].join(
+  return ["prop", subjectId ?? "", predicateKind ?? "", predicate ?? "", (at == null ? at : temporalInstantKey(at)) ?? ""].join(
     "|"
   );
 }
@@ -117,7 +118,7 @@ function mapGapToDraft(gap: EpistemicGap): {
           gap.subject_id,
           gap.predicate_kind,
           gap.predicate,
-          gap.at,
+          temporalInstantKey(gap.at),
           ...(gap.details.position_value_keys ?? []).slice().sort(),
         ].join("|"),
         expected_answer_shape: "position_choice_or_other",
@@ -140,7 +141,7 @@ function mapGapToDraft(gap: EpistemicGap): {
           gap.subject_id,
           gap.predicate_kind,
           gap.predicate,
-          gap.at,
+          temporalInstantKey(gap.at),
           ...sortUniqueIds(gap.claim_ids),
         ].join("|"),
         expected_answer_shape: "evidence_bearing_on_claim",
@@ -161,7 +162,7 @@ function mapGapToDraft(gap: EpistemicGap): {
           gap.subject_id,
           gap.predicate_kind,
           gap.predicate,
-          gap.at,
+          temporalInstantKey(gap.at),
           ...sortUniqueIds(gap.claim_ids),
           ...sortUniqueIds(gap.evidence_ids),
         ].join("|"),
@@ -330,7 +331,7 @@ function inquiryKeyFromQuestions(
     subjectId ?? "",
     query?.predicateKind ?? "",
     query?.predicate ?? "",
-    query?.at ?? "",
+    (query?.at == null ? query?.at : temporalInstantKey(query?.at)) ?? "",
     ...questions.map((q) => q.key),
   ].join("|");
 }
@@ -422,7 +423,7 @@ export function formulateUnresolvedSubjectInquiries(
     };
 
     inquiries.push({
-      key: ["inq", "unresolved_subject", claim.id, at ?? ""].join("|"),
+      key: ["inq", "unresolved_subject", claim.id, at == null ? "" : temporalInstantKey(at)].join("|"),
       status: "OPEN",
       subject_id: null,
       query: null,

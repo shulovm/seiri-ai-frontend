@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Declared Resource Availability
  * Per-source Evidence State (GROUND-179).
@@ -89,7 +90,7 @@ export function declaredResourceAvailabilityPerSourceEvidenceStateKey(params: {
   return [
     "declared-resource-availability-per-source-evidence-state",
     params.resource_declaration_id,
-    params.evaluation_at,
+    temporalInstantKey(params.evaluation_at),
     params.availability_declaration_id,
     params.raw_availability_status,
     params.value,

@@ -38,6 +38,9 @@ dist-ssr
 
 .vercel
 
+# Approved core checkpoint excludes generated storage scratch as well as projects.
+ground-core/storage/
+
 # GROUND Core local project state (Phase B file store)
 ground-core/storage/projects/
 

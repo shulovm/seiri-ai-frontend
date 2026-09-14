@@ -807,7 +807,7 @@ describe("GROUND-108 AUTHORITY Observation-Context Binding", () => {
     });
 
     it("schema 0.1.24; no Authority assessment / Permission / OE / 084–106", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

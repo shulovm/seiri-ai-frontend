@@ -442,7 +442,7 @@ describe("Agency Composition (GROUND-026)", () => {
   it("migrates 0.1.15 → 0.1.17 with empty candidate array", () => {
     assert.ok(validateProjectStateV0115(validProjectStateV0115).valid);
     const migrated = migrateProjectState(validProjectStateV0115);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.decision_option_actor_candidate_declarations, []);
     assert.ok(validateProjectState(migrated).valid);
   });

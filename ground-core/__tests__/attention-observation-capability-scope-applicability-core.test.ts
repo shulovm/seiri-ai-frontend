@@ -371,7 +371,7 @@ function assertNoForbiddenSemantics(payload: unknown): void {
 describe("Attention Observation Capability Scope Applicability (GROUND-055)", () => {
   describe("CapabilityScope audit / purity / architecture", () => {
     it("schema 0.1.24; only UNSCOPED/ENTITY/SUBJECT_STATE; no hierarchy helpers; no 051–053", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

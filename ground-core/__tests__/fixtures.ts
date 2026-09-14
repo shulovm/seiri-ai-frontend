@@ -294,6 +294,9 @@ export const validProjectStateV0124 = {
   intervention_resource_reservation_declarations: [] as ProjectState["intervention_resource_reservation_declarations"],
 } as ProjectState;
 
+/** Canonical snapshot-verification schema fixture; no historical Decisions to classify. */
+export const validProjectStateV0125 = { ...validProjectStateV0124, schema_version: "0.1.25" as const } as ProjectState;
+
 export const REFERENCE_DOC_ID = "a9010101-0101-4101-8101-010101010101";
 export const OBSERVATION_ID = "a9020202-0202-4202-8202-020202020202";
 export const JUDGMENT_ID = "a9030303-0303-4303-8303-030303030303";
@@ -333,7 +336,7 @@ export function buildFreeWaterPhase0Fixture(): ProjectState {
 export function buildReconcileFixtureState() {
   const ts = "2026-08-11T00:00:00.000Z";
   return {
-    schema_version: "0.1.24" as const,
+    schema_version: "0.1.25" as const,
     project: {
       id: RECONCILE_PROJECT_ID,
       title: "Reconcile Isolation Fixture",

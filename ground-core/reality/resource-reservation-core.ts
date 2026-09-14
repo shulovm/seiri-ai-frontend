@@ -1,3 +1,5 @@
+import { canonicalValueKey } from "./semantic-equality.js";
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Resource Reservation assessment (GROUND-035).
  *
@@ -44,12 +46,7 @@ function compareIds(a: string, b: string): number {
 }
 
 function declarerKey(declarer: ReferenceDeclarer): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function sortDeclarers(declarers: ReferenceDeclarer[]): ReferenceDeclarer[] {
@@ -98,7 +95,7 @@ export function resourceReservationScopeKey(
 export function resourceReservationWindowKey(
   window: ResourceReservationWindow
 ): string {
-  return `${window.reserved_from}|${window.reserved_until ?? "OPEN"}`;
+  return `${temporalInstantKey(window.reserved_from)}|${(window.reserved_until == null ? window.reserved_until : temporalInstantKey(window.reserved_until)) ?? "OPEN"}`;
 }
 
 /**
@@ -110,13 +107,13 @@ export function doesResourceReservationWindowCoverAt(
   reservedUntil: string | null,
   at: string
 ): boolean {
-  if (at < reservedFrom) {
+  if (compareTemporalInstants(at, reservedFrom) < 0) {
     return false;
   }
   if (reservedUntil === null) {
     return true;
   }
-  return at < reservedUntil;
+  return compareTemporalInstants(at, reservedUntil) < 0;
 }
 
 export function resourceReservationSemanticKey(
@@ -128,7 +125,7 @@ export function resourceReservationSemanticKey(
     "resource-reservation",
     resourceCommitmentSemanticKey,
     reservedByEntityId,
-    reservationMadeAt,
+    temporalInstantKey(reservationMadeAt),
   ].join("|");
 }
 
@@ -213,8 +210,8 @@ function declarationsForSemanticResourceCommitment(
       if (a.reserved_by_entity_id !== b.reserved_by_entity_id) {
         return a.reserved_by_entity_id < b.reserved_by_entity_id ? -1 : 1;
       }
-      if (a.reservation_made_at !== b.reservation_made_at) {
-        return a.reservation_made_at < b.reservation_made_at ? -1 : 1;
+      if (compareTemporalInstants(a.reservation_made_at, b.reservation_made_at) !== 0) {
+        return compareTemporalInstants(a.reservation_made_at, b.reservation_made_at) < 0 ? -1 : 1;
       }
       return compareIds(a.id, b.id);
     });

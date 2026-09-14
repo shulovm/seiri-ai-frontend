@@ -1131,7 +1131,7 @@ describe("GROUND-141 Canonical per-binding RESOURCE_READINESS Evidence State", (
     });
 
     it("schema 0.1.24; GROUND-140 only; no READY / older-layer access / composition", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

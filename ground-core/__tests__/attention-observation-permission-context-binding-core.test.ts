@@ -808,7 +808,7 @@ describe("GROUND-087 Explicit Permission Observation-Context Binding", () => {
     });
 
     it("schema 0.1.24; no Permission aggregation / temporal / OE / 083–085", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

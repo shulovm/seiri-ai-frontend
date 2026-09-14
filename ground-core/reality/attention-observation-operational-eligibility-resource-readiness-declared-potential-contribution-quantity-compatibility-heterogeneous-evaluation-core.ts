@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * Declared Potential Contribution Quantity-Compatibility
@@ -149,7 +150,7 @@ export function attentionObservationOperationalEligibilityResourceReadinessDecla
     params.observation_resource_requirement_key,
     params.resource_readiness_observation_context_binding_key,
     params.resource_declaration_id,
-    params.evaluation_at,
+    temporalInstantKey(params.evaluation_at),
     params.physical_potential_contribution_declaration_key,
     params.ground169_state_key,
     params.ground169_state_value,
@@ -302,7 +303,7 @@ export function extractDeclaredPotentialContributionIdentityFromGround169NestedL
   }
 
   const keys = new Set<string>();
-  const evaluationAts = new Set<string>();
+  const evaluationAts = new Map<string, string>();
   for (const source of matched.capacity_relation_interpretation_basis_binding_assessment
     .capacity_source_interpretation_basis_assessments) {
     const basis = source.interpretation_basis;
@@ -310,13 +311,13 @@ export function extractDeclaredPotentialContributionIdentityFromGround169NestedL
       continue;
     }
     keys.add(basis.physical_potential_contribution_declaration_key);
-    evaluationAts.add(basis.evaluation_at);
+    evaluationAts.set(temporalInstantKey(basis.evaluation_at), basis.evaluation_at);
   }
 
   if (keys.size === 1 && evaluationAts.size === 1) {
     return {
       physical_potential_contribution_declaration_key: [...keys][0]!,
-      evaluation_at: [...evaluationAts][0]!,
+      evaluation_at: [...evaluationAts.values()][0]!,
     };
   }
 
@@ -456,8 +457,7 @@ function assessBindingHeterogeneousEvaluation(params: {
 
   if (
     capacityState.evaluation_at !== null &&
-    capacityState.evaluation_at !==
-      capacityContributionIdentity.evaluation_at
+    compareTemporalInstants(capacityState.evaluation_at, capacityContributionIdentity.evaluation_at) !== 0
   ) {
     throw new Error(
       `Malformed GROUND-169 lineage: canonical evaluation_at ${capacityState.evaluation_at} != nested contribution evaluation_at ${capacityContributionIdentity.evaluation_at}`
@@ -468,7 +468,7 @@ function assessBindingHeterogeneousEvaluation(params: {
     capacityState.evaluation_at ??
     capacityContributionIdentity.evaluation_at;
 
-  if (capacityEvaluationAt !== requiredState.evaluation_at) {
+  if (compareTemporalInstants(capacityEvaluationAt, requiredState.evaluation_at) !== 0) {
     throw new Error(
       `Malformed cross-input: evaluation_at mismatch GROUND-169=${capacityEvaluationAt} GROUND-175=${requiredState.evaluation_at}`
     );

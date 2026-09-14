@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility AUTHORITY
  * Evaluation Instant (GROUND-109).
@@ -60,11 +61,11 @@ export const ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_AUTHORITY_EVALUATION_
   ];
 
 /**
- * Lexicographic ISO-8601 instant validation — same convention as GROUND-088.
- * No Date.parse / locale / timezone coercion / wall-clock default.
+ * Declared ISO-8601 timestamp syntax validation — same convention as GROUND-088.
+ * Preserves representation; temporal consumption resolves exact instants separately.
  */
 const AUTHORITY_EVALUATION_AT_PATTERN =
-  /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,9})?(Z|[+-]\d{2}:\d{2})$/;
+  /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[+-]\d{2}:\d{2})$/;
 
 function compareStrings(a: string, b: string): number {
   return a < b ? -1 : a > b ? 1 : 0;
@@ -102,7 +103,7 @@ export function attentionObservationOperationalEligibilityAuthorityEvaluationIns
     observationNeedKey,
     capabilityRequirementSetKey,
     "AUTHORITY",
-    authorityEvaluationAt,
+    temporalInstantKey(authorityEvaluationAt),
   ].join("|");
 }
 
@@ -199,7 +200,7 @@ export function normalizeAttentionObservationOperationalEligibilityAuthorityEval
 
     const existing = instantByCandidateKey.get(entry.candidate_key);
     if (existing) {
-      if (existing.authority_evaluation_at !== authority_evaluation_at) {
+      if (compareTemporalInstants(existing.authority_evaluation_at, authority_evaluation_at) !== 0) {
         throw new Error(
           `Conflicting AUTHORITY evaluation instants declared for candidate ${entry.candidate_key}`
         );

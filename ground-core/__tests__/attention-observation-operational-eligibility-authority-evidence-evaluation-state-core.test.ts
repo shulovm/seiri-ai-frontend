@@ -709,7 +709,7 @@ describe("GROUND-113 Authority Evidence Evaluation State", () => {
     });
 
     it("schema 0.1.24; 111 only; no 019/020/110/ProjectState", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

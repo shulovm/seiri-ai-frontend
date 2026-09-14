@@ -263,7 +263,7 @@ function assertNoForbidden(payload: unknown): void {
 describe("Attention Observation Observer Candidate (GROUND-049)", () => {
   describe("Schema / purity / RealityEntity identity / 048 independence", () => {
     it("schema 0.1.24; RealityEntity.id; no 048 / Capability / ProjectState", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

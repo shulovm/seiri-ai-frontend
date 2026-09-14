@@ -168,7 +168,7 @@ function typesSource(): string {
 
 describe("GROUND-181 Declared Resource Availability Source Aggregation Readiness Policy", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("proposition / sole rule / model limitations fixed", () => {

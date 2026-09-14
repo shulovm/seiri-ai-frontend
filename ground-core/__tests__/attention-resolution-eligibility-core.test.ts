@@ -329,7 +329,7 @@ function assertNoForbidden(payload: unknown): void {
 describe("Attention Resolution Domain Eligibility (GROUND-045)", () => {
   describe("Schema / purity", () => {
     it("schema 0.1.24; pure 044 transform; no enrichment runtimes", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

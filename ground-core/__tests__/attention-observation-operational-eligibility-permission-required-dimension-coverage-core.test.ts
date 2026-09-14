@@ -669,7 +669,7 @@ describe("GROUND-094 Operational Eligibility Permission Required Dimension Cover
     });
 
     it("schema 0.1.24; no 091/085/024–090; no acceptance/aggregation/OE result", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_PERMISSION_REQUIRED_DIMENSION_COVERAGE_MODEL_LIMITATIONS.slice(
           0,

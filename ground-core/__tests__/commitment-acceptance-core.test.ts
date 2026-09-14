@@ -399,7 +399,7 @@ describe("Commitment Acceptance (GROUND-031)", () => {
   describe("Migration", () => {
     it("migrates 0.1.19 → 0.1.20 with empty Acceptance array", () => {
       const migrated = migrateProjectState(validProjectStateV0119);
-      assert.equal(migrated.schema_version, "0.1.24");
+      assert.equal(migrated.schema_version, "0.1.25");
       assert.deepEqual(
         migrated.intervention_commitment_acceptance_declarations,
         []
@@ -415,7 +415,7 @@ describe("Commitment Acceptance (GROUND-031)", () => {
     });
 
     it("SCHEMA_VERSION is 0.1.20", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
     });
   });
 

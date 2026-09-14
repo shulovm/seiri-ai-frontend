@@ -504,7 +504,7 @@ const mixedCommon = {
 
 describe("GROUND-166 Capacity-Compatibility Source Aggregation Result", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("model limitations fixed order", () => {

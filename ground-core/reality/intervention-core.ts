@@ -1,3 +1,5 @@
+import { canonicalValueKey } from "./semantic-equality.js";
+import { compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Intervention Core I assessment (GROUND-023).
  *
@@ -67,39 +69,39 @@ export function isInterventionDeclarationActiveAt(
   declaration: InterventionDeclaration,
   at: string
 ): boolean {
-  if (declaration.valid_from > at) {
+  if (compareTemporalInstants(declaration.valid_from, at) > 0) {
     return false;
   }
   if (declaration.valid_until === null) {
     return true;
   }
-  return at < declaration.valid_until;
+  return compareTemporalInstants(at, declaration.valid_until) < 0;
 }
 
 export function isInterventionCapabilityRequirementActiveAt(
   declaration: InterventionCapabilityRequirementDeclaration,
   at: string
 ): boolean {
-  if (declaration.valid_from > at) {
+  if (compareTemporalInstants(declaration.valid_from, at) > 0) {
     return false;
   }
   if (declaration.valid_until === null) {
     return true;
   }
-  return at < declaration.valid_until;
+  return compareTemporalInstants(at, declaration.valid_until) < 0;
 }
 
 export function isInterventionResourceRequirementActiveAt(
   declaration: InterventionResourceRequirementDeclaration,
   at: string
 ): boolean {
-  if (declaration.valid_from > at) {
+  if (compareTemporalInstants(declaration.valid_from, at) > 0) {
     return false;
   }
   if (declaration.valid_until === null) {
     return true;
   }
-  return at < declaration.valid_until;
+  return compareTemporalInstants(at, declaration.valid_until) < 0;
 }
 
 function compareInterventions(
@@ -115,8 +117,8 @@ function compareInterventions(
   if (scopeCmp !== 0) {
     return scopeCmp;
   }
-  if (a.valid_from !== b.valid_from) {
-    return a.valid_from < b.valid_from ? -1 : 1;
+  if (compareTemporalInstants(a.valid_from, b.valid_from) !== 0) {
+    return compareTemporalInstants(a.valid_from, b.valid_from) < 0 ? -1 : 1;
   }
   return compareIds(a.id, b.id);
 }
@@ -134,8 +136,8 @@ function compareCapabilityRequirements(
   if (scopeCmp !== 0) {
     return scopeCmp;
   }
-  if (a.valid_from !== b.valid_from) {
-    return a.valid_from < b.valid_from ? -1 : 1;
+  if (compareTemporalInstants(a.valid_from, b.valid_from) !== 0) {
+    return compareTemporalInstants(a.valid_from, b.valid_from) < 0 ? -1 : 1;
   }
   return compareIds(a.id, b.id);
 }
@@ -162,8 +164,8 @@ function compareResourceRequirements(
   if (amountCmp !== 0) {
     return amountCmp;
   }
-  if (a.valid_from !== b.valid_from) {
-    return a.valid_from < b.valid_from ? -1 : 1;
+  if (compareTemporalInstants(a.valid_from, b.valid_from) !== 0) {
+    return compareTemporalInstants(a.valid_from, b.valid_from) < 0 ? -1 : 1;
   }
   return compareIds(a.id, b.id);
 }
@@ -232,7 +234,7 @@ export function groupInterventionCapabilityRequirements(
   );
   const groups = new Map<string, InterventionCapabilityRequirementGroup>();
   for (const entry of applicable) {
-    const key = `${entry.capability_key}|${capabilityScopeKey(entry.capability_scope)}`;
+    const key = canonicalValueKey([entry.capability_key, entry.capability_scope]);
     const existing = groups.get(key);
     if (existing) {
       existing.requirement_declaration_ids.push(entry.id);
@@ -267,11 +269,7 @@ export function groupInterventionResourceRequirements(
   );
   const groups = new Map<string, InterventionResourceRequirementGroup>();
   for (const entry of applicable) {
-    const key = [
-      entry.resource_key,
-      entry.unit,
-      resourceScopeKey(entry.resource_scope),
-    ].join("|");
+    const key = canonicalValueKey([entry.resource_key, entry.unit, entry.resource_scope]);
     const existing = groups.get(key);
     if (existing) {
       existing.requirement_declaration_ids.push(entry.id);

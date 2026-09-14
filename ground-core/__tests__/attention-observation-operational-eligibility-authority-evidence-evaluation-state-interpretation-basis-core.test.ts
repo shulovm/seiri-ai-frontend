@@ -1116,7 +1116,7 @@ describe("GROUND-115 Authority Evidence Interpretation Basis", () => {
     });
 
     it("schema 0.1.24; 113+114 only; no direct 111/108/ProjectState", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

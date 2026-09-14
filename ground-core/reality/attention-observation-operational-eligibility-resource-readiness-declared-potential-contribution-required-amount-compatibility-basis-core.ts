@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * Deterministic POINT-STOCK Declared Potential Contribution
@@ -183,7 +184,7 @@ export function attentionObservationOperationalEligibilityResourceReadinessDecla
     params.observation_resource_requirement_key,
     params.resource_readiness_observation_context_binding_key,
     params.resource_declaration_id,
-    params.evaluation_at,
+    temporalInstantKey(params.evaluation_at),
     params.physical_potential_contribution_declaration_key,
     params.contribution_quantity_kind_semantic_declaration_key,
     params.required_amount_semantic_declaration_key,

@@ -823,7 +823,7 @@ describe("GROUND-089 Explicit Declared Permission Interpretation Policy", () => 
         "EXECUTION_NOT_MODELED"
       );
 
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * RESOURCE_READINESS Raw Evidence Assessment (GROUND-135).
@@ -89,10 +90,10 @@ export function isObservationResourceRequirementApplicableAt(
   requirement: AttentionObservationResourceRequirement,
   at: string
 ): boolean {
-  if (requirement.valid_from !== null && requirement.valid_from > at) {
+  if (requirement.valid_from !== null && compareTemporalInstants(requirement.valid_from, at) > 0) {
     return false;
   }
-  if (requirement.valid_until !== null && at >= requirement.valid_until) {
+  if (requirement.valid_until !== null && compareTemporalInstants(at, requirement.valid_until) >= 0) {
     return false;
   }
   return true;
@@ -118,7 +119,7 @@ export function buildResourceAssessmentCanonicalKey(
   ].sort(compareStrings);
   return [
     assessment.resource.id,
-    assessment.at,
+    temporalInstantKey(assessment.at),
     assessment.declaration_status,
     assessment.availability.status,
     assessment.capacity.status,
@@ -153,7 +154,7 @@ export function attentionObservationOperationalEligibilityResourceReadinessRawBi
     bindingKey,
     resourceDeclarationId,
     evaluationInstantKey,
-    evaluationAt,
+    temporalInstantKey(evaluationAt),
     declarationLookupStatus,
     requirementTemporalRelation,
     resourceKeyRelation ?? "NONE",
@@ -357,7 +358,7 @@ function assertCandidateRawEvidenceAssessmentInvariant(
       );
     }
     for (const raw of assessment.raw_binding_evidence_assessments) {
-      if (raw.evaluation_at !== instant.evaluation_at) {
+      if (compareTemporalInstants(raw.evaluation_at, instant.evaluation_at) !== 0) {
         throw new Error(
           `RESOURCE_READINESS Raw Evidence Assessment temporal coherence violated for binding ${raw.resource_readiness_observation_context_binding_key}`
         );

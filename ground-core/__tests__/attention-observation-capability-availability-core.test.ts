@@ -397,7 +397,7 @@ function assertNoForbiddenSemantics(payload: unknown): void {
 describe("Attention Observation Capability Availability (GROUND-052)", () => {
   describe("CapabilityAvailability audit / purity / sibling architecture", () => {
     it("schema 0.1.24; Availability fields; consumes 050 not 051; no effective helpers", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

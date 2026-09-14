@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * Authority Evidence Evaluation State (GROUND-113).
@@ -112,7 +113,7 @@ export function attentionObservationOperationalEligibilityAuthorityEvidenceEvalu
     params.authorityPower,
     params.governanceScopeKey,
     params.evaluationInstantKey,
-    params.authorityEvaluationAt,
+    temporalInstantKey(params.authorityEvaluationAt),
     params.authorityProvenanceAssessmentCanonicalKey,
     params.authorityEvidenceEvaluationStateValueCanonicalKey,
   ].join("|");
@@ -138,7 +139,7 @@ export function attentionObservationOperationalEligibilityAuthorityEvidenceEvalu
     params.holderEntityId,
     params.authorityPower,
     params.governanceScopeKey,
-    params.authorityEvaluationAt,
+    temporalInstantKey(params.authorityEvaluationAt),
     params.authorityEvidenceEvaluationStateValueCanonicalKey,
     params.authorityEvidenceEvaluationStateBasisKey,
   ].join("|");
@@ -212,7 +213,7 @@ function assertProvenanceWrapperLineage(
       `AUTHORITY Evidence Evaluation State power mismatch for provenance wrapper ${wrapper.key}`
     );
   }
-  if (provenance.at !== wrapper.authority_evaluation_at) {
+  if (compareTemporalInstants(provenance.at, wrapper.authority_evaluation_at) !== 0) {
     throw new Error(
       `AUTHORITY Evidence Evaluation State evaluation-at mismatch for provenance wrapper ${wrapper.key}`
     );
@@ -222,7 +223,7 @@ function assertProvenanceWrapperLineage(
       `AUTHORITY Evidence Evaluation State direct-authority power mismatch for provenance wrapper ${wrapper.key}`
     );
   }
-  if (directAuthority.at !== wrapper.authority_evaluation_at) {
+  if (compareTemporalInstants(directAuthority.at, wrapper.authority_evaluation_at) !== 0) {
     throw new Error(
       `AUTHORITY Evidence Evaluation State direct-authority at mismatch for provenance wrapper ${wrapper.key}`
     );

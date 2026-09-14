@@ -319,7 +319,7 @@ describe("Resource Commitment (GROUND-034)", () => {
   describe("Migration / schema", () => {
     it("migrates 0.1.22 → 0.1.23 with empty Resource Commitment array", () => {
       const migrated = migrateProjectState(validProjectStateV0122);
-      assert.equal(migrated.schema_version, "0.1.24");
+      assert.equal(migrated.schema_version, "0.1.25");
       assert.deepEqual(migrated.intervention_resource_commitment_declarations, []);
     });
 
@@ -332,7 +332,7 @@ describe("Resource Commitment (GROUND-034)", () => {
     });
 
     it("SCHEMA_VERSION is 0.1.23", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
     });
   });
 

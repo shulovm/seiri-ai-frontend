@@ -991,7 +991,7 @@ describe("GROUND-139 RESOURCE_READINESS Evidence Interpretation Policy", () => {
     });
 
     it("schema 0.1.24; GROUND-133 only; no current 137/135/ProjectState", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

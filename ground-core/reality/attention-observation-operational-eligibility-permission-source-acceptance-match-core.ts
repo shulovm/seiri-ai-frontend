@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility Permission
  * Source Acceptance Match core (GROUND-097).
@@ -93,7 +94,7 @@ export function attentionObservationOperationalEligibilityPermissionSourceAccept
     params.permission_context_binding_key,
     params.permission_state_source_key,
     params.permission_state_basis_key,
-    params.permission_evaluation_at,
+    temporalInstantKey(params.permission_evaluation_at),
     params.permission_source_acceptance_criterion_key,
     params.permission_state,
     params.match,

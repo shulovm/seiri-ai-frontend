@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Situation / Salience formation (GROUND-009).
  *
@@ -99,10 +100,10 @@ function eventInWindow(
   }
   if (query.eventWindow) {
     const { from, until } = query.eventWindow;
-    return from <= event.occurred_at && event.occurred_at < until;
+    return compareTemporalInstants(from, event.occurred_at) <= 0 && compareTemporalInstants(event.occurred_at, until) < 0;
   }
   // No window: only exact point match at query.at (conservative).
-  return event.occurred_at === query.at;
+  return compareTemporalInstants(event.occurred_at, query.at) === 0;
 }
 
 function resolvePredicateScopes(
@@ -136,9 +137,9 @@ function situationKey(
   return [
     "sit",
     query.subjectId,
-    query.at,
+    temporalInstantKey(query.at),
     query.eventWindow
-      ? `${query.eventWindow.from}..${query.eventWindow.until}`
+      ? `${temporalInstantKey(query.eventWindow.from)}..${temporalInstantKey(query.eventWindow.until)}`
       : "",
     ...scopes.map((s) => `${s.predicateKind}:${s.predicate}`),
   ].join("|");
@@ -198,8 +199,8 @@ export function buildSituation(
       return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
     });
   const unplaced_events = worldline.unplaced_events.slice().sort((a, b) => {
-    if (a.recorded_at !== b.recorded_at) {
-      return a.recorded_at < b.recorded_at ? -1 : 1;
+    if (compareTemporalInstants(a.recorded_at, b.recorded_at) !== 0) {
+      return compareTemporalInstants(a.recorded_at, b.recorded_at) < 0 ? -1 : 1;
     }
     return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
   });

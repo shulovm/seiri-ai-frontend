@@ -208,7 +208,7 @@ function assertNoReadinessPolarity(payload: unknown): void {
 
 describe("GROUND-137 RESOURCE_READINESS Evidence Evaluation State", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("model limitations fixed order", () => {

@@ -109,7 +109,7 @@ describe("Reality Core Ontic Foundation", () => {
       assert.equal(next.reality_entities[0]?.id, ENTITY_ID);
       assert.equal(next.reality_entities[0]?.kind, "asset");
       assert.equal(next.reality_entities[0]?.project_id, PROJECT_ID);
-      assert.equal(next.schema_version, "0.1.24");
+      assert.equal(next.schema_version, "0.1.25");
     });
 
     it("persist/load roundtrip keeps stable ID and ownership", () => {
@@ -118,7 +118,7 @@ describe("Reality Core Ontic Foundation", () => {
       const loaded = loadProject(PROJECT_ID, { storageDir: tempDir });
       assert.equal(loaded.reality_entities[0]?.id, ENTITY_ID);
       assert.equal(loaded.reality_entities[0]?.project_id, PROJECT_ID);
-      assert.equal(loaded.schema_version, "0.1.24");
+      assert.equal(loaded.schema_version, "0.1.25");
     });
 
     it("rejects duplicate RealityEntity IDs", () => {
@@ -411,7 +411,7 @@ describe("Reality Core Ontic Foundation", () => {
 
     it("migration from previous schemas succeeds with empty Reality collections", () => {
       const from010 = migrateProjectState(validProjectStateV010);
-      assert.equal(from010.schema_version, "0.1.24");
+      assert.equal(from010.schema_version, "0.1.25");
       assert.deepEqual(from010.reality_entities, []);
       assert.deepEqual(from010.reality_events, []);
       assert.deepEqual(from010.reality_states, []);
@@ -419,7 +419,7 @@ describe("Reality Core Ontic Foundation", () => {
       assert.deepEqual(from010.claims, []);
 
       const from011 = migrateProjectState(validProjectStateV011);
-      assert.equal(from011.schema_version, "0.1.24");
+      assert.equal(from011.schema_version, "0.1.25");
       assert.deepEqual(from011.reality_entities, []);
       assert.deepEqual(from011.epistemic_observations, []);
     });

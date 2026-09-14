@@ -401,7 +401,7 @@ function reservationState(
 describe("Resource Reservation Capacity Pressure Basis (GROUND-037)", () => {
   describe("Schema / read-only / vocabulary", () => {
     it("schema remains 0.1.24 with no migration", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.equal(validProjectStateV0124.schema_version, "0.1.24");
     });
 

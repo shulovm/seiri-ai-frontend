@@ -553,7 +553,7 @@ describe("GROUND-083 Capability State", () => {
     });
 
     it("schema 0.1.24; 082-only runtime; no 080/081 matching", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

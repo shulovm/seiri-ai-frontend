@@ -381,7 +381,7 @@ describe("GROUND-123 Explicit Operational Eligibility AUTHORITY Source Aggregati
     });
 
     it("schema 0.1.24; 084 only; no 117–122; no HOLDS/match-count/result", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       assert.deepEqual(
         ATTENTION_OBSERVATION_OPERATIONAL_ELIGIBILITY_AUTHORITY_SOURCE_AGGREGATION_READINESS_POLICY_MODEL_LIMITATIONS.slice(
           0,

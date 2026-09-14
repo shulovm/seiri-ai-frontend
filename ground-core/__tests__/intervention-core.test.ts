@@ -13,6 +13,7 @@ import {
   findDeclaredInterventions,
   getApplicableInterventions,
   groupInterventionResourceRequirements,
+  groupInterventionCapabilityRequirements,
   isInterventionDeclarationActiveAt,
 } from "../reality/intervention-core.js";
 import {
@@ -184,7 +185,7 @@ describe("Intervention Core (GROUND-023)", () => {
   it("migrates 0.1.13 → 0.1.16 with empty permission collections", () => {
     assert.ok(validateProjectStateV0113(validProjectStateV0113).valid);
     const migrated = migrateProjectState(validProjectStateV0113);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
     assert.deepEqual(migrated.intervention_declarations, []);
     assert.deepEqual(migrated.intervention_capability_requirement_declarations, []);
     assert.deepEqual(migrated.intervention_resource_requirement_declarations, []);
@@ -835,4 +836,37 @@ describe("Intervention Core (GROUND-023)", () => {
       /referenced by intervention_capability_requirement/
     );
   });
+});
+
+it("persisted resource requirements keep independent resource and unit tuple identities", () => {
+  let state = applyPatch(baseProject(), patch("intervention_declaration", INT_A, intervention()));
+  for (const [id, resource_key, unit] of [[RES_REQ_A, "A|B", "C"], [RES_REQ_B, "A", "B|C"]]) {
+    state = applyPatch(state, patch("intervention_resource_requirement_declaration", id!, resReq({ id, resource_key, unit })));
+  }
+  const groups = groupInterventionResourceRequirements(state, INT_A, AT);
+  assert.equal(groups.length, 2);
+  assert.deepEqual(new Set(groups.map(g => JSON.stringify([g.resource_key, g.unit]))), new Set(['["A|B","C"]', '["A","B|C"]']));
+});
+
+it("capability name and scope remain independent even when names contain scope delimiters", () => {
+  let state = applyPatch(baseProject(), patch("intervention_declaration", INT_A, intervention()));
+  state = applyPatch(state, patch("intervention_capability_requirement_declaration", CAP_REQ_A, capReq({
+    capability_key: `inspect|SUBJECT_STATE|${ENTITY_PIPE}|condition`, capability_scope: { kind: "UNSCOPED" },
+  })));
+  state = applyPatch(state, patch("intervention_capability_requirement_declaration", CAP_REQ_B, capReq({
+    id: CAP_REQ_B, capability_key: "inspect", capability_scope: { kind: "SUBJECT_STATE", subject_id: ENTITY_PIPE, state_kind: "condition|UNSCOPED" },
+  })));
+  assert.equal(groupInterventionCapabilityRequirements(state, INT_A, AT).length, 2);
+});
+
+it("distinct declarer external-id and label tuples do not trigger false duplicate rejection", () => {
+  let state = applyPatch(baseProject(), patch("intervention_declaration", INT_A, intervention()));
+  state = applyPatch(state, patch("intervention_capability_requirement_declaration", CAP_REQ_A, capReq({
+    declared_by: { kind: "external", external_id: "a|b", label: "c" },
+  })));
+  state = applyPatch(state, patch("intervention_capability_requirement_declaration", CAP_REQ_B, capReq({
+    id: CAP_REQ_B, declared_by: { kind: "external", external_id: "a", label: "b|c" },
+  })));
+  assert.equal(state.intervention_capability_requirement_declarations.length, 2);
+  assert.equal(groupInterventionCapabilityRequirements(state, INT_A, AT)[0]!.requirement_declaration_ids.length, 2);
 });

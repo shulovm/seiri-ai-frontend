@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Capability Temporal Requirement (GROUND-056).
  *
@@ -80,8 +81,8 @@ export function buildCanonicalCapabilityTemporalRequirementWindowKey(
 ): string {
   return [
     "REQUIRED_WINDOW",
-    window.required_from,
-    window.required_until === null ? "OPEN" : window.required_until,
+    temporalInstantKey(window.required_from),
+    window.required_until === null ? "OPEN" : temporalInstantKey(window.required_until),
   ].join("|");
 }
 
@@ -130,7 +131,7 @@ export function assertValidRequiredCapabilityTemporalWindow(
     }
     // Half-open [from, until): until must be strictly after from
     // (same convention as CapabilityDeclaration: valid_until must be after valid_from)
-    if (window.required_until <= window.required_from) {
+    if (compareTemporalInstants(window.required_until, window.required_from) <= 0) {
       throw new Error(
         "Capability Temporal Requirement required_until must be after required_from"
       );

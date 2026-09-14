@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Permission State (GROUND-091).
  *
@@ -82,7 +83,7 @@ export function attentionObservationPermissionStateKey(
     capabilityRequirementSetKey,
     permissionContextBindingKey,
     currentDeclaredPermissionAssessmentKey,
-    permissionEvaluationAt,
+    temporalInstantKey(permissionEvaluationAt),
     permissionState,
     declaredPermissionInterpretationBasisKey ?? "none",
     declaredPermissionInterpretationPolicyKey ?? "none",
@@ -218,8 +219,7 @@ function buildPermissionStateBasis(
       );
     }
     if (
-      interpretationBasis.permission_evaluation_at !==
-      permissionBinding.permission_evaluation_at
+      compareTemporalInstants(interpretationBasis.permission_evaluation_at, permissionBinding.permission_evaluation_at) !== 0
     ) {
       throw new Error(
         `Stale Declared Permission Interpretation Basis for binding ${assessment.permission_context_binding_key}: evaluation instant mismatch`

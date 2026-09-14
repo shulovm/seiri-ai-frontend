@@ -18,7 +18,7 @@ import {
   validProjectStateV013,
   validProjectStateV014,
   validProjectStateV015,
-  validProjectStateV0124,
+  validProjectStateV0125,
   validStatePatchStatusChange,
   validStatePatchUpsert,
 } from "./fixtures.js";
@@ -26,7 +26,7 @@ import { migrateProjectState } from "../migrate.js";
 
 describe("validateProjectState v0.1.16", () => {
   it("accepts a minimal valid v0.1.16 ProjectState", () => {
-    const result = validateProjectState(validProjectStateV0124);
+    const result = validateProjectState(validProjectStateV0125);
     assert.equal(result.valid, true);
   });
 
@@ -34,17 +34,17 @@ describe("validateProjectState v0.1.16", () => {
     const migrated = migrateProjectState(validProjectStateV010);
     const result = validateProjectState(migrated);
     assert.equal(result.valid, true);
-    assert.equal(migrated.schema_version, "0.1.24");
+    assert.equal(migrated.schema_version, "0.1.25");
   });
 
   it("rejects missing schema_version", () => {
-    const { schema_version: _removed, ...invalid } = validProjectStateV0124;
+    const { schema_version: _removed, ...invalid } = validProjectStateV0125;
     const result = validateProjectState(invalid);
     assert.equal(result.valid, false);
   });
 
   it("rejects invalid project id format", () => {
-    const invalid = structuredClone(validProjectStateV0124);
+    const invalid = structuredClone(validProjectStateV0125);
     invalid.project.id = "not-a-uuid";
     const result = validateProjectState(invalid);
     assert.equal(result.valid, false);
@@ -52,7 +52,7 @@ describe("validateProjectState v0.1.16", () => {
 
   it("rejects wrong schema_version", () => {
     const invalid = {
-      ...structuredClone(validProjectStateV0124),
+      ...structuredClone(validProjectStateV0125),
       schema_version: "0.2.0",
     };
     const result = validateProjectState(invalid);

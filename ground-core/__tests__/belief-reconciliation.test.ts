@@ -534,3 +534,14 @@ describe("Belief & Reconciliation (GROUND-005)", () => {
     assert.equal(conflicts[0]?.conflict_kind, "duplicate_overlap");
   });
 });
+
+it("Belief preserves distinct provenance tuples containing separator characters", () => {
+  const p = withEntityAndClaims([
+    claim({ id: CLAIM_A, provenance: { kind: "document", external_id: "a\u0000b", label: "c" } }),
+    claim({ id: CLAIM_B, provenance: { kind: "document", external_id: "a", label: "b\u0000c" } }),
+  ]);
+  const assessment = assessBeliefAt(p, { subjectId: ENTITY_ID, predicateKind: "state", predicate: "condition", at: AT });
+  assert.equal(assessment.positions.length, 1);
+  assert.equal(assessment.positions[0]!.provenance_summary.length, 2);
+  assert.equal(assessment.status, "UNCONTESTED"); // provenance does not vote on truth
+});

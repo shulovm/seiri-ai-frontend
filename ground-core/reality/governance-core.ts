@@ -1,3 +1,5 @@
+import { canonicalValueKey } from "./semantic-equality.js";
+import { compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Governance Core assessment (GROUND-019).
  *
@@ -35,12 +37,7 @@ function sortUniqueIds(ids: string[]): string[] {
 }
 
 function declarerKey(declarer: ReferenceDeclarer): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function sortDeclarers(declarers: ReferenceDeclarer[]): ReferenceDeclarer[] {
@@ -85,13 +82,13 @@ export function isGovernanceDeclarationActiveAt(
   declaration: { valid_from: string; valid_until: string | null },
   at: string
 ): boolean {
-  if (declaration.valid_from > at) {
+  if (compareTemporalInstants(declaration.valid_from, at) > 0) {
     return false;
   }
   if (declaration.valid_until === null) {
     return true;
   }
-  return at < declaration.valid_until;
+  return compareTemporalInstants(at, declaration.valid_until) < 0;
 }
 
 function compareAuthorityDeclarations(
@@ -110,8 +107,8 @@ function compareAuthorityDeclarations(
   if (scopeCmp !== 0) {
     return scopeCmp;
   }
-  if (a.valid_from !== b.valid_from) {
-    return a.valid_from < b.valid_from ? -1 : 1;
+  if (compareTemporalInstants(a.valid_from, b.valid_from) !== 0) {
+    return compareTemporalInstants(a.valid_from, b.valid_from) < 0 ? -1 : 1;
   }
   return compareIds(a.id, b.id);
 }
@@ -129,8 +126,8 @@ function compareStandingDeclarations(
   if (scopeCmp !== 0) {
     return scopeCmp;
   }
-  if (a.valid_from !== b.valid_from) {
-    return a.valid_from < b.valid_from ? -1 : 1;
+  if (compareTemporalInstants(a.valid_from, b.valid_from) !== 0) {
+    return compareTemporalInstants(a.valid_from, b.valid_from) < 0 ? -1 : 1;
   }
   return compareIds(a.id, b.id);
 }
@@ -145,8 +142,8 @@ function compareMandateDeclarations(
   if (a.holder_entity_id !== b.holder_entity_id) {
     return compareIds(a.holder_entity_id, b.holder_entity_id);
   }
-  if (a.valid_from !== b.valid_from) {
-    return a.valid_from < b.valid_from ? -1 : 1;
+  if (compareTemporalInstants(a.valid_from, b.valid_from) !== 0) {
+    return compareTemporalInstants(a.valid_from, b.valid_from) < 0 ? -1 : 1;
   }
   return compareIds(a.id, b.id);
 }

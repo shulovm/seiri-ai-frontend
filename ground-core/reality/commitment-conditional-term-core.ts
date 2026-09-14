@@ -1,3 +1,4 @@
+import { canonicalValueKey } from "./semantic-equality.js";
 /**
  * Reality Core v0.7 — Commitment Conditional Term assessment (GROUND-033).
  *
@@ -47,12 +48,7 @@ function compareRoles(
 }
 
 function declarerKey(declarer: ReferenceDeclarer): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function sortDeclarers(declarers: ReferenceDeclarer[]): ReferenceDeclarer[] {

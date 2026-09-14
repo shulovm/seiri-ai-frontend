@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Normative Discovery (GROUND-012).
  *
@@ -129,7 +130,7 @@ function findingFromComparison(
       kind,
       assessment.subject_id,
       assessment.state_kind,
-      assessment.at,
+      temporalInstantKey(assessment.at),
       comparison.reference_condition_id,
     ].join("|"),
     kind,
@@ -194,7 +195,7 @@ function discoverFromReferenceAssessment(
         "CURRENT_STATE_CONFLICT",
         assessment.subject_id,
         assessment.state_kind,
-        assessment.at,
+        temporalInstantKey(assessment.at),
       ].join("|"),
       kind: "CURRENT_STATE_CONFLICT",
       subject_id: assessment.subject_id,
@@ -223,7 +224,7 @@ function discoverFromReferenceAssessment(
         "CURRENT_STATE_MISSING",
         assessment.subject_id,
         assessment.state_kind,
-        assessment.at,
+        temporalInstantKey(assessment.at),
       ].join("|"),
       kind: "CURRENT_STATE_MISSING",
       subject_id: assessment.subject_id,

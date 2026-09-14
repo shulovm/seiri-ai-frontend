@@ -1,5 +1,5 @@
 /** Run unchanged legacy tests in a disposable, repository-only test workspace. */
-import {cpSync,mkdtempSync,readdirSync,writeFileSync,symlinkSync} from 'node:fs';
+import {cpSync,mkdtempSync,readdirSync,readFileSync,writeFileSync,symlinkSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {resolve,join} from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -11,6 +11,14 @@ for(const name of ['ground-core','docs','scripts','package.json','package-lock.j
  cpSync(join(root,name),join(scratch,name),{recursive:true,filter:p=>!p.startsWith(join(root,'ground-core/storage'))});
 }
 symlinkSync(join(root,'node_modules'),join(scratch,'node_modules'),'dir');
+// The independent repository supports ignore checks and exact historical Git blobs.
+// Import only the two declared checkpoint histories from this source repository.
+const init=spawnSync('git',['init','--quiet',scratch],{cwd:scratch,stdio:'inherit'});
+if(init.status!==0)process.exit(init.status??1);
+const transition=JSON.parse(readFileSync(join(root,'docs/contract-evolution/schema24-to25.json'),'utf8'));
+const history=spawnSync('git',['fetch','--quiet','--no-tags','--no-write-fetch-head',root,
+ transition.previousAuthority.checkpoint,transition.approvedTransition.targetCheckpoint],{cwd:scratch,stdio:'inherit'});
+if(history.status!==0)process.exit(history.status??1);
 writeFileSync(join(scratch,'.ground-repro-test-workspace'),'GROUND-REPRO-001\n',{flag:'wx'});
 const generate=spawnSync(process.execPath,['--import','tsx',join(root,'scripts/repro/setup-fixtures.ts'),scratch],{cwd:scratch,stdio:'inherit'});
 if(generate.status!==0)process.exit(generate.status??1);

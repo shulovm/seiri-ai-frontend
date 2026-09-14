@@ -356,7 +356,7 @@ describe("Commitment Conditional Terms (GROUND-033)", () => {
   describe("Migration", () => {
     it("migrates 0.1.21 → 0.1.22 with empty Conditional Term array", () => {
       const migrated = migrateProjectState(validProjectStateV0121);
-      assert.equal(migrated.schema_version, "0.1.24");
+      assert.equal(migrated.schema_version, "0.1.25");
       assert.deepEqual(
         migrated.intervention_commitment_conditional_term_declarations,
         []
@@ -372,7 +372,7 @@ describe("Commitment Conditional Terms (GROUND-033)", () => {
     });
 
     it("SCHEMA_VERSION is 0.1.22", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
     });
   });
 

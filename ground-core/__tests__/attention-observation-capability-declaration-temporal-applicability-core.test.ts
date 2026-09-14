@@ -368,7 +368,7 @@ function assertNoForbiddenSemantics(payload: unknown): void {
 describe("Attention Observation Capability Declaration Temporal Applicability (GROUND-057)", () => {
   describe("Interval semantics / purity / architecture", () => {
     it("schema 0.1.24; half-open helpers; no 051–055 / ActiveAt / wall-clock / fake infinity", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

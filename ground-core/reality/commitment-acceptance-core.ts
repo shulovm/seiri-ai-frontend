@@ -1,3 +1,5 @@
+import { canonicalValueKey } from "./semantic-equality.js";
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Commitment Acceptance assessment (GROUND-031).
  *
@@ -33,12 +35,7 @@ function compareIds(a: string, b: string): number {
 }
 
 function declarerKey(declarer: ReferenceDeclarer): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function sortDeclarers(declarers: ReferenceDeclarer[]): ReferenceDeclarer[] {
@@ -64,15 +61,15 @@ export function commitmentAcceptanceSemanticKey(
   commitmentSemanticKey: string,
   acceptedAt: string
 ): string {
-  return `commitment-acceptance|${commitmentSemanticKey}|${acceptedAt}`;
+  return `commitment-acceptance|${commitmentSemanticKey}|${temporalInstantKey(acceptedAt)}`;
 }
 
 export function compareInterventionCommitmentAcceptanceDeclarations(
   a: InterventionCommitmentAcceptanceDeclaration,
   b: InterventionCommitmentAcceptanceDeclaration
 ): number {
-  if (a.accepted_at !== b.accepted_at) {
-    return a.accepted_at < b.accepted_at ? -1 : 1;
+  if (compareTemporalInstants(a.accepted_at, b.accepted_at) !== 0) {
+    return compareTemporalInstants(a.accepted_at, b.accepted_at) < 0 ? -1 : 1;
   }
   return compareIds(a.id, b.id);
 }
@@ -197,8 +194,8 @@ function groupAcceptanceDeclarationsIntoPositions(
   }
 
   return positions.sort((a, b) => {
-    if (a.accepted_at !== b.accepted_at) {
-      return a.accepted_at < b.accepted_at ? -1 : 1;
+    if (compareTemporalInstants(a.accepted_at, b.accepted_at) !== 0) {
+      return compareTemporalInstants(a.accepted_at, b.accepted_at) < 0 ? -1 : 1;
     }
     return a.key.localeCompare(b.key);
   });

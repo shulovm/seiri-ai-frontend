@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * Authority Evidence Evaluation State Interpretation Basis (GROUND-115).
@@ -101,7 +102,7 @@ export function attentionObservationOperationalEligibilityAuthorityEvidenceEvalu
     params.authority_power,
     params.governance_scope_key,
     params.authority_evaluation_instant_key,
-    params.authority_evaluation_at,
+    temporalInstantKey(params.authority_evaluation_at),
     params.authority_evidence_evaluation_state_key,
     params.authority_evidence_evaluation_state_basis_key,
     params.authority_evidence_evaluation_state_value_canonical_key,
@@ -214,7 +215,7 @@ function assertCurrentStateSelfConsistency(
     state.authority_holder_entity_id !== basis.authority_holder_entity_id ||
     state.authority_power !== basis.authority_power ||
     state.governance_scope_key !== basis.governance_scope_key ||
-    state.authority_evaluation_at !== basis.authority_evaluation_at
+    compareTemporalInstants(state.authority_evaluation_at, basis.authority_evaluation_at) !== 0
   ) {
     throw new Error(
       `Authority Evidence Evaluation State Interpretation Basis invariant violated: State/Basis context mismatch for State ${state.key}`

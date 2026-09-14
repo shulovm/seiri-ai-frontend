@@ -1,6 +1,7 @@
 /** GROUND Core — Project Graph / State Engine types */
 
-export const SCHEMA_VERSION = "0.1.24" as const;
+export const SCHEMA_VERSION = "0.1.25" as const;
+export const SCHEMA_VERSION_V0124 = "0.1.24" as const;
 export const SCHEMA_VERSION_V0123 = "0.1.23" as const;
 export const SCHEMA_VERSION_V0122 = "0.1.22" as const;
 export const SCHEMA_VERSION_V0121 = "0.1.21" as const;
@@ -28,6 +29,7 @@ export const LEGACY_SCHEMA_VERSION = "0.1.0" as const;
 
 export type SchemaVersion =
   | typeof SCHEMA_VERSION
+  | typeof SCHEMA_VERSION_V0124
   | typeof SCHEMA_VERSION_V0123
   | typeof SCHEMA_VERSION_V0122
   | typeof SCHEMA_VERSION_V0121
@@ -1421,6 +1423,17 @@ export interface DecisionContextSnapshotV1 {
   intervention_option_ids_without_actor_candidates: string[];
 }
 
+/** Persistence-time fact, bound to exact frozen content. Not current revalidation. */
+export type DecisionSnapshotVerification = {
+  decision_id: string;
+  snapshot_content_digest: string;
+} & (
+  | { status: "VERIFIED"; persisted_at: string }
+  | { status: "UNVERIFIED"; persisted_at: string; reason: "TEMPORAL_RESOLUTION_UNAVAILABLE";
+      temporal_declaration: string; temporal_operation: string; temporal_reason: string }
+  | { status: "NOT_RECORDED"; persisted_at: null; reason: "LEGACY_VERIFICATION_FACT_NOT_RECORDED" }
+);
+
 /**
  * Canonical persisted record of an actual declared Decision.
  * chosen != correct / feasible / authorized / committed / executed.
@@ -1436,6 +1449,8 @@ export interface RealityDecisionDeclaration {
   decided_at: string;
   rationale?: string | null;
   context_snapshot: DecisionContextSnapshotV1;
+  /** Optional only for historical TypeScript inputs; canonical schema requires this. */
+  snapshot_verification?: DecisionSnapshotVerification;
   declared_by: ReferenceDeclarer;
   recorded_at: string;
   created_at: string;

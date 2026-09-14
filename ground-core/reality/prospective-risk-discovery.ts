@@ -1,3 +1,4 @@
+import { compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Prospective Risk Discovery (GROUND-016).
  *
@@ -40,8 +41,8 @@ function compareRiskFindings(
   a: ProspectiveRiskFinding,
   b: ProspectiveRiskFinding
 ): number {
-  if (a.projected_for !== b.projected_for) {
-    return a.projected_for < b.projected_for ? -1 : 1;
+  if (compareTemporalInstants(a.projected_for, b.projected_for) !== 0) {
+    return compareTemporalInstants(a.projected_for, b.projected_for) < 0 ? -1 : 1;
   }
   if (a.subject_id !== b.subject_id) {
     return compareIds(a.subject_id, b.subject_id);
@@ -164,8 +165,8 @@ function buildRiskFindings(
           likelihood_estimators: likelihood_assessment.estimates
             .slice()
             .sort((a, b) => {
-              if (a.estimated_at !== b.estimated_at) {
-                return a.estimated_at < b.estimated_at ? -1 : 1;
+              if (compareTemporalInstants(a.estimated_at, b.estimated_at) !== 0) {
+                return compareTemporalInstants(a.estimated_at, b.estimated_at) < 0 ? -1 : 1;
               }
               return compareIds(a.id, b.id);
             })

@@ -1,0 +1,80 @@
+{
+  "id": "GROUND-CONTRACT-EVOLUTION-001",
+  "approval": {
+    "scope": "Adopt the previously approved core checkpoint into the clean Integration base; separate historical and current applicability of the three named contracts.",
+    "basis": "Explicit user instruction: GROUND CORE INTEGRATION — CONTRACT EVOLUTION IMPLEMENTATION, 2026-09-14. This record does not grant authority to arbitrary future checkpoints.",
+    "adoptionDocument": "docs/GROUND_DECISION_SNAPSHOT_VERIFICATION.md"
+  },
+  "previousAuthority": {
+    "checkpoint": "9cb9dc6fe2ac522679abc970c5a7daa08bcd253b",
+    "schemaVersion": "0.1.24",
+    "sourceApprovals": "ground-core/__tests__/fixtures/nl-approved-source-hashes.json"
+  },
+  "approvedTransition": {
+    "commonAncestor": "650a8c00416b77d36c7318bc73fd8f1991f95a4e",
+    "introducingCommit": "aed4eb7a07414a9d8df07fb7a91e1b2f8fafb595",
+    "targetCheckpoint": "8c0570cf3eb272fd932daa620807b012dad9be34",
+    "schemaFrom": "0.1.24",
+    "schemaTo": "0.1.25",
+    "commitCount": 14,
+    "corePathCount": 285,
+    "excludedCoreDiffPaths": [
+      ".gitignore"
+    ]
+  },
+  "integration": {
+    "inputCandidateDiffSHA256": "d41077452da59accf7567ba650f583dc87b218dfad4e1bc61f0c23650ed05a0c",
+    "composition": "previousAuthority tree + approvedTransition diff, excluding its .gitignore + explicitly reviewed integration support and contract implementation paths",
+    "supportFiles": [
+      {
+        "path": ".gitignore",
+        "sha256": "c4f717aa203f52804beb9ee0fac2c19525470ce157dc1c1f9522e293772fc99a"
+      }
+    ],
+    "implementationPaths": [
+      "docs/contract-evolution/schema24-to25.json",
+      "docs/GROUND_CONTRACT_EVOLUTION.md",
+      "ground-core/__tests__/contract-evolution.ts",
+      "ground-core/__tests__/contract-evolution.test.ts",
+      "ground-core/__tests__/historical-reality-round5.test.ts",
+      "ground-core/__tests__/historical-reality-round6.test.ts",
+      "scripts/repro/test-ground.mjs"
+    ]
+  },
+  "historicalContracts": [
+    {
+      "manifest": "ground-core/experimental/historical-reality/round5/immutable-baseline.json",
+      "fileCount": 675,
+      "contract": "historical-reality-round5.test.ts:21"
+    },
+    {
+      "manifest": "ground-core/experimental/historical-reality/round6/immutable-baseline.json",
+      "fileCount": 703,
+      "contract": "historical-reality-round6.test.ts:16"
+    }
+  ],
+  "currentApplicabilityChanges": [
+    {
+      "contract": "historical-reality-round5.test.ts:21",
+      "historical": "Original manifest plus original reviewed intake approvals remain checked against previousAuthority.checkpoint.",
+      "current": "Whole current source is checked against explicit Integration composition, not old hashes."
+    },
+    {
+      "contract": "historical-reality-round6.test.ts:16",
+      "historical": "Round5 proof source and original manifest remain checked at previousAuthority.checkpoint.",
+      "current": "Whole current source is checked against explicit Integration composition, not old hashes."
+    },
+    {
+      "contract": "historical-reality-round5.test.ts:24",
+      "historical": "Previous canonical schema and original proof are retained at previousAuthority.checkpoint.",
+      "current": "Keep world-target rejection and composition schema non-mutation; canonical version is tied to the approved target."
+    }
+  ],
+  "preservation": {
+    "historicalArtifactManifest": "docs/repro-001/historical-artifacts.json",
+    "artifactCount": 182,
+    "eternalSourceByteFreeze": false,
+    "automaticSupersessionByDate": false,
+    "futureAuthorityChangeRequires": "A new explicitly reviewed transition record; neither SCHEMA_VERSION alone nor current bytes can authorize a new target."
+  }
+}

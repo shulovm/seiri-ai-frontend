@@ -1,3 +1,4 @@
+import { canonicalValueKey } from "./semantic-equality.js";
 /**
  * Reality Core v0.7 — Attention Observation Capability Requirement (GROUND-048).
  *
@@ -72,11 +73,9 @@ export function attentionObservationCapabilityRequirementKey(
   observationNeedKey: string,
   capabilitySemanticKey: CanonicalCapabilitySemanticKey
 ): string {
-  return [
-    "attention-observation-capability-requirement",
-    observationNeedKey,
-    capabilitySemanticKey,
-  ].join("|");
+  return "attention-observation-capability-requirement|" + canonicalValueKey([
+    observationNeedKey, capabilitySemanticKey,
+  ]);
 }
 
 /**
@@ -111,10 +110,9 @@ export function normalizeAttentionObservationCapabilityRequirementSpecification(
       );
     }
 
-    const pairKey = [
-      req.observation_need_key,
-      req.capability_semantic_key,
-    ].join("|");
+    const pairKey = attentionObservationCapabilityRequirementKey(
+      req.observation_need_key, req.capability_semantic_key
+    );
     byPair.set(pairKey, {
       observation_need_key: req.observation_need_key,
       capability_semantic_key: req.capability_semantic_key,

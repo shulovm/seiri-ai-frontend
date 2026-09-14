@@ -751,7 +751,7 @@ describe("GROUND-078 Capability Requirement Set Composition Readiness Basis", ()
 
   describe("static proofs / schema", () => {
     it("schema 0.1.24; 075+077 only; no 076/074/073/072; no composition execution", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
 
       const core = readFileSync(
         join(

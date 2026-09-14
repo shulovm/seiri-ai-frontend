@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Declared Resource Availability
  * Source Aggregation Readiness Basis (GROUND-182).
@@ -190,7 +191,7 @@ export function declaredResourceAvailabilitySourceAggregationReadinessBasisKey(p
   return [
     "declared-resource-availability-source-aggregation-readiness-basis",
     params.resource_declaration_id,
-    params.evaluation_at,
+    temporalInstantKey(params.evaluation_at),
     params.availability_source_aggregation_policy_key,
     params.availability_source_aggregation_readiness_policy_key,
     params.readiness_rule,
@@ -239,7 +240,7 @@ function indexCurrentStatesByAvailabilityDeclarationId(
   >();
 
   for (const state of evidenceStateSet.source_evidence_states) {
-    if (state.evaluation_at !== evidenceStateSet.evaluation_at) {
+    if (compareTemporalInstants(state.evaluation_at, evidenceStateSet.evaluation_at) !== 0) {
       throw new Error(
         `Malformed GROUND-179 Set: source State evaluation_at ${state.evaluation_at} diverges from Set evaluation_at ${evidenceStateSet.evaluation_at}`
       );

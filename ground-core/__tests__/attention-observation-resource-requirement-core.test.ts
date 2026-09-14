@@ -174,7 +174,7 @@ function assertNoReadinessSemantics(payload: unknown): void {
 
 describe("GROUND-132 Observation Resource Requirement", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("model limitations fixed order", () => {
@@ -485,10 +485,10 @@ describe("GROUND-132 Observation Resource Requirement", () => {
       assert.ok(
         !/from ["'].*operational-eligibility-authority-dimension/.test(src)
       );
-      assert.ok(coreSrc.includes("./intervention-core.js"));
-      assert.ok(coreSrc.includes("./resource-core.js"));
-      assert.ok(coreSrc.includes("resourceRequirementAmountKey"));
-      assert.ok(coreSrc.includes("resourceScopeKey"));
+      assert.ok(coreSrc.includes("./semantic-equality.js"));
+      assert.ok(coreSrc.includes("canonicalValueKey"));
+      assert.ok(!/from ["'].*intervention-core/.test(coreSrc));
+      assert.ok(!/from ["'].*resource-core/.test(coreSrc));
     });
 
     it("no wall-clock", () => {
@@ -979,4 +979,37 @@ describe("GROUND-132 Observation Resource Requirement", () => {
       ["a", "a", "b"]
     );
   });
+});
+
+it("normalization deduplicates equivalent temporal requirement declarations", () => {
+  const spec = normalizeAttentionObservationResourceRequirementSpecification(mockRequirementSet(), {
+    candidate_requirement_sets: [{ candidate_key: CAND, requirements: [
+      mockRequirement({ valid_from: AT_FROM, valid_until: AT_UNTIL }),
+      mockRequirement({ valid_from: "2026-09-01T19:00:00+09:00", valid_until: "2026-09-02T19:00:00+09:00" }),
+    ] }],
+  });
+  assert.equal(spec.candidate_requirement_sets[0]!.requirements.length, 1);
+});
+
+it("distinct resource and unit tuples cannot collapse across delimiter boundaries", () => {
+  const inputs = [mockRequirement({ resource_key: "A|B", unit: "C" }), mockRequirement({ resource_key: "A", unit: "B|C" })];
+  const set = build132(mockRequirementSet(), { candidate_requirement_sets: [{ candidate_key: CAND, requirements: inputs }] });
+  const requirements = set.candidate_assessments[0]!.resource_requirements;
+  assert.equal(requirements.length, 2);
+  assert.equal(new Set(requirements.map(r => r.key)).size, 2);
+  assert.deepEqual(new Set(requirements.map(r => JSON.stringify([r.resource_key, r.unit]))), new Set(inputs.map(r => JSON.stringify([r.resource_key, r.unit]))));
+});
+
+it("distinct candidate requirement sets cannot compare equal through ambiguous serialization", () => {
+  assert.throws(() => normalizeAttentionObservationResourceRequirementSpecification(mockRequirementSet(), { candidate_requirement_sets: [
+    { candidate_key: CAND, requirements: [mockRequirement({ resource_key: "A|B", unit: "C" })] },
+    { candidate_key: CAND, requirements: [mockRequirement({ resource_key: "A", unit: "B|C" })] },
+  ] }), /Conflicting Observation Resource Requirement sets/);
+});
+
+it("Requirement set identity preserves member boundaries, including commas and empty-set marker", () => {
+  const key = (members: string[]) => buildAttentionObservationResourceRequirementSetKey(CAND, NEED_KEY, "cap", members);
+  assert.notEqual(key(["a,b", "c"]), key(["a", "b,c"]));
+  assert.notEqual(key([]), key([EMPTY_OBSERVATION_RESOURCE_REQUIREMENT_SET]));
+  assert.equal(key(["a,b", "c"]), key(["c", "a,b"]));
 });

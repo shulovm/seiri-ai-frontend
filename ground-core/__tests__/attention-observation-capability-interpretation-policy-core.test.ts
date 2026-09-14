@@ -779,7 +779,7 @@ describe("GROUND-081 Explicit Capability Interpretation Policy", () => {
     });
 
     it("schema 0.1.24; 048-only runtime; type-only 080; no current matching", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

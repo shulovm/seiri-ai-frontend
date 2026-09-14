@@ -304,7 +304,7 @@ function deepClone<T>(value: T): T {
 
 describe("GROUND-155 Explicit Per-binding Physical Potential Contribution Declaration", () => {
   it("schema unchanged at 0.1.24", () => {
-    assert.equal(SCHEMA_VERSION, "0.1.24");
+    assert.equal(SCHEMA_VERSION, "0.1.25");
   });
 
   it("model limitations fixed order", () => {

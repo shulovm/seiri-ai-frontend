@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * Explicit Per-binding RESOURCE_READINESS Physical Potential Contribution
@@ -86,7 +87,7 @@ export function attentionObservationOperationalEligibilityResourceReadinessPhysi
     params.observation_resource_requirement_key,
     params.resource_readiness_observation_context_binding_key,
     params.resource_declaration_id,
-    params.evaluation_at,
+    temporalInstantKey(params.evaluation_at),
   ].join("|");
 }
 
@@ -128,7 +129,7 @@ export function attentionObservationOperationalEligibilityResourceReadinessPhysi
     params.observation_resource_requirement_key,
     params.resource_readiness_observation_context_binding_key,
     params.resource_declaration_id,
-    params.evaluation_at,
+    temporalInstantKey(params.evaluation_at),
     params.declared_potential_contribution_quantity_canonical_key,
   ].join("|");
 }

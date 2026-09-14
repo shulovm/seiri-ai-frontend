@@ -57,7 +57,7 @@ describe("cli commands", () => {
     const projectId = cmdInit(["--title", "Show Project"], runtimeOptions());
     const output = cmdShow(projectId, runtimeOptions());
 
-    assert.match(output, /^\{\n  "schema_version": "0.1.24"/);
+    assert.match(output, /^\{\n  "schema_version": "0.1.25"/);
     assert.match(output, /"title": "Show Project"/);
   });
 

@@ -695,7 +695,7 @@ describe("GROUND-111 Observation-Context AUTHORITY Provenance Assessment", () =>
     });
 
     it("schema 0.1.24; 020 only; no independent 019/Delegation/Standing/Permission", () => {
-      assert.equal(SCHEMA_VERSION, "0.1.24");
+      assert.equal(SCHEMA_VERSION, "0.1.25");
       const core = readFileSync(
         join(
           __dirnameTest,

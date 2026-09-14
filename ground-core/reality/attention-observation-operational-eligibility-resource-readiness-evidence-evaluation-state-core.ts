@@ -1,3 +1,4 @@
+import { temporalInstantKey } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * RESOURCE_READINESS Evidence Evaluation State (GROUND-137).
@@ -111,7 +112,7 @@ export function attentionObservationOperationalEligibilityResourceReadinessEvide
     params.bindingKey,
     params.resourceDeclarationId,
     params.evaluationInstantKey,
-    params.evaluationAt,
+    temporalInstantKey(params.evaluationAt),
     params.rawBindingEvidenceAssessmentKey,
     params.evaluationStateValueCanonicalKey,
   ].join("|");

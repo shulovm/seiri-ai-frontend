@@ -1,3 +1,5 @@
+import { canonicalValueKey } from "./semantic-equality.js";
+import { compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Resource Core I assessment (GROUND-022).
  *
@@ -31,12 +33,7 @@ function compareIds(a: string, b: string): number {
 }
 
 function declarerKey(declarer: ReferenceDeclarer): string {
-  return [
-    declarer.kind,
-    declarer.entity_id ?? "",
-    declarer.external_id ?? "",
-    declarer.label ?? "",
-  ].join("|");
+  return canonicalValueKey([declarer.kind, declarer.entity_id ?? "", declarer.external_id ?? "", declarer.label ?? ""]);
 }
 
 function sortDeclarers(declarers: ReferenceDeclarer[]): ReferenceDeclarer[] {
@@ -81,39 +78,39 @@ export function isResourceDeclarationActiveAt(
   declaration: ResourceDeclaration,
   at: string
 ): boolean {
-  if (declaration.valid_from > at) {
+  if (compareTemporalInstants(declaration.valid_from, at) > 0) {
     return false;
   }
   if (declaration.valid_until === null) {
     return true;
   }
-  return at < declaration.valid_until;
+  return compareTemporalInstants(at, declaration.valid_until) < 0;
 }
 
 export function isResourceCapacityActiveAt(
   declaration: ResourceCapacityDeclaration,
   at: string
 ): boolean {
-  if (declaration.valid_from > at) {
+  if (compareTemporalInstants(declaration.valid_from, at) > 0) {
     return false;
   }
   if (declaration.valid_until === null) {
     return true;
   }
-  return at < declaration.valid_until;
+  return compareTemporalInstants(at, declaration.valid_until) < 0;
 }
 
 export function isResourceAvailabilityActiveAt(
   declaration: ResourceAvailabilityDeclaration,
   at: string
 ): boolean {
-  if (declaration.valid_from > at) {
+  if (compareTemporalInstants(declaration.valid_from, at) > 0) {
     return false;
   }
   if (declaration.valid_until === null) {
     return true;
   }
-  return at < declaration.valid_until;
+  return compareTemporalInstants(at, declaration.valid_until) < 0;
 }
 
 function compareResourceDeclarations(
@@ -135,8 +132,8 @@ function compareResourceDeclarations(
   if (scopeCmp !== 0) {
     return scopeCmp;
   }
-  if (a.valid_from !== b.valid_from) {
-    return a.valid_from < b.valid_from ? -1 : 1;
+  if (compareTemporalInstants(a.valid_from, b.valid_from) !== 0) {
+    return compareTemporalInstants(a.valid_from, b.valid_from) < 0 ? -1 : 1;
   }
   return compareIds(a.id, b.id);
 }
@@ -145,8 +142,8 @@ function compareCapacities(
   a: ResourceCapacityDeclaration,
   b: ResourceCapacityDeclaration
 ): number {
-  if (a.valid_from !== b.valid_from) {
-    return a.valid_from < b.valid_from ? -1 : 1;
+  if (compareTemporalInstants(a.valid_from, b.valid_from) !== 0) {
+    return compareTemporalInstants(a.valid_from, b.valid_from) < 0 ? -1 : 1;
   }
   const capCmp = resourceCapacityKey(a.capacity).localeCompare(
     resourceCapacityKey(b.capacity)
@@ -161,8 +158,8 @@ function compareAvailabilities(
   a: ResourceAvailabilityDeclaration,
   b: ResourceAvailabilityDeclaration
 ): number {
-  if (a.valid_from !== b.valid_from) {
-    return a.valid_from < b.valid_from ? -1 : 1;
+  if (compareTemporalInstants(a.valid_from, b.valid_from) !== 0) {
+    return compareTemporalInstants(a.valid_from, b.valid_from) < 0 ? -1 : 1;
   }
   if (a.status !== b.status) {
     return a.status < b.status ? -1 : 1;

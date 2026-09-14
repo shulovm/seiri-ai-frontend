@@ -1,3 +1,4 @@
+import { temporalInstantKey, compareTemporalInstants } from "../temporal.js";
 /**
  * Reality Core v0.7 — Attention Observation Operational Eligibility
  * Observation-Context AUTHORITY Provenance Assessment (GROUND-111).
@@ -119,7 +120,7 @@ export function attentionObservationOperationalEligibilityObservationContextAuth
     authorityPower,
     governanceScopeKeyValue,
     authorityEvaluationInstantKey,
-    authorityEvaluationAt,
+    temporalInstantKey(authorityEvaluationAt),
     authorityProvenanceAssessmentCanonicalKey,
   ].join("|");
 }
@@ -165,7 +166,7 @@ function assertDeclaredAuthorityWrapperLineage(
       `AUTHORITY Provenance Assessment instant key mismatch for declared wrapper ${declaredWrapper.key}`
     );
   }
-  if (declaredWrapper.authority_evaluation_at !== instant.authority_evaluation_at) {
+  if (compareTemporalInstants(declaredWrapper.authority_evaluation_at, instant.authority_evaluation_at) !== 0) {
     throw new Error(
       `AUTHORITY Provenance Assessment evaluation-at mismatch for declared wrapper ${declaredWrapper.key}`
     );
@@ -191,7 +192,7 @@ function assertProvenanceContextConsistency(
       `AUTHORITY Provenance Assessment context mismatch for declared wrapper ${declaredWrapper.key}: scope differs`
     );
   }
-  if (provenance.at !== declaredWrapper.authority_evaluation_at) {
+  if (compareTemporalInstants(provenance.at, declaredWrapper.authority_evaluation_at) !== 0) {
     throw new Error(
       `AUTHORITY Provenance Assessment context mismatch for declared wrapper ${declaredWrapper.key}: at differs`
     );
