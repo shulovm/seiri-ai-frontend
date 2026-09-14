@@ -1,14 +1,6 @@
-import { readFileSync } from 'node:fs';
-import { createHash } from 'node:crypto';
-import { normalizeProjectState } from '../../ground-core/migrate.js';
-import { validateProjectState } from '../../ground-core/validate.js';
-import { SCHEMA_VERSION } from '../../ground-core/types.js';
 import { getRealityWorldline } from '../../ground-core/reality/worldline.js';
 import { getClaimsForSubject, getEvidenceForClaim, getObservationsForSubject } from '../../ground-core/reality/epistemic.js';
-
-const directory = new URL('../../fixtures/human-interface/human-001/', import.meta.url);
-const manifest = JSON.parse(readFileSync(new URL('manifest.json', directory), 'utf8'));
-const foundationHash = '863545f650835b2b36c283ed2455cfe6fc31f10fbad78ee8647dc264ae56ad6c';
+import { realitySourceRegistry, RealitySourceError, canonicalBaselineCommit } from './source-registry.js';
 
 export class HumanReadTransportError extends Error {
   constructor(public readonly status: number, public readonly code: string) {
@@ -16,27 +8,31 @@ export class HumanReadTransportError extends Error {
   }
 }
 
-// The injected byte reader is a server-only test seam, never an HTTP parameter.
-export function createHumanRealityReader(readBytes: () => Buffer = () => readFileSync(new URL('project-state.json', directory))) {
+// Registry injection is server-only; HTTP accepts project/entity IDs, never sources or paths.
+export function createHumanRealityReader(registry: typeof realitySourceRegistry = realitySourceRegistry) {
   return (projectId: string, entityId: string) => {
-    if (projectId !== manifest.project_id) throw new HumanReadTransportError(404, 'PROJECT_SCOPE_MISMATCH');
-    if (entityId !== manifest.entity_id) throw new HumanReadTransportError(404, 'ENTITY_NOT_FOUND');
-    let bytes: Buffer;
-    try { bytes = readBytes(); }
-    catch { throw new HumanReadTransportError(503, 'FIXTURE_SOURCE_UNAVAILABLE'); }
-    const hash = createHash('sha256').update(bytes).digest('hex');
-    if (manifest.sha256 !== foundationHash || hash !== manifest.sha256) {
-      throw new HumanReadTransportError(503, 'FIXTURE_INTEGRITY_FAILURE');
-    }
-    // One verified buffer and one normalized ProjectState per request.
-    const raw = JSON.parse(bytes.toString('utf8'));
-    const state = normalizeProjectState(raw);
-    const validation = validateProjectState(state);
-    if (!validation.valid || state.schema_version !== SCHEMA_VERSION ||
-        SCHEMA_VERSION !== manifest.canonical_contract_schema_version ||
-        raw.schema_version !== manifest.snapshot_schema_version || state.project.id !== projectId) {
-      throw new HumanReadTransportError(503, 'CANONICAL_SOURCE_INVALID');
-    }
+    const { source, state } = (() => {
+      try {
+        const selected = registry.resolve(projectId);
+        // Proof-scope policy, not an assertion that this Entity is absent from ProjectState.
+        if (entityId !== selected.entity_id) throw new HumanReadTransportError(404, 'ENTITY_NOT_FOUND');
+        return registry.read(projectId);
+      } catch (error) {
+        if (error instanceof RealitySourceError) {
+          const codes: Record<string, string> = {
+            UNKNOWN_PROJECT: 'PROJECT_SCOPE_MISMATCH',
+            SOURCE_UNAVAILABLE: 'FIXTURE_SOURCE_UNAVAILABLE',
+            FIXTURE_INTEGRITY_FAILURE: 'FIXTURE_INTEGRITY_FAILURE',
+            CANONICAL_SOURCE_INVALID: 'CANONICAL_SOURCE_INVALID',
+          };
+          const code = codes[error.message];
+          if (code) throw new HumanReadTransportError(code === 'PROJECT_SCOPE_MISMATCH' ? 404 : 503, code);
+        }
+        // Parse/normalization and unexpected failures reach the HTTP read-failure boundary.
+        throw error;
+      }
+    })();
+    // All canonical readers share this one verified, normalized ProjectState.
     const worldline = getRealityWorldline(state, entityId);
     const observations = getObservationsForSubject(state, entityId);
     const claims = getClaimsForSubject(state, entityId);
@@ -44,9 +40,10 @@ export function createHumanRealityReader(readBytes: () => Buffer = () => readFil
     return {
       transport: {
         contract: 'human-interface-reality-read.v1',
-        source: { fixture: 'human-001', sha256: hash,
-          stored_schema_version: raw.schema_version, read_schema_version: state.schema_version,
-          canonical_baseline_commit: manifest.canonical_contract_commit },
+        source: { fixture: source.source_key, source_key: source.source_key,
+          source_qualification: source.source_qualification, sha256: source.sha256,
+          stored_schema_version: source.stored_schema, read_schema_version: state.schema_version,
+          canonical_baseline_commit: canonicalBaselineCommit },
         requested_scope: { project_id: projectId, entity_id: entityId },
         returned_counts: { observations: observations.length, claims: claims.length,
           events: worldline.events.length, states: worldline.states.length },
