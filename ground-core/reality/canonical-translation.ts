@@ -37,7 +37,7 @@ export function decomposeReality(text:string):TranslationUnit[]{
  if(unknown||/未検査|検査していない|調べていない/.test(span)){u.families.push('knowledge');u.properties.knowledge_of_X='不明';}
  if(denied){u.families.push('inspection');u.properties.inspection_performed=true;u.properties.X_present=false;}
  if(/異常なし/.test(span)){u.families.push('inspection-scope');u.properties.inspection_result='異常なし';u.properties.inspection_scope=span;}
- if(/未検査|検査していない|調べていない|検査(?:を|は).*(?:行って|実施して|行っておらず|実施しておらず).*(?:ない|おらず)/.test(span)){u.families.push('inspection','knowledge');u.properties.inspection_performed=false;u.properties.knowledge_of_X='不明';}
+ if(/未検査|検査していない|調べていない|検査(?:を|は).*(?:行って|実施して|行っておらず|実施しておらず).*(?:ない|おらず)/.test(span)){u.families.push('inspection','knowledge');u.properties.inspection_performed=false;u.properties.knowledge_of_X='不明';if(!/[「『]|報告した|聞いた/.test(span))u.qualification='unknown';}
  const quoted=/[「『]|(?:が|から).*(?:報告した|報告している|話した|聞いた|伝えた|言った)/.test(span)&&!/報告(?:は|が)ない/.test(span);
  const actor=span.match(/^(.{1,35}?)(?:が|は|から)/)?.[1];
  const innerObserver=span.match(/(?:が[、\s「『]*|「)(.{1,30}?)(?:が|は).*(?:目撃|直接見|直接確認|確認した)/)?.[1];
@@ -48,9 +48,9 @@ export function decomposeReality(text:string):TranslationUnit[]{
  if(/SNS.*(?:投稿|書か)|投稿.*書|記録|資料|台帳|名簿|ラベル|監視カメラ/.test(span)){u.families.push('record');u.record=span.match(/(?:SNS投稿|監視カメラ記録|電子管理記録|電子台帳|紙名簿|ラベル|台帳|記録|資料)/)?.[0];}
  if(/カメラ.*(?:記録|映像).*(?:確認|見た)|記録を.*確認/.test(span)){u.families.push('record-review');u.properties.record_review_completed=true;u.properties.direct_world_observation=false;const reviewer=span.match(/(?:記録|映像)を(.{1,25}?)が/)?.[1]??actor;if(reviewer)u.observer=clean(reviewer);}
  if(/(?:センサー|測定|計測|測定値|検査値|出力)/.test(span)){u.families.push('measurement');const reading=span.match(/(?:が|は|出力|値|結果)[^\d]{0,20}(\d[\d,]*(?:\.\d+)?)/)??span.match(/(?:測定|計測|検査)(?:値)?[^\d]{0,12}(\d[\d,]*(?:\.\d+)?)/);if(reading)u.properties.recorded_result_value=numberValue(reading[1]);if(verified&&reading)u.properties.verified_reality_value=numberValue(reading[1]);}
- if(verified){u.families.push('verification');u.properties.verification_completed=true;}
+ if(verified){u.families.push('verification');u.properties.verification_completed=true;if(actor&&!quoted)u.properties.verifier_name=clean(actor);}
  const lifecycle=interpretDecisionLifecycle(span);
- if(lifecycle){u.families.push('decision-lifecycle');u.properties.plan_lifecycle_stage=lifecycle;if(['considered','candidate','preferred','intended','planned','selected'].includes(lifecycle))u.properties.selection_completed=lifecycle==='selected';if(lifecycle==='selected'){const p=span.match(/([A-ZＡ-Ｚ\w]+案)/);if(p)u.properties.selected_plan_name=p[1];u.eventKinds.push('formal_plan_selected');}if(lifecycle==='instructed')u.eventKinds.push('instruction_issued');if(lifecycle==='executing')u.eventKinds.push('execution_started');if(lifecycle==='completed')u.eventKinds.push('execution_completed');}
+ if(lifecycle){u.families.push('decision-lifecycle');u.properties.referenced_plan_names=Array.from(new Set(span.match(/[A-Z]+案/g)??[]));u.properties.plan_lifecycle_stage=lifecycle;if(['considered','candidate','preferred','intended','planned','selected'].includes(lifecycle))u.properties.selection_completed=lifecycle==='selected';if(lifecycle==='selected'){const p=span.match(/([A-ZＡ-Ｚ\w]+案)/);if(p)u.properties.selected_plan_name=p[1];u.eventKinds.push('formal_plan_selected');}if(lifecycle==='instructed')u.eventKinds.push('instruction_issued');if(lifecycle==='executing')u.eventKinds.push('execution_started');if(lifecycle==='completed')u.eventKinds.push('execution_completed');}
  if(/命令|指示|要請/.test(span)&&/(?:送った|送信した|発令した|指示した|命令した|要請した)/.test(span)&&!/(?:送った|した).*(?:わけではない|事実はない)/.test(span)){u.families.push('instruction');u.properties.instruction_issued=true;u.eventKinds.push('instruction_issued');}
  if(/(?:設備|装置|機器|遮断機).*(?:実際に停止|停止した|止まった)/.test(span)&&!unknown&&!possible&&!quoted){u.families.push('execution');u.eventKinds.push('equipment_stopped');u.properties.equipment_operating_status='停止';}
  if(/(?:活動|作業|処置|処理|実行|消火|止血).*(?:開始した|始めた|始まった)/.test(span)&&!possible&&!unknown&&!quoted){u.families.push('execution');u.eventKinds.push('execution_started');}
@@ -70,7 +70,7 @@ export function decomposeReality(text:string):TranslationUnit[]{
  if(/差(?:は|が).*\d+人/.test(span)){u.families.push('aggregate');u.properties.aggregate_record_discrepancy=Number(span.match(/差(?:は|が).*?(\d+)人/)?.[1]);}
  if(/誰(?:なの|か)|個体.*不明|特定.*(?:できない|していない)/.test(span)){u.families.push('identity-unknown');u.properties.individual_identity_known=false;}
  if(/P\d/.test(span)&&/照合|個別.*確認|特定された/.test(span)){u.families.push('individual-identity');u.properties.identified_individual_names=Array.from(new Set(span.match(/P\d+/g)??[]));}
- if(/容器|袋|ラベル|内容物|試料|電子.*記録|台帳|中身/.test(span)&&/識別|由来|参加者|入れ替|別対象|別の対象|電子記録|電子台帳/.test(u.sourceSentence??span)){u.families.push('container-identity');u.properties.identity_roles_distinct=true;u.properties.contents_origin_verified=verified;}
+ if(/容器|袋|ラベル|内容物|試料|電子.*記録|台帳|中身/.test(span)&&/識別|由来|参加者|入れ替|別対象|別の対象|電子記録|電子台帳/.test(u.sourceSentence??span)){u.families.push('container-identity');u.properties.identity_roles_distinct=true;if(verified&&/内容物|試料/.test(span))u.properties.contents_origin_verified=true;else if(/未検証|未確認|証明しない|由来.*不明/.test(span))u.properties.contents_origin_verified=false;}
  if(/事故.*(?:直後|時点)|介入|救助|修理前|修理後|原設定|配線.*写真|資材.*移動|元.*配置/.test(span)){u.families.push('scene-history');u.properties.scene_phase=/修理後|介入後|救助後|移動された|介入/.test(span)&&!/事故時点/.test(span)?'post_intervention':'original';if(/(?:元|当時|事故|原設定).*(?:不明|分かっていない|復元できない)/.test(span))u.properties.original_complete_state_known=false;}
  if(/切替|切り替|切り換|服薬|投与|介入/.test(span)&&/後|続いて|翌|その後/.test(span)){u.families.push('temporal-succession');u.properties.temporal_succession=true;u.properties.causality_verified=false;}
  if(/原因|因果/.test(span)){u.families.push('causality');u.properties.causality_verified=verified&&!unknown&&!possible;if(verified&&!unknown&&!possible)u.eventKinds.push('causality_verified');}
@@ -78,8 +78,8 @@ export function decomposeReality(text:string):TranslationUnit[]{
  if(u.timeExpression)u.properties.time_role=u.families.includes('report')?'report time':u.families.includes('verification')?'verification time':u.families.includes('instruction')?'instruction time':u.families.includes('evidence-arrival')?'evidence availability time':u.families.includes('knowledge')?'knowledge report time':u.eventKinds.length?'event time':'observation/statement time';
  if(u.families.includes('causality'))u.properties.causal_status=quoted?'claimed':verified&&!unknown&&!possible?'verified':possible?'possible':unknown?'unverified':'not established';
  if((quoted||sourceRoles.organization||sourceRoles.socialRecord)&&!u.families.includes('record-review')){
-   u.qualification='reported';
-   for(const key of ['verification_completed','verified_reality_value','selection_completed','causality_verified'])if(key in u.properties){u.properties['reported_'+key]=u.properties[key];delete u.properties[key];}
+   u.properties.reported_content_epistemic_status=u.qualification;u.qualification='reported';
+   for(const key of ['verification_completed','verified_reality_value','selection_completed','causality_verified','contents_origin_verified','instruction_issued'])if(key in u.properties){u.properties['reported_'+key]=u.properties[key];delete u.properties[key];}
    u.eventKinds=[];
  }
  const withheld=unassertedOccurrenceReason(span);
@@ -110,7 +110,8 @@ export function proposeCanonicalTranslation(state:ProjectState,input:RealityProp
   if(u.timeExpression)ids.push(addState(record,'declared_time_expression',u.timeExpression,key+'|localtime'));
   for(const [kind,value] of Object.entries(u.properties))ids.push(addState(record,kind,value,key+'|'+kind));
   const targetText=u.span.replace(/^\d{4}-\d{2}-\d{2}T\S+\s*/, '');
-  const subjectName=typeof u.properties.resolved_referent==='string'?u.properties.resolved_referent:targetText.match(/^(.{1,35}?)(?:の測定値|の法的所有者|の所有者|には|は|が)/)?.[1];
+  const observedObject=targetText.match(/(?:が|は)\s*([^「『」、。]{1,35}?)(?:の|を)[^「『」、。]*(?:直接見た|目撃した|直接確認した)/)?.[1];
+  const subjectName=typeof u.properties.resolved_referent==='string'?u.properties.resolved_referent:u.observer&&observedObject?observedObject:targetText.match(/^(.{1,35}?)(?:の測定値|の法的所有者|の所有者|には|は|が)/)?.[1];
   const target=subjectName&&!/^(それ|この件|その人|同社)$/.test(clean(subjectName))?entity(clean(subjectName),clean(subjectName)===u.observer?'person':'unspecified'):null;
   if(target)ids.push(addState(record,'target_entity',target,key+'|target'));
   if(target&&u.qualification==='verified'&&u.time&&typeof u.properties.verified_reality_value==='number'){const uid=fingerprint(state.project.id+'|verified-target|'+key);ids.push(uid);operations.push({op:'upsert',entity:'reality_state',entity_id:uid,payload:{...common(uid),subject_id:target,kind:'measured_reality_value',value:u.properties.verified_reality_value,valid_from:u.time,valid_until:null,recorded_at:now}});}
@@ -118,11 +119,14 @@ export function proposeCanonicalTranslation(state:ProjectState,input:RealityProp
   let provenance:EpistemicProvenance={kind:'document',entity_id:document};
   if(u.reporter){const reporter=entity(u.reporter,u.properties.source_organization_name?'organization':'person');provenance={kind:u.properties.source_organization_name?'organization':'human',entity_id:reporter};ids.push(addState(record,'reporter',reporter,key+'|reporter'));}
   else if(u.observer){const observer=entity(u.observer,'person');provenance={kind:'human',entity_id:observer};ids.push(addState(record,u.families.includes('record-review')?'record_reviewer':'direct_observer',observer,key+'|observer'));}
+  if(typeof u.properties.verifier_name==='string'&&!u.reporter)provenance={kind:'human',entity_id:entity(u.properties.verifier_name,'person')};
   const sensor=u.span.match(/(?:^|[、\s])([^、。]{1,25}?センサー)/)?.[1];
-  if(u.families.includes('measurement')&&sensor&&!u.reporter)provenance={kind:'sensor',entity_id:entity(clean(sensor),'device')};
+  if(u.families.includes('measurement')&&sensor&&!u.reporter&&u.qualification!=='verified')provenance={kind:'sensor',entity_id:entity(clean(sensor),'device')};
   if(u.families.includes('container-identity')){
-    for(const [role,pattern,kind] of [['container',/容器|袋/,'asset'],['label',/ラベル/,'document'],['contents',/内容物|中身|試料|遺物/,'asset'],['presumed_participant',/参加者|由来主体/,'person'],['registry_record',/電子.*記録|電子台帳|電子記録|台帳/,'document']] as const){if(pattern.test(u.sourceSentence??u.span))ids.push(addState(record,role,entity(role+' '+fingerprint(input.input_text),kind),key+'|identity-'+role));}
+    for(const [role,pattern,kind] of [['container',/容器|袋/,'asset'],['label',/ラベル/,'document'],['contents',/内容物|中身|試料|遺物/,'asset'],['presumed_participant',/参加者|由来主体/,'person'],['registry_record',/電子.*記録|電子台帳|電子記録|台帳/,'document']] as const){if(pattern.test(u.sourceSentence??u.span)){const named=(u.sourceSentence??u.span).match(new RegExp('((?:'+pattern.source+')[A-Z][0-9]+)'))?.[1];ids.push(addState(record,role,entity(named??role+' '+fingerprint(input.input_text),kind),key+'|identity-'+role));}}
   }
+  if(Array.isArray(u.properties.referenced_plan_names))for(const name of u.properties.referenced_plan_names){if(typeof name==='string')ids.push(addState(record,'referenced_plan',entity(name,'plan'),key+'|plan-'+name));}
+  if(u.reporter&&observedObject)ids.push(addState(record,'reported_target',entity(clean(observedObject),'unspecified'),key+'|reportedTarget'));
   if(u.properties.reported_observer_name){const observer=entity(String(u.properties.reported_observer_name),'person');ids.push(addState(record,'reported_observer',observer,key+'|reportedObserver'));}
   if(Array.isArray(u.properties.intermediary_names))for(const name of u.properties.intermediary_names){if(typeof name==='string')ids.push(addState(record,'intermediary',entity(name,'person'),key+'|relay-'+name));}
  if(u.intermediary)ids.push(addState(record,'intermediary',entity(u.intermediary,'person'),key+'|intermediary'));
