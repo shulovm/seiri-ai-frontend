@@ -4,12 +4,13 @@ import type {PatchProposal,ClarificationResponse} from '../extraction/types.js';
 import {validateStatePatch} from '../validate.js';
 import {dryRunPatch} from '../extraction/dry-run.js';
 import type {RealityProposeInput} from './types.js';
+import {semanticClauses} from './semantic-clauses.js';
 import {unassertedOccurrenceReason} from './assertion-scope.js';
 import {interpretDecisionLifecycle} from './decision-lifecycle.js';
 
 /** Ingestion trace only. None of these types extend canonical primitives. */
 export interface TranslationUnit {
- span:string; families:string[]; qualification:'observed'|'reported'|'verified'|'unknown'|'negative'|'predicted'|'hypothetical'|'unresolved';
+ span:string; sourceSentence?:string; disposition?:'canonicalized'|'compositionally canonicalized'|'safely unresolved'|'clarification required'|'unsupported'; families:string[]; qualification:'observed'|'reported'|'verified'|'unknown'|'negative'|'predicted'|'hypothetical'|'unresolved';
  properties:Record<string,RealityStateValue>; observer?:string; reporter?:string; intermediary?:string; record?:string;
  eventKinds:string[]; time:string|null; timeExpression?:string; status:'preserved'|'unresolved'|'clarification required'|'unsupported'; reason?:string;
 }
@@ -23,8 +24,8 @@ function explicitTime(s:string):{time:string|null,timeExpression?:string}{const 
 export function decomposeReality(text:string):TranslationUnit[]{
  const units:TranslationUnit[]=[];
  // A quoted report is kept together; do not split nested attribution into independent world facts.
- const spans=sentenceSpans(text).map(clean).filter(Boolean);
- for(const span of spans){const u:TranslationUnit={span,families:[],qualification:'reported',properties:{},eventKinds:[],...explicitTime(span),status:'preserved'};
+ const spans=sentenceSpans(text).map(clean).filter(Boolean).flatMap(semanticClauses);
+ for(const clause of spans){const span=clean(clause.span);if(!span)continue;const u:TranslationUnit={span,sourceSentence:clause.sourceSentence,families:[],qualification:'reported',properties:{},eventKinds:[],...explicitTime(span),status:'preserved'};
  const unknown=/不明|未確認|未検証|未確定|確認できていない|確認していない|分からない|分かっていない|判明していない|とは限らない|確認が取れていない/.test(span);
  const possible=/可能性|らしい|かもしれない|推測|疑い|見込み/.test(span);
  const denied=/存在しなかった|検出されなかった|見つからなかった|含まれていなかった|混入していなかった|陰性|検査.*(?:存在しない|含まれない)/.test(span);
@@ -78,6 +79,7 @@ export function decomposeReality(text:string):TranslationUnit[]{
  u.families=Array.from(new Set(u.families));u.eventKinds=Array.from(new Set(u.eventKinds));
  if(!u.families.length){u.status='unsupported';u.reason='No supported semantic grammar; preserved as residual input, no world assertion made.';}
  if(/^(?:それ|その人|この件|担当者がそれ)/.test(span)&&!units.some(x=>x.observer||x.reporter||x.record)){u.status='clarification required';u.reason='Unresolved referent materially changes the observation subject.';}
+ u.disposition=u.status==='unsupported'?'unsupported':u.status==='clarification required'?'clarification required':['unknown','unresolved','hypothetical'].includes(u.qualification)?'safely unresolved':'compositionally canonicalized';
  units.push(u);
  }
  return units;

@@ -1,0 +1,5 @@
+import {it}from'node:test';import assert from'node:assert/strict';import {decomposeReality}from'../reality/canonical-translation.js';
+for(const domain of ['船舶整備','工場運転','試験施設'])it('affirmed event and unknown second clause: '+domain,()=>{const u=decomposeReality('装置が停止したが、停止した時刻は不明。');assert.ok(u.some(x=>x.eventKinds.includes('equipment_stopped')));assert.ok(u.some(x=>x.qualification==='unknown'));});
+it('attributed nested statement is not split into world clauses',()=>{const u=decomposeReality('連絡員が「観察員が目撃したが、所有者は不明」と報告した。');assert.equal(u.length,1);assert.equal(u[0].qualification,'reported');assert.deepEqual(u[0].eventKinds,[]);});
+it('contrast keeps independent quantity roles',()=>{const u=decomposeReality('保有数は240個あるが、そのうち自由に使えるのは67個。');assert.ok(u.some(x=>x.properties.total_quantity===240));assert.ok(u.some(x=>x.properties.available_quantity===67));});
+it('identity object lists are not fragmented at every comma',()=>assert.equal(decomposeReality('容器、ラベル、内容物、参加者、電子台帳は別対象として識別する。').length,1));
