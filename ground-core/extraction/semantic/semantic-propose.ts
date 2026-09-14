@@ -129,7 +129,7 @@ function buildObservationOperation(
       goal_id: input.project_state.current_state.primary_goal_id,
       title: observationTitle(event.type),
       body: event.raw_span ?? input.input_text,
-      source: "conversation",
+      source: input.source ?? "conversation",
       observed_at: timestamp,
       created_at: timestamp,
       updated_at: timestamp,

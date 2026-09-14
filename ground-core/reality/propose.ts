@@ -77,6 +77,7 @@ export function proposeFromReality(
     project_id: input.project_id,
     input_text: text,
     project_state: projectState,
+    source: input.source ?? "manual",
   };
 
   // mock 経路は fixture 依存の旧 extractor をそのまま使う（回帰互換）
