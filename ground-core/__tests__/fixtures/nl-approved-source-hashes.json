@@ -1,6 +1,6 @@
 {
   "classification": "B: intentional source change, stale whole-source fixture",
-  "scope": "Only five explicitly approved intake files. No schema/core/historical input exceptions. Original historical baselines remain byte-identical. Exact hash and byte length still enforced.",
+  "scope": "Five explicitly reviewed intake sources plus the Round5 integrity guard pinned by Round6. No core/schema/data/proof exceptions. Original snapshots retained.",
   "approved": [
     {
       "path": "ground-core/cli.ts",
@@ -41,6 +41,13 @@
       "approvedSHA256": "a95f860ae722f66f54971335a44cc81250c50ea6218605a38714900a3347026f",
       "approvedBytes": 4493,
       "reason": "Phase4 gates B/C/D explicitly authorized ingestion source change; source-channel/lifecycle/canonical behavior protected by nl tests and E2 954 unchanged assertions."
+    },
+    {
+      "path": "ground-core/__tests__/historical-reality-round5.test.ts",
+      "originalSHA256": "4881ca55ad6f514a48c6a1a7b243e76cf8f57e983522d9304a47dd11b3a70b93",
+      "approvedSHA256": "72224080e7f7ccf9922cb839482f6d2c5ab6c428ca14c97db9e9ef67ff602d20",
+      "approvedBytes": 8707,
+      "reason": "4B-F reviewed integrity guard/import/name update only. Historical semantic assertions unchanged; Round6 pins Round5 guard source."
     }
   ]
 }
