@@ -1,0 +1,46 @@
+{
+  "classification": "B: intentional source change, stale whole-source fixture",
+  "scope": "Only five explicitly approved intake files. No schema/core/historical input exceptions. Original historical baselines remain byte-identical. Exact hash and byte length still enforced.",
+  "approved": [
+    {
+      "path": "ground-core/cli.ts",
+      "originalSHA256": "d20008d79e09c924fd1f28c7492cbacb748c90a23f0549f835d88c5f1c2033c7",
+      "originalBytes": 31650,
+      "approvedSHA256": "a11b28874525c3af9e821ddae89120bc2866f9bf8952e82592602aac2f6ed0a1",
+      "approvedBytes": 31743,
+      "reason": "Phase4 gates B/C/D explicitly authorized ingestion source change; source-channel/lifecycle/canonical behavior protected by nl tests and E2 954 unchanged assertions."
+    },
+    {
+      "path": "ground-core/extraction/semantic/rule-modality-detector.ts",
+      "originalSHA256": "58379d28601fc61d857d0c842bf889a719c1bf6a7940e07f886f47c6794bc0a1",
+      "originalBytes": 5489,
+      "approvedSHA256": "1a370333a720f87e6a7df1004a1a7ee4cefa633e2c4b401d6700422e630abd02",
+      "approvedBytes": 5764,
+      "reason": "Phase4 gates B/C/D explicitly authorized ingestion source change; source-channel/lifecycle/canonical behavior protected by nl tests and E2 954 unchanged assertions."
+    },
+    {
+      "path": "ground-core/extraction/semantic/semantic-propose.ts",
+      "originalSHA256": "f2b1ffb5f9d3d82b8bbbceaf4a1ffea550b1e70eb78c277d5ff16b910701bd7a",
+      "originalBytes": 8216,
+      "approvedSHA256": "9948d117f053d366606a3a11216b31a2a9e3e925592ff2f8298b50da13ec88f6",
+      "approvedBytes": 8730,
+      "reason": "Phase4 gates B/C/D explicitly authorized ingestion source change; source-channel/lifecycle/canonical behavior protected by nl tests and E2 954 unchanged assertions."
+    },
+    {
+      "path": "ground-core/extraction/types.ts",
+      "originalSHA256": "54864385da6aafe5d28dcc7b55d3ba5197f2ce030566aa9ac30f9d9be868cb60",
+      "originalBytes": 2321,
+      "approvedSHA256": "a6ad5f7866b47588d3a91bb7212dd554813f5411192bae9e60b935b46308ea5d",
+      "approvedBytes": 2460,
+      "reason": "Phase4 gates B/C/D explicitly authorized ingestion source change; source-channel/lifecycle/canonical behavior protected by nl tests and E2 954 unchanged assertions."
+    },
+    {
+      "path": "ground-core/reality/propose.ts",
+      "originalSHA256": "585f1736f75873bbe211d238c7ab53490271dba9cba93935e77afc693b36cf7f",
+      "originalBytes": 3908,
+      "approvedSHA256": "a95f860ae722f66f54971335a44cc81250c50ea6218605a38714900a3347026f",
+      "approvedBytes": 4493,
+      "reason": "Phase4 gates B/C/D explicitly authorized ingestion source change; source-channel/lifecycle/canonical behavior protected by nl tests and E2 954 unchanged assertions."
+    }
+  ]
+}
