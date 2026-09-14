@@ -1,0 +1,5 @@
+{
+  "extends": "../../ground-core/tsconfig.json",
+  "compilerOptions": { "rootDir": "../.." },
+  "include": ["./**/*.ts"]
+}

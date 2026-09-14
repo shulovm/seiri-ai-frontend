@@ -1,0 +1,36 @@
+{
+  "counts": {
+    "sources": 32,
+    "claims": 64,
+    "actors": 43,
+    "relations": 66,
+    "artifacts": 14,
+    "references": 6,
+    "lineage": 12,
+    "messages": 4,
+    "stages": 9,
+    "assessments": 8,
+    "gaps": 16,
+    "searches": 7,
+    "reconstructions": 5,
+    "translation_checks": 1,
+    "assets": 9
+  },
+  "parent_integrity": "Round1, Round2 and Round1 landscape SHA256 verified; inherited PDF assets verified",
+  "dataset_sha256": "3f5da8eaee7ef0683abe9d3cf3c35b965b1e798f7458910a02cccc6f30418714",
+  "derived_traces": 75,
+  "canonical_projection": {
+    "claims": 64,
+    "historical_events": 0,
+    "historical_states": 0,
+    "scope": "Inherited 0.95 uncalibrated source-content attribution only"
+  },
+  "validation": "Sidecar serialize/reload/materialize; every derived basis traced; canonical file-store reload; new asset magic/size/hash plus inherited PDF integrity",
+  "limits": [
+    "No independent original authentication",
+    "No knowledge/read stage generated",
+    "1905/1906 edition link and underlying telegram remain unresolved",
+    "Full PDFs acquired; only declared pages inspected",
+    "Release announcement date is not exact scan creation date"
+  ]
+}

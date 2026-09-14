@@ -1,0 +1,1501 @@
+{
+  "schema_version": "historical-reality-review/round5",
+  "candidates": [
+    {
+      "id": "R5-C01",
+      "semantic_name": "actor-scoped epistemic state",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P0",
+      "signal_ids": [
+        "SG-01",
+        "SG-03",
+        "SG-14",
+        "SG-26"
+      ],
+      "historical_case_claim_ids": [
+        "c678-uncertainty",
+        "r2:c-ack82",
+        "r3:c-pak-nagasaki",
+        "r4:c-stark-belief"
+      ],
+      "existing_core_representation": "Claim relation + separate subject/provenance; BeliefAssessment is system-derived",
+      "lost_meaning_or_adapter_failure": "Provenance actor can be mistaken for belief holder; receipt payload cannot be queried as actor knowledge",
+      "sidecar_representation": "Evidenced actor+payload+stance relation; no Knowledge truth object",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/intent-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Evidenced actor+payload+stance relation; no Knowledge truth object",
+      "one_sentence_boundary": "actor-scoped epistemic state: Evidenced actor+payload+stance relation; no Knowledge truth object",
+      "counterexample": "Without this boundary: Provenance actor can be mistaken for belief holder; receipt payload cannot be queried as actor knowledge",
+      "decision_rationale": "Existing holder/declarer separation provides analogy; generic epistemic actor relation contract is missing, not a distinct Knowledge primitive",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C02",
+      "semantic_name": "information propagation",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P1",
+      "signal_ids": [
+        "SG-11",
+        "SG-15",
+        "SG-26"
+      ],
+      "historical_case_claim_ids": [
+        "r2:c-uriu2-relay",
+        "r3:c-pak-delivery",
+        "r4:c-novik-order",
+        "r4:c-jp-copy"
+      ],
+      "existing_core_representation": "Entity + relation Claim + Evidence",
+      "lost_meaning_or_adapter_failure": "A source reference/address/sent stage can be collapsed into receipt/read/knowledge",
+      "sidecar_representation": "Sparse attested stage relations with payload/actor/time; absence edge remains unknown",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/commitment-acceptance-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Sparse attested stage relations with payload/actor/time; absence edge remains unknown",
+      "one_sentence_boundary": "information propagation: Sparse attested stage relations with payload/actor/time; absence edge remains unknown",
+      "counterexample": "Without this boundary: A source reference/address/sent stage can be collapsed into receipt/read/knowledge",
+      "decision_rationale": "Relations suffice as atoms; no universal closed stage enum or linear pipeline justified",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C03",
+      "semantic_name": "temporal role",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P0",
+      "signal_ids": [
+        "SG-02",
+        "SG-10",
+        "SG-16"
+      ],
+      "historical_case_claim_ids": [
+        "c679-held",
+        "r3:c-release",
+        "r4:c-jp-approach",
+        "r4:c-sev-fire"
+      ],
+      "existing_core_representation": "observed_at/recorded_at/applicable_from and event occurred_at exist",
+      "lost_meaning_or_adapter_failure": "Historical report date and applicability can replace unknown action/receipt time; null applicability is unbounded, not unknown",
+      "sidecar_representation": "Role-labelled time assertion retains raw precision and conversion status; no extra per-stage fields",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/epistemic-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Role-labelled time assertion retains raw precision and conversion status; no extra per-stage fields",
+      "one_sentence_boundary": "temporal role: Role-labelled time assertion retains raw precision and conversion status; no extra per-stage fields",
+      "counterexample": "Without this boundary: Historical report date and applicability can replace unknown action/receipt time; null applicability is unbounded, not unknown",
+      "decision_rationale": "Existing time fields solve their own roles; generic role/time assertion contract missing",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C04",
+      "semantic_name": "general provenance lineage",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P1",
+      "signal_ids": [
+        "SG-04",
+        "SG-06",
+        "SG-19",
+        "SG-25"
+      ],
+      "historical_case_claim_ids": [
+        "r3:c-pak-note21",
+        "r3:c-ia-lineage",
+        "r4:c-guide-source",
+        "r4:c-stark-roots"
+      ],
+      "existing_core_representation": "EpistemicProvenance + relation Claim + evidence IDs",
+      "lost_meaning_or_adapter_failure": "Fingerprint identifies current source but not upstream endpoint/transformation scope",
+      "sidecar_representation": "Evidence-bearing derived_from relation with identified or unresolved endpoint; no trust inference",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/belief-reconciliation.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Evidence-bearing derived_from relation with identified or unresolved endpoint; no trust inference",
+      "one_sentence_boundary": "general provenance lineage: Evidence-bearing derived_from relation with identified or unresolved endpoint; no trust inference",
+      "counterexample": "Without this boundary: Fingerprint identifies current source but not upstream endpoint/transformation scope",
+      "decision_rationale": "Core provenance visibility is already general; typed upstream validation/composition is missing",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C05",
+      "semantic_name": "source identity certainty",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P1",
+      "signal_ids": [
+        "SG-19",
+        "SG-21",
+        "SG-22"
+      ],
+      "historical_case_claim_ids": [
+        "r3:c-rgia-type",
+        "r3:c-rsl-edition",
+        "r4:c-jp-copy"
+      ],
+      "existing_core_representation": "Claim about a document entity identity; confidence attaches to that proposition",
+      "lost_meaning_or_adapter_failure": "Clear content may be mistaken for authenticated original; assessment target/passage must be explicit",
+      "sidecar_representation": "Assessment target relation; documentary authenticity vocabulary remains sidecar",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/observation-need.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Assessment target relation; documentary authenticity vocabulary remains sidecar",
+      "one_sentence_boundary": "source identity certainty: Assessment target relation; documentary authenticity vocabulary remains sidecar",
+      "counterexample": "Without this boundary: Clear content may be mistaken for authenticated original; assessment target/passage must be explicit",
+      "decision_rationale": "Core subject identity EvidenceRequirement exists; no separate SourceIdentityCertainty primitive needed",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C06",
+      "semantic_name": "source content certainty",
+      "classification": "A",
+      "classification_label": "EXISTING CORE SUFFICIENT",
+      "priority": "P0",
+      "signal_ids": [
+        "SG-13",
+        "SG-21"
+      ],
+      "historical_case_claim_ids": [
+        "c395-captured",
+        "r3:c-pak-delivery",
+        "r4:c-jp-wounded",
+        "r4:c-press-paris"
+      ],
+      "existing_core_representation": "Document RealityEntity + inspected-content Claim + Evidence SUPPORTS; world claim separately scoped",
+      "lost_meaning_or_adapter_failure": "Wrong adapter can assign text certainty to external reality",
+      "sidecar_representation": "Keep separate propositions/subjects/predicates and confidence applicability; usage contract sufficient for this boundary",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/belief-reconciliation.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Keep separate propositions/subjects/predicates and confidence applicability; usage contract sufficient for this boundary",
+      "one_sentence_boundary": "source content certainty: Keep separate propositions/subjects/predicates and confidence applicability; usage contract sufficient for this boundary",
+      "counterexample": "Without this boundary: Wrong adapter can assign text certainty to external reality",
+      "decision_rationale": "Claim confidence already concerns its proposition; correct composition is sufficient, not a missing certainty primitive",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": false
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C07",
+      "semantic_name": "reality certainty",
+      "classification": "A",
+      "classification_label": "EXISTING CORE SUFFICIENT",
+      "priority": "P0",
+      "signal_ids": [
+        "SG-08",
+        "SG-13",
+        "SG-21",
+        "SG-24"
+      ],
+      "historical_case_claim_ids": [
+        "c395-captured",
+        "r3:c-pak-delivery",
+        "r4:c-press-not-sunk",
+        "r4:c-press-paris"
+      ],
+      "existing_core_representation": "Claim confidence + BeliefAssessment; Claim never ontic State",
+      "lost_meaning_or_adapter_failure": "UNCONTESTED or clear Source is falsely promoted to true event",
+      "sidecar_representation": "Existing epistemic/ontic firewall; no cross-target certainty inheritance",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/epistemic-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Existing epistemic/ontic firewall; no cross-target certainty inheritance",
+      "one_sentence_boundary": "reality certainty: Existing epistemic/ontic firewall; no cross-target certainty inheritance",
+      "counterexample": "Without this boundary: UNCONTESTED or clear Source is falsely promoted to true event",
+      "decision_rationale": "Core already keeps belief≠truth and no score fusion; calibration itself is a separate immature topic",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": false
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C08",
+      "semantic_name": "unknown target/reason",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P0",
+      "signal_ids": [
+        "SG-07",
+        "SG-19",
+        "SG-26"
+      ],
+      "historical_case_claim_ids": [
+        "c679-held",
+        "r3:c-pak-nagasaki",
+        "r4:c-novik-label",
+        "r4:c-photo-year"
+      ],
+      "existing_core_representation": "EpistemicGap + unresolved subject/time null + opaque Claim value",
+      "lost_meaning_or_adapter_failure": "Structural absence is mistaken for research failure or negative world evidence",
+      "sidecar_representation": "Scoped reason/target/evidence/search diagnostic composition; no universal UNKNOWN primitive",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/epistemic-gaps.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Scoped reason/target/evidence/search diagnostic composition; no universal UNKNOWN primitive",
+      "one_sentence_boundary": "unknown target/reason: Scoped reason/target/evidence/search diagnostic composition; no universal UNKNOWN primitive",
+      "counterexample": "Without this boundary: Structural absence is mistaken for research failure or negative world evidence",
+      "decision_rationale": "Structural gap primitives already exist; generic reason/diagnostic contract missing",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C09",
+      "semantic_name": "observation scope",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P1",
+      "signal_ids": [
+        "SG-01",
+        "SG-28"
+      ],
+      "historical_case_claim_ids": [
+        "c678-uncertainty",
+        "r4:c-novik-heard",
+        "r4:c-memo-night"
+      ],
+      "existing_core_representation": "EpistemicObservation kind/content/provenance/subject_ids; ObservationNeed temporal_scope",
+      "lost_meaning_or_adapter_failure": "Observer/source/coverage become one source field; viewpoint limits are nonqueryable",
+      "sidecar_representation": "Explicit observer+coverage+modality descriptor tied to observation/evidence",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/observation-need.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Explicit observer+coverage+modality descriptor tied to observation/evidence",
+      "one_sentence_boundary": "observation scope: Explicit observer+coverage+modality descriptor tied to observation/evidence",
+      "counterexample": "Without this boundary: Observer/source/coverage become one source field; viewpoint limits are nonqueryable",
+      "decision_rationale": "Observation exists; coverage/observer composition needs a contract, not new Observation",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C10",
+      "semantic_name": "partial observation and silence",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P0",
+      "signal_ids": [
+        "SG-07",
+        "SG-28",
+        "SG-35"
+      ],
+      "historical_case_claim_ids": [
+        "r2:c-togo-created",
+        "r4:c-jp-await",
+        "r4:c-novik-heard",
+        "r4:c-novik-label"
+      ],
+      "existing_core_representation": "Claim/EpistemicObservation + existing absence non-inference",
+      "lost_meaning_or_adapter_failure": "Unseen behind ships or partial rendering becomes negative observation",
+      "sidecar_representation": "Scope/completeness evidence descriptor; missing result never means negative",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/epistemic-gaps.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Scope/completeness evidence descriptor; missing result never means negative",
+      "one_sentence_boundary": "partial observation and silence: Scope/completeness evidence descriptor; missing result never means negative",
+      "counterexample": "Without this boundary: Unseen behind ships or partial rendering becomes negative observation",
+      "decision_rationale": "Core no-evidence≠false sufficient for default; explicit partial coverage relation still missing",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C11",
+      "semantic_name": "Evidence dependency",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P1",
+      "signal_ids": [
+        "SG-06",
+        "SG-25",
+        "SG-31"
+      ],
+      "historical_case_claim_ids": [
+        "r3:c-pak-note21",
+        "r4:c-guide-source",
+        "r4:c-stark-roots"
+      ],
+      "existing_core_representation": "Evidence IDs/provenance + source aggregation policy members",
+      "lost_meaning_or_adapter_failure": "Separate Evidence IDs treated as independent roots",
+      "sidecar_representation": "Proposition-scoped upstream links and common ancestor trace, with unresolved roots",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/declared-resource-availability-source-aggregation-policy-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Proposition-scoped upstream links and common ancestor trace, with unresolved roots",
+      "one_sentence_boundary": "Evidence dependency: Proposition-scoped upstream links and common ancestor trace, with unresolved roots",
+      "counterexample": "Without this boundary: Separate Evidence IDs treated as independent roots",
+      "decision_rationale": "Existing policy selection is not independence; dependency relation composition is missing",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C12",
+      "semantic_name": "independent corroboration verdict",
+      "classification": "E",
+      "classification_label": "IMMATURE",
+      "priority": "P3",
+      "signal_ids": [
+        "SG-06",
+        "SG-31"
+      ],
+      "historical_case_claim_ids": [
+        "r4:c-jp-night",
+        "r4:c-stark-explosion",
+        "r4:c-press-columbia"
+      ],
+      "existing_core_representation": "Belief retains all evidence; no majority winner",
+      "lost_meaning_or_adapter_failure": "Independent count/confidence is fabricated from paper count",
+      "sidecar_representation": "Keep limited origin assessments; do not implement independence classifier",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/declared-resource-availability-per-source-evidence-state-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Keep limited origin assessments; do not implement independence classifier",
+      "one_sentence_boundary": "independent corroboration verdict: Keep limited origin assessments; do not implement independence classifier",
+      "counterexample": "Without this boundary: Independent count/confidence is fabricated from paper count",
+      "decision_rationale": "Positive independence only concretely assessed Round4; hidden roots and proposition coverage unresolved",
+      "primitive_threshold": {
+        "1_multiple_rounds": false,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": "not demonstrated",
+        "3_existing_core_composition_alone_loses_meaning": "domain-specific or not demonstrated"
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C13",
+      "semantic_name": "contradiction dimension/alignment",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P1",
+      "signal_ids": [
+        "SG-05",
+        "SG-33"
+      ],
+      "historical_case_claim_ids": [
+        "c395-captured",
+        "r4:c-press-paris",
+        "r4:c-press-not-sunk",
+        "r4:c-jp-wounded",
+        "r4:c-en-wounded"
+      ],
+      "existing_core_representation": "SUPPORTS/CONTRADICTS + divergent Claim values",
+      "lost_meaning_or_adapter_failure": "Two true source-content assertions are incorrectly logically opposed; scope difference becomes conflict",
+      "sidecar_representation": "Contrast between reported propositions with explicit dimension/scope/alignment; existing links unchanged",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/belief-reconciliation.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Contrast between reported propositions with explicit dimension/scope/alignment; existing links unchanged",
+      "one_sentence_boundary": "contradiction dimension/alignment: Contrast between reported propositions with explicit dimension/scope/alignment; existing links unchanged",
+      "counterexample": "Without this boundary: Two true source-content assertions are incorrectly logically opposed; scope difference becomes conflict",
+      "decision_rationale": "Direct Evidence opposition exists; contrast alignment is composition, not many new contradiction primitives",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C14",
+      "semantic_name": "event identity resolution",
+      "classification": "E",
+      "classification_label": "IMMATURE",
+      "priority": "P3",
+      "signal_ids": [
+        "SG-27"
+      ],
+      "historical_case_claim_ids": [
+        "r4:c-jp-night",
+        "r4:c-stark-explosion",
+        "r4:c-press-paris"
+      ],
+      "existing_core_representation": "Entity IDs exact; no probabilistic Event resolver",
+      "lost_meaning_or_adapter_failure": "Nearby names/times trigger false same-event merge",
+      "sidecar_representation": "Manual probable episode alignment remains experimental",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/reality-worldline.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Manual probable episode alignment remains experimental",
+      "one_sentence_boundary": "event identity resolution: Manual probable episode alignment remains experimental",
+      "counterexample": "Without this boundary: Nearby names/times trigger false same-event merge",
+      "decision_rationale": "Only Round4 has concrete candidate alignments; episode/occurrence granularity and lifecycle immature",
+      "primitive_threshold": {
+        "1_multiple_rounds": false,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": "not demonstrated",
+        "3_existing_core_composition_alone_loses_meaning": "domain-specific or not demonstrated"
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C15",
+      "semantic_name": "spatial uncertainty",
+      "classification": "E",
+      "classification_label": "IMMATURE",
+      "priority": "P3",
+      "signal_ids": [
+        "SG-29"
+      ],
+      "historical_case_claim_ids": [
+        "r4:c-jp-map",
+        "r4:c-press-flug",
+        "r4:c-press-officer-direction"
+      ],
+      "existing_core_representation": "Claim JSON/location descriptors preserve raw; no geospatial truth solver",
+      "lost_meaning_or_adapter_failure": "Relative/vague map produces exact coordinates",
+      "sidecar_representation": "Retain source precision/raw frame; generic precision relation needs more modalities",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/epistemic-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Retain source precision/raw frame; generic precision relation needs more modalities",
+      "one_sentence_boundary": "spatial uncertainty: Retain source precision/raw frame; generic precision relation needs more modalities",
+      "counterexample": "Without this boundary: Relative/vague map produces exact coordinates",
+      "decision_rationale": "Concrete spatial comparisons concentrated Round4; no independent nonhistorical spatial resolution proof",
+      "primitive_threshold": {
+        "1_multiple_rounds": false,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": "not demonstrated",
+        "3_existing_core_composition_alone_loses_meaning": "domain-specific or not demonstrated"
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C16",
+      "semantic_name": "quantity disagreement and unit/scope",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P1",
+      "signal_ids": [
+        "SG-30"
+      ],
+      "historical_case_claim_ids": [
+        "r4:c-jp-wounded",
+        "r4:c-en-wounded",
+        "r4:c-sev-holes",
+        "r4:c-sev-ammo6"
+      ],
+      "existing_core_representation": "Claim object values semantic equality; ImpactMeasure unit/range scoped to impact",
+      "lost_meaning_or_adapter_failure": "60holes means60hits; different units/count phases reconciled numerically",
+      "sidecar_representation": "Quantity+unit+operator+scope contract; no generic measurement primitive yet",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/impact-measurement.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Quantity+unit+operator+scope contract; no generic measurement primitive yet",
+      "one_sentence_boundary": "quantity disagreement and unit/scope: Quantity+unit+operator+scope contract; no generic measurement primitive yet",
+      "counterexample": "Without this boundary: 60holes means60hits; different units/count phases reconciled numerically",
+      "decision_rationale": "Unit/range separation exists in impact/resource domains; generic casualty/observation comparison contract missing",
+      "primitive_threshold": {
+        "1_multiple_rounds": false,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C17",
+      "semantic_name": "state transition / reported damage boundary",
+      "classification": "A",
+      "classification_label": "EXISTING CORE SUFFICIENT",
+      "priority": "P0",
+      "signal_ids": [
+        "SG-09",
+        "SG-32"
+      ],
+      "historical_case_claim_ids": [
+        "c430-occupation",
+        "r4:c-sev-funnel",
+        "r4:c-sev-anchor",
+        "r4:c-memo-repair"
+      ],
+      "existing_core_representation": "RealityEntity/Event/State + Claim + Worldline",
+      "lost_meaning_or_adapter_failure": "Attack/report falsely implies ontic damage/disabled or healthy before-state",
+      "sidecar_representation": "Existing Event≠State and Claim≠State composition; verified ontic transition only",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/reality-worldline.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Existing Event≠State and Claim≠State composition; verified ontic transition only",
+      "one_sentence_boundary": "state transition / reported damage boundary: Existing Event≠State and Claim≠State composition; verified ontic transition only",
+      "counterexample": "Without this boundary: Attack/report falsely implies ontic damage/disabled or healthy before-state",
+      "decision_rationale": "Required ontic primitives already exist; evidential uncertainty belongs to claims/assessment",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": false
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C18",
+      "semantic_name": "Reconstruction / derived assessment",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P1",
+      "signal_ids": [
+        "SG-08",
+        "SG-12",
+        "SG-24",
+        "SG-33"
+      ],
+      "historical_case_claim_ids": [
+        "c679-held",
+        "r3:c-pak-delivery",
+        "r4:c-press-paris",
+        "r4:c-press-not-sunk"
+      ],
+      "existing_core_representation": "BeliefAssessment derived state and source routes; DecisionContextSnapshot evidence basis",
+      "lost_meaning_or_adapter_failure": "Multi-scope evaluated hypothesis collapsed into world State or single Claim",
+      "sidecar_representation": "Evidence-grounded derived assessment with evaluation/basis/alternatives; broad version lifecycle not ready",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/decision-memory-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Evidence-grounded derived assessment with evaluation/basis/alternatives; broad version lifecycle not ready",
+      "one_sentence_boundary": "Reconstruction / derived assessment: Evidence-grounded derived assessment with evaluation/basis/alternatives; broad version lifecycle not ready",
+      "counterexample": "Without this boundary: Multi-scope evaluated hypothesis collapsed into world State or single Claim",
+      "decision_rationale": "Derived read models/snapshots underestimated; cross-scope reconstruction contract is missing",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C19",
+      "semantic_name": "Reconstruction versioning",
+      "classification": "E",
+      "classification_label": "IMMATURE",
+      "priority": "P3",
+      "signal_ids": [
+        "SG-33"
+      ],
+      "historical_case_claim_ids": [
+        "r4:c-press-paris",
+        "r4:c-press-not-sunk"
+      ],
+      "existing_core_representation": "Append-only Decision/Intent declarations, versioned decision snapshot",
+      "lost_meaning_or_adapter_failure": "Old assessment overwritten when evidence changes",
+      "sidecar_representation": "Retain v1 in sidecar; generic supersession/retraction relation untested",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/decision-memory-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Retain v1 in sidecar; generic supersession/retraction relation untested",
+      "one_sentence_boundary": "Reconstruction versioning: Retain v1 in sidecar; generic supersession/retraction relation untested",
+      "counterexample": "Without this boundary: Old assessment overwritten when evidence changes",
+      "decision_rationale": "Round4 only v1; v2 was a synthetic test, not independent historical lifecycle evidence",
+      "primitive_threshold": {
+        "1_multiple_rounds": false,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": "not demonstrated",
+        "3_existing_core_composition_alone_loses_meaning": "domain-specific or not demonstrated"
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C20",
+      "semantic_name": "nested claimant / reported speech",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P0",
+      "signal_ids": [
+        "SG-01",
+        "SG-14"
+      ],
+      "historical_case_claim_ids": [
+        "c395-captured",
+        "r3:c-pak-delivery",
+        "r4:c-press-paris",
+        "r4:c-stark-jp-loss"
+      ],
+      "existing_core_representation": "Claim provenance/source vs value can carry roles",
+      "lost_meaning_or_adapter_failure": "Publisher→author→observer flattened; current extraction attributed to historical actor",
+      "sidecar_representation": "Explicit attributed proposition/report edges; no provenance=claimant shortcut",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/intent-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Explicit attributed proposition/report edges; no provenance=claimant shortcut",
+      "one_sentence_boundary": "nested claimant / reported speech: Explicit attributed proposition/report edges; no provenance=claimant shortcut",
+      "counterexample": "Without this boundary: Publisher→author→observer flattened; current extraction attributed to historical actor",
+      "decision_rationale": "Declarer/holder distinction already exists elsewhere; generic reporting nesting contract missing",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C21",
+      "semantic_name": "certainty assessment target / extraction resolution",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P0",
+      "signal_ids": [
+        "SG-13",
+        "SG-21",
+        "SG-35"
+      ],
+      "historical_case_claim_ids": [
+        "r3:c-pak-delivery",
+        "r4:c-jp-second-fire",
+        "r4:c-photo-year"
+      ],
+      "existing_core_representation": "Separate Claim propositions/confidence + ObservationNeed Claim/identity targets",
+      "lost_meaning_or_adapter_failure": "Text extraction, original identity and external delivery share one confidence",
+      "sidecar_representation": "Assessment target+basis+method contract over existing Claims/Evidence; no certainty-class primitive family",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/observation-need.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Assessment target+basis+method contract over existing Claims/Evidence; no certainty-class primitive family",
+      "one_sentence_boundary": "certainty assessment target / extraction resolution: Assessment target+basis+method contract over existing Claims/Evidence; no certainty-class primitive family",
+      "counterexample": "Without this boundary: Text extraction, original identity and external delivery share one confidence",
+      "decision_rationale": "Independent target relation missing as generic validated composition; categorical scale/calibration not promoted",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C22",
+      "semantic_name": "documentary manifestation / bibliographic custody",
+      "classification": "D",
+      "classification_label": "HISTORICAL / DOMAIN SIDECAR",
+      "priority": "P2",
+      "signal_ids": [
+        "SG-04",
+        "SG-18",
+        "SG-19",
+        "SG-22"
+      ],
+      "historical_case_claim_ids": [
+        "r3:c-rsl-edition",
+        "r3:c-pak-edition",
+        "r4:c-jp-copy"
+      ],
+      "existing_core_representation": "RealityEntity document + external provenance stores references",
+      "lost_meaning_or_adapter_failure": "1905/1906 edition or archival copy label becomes original message",
+      "sidecar_representation": "Retain edition/folio/collection/catalogue/reference inspection sidecar",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/epistemic-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Retain edition/folio/collection/catalogue/reference inspection sidecar",
+      "one_sentence_boundary": "documentary manifestation / bibliographic custody: Retain edition/folio/collection/catalogue/reference inspection sidecar",
+      "counterexample": "Without this boundary: 1905/1906 edition or archival copy label becomes original message",
+      "decision_rationale": "Documentary/archival vocabulary specializes core unnecessarily",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": false,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": "domain-specific or not demonstrated"
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C23",
+      "semantic_name": "identifier namespace / assignment context",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P1",
+      "signal_ids": [
+        "SG-18",
+        "SG-20"
+      ],
+      "historical_case_claim_ids": [
+        "r2:c-order48",
+        "r3:c-number-policy",
+        "r4:c-stark-label"
+      ],
+      "existing_core_representation": "UUID/internal ID vs external_id; entity attrs",
+      "lost_meaning_or_adapter_failure": "Modern FRUS679 becomes historical telegram number; No174 calendar misread",
+      "sidecar_representation": "Namespace+issuer/context on external identifiers; bibliography remains sidecar",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/epistemic-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Namespace+issuer/context on external identifiers; bibliography remains sidecar",
+      "one_sentence_boundary": "identifier namespace / assignment context: Namespace+issuer/context on external identifiers; bibliography remains sidecar",
+      "counterexample": "Without this boundary: Modern FRUS679 becomes historical telegram number; No174 calendar misread",
+      "decision_rationale": "External IDs exist; validation of externally assigned context needs contract",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C24",
+      "semantic_name": "translation operations / editorial collation",
+      "classification": "D",
+      "classification_label": "HISTORICAL / DOMAIN SIDECAR",
+      "priority": "P2",
+      "signal_ids": [
+        "SG-23",
+        "SG-35"
+      ],
+      "historical_case_claim_ids": [
+        "r3:c-jacar-expansion",
+        "r4:c-jp-type",
+        "r4:c-en-type",
+        "r4:c-press-officer-count"
+      ],
+      "existing_core_representation": "Claim source text + provenance retains inspected content",
+      "lost_meaning_or_adapter_failure": "Poltava-type becomes exact ship; OCR correction becomes real fleet correction",
+      "sidecar_representation": "Documentary collation operation and language/edition scope sidecar",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/belief-reconciliation.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Documentary collation operation and language/edition scope sidecar",
+      "one_sentence_boundary": "translation operations / editorial collation: Documentary collation operation and language/edition scope sidecar",
+      "counterexample": "Without this boundary: Poltava-type becomes exact ship; OCR correction becomes real fleet correction",
+      "decision_rationale": "Specific editorial operations belong in documentary adapter; general derivation is separate B candidate",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": false,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": "domain-specific or not demonstrated"
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C25",
+      "semantic_name": "calendar / archival historical date conventions",
+      "classification": "D",
+      "classification_label": "HISTORICAL / DOMAIN SIDECAR",
+      "priority": "P2",
+      "signal_ids": [
+        "SG-10",
+        "SG-16"
+      ],
+      "historical_case_claim_ids": [
+        "r3:c-release",
+        "r4:c-stark-label",
+        "r4:c-sev-fire"
+      ],
+      "existing_core_representation": "Known normalized instants and raw Claim payload",
+      "lost_meaning_or_adapter_failure": "Julian assumption assigns Gregorianday/UTC; release announcement becomes scan date",
+      "sidecar_representation": "Historical calendar conversion evidence and raw notation retained in sidecar",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/epistemic-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Historical calendar conversion evidence and raw notation retained in sidecar",
+      "one_sentence_boundary": "calendar / archival historical date conventions: Historical calendar conversion evidence and raw notation retained in sidecar",
+      "counterexample": "Without this boundary: Julian assumption assigns Gregorianday/UTC; release announcement becomes scan date",
+      "decision_rationale": "Time roles general B; Russian/Japanese period notation and archival release metadata domain-specific",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": false,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": "domain-specific or not demonstrated"
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C26",
+      "semantic_name": "accessibility / possession / reading / knowledge boundary",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P0",
+      "signal_ids": [
+        "SG-11",
+        "SG-17",
+        "SG-26"
+      ],
+      "historical_case_claim_ids": [
+        "r2:c-order48",
+        "r3:c-pak-delivery",
+        "r4:c-jp-compile",
+        "r4:c-photo-title"
+      ],
+      "existing_core_representation": "Evidence inspectable reference; actor relation claims; acceptance distinct from declaration",
+      "lost_meaning_or_adapter_failure": "Present accessible source establishes past actor reading; addressed report becomes received",
+      "sidecar_representation": "Explicit actor/payload/stage assertions with unknown edges; no epistemic result inferred",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/commitment-acceptance-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Explicit actor/payload/stage assertions with unknown edges; no epistemic result inferred",
+      "one_sentence_boundary": "accessibility / possession / reading / knowledge boundary: Explicit actor/payload/stage assertions with unknown edges; no epistemic result inferred",
+      "counterexample": "Without this boundary: Present accessible source establishes past actor reading; addressed report becomes received",
+      "decision_rationale": "Same relation composition as propagation; no additional Read/Knowledge primitive justified",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C27",
+      "semantic_name": "legal declaration / actual control / capability boundary",
+      "classification": "A",
+      "classification_label": "EXISTING CORE SUFFICIENT",
+      "priority": "P0",
+      "signal_ids": [
+        "SG-09",
+        "SG-12",
+        "SG-32"
+      ],
+      "historical_case_claim_ids": [
+        "c430-guarantee",
+        "c430-occupation",
+        "r4:c-jp-capability"
+      ],
+      "existing_core_representation": "Reference/Governance/Capability declarations ≠ effective reality; Claim≠State",
+      "lost_meaning_or_adapter_failure": "Treaty provision or commanders assessment becomes actual territorial control/full capability",
+      "sidecar_representation": "Use existing declaration/Claim vs observed/ontic distinction; territorial claim not generic Authority power",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/governance-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Use existing declaration/Claim vs observed/ontic distinction; territorial claim not generic Authority power",
+      "one_sentence_boundary": "legal declaration / actual control / capability boundary: Use existing declaration/Claim vs observed/ontic distinction; territorial claim not generic Authority power",
+      "counterexample": "Without this boundary: Treaty provision or commanders assessment becomes actual territorial control/full capability",
+      "decision_rationale": "Core already separates declared power/capability from efficacy; territory-specific ontology not justified",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": false
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C28",
+      "semantic_name": "interpretation / Narrative provenance",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P2",
+      "signal_ids": [
+        "SG-12",
+        "SG-24"
+      ],
+      "historical_case_claim_ids": [
+        "c430-guarantee",
+        "r3:c-pak-delivery",
+        "r4:c-press-paris"
+      ],
+      "existing_core_representation": "Claim + derived assessments + legacy summaries",
+      "lost_meaning_or_adapter_failure": "Issuer framing or current reconstruction presented as direct world observation",
+      "sidecar_representation": "Derived interpretation tied to evidence/claimant/evaluation scope; narrative presentation separate",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/decision-memory-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Derived interpretation tied to evidence/claimant/evaluation scope; narrative presentation separate",
+      "one_sentence_boundary": "interpretation / Narrative provenance: Derived interpretation tied to evidence/claimant/evaluation scope; narrative presentation separate",
+      "counterexample": "Without this boundary: Issuer framing or current reconstruction presented as direct world observation",
+      "decision_rationale": "No narrative truth primitive; evidence/derivation composition still needed",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C29",
+      "semantic_name": "modality / catalogue / depicted-event boundary",
+      "classification": "B",
+      "classification_label": "CORE COMPOSITION GAP",
+      "priority": "P0",
+      "signal_ids": [
+        "SG-11",
+        "SG-22",
+        "SG-34",
+        "SG-35"
+      ],
+      "historical_case_claim_ids": [
+        "r3:c-ia-lineage",
+        "r4:c-photo-title",
+        "r4:c-photo-year"
+      ],
+      "existing_core_representation": "EpistemicObservation modality + Evidence external_ref + source-content Claim",
+      "lost_meaning_or_adapter_failure": "Metadata existence becomes inspected photograph or precise exposure date",
+      "sidecar_representation": "Inspection/representation scope contract; cataloguer/publisher date not event observation",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/epistemic-core.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Inspection/representation scope contract; cataloguer/publisher date not event observation",
+      "one_sentence_boundary": "modality / catalogue / depicted-event boundary: Inspection/representation scope contract; cataloguer/publisher date not event observation",
+      "counterexample": "Without this boundary: Metadata existence becomes inspected photograph or precise exposure date",
+      "decision_rationale": "Existing modality primitive sufficient; scope and adapter validation are composition",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": true
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C30",
+      "semantic_name": "probability calibration / universal certainty scale",
+      "classification": "E",
+      "classification_label": "IMMATURE",
+      "priority": "P3",
+      "signal_ids": [
+        "SG-13",
+        "SG-21",
+        "SG-33"
+      ],
+      "historical_case_claim_ids": [
+        "r3:c-pak-delivery",
+        "r4:c-press-paris",
+        "r4:c-jp-wounded"
+      ],
+      "existing_core_representation": "Claim.confidence + descriptive nonfused summary",
+      "lost_meaning_or_adapter_failure": "Source-confidence arithmetic becomes fused reliability/reality score",
+      "sidecar_representation": "No calibrated probability from these records; retain targeted qualitative rationale",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/belief-reconciliation.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "No calibrated probability from these records; retain targeted qualitative rationale",
+      "one_sentence_boundary": "probability calibration / universal certainty scale: No calibrated probability from these records; retain targeted qualitative rationale",
+      "counterexample": "Without this boundary: Source-confidence arithmetic becomes fused reliability/reality score",
+      "decision_rationale": "Actual calibration/groundtruth repeated trials absent; adjective frequency is not promotion proof",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": "not demonstrated",
+        "3_existing_core_composition_alone_loses_meaning": "domain-specific or not demonstrated"
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C31",
+      "semantic_name": "research absence taxonomy / archive survival",
+      "classification": "D",
+      "classification_label": "HISTORICAL / DOMAIN SIDECAR",
+      "priority": "P2",
+      "signal_ids": [
+        "SG-07",
+        "SG-19",
+        "SG-35"
+      ],
+      "historical_case_claim_ids": [
+        "r3:c-rgia-type",
+        "r4:c-novik-label",
+        "r4:c-photo-title"
+      ],
+      "existing_core_representation": "Structural epistemic gaps are not archive/search history",
+      "lost_meaning_or_adapter_failure": "Notfound=inexistent; inaccessible=lost; silence=negative",
+      "sidecar_representation": "Preserve search method/date/result/limitations and documentary access status in sidecar",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/epistemic-gaps.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Preserve search method/date/result/limitations and documentary access status in sidecar",
+      "one_sentence_boundary": "research absence taxonomy / archive survival: Preserve search method/date/result/limitations and documentary access status in sidecar",
+      "counterexample": "Without this boundary: Notfound=inexistent; inaccessible=lost; silence=negative",
+      "decision_rationale": "Reason/target distinction general B, fixed archive/research status taxonomy documentary-specific",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": false,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": "domain-specific or not demonstrated"
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C32",
+      "semantic_name": "automatic inference / Knowledge truth / entity merge",
+      "classification": "E",
+      "classification_label": "IMMATURE",
+      "priority": "P3",
+      "signal_ids": [
+        "SG-03",
+        "SG-11",
+        "SG-27"
+      ],
+      "historical_case_claim_ids": [
+        "c678-uncertainty",
+        "r3:c-pak-delivery",
+        "r4:c-press-paris"
+      ],
+      "existing_core_representation": "Claim-derived Belief not historical knowledge; exact ID matching",
+      "lost_meaning_or_adapter_failure": "Reasonable knowledge or probabletarget silently becomes known/world-equivalent",
+      "sidecar_representation": "Do not infer; need externally justified rules and epistemic lifecycle",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/belief-reconciliation.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Do not infer; need externally justified rules and epistemic lifecycle",
+      "one_sentence_boundary": "automatic inference / Knowledge truth / entity merge: Do not infer; need externally justified rules and epistemic lifecycle",
+      "counterexample": "Without this boundary: Reasonable knowledge or probabletarget silently becomes known/world-equivalent",
+      "decision_rationale": "No real-case evidence that receipt implies read/knowledge; automatic identity/knowledge promotion rejected",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": "not demonstrated",
+        "3_existing_core_composition_alone_loses_meaning": "domain-specific or not demonstrated"
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    },
+    {
+      "id": "R5-C33",
+      "semantic_name": "reconciliation query scope / predicate cardinality",
+      "classification": "A",
+      "classification_label": "EXISTING CORE SUFFICIENT",
+      "priority": "P0",
+      "signal_ids": [],
+      "historical_case_claim_ids": [
+        "c679-held",
+        "r4:c-jp-night",
+        "r4:c-jp-wounded"
+      ],
+      "existing_core_representation": "BeliefQuery subject+predicate_kind+predicate+at groups semantically divergent values of one intended proposition slot",
+      "lost_meaning_or_adapter_failure": "Old partial adapter uses one predicate for all source assertions; different true text propositions appear as divergent alternatives",
+      "sidecar_representation": "Original atomic Claim IDs separate propositions; fresh adapter maps one predicate slot per extracted assertion",
+      "recurrence_evidence": "Declared claim roots grouped by originating Round in replay; risk-only earlier signals not upgraded to independently confirmed cases",
+      "domain_independence": {
+        "existing_test_path": "ground-core/__tests__/belief-reconciliation.test.ts",
+        "evidence_kind": "existing nonhistorical executable fixture/contract; not a newly researched external deployment",
+        "limit": "An analogous existing domain contract does not prove a new universal primitive or complete lifecycle"
+      },
+      "minimal_semantic_requirement": "Respect existing proposition query key; do not pass a set-valued source assertion list as one singleton-value proposition",
+      "one_sentence_boundary": "A reconciliation scope denotes one intended proposition slot, not all assertions in a source.",
+      "counterexample": "Source records attack time and casualty count; old single predicate is CONTESTED solely because the propositions differ.",
+      "decision_rationale": "Existing core exact-scope/value semantics are sufficient; fix the opt-in adapter and usage contract, not core assessBeliefAt.",
+      "primitive_threshold": {
+        "1_multiple_rounds": true,
+        "2_different_modalities": "explicit cases in inventory; replay retains source inspection/modality",
+        "4_not_historical_only": true,
+        "5_one_sentence": true,
+        "6_real_case_counterexample": true,
+        "7_serialization_replay": true,
+        "8_no_unknown_inference": true,
+        "9_legacy_safe_option": "opt-in contract/adapter or retained sidecar; no core mutation",
+        "10_new_primitive_gain_exceeds_composition": false,
+        "3_existing_core_composition_alone_loses_meaning": false
+      },
+      "core_primitive_promoted": false,
+      "primitive_threshold_notes": "For B, existing atoms exist but composition contracts are missing: criterion3 is a real contract-level loss. Criterion10 does not establish that a NEW ATOM is better than a minimal relation/contract. Modality and lifecycle claims are limited to the actual cited inspected representations."
+    }
+  ],
+  "signal_coverage_required": [
+    "SG-01",
+    "SG-02",
+    "SG-03",
+    "SG-04",
+    "SG-05",
+    "SG-06",
+    "SG-07",
+    "SG-08",
+    "SG-09",
+    "SG-10",
+    "SG-11",
+    "SG-12",
+    "SG-13",
+    "SG-14",
+    "SG-15",
+    "SG-16",
+    "SG-17",
+    "SG-18",
+    "SG-19",
+    "SG-20",
+    "SG-21",
+    "SG-22",
+    "SG-23",
+    "SG-24",
+    "SG-25",
+    "SG-26",
+    "SG-27",
+    "SG-28",
+    "SG-29",
+    "SG-30",
+    "SG-31",
+    "SG-32",
+    "SG-33",
+    "SG-34",
+    "SG-35"
+  ],
+  "classification_counts": {
+    "A": 5,
+    "B": 18,
+    "C": 0,
+    "D": 4,
+    "E": 6
+  },
+  "decision": "No new core primitive or relation implemented; one opt-in source-assertion usage contract/adapter proof planned after decision record. B is a real composition gap, not a claim that opaque JSON provides full semantic support. Query-scope adapter correction is A, based on existing single-proposition reconciliation contract."
+}

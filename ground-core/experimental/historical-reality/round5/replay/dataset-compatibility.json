@@ -1,0 +1,50 @@
+[
+  {
+    "round": 1,
+    "sources": 14,
+    "claims": 18,
+    "source_content_assertions": 18,
+    "projection": "Partial opt-in source-assertion composition only",
+    "historical_events": 0,
+    "historical_states": 0,
+    "attribution_reload_equivalent": true,
+    "relation_reconstruction_migration": "Not migrated; original sidecar retained",
+    "old_new_difference": "New per-extracted-proposition predicate slot and explicit original attribution/scope/time. Old broad predicate remains unchanged in inherited adapter."
+  },
+  {
+    "round": 2,
+    "sources": 23,
+    "claims": 41,
+    "source_content_assertions": 41,
+    "projection": "Partial opt-in source-assertion composition only",
+    "historical_events": 0,
+    "historical_states": 0,
+    "attribution_reload_equivalent": true,
+    "relation_reconstruction_migration": "Not migrated; original sidecar retained",
+    "old_new_difference": "New per-extracted-proposition predicate slot and explicit original attribution/scope/time. Old broad predicate remains unchanged in inherited adapter."
+  },
+  {
+    "round": 3,
+    "sources": 32,
+    "claims": 64,
+    "source_content_assertions": 64,
+    "projection": "Partial opt-in source-assertion composition only",
+    "historical_events": 0,
+    "historical_states": 0,
+    "attribution_reload_equivalent": true,
+    "relation_reconstruction_migration": "Not migrated; original sidecar retained",
+    "old_new_difference": "New per-extracted-proposition predicate slot and explicit original attribution/scope/time. Old broad predicate remains unchanged in inherited adapter."
+  },
+  {
+    "round": 4,
+    "sources": 42,
+    "claims": 147,
+    "source_content_assertions": 147,
+    "projection": "Partial opt-in source-assertion composition only",
+    "historical_events": 0,
+    "historical_states": 0,
+    "attribution_reload_equivalent": true,
+    "relation_reconstruction_migration": "Not migrated; original sidecar retained",
+    "old_new_difference": "New per-extracted-proposition predicate slot and explicit original attribution/scope/time. Old broad predicate remains unchanged in inherited adapter."
+  }
+]

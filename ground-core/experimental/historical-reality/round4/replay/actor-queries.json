@@ -1,0 +1,140 @@
+[
+  {
+    "actor": "r4:flagship-watch",
+    "day": "1904-02-09",
+    "before": [],
+    "same_day_order_unknown": [],
+    "unplaced": [
+      {
+        "id": "r4:k-flag-initial",
+        "kind": "knowledge_stage",
+        "description": "reported_interpretation first explosion initially thought accidental",
+        "claim_ids": [
+          "r4:c-stark-belief"
+        ],
+        "record_ids": [],
+        "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+        "details": {
+          "actor_id": "r4:flagship-watch",
+          "stage": "reported_interpretation",
+          "payload": "first explosion initially thought accidental",
+          "normalized_day": null,
+          "time_placement": "unplaced",
+          "knowledge_inferred": false
+        }
+      },
+      {
+        "id": "r4:k-flag-signals",
+        "kind": "knowledge_stage",
+        "description": "reported_receipt_and_interpretation Tsesarevich/Pallada signals identified attack",
+        "claim_ids": [
+          "r4:c-stark-signal"
+        ],
+        "record_ids": [],
+        "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+        "details": {
+          "actor_id": "r4:flagship-watch",
+          "stage": "reported_receipt_and_interpretation",
+          "payload": "Tsesarevich/Pallada signals identified attack",
+          "normalized_day": null,
+          "time_placement": "unplaced",
+          "knowledge_inferred": false
+        }
+      }
+    ],
+    "knowledge": "not_inferred",
+    "absence": "not_inferred"
+  },
+  {
+    "actor": "r4:novik",
+    "day": "1904-02-09",
+    "before": [],
+    "same_day_order_unknown": [],
+    "unplaced": [
+      {
+        "id": "r4:k-novik-order",
+        "kind": "knowledge_stage",
+        "description": "reported_order_receipt raise steam/pursue destroyers",
+        "claim_ids": [
+          "r4:c-novik-order"
+        ],
+        "record_ids": [],
+        "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+        "details": {
+          "actor_id": "r4:novik",
+          "stage": "reported_order_receipt",
+          "payload": "raise steam/pursue destroyers",
+          "normalized_day": null,
+          "time_placement": "conditional Jan27Julian=Feb9; not sorted as verified Gregorian",
+          "knowledge_inferred": false
+        }
+      }
+    ],
+    "knowledge": "not_inferred",
+    "absence": "not_inferred"
+  },
+  {
+    "actor": "r4:cherkasov",
+    "day": "1904-02-09",
+    "before": [],
+    "same_day_order_unknown": [],
+    "unplaced": [
+      {
+        "id": "r4:k-cherkasov-wireless",
+        "kind": "knowledge_stage",
+        "description": "retrospective_wireless_learning Pallada torpedo damage",
+        "claim_ids": [
+          "r4:c-memo-wireless"
+        ],
+        "record_ids": [],
+        "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+        "details": {
+          "actor_id": "r4:cherkasov",
+          "stage": "retrospective_wireless_learning",
+          "payload": "Pallada torpedo damage",
+          "normalized_day": null,
+          "time_placement": "unplaced; sender/exactreceiver unknown",
+          "knowledge_inferred": false
+        }
+      }
+    ],
+    "knowledge": "not_inferred",
+    "absence": "not_inferred"
+  },
+  {
+    "actor": "togo",
+    "day": "1904-02-09",
+    "before": [],
+    "same_day_order_unknown": [],
+    "unplaced": [],
+    "knowledge": "not_inferred",
+    "absence": "not_inferred"
+  },
+  {
+    "actor": "navy-minister",
+    "day": "1904-02-09",
+    "before": [],
+    "same_day_order_unknown": [],
+    "unplaced": [],
+    "knowledge": "not_inferred",
+    "absence": "not_inferred"
+  },
+  {
+    "actor": "jp-cabinet",
+    "day": "1904-02-09",
+    "before": [],
+    "same_day_order_unknown": [],
+    "unplaced": [],
+    "knowledge": "not_inferred",
+    "absence": "not_inferred"
+  },
+  {
+    "actor": "r4:kamimura",
+    "day": "1904-02-09",
+    "before": [],
+    "same_day_order_unknown": [],
+    "unplaced": [],
+    "knowledge": "not_inferred",
+    "absence": "not_inferred"
+  }
+]

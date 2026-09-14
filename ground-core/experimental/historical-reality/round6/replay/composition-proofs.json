@@ -1,0 +1,2821 @@
+[
+  {
+    "id": "r6:proof-1",
+    "round5_claim_id": "c395-captured",
+    "round6_claim_id": "r6:c-native-replaced",
+    "contract": "source-assertion/v1",
+    "limit": "Transfer proves document-attributed content, not authority validity, implementation, territorial identity or knowledge",
+    "original_round5_attribution": {
+      "experimental_claim_id": "c395-captured",
+      "proposition": "captured",
+      "predicate": "reported_fate",
+      "extraction_context": "foreign minister informs Griscom; upstream naval telegram not inspected",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "frus:1904:395",
+        "locator": {
+          "document_number": "395",
+          "page": {
+            "status": "unknown",
+            "reason": "HTML page marker not inspected for this record"
+          }
+        },
+        "inspection": "edition_text_inspected"
+      },
+      "attributed_claim": {
+        "id": "c395-captured",
+        "source_id": "frus:1904:395",
+        "subject_id": "variag",
+        "predicate": "reported_fate",
+        "object": "captured",
+        "claimant_id": "jp-fm",
+        "report_chain": [
+          "jp-fm",
+          "griscom",
+          "hay"
+        ],
+        "temporal_scope": {
+          "raw": "to-day, February 9",
+          "precision": "day",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": "1904-02-09",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "spatial_scope": "near Chemulpo",
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for attribution to inspected edition; not a truth score",
+          "context": "foreign minister informs Griscom; upstream naval telegram not inspected"
+        },
+        "epistemic_limit": "source assertion; not promoted to historical reality"
+      },
+      "actor_descriptors": [
+        {
+          "id": "griscom",
+          "label": "Mr. Griscom, American Legation, Tokyo",
+          "kind": "person",
+          "identity_boundary": "本文表記を保持。氏名補完は未検証",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "hay",
+          "label": "Mr. Hay",
+          "kind": "person",
+          "identity_boundary": "Secretary of Stateという役職と人物を分離",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "jp-fm",
+          "label": "Japanese minister for foreign affairs",
+          "kind": "office",
+          "identity_boundary": "d395の役職表記。個人同定は未確定",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "variag",
+          "label": "Variag / ワリヤーグ",
+          "kind": "ship",
+          "identity_boundary": "宗谷への同一船体・改称・編入は資料導線のみ。時点未確定",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        }
+      ],
+      "source_creation": {
+        "raw": "1904-02-09",
+        "precision": "day",
+        "calendar": "edition date; original calendar unverified",
+        "normalized_day": "1904-02-09",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "no clock time or offset in inspected text"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+    },
+    "territorial_attribution": {
+      "experimental_claim_id": "r6:c-native-replaced",
+      "proposition": "Percy says they have heard Maritime Customs staff removed from administration of native customs and replaced by Russian nominee",
+      "predicate": "reports_native_customs_replacement",
+      "extraction_context": "Source layer and report chain preserved; heading/report time does not become observed event time",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "r6:s-customs",
+        "locator": {
+          "source_id": "r6:s-customs",
+          "section": "native-replaced"
+        },
+        "inspection": "published text inspected; original image not inspected"
+      },
+      "attributed_claim": {
+        "id": "r6:c-native-replaced",
+        "source_id": "r6:s-customs",
+        "subject_id": "r6:native-nominee",
+        "predicate": "reports_native_customs_replacement",
+        "object": "Percy says they have heard Maritime Customs staff removed from administration of native customs and replaced by Russian nominee",
+        "claimant_id": "r6:percy",
+        "report_chain": [
+          "r6:uk-parliament",
+          "r6:percy"
+        ],
+        "temporal_scope": {
+          "raw": "Replacement time unknown; statement February4",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for inspected text attribution only; not world probability",
+          "context": "Source layer and report chain preserved; heading/report time does not become observed event time"
+        },
+        "assertion_layer": "source_author_reports_actor_assertion",
+        "locator": {
+          "source_id": "r6:s-customs",
+          "section": "native-replaced"
+        },
+        "epistemic_limit": "Reported/declared proposition only; no canonical world state or actor reading inferred"
+      },
+      "actor_descriptors": [
+        {
+          "id": "r6:native-nominee",
+          "label": "Russian nominee at Niuchwang native customs",
+          "kind": "individual_unknown_name",
+          "identity_boundary": "Appointment reported by Percy; person identity not supplied"
+        },
+        {
+          "id": "r6:percy",
+          "label": "Earl Percy, UK Foreign Affairs answer",
+          "kind": "ministerial_individual",
+          "identity_boundary": "Reports heard information; not eyewitness"
+        },
+        {
+          "id": "r6:uk-parliament",
+          "label": "UK Parliament, Hansard publisher",
+          "kind": "publisher",
+          "identity_boundary": "Official edited debate record, not original field report"
+        }
+      ],
+      "source_creation": {
+        "raw": "04 February 1904",
+        "precision": "day",
+        "calendar": "edition civil date; no offset established",
+        "normalized_day": "1904-02-04",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No independently calibrated clock/offset"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability.",
+      "territorial_composition": {
+        "contract": "territorial-attributed-mentions/v1",
+        "rows": [
+          {
+            "id": "r6:row-ni-native",
+            "case_id": "r6:case-niu",
+            "place_id": "r6:p-niu",
+            "actor_id": "r6:native-nominee",
+            "dimension": "native_customs_administration",
+            "assertion_form": "reported_exercise",
+            "value": "Replacement of Maritime Customs staff by Russian nominee heard",
+            "scope": {
+              "spatial": "r6:p-niu",
+              "functional": "native_customs_administration",
+              "actor": "r6:native-nominee",
+              "population": "not specified by source",
+              "infrastructure": "native customs institution",
+              "temporal_key": "ni-native"
+            },
+            "time": {
+              "raw": "Heard by February4; replacement date unknown",
+              "precision": "unknown",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "Original date/order within day not established; no interpolation"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            },
+            "time_role": "reported_event",
+            "claim_ids": [
+              "r6:c-native-replaced"
+            ],
+            "record_ids": [],
+            "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+            "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+            "reality_certainty": "possible",
+            "competing_claim_ids": [],
+            "unknown_reason": "Heard report; appointment order, staff identity, collection ledger uninspected",
+            "canonical_state": false,
+            "exclusivity": "not asserted",
+            "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+          },
+          {
+            "id": "r6:row-ni-tax",
+            "case_id": "r6:case-niu",
+            "place_id": "r6:p-niu",
+            "actor_id": "qing-government",
+            "dimension": "local_tax_collection",
+            "assertion_form": "unresolved_state",
+            "value": {
+              "status": "unknown",
+              "reason": "Native customs staffing report does not attest all municipal taxation/collection"
+            },
+            "scope": {
+              "spatial": "r6:p-niu",
+              "functional": "local_tax_collection",
+              "actor": "qing-government",
+              "population": "not specified by source",
+              "infrastructure": "not infrastructure-specific",
+              "temporal_key": "ni-tax"
+            },
+            "time": {
+              "raw": "February4–24 research window",
+              "precision": "unknown",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "Original date/order within day not established; no interpolation"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            },
+            "time_role": "research_scope",
+            "claim_ids": [
+              "r6:c-native-replaced"
+            ],
+            "record_ids": [],
+            "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+            "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+            "reality_certainty": "unresolved",
+            "competing_claim_ids": [],
+            "unknown_reason": "Native customs staffing report does not attest all municipal taxation/collection",
+            "canonical_state": false,
+            "exclusivity": "not asserted",
+            "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+          }
+        ],
+        "places": [
+          {
+            "id": "r6:p-niu",
+            "label": "Niuchwang treaty port",
+            "kind": "port",
+            "contemporary_designations": [
+              "Niuchwang (FRUS)",
+              "Niu-chwang (Hansard)"
+            ],
+            "claim_ids": [
+              "r6:c-arrest",
+              "r6:c-native-replaced"
+            ],
+            "identity_basis": "Manual shared port/context alignment probable; no extension to modern Niuzhuang/Yingkou municipal limits; native customs functional institution distinguished",
+            "coordinates": null,
+            "polygon": null,
+            "modern_locator": {
+              "status": "unknown",
+              "reason": "Not needed; no modern border back-projection"
+            }
+          }
+        ],
+        "scope": "Source-attributed mentions only; related rows are reconstruction context, not assertions that every supported record is factual. Unknown targets remain unknown."
+      }
+    },
+    "derived_source_content_assessment": "UNCONTESTED",
+    "uncontested_is_not_truth": true,
+    "sources": [
+      {
+        "id": "r6:s-customs",
+        "title": "Hansard: Niu-chwang Customs Staff, 129 c345",
+        "url": "https://api.parliament.uk/historic-hansard/commons/1904/feb/04/niu-chwang-customs-staff",
+        "excerpt": "We have heard that the Russians have removed the member",
+        "inspection": "published text inspected; original image not inspected",
+        "creation": {
+          "raw": "04 February 1904",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-04",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "locator": {
+          "item_id": "customs",
+          "saved_representation": "evidence/hansard-customs.html"
+        },
+        "access_date": "2026-09-14",
+        "modality": "parliamentary_answer",
+        "original_status": "not_inspected",
+        "completeness": "full downloaded HTML",
+        "authenticity_limit": "Official host attests edition, not historical document authenticity"
+      }
+    ]
+  },
+  {
+    "id": "r6:proof-2",
+    "round5_claim_id": "c679-held",
+    "round6_claim_id": "r6:c-miller-dispatch",
+    "contract": "source-assertion/v1",
+    "limit": "Transfer proves document-attributed content, not authority validity, implementation, territorial identity or knowledge",
+    "original_round5_attribution": {
+      "experimental_claim_id": "c679-held",
+      "proposition": "Russian reply when Japanese minister requested passports",
+      "predicate": "reportedly_possessed",
+      "extraction_context": "possession by Russian minister is not receipt by Japanese government",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "frus:1904:679",
+        "locator": {
+          "document_number": "679",
+          "page": {
+            "status": "unknown",
+            "reason": "HTML page marker not inspected for this record"
+          }
+        },
+        "inspection": "edition_text_inspected"
+      },
+      "attributed_claim": {
+        "id": "c679-held",
+        "source_id": "frus:1904:679",
+        "subject_id": "ru-minister-jp",
+        "predicate": "reportedly_possessed",
+        "object": "Russian reply when Japanese minister requested passports",
+        "claimant_id": "ru-fm",
+        "report_chain": [
+          "ru-fm",
+          "mccormick",
+          "hay"
+        ],
+        "temporal_scope": {
+          "raw": "when passports requested",
+          "precision": "unknown",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "spatial_scope": "Tokyo",
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for attribution to inspected edition; not a truth score",
+          "context": "possession by Russian minister is not receipt by Japanese government"
+        },
+        "epistemic_limit": "source assertion; not promoted to historical reality"
+      },
+      "actor_descriptors": [
+        {
+          "id": "mccormick",
+          "label": "Mr. McCormick, American Embassy, St. Petersburg",
+          "kind": "person",
+          "identity_boundary": "米国外交官の報告とロシア政府の認識は別",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "hay",
+          "label": "Mr. Hay",
+          "kind": "person",
+          "identity_boundary": "Secretary of Stateという役職と人物を分離",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "ru-fm",
+          "label": "Russian minister for foreign affairs / Count Lamsdorff",
+          "kind": "office",
+          "identity_boundary": "d680の固有名と他文書の役職の同定は要確認",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "ru-minister-jp",
+          "label": "Russian minister at Tokyo",
+          "kind": "office",
+          "identity_boundary": "回答を所持したという伝聞の対象",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        }
+      ],
+      "source_creation": {
+        "raw": "1904-02-08",
+        "precision": "day",
+        "calendar": "edition date; original calendar unverified",
+        "normalized_day": "1904-02-08",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "no clock time or offset in inspected text"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+    },
+    "territorial_attribution": {
+      "experimental_claim_id": "r6:c-miller-dispatch",
+      "proposition": "Conger reports he sent telegraphic instructions to Consul Miller",
+      "predicate": "sent_telegraphic_instructions",
+      "extraction_context": "Source layer and report chain preserved; heading/report time does not become observed event time",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "r6:s-125",
+        "locator": {
+          "source_id": "r6:s-125",
+          "section": "miller-dispatch"
+        },
+        "inspection": "official_TEI_text_inspected; historical original not inspected"
+      },
+      "attributed_claim": {
+        "id": "r6:c-miller-dispatch",
+        "source_id": "r6:s-125",
+        "subject_id": "conger",
+        "predicate": "sent_telegraphic_instructions",
+        "object": "Conger reports he sent telegraphic instructions to Consul Miller",
+        "claimant_id": "conger",
+        "report_chain": [
+          "conger",
+          "r6:miller"
+        ],
+        "temporal_scope": {
+          "raw": "have sent; February13 heading not dispatch instant",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for inspected text attribution only; not world probability",
+          "context": "Source layer and report chain preserved; heading/report time does not become observed event time"
+        },
+        "assertion_layer": "source_author_reports_actor_assertion",
+        "locator": {
+          "source_id": "r6:s-125",
+          "section": "miller-dispatch"
+        },
+        "epistemic_limit": "Reported/declared proposition only; no canonical world state or actor reading inferred"
+      },
+      "actor_descriptors": [
+        {
+          "id": "conger",
+          "label": "Mr. Conger",
+          "kind": "person",
+          "identity_boundary": "d86の指示宛先。指示の履行は未確定",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "r6:miller",
+          "label": "Henry B. Miller, American consul Niuchwang",
+          "kind": "consular_individual",
+          "identity_boundary": "Good offices only; no transfer of Japanese consular authority"
+        }
+      ],
+      "source_creation": {
+        "raw": "1904-02-13",
+        "precision": "day",
+        "calendar": "edition civil date; no offset established",
+        "normalized_day": "1904-02-13",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No independently calibrated clock/offset"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability.",
+      "territorial_composition": {
+        "contract": "territorial-attributed-mentions/v1",
+        "rows": [
+          {
+            "id": "r6:row-ni-send",
+            "case_id": "r6:case-niu",
+            "place_id": "r6:p-niu",
+            "actor_id": "conger",
+            "dimension": "good_offices_message",
+            "assertion_form": "documented_transmission",
+            "value": "Telegraphic instructions sent to Miller",
+            "scope": {
+              "spatial": "r6:p-niu",
+              "functional": "good_offices_message",
+              "actor": "conger",
+              "population": "not specified by source",
+              "infrastructure": "not infrastructure-specific",
+              "temporal_key": "ni-send"
+            },
+            "time": {
+              "raw": "have sent; no send instant",
+              "precision": "unknown",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "Original date/order within day not established; no interpolation"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            },
+            "time_role": "documented_stage",
+            "claim_ids": [
+              "r6:c-miller-dispatch"
+            ],
+            "record_ids": [],
+            "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+            "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+            "reality_certainty": "possible",
+            "competing_claim_ids": [],
+            "unknown_reason": "Miller receipt/read/action not established",
+            "canonical_state": false,
+            "exclusivity": "not asserted",
+            "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+          }
+        ],
+        "places": [
+          {
+            "id": "r6:p-niu",
+            "label": "Niuchwang treaty port",
+            "kind": "port",
+            "contemporary_designations": [
+              "Niuchwang (FRUS)",
+              "Niu-chwang (Hansard)"
+            ],
+            "claim_ids": [
+              "r6:c-arrest",
+              "r6:c-native-replaced"
+            ],
+            "identity_basis": "Manual shared port/context alignment probable; no extension to modern Niuzhuang/Yingkou municipal limits; native customs functional institution distinguished",
+            "coordinates": null,
+            "polygon": null,
+            "modern_locator": {
+              "status": "unknown",
+              "reason": "Not needed; no modern border back-projection"
+            }
+          }
+        ],
+        "scope": "Source-attributed mentions only; related rows are reconstruction context, not assertions that every supported record is factual. Unknown targets remain unknown."
+      }
+    },
+    "derived_source_content_assessment": "UNCONTESTED",
+    "uncontested_is_not_truth": true,
+    "sources": [
+      {
+        "id": "r6:s-125",
+        "title": "Conger confirms receipt, Chinese consent and Miller instruction",
+        "url": "https://history.state.gov/historicaldocuments/frus1904/d125",
+        "excerpt": "Mr. Conger to Mr. Hay. American Legation,Peking, China, February 13, 1904. No. 1503.] Sir: I have the honor to confirm your telegram received February 10. The Chinese Government have readily consented, and I have sent te",
+        "inspection": "official_TEI_text_inspected; historical original not inspected",
+        "creation": {
+          "raw": "1904-02-13",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-13",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "locator": {
+          "volume": "frus1904",
+          "document_id": "d125",
+          "saved_tei": "evidence/frus1904-d125.xml"
+        },
+        "access_date": "2026-09-14",
+        "modality": "published_diplomatic_edition",
+        "original_status": "not_inspected",
+        "authenticity_limit": "Official published edition/digitization, not an authenticated original; editorial paraphrase/translation retained",
+        "temporal_annotations": [
+          {
+            "role": "document_heading_date",
+            "time": {
+              "raw": "1904-02-13",
+              "precision": "day",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": "1904-02-13",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            }
+          },
+          {
+            "role": "publication_time",
+            "time": {
+              "raw": "FRUS1904 published edition; see inherited FRUS lineage, not1904 heading date",
+              "precision": "unknown",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "Original date/order within day not established; no interpolation"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "r6:proof-3",
+    "round5_claim_id": "r2:c-ack82",
+    "round6_claim_id": "r6:c-conger-receipt",
+    "contract": "source-assertion/v1",
+    "limit": "Transfer proves document-attributed content, not authority validity, implementation, territorial identity or knowledge",
+    "original_round5_attribution": {
+      "experimental_claim_id": "r2:c-ack82",
+      "proposition": "栗野No82は「貴電五〇、五三悉ス」。2月5日6.15pM日付、東京2月6日4.40aM受信。No51/52受領はこの文から拡張しない。",
+      "predicate": "acknowledged_messages",
+      "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality.",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "r2:komura-bundle",
+        "locator": {
+          "ref": "B07090546900",
+          "repository": "外務省外交史料館",
+          "call": "5.2.1.14_003",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200147290500/raw/B07090546900.b5_0029.5-0267.00000006.pdf",
+          "images": "4–6,8–12; frame0009–0017"
+        },
+        "inspection": "Archival digitized telegram records; PDF images4–6,8–12 visually inspected. Outgoing copies and receiving annotations are not original Russian reply or proof of minister reading."
+      },
+      "attributed_claim": {
+        "id": "r2:c-ack82",
+        "source_id": "r2:komura-bundle",
+        "subject_id": "jp-minister-ru",
+        "predicate": "acknowledged_messages",
+        "object": "栗野No82は「貴電五〇、五三悉ス」。2月5日6.15pM日付、東京2月6日4.40aM受信。No51/52受領はこの文から拡張しない。",
+        "claimant_id": "jp-minister-ru",
+        "report_chain": [
+          "jp-minister-ru"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-05",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "6.15pM",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      "actor_descriptors": [
+        {
+          "id": "jp-minister-ru",
+          "label": "Japanese minister at St. Petersburg",
+          "kind": "office",
+          "identity_boundary": "d678の認識主体。日本全体へ拡張しない",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        }
+      ],
+      "source_creation": {
+        "raw": "not located",
+        "precision": "unknown",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": {
+          "status": "unknown",
+          "reason": "No independently placed day"
+        },
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": {
+          "status": "unknown",
+          "reason": "Clock not specified"
+        },
+        "place": {
+          "status": "unknown",
+          "reason": "Place not established"
+        },
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+    },
+    "territorial_attribution": {
+      "experimental_claim_id": "r6:c-conger-receipt",
+      "proposition": "Conger confirms telegram received February10",
+      "predicate": "explicit_receipt",
+      "extraction_context": "Source layer and report chain preserved; heading/report time does not become observed event time",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "r6:s-125",
+        "locator": {
+          "source_id": "r6:s-125",
+          "section": "conger-receipt"
+        },
+        "inspection": "official_TEI_text_inspected; historical original not inspected"
+      },
+      "attributed_claim": {
+        "id": "r6:c-conger-receipt",
+        "source_id": "r6:s-125",
+        "subject_id": "conger",
+        "predicate": "explicit_receipt",
+        "object": "Conger confirms telegram received February10",
+        "claimant_id": "conger",
+        "report_chain": [
+          "conger",
+          "r6:loomis"
+        ],
+        "temporal_scope": {
+          "raw": "received February10",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for inspected text attribution only; not world probability",
+          "context": "Source layer and report chain preserved; heading/report time does not become observed event time"
+        },
+        "assertion_layer": "source_author_asserts",
+        "locator": {
+          "source_id": "r6:s-125",
+          "section": "conger-receipt"
+        },
+        "epistemic_limit": "Reported/declared proposition only; no canonical world state or actor reading inferred"
+      },
+      "actor_descriptors": [
+        {
+          "id": "conger",
+          "label": "Mr. Conger",
+          "kind": "person",
+          "identity_boundary": "d86の指示宛先。指示の履行は未確定",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "r6:loomis",
+          "label": "Francis B. Loomis, Department of State",
+          "kind": "individual",
+          "identity_boundary": "Instruction author distinct from local consul"
+        }
+      ],
+      "source_creation": {
+        "raw": "1904-02-13",
+        "precision": "day",
+        "calendar": "edition civil date; no offset established",
+        "normalized_day": "1904-02-13",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No independently calibrated clock/offset"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability.",
+      "territorial_composition": {
+        "contract": "territorial-attributed-mentions/v1",
+        "rows": [
+          {
+            "id": "r6:row-ni-receipt",
+            "case_id": "r6:case-niu",
+            "place_id": "r6:p-niu",
+            "actor_id": "conger",
+            "dimension": "good_offices_message",
+            "assertion_form": "documented_transmission",
+            "value": "Conger received ministry telegram10Feb",
+            "scope": {
+              "spatial": "r6:p-niu",
+              "functional": "good_offices_message",
+              "actor": "conger",
+              "population": "not specified by source",
+              "infrastructure": "not infrastructure-specific",
+              "temporal_key": "ni-receipt"
+            },
+            "time": {
+              "raw": "received February10",
+              "precision": "day",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": "1904-02-10",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            },
+            "time_role": "documented_stage",
+            "claim_ids": [
+              "r6:c-conger-receipt"
+            ],
+            "record_ids": [],
+            "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+            "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+            "reality_certainty": "possible",
+            "competing_claim_ids": [],
+            "unknown_reason": "Effective extent/onset and independent field verification not established",
+            "canonical_state": false,
+            "exclusivity": "not asserted",
+            "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+          }
+        ],
+        "places": [
+          {
+            "id": "r6:p-niu",
+            "label": "Niuchwang treaty port",
+            "kind": "port",
+            "contemporary_designations": [
+              "Niuchwang (FRUS)",
+              "Niu-chwang (Hansard)"
+            ],
+            "claim_ids": [
+              "r6:c-arrest",
+              "r6:c-native-replaced"
+            ],
+            "identity_basis": "Manual shared port/context alignment probable; no extension to modern Niuzhuang/Yingkou municipal limits; native customs functional institution distinguished",
+            "coordinates": null,
+            "polygon": null,
+            "modern_locator": {
+              "status": "unknown",
+              "reason": "Not needed; no modern border back-projection"
+            }
+          }
+        ],
+        "scope": "Source-attributed mentions only; related rows are reconstruction context, not assertions that every supported record is factual. Unknown targets remain unknown."
+      }
+    },
+    "derived_source_content_assessment": "UNCONTESTED",
+    "uncontested_is_not_truth": true,
+    "sources": [
+      {
+        "id": "r6:s-125",
+        "title": "Conger confirms receipt, Chinese consent and Miller instruction",
+        "url": "https://history.state.gov/historicaldocuments/frus1904/d125",
+        "excerpt": "Mr. Conger to Mr. Hay. American Legation,Peking, China, February 13, 1904. No. 1503.] Sir: I have the honor to confirm your telegram received February 10. The Chinese Government have readily consented, and I have sent te",
+        "inspection": "official_TEI_text_inspected; historical original not inspected",
+        "creation": {
+          "raw": "1904-02-13",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-13",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "locator": {
+          "volume": "frus1904",
+          "document_id": "d125",
+          "saved_tei": "evidence/frus1904-d125.xml"
+        },
+        "access_date": "2026-09-14",
+        "modality": "published_diplomatic_edition",
+        "original_status": "not_inspected",
+        "authenticity_limit": "Official published edition/digitization, not an authenticated original; editorial paraphrase/translation retained",
+        "temporal_annotations": [
+          {
+            "role": "document_heading_date",
+            "time": {
+              "raw": "1904-02-13",
+              "precision": "day",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": "1904-02-13",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            }
+          },
+          {
+            "role": "publication_time",
+            "time": {
+              "raw": "FRUS1904 published edition; see inherited FRUS lineage, not1904 heading date",
+              "precision": "unknown",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "Original date/order within day not established; no interpolation"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "r6:proof-4",
+    "round5_claim_id": "r3:c-pak-delivery",
+    "round6_claim_id": "r6:c-allen-receipt",
+    "contract": "source-assertion/v1",
+    "limit": "Transfer proves document-attributed content, not authority validity, implementation, territorial identity or knowledge",
+    "original_round5_attribution": {
+      "experimental_claim_id": "r3:c-pak-delivery",
+      "proposition": "Pak says telegram delivered toRosen only7February (доставлена Розену только 7 февраля). Wording asserts delivery, not opening, reading or acknowledgment.",
+      "predicate": "later_delivery_assertion",
+      "extraction_context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion.",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "r2:pak",
+        "locator": {
+          "inspected": "p135 and footnotes19–21",
+          "download_url": "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+        },
+        "inspection": "Later historian; PDF text searched and p135 visually inspected. Bibliography is a discovery path, not original telegram inspection."
+      },
+      "attributed_claim": {
+        "id": "r3:c-pak-delivery",
+        "source_id": "r2:pak",
+        "subject_id": "ru-minister-jp",
+        "predicate": "later_delivery_assertion",
+        "object": "Pak says telegram delivered toRosen only7February (доставлена Розену только 7 февраля). Wording asserts delivery, not opening, reading or acknowledgment.",
+        "claimant_id": "pak-2023",
+        "report_chain": [
+          "pak-2023"
+        ],
+        "temporal_scope": {
+          "raw": "7 февраля",
+          "precision": "day",
+          "normalized_day": "1904-02-07",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          },
+          "calendar": "Gregorian interpretation from article sequence; original telegram calendar unverified"
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      "actor_descriptors": [
+        {
+          "id": "ru-minister-jp",
+          "label": "Russian minister at Tokyo",
+          "kind": "office",
+          "identity_boundary": "回答を所持したという伝聞の対象",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "pak-2023",
+          "label": "B. B. Pak（2023年論文著者）",
+          "kind": "individual",
+          "identity_boundary": "This source-attested scope only; no automatic office, government or command-wide equivalence."
+        }
+      ],
+      "source_creation": {
+        "raw": "2023",
+        "precision": "unknown",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": {
+          "status": "unknown",
+          "reason": "No independently placed day"
+        },
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": {
+          "status": "unknown",
+          "reason": "Clock not specified"
+        },
+        "place": {
+          "status": "unknown",
+          "reason": "Place not established"
+        },
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+    },
+    "territorial_attribution": {
+      "experimental_claim_id": "r6:c-allen-receipt",
+      "proposition": "Allen reports Hayashi handed him a translation yesterday afternoon",
+      "predicate": "handed_translation",
+      "extraction_context": "Source layer and report chain preserved; heading/report time does not become observed event time",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "r6:s-450",
+        "locator": {
+          "document_id": "d450",
+          "paragraph": 1
+        },
+        "inspection": "official_TEI_text_inspected; historical original not inspected"
+      },
+      "attributed_claim": {
+        "id": "r6:c-allen-receipt",
+        "source_id": "r6:s-450",
+        "subject_id": "r6:allen",
+        "predicate": "handed_translation",
+        "object": "Allen reports Hayashi handed him a translation yesterday afternoon",
+        "claimant_id": "r6:allen",
+        "report_chain": [
+          "r6:allen",
+          "hayashi"
+        ],
+        "temporal_scope": {
+          "raw": "yesterday afternoon (heading February27)",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-26",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for inspected text attribution only; not world probability",
+          "context": "Source layer and report chain preserved; heading/report time does not become observed event time"
+        },
+        "assertion_layer": "source_author_asserts",
+        "locator": {
+          "document_id": "d450",
+          "paragraph": 1
+        },
+        "epistemic_limit": "Reported/declared proposition only; no canonical world state or actor reading inferred"
+      },
+      "actor_descriptors": [
+        {
+          "id": "hayashi",
+          "label": "日本公使 林權助",
+          "kind": "person",
+          "identity_boundary": "1904年2月12日の発信者。役職任期全体は未入力",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "r6:allen",
+          "label": "Horace N. Allen, American Legation Seoul",
+          "kind": "individual",
+          "identity_boundary": "Not US government knowledge collectively"
+        }
+      ],
+      "source_creation": {
+        "raw": "1904-02-27",
+        "precision": "day",
+        "calendar": "edition civil date; no offset established",
+        "normalized_day": "1904-02-27",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No independently calibrated clock/offset"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability.",
+      "territorial_composition": {
+        "contract": "territorial-attributed-mentions/v1",
+        "rows": [
+          {
+            "id": "r6:row-se-allen",
+            "case_id": "r6:case-seoul",
+            "place_id": "r6:p-seoul",
+            "actor_id": "r6:allen",
+            "dimension": "protocol_copy_possession",
+            "assertion_form": "documented_transmission",
+            "value": "Handed translation yesterday afternoon",
+            "scope": {
+              "spatial": "r6:p-seoul",
+              "functional": "protocol_copy_possession",
+              "actor": "r6:allen",
+              "population": "not specified by source",
+              "infrastructure": "not infrastructure-specific",
+              "temporal_key": "se-allen"
+            },
+            "time": {
+              "raw": "yesterday afternoon / February27 heading",
+              "precision": "day",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": "1904-02-26",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            },
+            "time_role": "documented_stage",
+            "claim_ids": [
+              "r6:c-allen-receipt"
+            ],
+            "record_ids": [],
+            "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+            "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+            "reality_certainty": "possible",
+            "competing_claim_ids": [],
+            "unknown_reason": "Effective extent/onset and independent field verification not established",
+            "canonical_state": false,
+            "exclusivity": "not asserted",
+            "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+          },
+          {
+            "id": "r6:row-se-police",
+            "case_id": "r6:case-seoul",
+            "place_id": "r6:p-seoul",
+            "actor_id": "kr-government",
+            "dimension": "local_policing",
+            "assertion_form": "unresolved_state",
+            "value": {
+              "status": "unknown",
+              "reason": "Known place/polity, no located policing authority/exercise evidence in inspected protocol and Allen item"
+            },
+            "scope": {
+              "spatial": "r6:p-seoul",
+              "functional": "local_policing",
+              "actor": "kr-government",
+              "population": "not specified by source",
+              "infrastructure": "not infrastructure-specific",
+              "temporal_key": "se-police"
+            },
+            "time": {
+              "raw": "February23–26 research window",
+              "precision": "unknown",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "Original date/order within day not established; no interpolation"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            },
+            "time_role": "research_scope",
+            "claim_ids": [
+              "r6:c-allen-receipt"
+            ],
+            "record_ids": [],
+            "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+            "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+            "reality_certainty": "unresolved",
+            "competing_claim_ids": [],
+            "unknown_reason": "Known place/polity, no located policing authority/exercise evidence in inspected protocol and Allen item",
+            "canonical_state": false,
+            "exclusivity": "not asserted",
+            "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+          }
+        ],
+        "places": [
+          {
+            "id": "r6:p-seoul",
+            "label": "漢城/京城/Seoul diplomatic arena",
+            "kind": "settlement_institutional_arena",
+            "contemporary_designations": [
+              "Seoul (FRUSd450)",
+              "京城 (Okabe copied account)"
+            ],
+            "claim_ids": [
+              "r6:c-allen-receipt",
+              "r6:c-okabe-order"
+            ],
+            "identity_basis": "Manual documentary context association; protocol scope Korea-wide is context, not Seoul boundary; translation handing-place given by legation heading, exact facility unknown",
+            "coordinates": null,
+            "polygon": null,
+            "modern_locator": {
+              "status": "unknown",
+              "reason": "Not needed; no modern border back-projection"
+            }
+          }
+        ],
+        "scope": "Source-attributed mentions only; related rows are reconstruction context, not assertions that every supported record is factual. Unknown targets remain unknown."
+      }
+    },
+    "derived_source_content_assessment": "UNCONTESTED",
+    "uncontested_is_not_truth": true,
+    "sources": [
+      {
+        "id": "r6:s-450",
+        "title": "Allen records Hayashi handing protocol translation yesterday afternoon",
+        "url": "https://history.state.gov/historicaldocuments/frus1904/d450",
+        "excerpt": "Mr. Allen to Mr. Hay. American Legation,Seoul, Korea, February 27, 1904. No. 681.] Sir: * * * * * * * Mr. Hayashi, the Japanese minister, during his call on yesterday afternoon handed me a translation of the new agreemen",
+        "inspection": "official_TEI_text_inspected; historical original not inspected",
+        "creation": {
+          "raw": "1904-02-27",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-27",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "locator": {
+          "volume": "frus1904",
+          "document_id": "d450",
+          "saved_tei": "evidence/frus1904-d450.xml"
+        },
+        "access_date": "2026-09-14",
+        "modality": "published_diplomatic_edition",
+        "original_status": "not_inspected",
+        "authenticity_limit": "Official published edition/digitization, not an authenticated original; editorial paraphrase/translation retained",
+        "temporal_annotations": [
+          {
+            "role": "document_heading_date",
+            "time": {
+              "raw": "1904-02-27",
+              "precision": "day",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": "1904-02-27",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            }
+          },
+          {
+            "role": "publication_time",
+            "time": {
+              "raw": "FRUS1904 published edition; see inherited FRUS lineage, not1904 heading date",
+              "precision": "unknown",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "Original date/order within day not established; no interpolation"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "r6:proof-5",
+    "round5_claim_id": "r4:c-press-paris",
+    "round6_claim_id": "r6:c-county-promise",
+    "contract": "source-assertion/v1",
+    "limit": "Transfer proves document-attributed content, not authority validity, implementation, territorial identity or knowledge",
+    "original_round5_attribution": {
+      "experimental_claim_id": "r4:c-press-paris",
+      "proposition": "French foreign office in Paris reportedly announced cruiser Pallida sunk",
+      "predicate": "attributed_reported_proposition",
+      "extraction_context": "p.1 War is on column 2; qualifier: Pallida/Pallada alignment probable from shared cruiser/torpedo/Port Arthur context, not proven identity",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "r4:s-clarendon",
+        "locator": {
+          "passage": "p.1 War is on column 2"
+        },
+        "inspection": "Page 1 scan visually inspected; other pages not inspected"
+      },
+      "attributed_claim": {
+        "id": "r4:c-press-paris",
+        "source_id": "r4:s-clarendon",
+        "subject_id": "r4:clarendon",
+        "predicate": "attributed_reported_proposition",
+        "object": "French foreign office in Paris reportedly announced cruiser Pallida sunk",
+        "claimant_id": "r4:clarendon",
+        "report_chain": [
+          "r4:clarendon",
+          "r4:paris-office"
+        ],
+        "temporal_scope": {
+          "raw": "time not specified",
+          "precision": "unknown",
+          "calendar": "not stated",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "calendar/clock or creation day unverified"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "local clock standard not located"
+          }
+        },
+        "extraction": {
+          "status": "inspected_source_atomic_extraction",
+          "confidence": "source-content attribution only; no numeric reality confidence",
+          "context": "p.1 War is on column 2; qualifier: Pallida/Pallada alignment probable from shared cruiser/torpedo/Port Arthur context, not proven identity"
+        },
+        "locator": {
+          "passage": "p.1 War is on column 2"
+        },
+        "assertion_layer": "source_reports_actor_assertion",
+        "epistemic_qualifier": "Pallida/Pallada alignment probable from shared cruiser/torpedo/Port Arthur context, not proven identity",
+        "reported_proposition": {
+          "topic": "Pallada sinking in initial night attack",
+          "polarity": "positive"
+        }
+      },
+      "actor_descriptors": [
+        {
+          "id": "r4:clarendon",
+          "label": "Clarendon Chronicle editorial voice",
+          "kind": "publisher",
+          "identity_boundary": "Only named/attributed scope in inspected source; institutional knowledge and individual identity are not inferred."
+        },
+        {
+          "id": "r4:paris-office",
+          "label": "French foreign office as attributed by newspaper",
+          "kind": "reported institution",
+          "identity_boundary": "Only named/attributed scope in inspected source; institutional knowledge and individual identity are not inferred."
+        }
+      ],
+      "source_creation": {
+        "raw": "10 February 1904",
+        "precision": "day",
+        "calendar": "Gregorian",
+        "normalized_day": "1904-02-10",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "local clock standard not located"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+    },
+    "territorial_attribution": {
+      "experimental_claim_id": "r6:c-county-promise",
+      "proposition": "Okabe says county chief undertook protection of Japanese residents property; subsequent enforcement not observed",
+      "predicate": "reports_promise",
+      "extraction_context": "Source layer and report chain preserved; heading/report time does not become observed event time",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "r6:s-uiju",
+        "locator": {
+          "level_id": "jh_019_0020_7580",
+          "section": "I–II",
+          "copy_mark": "寫"
+        },
+        "inspection": "published text inspected; original image not inspected"
+      },
+      "attributed_claim": {
+        "id": "r6:c-county-promise",
+        "source_id": "r6:s-uiju",
+        "subject_id": "r6:county",
+        "predicate": "reports_promise",
+        "object": "Okabe says county chief undertook protection of Japanese residents property; subsequent enforcement not observed",
+        "claimant_id": "r6:okabe",
+        "report_chain": [
+          "hayashi",
+          "r6:okabe",
+          "r6:county"
+        ],
+        "temporal_scope": {
+          "raw": "引揚時; 二月五日",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for inspected text attribution only; not world probability",
+          "context": "Source layer and report chain preserved; heading/report time does not become observed event time"
+        },
+        "assertion_layer": "retrospective_actor_assertion_in_forwarded_copy",
+        "locator": {
+          "level_id": "jh_019_0020_7580",
+          "section": "I–II",
+          "copy_mark": "寫"
+        },
+        "epistemic_limit": "Reported/declared proposition only; no canonical world state or actor reading inferred"
+      },
+      "actor_descriptors": [
+        {
+          "id": "hayashi",
+          "label": "日本公使 林權助",
+          "kind": "person",
+          "identity_boundary": "1904年2月12日の発信者。役職任期全体は未入力",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "r6:okabe",
+          "label": "岡部三郎, diplomatic assistant at 義州",
+          "kind": "individual",
+          "identity_boundary": "Retrospective first-person report in attached copy"
+        },
+        {
+          "id": "r6:county",
+          "label": "義州郡官/郡守, unnamed",
+          "kind": "local_administration",
+          "identity_boundary": "Horses/property-protection undertaking only"
+        }
+      ],
+      "source_creation": {
+        "raw": "明治三十七年四月二十五日",
+        "precision": "day",
+        "calendar": "edition civil date; no offset established",
+        "normalized_day": "1904-04-25",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No independently calibrated clock/offset"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability.",
+      "territorial_composition": {
+        "contract": "territorial-attributed-mentions/v1",
+        "rows": [
+          {
+            "id": "r6:row-ui-promise",
+            "case_id": "r6:case-uiju",
+            "place_id": "r6:p-uiju",
+            "actor_id": "r6:county",
+            "dimension": "resident_property_protection",
+            "assertion_form": "undertaking",
+            "value": "Chief undertook protection",
+            "scope": {
+              "spatial": "r6:p-uiju",
+              "functional": "resident_property_protection",
+              "actor": "r6:county",
+              "population": "Japanese residents’ retained property",
+              "infrastructure": "not infrastructure-specific",
+              "temporal_key": "ui-promise"
+            },
+            "time": {
+              "raw": "二月五日",
+              "precision": "day",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": "1904-02-05",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            },
+            "time_role": "research_scope",
+            "claim_ids": [
+              "r6:c-county-promise"
+            ],
+            "record_ids": [],
+            "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+            "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+            "reality_certainty": "possible",
+            "competing_claim_ids": [],
+            "unknown_reason": "Promise not subsequent prevention of trespass or title validity",
+            "canonical_state": false,
+            "exclusivity": "not asserted",
+            "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+          }
+        ],
+        "places": [
+          {
+            "id": "r6:p-uiju",
+            "label": "義州 withdrawal arena",
+            "kind": "settlement",
+            "contemporary_designations": [
+              "義州"
+            ],
+            "claim_ids": [
+              "r6:c-withdraw-action",
+              "r6:c-county-promise"
+            ],
+            "identity_basis": "Copy §II ties county officer/office/departure; no county polygon",
+            "coordinates": null,
+            "polygon": null,
+            "modern_locator": {
+              "status": "unknown",
+              "reason": "Not needed; no modern border back-projection"
+            }
+          }
+        ],
+        "scope": "Source-attributed mentions only; related rows are reconstruction context, not assertions that every supported record is factual. Unknown targets remain unknown."
+      }
+    },
+    "derived_source_content_assessment": "UNCONTESTED",
+    "uncontested_is_not_truth": true,
+    "sources": [
+      {
+        "id": "r6:s-uiju",
+        "title": "Hayashi forwards Okabe attached copy of withdrawal report",
+        "url": "https://db.history.go.kr/item/compareViewer.do?levelId=jh_019_0020_7580",
+        "excerpt": "[上件報告書 寫]",
+        "inspection": "published text inspected; original image not inspected",
+        "creation": {
+          "raw": "明治三十七年四月二十五日",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-04-25",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "locator": {
+          "item_id": "uiju",
+          "saved_representation": "evidence/nikh-uiju.research-extract.json"
+        },
+        "access_date": "2026-09-14",
+        "modality": "edited_diplomatic_copy",
+        "original_status": "not_inspected",
+        "completeness": "selected researcher extract; original publication viewed through web tool",
+        "authenticity_limit": "Official host attests edition, not historical document authenticity"
+      }
+    ]
+  },
+  {
+    "id": "r6:proof-6",
+    "round5_claim_id": "r4:c-press-not-sunk",
+    "round6_claim_id": "r6:c-no-jp-authority",
+    "contract": "source-assertion/v1",
+    "limit": "Transfer proves document-attributed content, not authority validity, implementation, territorial identity or knowledge",
+    "original_round5_attribution": {
+      "experimental_claim_id": "r4:c-press-not-sunk",
+      "proposition": "Russian telegram to Tsar says three torpedo-injured ships not sunk",
+      "predicate": "attributed_reported_proposition",
+      "extraction_context": "p.1 Extent of damage; qualifier: Pallada named among three; original telegram not inspected",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "r4:s-astorian",
+        "locator": {
+          "passage": "p.1 Extent of damage"
+        },
+        "inspection": "Page 1 scan visually inspected; web OCR separately retained"
+      },
+      "attributed_claim": {
+        "id": "r4:c-press-not-sunk",
+        "source_id": "r4:s-astorian",
+        "subject_id": "r4:astorian",
+        "predicate": "attributed_reported_proposition",
+        "object": "Russian telegram to Tsar says three torpedo-injured ships not sunk",
+        "claimant_id": "r4:astorian",
+        "report_chain": [
+          "r4:astorian",
+          "alexieff"
+        ],
+        "temporal_scope": {
+          "raw": "time not specified",
+          "precision": "unknown",
+          "calendar": "not stated",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "calendar/clock or creation day unverified"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "local clock standard not located"
+          }
+        },
+        "extraction": {
+          "status": "inspected_source_atomic_extraction",
+          "confidence": "source-content attribution only; no numeric reality confidence",
+          "context": "p.1 Extent of damage; qualifier: Pallada named among three; original telegram not inspected"
+        },
+        "locator": {
+          "passage": "p.1 Extent of damage"
+        },
+        "assertion_layer": "source_reports_actor_assertion",
+        "epistemic_qualifier": "Pallada named among three; original telegram not inspected",
+        "reported_proposition": {
+          "topic": "Pallada sinking in initial night attack",
+          "polarity": "negative"
+        }
+      },
+      "actor_descriptors": [
+        {
+          "id": "alexieff",
+          "label": "Admiral Alexieff",
+          "kind": "person",
+          "identity_boundary": "回答修正権限の伝聞対象。軍全体ではない",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "r4:astorian",
+          "label": "Morning Astorian editorial/reporting voice",
+          "kind": "publisher",
+          "identity_boundary": "Only named/attributed scope in inspected source; institutional knowledge and individual identity are not inferred."
+        }
+      ],
+      "source_creation": {
+        "raw": "10 February 1904",
+        "precision": "day",
+        "calendar": "Gregorian",
+        "normalized_day": "1904-02-10",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "local clock standard not located"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+    },
+    "territorial_attribution": {
+      "experimental_claim_id": "r6:c-no-jp-authority",
+      "proposition": "Miller will not be invested with Japanese consular functions or authority",
+      "predicate": "denies_investiture",
+      "extraction_context": "Source layer and report chain preserved; heading/report time does not become observed event time",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "r6:s-124",
+        "locator": {
+          "source_id": "r6:s-124",
+          "section": "no-jp-authority"
+        },
+        "inspection": "official_TEI_text_inspected; historical original not inspected"
+      },
+      "attributed_claim": {
+        "id": "r6:c-no-jp-authority",
+        "source_id": "r6:s-124",
+        "subject_id": "r6:miller",
+        "predicate": "denies_investiture",
+        "object": "Miller will not be invested with Japanese consular functions or authority",
+        "claimant_id": "r6:loomis",
+        "report_chain": [
+          "r3:frus-publisher",
+          "r6:loomis",
+          "conger"
+        ],
+        "temporal_scope": {
+          "raw": "February9 instruction",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-09",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for inspected text attribution only; not world probability",
+          "context": "Source layer and report chain preserved; heading/report time does not become observed event time"
+        },
+        "assertion_layer": "source_author_reports_actor_assertion",
+        "locator": {
+          "source_id": "r6:s-124",
+          "section": "no-jp-authority"
+        },
+        "epistemic_limit": "Reported/declared proposition only; no canonical world state or actor reading inferred"
+      },
+      "actor_descriptors": [
+        {
+          "id": "conger",
+          "label": "Mr. Conger",
+          "kind": "person",
+          "identity_boundary": "d86の指示宛先。指示の履行は未確定",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "r3:frus-publisher",
+          "label": "Office of the Historian",
+          "kind": "publisher",
+          "identity_boundary": "Source attribution scope only; no assumption of a collective historical knowledge state."
+        },
+        {
+          "id": "r6:miller",
+          "label": "Henry B. Miller, American consul Niuchwang",
+          "kind": "consular_individual",
+          "identity_boundary": "Good offices only; no transfer of Japanese consular authority"
+        },
+        {
+          "id": "r6:loomis",
+          "label": "Francis B. Loomis, Department of State",
+          "kind": "individual",
+          "identity_boundary": "Instruction author distinct from local consul"
+        }
+      ],
+      "source_creation": {
+        "raw": "1904-02-09",
+        "precision": "day",
+        "calendar": "edition civil date; no offset established",
+        "normalized_day": "1904-02-09",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No independently calibrated clock/offset"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability.",
+      "territorial_composition": {
+        "contract": "territorial-attributed-mentions/v1",
+        "rows": [
+          {
+            "id": "r6:row-ni-good",
+            "case_id": "r6:case-niu",
+            "place_id": "r6:p-niu",
+            "actor_id": "r6:miller",
+            "dimension": "good_offices",
+            "assertion_form": "instruction",
+            "value": "Conditional US good-offices role, no Japanese functions",
+            "scope": {
+              "spatial": "r6:p-niu",
+              "functional": "good_offices",
+              "actor": "r6:miller",
+              "population": "Japanese subjects and interests",
+              "infrastructure": "not infrastructure-specific",
+              "temporal_key": "ni-good"
+            },
+            "time": {
+              "raw": "February9",
+              "precision": "day",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": "1904-02-09",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            },
+            "time_role": "research_scope",
+            "claim_ids": [
+              "r6:c-goodoffices",
+              "r6:c-no-jp-authority"
+            ],
+            "record_ids": [],
+            "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+            "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+            "reality_certainty": "possible",
+            "competing_claim_ids": [],
+            "unknown_reason": "Chinese assent separately attested, not consummated protection",
+            "canonical_state": false,
+            "exclusivity": "not asserted",
+            "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+          }
+        ],
+        "places": [
+          {
+            "id": "r6:p-niu",
+            "label": "Niuchwang treaty port",
+            "kind": "port",
+            "contemporary_designations": [
+              "Niuchwang (FRUS)",
+              "Niu-chwang (Hansard)"
+            ],
+            "claim_ids": [
+              "r6:c-arrest",
+              "r6:c-native-replaced"
+            ],
+            "identity_basis": "Manual shared port/context alignment probable; no extension to modern Niuzhuang/Yingkou municipal limits; native customs functional institution distinguished",
+            "coordinates": null,
+            "polygon": null,
+            "modern_locator": {
+              "status": "unknown",
+              "reason": "Not needed; no modern border back-projection"
+            }
+          }
+        ],
+        "scope": "Source-attributed mentions only; related rows are reconstruction context, not assertions that every supported record is factual. Unknown targets remain unknown."
+      }
+    },
+    "derived_source_content_assessment": "UNCONTESTED",
+    "uncontested_is_not_truth": true,
+    "sources": [
+      {
+        "id": "r6:s-124",
+        "title": "Loomis good-offices instruction, explicit no Japanese consular authority",
+        "url": "https://history.state.gov/historicaldocuments/frus1904/d124",
+        "excerpt": "Mr. Loomis to Mr. Conger. [Telegram.—Paraphrase.] Department of State,Washington, February 9, 1904. (Mr. Loomis instructs Mr. Conger to instruct the consul at Niu-chwang to take charge of Japanese interests at the reques",
+        "inspection": "official_TEI_text_inspected; historical original not inspected",
+        "creation": {
+          "raw": "1904-02-09",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-09",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "locator": {
+          "volume": "frus1904",
+          "document_id": "d124",
+          "saved_tei": "evidence/frus1904-d124.xml"
+        },
+        "access_date": "2026-09-14",
+        "modality": "published_diplomatic_edition",
+        "original_status": "not_inspected",
+        "authenticity_limit": "Official published edition/digitization, not an authenticated original; editorial paraphrase/translation retained",
+        "temporal_annotations": [
+          {
+            "role": "document_heading_date",
+            "time": {
+              "raw": "1904-02-09",
+              "precision": "day",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": "1904-02-09",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            }
+          },
+          {
+            "role": "publication_time",
+            "time": {
+              "raw": "FRUS1904 published edition; see inherited FRUS lineage, not1904 heading date",
+              "precision": "unknown",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "Original date/order within day not established; no interpolation"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "r6:proof-7",
+    "round5_claim_id": "r4:c-jp-wounded",
+    "round6_claim_id": "r6:c-cer-duty",
+    "contract": "source-assertion/v1",
+    "limit": "Transfer proves document-attributed content, not authority validity, implementation, territorial identity or knowledge",
+    "original_round5_attribution": {
+      "experimental_claim_id": "r4:c-jp-wounded",
+      "proposition": "Japanese fleet wounded reported as 53",
+      "predicate": "attributed_reported_proposition",
+      "extraction_context": "image 2, frame 0004; 負傷五十三名; qualifier: rough report; detailed ship reports still awaited",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "r2:togo-copy",
+        "locator": {
+          "passage": "image 2, frame 0004; 負傷五十三名"
+        },
+        "inspection": "Digitized contemporary report copy bearing 写; images1,3,5 visually inspected. Not minister receipt original."
+      },
+      "attributed_claim": {
+        "id": "r4:c-jp-wounded",
+        "source_id": "r2:togo-copy",
+        "subject_id": "togo",
+        "predicate": "attributed_reported_proposition",
+        "object": "Japanese fleet wounded reported as 53",
+        "claimant_id": "togo",
+        "report_chain": [
+          "togo"
+        ],
+        "temporal_scope": {
+          "raw": "time not specified",
+          "precision": "unknown",
+          "calendar": "not stated",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "calendar/clock or creation day unverified"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "local clock standard not located"
+          }
+        },
+        "extraction": {
+          "status": "inspected_source_atomic_extraction",
+          "confidence": "source-content attribution only; no numeric reality confidence",
+          "context": "image 2, frame 0004; 負傷五十三名; qualifier: rough report; detailed ship reports still awaited"
+        },
+        "locator": {
+          "passage": "image 2, frame 0004; 負傷五十三名"
+        },
+        "assertion_layer": "source_author_asserts",
+        "epistemic_qualifier": "rough report; detailed ship reports still awaited"
+      },
+      "actor_descriptors": [
+        {
+          "id": "togo",
+          "label": "東郷平八郎",
+          "kind": "individual",
+          "identity_boundary": "This source-attested scope only; no automatic office, government or command-wide equivalence."
+        }
+      ],
+      "source_creation": {
+        "raw": "明治三十七年二月十日",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-10",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": {
+          "status": "unknown",
+          "reason": "Clock not specified"
+        },
+        "place": {
+          "status": "unknown",
+          "reason": "Place not established"
+        },
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+    },
+    "territorial_attribution": {
+      "experimental_claim_id": "r6:c-cer-duty",
+      "proposition": "Alexeieff orders local officers, gentry, village elders and people to protect Chinese Eastern Railway and district telegraph/telephone wires",
+      "predicate": "declares_protection_duty",
+      "extraction_context": "Source layer and report chain preserved; heading/report time does not become observed event time",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "r6:s-100",
+        "locator": {
+          "source_id": "r6:s-100",
+          "section": "cer-duty"
+        },
+        "inspection": "official_TEI_text_inspected; historical original not inspected"
+      },
+      "attributed_claim": {
+        "id": "r6:c-cer-duty",
+        "source_id": "r6:s-100",
+        "subject_id": "r6:elders",
+        "predicate": "declares_protection_duty",
+        "object": "Alexeieff orders local officers, gentry, village elders and people to protect Chinese Eastern Railway and district telegraph/telephone wires",
+        "claimant_id": "alexieff",
+        "report_chain": [
+          "r3:frus-publisher",
+          "conger",
+          "alexieff"
+        ],
+        "temporal_scope": {
+          "raw": "Russian calendar February3,1904",
+          "precision": "unknown",
+          "calendar": "Russian calendar explicitly printed in translation; original/Julian conversion not authenticated",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Russian-calendar raw date retained; no unconditional converted instant/day asserted"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for inspected text attribution only; not world probability",
+          "context": "Source layer and report chain preserved; heading/report time does not become observed event time"
+        },
+        "assertion_layer": "source_author_reports_actor_assertion",
+        "locator": {
+          "source_id": "r6:s-100",
+          "section": "cer-duty"
+        },
+        "epistemic_limit": "Reported/declared proposition only; no canonical world state or actor reading inferred"
+      },
+      "actor_descriptors": [
+        {
+          "id": "alexieff",
+          "label": "Admiral Alexieff",
+          "kind": "person",
+          "identity_boundary": "回答修正権限の伝聞対象。軍全体ではない",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "conger",
+          "label": "Mr. Conger",
+          "kind": "person",
+          "identity_boundary": "d86の指示宛先。指示の履行は未確定",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "r3:frus-publisher",
+          "label": "Office of the Historian",
+          "kind": "publisher",
+          "identity_boundary": "Source attribution scope only; no assumption of a collective historical knowledge state."
+        },
+        {
+          "id": "r6:elders",
+          "label": "Local officers, gentry, village elders addressed by Alexeieff",
+          "kind": "local_actor_scope",
+          "identity_boundary": "Named categories in proclamation, compliance unverified"
+        }
+      ],
+      "source_creation": {
+        "raw": "1904-03-01",
+        "precision": "day",
+        "calendar": "edition civil date; no offset established",
+        "normalized_day": "1904-03-01",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No independently calibrated clock/offset"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability.",
+      "territorial_composition": {
+        "contract": "territorial-attributed-mentions/v1",
+        "rows": [
+          {
+            "id": "r6:row-ce-duty",
+            "case_id": "r6:case-cer",
+            "place_id": "r6:p-cer",
+            "actor_id": "r6:elders",
+            "dimension": "infrastructure_protection",
+            "assertion_form": "declared_duty",
+            "value": "Local officers/gentry/elders/people assigned protective responsibility",
+            "scope": {
+              "spatial": "r6:p-cer",
+              "functional": "infrastructure_protection",
+              "actor": "r6:elders",
+              "population": "not specified by source",
+              "infrastructure": "railway, district telegraph/telephone wires",
+              "temporal_key": "ce-duty"
+            },
+            "time": {
+              "raw": "Russian calendar February3,1904",
+              "precision": "unknown",
+              "calendar": "Russian calendar as printed; original/Julian conversion not authenticated",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "Raw Russian calendar preserved without unconditional day placement"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            },
+            "time_role": "declared_right_or_position",
+            "claim_ids": [
+              "r6:c-cer-duty"
+            ],
+            "record_ids": [],
+            "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+            "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+            "reality_certainty": "possible",
+            "competing_claim_ids": [],
+            "unknown_reason": "No local recipient/reading, patrol, repair or protected segment attested",
+            "canonical_state": false,
+            "exclusivity": "not asserted",
+            "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+          },
+          {
+            "id": "r6:row-ce-operation",
+            "case_id": "r6:case-cer",
+            "place_id": "r6:p-cer",
+            "actor_id": "r6:railway-operator-unidentified",
+            "dimension": "railway_operation",
+            "assertion_form": "unresolved_state",
+            "value": {
+              "status": "unknown",
+              "reason": "Protection clause does not identify operator, train movement or operating capability"
+            },
+            "scope": {
+              "spatial": "r6:p-cer",
+              "functional": "railway_operation",
+              "actor": "r6:railway-operator-unidentified",
+              "population": "not specified by source",
+              "infrastructure": "Chinese Eastern Railway",
+              "temporal_key": "ce-operation"
+            },
+            "time": {
+              "raw": "Opening phase proclamation scope",
+              "precision": "unknown",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "Original date/order within day not established; no interpolation"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            },
+            "time_role": "research_scope",
+            "claim_ids": [
+              "r6:c-cer-duty"
+            ],
+            "record_ids": [],
+            "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+            "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+            "reality_certainty": "unresolved",
+            "competing_claim_ids": [],
+            "unknown_reason": "Protection clause does not identify operator, train movement or operating capability",
+            "canonical_state": false,
+            "exclusivity": "not asserted",
+            "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+          },
+          {
+            "id": "r6:row-ce-ownership",
+            "case_id": "r6:case-cer",
+            "place_id": "r6:p-cer",
+            "actor_id": "ru-government",
+            "dimension": "territorial_ownership",
+            "assertion_form": "unresolved_state",
+            "value": {
+              "status": "unknown",
+              "reason": "No located title/concession original; protection responsibility is not territorial ownership"
+            },
+            "scope": {
+              "spatial": "r6:p-cer",
+              "functional": "territorial_ownership",
+              "actor": "ru-government",
+              "population": "not specified by source",
+              "infrastructure": "railway traversed land",
+              "temporal_key": "ce-ownership"
+            },
+            "time": {
+              "raw": "Opening phase proclamation scope",
+              "precision": "unknown",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "Original date/order within day not established; no interpolation"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            },
+            "time_role": "research_scope",
+            "claim_ids": [
+              "r6:c-cer-duty"
+            ],
+            "record_ids": [],
+            "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+            "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+            "reality_certainty": "unresolved",
+            "competing_claim_ids": [],
+            "unknown_reason": "No located title/concession original; protection responsibility is not territorial ownership",
+            "canonical_state": false,
+            "exclusivity": "not asserted",
+            "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+          }
+        ],
+        "places": [
+          {
+            "id": "r6:p-cer",
+            "label": "Chinese Eastern Railway district-linked protective scope",
+            "kind": "infrastructure_network_scope",
+            "contemporary_designations": [
+              "Chinese Eastern Railway",
+              "telegraph and telephone wires in their districts"
+            ],
+            "claim_ids": [
+              "r6:c-cer-duty"
+            ],
+            "identity_basis": "Named infrastructure network, not a precise segment or all Manchuria land; lowest spatial resolution selected to test limits rather than fabricate segment",
+            "coordinates": null,
+            "polygon": null,
+            "modern_locator": {
+              "status": "unknown",
+              "reason": "Not needed; no modern border back-projection"
+            }
+          }
+        ],
+        "scope": "Source-attributed mentions only; related rows are reconstruction context, not assertions that every supported record is factual. Unknown targets remain unknown."
+      }
+    },
+    "derived_source_content_assessment": "UNCONTESTED",
+    "uncontested_is_not_truth": true,
+    "sources": [
+      {
+        "id": "r6:s-100",
+        "title": "Alexeieff proclamation, Chinese text reported posted, English translation",
+        "url": "https://history.state.gov/historicaldocuments/frus1904/d100",
+        "excerpt": "Mr. Conger to Mr. Hay. American Legation,Peking, China, March 1, 1904. No. 1523.] Sir: Inclosing translation of a proclamation issued by Viceroy Alexeieff, and posted all over Manchuria in the Chinese language, I have th",
+        "inspection": "official_TEI_text_inspected; historical original not inspected",
+        "creation": {
+          "raw": "1904-03-01",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-03-01",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "locator": {
+          "volume": "frus1904",
+          "document_id": "d100",
+          "saved_tei": "evidence/frus1904-d100.xml"
+        },
+        "access_date": "2026-09-14",
+        "modality": "published_diplomatic_edition",
+        "original_status": "not_inspected",
+        "authenticity_limit": "Official published edition/digitization, not an authenticated original; editorial paraphrase/translation retained",
+        "temporal_annotations": [
+          {
+            "role": "document_heading_date",
+            "time": {
+              "raw": "1904-03-01",
+              "precision": "day",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": "1904-03-01",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            }
+          },
+          {
+            "role": "publication_time",
+            "time": {
+              "raw": "FRUS1904 published edition; see inherited FRUS lineage, not1904 heading date",
+              "precision": "unknown",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "Original date/order within day not established; no interpolation"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "r6:proof-8",
+    "round5_claim_id": "r4:c-en-wounded",
+    "round6_claim_id": "r6:c-qing-sovereignty",
+    "contract": "source-assertion/v1",
+    "limit": "Transfer proves document-attributed content, not authority validity, implementation, territorial identity or knowledge",
+    "original_round5_attribution": {
+      "experimental_claim_id": "r4:c-en-wounded",
+      "proposition": "Japanese wounded given as 54",
+      "predicate": "attributed_reported_proposition",
+      "extraction_context": "casualty paragraph; qualifier: difference from Japanese copy 53",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "r4:s-english",
+        "locator": {
+          "passage": "casualty paragraph"
+        },
+        "inspection": "Full page inspected; edition/translator unknown"
+      },
+      "attributed_claim": {
+        "id": "r4:c-en-wounded",
+        "source_id": "r4:s-english",
+        "subject_id": "r4:english-editor",
+        "predicate": "attributed_reported_proposition",
+        "object": "Japanese wounded given as 54",
+        "claimant_id": "r4:english-editor",
+        "report_chain": [
+          "r4:english-editor",
+          "togo"
+        ],
+        "temporal_scope": {
+          "raw": "time not specified",
+          "precision": "unknown",
+          "calendar": "not stated",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "calendar/clock or creation day unverified"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "local clock standard not located"
+          }
+        },
+        "extraction": {
+          "status": "inspected_source_atomic_extraction",
+          "confidence": "source-content attribution only; no numeric reality confidence",
+          "context": "casualty paragraph; qualifier: difference from Japanese copy 53"
+        },
+        "locator": {
+          "passage": "casualty paragraph"
+        },
+        "assertion_layer": "source_reports_actor_assertion",
+        "epistemic_qualifier": "difference from Japanese copy 53"
+      },
+      "actor_descriptors": [
+        {
+          "id": "togo",
+          "label": "東郷平八郎",
+          "kind": "individual",
+          "identity_boundary": "This source-attested scope only; no automatic office, government or command-wide equivalence."
+        },
+        {
+          "id": "r4:english-editor",
+          "label": "Unnamed modern English reprint editor/translator",
+          "kind": "unresolved publisher",
+          "identity_boundary": "Only named/attributed scope in inspected source; institutional knowledge and individual identity are not inferred."
+        }
+      ],
+      "source_creation": {
+        "raw": "modern representation; historical document date stored separately",
+        "precision": "unknown",
+        "calendar": "not stated",
+        "normalized_day": {
+          "status": "unknown",
+          "reason": "calendar/clock or creation day unverified"
+        },
+        "time_standard": {
+          "status": "unknown",
+          "reason": "local clock standard not located"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+    },
+    "territorial_attribution": {
+      "experimental_claim_id": "r6:c-qing-sovereignty",
+      "proposition": "Prince Ch’ing says Manchurian frontier territory remains/reverts Chinese sovereignty whatever war outcome and neither power may usurp it",
+      "predicate": "asserts_sovereignty_no_usurpation",
+      "extraction_context": "Source layer and report chain preserved; heading/report time does not become observed event time",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "r6:s-92",
+        "locator": {
+          "source_id": "r6:s-92",
+          "section": "qing-sovereignty"
+        },
+        "inspection": "official_TEI_text_inspected; historical original not inspected"
+      },
+      "attributed_claim": {
+        "id": "r6:c-qing-sovereignty",
+        "source_id": "r6:s-92",
+        "subject_id": "qing-government",
+        "predicate": "asserts_sovereignty_no_usurpation",
+        "object": "Prince Ch’ing says Manchurian frontier territory remains/reverts Chinese sovereignty whatever war outcome and neither power may usurp it",
+        "claimant_id": "r6:chingt",
+        "report_chain": [
+          "r3:frus-publisher",
+          "conger",
+          "r6:chingt"
+        ],
+        "temporal_scope": {
+          "raw": "Kuanghsü XXIX twelfth moon27th / February12",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-12",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for inspected text attribution only; not world probability",
+          "context": "Source layer and report chain preserved; heading/report time does not become observed event time"
+        },
+        "assertion_layer": "source_author_reports_actor_assertion",
+        "locator": {
+          "source_id": "r6:s-92",
+          "section": "qing-sovereignty"
+        },
+        "epistemic_limit": "Reported/declared proposition only; no canonical world state or actor reading inferred"
+      },
+      "actor_descriptors": [
+        {
+          "id": "qing-government",
+          "label": "Qing government",
+          "kind": "government",
+          "identity_boundary": "FRUSのChinaを現代中国政府へ置換しない",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "conger",
+          "label": "Mr. Conger",
+          "kind": "person",
+          "identity_boundary": "d86の指示宛先。指示の履行は未確定",
+          "documented_scope": "sample documents, 1904",
+          "lifetime": {
+            "status": "unknown",
+            "reason": "sample scope is not an identity lifetime"
+          }
+        },
+        {
+          "id": "r3:frus-publisher",
+          "label": "Office of the Historian",
+          "kind": "publisher",
+          "identity_boundary": "Source attribution scope only; no assumption of a collective historical knowledge state."
+        },
+        {
+          "id": "r6:chingt",
+          "label": "Prince Ch’ing, Wai-wu Pu",
+          "kind": "ministry_individual",
+          "identity_boundary": "Quoted foreign-office stance, not local implementation"
+        }
+      ],
+      "source_creation": {
+        "raw": "1904-02-13",
+        "precision": "day",
+        "calendar": "edition civil date; no offset established",
+        "normalized_day": "1904-02-13",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No independently calibrated clock/offset"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability.",
+      "territorial_composition": {
+        "contract": "territorial-attributed-mentions/v1",
+        "rows": [
+          {
+            "id": "r6:row-ce-sovereignty",
+            "case_id": "r6:case-cer",
+            "place_id": "r6:p-manchuria",
+            "actor_id": "qing-government",
+            "dimension": "territorial_sovereignty_claim",
+            "assertion_form": "actor_stance",
+            "value": "Prince Ch’ing claims Manchuria remains/reverts Chinese sovereignty",
+            "scope": {
+              "spatial": "r6:p-manchuria",
+              "functional": "territorial_sovereignty_claim",
+              "actor": "qing-government",
+              "population": "not specified by source",
+              "infrastructure": "not infrastructure-specific",
+              "temporal_key": "ce-sovereignty"
+            },
+            "time": {
+              "raw": "February12",
+              "precision": "day",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": "1904-02-12",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            },
+            "time_role": "declared_right_or_position",
+            "claim_ids": [
+              "r6:c-qing-sovereignty"
+            ],
+            "record_ids": [],
+            "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+            "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+            "reality_certainty": "possible",
+            "competing_claim_ids": [],
+            "unknown_reason": "Effective extent/onset and independent field verification not established",
+            "canonical_state": false,
+            "exclusivity": "not asserted",
+            "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+          }
+        ],
+        "places": [
+          {
+            "id": "r6:p-manchuria",
+            "label": "Three eastern provinces regional context",
+            "kind": "vague_historical_region",
+            "contemporary_designations": [
+              "three eastern provinces",
+              "Manchuria"
+            ],
+            "claim_ids": [
+              "r6:c-qing-sovereignty",
+              "r6:c-cer-duty"
+            ],
+            "identity_basis": "Contemporary regional expression only; no province boundary reconstruction",
+            "coordinates": null,
+            "polygon": null,
+            "modern_locator": {
+              "status": "unknown",
+              "reason": "Not needed; no modern border back-projection"
+            }
+          }
+        ],
+        "scope": "Source-attributed mentions only; related rows are reconstruction context, not assertions that every supported record is factual. Unknown targets remain unknown."
+      }
+    },
+    "derived_source_content_assessment": "UNCONTESTED",
+    "uncontested_is_not_truth": true,
+    "sources": [
+      {
+        "id": "r6:s-92",
+        "title": "Conger encloses Prince Ch’ing territorial-sovereignty notes",
+        "url": "https://history.state.gov/historicaldocuments/frus1904/d92",
+        "excerpt": "Mr. Conger to Mr. Hay. American Legation,Peking, China, February 13, 1904. No. 1502.] Sir: I confirm Department’s telegram of the 10th instant, and mine of the 11th and 13th. Immediately on receipt of your instructions I",
+        "inspection": "official_TEI_text_inspected; historical original not inspected",
+        "creation": {
+          "raw": "1904-02-13",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-13",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "locator": {
+          "volume": "frus1904",
+          "document_id": "d92",
+          "saved_tei": "evidence/frus1904-d92.xml"
+        },
+        "access_date": "2026-09-14",
+        "modality": "published_diplomatic_edition",
+        "original_status": "not_inspected",
+        "authenticity_limit": "Official published edition/digitization, not an authenticated original; editorial paraphrase/translation retained",
+        "temporal_annotations": [
+          {
+            "role": "document_heading_date",
+            "time": {
+              "raw": "1904-02-13",
+              "precision": "day",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": "1904-02-13",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            }
+          },
+          {
+            "role": "publication_time",
+            "time": {
+              "raw": "FRUS1904 published edition; see inherited FRUS lineage, not1904 heading date",
+              "precision": "unknown",
+              "calendar": "edition civil date; no offset established",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "Original date/order within day not established; no interpolation"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "No independently calibrated clock/offset"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "r6:proof-9",
+    "round5_claim_id": "r4:c-jp-second-fire",
+    "round6_claim_id": "r6:c-protocol-holdings",
+    "contract": "source-assertion/v1",
+    "limit": "Transfer proves document-attributed content, not authority validity, implementation, territorial identity or knowledge",
+    "original_round5_attribution": {
+      "experimental_claim_id": "r4:c-jp-second-fire",
+      "proposition": "Inspected Second Fleet report contains noon-hour firing-time lines for enemy and Izumo; current extraction cannot securely read the minute numerals",
+      "predicate": "attributed_reported_proposition",
+      "extraction_context": "image7 frame0009; handwritten firing-time lines; initial12:07reading withdrawn after reinspection; distinguish enemy firing and Izumo firing",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "r2:togo-copy",
+        "locator": {
+          "passage": "image7 frame0009; section3 firing beginning/end"
+        },
+        "inspection": "Digitized contemporary report copy bearing 写; images1,3,5 visually inspected. Not minister receipt original."
+      },
+      "attributed_claim": {
+        "id": "r4:c-jp-second-fire",
+        "source_id": "r2:togo-copy",
+        "subject_id": "r4:second-fleet",
+        "predicate": "attributed_reported_proposition",
+        "object": "Inspected Second Fleet report contains noon-hour firing-time lines for enemy and Izumo; current extraction cannot securely read the minute numerals",
+        "claimant_id": "r3:system",
+        "report_chain": [
+          "r3:system"
+        ],
+        "temporal_scope": {
+          "raw": "午后〇時［分の数判読未確定］",
+          "precision": "day",
+          "calendar": "Gregorian",
+          "normalized_day": "1904-02-09",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "local clock standard not located"
+          }
+        },
+        "extraction": {
+          "status": "inspected_passage_partial_transcription_uncertain",
+          "confidence": "source-content attribution only; no numeric reality confidence",
+          "context": "image7 frame0009; handwritten firing-time lines; initial12:07reading withdrawn after reinspection; distinguish enemy firing and Izumo firing"
+        },
+        "locator": {
+          "passage": "image7 frame0009; section3 firing beginning/end"
+        },
+        "assertion_layer": "current_system_inspection_diagnostic",
+        "epistemic_qualifier": "Inspection uncertainty belongs to current extraction, not a statement of Kamimura uncertainty"
+      },
+      "actor_descriptors": [
+        {
+          "id": "r3:system",
+          "label": "Current research extraction",
+          "kind": "system",
+          "identity_boundary": "Source attribution scope only; no assumption of a collective historical knowledge state."
+        },
+        {
+          "id": "r4:second-fleet",
+          "label": "Japanese Second Fleet report scope, distinct from Second Squadron casualty table",
+          "kind": "fleet",
+          "identity_boundary": "Second Fleet command report is not identical to Second Squadron ship casualty scope"
+        }
+      ],
+      "source_creation": {
+        "raw": "明治三十七年二月十日",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-10",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": {
+          "status": "unknown",
+          "reason": "Clock not specified"
+        },
+        "place": {
+          "status": "unknown",
+          "reason": "Place not established"
+        },
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+    },
+    "territorial_attribution": {
+      "experimental_claim_id": "r6:c-protocol-holdings",
+      "proposition": "NIKH identifies Kyujanggak23016/23017 and Japan diplomatic archives B13091012600",
+      "predicate": "publisher_reports_original_holdings",
+      "extraction_context": "Current system reports publisher custody assertion, not archival authentication; NIKH is nested claimant",
+      "assertion_contract": "source-assertion/v1",
+      "content_scope": {
+        "source_id": "r6:s-protocol-ref",
+        "locator": {
+          "source_id": "r6:s-protocol-ref",
+          "section": "protocol-holdings"
+        },
+        "inspection": "published text inspected; original image not inspected"
+      },
+      "attributed_claim": {
+        "id": "r6:c-protocol-holdings",
+        "source_id": "r6:s-protocol-ref",
+        "subject_id": "r3:system",
+        "predicate": "publisher_reports_original_holdings",
+        "object": "NIKH identifies Kyujanggak23016/23017 and Japan diplomatic archives B13091012600",
+        "claimant_id": "r6:nikh-editor",
+        "report_chain": [
+          "r3:system",
+          "r6:nikh-editor"
+        ],
+        "temporal_scope": {
+          "raw": "Modern catalogue statement; historical custody onset not established",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for inspected text attribution only; not world probability",
+          "context": "Current system reports publisher custody assertion, not archival authentication; NIKH is nested claimant"
+        },
+        "assertion_layer": "current_system_reports_publisher_assertion",
+        "locator": {
+          "source_id": "r6:s-protocol-ref",
+          "section": "protocol-holdings"
+        },
+        "epistemic_limit": "Reported/declared proposition only; no canonical world state or actor reading inferred"
+      },
+      "actor_descriptors": [
+        {
+          "id": "r3:system",
+          "label": "Current research extraction",
+          "kind": "system",
+          "identity_boundary": "Source attribution scope only; no assumption of a collective historical knowledge state."
+        },
+        {
+          "id": "r6:nikh-editor",
+          "label": "NIKH educational/DB edition publisher",
+          "kind": "edition_publisher",
+          "identity_boundary": "Contemporary compiler of transcription and original holding references; not treaty signatory"
+        }
+      ],
+      "source_creation": {
+        "raw": "Modern educational edition; publication date not established",
+        "precision": "unknown",
+        "calendar": "edition civil date; no offset established",
+        "normalized_day": {
+          "status": "unknown",
+          "reason": "Original date/order within day not established; no interpolation"
+        },
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No independently calibrated clock/offset"
+        }
+      },
+      "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+    },
+    "derived_source_content_assessment": "UNCONTESTED",
+    "uncontested_is_not_truth": true,
+    "sources": [
+      {
+        "id": "r6:s-protocol-ref",
+        "title": "NIKH protocol transcription and original holding references",
+        "url": "https://contents.history.go.kr/front/hm/view.do?levelId=hm_121_0010",
+        "excerpt": "光武八年二月廿三日",
+        "inspection": "published text inspected; original image not inspected",
+        "creation": {
+          "raw": "Modern educational edition; publication date not established",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "locator": {
+          "item_id": "protocol-ref",
+          "saved_representation": "evidence/nikh-protocol.reference-extract.json"
+        },
+        "access_date": "2026-09-14",
+        "modality": "archive_reference_in_modern_edition",
+        "original_status": "not_inspected",
+        "completeness": "selected researcher extract; original publication viewed through web tool",
+        "authenticity_limit": "Official host attests edition, not historical document authenticity"
+      }
+    ]
+  }
+]

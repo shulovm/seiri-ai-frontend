@@ -1,0 +1,263 @@
+[
+  {
+    "candidate_id": "R5-C01",
+    "semantic_name": "actor-scoped epistemic state",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "required narrower scope",
+    "claim_ids": [
+      "r6:c-okabe-order",
+      "r6:c-conger-receipt"
+    ],
+    "finding": "Recipient stage/payload scope separate from authority holder and current narrator; no inferred interpretation",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C02",
+    "semantic_name": "information propagation",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "worked unchanged",
+    "claim_ids": [
+      "r6:c-courier-send",
+      "r6:c-police-receipt"
+    ],
+    "finding": "Existing sidecar/opt-in source-attribution boundary survives; territorial scopes remain in experimental composition",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C03",
+    "semantic_name": "temporal role",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "worked unchanged",
+    "claim_ids": [
+      "r6:c-notice-plan",
+      "r6:c-withdraw-action"
+    ],
+    "finding": "Existing sidecar/opt-in source-attribution boundary survives; territorial scopes remain in experimental composition",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C04",
+    "semantic_name": "general provenance lineage",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "worked unchanged",
+    "claim_ids": [
+      "r6:c-protocol-holdings"
+    ],
+    "finding": "Existing sidecar/opt-in source-attribution boundary survives; territorial scopes remain in experimental composition",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C05",
+    "semantic_name": "source identity certainty",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "worked unchanged",
+    "claim_ids": [
+      "r6:c-protocol-holdings"
+    ],
+    "finding": "Existing sidecar/opt-in source-attribution boundary survives; territorial scopes remain in experimental composition",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C08",
+    "semantic_name": "unknown target/reason",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "required narrower scope",
+    "claim_ids": [
+      "r6:c-county-promise",
+      "r6:c-cer-duty"
+    ],
+    "finding": "Unknown target includes functional/population/infrastructure/place/time, not just sovereign country",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C09",
+    "semantic_name": "observation scope",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "worked unchanged",
+    "claim_ids": [
+      "r6:c-uiju-telegraph"
+    ],
+    "finding": "Existing sidecar/opt-in source-attribution boundary survives; territorial scopes remain in experimental composition",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C10",
+    "semantic_name": "partial observation and silence",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "worked unchanged",
+    "claim_ids": [
+      "r6:c-uiju-telegraph"
+    ],
+    "finding": "Existing sidecar/opt-in source-attribution boundary survives; territorial scopes remain in experimental composition",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C11",
+    "semantic_name": "Evidence dependency",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "worked unchanged",
+    "claim_ids": [
+      "r6:c-qing-sovereignty",
+      "r6:c-arrest"
+    ],
+    "finding": "Existing sidecar/opt-in source-attribution boundary survives; territorial scopes remain in experimental composition",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C13",
+    "semantic_name": "contradiction dimension/alignment",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "required narrower scope",
+    "claim_ids": [
+      "r6:c-grain-ban",
+      "r6:c-local-purchase"
+    ],
+    "finding": "Comparison needs assertion-form and functional/population/infrastructure/time keys; same control label insufficient",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C16",
+    "semantic_name": "quantity disagreement and unit/scope",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": false,
+    "status": "not needed",
+    "claim_ids": [],
+    "finding": "No same-unit numerical territorial disagreement located; thirteen/planned vs sixteen/action is temporal role, not quantity counterexample",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C18",
+    "semantic_name": "Reconstruction / derived assessment",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "revealed hidden ambiguity",
+    "claim_ids": [
+      "r6:c-cer-duty",
+      "r6:c-county-promise"
+    ],
+    "finding": "New v1 makes evidence evaluation/cutoff and dataset basis explicit; R4lackflag unchanged; exact observed validity stillunknown",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C20",
+    "semantic_name": "nested claimant / reported speech",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "worked unchanged",
+    "claim_ids": [
+      "r6:c-arrest",
+      "r6:c-hart-receipt"
+    ],
+    "finding": "Existing sidecar/opt-in source-attribution boundary survives; territorial scopes remain in experimental composition",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C21",
+    "semantic_name": "certainty assessment target / extraction resolution",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "worked unchanged",
+    "claim_ids": [
+      "r6:c-customs-question",
+      "r6:c-native-replaced"
+    ],
+    "finding": "Existing sidecar/opt-in source-attribution boundary survives; territorial scopes remain in experimental composition",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C23",
+    "semantic_name": "identifier namespace / assignment context",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "worked unchanged",
+    "claim_ids": [
+      "r6:c-protocol-holdings",
+      "r6:c-uiju-place"
+    ],
+    "finding": "HOI/repository/archivalreference/actorIDs distinct namespaces; historicalplacealiasmanual",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C26",
+    "semantic_name": "accessibility / possession / reading / knowledge boundary",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "worked unchanged",
+    "claim_ids": [
+      "r6:c-ports-orders",
+      "r6:c-cer-posted"
+    ],
+    "finding": "Existing sidecar/opt-in source-attribution boundary survives; territorial scopes remain in experimental composition",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C28",
+    "semantic_name": "interpretation / Narrative provenance",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "worked unchanged",
+    "claim_ids": [
+      "r6:c-gris-interpret"
+    ],
+    "finding": "Existing sidecar/opt-in source-attribution boundary survives; territorial scopes remain in experimental composition",
+    "failed": false,
+    "promoted": false
+  },
+  {
+    "candidate_id": "R5-C29",
+    "semantic_name": "modality / catalogue / depicted-event boundary",
+    "classification_before": "B",
+    "classification_after": "B",
+    "used": true,
+    "status": "worked unchanged",
+    "claim_ids": [
+      "r6:c-protocol-holdings"
+    ],
+    "finding": "Archive reference is not original image or boundary map inspection",
+    "failed": false,
+    "promoted": false
+  }
+]

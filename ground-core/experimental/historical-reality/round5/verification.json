@@ -1,0 +1,134 @@
+{
+  "checked_on": "2026-09-14",
+  "core_schema_version": "0.1.24",
+  "core_changes": 0,
+  "canonical_new_primitives": 0,
+  "canonical_new_relations": 0,
+  "opt_in_adapter_usage_contracts": 1,
+  "candidates": 33,
+  "classifications": {
+    "A": 5,
+    "B": 18,
+    "C": 0,
+    "D": 4,
+    "E": 6
+  },
+  "signals_indexed": 35,
+  "immutable_files_verified": 675,
+  "historical_trace_records": 238,
+  "composition_proofs": 9,
+  "historical_dataset_compatibility": [
+    {
+      "round": 1,
+      "sources": 14,
+      "claims": 18,
+      "source_content_assertions": 18,
+      "projection": "Partial opt-in source-assertion composition only",
+      "historical_events": 0,
+      "historical_states": 0,
+      "attribution_reload_equivalent": true,
+      "relation_reconstruction_migration": "Not migrated; original sidecar retained",
+      "old_new_difference": "New per-extracted-proposition predicate slot and explicit original attribution/scope/time. Old broad predicate remains unchanged in inherited adapter."
+    },
+    {
+      "round": 2,
+      "sources": 23,
+      "claims": 41,
+      "source_content_assertions": 41,
+      "projection": "Partial opt-in source-assertion composition only",
+      "historical_events": 0,
+      "historical_states": 0,
+      "attribution_reload_equivalent": true,
+      "relation_reconstruction_migration": "Not migrated; original sidecar retained",
+      "old_new_difference": "New per-extracted-proposition predicate slot and explicit original attribution/scope/time. Old broad predicate remains unchanged in inherited adapter."
+    },
+    {
+      "round": 3,
+      "sources": 32,
+      "claims": 64,
+      "source_content_assertions": 64,
+      "projection": "Partial opt-in source-assertion composition only",
+      "historical_events": 0,
+      "historical_states": 0,
+      "attribution_reload_equivalent": true,
+      "relation_reconstruction_migration": "Not migrated; original sidecar retained",
+      "old_new_difference": "New per-extracted-proposition predicate slot and explicit original attribution/scope/time. Old broad predicate remains unchanged in inherited adapter."
+    },
+    {
+      "round": 4,
+      "sources": 42,
+      "claims": 147,
+      "source_content_assertions": 147,
+      "projection": "Partial opt-in source-assertion composition only",
+      "historical_events": 0,
+      "historical_states": 0,
+      "attribution_reload_equivalent": true,
+      "relation_reconstruction_migration": "Not migrated; original sidecar retained",
+      "old_new_difference": "New per-extracted-proposition predicate slot and explicit original attribution/scope/time. Old broad predicate remains unchanged in inherited adapter."
+    }
+  ],
+  "legacy_semantic_delta": "0 in core. New opt-in projection has per-proposition predicate slots and preserved attributed fields; legacy adapter behavior unchanged.",
+  "limits": [
+    "JSON retention alone is not generic semantic promotion",
+    "Claim0.95isuncalibratedsource-contentestimate, never a world score",
+    "No original authentication or new historical evidence acquired",
+    "Lineage/Knowledge/time conversion/reconstruction alternatives remain sidecar",
+    "No generic independence or version/retraction lifecycle promoted"
+  ],
+  "executed_checks": [
+    {
+      "command": "node --import tsx --test --test-concurrency=4 ground-core/__tests__/*.test.ts",
+      "environment": "normal permissions; required for unchanged CLI test local IPC",
+      "exit_code": 0,
+      "test_files": 195,
+      "tests": 3768,
+      "passed": 3768,
+      "failed": 0,
+      "new_round5_tests": 16,
+      "legacy_tests": 3752
+    },
+    {
+      "command": "node_modules/.bin/tsc -p ground-core/tsconfig.json --pretty false",
+      "exit_code": 0
+    },
+    {
+      "command": "node_modules/.bin/tsc -p ground-core/tsconfig.json --noEmit false --outDir /private/tmp/rj5-core-build --pretty false",
+      "exit_code": 0
+    },
+    {
+      "command": "node /private/tmp/rj5-core-build/cli.js new-id",
+      "exit_code": 0,
+      "limit": "temporary workspace node_modules link; CLInewidsmoke only, not standalone packaging"
+    },
+    {
+      "command": "npm run build",
+      "exit_code": 0,
+      "modules": 213
+    },
+    {
+      "command": "node --import tsx ground-core/experimental/historical-reality/round5/replay.ts",
+      "exit_code": 0
+    }
+  ],
+  "initial_environment_failure": {
+    "sandbox_full_suite": {
+      "passed": 3751,
+      "failed": 1,
+      "reason": "unchanged CLI test invokes tsx IPC; listenEPERM"
+    },
+    "resolution": "Entire suite rerun with normal permissions, no test skipped or legacy code changed"
+  },
+  "review_files_sha256": {
+    "promotion-records.json": "8dd6eff1b42bf60cd071c0f658641d461e3e281b2abd3fb94b67db0782069b69",
+    "immutable-baseline.json": "a7e9099689dbd2d361968c27eaf32908fb8fa605c37bbff9716e27a439747993",
+    "gate.ts": "52d990f907deb523527c87d9b8b18f438d0f73ae661fc789e649c2a4b4845cfb",
+    "source-contract.ts": "17f3b57f9c70b336c323a794a760f9c82acbc2e2b799ba0fd88ca4f21a855ed7",
+    "replay.ts": "0b1d140190046d6d18405a4207cab537c7cf9726b20449d57b0527277d5c9881",
+    "README.md": "f330b0b9757b66ac420e88359a27ece5fed609d6952d9f64d75c691be60bbc89",
+    "candidate-inventory.json": "587ecca1bdbb702efce8afd33ca7236ed2708213d16c61d46721bd0df93961e2",
+    "semantic-signal-index.json": "7a8974981cd4118e06b426997daf60749b99324a5c760130d61c848e9c10caec",
+    "architecture-decisions.json": "918c677da5a089b9c0fd34f4f09d8801e1660cb06dd8d22761051bd040495083",
+    "semantic-gap-signals.json": "97dbd27e3d5181113d874ad01105e70411320c2915706cfc98b2afbe6e671950"
+  },
+  "new_signal": "SG-36 adapter query-scope misuse;35inheritedsignalsindexed"
+}

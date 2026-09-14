@@ -1,0 +1,2863 @@
+{
+  "schema_version": "historical-reality-experimental/round3",
+  "parents": {
+    "round1_sha256": "5bc32592aa80ee4742f8e01b09d4381dacc1ce080fb930772a7a1ea2b24c70c2",
+    "round2_sha256": "8fa0c1087b1945dfcbc1aa991c014d2b44796e4e4667eb3243d5a9a27d097d3c",
+    "landscape_sha256": "40c3d8b4094e67359d5469c09fcf30dcba9479e3bb123401fb618d465021960f"
+  },
+  "delta": {
+    "actors": [
+      {
+        "id": "r3:system",
+        "label": "Current research extraction",
+        "kind": "system",
+        "identity_boundary": "Source attribution scope only; no assumption of a collective historical knowledge state."
+      },
+      {
+        "id": "r3:frus-publisher",
+        "label": "Office of the Historian",
+        "kind": "publisher",
+        "identity_boundary": "Source attribution scope only; no assumption of a collective historical knowledge state."
+      },
+      {
+        "id": "r3:jacar-editor",
+        "label": "JACAR exhibition editor",
+        "kind": "publisher",
+        "identity_boundary": "Source attribution scope only; no assumption of a collective historical knowledge state."
+      },
+      {
+        "id": "r3:ia-metadata",
+        "label": "Internet Archive metadata record",
+        "kind": "publisher",
+        "identity_boundary": "Source attribution scope only; no assumption of a collective historical knowledge state."
+      },
+      {
+        "id": "r3:rosen-publishers",
+        "label": "Rosen memoir publishers",
+        "kind": "publisher",
+        "identity_boundary": "Source attribution scope only; no assumption of a collective historical knowledge state."
+      },
+      {
+        "id": "r3:rsl",
+        "label": "Russian State Library catalogue",
+        "kind": "institution",
+        "identity_boundary": "Source attribution scope only; no assumption of a collective historical knowledge state."
+      },
+      {
+        "id": "r3:rgia",
+        "label": "RGIA descriptive record",
+        "kind": "institution",
+        "identity_boundary": "Source attribution scope only; no assumption of a collective historical knowledge state."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r3:frus-print-images",
+        "title": "FRUS 1904, printed pp.708–709, official page images",
+        "url": "https://history.state.gov/historicaldocuments/frus1904/pg_709",
+        "excerpt": "Printed p.709 labels McCormick to Hay, St. Petersburg, February 8, 1904: Telegram—Paraphrase; reports Lamsdorff said Rosen had the reply when Kurino asked for passports.",
+        "inspection": "Official PNGs acquired and visually inspected; printed publication, not a telegram original.",
+        "locator": {
+          "volume": "frus1904",
+          "printed_pages": [
+            708,
+            709
+          ],
+          "image_files": [
+            "0796.png",
+            "0797.png"
+          ]
+        },
+        "creation": {
+          "raw": "1905 publication of volume",
+          "precision": "year",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "access_date": "2026-09-14"
+      },
+      {
+        "id": "r3:frus-citation-policy",
+        "title": "FRUS citation and identifier policy",
+        "url": "https://history.state.gov/historicaldocuments/citing-frus",
+        "excerpt": "Pre-1955–57 volumes lacked printed document numbers; numbers were superimposed on digitized web and ebook editions.",
+        "inspection": "Publisher documentation read via official website.",
+        "locator": {
+          "section": "When citing a document number is not possible"
+        },
+        "creation": {
+          "raw": "Date of current representation not stated",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "access_date": "2026-09-14"
+      },
+      {
+        "id": "r3:frus-release",
+        "title": "FRUS digitized release announcement",
+        "url": "https://history.state.gov/historicaldocuments/quarterly-releases/2017-q4",
+        "excerpt": "Release announced December 7, 2017 includes FRUS 1904; Wisconsin supplied printed-book scans, Office created searchable text.",
+        "inspection": "Official announcement inspected; announcement date is not exact scanning/transcription time.",
+        "locator": {
+          "release": "2017-q4"
+        },
+        "creation": {
+          "raw": "December 7, 2017",
+          "precision": "day",
+          "normalized_day": "2017-12-07",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "access_date": "2026-09-14"
+      },
+      {
+        "id": "r3:jacar-text",
+        "title": "JACAR Komura telegram: modern 原文 transcription and 口語訳",
+        "url": "https://www.jacar.go.jp/exhibition/nichiro/komura_telegram_txt.htm",
+        "excerpt": "Modern page labels 原文 and 口語訳; Sent.Feb5-04 2-pm; No54; original-text line 五十五十一号及五十二号; colloquial text renders 50, 51, 52 and expands actor names and 露都.",
+        "inspection": "Shift_JIS HTML acquired, decoded and read; strikethrough markup retained; no named translator or creation date.",
+        "locator": {
+          "sections": [
+            "原 文",
+            "口語訳"
+          ],
+          "linked_preview": "img3/komura_telegram_s.jpg"
+        },
+        "creation": {
+          "raw": "Date of current representation not stated",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "access_date": "2026-09-14"
+      },
+      {
+        "id": "r3:rosen-memoir",
+        "title": "Rosen, Forty years of diplomacy, Vol.I, 1922, Cornell scanned copy",
+        "url": "https://archive.org/details/cu31924071193662",
+        "excerpt": "pp231–232 recount receipt of Komura invitation on afternoon Feb6, call at4pm, and outgoing cipher warnings addressed to Port Arthur and St Petersburg. Publishers note lack of final revision after author death.",
+        "inspection": "PDF acquired (328 pages). Visually inspected PDF pages4,11,12,15,237,238; text searched for Nagasaki/telegram/reply; selective reading, not complete memoir verification.",
+        "locator": {
+          "printed_pages": [
+            231,
+            232
+          ],
+          "pdf_pages": [
+            4,
+            11,
+            12,
+            15,
+            237,
+            238
+          ],
+          "copy_accession": "A532366",
+          "volume": "I"
+        },
+        "creation": {
+          "raw": "First published 1922",
+          "precision": "year",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "access_date": "2026-09-14"
+      },
+      {
+        "id": "r3:rosen-metadata",
+        "title": "IA metadata for Cornell Rosen copy",
+        "url": "https://archive.org/metadata/cu31924071193662",
+        "excerpt": "Contributor Cornell; date1922; call DK254.R7 A3; scandate20070806073717; publicdate2009-11-19 20:31:38; PDF listed derivative Text PDF with upstream Djvu XML.",
+        "inspection": "Public JSON acquired and read. File pipeline labels are not historical-original classifications.",
+        "locator": {
+          "identifier": "cu31924071193662",
+          "fields": [
+            "date",
+            "contributor",
+            "call_number",
+            "scandate",
+            "publicdate",
+            "files"
+          ]
+        },
+        "creation": {
+          "raw": "Date of current representation not stated",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "access_date": "2026-09-14"
+      },
+      {
+        "id": "r3:rsl-metadata",
+        "title": "RSL/NEB Russian collection bibliographic metadata",
+        "url": "https://rusneb.ru/catalog/000199_000009_007506064/",
+        "excerpt": "Catalogue: Synodal printing office, St Petersburg1905, 49,[1]pp; no title leaf; cover На правах рукописи. Pak cites1906.",
+        "inspection": "Indexed official catalogue metadata located; direct catalogue fetch403; supplied PDF endpoint returned HTML, not PDF; content pages not inspected.",
+        "locator": {
+          "record": "000199_000009_007506064",
+          "extent": "49, [1] с.",
+          "notes": [
+            "Без тит. л.",
+            "На обл.: На правах рукописи"
+          ]
+        },
+        "creation": {
+          "raw": "Date of current representation not stated",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "access_date": "2026-09-14"
+      },
+      {
+        "id": "r3:rgia-metadata",
+        "title": "RGIA typescript overview catalogue: 1622/1/301-г",
+        "url": "https://www.prlib.ru/item/324328",
+        "excerpt": "Catalogue describes an unnumbered folder, typescript overview,29folios, date1903 and June10; not a direct identification of the final reply telegram.",
+        "inspection": "Official descriptive metadata read; no file images located or inspected.",
+        "locator": {
+          "record": "b386133b-e018-4010-b2bf-2b0623c300b5",
+          "shelfmark": "РГИА. 1622 / 1 / 301-г"
+        },
+        "creation": {
+          "raw": "Date of current representation not stated",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "access_date": "2026-09-14"
+      },
+      {
+        "id": "r3:hathi-lead",
+        "title": "Penn Online Books lead to Hathi record103219007",
+        "url": "https://onlinebooks.library.upenn.edu/webbin/book/browse?c=x&key=Earthquakes+--+Japan+--+History+--+Sources&type=lcsubc",
+        "excerpt": "Listing locates Russian1905 collection at HathiTrust, with page images marked US access only.",
+        "inspection": "Listing HTML acquired and read; linked Hathi catalogue403; no pages inspected.",
+        "locator": {
+          "linked_catalogue": "https://catalog.hathitrust.org/Record/103219007"
+        },
+        "creation": {
+          "raw": "Date of current representation not stated",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "access_date": "2026-09-14"
+      }
+    ],
+    "claims": [
+      {
+        "id": "r3:c-paraphrase",
+        "source_id": "r3:frus-print-images",
+        "subject_id": "r3:system",
+        "predicate": "documentary_observation",
+        "object": "Printed p709 labels the Feb8 McCormick report Telegram—Paraphrase; its Rosen possession assertion is attributed through Lamsdorff. Printed page lacks modern679.",
+        "claimant_id": "r3:system",
+        "report_chain": [
+          "r3:system",
+          "mccormick",
+          "ru-fm"
+        ],
+        "temporal_scope": {
+          "raw": "February 8, 1904 report date",
+          "precision": "day",
+          "normalized_day": "1904-02-08",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-number-policy",
+        "source_id": "r3:frus-citation-policy",
+        "subject_id": "r3:frus-publisher",
+        "predicate": "documentary_observation",
+        "object": "Publisher says pre1955–57 web document numbers were superimposed and do not identify printed numbers.",
+        "claimant_id": "r3:frus-publisher",
+        "report_chain": [
+          "r3:frus-publisher"
+        ],
+        "temporal_scope": {
+          "raw": "Temporal role not dated by inspected evidence",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-release",
+        "source_id": "r3:frus-release",
+        "subject_id": "r3:frus-publisher",
+        "predicate": "documentary_observation",
+        "object": "Publisher announces digitized FRUS1904 release on Dec7,2017; Wisconsin supplied scans of printed books and Office created searchable edition.",
+        "claimant_id": "r3:frus-publisher",
+        "report_chain": [
+          "r3:frus-publisher"
+        ],
+        "temporal_scope": {
+          "raw": "December 7, 2017",
+          "precision": "day",
+          "normalized_day": "2017-12-07",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-jacar-labels",
+        "source_id": "r3:jacar-text",
+        "subject_id": "r3:jacar-editor",
+        "predicate": "documentary_observation",
+        "object": "Modern JACAR page presents 原文 transcription and 口語訳; these labels do not independently authenticate1904 artifact.",
+        "claimant_id": "r3:jacar-editor",
+        "report_chain": [
+          "r3:jacar-editor"
+        ],
+        "temporal_scope": {
+          "raw": "Temporal role not dated by inspected evidence",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-jacar-expansion",
+        "source_id": "r3:jacar-text",
+        "subject_id": "r3:jacar-editor",
+        "predicate": "documentary_observation",
+        "object": "Colloquial rendering expands 栗野/小村 to full names and 露都 to Russian capital (Saint Petersburg); visible date, No54 and four-part acknowledgment instruction remain.",
+        "claimant_id": "r3:jacar-editor",
+        "report_chain": [
+          "r3:jacar-editor"
+        ],
+        "temporal_scope": {
+          "raw": "Temporal role not dated by inspected evidence",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-jacar-transcription",
+        "source_id": "r3:jacar-text",
+        "subject_id": "r3:system",
+        "predicate": "documentary_observation",
+        "object": "原文 HTML has 五十五十一号及五十二号 while colloquial rendering separates50,51,52; strikethrough貴館ニ於ケル retained as markup. Exact transcription fidelity unresolved.",
+        "claimant_id": "r3:system",
+        "report_chain": [
+          "r3:system"
+        ],
+        "temporal_scope": {
+          "raw": "Temporal role not dated by inspected evidence",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-memoir-publication",
+        "source_id": "r3:rosen-memoir",
+        "subject_id": "r3:rosen-publishers",
+        "predicate": "documentary_observation",
+        "object": "Title identifies Rosen, VolI; copyright leaf First published1922; Publishers Note says author died before type and lacked final revision.",
+        "claimant_id": "r3:rosen-publishers",
+        "report_chain": [
+          "r3:rosen-publishers"
+        ],
+        "temporal_scope": {
+          "raw": "First published 1922",
+          "precision": "year",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-memoir-copy",
+        "source_id": "r3:rosen-memoir",
+        "subject_id": "r3:system",
+        "predicate": "documentary_observation",
+        "object": "Scanned copy includes Cornell original-book notice and accessionA532366; original in notice means the scanned1922 book, not a1904 telegram.",
+        "claimant_id": "r3:system",
+        "report_chain": [
+          "r3:system"
+        ],
+        "temporal_scope": {
+          "raw": "Temporal role not dated by inspected evidence",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-invitation",
+        "source_id": "r3:rosen-memoir",
+        "subject_id": "ru-minister-jp",
+        "predicate": "retrospective_receipt_assertion",
+        "object": "Rosen retrospectively says he received Komura invitation afternoonSaturdayFeb6,1904 to call4pm; this is Japanese invitation, not Russian final reply.",
+        "claimant_id": "ru-minister-jp",
+        "report_chain": [
+          "ru-minister-jp"
+        ],
+        "temporal_scope": {
+          "raw": "afternoon of Saturday, February 6, 1904",
+          "precision": "day",
+          "normalized_day": "1904-02-06",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-outgoing",
+        "source_id": "r3:rosen-memoir",
+        "subject_id": "ru-minister-jp",
+        "predicate": "retrospective_dispatch_assertion",
+        "object": "Rosen recounts outgoing cipher telegrams to PortArthur and StPetersburg after return from Komura; he says none arrived because forwarding was suspended. This is witness retrospective causal claim, not incoming final reply log.",
+        "claimant_id": "ru-minister-jp",
+        "report_chain": [
+          "ru-minister-jp"
+        ],
+        "temporal_scope": {
+          "raw": "after my return to the legation [in Feb6 narrative]",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-ia-lineage",
+        "source_id": "r3:rosen-metadata",
+        "subject_id": "r3:ia-metadata",
+        "predicate": "documentary_observation",
+        "object": "IA lists the PDF as derivative TextPDF, upstream DjvuXML; Cornell contributor, call DK254.R7 A3, scannerKirtasAPT2400, OCR ABBYYFineReader8.0. Metadata original labels concern file pipeline.",
+        "claimant_id": "r3:ia-metadata",
+        "report_chain": [
+          "r3:ia-metadata"
+        ],
+        "temporal_scope": {
+          "raw": "Temporal role not dated by inspected evidence",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-ia-times",
+        "source_id": "r3:rosen-metadata",
+        "subject_id": "r3:ia-metadata",
+        "predicate": "documentary_observation",
+        "object": "Raw scandate20070806073717; addeddate2009-11-05 09:47:22; publicdate2009-11-19 20:31:38. Time standards unstated here.",
+        "claimant_id": "r3:ia-metadata",
+        "report_chain": [
+          "r3:ia-metadata"
+        ],
+        "temporal_scope": {
+          "raw": "Temporal role not dated by inspected evidence",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-rsl-edition",
+        "source_id": "r3:rsl-metadata",
+        "subject_id": "r3:rsl",
+        "predicate": "documentary_observation",
+        "object": "Official catalogue states StPetersburg Synodal printing1905,49,[1]pages,no titleleaf,cover На правах рукописи; this publication context is not autograph status.",
+        "claimant_id": "r3:rsl",
+        "report_chain": [
+          "r3:rsl"
+        ],
+        "temporal_scope": {
+          "raw": "Temporal role not dated by inspected evidence",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-rgia-type",
+        "source_id": "r3:rgia-metadata",
+        "subject_id": "r3:rgia",
+        "predicate": "documentary_observation",
+        "object": "RGIA1622/1/301-г catalogue describes typescript overview,29folios,date1903/June10; final-reply-original identity not established.",
+        "claimant_id": "r3:rgia",
+        "report_chain": [
+          "r3:rgia"
+        ],
+        "temporal_scope": {
+          "raw": "Temporal role not dated by inspected evidence",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-hathi-access",
+        "source_id": "r3:hathi-lead",
+        "subject_id": "r3:system",
+        "predicate": "documentary_observation",
+        "object": "Penn listing links Russian1905 collection to Hathi103219007 with US-only page access; no page content verified.",
+        "claimant_id": "r3:system",
+        "report_chain": [
+          "r3:system"
+        ],
+        "temporal_scope": {
+          "raw": "Temporal role not dated by inspected evidence",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-pak-quote",
+        "source_id": "r2:pak",
+        "subject_id": "pak-2023",
+        "predicate": "documentary_observation",
+        "object": "Pak2023 quotes8articles pp135–136; footnote20 identifies Lamsdorff→Alexieff telegramNo2,21January1904,collectionpp46–47; citation is not inspection of telegram.",
+        "claimant_id": "pak-2023",
+        "report_chain": [
+          "pak-2023",
+          "ru-fm"
+        ],
+        "temporal_scope": {
+          "raw": "Temporal role not dated by inspected evidence",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-pak-article8",
+        "source_id": "r2:pak",
+        "subject_id": "pak-2023",
+        "predicate": "documentary_observation",
+        "object": "Current Russian quoted article8 reads Отмена всех прежних соглашений между Россией касательно Кореи; original-language omission/normalization cannot be checked without upstream pages.",
+        "claimant_id": "pak-2023",
+        "report_chain": [
+          "pak-2023",
+          "ru-fm"
+        ],
+        "temporal_scope": {
+          "raw": "Temporal role not dated by inspected evidence",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-pak-direct",
+        "source_id": "r2:pak",
+        "subject_id": "ru-minister-jp",
+        "predicate": "later_dispatch_assertion",
+        "object": "Pak says a similar telegram of new Russian proposals was sent directly toTokyo in Rosen name; exact transmitted-copy identity and sender/time unspecified in this sentence.",
+        "claimant_id": "pak-2023",
+        "report_chain": [
+          "pak-2023"
+        ],
+        "temporal_scope": {
+          "raw": "Temporal role not dated by inspected evidence",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-pak-nagasaki",
+        "source_id": "r2:pak",
+        "subject_id": "jp-government",
+        "predicate": "later_custody_assertion",
+        "object": "Pak says this telegram was delayed at Nagasaki telegraph by Japanese government order; no relay log, carrier identity or arrival time furnished.",
+        "claimant_id": "pak-2023",
+        "report_chain": [
+          "pak-2023"
+        ],
+        "temporal_scope": {
+          "raw": "Temporal role not dated by inspected evidence",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-pak-delivery",
+        "source_id": "r2:pak",
+        "subject_id": "ru-minister-jp",
+        "predicate": "later_delivery_assertion",
+        "object": "Pak says telegram delivered toRosen only7February (доставлена Розену только 7 февраля). Wording asserts delivery, not opening, reading or acknowledgment.",
+        "claimant_id": "pak-2023",
+        "report_chain": [
+          "pak-2023"
+        ],
+        "temporal_scope": {
+          "raw": "7 февраля",
+          "precision": "day",
+          "normalized_day": "1904-02-07",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          },
+          "calendar": "Gregorian interpretation from article sequence; original telegram calendar unverified"
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-pak-note21",
+        "source_id": "r2:pak",
+        "subject_id": "pak-2023",
+        "predicate": "documentary_observation",
+        "object": "Delivery/holding paragraph cites footnote21: PakB.D.RussiaandKorea1979pp197–198 and Naroch nitsky etal1973pp224–228; not a cited original Nagasaki receipt record.",
+        "claimant_id": "pak-2023",
+        "report_chain": [
+          "pak-2023"
+        ],
+        "temporal_scope": {
+          "raw": "Temporal role not dated by inspected evidence",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-pak-edition",
+        "source_id": "r2:pak",
+        "subject_id": "pak-2023",
+        "predicate": "documentary_observation",
+        "object": "Pak footnote4 and bibliography identify the Special Committee collection as StPetersburg1906; catalogue1905 may describe another edition; identity unresolved.",
+        "claimant_id": "pak-2023",
+        "report_chain": [
+          "pak-2023"
+        ],
+        "temporal_scope": {
+          "raw": "Temporal role not dated by inspected evidence",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      },
+      {
+        "id": "r3:c-jp-scan",
+        "source_id": "r2:komura-bundle",
+        "subject_id": "r3:system",
+        "predicate": "documentary_observation",
+        "object": "B07090546900 images4–5 show No54 sentFeb5 2pm and acknowledgment by part; image6 bears Copie No53; image11 contains No82 acknowledgments of50/53, with office receivedFeb6 4.40am. None establishes receipt of Russian final reply.",
+        "claimant_id": "r3:system",
+        "report_chain": [
+          "r3:system"
+        ],
+        "temporal_scope": {
+          "raw": "1904年2月5日／6日 [different send/receipt annotations]",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "extraction": {
+          "status": "inspected",
+          "confidence": "text attribution only; no calibration for historical truth",
+          "context": "Attribution to the inspected representation only; no original-document authentication or external truth promotion."
+        }
+      }
+    ],
+    "evidence_relations": [
+      {
+        "id": "r3:e:paraphrase",
+        "source_id": "r3:frus-print-images",
+        "claim_id": "r3:c-paraphrase",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:number-policy",
+        "source_id": "r3:frus-citation-policy",
+        "claim_id": "r3:c-number-policy",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:release",
+        "source_id": "r3:frus-release",
+        "claim_id": "r3:c-release",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:jacar-labels",
+        "source_id": "r3:jacar-text",
+        "claim_id": "r3:c-jacar-labels",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:jacar-expansion",
+        "source_id": "r3:jacar-text",
+        "claim_id": "r3:c-jacar-expansion",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:jacar-transcription",
+        "source_id": "r3:jacar-text",
+        "claim_id": "r3:c-jacar-transcription",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:memoir-publication",
+        "source_id": "r3:rosen-memoir",
+        "claim_id": "r3:c-memoir-publication",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:memoir-copy",
+        "source_id": "r3:rosen-memoir",
+        "claim_id": "r3:c-memoir-copy",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:invitation",
+        "source_id": "r3:rosen-memoir",
+        "claim_id": "r3:c-invitation",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:outgoing",
+        "source_id": "r3:rosen-memoir",
+        "claim_id": "r3:c-outgoing",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:ia-lineage",
+        "source_id": "r3:rosen-metadata",
+        "claim_id": "r3:c-ia-lineage",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:ia-times",
+        "source_id": "r3:rosen-metadata",
+        "claim_id": "r3:c-ia-times",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:rsl-edition",
+        "source_id": "r3:rsl-metadata",
+        "claim_id": "r3:c-rsl-edition",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:rgia-type",
+        "source_id": "r3:rgia-metadata",
+        "claim_id": "r3:c-rgia-type",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:hathi-access",
+        "source_id": "r3:hathi-lead",
+        "claim_id": "r3:c-hathi-access",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:pak-quote",
+        "source_id": "r2:pak",
+        "claim_id": "r3:c-pak-quote",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:pak-article8",
+        "source_id": "r2:pak",
+        "claim_id": "r3:c-pak-article8",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:pak-direct",
+        "source_id": "r2:pak",
+        "claim_id": "r3:c-pak-direct",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:pak-nagasaki",
+        "source_id": "r2:pak",
+        "claim_id": "r3:c-pak-nagasaki",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:pak-delivery",
+        "source_id": "r2:pak",
+        "claim_id": "r3:c-pak-delivery",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:pak-note21",
+        "source_id": "r2:pak",
+        "claim_id": "r3:c-pak-note21",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:pak-edition",
+        "source_id": "r2:pak",
+        "claim_id": "r3:c-pak-edition",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      },
+      {
+        "id": "r3:e:jp-scan",
+        "source_id": "r2:komura-bundle",
+        "claim_id": "r3:c-jp-scan",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "The declared inspection supports this attributed source-content observation, not the external proposition."
+      }
+    ],
+    "actor_epistemic_records": [],
+    "reconstructions": [],
+    "interpretations": [],
+    "narratives": []
+  },
+  "documentary": {
+    "artifacts": [
+      {
+        "id": "a-frus-web679",
+        "kind": "modern_digital_transcription",
+        "source_ids": [
+          "frus:1904:679"
+        ],
+        "inspection": "Located representation; declared source inspection only",
+        "language": {
+          "value": "English",
+          "basis": "Language observed in inspected text"
+        },
+        "original_status": "not_a_historical_original",
+        "identity": [
+          {
+            "namespace": "Office of Historian web document",
+            "value": "frus1904/d679",
+            "assigned_context": "Superimposed modern web edition number, not1904 message number"
+          }
+        ],
+        "provenance_status": "partially established",
+        "authenticity": "unresolved",
+        "temporal_roles": [
+          {
+            "role": "accessed_now",
+            "time": {
+              "raw": "2026-09-14",
+              "precision": "day",
+              "normalized_day": "2026-09-14",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "Clock standard not verified; no UTC conversion"
+              }
+            },
+            "claim_ids": [
+              "c679-held"
+            ]
+          }
+        ],
+        "claim_ids": [
+          "c679-held"
+        ],
+        "limit": "Separate artifact identity; no professional authentication; content correspondence does not merge artifacts."
+      },
+      {
+        "id": "a-frus-scan709",
+        "kind": "scan_image",
+        "source_ids": [
+          "r3:frus-print-images"
+        ],
+        "inspection": "PNG visually inspected pp708–709",
+        "language": {
+          "value": "English",
+          "basis": "Language observed in inspected text"
+        },
+        "original_status": "not_a_historical_original",
+        "identity": [
+          {
+            "namespace": "Official scan image",
+            "value": "frus1904/0797.png",
+            "assigned_context": "Digital image filename corresponding to printed709"
+          }
+        ],
+        "provenance_status": "partially established",
+        "authenticity": "unresolved",
+        "temporal_roles": [
+          {
+            "role": "accessed_now",
+            "time": {
+              "raw": "2026-09-14",
+              "precision": "day",
+              "normalized_day": "2026-09-14",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "Clock standard not verified; no UTC conversion"
+              }
+            },
+            "claim_ids": [
+              "r3:c-paraphrase"
+            ]
+          }
+        ],
+        "claim_ids": [
+          "r3:c-paraphrase"
+        ],
+        "limit": "Separate artifact identity; no professional authentication; content correspondence does not merge artifacts."
+      },
+      {
+        "id": "a-frus-print709",
+        "kind": "official_published_page",
+        "source_ids": [
+          "r3:frus-print-images"
+        ],
+        "inspection": "Printed artifact represented by inspected scan; physical copy not examined",
+        "language": {
+          "value": "English",
+          "basis": "Language observed in inspected text"
+        },
+        "original_status": "not_a_historical_original",
+        "identity": [
+          {
+            "namespace": "FRUS printed page",
+            "value": "1904 volume p709",
+            "assigned_context": "1905 printed edition; page number differs from modern679"
+          }
+        ],
+        "provenance_status": "partially established",
+        "authenticity": "unresolved",
+        "temporal_roles": [
+          {
+            "role": "published_at",
+            "time": {
+              "raw": "1905",
+              "precision": "year",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "No verified Gregorian day for this temporal role"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "Clock standard not verified; no UTC conversion"
+              }
+            },
+            "claim_ids": [
+              "r3:c-paraphrase"
+            ]
+          }
+        ],
+        "claim_ids": [
+          "r3:c-paraphrase"
+        ],
+        "limit": "Separate artifact identity; no professional authentication; content correspondence does not merge artifacts."
+      },
+      {
+        "id": "a-pak-pdf",
+        "kind": "later_edited_article",
+        "source_ids": [
+          "r2:pak"
+        ],
+        "inspection": "Russian PDF pp135–137 visually inspected",
+        "language": {
+          "value": "Russian",
+          "basis": "Language observed in inspected text"
+        },
+        "original_status": "not_a_historical_original",
+        "identity": [
+          {
+            "namespace": "Journal edition pages",
+            "value": "2023 N1 pp135–137",
+            "assigned_context": "Current Russian article PDF, not original diplomatic telegram"
+          }
+        ],
+        "provenance_status": "partially established",
+        "authenticity": "unresolved",
+        "temporal_roles": [
+          {
+            "role": "published_at",
+            "time": {
+              "raw": "2023",
+              "precision": "year",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "No verified Gregorian day for this temporal role"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "Clock standard not verified; no UTC conversion"
+              }
+            },
+            "claim_ids": [
+              "r3:c-pak-quote"
+            ]
+          }
+        ],
+        "claim_ids": [
+          "r3:c-pak-quote",
+          "r3:c-pak-note21",
+          "r3:c-pak-delivery",
+          "r3:c-pak-edition"
+        ],
+        "limit": "Separate artifact identity; no professional authentication; content correspondence does not merge artifacts."
+      },
+      {
+        "id": "a-rsl-catalog",
+        "kind": "modern_catalogue",
+        "source_ids": [
+          "r3:rsl-metadata"
+        ],
+        "inspection": "Indexed official metadata only; direct access denied",
+        "language": {
+          "value": "Russian",
+          "basis": "Language observed in inspected text"
+        },
+        "original_status": "not_a_historical_original",
+        "identity": [
+          {
+            "namespace": "NEB/RSL bibliographic record",
+            "value": "000199_000009_007506064",
+            "assigned_context": "Catalogue record not collection pages"
+          }
+        ],
+        "provenance_status": "partially established",
+        "authenticity": "unresolved",
+        "temporal_roles": [],
+        "claim_ids": [
+          "r3:c-rsl-edition"
+        ],
+        "limit": "Separate artifact identity; no professional authentication; content correspondence does not merge artifacts."
+      },
+      {
+        "id": "a-rsl-edition",
+        "kind": "official_collection_catalogued",
+        "source_ids": [
+          "r3:rsl-metadata"
+        ],
+        "inspection": "Catalogue-only existence; pages not inspected",
+        "language": {
+          "value": "Russian",
+          "basis": "Russian language stated by catalogue; edition pages not inspected"
+        },
+        "original_status": "catalogued_not_inspected",
+        "identity": [
+          {
+            "namespace": "RSL catalogue edition",
+            "value": "StP1905,49,[1]pp",
+            "assigned_context": "Edition existence described by catalogue; exact relation to Pak1906 not established"
+          }
+        ],
+        "provenance_status": "partially established",
+        "authenticity": "unresolved",
+        "temporal_roles": [
+          {
+            "role": "published_at",
+            "time": {
+              "raw": "1905",
+              "precision": "year",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "No verified Gregorian day for this temporal role"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "Clock standard not verified; no UTC conversion"
+              }
+            },
+            "claim_ids": [
+              "r3:c-rsl-edition"
+            ]
+          }
+        ],
+        "claim_ids": [
+          "r3:c-rsl-edition"
+        ],
+        "limit": "Separate artifact identity; no professional authentication; content correspondence does not merge artifacts."
+      },
+      {
+        "id": "a-jp-archival54",
+        "kind": "archival_office_document",
+        "source_ids": [
+          "r2:komura-bundle"
+        ],
+        "inspection": "Located representation; declared source inspection only",
+        "language": {
+          "value": "Japanese with English routing notation",
+          "basis": "Language observed in inspected text"
+        },
+        "original_status": "unverified_archival_document",
+        "identity": [
+          {
+            "namespace": "JACAR record/frame",
+            "value": "B07090546900 frames0009–0010 / MOFA5.2.1.14_003",
+            "assigned_context": "Archival document represented by scan; office-original versus contemporary copy not independently verified"
+          }
+        ],
+        "provenance_status": "partially established",
+        "authenticity": "unresolved",
+        "temporal_roles": [
+          {
+            "role": "dispatched_at",
+            "time": {
+              "raw": "Sent.Feb5-04 2-pm",
+              "precision": "day",
+              "normalized_day": "1904-02-05",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "Clock standard not verified; no UTC conversion"
+              }
+            },
+            "claim_ids": [
+              "r2:c-order54"
+            ]
+          }
+        ],
+        "claim_ids": [
+          "r3:c-jp-scan",
+          "r2:c-order54"
+        ],
+        "limit": "Separate artifact identity; no professional authentication; content correspondence does not merge artifacts."
+      },
+      {
+        "id": "a-jp-bundle-pdf",
+        "kind": "archival_digital_images",
+        "source_ids": [
+          "r2:komura-bundle"
+        ],
+        "inspection": "Declared selected frames visually inspected; PDF export retained",
+        "language": {
+          "value": "Japanese with English routing notation",
+          "basis": "Language observed in inspected text"
+        },
+        "original_status": "not_a_historical_original",
+        "identity": [
+          {
+            "namespace": "JACAR digital export",
+            "value": "B07090546900 PDF58pages",
+            "assigned_context": "Images4–5 represent No54,6CopieNo53,11No82; not one single1904 artifact"
+          }
+        ],
+        "provenance_status": "partially established",
+        "authenticity": "unresolved",
+        "temporal_roles": [],
+        "claim_ids": [
+          "r3:c-jp-scan"
+        ],
+        "limit": "Separate artifact identity; no professional authentication; content correspondence does not merge artifacts."
+      },
+      {
+        "id": "a-jacar-transcription",
+        "kind": "modern_transcription",
+        "source_ids": [
+          "r3:jacar-text"
+        ],
+        "inspection": "Located representation; declared source inspection only",
+        "language": {
+          "value": "Japanese with English routing notation",
+          "basis": "Language observed in inspected text"
+        },
+        "original_status": "not_a_historical_original",
+        "identity": [
+          {
+            "namespace": "JACAR exhibition HTML section",
+            "value": "komura_telegram_txt.htm#原文",
+            "assigned_context": "Modern HTML label原文; not original document identity"
+          }
+        ],
+        "provenance_status": "partially established",
+        "authenticity": "unresolved",
+        "temporal_roles": [],
+        "claim_ids": [
+          "r3:c-jacar-labels",
+          "r3:c-jacar-transcription"
+        ],
+        "limit": "Separate artifact identity; no professional authentication; content correspondence does not merge artifacts."
+      },
+      {
+        "id": "a-jacar-colloquial",
+        "kind": "modern_colloquial_translation",
+        "source_ids": [
+          "r3:jacar-text"
+        ],
+        "inspection": "Located representation; declared source inspection only",
+        "language": {
+          "value": "Modern colloquial Japanese",
+          "basis": "Language observed in inspected text"
+        },
+        "original_status": "not_a_historical_original",
+        "identity": [
+          {
+            "namespace": "JACAR exhibition HTML section",
+            "value": "komura_telegram_txt.htm#口語訳",
+            "assigned_context": "Modern same-language rendering; lexical actor/place expansion"
+          }
+        ],
+        "provenance_status": "partially established",
+        "authenticity": "unresolved",
+        "temporal_roles": [],
+        "claim_ids": [
+          "r3:c-jacar-expansion"
+        ],
+        "limit": "Separate artifact identity; no professional authentication; content correspondence does not merge artifacts."
+      },
+      {
+        "id": "a-rosen-pdf",
+        "kind": "derivative_scan_text_pdf",
+        "source_ids": [
+          "r3:rosen-memoir",
+          "r3:rosen-metadata"
+        ],
+        "inspection": "PDF selected images inspected, text layer searched",
+        "language": {
+          "value": "English",
+          "basis": "Language observed in inspected text"
+        },
+        "original_status": "not_a_historical_original",
+        "identity": [
+          {
+            "namespace": "IA item PDF mirrored on Wikimedia",
+            "value": "cu31924071193662",
+            "assigned_context": "Local PDF bytes acquired from Wikimedia; exact IA derivative-file byte equality not compared"
+          }
+        ],
+        "provenance_status": "partially established",
+        "authenticity": "unresolved",
+        "temporal_roles": [],
+        "claim_ids": [
+          "r3:c-memoir-copy",
+          "r3:c-ia-lineage"
+        ],
+        "limit": "Separate artifact identity; no professional authentication; content correspondence does not merge artifacts."
+      },
+      {
+        "id": "a-rosen-book",
+        "kind": "published_memoir_copy",
+        "source_ids": [
+          "r3:rosen-memoir"
+        ],
+        "inspection": "Located representation; declared source inspection only",
+        "language": {
+          "value": "English",
+          "basis": "Language observed in inspected text"
+        },
+        "original_status": "not_a_historical_original",
+        "identity": [
+          {
+            "namespace": "Cornell scanned copy accession",
+            "value": "A532366; VolI1922",
+            "assigned_context": "Physical book copy represented by scan, not memoir manuscript or1904 telegram"
+          }
+        ],
+        "provenance_status": "partially established",
+        "authenticity": "unresolved",
+        "temporal_roles": [
+          {
+            "role": "published_at",
+            "time": {
+              "raw": "First published1922",
+              "precision": "year",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "No verified Gregorian day for this temporal role"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "Clock standard not verified; no UTC conversion"
+              }
+            },
+            "claim_ids": [
+              "r3:c-memoir-publication"
+            ]
+          }
+        ],
+        "claim_ids": [
+          "r3:c-memoir-publication",
+          "r3:c-memoir-copy"
+        ],
+        "limit": "Separate artifact identity; no professional authentication; content correspondence does not merge artifacts."
+      },
+      {
+        "id": "a-rosen-metadata",
+        "kind": "digitization_metadata",
+        "source_ids": [
+          "r3:rosen-metadata"
+        ],
+        "inspection": "Located representation; declared source inspection only",
+        "language": {
+          "value": "English metadata",
+          "basis": "Language observed in inspected text"
+        },
+        "original_status": "not_a_historical_original",
+        "identity": [
+          {
+            "namespace": "Internet Archive item",
+            "value": "cu31924071193662/metadata",
+            "assigned_context": "Modern metadata about1922book digitization"
+          }
+        ],
+        "provenance_status": "partially established",
+        "authenticity": "unresolved",
+        "temporal_roles": [
+          {
+            "role": "digitized_at",
+            "time": {
+              "raw": "20070806073717",
+              "precision": "day",
+              "normalized_day": "2007-08-06",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "Clock standard not verified; no UTC conversion"
+              }
+            },
+            "claim_ids": [
+              "r3:c-ia-times"
+            ]
+          },
+          {
+            "role": "added_to_repository_at",
+            "time": {
+              "raw": "2009-11-05 09:47:22",
+              "precision": "day",
+              "normalized_day": "2009-11-05",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "Clock standard not verified; no UTC conversion"
+              }
+            },
+            "claim_ids": [
+              "r3:c-ia-times"
+            ]
+          },
+          {
+            "role": "digital_publication_at",
+            "time": {
+              "raw": "2009-11-19 20:31:38",
+              "precision": "day",
+              "normalized_day": "2009-11-19",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "Clock standard not verified; no UTC conversion"
+              }
+            },
+            "claim_ids": [
+              "r3:c-ia-times"
+            ]
+          }
+        ],
+        "claim_ids": [
+          "r3:c-ia-lineage",
+          "r3:c-ia-times"
+        ],
+        "limit": "Separate artifact identity; no professional authentication; content correspondence does not merge artifacts."
+      },
+      {
+        "id": "a-rgia-catalog",
+        "kind": "archival_descriptive_record",
+        "source_ids": [
+          "r3:rgia-metadata"
+        ],
+        "inspection": "Located representation; declared source inspection only",
+        "language": {
+          "value": "Russian",
+          "basis": "Language observed in inspected text"
+        },
+        "original_status": "not_a_historical_original",
+        "identity": [
+          {
+            "namespace": "RGIA catalogue",
+            "value": "1622/1/301-г",
+            "assigned_context": "Typescript overview description, not final reply artifact"
+          }
+        ],
+        "provenance_status": "partially established",
+        "authenticity": "unresolved",
+        "temporal_roles": [],
+        "claim_ids": [
+          "r3:c-rgia-type"
+        ],
+        "limit": "Separate artifact identity; no professional authentication; content correspondence does not merge artifacts."
+      }
+    ],
+    "references": [
+      {
+        "id": "ref-frus-input",
+        "label": "Uninspected input to printed McCormick Feb8 paraphrase",
+        "locator": "FRUSp709 heading; no original archival shelfmark in inspected passage",
+        "existence": "referenced_not_verified",
+        "unknown_reason": "provenance_incomplete",
+        "claim_ids": [
+          "r3:c-paraphrase"
+        ],
+        "limit": "Reference endpoint only; no asserted original artifact or verified textual identity."
+      },
+      {
+        "id": "ref-pak-edition",
+        "label": "Pak-cited collection1906 pages46–47",
+        "locator": "Special Committee collection cited1906; footnote20telegramNo2Jan21,1904",
+        "existence": "referenced_not_verified",
+        "unknown_reason": "source_referenced_but_unavailable",
+        "claim_ids": [
+          "r3:c-pak-quote",
+          "r3:c-pak-edition"
+        ],
+        "limit": "Reference endpoint only; no asserted original artifact or verified textual identity."
+      },
+      {
+        "id": "ref-reply-no2",
+        "label": "Cited Lamsdorff→Alexieff No2 telegram",
+        "locator": "21January1904,No2,pp46–47; original/officecopy status not verified",
+        "existence": "referenced_not_verified",
+        "unknown_reason": "original_not_located",
+        "claim_ids": [
+          "r3:c-pak-quote"
+        ],
+        "limit": "Reference endpoint only; no asserted original artifact or verified textual identity."
+      },
+      {
+        "id": "ref-note21-pak",
+        "label": "PakB.D.1979 cited research",
+        "locator": "RussiaandKorea pp197–198",
+        "existence": "referenced_not_verified",
+        "unknown_reason": "source_referenced_but_unavailable",
+        "claim_ids": [
+          "r3:c-pak-note21"
+        ],
+        "limit": "Reference endpoint only; no asserted original artifact or verified textual identity."
+      },
+      {
+        "id": "ref-note21-1973",
+        "label": "1973 cited research",
+        "locator": "InternationalrelationsFarEastbook1pp224–228",
+        "existence": "referenced_not_verified",
+        "unknown_reason": "source_referenced_but_unavailable",
+        "claim_ids": [
+          "r3:c-pak-note21"
+        ],
+        "limit": "Reference endpoint only; no asserted original artifact or verified textual identity."
+      },
+      {
+        "id": "ref-rosen-manuscript",
+        "label": "Unlocated manuscript/input to published English memoir",
+        "locator": "Publishers note; author died before type; no translator/original-language manuscript identified",
+        "existence": "referenced_not_verified",
+        "unknown_reason": "provenance_incomplete",
+        "claim_ids": [
+          "r3:c-memoir-publication"
+        ],
+        "limit": "Reference endpoint only; no asserted original artifact or verified textual identity."
+      }
+    ],
+    "lineage": [
+      {
+        "id": "l-frus-web",
+        "from_id": "a-frus-web679",
+        "to": {
+          "kind": "artifact",
+          "id": "a-frus-scan709"
+        },
+        "relation": "transcribed_from",
+        "attestation": "publisher_assertion",
+        "status": "partial_correspondence",
+        "scope": "Publisher states searchable text from scans; printed709 passage visually compared with modern679. Not original telegram.",
+        "claim_ids": [
+          "c679-held",
+          "r3:c-paraphrase",
+          "r3:c-release"
+        ],
+        "limit": "No original authentication; unverified endpoints stay references and partial text correspondence remains partial."
+      },
+      {
+        "id": "l-frus-scan",
+        "from_id": "a-frus-scan709",
+        "to": {
+          "kind": "artifact",
+          "id": "a-frus-print709"
+        },
+        "relation": "digitized_from",
+        "attestation": "publisher_assertion",
+        "status": "partial_correspondence",
+        "scope": "Official page image and publisher scan provenance; physical source-copy identity not established.",
+        "claim_ids": [
+          "r3:c-paraphrase",
+          "r3:c-release"
+        ],
+        "limit": "No original authentication; unverified endpoints stay references and partial text correspondence remains partial."
+      },
+      {
+        "id": "l-frus-input",
+        "from_id": "a-frus-print709",
+        "to": {
+          "kind": "reference",
+          "id": "ref-frus-input"
+        },
+        "relation": "claims_to_reproduce",
+        "attestation": "citation_only",
+        "status": "asserted_not_verified",
+        "scope": "Explicitly a paraphrase of attributed telegram; verbatim reproduction is not claimed.",
+        "claim_ids": [
+          "r3:c-paraphrase"
+        ],
+        "limit": "No original authentication; unverified endpoints stay references and partial text correspondence remains partial."
+      },
+      {
+        "id": "l-pak-quote",
+        "from_id": "a-pak-pdf",
+        "to": {
+          "kind": "reference",
+          "id": "ref-pak-edition"
+        },
+        "relation": "quoted_from",
+        "attestation": "citation_only",
+        "status": "asserted_not_verified",
+        "scope": "Quotation with citation; underlying1906edition pages not acquired.",
+        "claim_ids": [
+          "r3:c-pak-quote",
+          "r3:c-pak-edition"
+        ],
+        "limit": "No original authentication; unverified endpoints stay references and partial text correspondence remains partial."
+      },
+      {
+        "id": "l-pak-reply",
+        "from_id": "a-pak-pdf",
+        "to": {
+          "kind": "reference",
+          "id": "ref-reply-no2"
+        },
+        "relation": "claims_to_reproduce",
+        "attestation": "citation_only",
+        "status": "asserted_not_verified",
+        "scope": "Article attributes quoted text through collection to No2; draft versus sent/received copy unresolved.",
+        "claim_ids": [
+          "r3:c-pak-quote"
+        ],
+        "limit": "No original authentication; unverified endpoints stay references and partial text correspondence remains partial."
+      },
+      {
+        "id": "l-pak-delivery79",
+        "from_id": "a-pak-pdf",
+        "to": {
+          "kind": "reference",
+          "id": "ref-note21-pak"
+        },
+        "relation": "cites_for",
+        "attestation": "citation_only",
+        "status": "asserted_not_verified",
+        "scope": "Citation dependency of holding/delivery paragraph, not verified verbatim quotation.",
+        "claim_ids": [
+          "r3:c-pak-note21"
+        ],
+        "limit": "No original authentication; unverified endpoints stay references and partial text correspondence remains partial."
+      },
+      {
+        "id": "l-pak-delivery73",
+        "from_id": "a-pak-pdf",
+        "to": {
+          "kind": "reference",
+          "id": "ref-note21-1973"
+        },
+        "relation": "cites_for",
+        "attestation": "citation_only",
+        "status": "asserted_not_verified",
+        "scope": "Second citation dependency of delivery paragraph, not original relay log.",
+        "claim_ids": [
+          "r3:c-pak-note21"
+        ],
+        "limit": "No original authentication; unverified endpoints stay references and partial text correspondence remains partial."
+      },
+      {
+        "id": "l-jp-scan",
+        "from_id": "a-jp-bundle-pdf",
+        "to": {
+          "kind": "artifact",
+          "id": "a-jp-archival54"
+        },
+        "relation": "digitized_from",
+        "attestation": "publisher_assertion",
+        "status": "partial_correspondence",
+        "scope": "Only images4–5 of multi-document export represent this No54; remaining pages are other documents.",
+        "claim_ids": [
+          "r3:c-jp-scan",
+          "r2:c-order54"
+        ],
+        "limit": "No original authentication; unverified endpoints stay references and partial text correspondence remains partial."
+      },
+      {
+        "id": "l-jacar-text",
+        "from_id": "a-jacar-transcription",
+        "to": {
+          "kind": "artifact",
+          "id": "a-jp-archival54"
+        },
+        "relation": "claims_to_reproduce",
+        "attestation": "observed_comparison",
+        "status": "partial_correspondence",
+        "scope": "No54/date/routing/ackpart payload match; ambiguous numbered transcription line and deletion markup prevent exact-copy claim.",
+        "claim_ids": [
+          "r3:c-jacar-labels",
+          "r3:c-jacar-transcription",
+          "r3:c-jp-scan"
+        ],
+        "limit": "No original authentication; unverified endpoints stay references and partial text correspondence remains partial."
+      },
+      {
+        "id": "l-jacar-translation",
+        "from_id": "a-jacar-colloquial",
+        "to": {
+          "kind": "artifact",
+          "id": "a-jacar-transcription"
+        },
+        "relation": "translated_from",
+        "attestation": "publisher_assertion",
+        "status": "partial_correspondence",
+        "scope": "Page explicitly labels口語訳; same-language modern rendering, not Russian→Japanese translation.",
+        "claim_ids": [
+          "r3:c-jacar-expansion",
+          "r3:c-jacar-labels"
+        ],
+        "limit": "No original authentication; unverified endpoints stay references and partial text correspondence remains partial."
+      },
+      {
+        "id": "l-rosen-scan",
+        "from_id": "a-rosen-pdf",
+        "to": {
+          "kind": "artifact",
+          "id": "a-rosen-book"
+        },
+        "relation": "digitized_from",
+        "attestation": "publisher_assertion",
+        "status": "partial_correspondence",
+        "scope": "Cornell book notice and metadata; scan/textPDF derivative chain partially documented; mirror byte equality not independently checked.",
+        "claim_ids": [
+          "r3:c-memoir-copy",
+          "r3:c-ia-lineage"
+        ],
+        "limit": "No original authentication; unverified endpoints stay references and partial text correspondence remains partial."
+      },
+      {
+        "id": "l-rosen-input",
+        "from_id": "a-rosen-book",
+        "to": {
+          "kind": "reference",
+          "id": "ref-rosen-manuscript"
+        },
+        "relation": "claims_to_reproduce",
+        "attestation": "citation_only",
+        "status": "asserted_not_verified",
+        "scope": "Publisher attributes memoir to Rosen; unlocated authorial input, final revision absent; not classified as translation without evidence.",
+        "claim_ids": [
+          "r3:c-memoir-publication"
+        ],
+        "limit": "No original authentication; unverified endpoints stay references and partial text correspondence remains partial."
+      }
+    ],
+    "messages": [
+      {
+        "id": "m-reply",
+        "label": "Incoming Russian final proposals addressed toRosen",
+        "identity_status": "Attributed payload grouping, not verified artifact equivalence across witnesses",
+        "claim_ids": [
+          "r3:c-pak-direct",
+          "r3:c-pak-nagasaki",
+          "r3:c-pak-delivery",
+          "c679-held"
+        ],
+        "limit": "Do not combine incoming Russian reply, Japanese invitation, Japanese No54/No82 or outgoing Rosen warnings."
+      },
+      {
+        "id": "m-invitation",
+        "label": "Komura invitation toRosen onFeb6",
+        "identity_status": "Attributed payload grouping, not verified artifact equivalence across witnesses",
+        "claim_ids": [
+          "r3:c-invitation"
+        ],
+        "limit": "Do not combine incoming Russian reply, Japanese invitation, Japanese No54/No82 or outgoing Rosen warnings."
+      },
+      {
+        "id": "m-warnings",
+        "label": "Outgoing Rosen warnings after rupture",
+        "identity_status": "Attributed payload grouping, not verified artifact equivalence across witnesses",
+        "claim_ids": [
+          "r3:c-outgoing"
+        ],
+        "limit": "Do not combine incoming Russian reply, Japanese invitation, Japanese No54/No82 or outgoing Rosen warnings."
+      },
+      {
+        "id": "m-jp82",
+        "label": "Kurino No82 acknowledgment50/53, not Russian reply",
+        "identity_status": "Attributed payload grouping, not verified artifact equivalence across witnesses",
+        "claim_ids": [
+          "r2:c-ack82",
+          "r2:c-ack82-receipt",
+          "r3:c-jp-scan"
+        ],
+        "limit": "Do not combine incoming Russian reply, Japanese invitation, Japanese No54/No82 or outgoing Rosen warnings."
+      }
+    ],
+    "stages": [
+      {
+        "id": "s-reply-address",
+        "message_id": "m-reply",
+        "stage": "addressed_to",
+        "actor_id": "ru-minister-jp",
+        "attestation_form": "later_reconstruction",
+        "time": {
+          "raw": "на имя Розена; dispatch date unspecified",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "time_role": "addressed_to_at",
+        "claim_ids": [
+          "r3:c-pak-direct"
+        ],
+        "limit": "Stage is only the attributed assertion stated by this source. No next stage, individual reading, synchronization, or knowledge inferred.",
+        "actor_role": "recipient"
+      },
+      {
+        "id": "s-reply-send",
+        "message_id": "m-reply",
+        "stage": "dispatched",
+        "actor_id": {
+          "status": "unknown",
+          "reason": "Pak direct-send sentence does not identify sender; Russian proposals are not a named dispatch actor."
+        },
+        "attestation_form": "later_reconstruction",
+        "time": {
+          "raw": "sent directly toTokyo; date unspecified",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "time_role": "dispatched_at",
+        "claim_ids": [
+          "r3:c-pak-direct"
+        ],
+        "limit": "Stage is only the attributed assertion stated by this source. No next stage, individual reading, synchronization, or knowledge inferred.",
+        "actor_role": "sender"
+      },
+      {
+        "id": "s-reply-hold",
+        "message_id": "m-reply",
+        "stage": "held_at_location",
+        "actor_id": {
+          "status": "unknown",
+          "reason": "Physical telegraph custodian unspecified; ordering authority is a separate scope."
+        },
+        "attestation_form": "later_reconstruction",
+        "time": {
+          "raw": "Nagasaki telegraph delay; time unspecified",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "time_role": "held_at_location_at",
+        "claim_ids": [
+          "r3:c-pak-nagasaki"
+        ],
+        "limit": "Stage is only the attributed assertion stated by this source. No next stage, individual reading, synchronization, or knowledge inferred.",
+        "actor_role": "physical_custodian",
+        "additional_actor_scopes": {
+          "reported_ordering_authority": "jp-government"
+        }
+      },
+      {
+        "id": "s-reply-delivery",
+        "message_id": "m-reply",
+        "stage": "delivered_to",
+        "actor_id": "ru-minister-jp",
+        "attestation_form": "later_reconstruction",
+        "time": {
+          "raw": "7 февраля",
+          "precision": "day",
+          "normalized_day": "1904-02-07",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "time_role": "delivered_to_at",
+        "claim_ids": [
+          "r3:c-pak-delivery"
+        ],
+        "limit": "Stage is only the attributed assertion stated by this source. No next stage, individual reading, synchronization, or knowledge inferred.",
+        "actor_role": "recipient"
+      },
+      {
+        "id": "s-reply-possession",
+        "message_id": "m-reply",
+        "stage": "possessed_by",
+        "actor_id": "ru-minister-jp",
+        "attestation_form": "source_reports_actor_assertion",
+        "time": {
+          "raw": "when Kurino askedforpassports; reportedFebruary8,1904, targetday not established",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "time_role": "possessed_by_at",
+        "claim_ids": [
+          "c679-held"
+        ],
+        "limit": "Stage is only the attributed assertion stated by this source. No next stage, individual reading, synchronization, or knowledge inferred.",
+        "actor_role": "holder"
+      },
+      {
+        "id": "s-invitation-receipt",
+        "message_id": "m-invitation",
+        "stage": "delivered_to",
+        "actor_id": "ru-minister-jp",
+        "attestation_form": "retrospective_actor_assertion",
+        "time": {
+          "raw": "afternoonSaturdayFebruary6,1904",
+          "precision": "day",
+          "normalized_day": "1904-02-06",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "time_role": "received_at",
+        "claim_ids": [
+          "r3:c-invitation"
+        ],
+        "limit": "Stage is only the attributed assertion stated by this source. No next stage, individual reading, synchronization, or knowledge inferred.",
+        "actor_role": "recipient"
+      },
+      {
+        "id": "s-warnings-send",
+        "message_id": "m-warnings",
+        "stage": "dispatched",
+        "actor_id": "ru-minister-jp",
+        "attestation_form": "retrospective_actor_assertion",
+        "time": {
+          "raw": "afterreturntolegation; source narrative6Feb",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "time_role": "dispatched_at",
+        "claim_ids": [
+          "r3:c-outgoing"
+        ],
+        "limit": "Stage is only the attributed assertion stated by this source. No next stage, individual reading, synchronization, or knowledge inferred.",
+        "actor_role": "sender"
+      },
+      {
+        "id": "s-jp82-ack",
+        "message_id": "m-jp82",
+        "stage": "receipt_acknowledged",
+        "actor_id": "jp-minister-ru",
+        "attestation_form": "source_asserts",
+        "time": {
+          "raw": "February5,1904,6.15P.M.",
+          "precision": "day",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "time_role": "receipt_acknowledged_at",
+        "claim_ids": [
+          "r2:c-ack82"
+        ],
+        "limit": "Stage is only the attributed assertion stated by this source. No next stage, individual reading, synchronization, or knowledge inferred.",
+        "actor_role": "acknowledging_recipient_of_50_and_53"
+      },
+      {
+        "id": "s-jp82-office",
+        "message_id": "m-jp82",
+        "stage": "receipt_annotated",
+        "actor_id": "jp-fm-receiving-office",
+        "attestation_form": "source_asserts",
+        "time": {
+          "raw": "ReceivedFeb6-04 4.40am",
+          "precision": "day",
+          "normalized_day": "1904-02-06",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "time_role": "receipt_annotated_at",
+        "claim_ids": [
+          "r2:c-ack82-receipt",
+          "r3:c-jp-scan"
+        ],
+        "limit": "Stage is only the attributed assertion stated by this source. No next stage, individual reading, synchronization, or knowledge inferred.",
+        "actor_role": "receiving_office"
+      }
+    ],
+    "assessments": [
+      {
+        "id": "q-delivery-content",
+        "target": {
+          "kind": "source_content",
+          "id": "r3:c-pak-delivery"
+        },
+        "status": "strongly_established",
+        "proposition": "Current PakRussian text asserts deliveredtoRosen7Feb.",
+        "claim_ids": [
+          "r3:c-pak-delivery"
+        ],
+        "limit": "Strong text observation, not external delivery certainty."
+      },
+      {
+        "id": "q-reply-identity",
+        "target": {
+          "kind": "documentary_identity",
+          "id": "ref-reply-no2"
+        },
+        "status": "unresolved",
+        "proposition": "No2quotation is exact final telegram actually dispatchedanddelivered toRosen.",
+        "claim_ids": [
+          "r3:c-pak-quote",
+          "r3:c-pak-direct",
+          "r3:c-pak-edition",
+          "r3:c-rsl-edition"
+        ],
+        "limit": "No sent/received original; similartelegram wording and edition mismatch unresolved."
+      },
+      {
+        "id": "q-delivery-reality",
+        "target": {
+          "kind": "external_reality",
+          "id": "s-reply-delivery"
+        },
+        "status": "unresolved",
+        "proposition": "Rosen actually receivedfinalreply on7Feb.",
+        "claim_ids": [
+          "r3:c-pak-delivery",
+          "r3:c-pak-note21",
+          "c679-held"
+        ],
+        "limit": "Later research delivery assertion and indirect possession report differ in stage and temporal resolution; no relay/ackoriginal."
+      },
+      {
+        "id": "q-frus-content",
+        "target": {
+          "kind": "source_content",
+          "id": "r3:c-paraphrase"
+        },
+        "status": "strongly_established",
+        "proposition": "Printedpagecontains Telegram—Paraphrase and attributed possession report.",
+        "claim_ids": [
+          "r3:c-paraphrase"
+        ],
+        "limit": "Verifies print content, not Lamsdorff statementtruth."
+      },
+      {
+        "id": "q-frus-id",
+        "target": {
+          "kind": "documentary_identity",
+          "id": "a-frus-web679"
+        },
+        "status": "possible",
+        "proposition": "Modern679corresponds to printed709 report section.",
+        "claim_ids": [
+          "r3:c-paraphrase",
+          "c679-held",
+          "r3:c-number-policy",
+          "r3:c-release"
+        ],
+        "limit": "Partial visual textmatch+publisherdigitization; not exact originaltelegram equivalence."
+      },
+      {
+        "id": "q-nagasaki-reality",
+        "target": {
+          "kind": "external_reality",
+          "id": "s-reply-hold"
+        },
+        "status": "unresolved",
+        "proposition": "Japanese authoritiesactuallyheldthe finalreplyatNagasaki.",
+        "claim_ids": [
+          "r3:c-pak-nagasaki",
+          "r3:c-pak-note21"
+        ],
+        "limit": "No original order, relay ledger, custodyreceipt or timestamp inspected."
+      },
+      {
+        "id": "q-jp-identity",
+        "target": {
+          "kind": "documentary_identity",
+          "id": "a-jp-archival54"
+        },
+        "status": "possible",
+        "proposition": "No54archivalimagecorresponds to modernJACAR transcription.",
+        "claim_ids": [
+          "r3:c-jp-scan",
+          "r2:c-order54",
+          "r3:c-jacar-transcription"
+        ],
+        "limit": "Partial content/locator match; officecopy/original and exactnormalization uncertain."
+      },
+      {
+        "id": "q-russian-language",
+        "target": {
+          "kind": "source_content",
+          "id": "r3:c-pak-quote"
+        },
+        "status": "strongly_established",
+        "proposition": "ReadableRussianquotationlocatedin2023article.",
+        "claim_ids": [
+          "r3:c-pak-quote"
+        ],
+        "limit": "Russian-language presence doesnotprove original language ofsent1904artifact or pre1918spelling fidelity."
+      }
+    ],
+    "gaps": [
+      {
+        "id": "g-reply-original",
+        "target_id": "ref-reply-no2",
+        "role": "original_artifact",
+        "unknown_reason": "original_not_located",
+        "reason": "Cited No2 hasno inspected original, officecopy, archive shelfmark or sent/received identity.",
+        "claim_ids": [
+          "r3:c-pak-quote"
+        ],
+        "limit": "Unknown retained; no lost-document, inexistence or ignorance inference."
+      },
+      {
+        "id": "g-edition",
+        "target_id": "a-rsl-edition",
+        "role": "edition_identity",
+        "unknown_reason": "provenance_incomplete",
+        "reason": "1905catalogue versus1906citation cannotbe resolved bysimilar titles; neither copiednor correctedparent.",
+        "claim_ids": [
+          "r3:c-rsl-edition",
+          "r3:c-pak-edition"
+        ],
+        "limit": "Unknown retained; no lost-document, inexistence or ignorance inference."
+      },
+      {
+        "id": "g-rsl-access",
+        "target_id": "a-rsl-edition",
+        "role": "page_access",
+        "unknown_reason": "archive_inaccessible",
+        "reason": "PDFendpointHTML andcatalogue403; pages46–47 notread.",
+        "claim_ids": [
+          "r3:c-rsl-edition"
+        ],
+        "limit": "Unknown retained; no lost-document, inexistence or ignorance inference."
+      },
+      {
+        "id": "g-reply-sender_possession",
+        "target_id": "m-reply",
+        "role": "sender_possession",
+        "unknown_reason": "no_evidence_currently_located",
+        "reason": "No stage-specific contemporary record located for incoming finalreply; no inference fromaddress/delivery/possession.",
+        "claim_ids": [
+          "r3:c-pak-direct",
+          "r3:c-pak-delivery",
+          "c679-held"
+        ],
+        "limit": "Unknown retained; no lost-document, inexistence or ignorance inference."
+      },
+      {
+        "id": "g-reply-transmission_mechanism",
+        "target_id": "m-reply",
+        "role": "transmission_mechanism",
+        "unknown_reason": "no_evidence_currently_located",
+        "reason": "No stage-specific contemporary record located for incoming finalreply; no inference fromaddress/delivery/possession.",
+        "claim_ids": [
+          "r3:c-pak-direct",
+          "r3:c-pak-delivery",
+          "c679-held"
+        ],
+        "limit": "Unknown retained; no lost-document, inexistence or ignorance inference."
+      },
+      {
+        "id": "g-reply-arrival_at_location",
+        "target_id": "m-reply",
+        "role": "arrival_at_location",
+        "unknown_reason": "no_evidence_currently_located",
+        "reason": "No stage-specific contemporary record located for incoming finalreply; no inference fromaddress/delivery/possession.",
+        "claim_ids": [
+          "r3:c-pak-direct",
+          "r3:c-pak-delivery",
+          "c679-held"
+        ],
+        "limit": "Unknown retained; no lost-document, inexistence or ignorance inference."
+      },
+      {
+        "id": "g-reply-delivery_attempt",
+        "target_id": "m-reply",
+        "role": "delivery_attempt",
+        "unknown_reason": "no_evidence_currently_located",
+        "reason": "No stage-specific contemporary record located for incoming finalreply; no inference fromaddress/delivery/possession.",
+        "claim_ids": [
+          "r3:c-pak-direct",
+          "r3:c-pak-delivery",
+          "c679-held"
+        ],
+        "limit": "Unknown retained; no lost-document, inexistence or ignorance inference."
+      },
+      {
+        "id": "g-reply-receipt_acknowledgment",
+        "target_id": "m-reply",
+        "role": "receipt_acknowledgment",
+        "unknown_reason": "no_evidence_currently_located",
+        "reason": "No stage-specific contemporary record located for incoming finalreply; no inference fromaddress/delivery/possession.",
+        "claim_ids": [
+          "r3:c-pak-direct",
+          "r3:c-pak-delivery",
+          "c679-held"
+        ],
+        "limit": "Unknown retained; no lost-document, inexistence or ignorance inference."
+      },
+      {
+        "id": "g-reply-opened_at",
+        "target_id": "m-reply",
+        "role": "opened_at",
+        "unknown_reason": "no_evidence_currently_located",
+        "reason": "No stage-specific contemporary record located for incoming finalreply; no inference fromaddress/delivery/possession.",
+        "claim_ids": [
+          "r3:c-pak-direct",
+          "r3:c-pak-delivery",
+          "c679-held"
+        ],
+        "limit": "Unknown retained; no lost-document, inexistence or ignorance inference."
+      },
+      {
+        "id": "g-reply-read_at",
+        "target_id": "m-reply",
+        "role": "read_at",
+        "unknown_reason": "no_evidence_currently_located",
+        "reason": "No stage-specific contemporary record located for incoming finalreply; no inference fromaddress/delivery/possession.",
+        "claim_ids": [
+          "r3:c-pak-direct",
+          "r3:c-pak-delivery",
+          "c679-held"
+        ],
+        "limit": "Unknown retained; no lost-document, inexistence or ignorance inference."
+      },
+      {
+        "id": "g-reply-understood_at",
+        "target_id": "m-reply",
+        "role": "understood_at",
+        "unknown_reason": "no_evidence_currently_located",
+        "reason": "No stage-specific contemporary record located for incoming finalreply; no inference fromaddress/delivery/possession.",
+        "claim_ids": [
+          "r3:c-pak-direct",
+          "r3:c-pak-delivery",
+          "c679-held"
+        ],
+        "limit": "Unknown retained; no lost-document, inexistence or ignorance inference."
+      },
+      {
+        "id": "g-reply-reported_onward",
+        "target_id": "m-reply",
+        "role": "reported_onward",
+        "unknown_reason": "no_evidence_currently_located",
+        "reason": "No stage-specific contemporary record located for incoming finalreply; no inference fromaddress/delivery/possession.",
+        "claim_ids": [
+          "r3:c-pak-direct",
+          "r3:c-pak-delivery",
+          "c679-held"
+        ],
+        "limit": "Unknown retained; no lost-document, inexistence or ignorance inference."
+      },
+      {
+        "id": "g-reply-acted_upon_at",
+        "target_id": "m-reply",
+        "role": "acted_upon_at",
+        "unknown_reason": "no_evidence_currently_located",
+        "reason": "No stage-specific contemporary record located for incoming finalreply; no inference fromaddress/delivery/possession.",
+        "claim_ids": [
+          "r3:c-pak-direct",
+          "r3:c-pak-delivery",
+          "c679-held"
+        ],
+        "limit": "Unknown retained; no lost-document, inexistence or ignorance inference."
+      },
+      {
+        "id": "g-russian-normalization",
+        "target_id": "ref-reply-no2",
+        "role": "original_language_and_spelling",
+        "unknown_reason": "source_referenced_but_unavailable",
+        "reason": "Modern Russian quote visible; historical orthography/editorialchanges notcollatedwith1905/1906pages.",
+        "claim_ids": [
+          "r3:c-pak-article8",
+          "r3:c-pak-quote"
+        ],
+        "limit": "Unknown retained; no lost-document, inexistence or ignorance inference."
+      },
+      {
+        "id": "g-frus-translator",
+        "target_id": "a-frus-print709",
+        "role": "paraphrase_input_language",
+        "unknown_reason": "provenance_incomplete",
+        "reason": "No inspected underlying original telegram text, translator or transcriptionchain forFeb8paraphrase.",
+        "claim_ids": [
+          "r3:c-paraphrase"
+        ],
+        "limit": "Unknown retained; no lost-document, inexistence or ignorance inference."
+      },
+      {
+        "id": "g-jacar-date",
+        "target_id": "a-jacar-colloquial",
+        "role": "translated_at",
+        "unknown_reason": "date_absent",
+        "reason": "Page doesnotstate translationdate or namedtranslator.",
+        "claim_ids": [
+          "r3:c-jacar-labels"
+        ],
+        "limit": "Unknown retained; no lost-document, inexistence or ignorance inference."
+      }
+    ],
+    "searches": [
+      {
+        "id": "search-rsl",
+        "what": "Collectionpp46–47 andoriginal No2",
+        "where": "NEB/RSL public catalogue anddownload endpoint",
+        "query_or_locator": "000199_000009_007506064; https://dlib.rsl.ru/rsl01007000000/rsl01007506000/rsl01007506064/rsl01007506064.pdf",
+        "searched_on": "2026-09-14",
+        "result": "Catalogue403; supposedPDFHTTP200text/html6811bytes, notPDF.",
+        "classification": "archive_inaccessible",
+        "limitation": "Catalogueindexedmetadata only; access failure doesnotestablishpageabsence.",
+        "source_ids": [
+          "r3:rsl-metadata"
+        ],
+        "absence_inference": false
+      },
+      {
+        "id": "search-hathi",
+        "what": "Alternative1905collection pageimages",
+        "where": "PennOnlineBooks→HathiTrust",
+        "query_or_locator": "Hathi Record103219007",
+        "searched_on": "2026-09-14",
+        "result": "LeadlabelsUSaccessonly; directcatalogue403.",
+        "classification": "archive_inaccessible",
+        "limitation": "No region/securitybypass; editionidentityandpagesnotverified.",
+        "source_ids": [
+          "r3:hathi-lead"
+        ],
+        "absence_inference": false
+      },
+      {
+        "id": "search-ia",
+        "what": "Russian collection alternative scan",
+        "where": "InternetArchive advancedsearch",
+        "query_or_locator": "\"Dokumenty\" AND \"Iaponiei\"",
+        "searched_on": "2026-09-14",
+        "result": "API numFound0,332byteJSONsaved.",
+        "classification": "searched_but_not_found",
+        "limitation": "Exacttransliteration queryonly; variants/unindexedholdings notcovered; nothistoricalabsence.",
+        "source_ids": [
+          "r3:rsl-metadata"
+        ],
+        "absence_inference": false
+      },
+      {
+        "id": "search-rgia",
+        "what": "Finalreplyoriginal within archivelead",
+        "where": "PresidentialLibraryRGIA catalogue",
+        "query_or_locator": "РГИА.1622/1/301-г; item324328",
+        "searched_on": "2026-09-14",
+        "result": "Typescriptoverviewdescriptionfound; targetoriginalnotidentified; imagesnotlocated.",
+        "classification": "source_referenced_but_unavailable",
+        "limitation": "Descriptivecatalogueonly; notfull29foliosread.",
+        "source_ids": [
+          "r3:rgia-metadata"
+        ],
+        "absence_inference": false
+      },
+      {
+        "id": "search-jacar",
+        "what": "Nagasaki/Rosen replyreceiptprimaryrecord",
+        "where": "ExternalwebindexofJACAR",
+        "query_or_locator": "\"長崎\" \"電信\" \"露国\" \"明治３７\" site:jacar.archives.go.jp; \"ローゼン\" \"回答\" site:jacar.go.jp",
+        "searched_on": "2026-09-14",
+        "result": "Targetreceipt/ordernotlocated; ship/cableotherdate resultsoutside scope.",
+        "classification": "searched_but_not_found",
+        "limitation": "Externalindexonly, notexhaustiveinternalarchive search.",
+        "source_ids": [
+          "r2:komura-bundle"
+        ],
+        "absence_inference": false
+      },
+      {
+        "id": "search-komura",
+        "what": "KurinoNo50replyreport original",
+        "where": "B07090546900selectedarchiveimages",
+        "query_or_locator": "Images1–6,8–15; frames0006–0020 selected, image7notinspected",
+        "searched_on": "2026-09-14",
+        "result": "No54,53,82andsubsequentprotectingpowercommunicationsfound; No50originalnotlocatedintheseimages.",
+        "classification": "searched_but_not_found",
+        "limitation": "Selectedpagesonly, notcomplete58pagebundle search.",
+        "source_ids": [
+          "r2:komura-bundle"
+        ],
+        "absence_inference": false
+      },
+      {
+        "id": "search-rosen",
+        "what": "IncomingreplyNagasakireceipt/read assertion",
+        "where": "RosenVolI1922 PDF328pages",
+        "query_or_locator": "Textlayer search Nagasaki/telegram/reply; printedpp231–232 inspected",
+        "searched_on": "2026-09-14",
+        "result": "RelevantpagesdescribeJapaneseinvitationandoutgoingwarnings; noincomingfinalreplyread/ack recordlocated.",
+        "classification": "searched_but_not_found",
+        "limitation": "OCR/textsearchandselectivepages; notcompletewitnessrecordsearch orproofactorleftnone.",
+        "source_ids": [
+          "r3:rosen-memoir"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "reconstructions": [
+      {
+        "id": "dr-reply",
+        "domain": "documentary",
+        "status": "strongly_established",
+        "proposition": "CurrentreadableRussianreplywordingends atPak2023quotationandunverified1906collection/No2references. Official1905editioncataloguedbutnotread.",
+        "record_ids": [
+          "a-pak-pdf",
+          "a-rsl-edition",
+          "g-reply-original",
+          "g-edition"
+        ],
+        "claim_ids": [
+          "r3:c-pak-quote",
+          "r3:c-pak-edition",
+          "r3:c-rsl-edition"
+        ],
+        "limit": "Thisstrongstatusconcerns locateddocumentarychainanditsgaps, notoriginaltextauthenticity."
+      },
+      {
+        "id": "dr-frus",
+        "domain": "documentary",
+        "status": "strongly_established",
+        "proposition": "Modern679andofficialprinted709imagegiveapartiallydocumentedpublication/digitizationchain endingat uninspectedinputtoparaphrase.",
+        "record_ids": [
+          "a-frus-web679",
+          "a-frus-print709"
+        ],
+        "claim_ids": [
+          "r3:c-paraphrase",
+          "r3:c-release",
+          "r3:c-number-policy"
+        ],
+        "limit": "No exactoriginaltelegram, historicaltruth orRosenreading established."
+      },
+      {
+        "id": "hr-receipt",
+        "domain": "historical_reality",
+        "status": "unresolved",
+        "proposition": "IncomingRussianreplydeliverytoRosen7Febremainslaterassertion; possessionclaimisnestedandunplaced; Nagasakiorder/relayload unverified.",
+        "record_ids": [
+          "s-reply-delivery",
+          "s-reply-possession",
+          "q-delivery-reality"
+        ],
+        "claim_ids": [
+          "r3:c-pak-delivery",
+          "r3:c-pak-nagasaki",
+          "r3:c-pak-note21",
+          "c679-held"
+        ],
+        "limit": "No documentary reconstruction promotedtohistoricalfact."
+      },
+      {
+        "id": "kr-rosen",
+        "domain": "knowledge",
+        "status": "unresolved",
+        "proposition": "No locatedevidenceestablisheswhenRosenreadorunderstoodfinalreply, norJapaneseFM/cabinetknowledgeofit.",
+        "record_ids": [
+          "g-reply-read_at",
+          "g-reply-understood_at",
+          "s-reply-address"
+        ],
+        "claim_ids": [
+          "r3:c-pak-delivery",
+          "c679-held"
+        ],
+        "limit": "No knowledge inferredfromaddress, organizationaldelay, physicaldeliveryorpossession; unknownnotignorance."
+      },
+      {
+        "id": "dr-jp",
+        "domain": "documentary",
+        "status": "possible",
+        "proposition": "No54archivalimages→moderntranscription→colloquialrendering partiallycorrespond; exactcopyandtranslationdate unresolved.",
+        "record_ids": [
+          "a-jacar-transcription",
+          "a-jacar-colloquial",
+          "g-jacar-date"
+        ],
+        "claim_ids": [
+          "r3:c-jp-scan",
+          "r3:c-jacar-labels",
+          "r3:c-jacar-transcription",
+          "r3:c-jacar-expansion"
+        ],
+        "limit": "A1904datedarchiveddocumentrepresentationisreachable; physicaloriginalauthenticationnotdone."
+      }
+    ],
+    "translation_checks": [
+      {
+        "id": "tc-jacar",
+        "from_id": "a-jacar-transcription",
+        "to_id": "a-jacar-colloquial",
+        "status": "partial_wording_comparison",
+        "operations": [
+          {
+            "dimension": "actor_designation",
+            "observation": "Full namesaddedto原文shortsurnames; actoridentification expansion, notnew1904knowledge."
+          },
+          {
+            "dimension": "place_designation",
+            "observation": "露都 renderedRussian capital (SaintPetersburg); parenthesizedmodernexplanation added."
+          },
+          {
+            "dimension": "temporal_wording",
+            "observation": "Feb5 2pm visible inboth; noUTCclockstandardadded."
+          },
+          {
+            "dimension": "certainty_and_intent",
+            "observation": "Instruction towithdrawirrespectiveofreplyandackeachpart retainedincomparedpassage; nofullsemantic-equivalence certification."
+          },
+          {
+            "dimension": "transcription",
+            "observation": "五十五十一号 sequenceversusseparated50/51/52 unresolvedtranscriptionline; mustnotascribeambiguitytooriginalmessage."
+          }
+        ],
+        "claim_ids": [
+          "r3:c-jacar-expansion",
+          "r3:c-jacar-transcription",
+          "r3:c-jacar-labels",
+          "r2:c-order54"
+        ],
+        "limit": "Selectivecomparisononly; translatorunnamed; noRussianoriginal/FRUSpersonalviewequivalence inferred."
+      }
+    ]
+  },
+  "assets": [
+    {
+      "id": "asset-frus708.png",
+      "source_id": "r3:frus-print-images",
+      "path": "evidence/frus708.png",
+      "sha256": "4fbc0a9643b6d2d8caf86037e08ae6fa0e34b8718b5b7d5a7d1346d31b1ee60d",
+      "bytes": 74830,
+      "format": "png",
+      "origin_url": "https://static.history.state.gov/frus/frus1904/medium/0796.png",
+      "inspection": "Visually inspected printed708; notoriginaltelegram"
+    },
+    {
+      "id": "asset-frus709.png",
+      "source_id": "r3:frus-print-images",
+      "path": "evidence/frus709.png",
+      "sha256": "60fab66aaa636e65c6c7bbc79c0e76bcc295e585afe3ad4502bae1fec338a97f",
+      "bytes": 96669,
+      "format": "png",
+      "origin_url": "https://static.history.state.gov/frus/frus1904/medium/0797.png",
+      "inspection": "Visually inspected printed709; modern679absent"
+    },
+    {
+      "id": "asset-jacar-transcription.html",
+      "source_id": "r3:jacar-text",
+      "path": "evidence/jacar-transcription.html",
+      "sha256": "22ef3ca993e3805bfcb5edb3a0c4b7f568536f5f14b582f591a291df1510c23b",
+      "bytes": 5936,
+      "format": "html",
+      "origin_url": "https://www.jacar.go.jp/exhibition/nichiro/komura_telegram_txt.htm",
+      "inspection": "Shift_JISdecodedandread, rawbytesretained"
+    },
+    {
+      "id": "asset-rosen-memoir.pdf",
+      "source_id": "r3:rosen-memoir",
+      "path": "evidence/rosen-memoir.pdf",
+      "sha256": "29a7c756a6e79f829f6c95dce9f497886584923ce97026d5dd6d8e724f2955ef",
+      "bytes": 7353539,
+      "format": "pdf",
+      "origin_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Forty_years_of_diplomacy_%28IA_cu31924071193662%29.pdf",
+      "inspection": "328pages; selectiveimageinspectionandtextsearch"
+    },
+    {
+      "id": "asset-rosen-metadata.json",
+      "source_id": "r3:rosen-metadata",
+      "path": "evidence/rosen-metadata.json",
+      "sha256": "a5e7ba38a6860e536d6f629302bc64da8b9c30ad82ec13d268314fe756d3eacc",
+      "bytes": 6023,
+      "format": "json",
+      "origin_url": "https://archive.org/metadata/cu31924071193662",
+      "inspection": "Publicmetadataread; nohistoricaloriginalinferred"
+    },
+    {
+      "id": "asset-rsl-html-response.html",
+      "source_id": "r3:rsl-metadata",
+      "path": "evidence/rsl-html-response.html",
+      "sha256": "e539d0e34705288fd2e1dd4861585fb12ee3e8af2f2a075d2124364c9391bc07",
+      "bytes": 6811,
+      "format": "html",
+      "origin_url": "https://dlib.rsl.ru/rsl01007000000/rsl01007506000/rsl01007506064/rsl01007506064.pdf",
+      "inspection": "FailedPDFacquisition response retainedasHTMLnotPDF"
+    },
+    {
+      "id": "asset-ia-search.json",
+      "source_id": "r3:rsl-metadata",
+      "path": "evidence/ia-search.json",
+      "sha256": "19fe87604bb6d18d8a91d0dc5b4b35320c7384577a74b60ce06d12db0ef0be8c",
+      "bytes": 332,
+      "format": "json",
+      "origin_url": "https://archive.org/advancedsearch.php?q=%22Dokumenty%22+AND+%22Iaponiei%22&output=json",
+      "inspection": "Query-specificzeroresultnotabsence"
+    },
+    {
+      "id": "asset-hathi-denied.html",
+      "source_id": "r3:hathi-lead",
+      "path": "evidence/hathi-denied.html",
+      "sha256": "9a496f3474882c49d6021771c2028a24cd93b90d771828d9c7c4eb8e60033ee2",
+      "bytes": 5503,
+      "format": "html",
+      "origin_url": "https://catalog.hathitrust.org/Record/103219007",
+      "inspection": "403response; nohistoricalpagesinspected"
+    },
+    {
+      "id": "asset-penn-lead.html",
+      "source_id": "r3:hathi-lead",
+      "path": "evidence/penn-lead.html",
+      "sha256": "db7f82351189021c538e06ea1591497139de0f00540da12501d61431f50ff5b5",
+      "bytes": 33126,
+      "format": "html",
+      "origin_url": "https://onlinebooks.library.upenn.edu/webbin/book/browse?c=x&key=Earthquakes+--+Japan+--+History+--+Sources&type=lcsubc",
+      "inspection": "BibliographiclistingreadnotHathipages"
+    }
+  ]
+}

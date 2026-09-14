@@ -1,0 +1,2048 @@
+[
+  {
+    "node": {
+      "id": "n-reply-report",
+      "stage": "record",
+      "actor_id": "jp-minister-ru",
+      "time": {
+        "raw": "1904-02-05",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-05",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": "5.5 A.M.",
+        "place": "Petersburg",
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "r2:c-reply-sent"
+      ],
+      "attestation_form": "source_reports_actor_assertion"
+    },
+    "claims": [
+      {
+        "id": "r2:c-reply-sent",
+        "source_id": "r2:jp-whitebook",
+        "subject_id": "ru-fm",
+        "predicate": "reported_dispatch",
+        "object": "栗野は2月4日20時の面談で、ラムズドルフが回答の趣旨をアレクセーエフへ送りローゼンへ転送させると述べた、と報告。原回答本文・発送原票は未確認。",
+        "claimant_id": "jp-minister-ru",
+        "report_chain": [
+          "jp-minister-ru",
+          "ru-fm"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-04",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-04",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "8 P.M.",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "id": "e:r2:c-reply-sent",
+        "source_id": "r2:jp-whitebook",
+        "claim_id": "r2:c-reply-sent",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:jp-whitebook",
+        "title": "Correspondence regarding negotiations, presented to Imperial Diet March 1904 (Translation)",
+        "url": "https://archive.org/details/correspondencere00japarich",
+        "inspection": "Digitized 1904 published English translation; cover and PDF pp60,64,65 visually inspected; No49 text extracted pp62–63, not visually collated to Japanese original.",
+        "locator": {
+          "edition": "March 1904 Japanese diplomatic published translation",
+          "inspected": "No48–51; printed pp56–61; PDF pp60–65",
+          "download_url": "https://archive.org/download/correspondencere00japarich/correspondencere00japarich.pdf"
+        },
+        "creation": {
+          "raw": "March 1904",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-correspondence-1904.pdf"
+      }
+    ]
+  },
+  {
+    "node": {
+      "id": "n-no50-receipt",
+      "stage": "receipt",
+      "actor_id": "jp-fm-receiving-office",
+      "time": {
+        "raw": "1904-02-05",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-05",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": "5.15 P.M.",
+        "place": "Tokyo",
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "r2:c-no50-receipt"
+      ],
+      "attestation_form": "source_asserts"
+    },
+    "claims": [
+      {
+        "id": "r2:c-no50-receipt",
+        "source_id": "r2:jp-whitebook",
+        "subject_id": "jp-fm-receiving-office",
+        "predicate": "telegram_received_annotation",
+        "object": "公刊文書No50の発信地日付はPetersburg Feb5 5.5 A.M.、東京受信欄はFeb5 5.15 P.M.。Komura本人の閲読時刻はない。",
+        "claimant_id": "jp-minister-ru",
+        "report_chain": [
+          "jp-minister-ru"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-05",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "5.15 P.M.",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "id": "e:r2:c-no50-receipt",
+        "source_id": "r2:jp-whitebook",
+        "claim_id": "r2:c-no50-receipt",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:jp-whitebook",
+        "title": "Correspondence regarding negotiations, presented to Imperial Diet March 1904 (Translation)",
+        "url": "https://archive.org/details/correspondencere00japarich",
+        "inspection": "Digitized 1904 published English translation; cover and PDF pp60,64,65 visually inspected; No49 text extracted pp62–63, not visually collated to Japanese original.",
+        "locator": {
+          "edition": "March 1904 Japanese diplomatic published translation",
+          "inspected": "No48–51; printed pp56–61; PDF pp60–65",
+          "download_url": "https://archive.org/download/correspondencere00japarich/correspondencere00japarich.pdf"
+        },
+        "creation": {
+          "raw": "March 1904",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-correspondence-1904.pdf"
+      }
+    ]
+  },
+  {
+    "node": {
+      "id": "n-instruction54",
+      "stage": "order",
+      "actor_id": "jp-fm",
+      "time": {
+        "raw": "1904-02-05",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-05",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": "2-pm",
+        "place": "Tokyo",
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "r2:c-order54"
+      ],
+      "attestation_form": "source_asserts"
+    },
+    "claims": [
+      {
+        "id": "r2:c-order54",
+        "source_id": "r2:komura-bundle",
+        "subject_id": "jp-fm",
+        "predicate": "instruction_sent_copy",
+        "object": "No54: 2月5日2-pm発信表記。No50/51/52を一つの通告、No53を同時に提出。ロシア回答の発送・内容によらず実施、各受領と提出の即時電報報告を指示。",
+        "claimant_id": "jp-fm",
+        "report_chain": [
+          "jp-fm"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-05",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "2-pm",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "id": "e:r2:c-order54",
+        "source_id": "r2:komura-bundle",
+        "claim_id": "r2:c-order54",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:komura-bundle",
+        "title": "聖坡得斯堡・外交電報簿 B07090546900",
+        "url": "https://www.jacar.archives.go.jp/das/meta/B07090546900",
+        "inspection": "Archival digitized telegram records; PDF images4–6,8–12 visually inspected. Outgoing copies and receiving annotations are not original Russian reply or proof of minister reading.",
+        "locator": {
+          "ref": "B07090546900",
+          "repository": "外務省外交史料館",
+          "call": "5.2.1.14_003",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200147290500/raw/B07090546900.b5_0029.5-0267.00000006.pdf",
+          "images": "4–6,8–12; frame0009–0017"
+        },
+        "creation": {
+          "raw": "not located",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-komura-bundle.pdf"
+      }
+    ]
+  },
+  {
+    "node": {
+      "id": "n-ack82",
+      "stage": "record",
+      "actor_id": "jp-minister-ru",
+      "time": {
+        "raw": "1904-02-05",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-05",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": "6.15pM",
+        "place": "Petersburg",
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "r2:c-ack82"
+      ],
+      "attestation_form": "source_asserts"
+    },
+    "claims": [
+      {
+        "id": "r2:c-ack82",
+        "source_id": "r2:komura-bundle",
+        "subject_id": "jp-minister-ru",
+        "predicate": "acknowledged_messages",
+        "object": "栗野No82は「貴電五〇、五三悉ス」。2月5日6.15pM日付、東京2月6日4.40aM受信。No51/52受領はこの文から拡張しない。",
+        "claimant_id": "jp-minister-ru",
+        "report_chain": [
+          "jp-minister-ru"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-05",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "6.15pM",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "id": "e:r2:c-ack82",
+        "source_id": "r2:komura-bundle",
+        "claim_id": "r2:c-ack82",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:komura-bundle",
+        "title": "聖坡得斯堡・外交電報簿 B07090546900",
+        "url": "https://www.jacar.archives.go.jp/das/meta/B07090546900",
+        "inspection": "Archival digitized telegram records; PDF images4–6,8–12 visually inspected. Outgoing copies and receiving annotations are not original Russian reply or proof of minister reading.",
+        "locator": {
+          "ref": "B07090546900",
+          "repository": "外務省外交史料館",
+          "call": "5.2.1.14_003",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200147290500/raw/B07090546900.b5_0029.5-0267.00000006.pdf",
+          "images": "4–6,8–12; frame0009–0017"
+        },
+        "creation": {
+          "raw": "not located",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-komura-bundle.pdf"
+      }
+    ]
+  },
+  {
+    "node": {
+      "id": "n-ack82-receipt",
+      "stage": "receipt",
+      "actor_id": "jp-fm-receiving-office",
+      "time": {
+        "raw": "1904-02-06",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-06",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": "4.40aM",
+        "place": "Tokyo",
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "r2:c-ack82-receipt"
+      ],
+      "attestation_form": "source_asserts"
+    },
+    "claims": [
+      {
+        "id": "r2:c-ack82-receipt",
+        "source_id": "r2:komura-bundle",
+        "subject_id": "jp-fm-receiving-office",
+        "predicate": "telegram_received_annotation",
+        "object": "栗野No82の受信欄は6/2/1904 4.40aM。東京受信事務の記録であり小村本人閲読・閣議共有ではない。",
+        "claimant_id": "jp-minister-ru",
+        "report_chain": [
+          "jp-fm-receiving-office"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-06",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-06",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "4.40aM",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "id": "e:r2:c-ack82-receipt",
+        "source_id": "r2:komura-bundle",
+        "claim_id": "r2:c-ack82-receipt",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:komura-bundle",
+        "title": "聖坡得斯堡・外交電報簿 B07090546900",
+        "url": "https://www.jacar.archives.go.jp/das/meta/B07090546900",
+        "inspection": "Archival digitized telegram records; PDF images4–6,8–12 visually inspected. Outgoing copies and receiving annotations are not original Russian reply or proof of minister reading.",
+        "locator": {
+          "ref": "B07090546900",
+          "repository": "外務省外交史料館",
+          "call": "5.2.1.14_003",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200147290500/raw/B07090546900.b5_0029.5-0267.00000006.pdf",
+          "images": "4–6,8–12; frame0009–0017"
+        },
+        "creation": {
+          "raw": "not located",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-komura-bundle.pdf"
+      }
+    ]
+  },
+  {
+    "node": {
+      "id": "n-notes-delivery",
+      "stage": "action",
+      "actor_id": "jp-minister-ru",
+      "time": {
+        "raw": "1904-02-06",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-06",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": "4 P.M.",
+        "place": "Petersburg",
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "r2:c-note-presented"
+      ],
+      "attestation_form": "source_asserts"
+    },
+    "claims": [
+      {
+        "id": "r2:c-note-presented",
+        "source_id": "r2:jp-whitebook",
+        "subject_id": "jp-minister-ru",
+        "predicate": "reported_note_delivery",
+        "object": "公刊No51で栗野がFeb6 TODAY 4P.M.にラムズドルフへ両通告を提出したと報告。離露10日は予定であり実行証明ではない。",
+        "claimant_id": "jp-minister-ru",
+        "report_chain": [
+          "jp-minister-ru"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-06",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-06",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "4 P.M.",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "id": "e:r2:c-note-presented",
+        "source_id": "r2:jp-whitebook",
+        "claim_id": "r2:c-note-presented",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:jp-whitebook",
+        "title": "Correspondence regarding negotiations, presented to Imperial Diet March 1904 (Translation)",
+        "url": "https://archive.org/details/correspondencere00japarich",
+        "inspection": "Digitized 1904 published English translation; cover and PDF pp60,64,65 visually inspected; No49 text extracted pp62–63, not visually collated to Japanese original.",
+        "locator": {
+          "edition": "March 1904 Japanese diplomatic published translation",
+          "inspected": "No48–51; printed pp56–61; PDF pp60–65",
+          "download_url": "https://archive.org/download/correspondencere00japarich/correspondencere00japarich.pdf"
+        },
+        "creation": {
+          "raw": "March 1904",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-correspondence-1904.pdf"
+      }
+    ]
+  },
+  {
+    "node": {
+      "id": "n-notes-receipt",
+      "stage": "receipt",
+      "actor_id": "jp-fm-receiving-office",
+      "time": {
+        "raw": "1904-02-07",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-07",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": "5.45 A.M.",
+        "place": "Tokyo",
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "r2:c-note-report-receipt"
+      ],
+      "attestation_form": "source_asserts"
+    },
+    "claims": [
+      {
+        "id": "r2:c-note-report-receipt",
+        "source_id": "r2:jp-whitebook",
+        "subject_id": "jp-fm-receiving-office",
+        "predicate": "telegram_received_annotation",
+        "object": "No51はPetersburg Feb6 5.57P.M.日付、Received Feb7 5.45A.M.。受信欄と通告提出時刻を分離。",
+        "claimant_id": "jp-minister-ru",
+        "report_chain": [
+          "jp-fm-receiving-office"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-07",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-07",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "5.45 A.M.",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "id": "e:r2:c-note-report-receipt",
+        "source_id": "r2:jp-whitebook",
+        "claim_id": "r2:c-note-report-receipt",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:jp-whitebook",
+        "title": "Correspondence regarding negotiations, presented to Imperial Diet March 1904 (Translation)",
+        "url": "https://archive.org/details/correspondencere00japarich",
+        "inspection": "Digitized 1904 published English translation; cover and PDF pp60,64,65 visually inspected; No49 text extracted pp62–63, not visually collated to Japanese original.",
+        "locator": {
+          "edition": "March 1904 Japanese diplomatic published translation",
+          "inspected": "No48–51; printed pp56–61; PDF pp60–65",
+          "download_url": "https://archive.org/download/correspondencere00japarich/correspondencere00japarich.pdf"
+        },
+        "creation": {
+          "raw": "March 1904",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-correspondence-1904.pdf"
+      }
+    ]
+  },
+  {
+    "node": {
+      "id": "n-hayashi",
+      "stage": "interpretation",
+      "actor_id": "hayashi-london",
+      "time": {
+        "raw": "1904-02-05",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-05",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": "10.50p.m.",
+        "place": "London",
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "r2:c-london-response"
+      ],
+      "attestation_form": "source_asserts"
+    },
+    "claims": [
+      {
+        "id": "r2:c-london-response",
+        "source_id": "r2:komura-bundle",
+        "subject_id": "hayashi-london",
+        "predicate": "proposal_references_instruction",
+        "object": "林No59は小村No65を参照し栗野撤退後の情報収集拠点を提案。London Feb5 10.50p.m.、東京Feb6 11.20a.m.受信。ロシア回答受領の知識ではない。",
+        "claimant_id": "hayashi-london",
+        "report_chain": [
+          "hayashi-london"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-05",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "10.50p.m.",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "id": "e:r2:c-london-response",
+        "source_id": "r2:komura-bundle",
+        "claim_id": "r2:c-london-response",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:komura-bundle",
+        "title": "聖坡得斯堡・外交電報簿 B07090546900",
+        "url": "https://www.jacar.archives.go.jp/das/meta/B07090546900",
+        "inspection": "Archival digitized telegram records; PDF images4–6,8–12 visually inspected. Outgoing copies and receiving annotations are not original Russian reply or proof of minister reading.",
+        "locator": {
+          "ref": "B07090546900",
+          "repository": "外務省外交史料館",
+          "call": "5.2.1.14_003",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200147290500/raw/B07090546900.b5_0029.5-0267.00000006.pdf",
+          "images": "4–6,8–12; frame0009–0017"
+        },
+        "creation": {
+          "raw": "not located",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-komura-bundle.pdf"
+      }
+    ]
+  },
+  {
+    "node": {
+      "id": "n-togo-report",
+      "stage": "record",
+      "actor_id": "togo",
+      "time": {
+        "raw": "1904-02-10",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-10",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": {
+          "status": "unknown",
+          "reason": "Clock not specified"
+        },
+        "place": {
+          "status": "unknown",
+          "reason": "Place not established"
+        },
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "r2:c-togo-created"
+      ],
+      "attestation_form": "source_asserts"
+    },
+    "claims": [
+      {
+        "id": "r2:c-togo-created",
+        "source_id": "r2:togo-copy",
+        "subject_id": "togo",
+        "predicate": "report_dated",
+        "object": "写の報告末尾に明治三十七年二月十日、東郷平八郎。艦船当日航海日誌と同一視しない。",
+        "claimant_id": "togo",
+        "report_chain": [
+          "togo"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-10",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "id": "e:r2:c-togo-created",
+        "source_id": "r2:togo-copy",
+        "claim_id": "r2:c-togo-created",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:togo-copy",
+        "title": "第2艦隊戦闘詳報(1) C09050255300",
+        "url": "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+        "inspection": "Digitized contemporary report copy bearing 写; images1,3,5 visually inspected. Not minister receipt original.",
+        "locator": {
+          "ref": "C09050255300",
+          "repository": "防衛研究所",
+          "call": "海軍省-日露-M37-5",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200091076000/raw/C09050255300.c0754804001.11nitiro_002.0003_01.pdf",
+          "images": "1,3,5"
+        },
+        "creation": {
+          "raw": "明治三十七年二月十日",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-portarthur.pdf"
+      }
+    ]
+  },
+  {
+    "node": {
+      "id": "n-togo-dispatch",
+      "stage": "transmission",
+      "actor_id": "togo",
+      "time": {
+        "raw": "1904-02-11",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-11",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": {
+          "status": "unknown",
+          "reason": "Clock not specified"
+        },
+        "place": "Chemulpo",
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "r2:c-togo-dispatch"
+      ],
+      "attestation_form": "source_asserts"
+    },
+    "claims": [
+      {
+        "id": "r2:c-togo-dispatch",
+        "source_id": "r2:togo-copy",
+        "subject_id": "navy-minister",
+        "predicate": "report_dispatch_annotation",
+        "object": "海軍大臣宛戦闘報告の冒頭注記は二月十一日仁川ヨリ発電。受信・閲読欄は今回未確認。",
+        "claimant_id": "togo",
+        "report_chain": [
+          "navy-minister"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-11",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-11",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "id": "e:r2:c-togo-dispatch",
+        "source_id": "r2:togo-copy",
+        "claim_id": "r2:c-togo-dispatch",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:togo-copy",
+        "title": "第2艦隊戦闘詳報(1) C09050255300",
+        "url": "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+        "inspection": "Digitized contemporary report copy bearing 写; images1,3,5 visually inspected. Not minister receipt original.",
+        "locator": {
+          "ref": "C09050255300",
+          "repository": "防衛研究所",
+          "call": "海軍省-日露-M37-5",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200091076000/raw/C09050255300.c0754804001.11nitiro_002.0003_01.pdf",
+          "images": "1,3,5"
+        },
+        "creation": {
+          "raw": "明治三十七年二月十日",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-portarthur.pdf"
+      }
+    ]
+  },
+  {
+    "node": {
+      "id": "n-uriu1",
+      "stage": "transmission",
+      "actor_id": "uriu",
+      "time": {
+        "raw": "1904-02-09",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-09",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": "午後十二時三十五分",
+        "place": "Chemulpo",
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "r2:c-uriu1"
+      ],
+      "attestation_form": "later_reconstruction"
+    },
+    "claims": [
+      {
+        "id": "r2:c-uriu1",
+        "source_id": "r2:chemulpo-edition",
+        "subject_id": "uriu",
+        "predicate": "telegram_dispatch_reproduced",
+        "object": "No1はFeb9 午後十二時三十五分仁川発電、午後四時五十分佐世保発電。前日夕刻のコレーツ発砲などを主張し当日正午期限の退去通告を報告。",
+        "claimant_id": "uriu",
+        "report_chain": [
+          "uriu"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-09",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-09",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "午後十二時三十五分",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "id": "e:r2:c-uriu1",
+        "source_id": "r2:chemulpo-edition",
+        "claim_id": "r2:c-uriu1",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:chemulpo-edition",
+        "title": "極秘明治37.8年海戦史 第1部戦紀巻2 備考文書 C05110032100",
+        "url": "https://www.jacar.archives.go.jp/das/meta/C05110032100",
+        "inspection": "Later compiled official naval history documents; images4–6,10–11 visually inspected. Printed telegram reproductions, not transmitted originals.",
+        "locator": {
+          "ref": "C05110032100",
+          "repository": "防衛研究所",
+          "call": "⑨その他-千代田-470",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200054612800/raw/C05110032100.c0460906001.rokaisen_002.0237_01.pdf",
+          "inspected": "備考文書No1–3; printed pp1–2,10–13"
+        },
+        "creation": {
+          "raw": "not located",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-chemulpo.pdf"
+      }
+    ]
+  },
+  {
+    "node": {
+      "id": "n-uriu1-relay",
+      "stage": "transmission",
+      "actor_id": "uriu",
+      "time": {
+        "raw": "1904-02-09",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-09",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": "午後四時五十分",
+        "place": "Sasebo",
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "r2:c-uriu1-relay"
+      ],
+      "attestation_form": "later_reconstruction"
+    },
+    "claims": [
+      {
+        "id": "r2:c-uriu1-relay",
+        "source_id": "r2:chemulpo-edition",
+        "subject_id": "uriu",
+        "predicate": "relay_dispatch_reproduced",
+        "object": "No1括弧内はFeb9 午後四時五十分佐世保発電。佐世保発電は海軍大臣東京受信ではない。",
+        "claimant_id": "uriu",
+        "report_chain": [
+          "uriu"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-09",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-09",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "午後四時五十分",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "id": "e:r2:c-uriu1-relay",
+        "source_id": "r2:chemulpo-edition",
+        "claim_id": "r2:c-uriu1-relay",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:chemulpo-edition",
+        "title": "極秘明治37.8年海戦史 第1部戦紀巻2 備考文書 C05110032100",
+        "url": "https://www.jacar.archives.go.jp/das/meta/C05110032100",
+        "inspection": "Later compiled official naval history documents; images4–6,10–11 visually inspected. Printed telegram reproductions, not transmitted originals.",
+        "locator": {
+          "ref": "C05110032100",
+          "repository": "防衛研究所",
+          "call": "⑨その他-千代田-470",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200054612800/raw/C05110032100.c0460906001.rokaisen_002.0237_01.pdf",
+          "inspected": "備考文書No1–3; printed pp1–2,10–13"
+        },
+        "creation": {
+          "raw": "not located",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-chemulpo.pdf"
+      }
+    ]
+  },
+  {
+    "node": {
+      "id": "n-uriu2",
+      "stage": "transmission",
+      "actor_id": "uriu",
+      "time": {
+        "raw": "1904-02-10",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-10",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": "午後三時三十五分",
+        "place": "Chemulpo",
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "r2:c-uriu2"
+      ],
+      "attestation_form": "later_reconstruction"
+    },
+    "claims": [
+      {
+        "id": "r2:c-uriu2",
+        "source_id": "r2:chemulpo-edition",
+        "subject_id": "uriu",
+        "predicate": "telegram_dispatch_reproduced",
+        "object": "No2はFeb10 午後三時三十五分仁川発電。9日35分交戦・露艦退却と夕刻破壊、己方無損害を主張。観測・推定・敵艦状態を一つの確定Realityにしない。",
+        "claimant_id": "uriu",
+        "report_chain": [
+          "uriu"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-10",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "午後三時三十五分",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "id": "e:r2:c-uriu2",
+        "source_id": "r2:chemulpo-edition",
+        "claim_id": "r2:c-uriu2",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:chemulpo-edition",
+        "title": "極秘明治37.8年海戦史 第1部戦紀巻2 備考文書 C05110032100",
+        "url": "https://www.jacar.archives.go.jp/das/meta/C05110032100",
+        "inspection": "Later compiled official naval history documents; images4–6,10–11 visually inspected. Printed telegram reproductions, not transmitted originals.",
+        "locator": {
+          "ref": "C05110032100",
+          "repository": "防衛研究所",
+          "call": "⑨その他-千代田-470",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200054612800/raw/C05110032100.c0460906001.rokaisen_002.0237_01.pdf",
+          "inspected": "備考文書No1–3; printed pp1–2,10–13"
+        },
+        "creation": {
+          "raw": "not located",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-chemulpo.pdf"
+      }
+    ]
+  },
+  {
+    "node": {
+      "id": "n-uriu2-relay",
+      "stage": "transmission",
+      "actor_id": "uriu",
+      "time": {
+        "raw": "1904-02-10",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-10",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": "午後八時三十五分",
+        "place": "Sasebo",
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "r2:c-uriu2-relay"
+      ],
+      "attestation_form": "later_reconstruction"
+    },
+    "claims": [
+      {
+        "id": "r2:c-uriu2-relay",
+        "source_id": "r2:chemulpo-edition",
+        "subject_id": "uriu",
+        "predicate": "relay_dispatch_reproduced",
+        "object": "No2括弧内はFeb10 午後八時三十五分佐世保発電。受信先の受領時刻は示さない。",
+        "claimant_id": "uriu",
+        "report_chain": [
+          "uriu"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-10",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "午後八時三十五分",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "id": "e:r2:c-uriu2-relay",
+        "source_id": "r2:chemulpo-edition",
+        "claim_id": "r2:c-uriu2-relay",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:chemulpo-edition",
+        "title": "極秘明治37.8年海戦史 第1部戦紀巻2 備考文書 C05110032100",
+        "url": "https://www.jacar.archives.go.jp/das/meta/C05110032100",
+        "inspection": "Later compiled official naval history documents; images4–6,10–11 visually inspected. Printed telegram reproductions, not transmitted originals.",
+        "locator": {
+          "ref": "C05110032100",
+          "repository": "防衛研究所",
+          "call": "⑨その他-千代田-470",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200054612800/raw/C05110032100.c0460906001.rokaisen_002.0237_01.pdf",
+          "inspected": "備考文書No1–3; printed pp1–2,10–13"
+        },
+        "creation": {
+          "raw": "not located",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-chemulpo.pdf"
+      }
+    ]
+  },
+  {
+    "node": {
+      "id": "n-army-control",
+      "stage": "order",
+      "actor_id": "jp-army-command",
+      "time": {
+        "raw": "1904-02-12",
+        "precision": "day",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": "1904-02-12",
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": {
+          "status": "unknown",
+          "reason": "Clock not specified"
+        },
+        "place": {
+          "status": "unknown",
+          "reason": "Place not established"
+        },
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "r2:c-army-control"
+      ],
+      "attestation_form": "source_asserts"
+    },
+    "claims": [
+      {
+        "id": "r2:c-army-control",
+        "source_id": "r2:army-control",
+        "subject_id": "jp-army-command",
+        "predicate": "later_distribution_record",
+        "object": "二月十二日配賦済文書を二月二十六日に番号付けし、奉読を命じる。十二日配賦・命令を六〜十日の陸軍知識へ逆流させない。",
+        "claimant_id": "jp-army-command",
+        "report_chain": [
+          "jp-army-command"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-12",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-12",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "id": "e:r2:c-army-control",
+        "source_id": "r2:army-control",
+        "claim_id": "r2:c-army-control",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:army-control",
+        "title": "御勅語並に奉答文配布の件 C06040574900",
+        "url": "https://www.jacar.archives.go.jp/das/meta/C06040574900",
+        "inspection": "Catalog transcription inspected only; original images unconfirmed. Explicit February12 distribution and February26 numbering, outside window.",
+        "locator": {
+          "repository": "防衛研究所",
+          "call": "大本営-日露戦役-M37-10-144",
+          "ref": "C06040574900",
+          "images": "4; not inspected"
+        },
+        "creation": {
+          "raw": "二月二十六日・二月十二日配賦を番号付け",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-26",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14"
+      }
+    ]
+  },
+  {
+    "node": {
+      "id": "n-whitebook-publication",
+      "stage": "publication",
+      "actor_id": "jp-public",
+      "time": {
+        "raw": "March 1904; presented to Diet; precise public access unknown",
+        "precision": "unknown",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": {
+          "status": "unknown",
+          "reason": "No independently placed day"
+        },
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": {
+          "status": "unknown",
+          "reason": "Clock not specified"
+        },
+        "place": {
+          "status": "unknown",
+          "reason": "Place not established"
+        },
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "r2:c-order48"
+      ],
+      "attestation_form": "source_asserts"
+    },
+    "claims": [
+      {
+        "id": "r2:c-order48",
+        "source_id": "r2:jp-whitebook",
+        "subject_id": "jp-fm",
+        "predicate": "published_instruction_dateline",
+        "object": "公刊文書No48/49はFeb5 2.15 P.M.。No54の2-pmと同一時刻へ丸めない。文書番号と電報番号を区別。",
+        "claimant_id": "jp-fm",
+        "report_chain": [
+          "jp-fm"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-05",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "2.15 P.M.",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "id": "e:r2:c-order48",
+        "source_id": "r2:jp-whitebook",
+        "claim_id": "r2:c-order48",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:jp-whitebook",
+        "title": "Correspondence regarding negotiations, presented to Imperial Diet March 1904 (Translation)",
+        "url": "https://archive.org/details/correspondencere00japarich",
+        "inspection": "Digitized 1904 published English translation; cover and PDF pp60,64,65 visually inspected; No49 text extracted pp62–63, not visually collated to Japanese original.",
+        "locator": {
+          "edition": "March 1904 Japanese diplomatic published translation",
+          "inspected": "No48–51; printed pp56–61; PDF pp60–65",
+          "download_url": "https://archive.org/download/correspondencere00japarich/correspondencere00japarich.pdf"
+        },
+        "creation": {
+          "raw": "March 1904",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-correspondence-1904.pdf"
+      }
+    ]
+  },
+  {
+    "node": {
+      "id": "n-rosen-held",
+      "stage": "source_possession",
+      "actor_id": "ru-minister-jp",
+      "time": {
+        "raw": "Reported February8: Rosen had reply when passports were asked; possession time not directly dated",
+        "precision": "unknown",
+        "calendar": "Gregorian as printed; local clock standard unverified",
+        "normalized_day": {
+          "status": "unknown",
+          "reason": "Report dateline is not Rosen possession time"
+        },
+        "time_standard": {
+          "status": "unknown",
+          "reason": "No verified clock standard or UTC offset"
+        },
+        "clock": {
+          "status": "unknown",
+          "reason": "Clock not specified"
+        },
+        "place": {
+          "status": "unknown",
+          "reason": "Place not established"
+        },
+        "normalized_instant": {
+          "status": "unknown",
+          "reason": "No UTC conversion without a verified time standard"
+        }
+      },
+      "claim_ids": [
+        "c679-held"
+      ],
+      "attestation_form": "source_reports_actor_assertion"
+    },
+    "claims": [
+      {
+        "id": "c679-held",
+        "source_id": "frus:1904:679",
+        "subject_id": "ru-minister-jp",
+        "predicate": "reportedly_possessed",
+        "object": "Russian reply when Japanese minister requested passports",
+        "claimant_id": "ru-fm",
+        "report_chain": [
+          "ru-fm",
+          "mccormick",
+          "hay"
+        ],
+        "temporal_scope": {
+          "raw": "when passports requested",
+          "precision": "unknown",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "spatial_scope": "Tokyo",
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for attribution to inspected edition; not a truth score",
+          "context": "possession by Russian minister is not receipt by Japanese government"
+        },
+        "epistemic_limit": "source assertion; not promoted to historical reality"
+      }
+    ],
+    "relations": [
+      {
+        "id": "e-c679-held",
+        "source_id": "frus:1904:679",
+        "claim_id": "c679-held",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "inspectable source wording supports extraction, not truth of external event"
+      }
+    ],
+    "sources": [
+      {
+        "id": "frus:1904:679",
+        "title": "FRUS 1904, document 679",
+        "creator": "mccormick",
+        "recipient": "hay",
+        "issuing_organization": "American Embassy, St. Petersburg",
+        "creation": {
+          "raw": "1904-02-08",
+          "precision": "day",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": "1904-02-08",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "creation_place": "St. Petersburg",
+        "original_language": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "inspected_language": "English",
+        "source_type": "diplomatic document",
+        "contemporary_or_retrospective": "contemporary communication through later published edition",
+        "manifestation": "telegram paraphrase",
+        "purpose": "reports Russian foreign minister account of reply possession",
+        "visibility_at_creation": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "archive": "United States Department of State, Office of the Historian (edition host; original repository not established)",
+        "collection": "Papers Relating to the Foreign Relations of the United States, 1904",
+        "publication": {
+          "publisher": "Government Printing Office",
+          "place": "Washington",
+          "year": "1905",
+          "authority_url": "https://history.state.gov/historicaldocuments/frus1904"
+        },
+        "locator": {
+          "document_number": "679",
+          "page": {
+            "status": "unknown",
+            "reason": "HTML page marker not inspected for this record"
+          }
+        },
+        "url": "https://history.state.gov/historicaldocuments/frus1904/d679",
+        "access_date": "2026-09-14",
+        "digitization": {
+          "provider": "Office of the Historian",
+          "method": "web tool rendered text; original image not inspected",
+          "digitization_date": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          }
+        },
+        "authenticity": {
+          "status": "hosted_official_edition",
+          "limit": "original telegram, autograph, archival custody and editorial accuracy not authenticated"
+        },
+        "completeness": {
+          "status": "excerpt_only",
+          "reason": "short inspected excerpt plus researcher paraphrase; not a full document capture"
+        },
+        "known_alterations": [
+          "telegram paraphrase"
+        ],
+        "access_at_time": {
+          "status": "unknown",
+          "reason": "addressee does not prove receipt or public access"
+        },
+        "excerpt": "the Russian minister at Tokyo had the Russian reply when the Japanese minister asked for his passports",
+        "inspection": "edition_text_inspected",
+        "designation": "Mr. McCormick to Mr. Hay.",
+        "source_completeness": {
+          "status": "unknown",
+          "reason": "original source completeness not authenticated; existing completeness field describes saved sample"
+        }
+      }
+    ]
+  }
+]

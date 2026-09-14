@@ -1,0 +1,274 @@
+{
+  "round1_round2": {
+    "actor_id": "jp-minister-ru",
+    "day": "1904-02-10",
+    "inherited_round1_records": {
+      "actor_id": "jp-minister-ru",
+      "day": "1904-02-10",
+      "documented_before_day": [],
+      "same_day_order_unknown": [],
+      "unplaced": [
+        {
+          "id": "k678",
+          "actor_id": "jp-minister-ru",
+          "claim_id": "c678-uncertainty",
+          "stance": "explicit_no_positive_knowledge",
+          "source_id": "frus:1904:678",
+          "as_of": {
+            "raw": "conversation reported February 7",
+            "precision": "unknown",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": {
+              "status": "unknown",
+              "reason": "not established by inspected edition"
+            },
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "limit": "do not replace with did_not_know; no exact conversation time"
+        },
+        {
+          "id": "k678-told",
+          "actor_id": "jp-minister-ru",
+          "claim_id": "c678-sent",
+          "stance": "was_told",
+          "source_id": "frus:1904:678",
+          "as_of": {
+            "raw": "conversation reported February 7",
+            "precision": "unknown",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": {
+              "status": "unknown",
+              "reason": "not established by inspected edition"
+            },
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "limit": "hearsay about sent reply is not knowledge of reply text"
+        }
+      ],
+      "conclusion": "Documentary records only; no inference of truth, continued belief, access, or ignorance."
+    },
+    "documented_before_day": [
+      {
+        "id": "k-kurino-ack",
+        "actor_id": "jp-minister-ru",
+        "node_id": "n-ack82",
+        "claim_id": "r2:c-ack82",
+        "stance": "acknowledged_message",
+        "payload": "Telegram numbers50 and53 only; reference not expanded to51/52/54.",
+        "limit": "Bounded source-attested epistemic act, not continuing knowledge or organisation-wide belief.",
+        "node": {
+          "id": "n-ack82",
+          "stage": "record",
+          "actor_id": "jp-minister-ru",
+          "time": {
+            "raw": "1904-02-05",
+            "precision": "day",
+            "calendar": "Gregorian as printed; local clock standard unverified",
+            "normalized_day": "1904-02-05",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "No verified clock standard or UTC offset"
+            },
+            "clock": "6.15pM",
+            "place": "Petersburg",
+            "normalized_instant": {
+              "status": "unknown",
+              "reason": "No UTC conversion without a verified time standard"
+            }
+          },
+          "claim_ids": [
+            "r2:c-ack82"
+          ],
+          "attestation_form": "source_asserts"
+        }
+      }
+    ],
+    "same_day_order_unknown": [],
+    "unplaced": [],
+    "conclusion": "Retrospective documentary attestation only. Empty results mean no record in this layer; never actor ignorance, continued belief or contemporary public access."
+  },
+  "round3": [
+    {
+      "actor_id": "ru-minister-jp",
+      "message_id": "m-reply",
+      "day": "1904-02-08",
+      "documented_before_day": [
+        {
+          "id": "s-reply-delivery",
+          "message_id": "m-reply",
+          "stage": "delivered_to",
+          "actor_id": "ru-minister-jp",
+          "attestation_form": "later_reconstruction",
+          "time": {
+            "raw": "7 февраля",
+            "precision": "day",
+            "normalized_day": "1904-02-07",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "Clock standard not verified; no UTC conversion"
+            }
+          },
+          "time_role": "delivered_to_at",
+          "claim_ids": [
+            "r3:c-pak-delivery"
+          ],
+          "limit": "Stage is only the attributed assertion stated by this source. No next stage, individual reading, synchronization, or knowledge inferred.",
+          "actor_role": "recipient"
+        }
+      ],
+      "same_day_order_unknown": [],
+      "unplaced": [
+        {
+          "id": "s-reply-address",
+          "message_id": "m-reply",
+          "stage": "addressed_to",
+          "actor_id": "ru-minister-jp",
+          "attestation_form": "later_reconstruction",
+          "time": {
+            "raw": "на имя Розена; dispatch date unspecified",
+            "precision": "unknown",
+            "normalized_day": {
+              "status": "unknown",
+              "reason": "No verified Gregorian day for this temporal role"
+            },
+            "time_standard": {
+              "status": "unknown",
+              "reason": "Clock standard not verified; no UTC conversion"
+            }
+          },
+          "time_role": "addressed_to_at",
+          "claim_ids": [
+            "r3:c-pak-direct"
+          ],
+          "limit": "Stage is only the attributed assertion stated by this source. No next stage, individual reading, synchronization, or knowledge inferred.",
+          "actor_role": "recipient"
+        },
+        {
+          "id": "s-reply-possession",
+          "message_id": "m-reply",
+          "stage": "possessed_by",
+          "actor_id": "ru-minister-jp",
+          "attestation_form": "source_reports_actor_assertion",
+          "time": {
+            "raw": "when Kurino askedforpassports; reportedFebruary8,1904, targetday not established",
+            "precision": "unknown",
+            "normalized_day": {
+              "status": "unknown",
+              "reason": "No verified Gregorian day for this temporal role"
+            },
+            "time_standard": {
+              "status": "unknown",
+              "reason": "Clock standard not verified; no UTC conversion"
+            }
+          },
+          "time_role": "possessed_by_at",
+          "claim_ids": [
+            "c679-held"
+          ],
+          "limit": "Stage is only the attributed assertion stated by this source. No next stage, individual reading, synchronization, or knowledge inferred.",
+          "actor_role": "holder"
+        }
+      ],
+      "reading": "not_inferred",
+      "knowledge": "not_inferred",
+      "limit": "Attributed records, including later recollections. Empty results do not prove ignorance; delivery does not entail reading."
+    },
+    {
+      "actor_id": "ru-minister-jp",
+      "message_id": "m-invitation",
+      "day": "1904-02-08",
+      "documented_before_day": [
+        {
+          "id": "s-invitation-receipt",
+          "message_id": "m-invitation",
+          "stage": "delivered_to",
+          "actor_id": "ru-minister-jp",
+          "attestation_form": "retrospective_actor_assertion",
+          "time": {
+            "raw": "afternoonSaturdayFebruary6,1904",
+            "precision": "day",
+            "normalized_day": "1904-02-06",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "Clock standard not verified; no UTC conversion"
+            }
+          },
+          "time_role": "received_at",
+          "claim_ids": [
+            "r3:c-invitation"
+          ],
+          "limit": "Stage is only the attributed assertion stated by this source. No next stage, individual reading, synchronization, or knowledge inferred.",
+          "actor_role": "recipient"
+        }
+      ],
+      "same_day_order_unknown": [],
+      "unplaced": [],
+      "reading": "not_inferred",
+      "knowledge": "not_inferred",
+      "limit": "Attributed records, including later recollections. Empty results do not prove ignorance; delivery does not entail reading."
+    },
+    {
+      "actor_id": "jp-fm-receiving-office",
+      "message_id": "m-jp82",
+      "day": "1904-02-08",
+      "documented_before_day": [
+        {
+          "id": "s-jp82-office",
+          "message_id": "m-jp82",
+          "stage": "receipt_annotated",
+          "actor_id": "jp-fm-receiving-office",
+          "attestation_form": "source_asserts",
+          "time": {
+            "raw": "ReceivedFeb6-04 4.40am",
+            "precision": "day",
+            "normalized_day": "1904-02-06",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "Clock standard not verified; no UTC conversion"
+            }
+          },
+          "time_role": "receipt_annotated_at",
+          "claim_ids": [
+            "r2:c-ack82-receipt",
+            "r3:c-jp-scan"
+          ],
+          "limit": "Stage is only the attributed assertion stated by this source. No next stage, individual reading, synchronization, or knowledge inferred.",
+          "actor_role": "receiving_office"
+        }
+      ],
+      "same_day_order_unknown": [],
+      "unplaced": [],
+      "reading": "not_inferred",
+      "knowledge": "not_inferred",
+      "limit": "Attributed records, including later recollections. Empty results do not prove ignorance; delivery does not entail reading."
+    },
+    {
+      "actor_id": "jp-fm",
+      "message_id": "m-reply",
+      "day": "1904-02-08",
+      "documented_before_day": [],
+      "same_day_order_unknown": [],
+      "unplaced": [],
+      "reading": "not_inferred",
+      "knowledge": "not_inferred",
+      "limit": "Attributed records, including later recollections. Empty results do not prove ignorance; delivery does not entail reading."
+    },
+    {
+      "actor_id": "jp-cabinet",
+      "message_id": "m-reply",
+      "day": "1904-02-08",
+      "documented_before_day": [],
+      "same_day_order_unknown": [],
+      "unplaced": [],
+      "reading": "not_inferred",
+      "knowledge": "not_inferred",
+      "limit": "Attributed records, including later recollections. Empty results do not prove ignorance; delivery does not entail reading."
+    }
+  ]
+}

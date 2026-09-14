@@ -1,0 +1,125 @@
+{
+  "review": [
+    {
+      "candidate": "actor-scoped epistemic state",
+      "A_needed_again": {
+        "answer": "yes",
+        "case": "Flagshipinitialbelief,Novikorderreceipt,Cherkasovwireless; noJapanesegovernmentbackfill"
+      },
+      "B_boundary_changed": "No; observers/groups/shipcommand are additional scopes",
+      "C_diplomacy_specific": "no",
+      "D_military_observational_generalization": "yes, in this narrow military case",
+      "E_historical_only": "no; calendar/archive practices are historical-specific aspects",
+      "F_ground_generalization": "Plausible for sensor observations, incident reports and organizational communication; not yet tested in a nonhistorical dataset",
+      "recommendation": "Core Promotion Candidate: actor+payload attribution, not a Knowledge truth predicate",
+      "stable_meaning": "Attribution, target, raw evidence and explicit unknowns; recommendation is for minimal boundary contracts only",
+      "core_change_performed": false
+    },
+    {
+      "candidate": "information propagation stage",
+      "A_needed_again": {
+        "answer": "yes",
+        "case": "Sensoryobservation,signalreceipt,interpretation,orderreceipt,record,dispatch,publication"
+      },
+      "B_boundary_changed": "Yes; perceptual/interpretive stages differ from documentary custody",
+      "C_diplomacy_specific": "no",
+      "D_military_observational_generalization": "yes, in this narrow military case",
+      "E_historical_only": "no; calendar/archive practices are historical-specific aspects",
+      "F_ground_generalization": "Plausible for sensor observations, incident reports and organizational communication; not yet tested in a nonhistorical dataset",
+      "recommendation": "Watch: sparse evidence-bearing stages; closed vocabulary and stage composition immature",
+      "stable_meaning": "Attribution, target, raw evidence and explicit unknowns; recommendation is for minimal boundary contracts only",
+      "core_change_performed": false
+    },
+    {
+      "candidate": "temporal role",
+      "A_needed_again": {
+        "answer": "yes",
+        "case": "Explosion,gunfire,approach,firing,shellarrival,recorddate,dispatchdate"
+      },
+      "B_boundary_changed": "Core boundary unchanged; clock calibration and observable alignment now explicit",
+      "C_diplomacy_specific": "no",
+      "D_military_observational_generalization": "yes, in this narrow military case",
+      "E_historical_only": "no; calendar/archive practices are historical-specific aspects",
+      "F_ground_generalization": "Plausible for sensor observations, incident reports and organizational communication; not yet tested in a nonhistorical dataset",
+      "recommendation": "Core Promotion Candidate: raw representation+role+precision+unknown conversion; not automatic UTC synchronization",
+      "stable_meaning": "Attribution, target, raw evidence and explicit unknowns; recommendation is for minimal boundary contracts only",
+      "core_change_performed": false
+    },
+    {
+      "candidate": "provenance lineage",
+      "A_needed_again": {
+        "answer": "yes",
+        "case": "TogoEnglish/guide reuse; Starkdeclaredcompilation; official telegram repeated in press"
+      },
+      "B_boundary_changed": "Endpoint boundary stable; independence is proposition-scoped rather than global source property",
+      "C_diplomacy_specific": "no",
+      "D_military_observational_generalization": "yes, in this narrow military case",
+      "E_historical_only": "no; calendar/archive practices are historical-specific aspects",
+      "F_ground_generalization": "Plausible for sensor observations, incident reports and organizational communication; not yet tested in a nonhistorical dataset",
+      "recommendation": "Core Promotion Candidate: evidenced upstream endpoint+scope; transformation vocabulary/exact copy identity remain experimental",
+      "stable_meaning": "Attribution, target, raw evidence and explicit unknowns; recommendation is for minimal boundary contracts only",
+      "core_change_performed": false
+    },
+    {
+      "candidate": "source identity certainty",
+      "A_needed_again": {
+        "answer": "yes",
+        "case": "LocatedOCR/scan is not captainmanuscript; Pallida target match remains probable"
+      },
+      "B_boundary_changed": "No; source identity and depicted/target identity must remain separate",
+      "C_diplomacy_specific": "no",
+      "D_military_observational_generalization": "yes, in this narrow military case",
+      "E_historical_only": "no; calendar/archive practices are historical-specific aspects",
+      "F_ground_generalization": "Plausible for sensor observations, incident reports and organizational communication; not yet tested in a nonhistorical dataset",
+      "recommendation": "Core Promotion Candidate: explicitly named assessment target; no universal authenticity score",
+      "stable_meaning": "Attribution, target, raw evidence and explicit unknowns; recommendation is for minimal boundary contracts only",
+      "core_change_performed": false
+    },
+    {
+      "candidate": "source content certainty",
+      "A_needed_again": {
+        "answer": "yes",
+        "case": "53Japanese/54English; scan16vsOCR18; clearlywordedParis sinkingclaim"
+      },
+      "B_boundary_changed": "No; partialrepresentation inspection boundary made explicit",
+      "C_diplomacy_specific": "no",
+      "D_military_observational_generalization": "yes, in this narrow military case",
+      "E_historical_only": "no; calendar/archive practices are historical-specific aspects",
+      "F_ground_generalization": "Plausible for sensor observations, incident reports and organizational communication; not yet tested in a nonhistorical dataset",
+      "recommendation": "Core Promotion Candidate: assessment concerns inspected representation/passage; no world certainty inheritance",
+      "stable_meaning": "Attribution, target, raw evidence and explicit unknowns; recommendation is for minimal boundary contracts only",
+      "core_change_performed": false
+    },
+    {
+      "candidate": "reality certainty",
+      "A_needed_again": {
+        "answer": "yes",
+        "case": "Palladasunkcontested; broadengagementprobable; exactfleetcountcontested"
+      },
+      "B_boundary_changed": "No; scoped evidence/rationale explicit; categorical calibration remains unresolved",
+      "C_diplomacy_specific": "no",
+      "D_military_observational_generalization": "yes, in this narrow military case",
+      "E_historical_only": "no; calendar/archive practices are historical-specific aspects",
+      "F_ground_generalization": "Plausible for sensor observations, incident reports and organizational communication; not yet tested in a nonhistorical dataset",
+      "recommendation": "Watch: distinct target stable, probability/contested scale and lifecycle not ready",
+      "stable_meaning": "Attribution, target, raw evidence and explicit unknowns; recommendation is for minimal boundary contracts only",
+      "core_change_performed": false
+    },
+    {
+      "candidate": "unknown reason",
+      "A_needed_again": {
+        "answer": "yes",
+        "case": "Uninspectedoriginal,partialdownload,missingclock,uninspectedphoto,unknownmedicalmechanism"
+      },
+      "B_boundary_changed": "No; method/scope and absence non-inference still required",
+      "C_diplomacy_specific": "no",
+      "D_military_observational_generalization": "yes, in this narrow military case",
+      "E_historical_only": "no; calendar/archive practices are historical-specific aspects",
+      "F_ground_generalization": "Plausible for sensor observations, incident reports and organizational communication; not yet tested in a nonhistorical dataset",
+      "recommendation": "Core Promotion Candidate: reason+target+search/inspection scope, not a fixed universal taxonomy",
+      "stable_meaning": "Attribution, target, raw evidence and explicit unknowns; recommendation is for minimal boundary contracts only",
+      "core_change_performed": false
+    }
+  ],
+  "promotion_limit": "Candidates are semantic boundaries for future design review. No new core primitive/relation/schema enacted. Repeated appearance alone is insufficient. Stage enum, probability calibration, identity solver, spatial certainty scale and source-reliability scoring are not promoted."
+}

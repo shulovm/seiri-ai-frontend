@@ -1,0 +1,4113 @@
+[
+  {
+    "round": 1,
+    "id": "r-reply",
+    "claim_ids": [
+      "c392-instruction",
+      "c393-termination",
+      "c678-uncertainty",
+      "c678-sent",
+      "c679-held"
+    ],
+    "source_ids": [
+      "frus:1904:392",
+      "frus:1904:393",
+      "frus:1904:678",
+      "frus:1904:679"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d392",
+      "https://history.state.gov/historicaldocuments/frus1904/d393",
+      "https://history.state.gov/historicaldocuments/frus1904/d678",
+      "https://history.state.gov/historicaldocuments/frus1904/d679"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 1,
+    "id": "r-variag",
+    "claim_ids": [
+      "c395-captured",
+      "cjacar-selfsink"
+    ],
+    "source_ids": [
+      "frus:1904:395",
+      "jacar:chemulpo-guide"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d395",
+      "https://www.jacar.go.jp/exhibition/nichiro2/sensoushi/kaijou_02_outline.html"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 1,
+    "id": "r-protocol-text",
+    "claim_ids": [
+      "c430-guarantee",
+      "c430-occupation"
+    ],
+    "source_ids": [
+      "frus:1904:430"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d430"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 1,
+    "id": "r-portarthur",
+    "claim_ids": [
+      "c680-attack"
+    ],
+    "source_ids": [
+      "frus:1904:680"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d680"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-reply-report",
+    "claim_ids": [
+      "r2:c-reply-sent"
+    ],
+    "source_ids": [
+      "r2:jp-whitebook"
+    ],
+    "source_urls": [
+      "https://archive.org/details/correspondencere00japarich"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-no50-receipt",
+    "claim_ids": [
+      "r2:c-no50-receipt"
+    ],
+    "source_ids": [
+      "r2:jp-whitebook"
+    ],
+    "source_urls": [
+      "https://archive.org/details/correspondencere00japarich"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-instruction54",
+    "claim_ids": [
+      "r2:c-order54"
+    ],
+    "source_ids": [
+      "r2:komura-bundle"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-ack82",
+    "claim_ids": [
+      "r2:c-ack82"
+    ],
+    "source_ids": [
+      "r2:komura-bundle"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-ack82-receipt",
+    "claim_ids": [
+      "r2:c-ack82-receipt"
+    ],
+    "source_ids": [
+      "r2:komura-bundle"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-notes-delivery",
+    "claim_ids": [
+      "r2:c-note-presented"
+    ],
+    "source_ids": [
+      "r2:jp-whitebook"
+    ],
+    "source_urls": [
+      "https://archive.org/details/correspondencere00japarich"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-notes-receipt",
+    "claim_ids": [
+      "r2:c-note-report-receipt"
+    ],
+    "source_ids": [
+      "r2:jp-whitebook"
+    ],
+    "source_urls": [
+      "https://archive.org/details/correspondencere00japarich"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-hayashi",
+    "claim_ids": [
+      "r2:c-london-response"
+    ],
+    "source_ids": [
+      "r2:komura-bundle"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-togo-report",
+    "claim_ids": [
+      "r2:c-togo-created"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-togo-dispatch",
+    "claim_ids": [
+      "r2:c-togo-dispatch"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-uriu1",
+    "claim_ids": [
+      "r2:c-uriu1"
+    ],
+    "source_ids": [
+      "r2:chemulpo-edition"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C05110032100"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-uriu1-relay",
+    "claim_ids": [
+      "r2:c-uriu1-relay"
+    ],
+    "source_ids": [
+      "r2:chemulpo-edition"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C05110032100"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-uriu2",
+    "claim_ids": [
+      "r2:c-uriu2"
+    ],
+    "source_ids": [
+      "r2:chemulpo-edition"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C05110032100"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-uriu2-relay",
+    "claim_ids": [
+      "r2:c-uriu2-relay"
+    ],
+    "source_ids": [
+      "r2:chemulpo-edition"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C05110032100"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-army-control",
+    "claim_ids": [
+      "r2:c-army-control"
+    ],
+    "source_ids": [
+      "r2:army-control"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C06040574900"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-whitebook-publication",
+    "claim_ids": [
+      "r2:c-order48"
+    ],
+    "source_ids": [
+      "r2:jp-whitebook"
+    ],
+    "source_urls": [
+      "https://archive.org/details/correspondencere00japarich"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 2,
+    "id": "n-rosen-held",
+    "claim_ids": [
+      "c679-held"
+    ],
+    "source_ids": [
+      "frus:1904:679"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679"
+    ],
+    "boundary": "Attributed evidence; no original authentication or world certainty inferred"
+  },
+  {
+    "round": 3,
+    "id": "a-frus-web679",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-paraphrase",
+      "r3:c-release"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r3:frus-print-images",
+      "r3:frus-release"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://history.state.gov/historicaldocuments/frus1904/pg_709",
+      "https://history.state.gov/historicaldocuments/quarterly-releases/2017-q4"
+    ],
+    "terminal_references": [
+      "ref-frus-input"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "a-frus-scan709",
+    "claim_ids": [
+      "r3:c-paraphrase",
+      "r3:c-release"
+    ],
+    "source_ids": [
+      "r3:frus-print-images",
+      "r3:frus-release"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/pg_709",
+      "https://history.state.gov/historicaldocuments/quarterly-releases/2017-q4"
+    ],
+    "terminal_references": [
+      "ref-frus-input"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "a-frus-print709",
+    "claim_ids": [
+      "r3:c-paraphrase"
+    ],
+    "source_ids": [
+      "r3:frus-print-images"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/pg_709"
+    ],
+    "terminal_references": [
+      "ref-frus-input"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "a-pak-pdf",
+    "claim_ids": [
+      "r3:c-pak-quote",
+      "r3:c-pak-delivery",
+      "r3:c-pak-note21",
+      "r3:c-pak-edition"
+    ],
+    "source_ids": [
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [
+      "ref-pak-edition",
+      "ref-reply-no2",
+      "ref-note21-pak",
+      "ref-note21-1973"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "a-rsl-catalog",
+    "claim_ids": [
+      "r3:c-rsl-edition"
+    ],
+    "source_ids": [
+      "r3:rsl-metadata"
+    ],
+    "source_urls": [
+      "https://rusneb.ru/catalog/000199_000009_007506064/"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "a-rsl-edition",
+    "claim_ids": [
+      "r3:c-rsl-edition",
+      "r3:c-pak-edition"
+    ],
+    "source_ids": [
+      "r2:pak",
+      "r3:rsl-metadata"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf",
+      "https://rusneb.ru/catalog/000199_000009_007506064/"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "a-jp-archival54",
+    "claim_ids": [
+      "r2:c-order54",
+      "r3:c-jp-scan"
+    ],
+    "source_ids": [
+      "r2:komura-bundle"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "a-jp-bundle-pdf",
+    "claim_ids": [
+      "r2:c-order54",
+      "r3:c-jp-scan"
+    ],
+    "source_ids": [
+      "r2:komura-bundle"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "a-jacar-transcription",
+    "claim_ids": [
+      "r2:c-order54",
+      "r3:c-jacar-labels",
+      "r3:c-jacar-transcription",
+      "r3:c-jp-scan"
+    ],
+    "source_ids": [
+      "r2:komura-bundle",
+      "r3:jacar-text"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900",
+      "https://www.jacar.go.jp/exhibition/nichiro/komura_telegram_txt.htm"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "a-jacar-colloquial",
+    "claim_ids": [
+      "r2:c-order54",
+      "r3:c-jacar-labels",
+      "r3:c-jacar-expansion",
+      "r3:c-jacar-transcription",
+      "r3:c-jp-scan"
+    ],
+    "source_ids": [
+      "r2:komura-bundle",
+      "r3:jacar-text"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900",
+      "https://www.jacar.go.jp/exhibition/nichiro/komura_telegram_txt.htm"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "a-rosen-pdf",
+    "claim_ids": [
+      "r3:c-memoir-publication",
+      "r3:c-memoir-copy",
+      "r3:c-ia-lineage"
+    ],
+    "source_ids": [
+      "r3:rosen-memoir",
+      "r3:rosen-metadata"
+    ],
+    "source_urls": [
+      "https://archive.org/details/cu31924071193662",
+      "https://archive.org/metadata/cu31924071193662"
+    ],
+    "terminal_references": [
+      "ref-rosen-manuscript"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "a-rosen-book",
+    "claim_ids": [
+      "r3:c-memoir-publication",
+      "r3:c-memoir-copy"
+    ],
+    "source_ids": [
+      "r3:rosen-memoir"
+    ],
+    "source_urls": [
+      "https://archive.org/details/cu31924071193662"
+    ],
+    "terminal_references": [
+      "ref-rosen-manuscript"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "a-rosen-metadata",
+    "claim_ids": [
+      "r3:c-ia-lineage",
+      "r3:c-ia-times"
+    ],
+    "source_ids": [
+      "r3:rosen-metadata"
+    ],
+    "source_urls": [
+      "https://archive.org/metadata/cu31924071193662"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "a-rgia-catalog",
+    "claim_ids": [
+      "r3:c-rgia-type"
+    ],
+    "source_ids": [
+      "r3:rgia-metadata"
+    ],
+    "source_urls": [
+      "https://www.prlib.ru/item/324328"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "ref-frus-input",
+    "claim_ids": [
+      "r3:c-paraphrase"
+    ],
+    "source_ids": [
+      "r3:frus-print-images"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/pg_709"
+    ],
+    "terminal_references": [
+      "ref-frus-input"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "ref-pak-edition",
+    "claim_ids": [
+      "r3:c-pak-quote",
+      "r3:c-pak-edition"
+    ],
+    "source_ids": [
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [
+      "ref-pak-edition"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "ref-reply-no2",
+    "claim_ids": [
+      "r3:c-pak-quote"
+    ],
+    "source_ids": [
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [
+      "ref-reply-no2"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "ref-note21-pak",
+    "claim_ids": [
+      "r3:c-pak-note21"
+    ],
+    "source_ids": [
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [
+      "ref-note21-pak"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "ref-note21-1973",
+    "claim_ids": [
+      "r3:c-pak-note21"
+    ],
+    "source_ids": [
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [
+      "ref-note21-1973"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "ref-rosen-manuscript",
+    "claim_ids": [
+      "r3:c-memoir-publication"
+    ],
+    "source_ids": [
+      "r3:rosen-memoir"
+    ],
+    "source_urls": [
+      "https://archive.org/details/cu31924071193662"
+    ],
+    "terminal_references": [
+      "ref-rosen-manuscript"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "l-frus-web",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-paraphrase",
+      "r3:c-release"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r3:frus-print-images",
+      "r3:frus-release"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://history.state.gov/historicaldocuments/frus1904/pg_709",
+      "https://history.state.gov/historicaldocuments/quarterly-releases/2017-q4"
+    ],
+    "terminal_references": [
+      "ref-frus-input"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "l-frus-scan",
+    "claim_ids": [
+      "r3:c-paraphrase",
+      "r3:c-release"
+    ],
+    "source_ids": [
+      "r3:frus-print-images",
+      "r3:frus-release"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/pg_709",
+      "https://history.state.gov/historicaldocuments/quarterly-releases/2017-q4"
+    ],
+    "terminal_references": [
+      "ref-frus-input"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "l-frus-input",
+    "claim_ids": [
+      "r3:c-paraphrase"
+    ],
+    "source_ids": [
+      "r3:frus-print-images"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/pg_709"
+    ],
+    "terminal_references": [
+      "ref-frus-input"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "l-pak-quote",
+    "claim_ids": [
+      "r3:c-pak-quote",
+      "r3:c-pak-delivery",
+      "r3:c-pak-note21",
+      "r3:c-pak-edition"
+    ],
+    "source_ids": [
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [
+      "ref-pak-edition",
+      "ref-reply-no2",
+      "ref-note21-pak",
+      "ref-note21-1973"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "l-pak-reply",
+    "claim_ids": [
+      "r3:c-pak-quote",
+      "r3:c-pak-delivery",
+      "r3:c-pak-note21",
+      "r3:c-pak-edition"
+    ],
+    "source_ids": [
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [
+      "ref-pak-edition",
+      "ref-reply-no2",
+      "ref-note21-pak",
+      "ref-note21-1973"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "l-pak-delivery79",
+    "claim_ids": [
+      "r3:c-pak-quote",
+      "r3:c-pak-delivery",
+      "r3:c-pak-note21",
+      "r3:c-pak-edition"
+    ],
+    "source_ids": [
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [
+      "ref-pak-edition",
+      "ref-reply-no2",
+      "ref-note21-pak",
+      "ref-note21-1973"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "l-pak-delivery73",
+    "claim_ids": [
+      "r3:c-pak-quote",
+      "r3:c-pak-delivery",
+      "r3:c-pak-note21",
+      "r3:c-pak-edition"
+    ],
+    "source_ids": [
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [
+      "ref-pak-edition",
+      "ref-reply-no2",
+      "ref-note21-pak",
+      "ref-note21-1973"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "l-jp-scan",
+    "claim_ids": [
+      "r2:c-order54",
+      "r3:c-jp-scan"
+    ],
+    "source_ids": [
+      "r2:komura-bundle"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "l-jacar-text",
+    "claim_ids": [
+      "r2:c-order54",
+      "r3:c-jacar-labels",
+      "r3:c-jacar-transcription",
+      "r3:c-jp-scan"
+    ],
+    "source_ids": [
+      "r2:komura-bundle",
+      "r3:jacar-text"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900",
+      "https://www.jacar.go.jp/exhibition/nichiro/komura_telegram_txt.htm"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "l-jacar-translation",
+    "claim_ids": [
+      "r2:c-order54",
+      "r3:c-jacar-labels",
+      "r3:c-jacar-expansion",
+      "r3:c-jacar-transcription",
+      "r3:c-jp-scan"
+    ],
+    "source_ids": [
+      "r2:komura-bundle",
+      "r3:jacar-text"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900",
+      "https://www.jacar.go.jp/exhibition/nichiro/komura_telegram_txt.htm"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "l-rosen-scan",
+    "claim_ids": [
+      "r3:c-memoir-publication",
+      "r3:c-memoir-copy",
+      "r3:c-ia-lineage"
+    ],
+    "source_ids": [
+      "r3:rosen-memoir",
+      "r3:rosen-metadata"
+    ],
+    "source_urls": [
+      "https://archive.org/details/cu31924071193662",
+      "https://archive.org/metadata/cu31924071193662"
+    ],
+    "terminal_references": [
+      "ref-rosen-manuscript"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "l-rosen-input",
+    "claim_ids": [
+      "r3:c-memoir-publication",
+      "r3:c-memoir-copy"
+    ],
+    "source_ids": [
+      "r3:rosen-memoir"
+    ],
+    "source_urls": [
+      "https://archive.org/details/cu31924071193662"
+    ],
+    "terminal_references": [
+      "ref-rosen-manuscript"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "m-reply",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "m-invitation",
+    "claim_ids": [
+      "r3:c-invitation"
+    ],
+    "source_ids": [
+      "r3:rosen-memoir"
+    ],
+    "source_urls": [
+      "https://archive.org/details/cu31924071193662"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "m-warnings",
+    "claim_ids": [
+      "r3:c-outgoing"
+    ],
+    "source_ids": [
+      "r3:rosen-memoir"
+    ],
+    "source_urls": [
+      "https://archive.org/details/cu31924071193662"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "m-jp82",
+    "claim_ids": [
+      "r2:c-ack82",
+      "r2:c-ack82-receipt",
+      "r3:c-jp-scan"
+    ],
+    "source_ids": [
+      "r2:komura-bundle"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "s-reply-address",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "s-reply-send",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "s-reply-hold",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "s-reply-delivery",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "s-reply-possession",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "s-invitation-receipt",
+    "claim_ids": [
+      "r3:c-invitation"
+    ],
+    "source_ids": [
+      "r3:rosen-memoir"
+    ],
+    "source_urls": [
+      "https://archive.org/details/cu31924071193662"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "s-warnings-send",
+    "claim_ids": [
+      "r3:c-outgoing"
+    ],
+    "source_ids": [
+      "r3:rosen-memoir"
+    ],
+    "source_urls": [
+      "https://archive.org/details/cu31924071193662"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "s-jp82-ack",
+    "claim_ids": [
+      "r2:c-ack82",
+      "r2:c-ack82-receipt",
+      "r3:c-jp-scan"
+    ],
+    "source_ids": [
+      "r2:komura-bundle"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "s-jp82-office",
+    "claim_ids": [
+      "r2:c-ack82",
+      "r2:c-ack82-receipt",
+      "r3:c-jp-scan"
+    ],
+    "source_ids": [
+      "r2:komura-bundle"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "q-delivery-content",
+    "claim_ids": [
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "q-reply-identity",
+    "claim_ids": [
+      "r3:c-rsl-edition",
+      "r3:c-pak-quote",
+      "r3:c-pak-direct",
+      "r3:c-pak-edition"
+    ],
+    "source_ids": [
+      "r2:pak",
+      "r3:rsl-metadata"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf",
+      "https://rusneb.ru/catalog/000199_000009_007506064/"
+    ],
+    "terminal_references": [
+      "ref-reply-no2"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "q-delivery-reality",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery",
+      "r3:c-pak-note21"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "q-frus-content",
+    "claim_ids": [
+      "r3:c-paraphrase"
+    ],
+    "source_ids": [
+      "r3:frus-print-images"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/pg_709"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "q-frus-id",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-paraphrase",
+      "r3:c-number-policy",
+      "r3:c-release"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r3:frus-print-images",
+      "r3:frus-citation-policy",
+      "r3:frus-release"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://history.state.gov/historicaldocuments/frus1904/pg_709",
+      "https://history.state.gov/historicaldocuments/citing-frus",
+      "https://history.state.gov/historicaldocuments/quarterly-releases/2017-q4"
+    ],
+    "terminal_references": [
+      "ref-frus-input"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "q-nagasaki-reality",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery",
+      "r3:c-pak-note21"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "q-jp-identity",
+    "claim_ids": [
+      "r2:c-order54",
+      "r3:c-jacar-transcription",
+      "r3:c-jp-scan"
+    ],
+    "source_ids": [
+      "r2:komura-bundle",
+      "r3:jacar-text"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900",
+      "https://www.jacar.go.jp/exhibition/nichiro/komura_telegram_txt.htm"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "q-russian-language",
+    "claim_ids": [
+      "r3:c-pak-quote"
+    ],
+    "source_ids": [
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "g-reply-original",
+    "claim_ids": [
+      "r3:c-pak-quote"
+    ],
+    "source_ids": [
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [
+      "ref-reply-no2"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "g-edition",
+    "claim_ids": [
+      "r3:c-rsl-edition",
+      "r3:c-pak-edition"
+    ],
+    "source_ids": [
+      "r2:pak",
+      "r3:rsl-metadata"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf",
+      "https://rusneb.ru/catalog/000199_000009_007506064/"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "g-rsl-access",
+    "claim_ids": [
+      "r3:c-rsl-edition",
+      "r3:c-pak-edition"
+    ],
+    "source_ids": [
+      "r2:pak",
+      "r3:rsl-metadata"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf",
+      "https://rusneb.ru/catalog/000199_000009_007506064/"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "g-reply-sender_possession",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "g-reply-transmission_mechanism",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "g-reply-arrival_at_location",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "g-reply-delivery_attempt",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "g-reply-receipt_acknowledgment",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "g-reply-opened_at",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "g-reply-read_at",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "g-reply-understood_at",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "g-reply-reported_onward",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "g-reply-acted_upon_at",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "g-russian-normalization",
+    "claim_ids": [
+      "r3:c-pak-quote",
+      "r3:c-pak-article8"
+    ],
+    "source_ids": [
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [
+      "ref-reply-no2"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "g-frus-translator",
+    "claim_ids": [
+      "r3:c-paraphrase"
+    ],
+    "source_ids": [
+      "r3:frus-print-images"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/pg_709"
+    ],
+    "terminal_references": [
+      "ref-frus-input"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "g-jacar-date",
+    "claim_ids": [
+      "r2:c-order54",
+      "r3:c-jacar-labels",
+      "r3:c-jacar-expansion",
+      "r3:c-jacar-transcription",
+      "r3:c-jp-scan"
+    ],
+    "source_ids": [
+      "r2:komura-bundle",
+      "r3:jacar-text"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900",
+      "https://www.jacar.go.jp/exhibition/nichiro/komura_telegram_txt.htm"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "tc-jacar",
+    "claim_ids": [
+      "r2:c-order54",
+      "r3:c-jacar-labels",
+      "r3:c-jacar-expansion",
+      "r3:c-jacar-transcription",
+      "r3:c-jp-scan"
+    ],
+    "source_ids": [
+      "r2:komura-bundle",
+      "r3:jacar-text"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900",
+      "https://www.jacar.go.jp/exhibition/nichiro/komura_telegram_txt.htm"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "dr-reply",
+    "claim_ids": [
+      "r3:c-rsl-edition",
+      "r3:c-pak-quote",
+      "r3:c-pak-delivery",
+      "r3:c-pak-note21",
+      "r3:c-pak-edition"
+    ],
+    "source_ids": [
+      "r2:pak",
+      "r3:rsl-metadata"
+    ],
+    "source_urls": [
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf",
+      "https://rusneb.ru/catalog/000199_000009_007506064/"
+    ],
+    "terminal_references": [
+      "ref-pak-edition",
+      "ref-reply-no2",
+      "ref-note21-pak",
+      "ref-note21-1973"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "dr-frus",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-paraphrase",
+      "r3:c-number-policy",
+      "r3:c-release"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r3:frus-print-images",
+      "r3:frus-citation-policy",
+      "r3:frus-release"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://history.state.gov/historicaldocuments/frus1904/pg_709",
+      "https://history.state.gov/historicaldocuments/citing-frus",
+      "https://history.state.gov/historicaldocuments/quarterly-releases/2017-q4"
+    ],
+    "terminal_references": [
+      "ref-frus-input"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "hr-receipt",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery",
+      "r3:c-pak-note21"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "kr-rosen",
+    "claim_ids": [
+      "c679-held",
+      "r3:c-pak-direct",
+      "r3:c-pak-nagasaki",
+      "r3:c-pak-delivery"
+    ],
+    "source_ids": [
+      "frus:1904:679",
+      "r2:pak"
+    ],
+    "source_urls": [
+      "https://history.state.gov/historicaldocuments/frus1904/d679",
+      "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 3,
+    "id": "dr-jp",
+    "claim_ids": [
+      "r2:c-order54",
+      "r3:c-jacar-labels",
+      "r3:c-jacar-expansion",
+      "r3:c-jacar-transcription",
+      "r3:c-jp-scan"
+    ],
+    "source_ids": [
+      "r2:komura-bundle",
+      "r3:jacar-text"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/B07090546900",
+      "https://www.jacar.go.jp/exhibition/nichiro/komura_telegram_txt.htm"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ev-jp-night",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-night"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ev-ru-night",
+    "claim_ids": [
+      "r4:c-stark-label",
+      "r4:c-stark-roots",
+      "r4:c-stark-explosion",
+      "r4:c-stark-attachments"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ev-jp-day",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-day"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ev-ru-day",
+    "claim_ids": [
+      "r4:c-sev-label",
+      "r4:c-sev-fire"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ev-paris-night",
+    "claim_ids": [
+      "r4:c-press-paris"
+    ],
+    "source_ids": [
+      "r4:s-clarendon"
+    ],
+    "source_urls": [
+      "https://newspapers.swco.ttu.edu/server/api/core/bitstreams/8ee25498-d4a8-42e0-8d4e-a6f2d31511d3/content"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ev-memo-day",
+    "claim_ids": [
+      "r4:c-memo-edition",
+      "r4:c-memo-letter",
+      "r4:c-memo-shell"
+    ],
+    "source_ids": [
+      "r4:s-cherkasov",
+      "r4:s-memoir-edition"
+    ],
+    "source_urls": [
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html",
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/index.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:align-night",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-night",
+      "r4:c-stark-label",
+      "r4:c-stark-roots",
+      "r4:c-stark-explosion",
+      "r4:c-stark-attachments"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:align-day",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-day",
+      "r4:c-sev-label",
+      "r4:c-sev-fire"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-sevastopol"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:align-paris",
+    "claim_ids": [
+      "r4:c-stark-label",
+      "r4:c-stark-roots",
+      "r4:c-stark-explosion",
+      "r4:c-stark-attachments",
+      "r4:c-press-not-sunk",
+      "r4:c-press-paris"
+    ],
+    "source_ids": [
+      "r4:s-stark",
+      "r4:s-astorian",
+      "r4:s-clarendon"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/",
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/",
+      "https://newspapers.swco.ttu.edu/server/api/core/bitstreams/8ee25498-d4a8-42e0-8d4e-a6f2d31511d3/content"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:separate-night-day",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-night",
+      "r4:c-jp-day"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:obs-explosion",
+    "claim_ids": [
+      "r4:c-stark-explosion"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:obs-gunfire",
+    "claim_ids": [
+      "r4:c-novik-heard"
+    ],
+    "source_ids": [
+      "r4:s-novik"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_024/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:obs-memo-night",
+    "claim_ids": [
+      "r4:c-memo-night"
+    ],
+    "source_ids": [
+      "r4:s-cherkasov"
+    ],
+    "source_urls": [
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:obs-first-shell",
+    "claim_ids": [
+      "r4:c-memo-shell"
+    ],
+    "source_ids": [
+      "r4:s-cherkasov"
+    ],
+    "source_urls": [
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:obs-torpedo",
+    "claim_ids": [
+      "r4:c-novik-torpedo"
+    ],
+    "source_ids": [
+      "r4:s-novik"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_024/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:obs-columbia",
+    "claim_ids": [
+      "r4:c-press-columbia"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:time-explosion",
+    "claim_ids": [
+      "r4:c-stark-explosion"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:time-gunfire",
+    "claim_ids": [
+      "r4:c-novik-heard"
+    ],
+    "source_ids": [
+      "r4:s-novik"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_024/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:time-order",
+    "claim_ids": [
+      "r4:c-novik-order"
+    ],
+    "source_ids": [
+      "r4:s-novik"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_024/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:time-jp-night",
+    "claim_ids": [
+      "r4:c-jp-night"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:time-en-night",
+    "claim_ids": [
+      "r4:c-en-night"
+    ],
+    "source_ids": [
+      "r4:s-english"
+    ],
+    "source_urls": [
+      "https://losthistory.net/russojapanesewar/togo-aar1.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:time-approach",
+    "claim_ids": [
+      "r4:c-jp-approach"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:time-jp-day",
+    "claim_ids": [
+      "r4:c-jp-day"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:time-second",
+    "claim_ids": [
+      "r4:c-jp-second-fire"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:time-ru-fire",
+    "claim_ids": [
+      "r4:c-sev-fire"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:time-first-shell",
+    "claim_ids": [
+      "r4:c-memo-shell"
+    ],
+    "source_ids": [
+      "r4:s-cherkasov"
+    ],
+    "source_urls": [
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:time-guide",
+    "claim_ids": [
+      "r4:c-guide-chart"
+    ],
+    "source_ids": [
+      "r4:s-guide"
+    ],
+    "source_urls": [
+      "https://www.jacar.go.jp/exhibition/nichiro2/sensoushi/kaijou_01_detail.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:space-roads",
+    "claim_ids": [
+      "r4:c-jp-night"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:space-flagship",
+    "claim_ids": [
+      "r4:c-stark-explosion"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:space-map",
+    "claim_ids": [
+      "r4:c-jp-map"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:space-map-id",
+    "claim_ids": [
+      "r4:c-jp-map-id"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:space-range",
+    "claim_ids": [
+      "r4:c-memo-range"
+    ],
+    "source_ids": [
+      "r4:s-cherkasov"
+    ],
+    "source_urls": [
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:space-west",
+    "claim_ids": [
+      "r4:c-sev-fire"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:space-south",
+    "claim_ids": [
+      "r4:c-press-flug"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:space-dalny",
+    "claim_ids": [
+      "r4:c-press-officer-direction"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-jp-wounded",
+    "claim_ids": [
+      "r4:c-jp-wounded"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-en-wounded",
+    "claim_ids": [
+      "r4:c-en-wounded"
+    ],
+    "source_ids": [
+      "r4:s-english"
+    ],
+    "source_urls": [
+      "https://losthistory.net/russojapanesewar/togo-aar1.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-jp-dead",
+    "claim_ids": [
+      "r4:c-jp-killed"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-second-dead",
+    "claim_ids": [
+      "r4:c-jp-second-killed"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-ru-fleet",
+    "claim_ids": [
+      "r4:c-memo-count"
+    ],
+    "source_ids": [
+      "r4:s-cherkasov"
+    ],
+    "source_urls": [
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-press-fleet",
+    "claim_ids": [
+      "r4:c-press-officer-count"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-sev-initial",
+    "claim_ids": [
+      "r4:c-sev-count"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-sev-added",
+    "claim_ids": [
+      "r4:c-sev-count"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-smokes",
+    "claim_ids": [
+      "r4:c-memo-smokes"
+    ],
+    "source_ids": [
+      "r4:s-cherkasov"
+    ],
+    "source_urls": [
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-torpedoes",
+    "claim_ids": [
+      "r4:c-stark-torpedoes"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-hit",
+    "claim_ids": [
+      "r4:c-stark-hit"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-destroyers",
+    "claim_ids": [
+      "r4:c-stark-destroyers"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-jp-loss",
+    "claim_ids": [
+      "r4:c-stark-jp-loss"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-ammo12",
+    "claim_ids": [
+      "r4:c-sev-ammo12"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-ammo6",
+    "claim_ids": [
+      "r4:c-sev-ammo6"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-holes",
+    "claim_ids": [
+      "r4:c-sev-holes"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-list",
+    "claim_ids": [
+      "r4:c-stark-pallada"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-range",
+    "claim_ids": [
+      "r4:c-memo-range"
+    ],
+    "source_ids": [
+      "r4:s-cherkasov"
+    ],
+    "source_urls": [
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-sev-wounds",
+    "claim_ids": [
+      "r4:c-sev-wounded"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-ru-naval-killed",
+    "claim_ids": [
+      "r4:c-press-naval-casualty"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-ru-naval-wounded",
+    "claim_ids": [
+      "r4:c-press-naval-casualty"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-ru-coast",
+    "claim_ids": [
+      "r4:c-press-coast"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:q-headline",
+    "claim_ids": [
+      "r4:c-press-headline"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:x-pallada",
+    "claim_ids": [
+      "r4:c-stark-label",
+      "r4:c-stark-roots",
+      "r4:c-stark-explosion",
+      "r4:c-stark-attachments",
+      "r4:c-press-not-sunk",
+      "r4:c-press-paris"
+    ],
+    "source_ids": [
+      "r4:s-stark",
+      "r4:s-astorian",
+      "r4:s-clarendon"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/",
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/",
+      "https://newspapers.swco.ttu.edu/server/api/core/bitstreams/8ee25498-d4a8-42e0-8d4e-a6f2d31511d3/content"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:x-wounded",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-type",
+      "r4:c-jp-wounded",
+      "r4:c-en-date",
+      "r4:c-en-type",
+      "r4:c-en-wounded"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-english"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://losthistory.net/russojapanesewar/togo-aar1.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:x-type",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-type",
+      "r4:c-jp-wounded",
+      "r4:c-en-date",
+      "r4:c-en-type",
+      "r4:c-en-wounded"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-english"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://losthistory.net/russojapanesewar/togo-aar1.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:x-fleet",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-day",
+      "r4:c-sev-label",
+      "r4:c-sev-fire",
+      "r4:c-memo-count",
+      "r4:c-press-officer-count"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-sevastopol",
+      "r4:s-cherkasov",
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/",
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html",
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:x-night-clock",
+    "claim_ids": [
+      "r4:c-stark-explosion",
+      "r4:c-novik-heard"
+    ],
+    "source_ids": [
+      "r4:s-stark",
+      "r4:s-novik"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/",
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_024/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:x-day-role",
+    "claim_ids": [
+      "r4:c-jp-approach",
+      "r4:c-jp-day"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:x-first-shell",
+    "claim_ids": [
+      "r4:c-sev-fire",
+      "r4:c-memo-shell"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol",
+      "r4:s-cherkasov"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/",
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:x-dead-scope",
+    "claim_ids": [
+      "r4:c-jp-killed",
+      "r4:c-jp-second-killed"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:x-night-damage",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-night",
+      "r4:c-jp-day",
+      "r4:c-jp-capability",
+      "r4:c-press-night-undamaged"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-clarendon"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://newspapers.swco.ttu.edu/server/api/core/bitstreams/8ee25498-d4a8-42e0-8d4e-a6f2d31511d3/content"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:x-sev-injury",
+    "claim_ids": [
+      "r4:c-sev-wounded",
+      "r4:c-memo-funnel"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol",
+      "r4:s-cherkasov"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/",
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:x-sev-petrov",
+    "claim_ids": [
+      "r4:c-sev-wounded",
+      "r4:c-memo-petrov"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol",
+      "r4:s-cherkasov"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/",
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:x-press-damage",
+    "claim_ids": [
+      "r4:c-press-headline",
+      "r4:c-press-day-damage"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:x-press-casualties",
+    "claim_ids": [
+      "r4:c-press-naval-casualty",
+      "r4:c-press-coast",
+      "r4:c-press-headline"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:x-guide-time",
+    "claim_ids": [
+      "r4:c-guide-chart",
+      "r4:c-guide-body"
+    ],
+    "source_ids": [
+      "r4:s-guide"
+    ],
+    "source_urls": [
+      "https://www.jacar.go.jp/exhibition/nichiro2/sensoushi/kaijou_01_detail.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:x-night-date",
+    "claim_ids": [
+      "r4:c-jp-night",
+      "r4:c-en-night"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-english"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://losthistory.net/russojapanesewar/togo-aar1.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:x-direction",
+    "claim_ids": [
+      "r4:c-press-flug",
+      "r4:c-press-officer-direction"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:dep-japanese",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-night",
+      "r4:c-jp-type",
+      "r4:c-jp-wounded",
+      "r4:c-en-date",
+      "r4:c-en-night",
+      "r4:c-en-type",
+      "r4:c-en-wounded",
+      "r4:c-guide-source"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-english",
+      "r4:s-guide"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://losthistory.net/russojapanesewar/togo-aar1.html",
+      "https://www.jacar.go.jp/exhibition/nichiro2/sensoushi/kaijou_01_detail.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:dep-russian",
+    "claim_ids": [
+      "r4:c-stark-label",
+      "r4:c-stark-roots",
+      "r4:c-stark-attachments"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ind-night",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-night",
+      "r4:c-jp-type",
+      "r4:c-jp-wounded",
+      "r4:c-en-date",
+      "r4:c-en-night",
+      "r4:c-en-type",
+      "r4:c-en-wounded",
+      "r4:c-guide-source",
+      "r4:c-stark-label",
+      "r4:c-stark-roots",
+      "r4:c-stark-explosion",
+      "r4:c-stark-attachments"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-english",
+      "r4:s-stark",
+      "r4:s-guide"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://losthistory.net/russojapanesewar/togo-aar1.html",
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/",
+      "https://www.jacar.go.jp/exhibition/nichiro2/sensoushi/kaijou_01_detail.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ind-day",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-day",
+      "r4:c-sev-label",
+      "r4:c-sev-fire",
+      "r4:c-memo-shell"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-sevastopol",
+      "r4:s-cherkasov"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/",
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ind-foreign",
+    "claim_ids": [
+      "r4:c-press-flug",
+      "r4:c-press-columbia"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:state-sev-before",
+    "claim_ids": [
+      "r4:c-sev-funnel"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:state-sev-after",
+    "claim_ids": [
+      "r4:c-sev-funnel"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:state-sev-operating",
+    "claim_ids": [
+      "r4:c-sev-anchor"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:state-sev-repair",
+    "claim_ids": [
+      "r4:c-memo-repair"
+    ],
+    "source_ids": [
+      "r4:s-cherkasov"
+    ],
+    "source_urls": [
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:state-pallada",
+    "claim_ids": [
+      "r4:c-stark-pallada"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:state-jp-capability",
+    "claim_ids": [
+      "r4:c-jp-capability"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:k-flag-initial",
+    "claim_ids": [
+      "r4:c-stark-belief"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:k-flag-signals",
+    "claim_ids": [
+      "r4:c-stark-signal"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:k-novik-order",
+    "claim_ids": [
+      "r4:c-novik-order"
+    ],
+    "source_ids": [
+      "r4:s-novik"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_024/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:k-cherkasov-wireless",
+    "claim_ids": [
+      "r4:c-memo-wireless"
+    ],
+    "source_ids": [
+      "r4:s-cherkasov"
+    ],
+    "source_urls": [
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:k-togo-record",
+    "claim_ids": [
+      "r4:c-jp-record"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:k-togo-dispatch",
+    "claim_ids": [
+      "r4:c-jp-copy"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:k-kamimura-record",
+    "claim_ids": [
+      "r4:c-jp-compile"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:k-public",
+    "claim_ids": [
+      "r4:c-press-flug"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:silence-togo",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-await"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:silence-novik",
+    "claim_ids": [
+      "r4:c-novik-label",
+      "r4:c-novik-heard"
+    ],
+    "source_ids": [
+      "r4:s-novik"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_024/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:photo-boundary",
+    "claim_ids": [
+      "r4:c-photo-title",
+      "r4:c-photo-year",
+      "r4:c-photo-publisher"
+    ],
+    "source_ids": [
+      "r4:s-photo"
+    ],
+    "source_urls": [
+      "https://collections.tepapa.govt.nz/object/272298"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:recon-night",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-night",
+      "r4:c-jp-type",
+      "r4:c-jp-wounded",
+      "r4:c-en-date",
+      "r4:c-en-night",
+      "r4:c-en-type",
+      "r4:c-en-wounded",
+      "r4:c-guide-source",
+      "r4:c-stark-label",
+      "r4:c-stark-roots",
+      "r4:c-stark-explosion",
+      "r4:c-stark-attachments",
+      "r4:c-novik-heard"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-english",
+      "r4:s-stark",
+      "r4:s-novik",
+      "r4:s-guide"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://losthistory.net/russojapanesewar/togo-aar1.html",
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/",
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_024/",
+      "https://www.jacar.go.jp/exhibition/nichiro2/sensoushi/kaijou_01_detail.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:recon-day",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-day",
+      "r4:c-jp-second-fire",
+      "r4:c-sev-label",
+      "r4:c-sev-fire",
+      "r4:c-memo-shell"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-sevastopol",
+      "r4:s-cherkasov"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/",
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:recon-pallada",
+    "claim_ids": [
+      "r4:c-stark-label",
+      "r4:c-stark-roots",
+      "r4:c-stark-explosion",
+      "r4:c-stark-pallada",
+      "r4:c-stark-attachments",
+      "r4:c-press-not-sunk",
+      "r4:c-press-paris"
+    ],
+    "source_ids": [
+      "r4:s-stark",
+      "r4:s-astorian",
+      "r4:s-clarendon"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/",
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/",
+      "https://newspapers.swco.ttu.edu/server/api/core/bitstreams/8ee25498-d4a8-42e0-8d4e-a6f2d31511d3/content"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:recon-jp-wounded",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-night",
+      "r4:c-jp-type",
+      "r4:c-jp-wounded",
+      "r4:c-en-date",
+      "r4:c-en-night",
+      "r4:c-en-type",
+      "r4:c-en-wounded",
+      "r4:c-guide-source"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-english",
+      "r4:s-guide"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://losthistory.net/russojapanesewar/togo-aar1.html",
+      "https://www.jacar.go.jp/exhibition/nichiro2/sensoushi/kaijou_01_detail.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:recon-force",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-day",
+      "r4:c-sev-label",
+      "r4:c-sev-count",
+      "r4:c-sev-fire",
+      "r4:c-memo-count",
+      "r4:c-press-officer-count"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-sevastopol",
+      "r4:s-cherkasov",
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/",
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html",
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:recon-sev-state",
+    "claim_ids": [
+      "r4:c-sev-wounded",
+      "r4:c-sev-funnel",
+      "r4:c-sev-anchor",
+      "r4:c-memo-funnel",
+      "r4:c-memo-petrov",
+      "r4:c-memo-repair"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol",
+      "r4:s-cherkasov"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/",
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:recon-knowledge",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-record",
+      "r4:c-jp-compile",
+      "r4:c-stark-belief",
+      "r4:c-stark-signal",
+      "r4:c-novik-order",
+      "r4:c-memo-wireless",
+      "r4:c-press-flug"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-stark",
+      "r4:s-novik",
+      "r4:s-cherkasov",
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/",
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_024/",
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html",
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "boundary": "Attributed evidence and versioned reconstruction; no canonical event identity, world quantities, historical knowledge or original authentication inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:a-jp",
+    "claim_ids": [
+      "r4:c-jp-copy"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "terminal_references": [
+      "r4:ref-jp-original"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:a-english",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-type",
+      "r4:c-jp-wounded",
+      "r4:c-en-date",
+      "r4:c-en-type",
+      "r4:c-en-wounded"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-english"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://losthistory.net/russojapanesewar/togo-aar1.html"
+    ],
+    "terminal_references": [
+      "r4:ref-jp-original"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:a-stark",
+    "claim_ids": [
+      "r4:c-stark-label",
+      "r4:c-stark-roots",
+      "r4:c-stark-attachments"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "terminal_references": [
+      "r4:ref-watch",
+      "r4:ref-captains"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:a-novik",
+    "claim_ids": [
+      "r4:c-novik-label"
+    ],
+    "source_ids": [
+      "r4:s-novik"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_024/"
+    ],
+    "terminal_references": [
+      "r4:ref-novik-original"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:a-sevastopol",
+    "claim_ids": [
+      "r4:c-sev-label"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/"
+    ],
+    "terminal_references": [
+      "r4:ref-sev-original"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:a-cherkasov",
+    "claim_ids": [
+      "r4:c-memo-edition",
+      "r4:c-memo-letter"
+    ],
+    "source_ids": [
+      "r4:s-cherkasov",
+      "r4:s-memoir-edition"
+    ],
+    "source_urls": [
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html",
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/index.html"
+    ],
+    "terminal_references": [
+      "r4:ref-letter"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:a-memoir-edition",
+    "claim_ids": [
+      "r4:c-memo-edition"
+    ],
+    "source_ids": [
+      "r4:s-memoir-edition"
+    ],
+    "source_urls": [
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/index.html"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:a-astorian",
+    "claim_ids": [
+      "r4:c-press-flug"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "terminal_references": [
+      "r4:ref-flug"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:a-clarendon",
+    "claim_ids": [
+      "r4:c-press-paris"
+    ],
+    "source_ids": [
+      "r4:s-clarendon"
+    ],
+    "source_urls": [
+      "https://newspapers.swco.ttu.edu/server/api/core/bitstreams/8ee25498-d4a8-42e0-8d4e-a6f2d31511d3/content"
+    ],
+    "terminal_references": [
+      "r4:ref-paris"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:a-guide",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-guide-source"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-guide"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://www.jacar.go.jp/exhibition/nichiro2/sensoushi/kaijou_01_detail.html"
+    ],
+    "terminal_references": [
+      "r4:ref-jp-original"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:a-photo",
+    "claim_ids": [
+      "r4:c-photo-title"
+    ],
+    "source_ids": [
+      "r4:s-photo"
+    ],
+    "source_urls": [
+      "https://collections.tepapa.govt.nz/object/272298"
+    ],
+    "terminal_references": [
+      "r4:ref-photo"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ref-watch",
+    "claim_ids": [
+      "r4:c-stark-roots"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "terminal_references": [
+      "r4:ref-watch"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ref-captains",
+    "claim_ids": [
+      "r4:c-stark-attachments"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "terminal_references": [
+      "r4:ref-captains"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ref-jp-original",
+    "claim_ids": [
+      "r4:c-jp-copy"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "terminal_references": [
+      "r4:ref-jp-original"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ref-paris",
+    "claim_ids": [
+      "r4:c-press-paris"
+    ],
+    "source_ids": [
+      "r4:s-clarendon"
+    ],
+    "source_urls": [
+      "https://newspapers.swco.ttu.edu/server/api/core/bitstreams/8ee25498-d4a8-42e0-8d4e-a6f2d31511d3/content"
+    ],
+    "terminal_references": [
+      "r4:ref-paris"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ref-flug",
+    "claim_ids": [
+      "r4:c-press-flug"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "terminal_references": [
+      "r4:ref-flug"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ref-letter",
+    "claim_ids": [
+      "r4:c-memo-letter"
+    ],
+    "source_ids": [
+      "r4:s-cherkasov"
+    ],
+    "source_urls": [
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html"
+    ],
+    "terminal_references": [
+      "r4:ref-letter"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ref-novik-original",
+    "claim_ids": [
+      "r4:c-novik-label"
+    ],
+    "source_ids": [
+      "r4:s-novik"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_024/"
+    ],
+    "terminal_references": [
+      "r4:ref-novik-original"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ref-sev-original",
+    "claim_ids": [
+      "r4:c-sev-label"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/"
+    ],
+    "terminal_references": [
+      "r4:ref-sev-original"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:ref-photo",
+    "claim_ids": [
+      "r4:c-photo-title"
+    ],
+    "source_ids": [
+      "r4:s-photo"
+    ],
+    "source_urls": [
+      "https://collections.tepapa.govt.nz/object/272298"
+    ],
+    "terminal_references": [
+      "r4:ref-photo"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:lineage-jp-original",
+    "claim_ids": [
+      "r4:c-jp-copy"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "terminal_references": [
+      "r4:ref-jp-original"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:lineage-english-jp",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-type",
+      "r4:c-jp-wounded",
+      "r4:c-en-date",
+      "r4:c-en-type",
+      "r4:c-en-wounded"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-english"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://losthistory.net/russojapanesewar/togo-aar1.html"
+    ],
+    "terminal_references": [
+      "r4:ref-jp-original"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:lineage-guide-jp",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-guide-source"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-guide"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://www.jacar.go.jp/exhibition/nichiro2/sensoushi/kaijou_01_detail.html"
+    ],
+    "terminal_references": [
+      "r4:ref-jp-original"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:lineage-stark-watch",
+    "claim_ids": [
+      "r4:c-stark-label",
+      "r4:c-stark-roots",
+      "r4:c-stark-attachments"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "terminal_references": [
+      "r4:ref-watch",
+      "r4:ref-captains"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:lineage-stark-capt",
+    "claim_ids": [
+      "r4:c-stark-label",
+      "r4:c-stark-roots",
+      "r4:c-stark-attachments"
+    ],
+    "source_ids": [
+      "r4:s-stark"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/"
+    ],
+    "terminal_references": [
+      "r4:ref-watch",
+      "r4:ref-captains"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:lineage-novik-original",
+    "claim_ids": [
+      "r4:c-novik-label"
+    ],
+    "source_ids": [
+      "r4:s-novik"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_024/"
+    ],
+    "terminal_references": [
+      "r4:ref-novik-original"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:lineage-sev-original",
+    "claim_ids": [
+      "r4:c-sev-label"
+    ],
+    "source_ids": [
+      "r4:s-sevastopol"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/"
+    ],
+    "terminal_references": [
+      "r4:ref-sev-original"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:lineage-memo-letter",
+    "claim_ids": [
+      "r4:c-memo-edition",
+      "r4:c-memo-letter"
+    ],
+    "source_ids": [
+      "r4:s-cherkasov",
+      "r4:s-memoir-edition"
+    ],
+    "source_urls": [
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html",
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/index.html"
+    ],
+    "terminal_references": [
+      "r4:ref-letter"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:lineage-memo-edition",
+    "claim_ids": [
+      "r4:c-memo-edition",
+      "r4:c-memo-letter"
+    ],
+    "source_ids": [
+      "r4:s-cherkasov",
+      "r4:s-memoir-edition"
+    ],
+    "source_urls": [
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html",
+      "https://militera.lib.ru/memo/russian/cherkasov_vn/index.html"
+    ],
+    "terminal_references": [
+      "r4:ref-letter"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:lineage-press-flug",
+    "claim_ids": [
+      "r4:c-press-flug"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "terminal_references": [
+      "r4:ref-flug"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:lineage-press-paris",
+    "claim_ids": [
+      "r4:c-press-paris"
+    ],
+    "source_ids": [
+      "r4:s-clarendon"
+    ],
+    "source_urls": [
+      "https://newspapers.swco.ttu.edu/server/api/core/bitstreams/8ee25498-d4a8-42e0-8d4e-a6f2d31511d3/content"
+    ],
+    "terminal_references": [
+      "r4:ref-paris"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:lineage-catalog-photo",
+    "claim_ids": [
+      "r4:c-photo-title"
+    ],
+    "source_ids": [
+      "r4:s-photo"
+    ],
+    "source_urls": [
+      "https://collections.tepapa.govt.nz/object/272298"
+    ],
+    "terminal_references": [
+      "r4:ref-photo"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:assessment-jp-wounded",
+    "claim_ids": [
+      "r4:c-jp-wounded"
+    ],
+    "source_ids": [
+      "r2:togo-copy"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:assessment-en-wounded",
+    "claim_ids": [
+      "r4:c-en-wounded"
+    ],
+    "source_ids": [
+      "r4:s-english"
+    ],
+    "source_urls": [
+      "https://losthistory.net/russojapanesewar/togo-aar1.html"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:assessment-press-paris",
+    "claim_ids": [
+      "r4:c-press-paris"
+    ],
+    "source_ids": [
+      "r4:s-clarendon"
+    ],
+    "source_urls": [
+      "https://newspapers.swco.ttu.edu/server/api/core/bitstreams/8ee25498-d4a8-42e0-8d4e-a6f2d31511d3/content"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:assessment-press-not-sunk",
+    "claim_ids": [
+      "r4:c-press-not-sunk"
+    ],
+    "source_ids": [
+      "r4:s-astorian"
+    ],
+    "source_urls": [
+      "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:assessment-photo-year",
+    "claim_ids": [
+      "r4:c-photo-year"
+    ],
+    "source_ids": [
+      "r4:s-photo"
+    ],
+    "source_urls": [
+      "https://collections.tepapa.govt.nz/object/272298"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:assessment-novik-order",
+    "claim_ids": [
+      "r4:c-novik-order"
+    ],
+    "source_ids": [
+      "r4:s-novik"
+    ],
+    "source_urls": [
+      "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_024/"
+    ],
+    "terminal_references": [],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  },
+  {
+    "round": 4,
+    "id": "r4:translation-togo",
+    "claim_ids": [
+      "r4:c-jp-copy",
+      "r4:c-jp-night",
+      "r4:c-jp-type",
+      "r4:c-jp-wounded",
+      "r4:c-en-date",
+      "r4:c-en-night",
+      "r4:c-en-type",
+      "r4:c-en-wounded"
+    ],
+    "source_ids": [
+      "r2:togo-copy",
+      "r4:s-english"
+    ],
+    "source_urls": [
+      "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "https://losthistory.net/russojapanesewar/togo-aar1.html"
+    ],
+    "terminal_references": [
+      "r4:ref-jp-original"
+    ],
+    "boundary": "Source content and reference attribution only; no original authentication, historical truth or actor reading inferred."
+  }
+]

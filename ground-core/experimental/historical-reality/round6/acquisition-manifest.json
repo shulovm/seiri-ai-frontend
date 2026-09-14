@@ -1,0 +1,300 @@
+{
+  "assets": [
+    {
+      "id": "r6:asset-frus1904-d125.xml",
+      "source_id": "r6:s-125",
+      "path": "evidence/frus1904-d125.xml",
+      "sha256": "c4410b1454fc099659511c3ed8b8a76617c1bad6b535859448f9c70c1932bdfa",
+      "bytes": 1668,
+      "format": "xml",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d125",
+      "inspection": "official TEI element extracted with XML serializer; not original manuscript"
+    },
+    {
+      "id": "r6:asset-frus1904-d124.xml",
+      "source_id": "r6:s-124",
+      "path": "evidence/frus1904-d124.xml",
+      "sha256": "5d5fc336325361424f931add01271b849a3d7504bbc33112f8e26327f991eb7a",
+      "bytes": 1616,
+      "format": "xml",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d124",
+      "inspection": "official TEI element extracted with XML serializer; not original manuscript"
+    },
+    {
+      "id": "r6:asset-frus1904-d126.xml",
+      "source_id": "r6:s-126",
+      "path": "evidence/frus1904-d126.xml",
+      "sha256": "63a8b9a6981b0c85805c9ce6412716c77e8f896d7b42cdcd5a82d8c6ff59de04",
+      "bytes": 1548,
+      "format": "xml",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d126",
+      "inspection": "official TEI element extracted with XML serializer; not original manuscript"
+    },
+    {
+      "id": "r6:asset-frus1904-d127.xml",
+      "source_id": "r6:s-127",
+      "path": "evidence/frus1904-d127.xml",
+      "sha256": "4d3c801debb6ef16a0ffc2101db4d094b9eb767aa0f88e75276a4523da4904c4",
+      "bytes": 1371,
+      "format": "xml",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d127",
+      "inspection": "official TEI element extracted with XML serializer; not original manuscript"
+    },
+    {
+      "id": "r6:asset-frus1904-d17.xml",
+      "source_id": "r6:s-17",
+      "path": "evidence/frus1904-d17.xml",
+      "sha256": "eb816187bb41ea181370c67c453aa3b11b5e47ef262019c151a87524e59533c1",
+      "bytes": 6870,
+      "format": "xml",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d17",
+      "inspection": "official TEI element extracted with XML serializer; not original manuscript"
+    },
+    {
+      "id": "r6:asset-frus1904-d92.xml",
+      "source_id": "r6:s-92",
+      "path": "evidence/frus1904-d92.xml",
+      "sha256": "cd60a8f62682049217bc2b33f45527cc307d86a112d85e36a5e813e0709565dc",
+      "bytes": 14964,
+      "format": "xml",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d92",
+      "inspection": "official TEI element extracted with XML serializer; not original manuscript"
+    },
+    {
+      "id": "r6:asset-frus1904-d18.xml",
+      "source_id": "r6:s-18",
+      "path": "evidence/frus1904-d18.xml",
+      "sha256": "d83cc1d019ad542aaf2a94e5d23ef966f26ba70d5bd2bb0714879e7373bf1e74",
+      "bytes": 21231,
+      "format": "xml",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d18",
+      "inspection": "official TEI element extracted with XML serializer; not original manuscript"
+    },
+    {
+      "id": "r6:asset-frus1904-d100.xml",
+      "source_id": "r6:s-100",
+      "path": "evidence/frus1904-d100.xml",
+      "sha256": "3aa5fa8f2a998bc3d507558db60df2be8fcf4e78881fa3e9112438cc3578ca40",
+      "bytes": 8642,
+      "format": "xml",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d100",
+      "inspection": "official TEI element extracted with XML serializer; not original manuscript"
+    },
+    {
+      "id": "r6:asset-frus1904-d103.xml",
+      "source_id": "r6:s-103",
+      "path": "evidence/frus1904-d103.xml",
+      "sha256": "f79c0f420019c37945c44cdca1cbfed6a3981d8cfd32683bfefc81ba16fd6f2c",
+      "bytes": 12653,
+      "format": "xml",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d103",
+      "inspection": "official TEI element extracted with XML serializer; not original manuscript"
+    },
+    {
+      "id": "r6:asset-frus1904-d431.xml",
+      "source_id": "r6:s-431",
+      "path": "evidence/frus1904-d431.xml",
+      "sha256": "ff7b05a391e55d97114debee778e1b66a8b62b2c4f2a5b45ccd00d9aef16a031",
+      "bytes": 3640,
+      "format": "xml",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d431",
+      "inspection": "official TEI element extracted with XML serializer; not original manuscript"
+    },
+    {
+      "id": "r6:asset-frus1904-d450.xml",
+      "source_id": "r6:s-450",
+      "path": "evidence/frus1904-d450.xml",
+      "sha256": "a6bf98f44e94a231cbfdb9290751501b5fa66adf41ece9b4e94526202125d03a",
+      "bytes": 1819,
+      "format": "xml",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d450",
+      "inspection": "official TEI element extracted with XML serializer; not original manuscript"
+    },
+    {
+      "id": "r6:asset-hansard-customs.html",
+      "source_id": "r6:s-customs",
+      "path": "evidence/hansard-customs.html",
+      "sha256": "2dbbc7771bc32a995ec0dbd802f7f151a0a0b58b8a41b60ea1cf34d37837c486",
+      "bytes": 8034,
+      "format": "html",
+      "origin_url": "https://api.parliament.uk/historic-hansard/commons/1904/feb/04/niu-chwang-customs-staff",
+      "inspection": "saved official HTML"
+    },
+    {
+      "id": "r6:asset-hansard-niuchwang.html",
+      "source_id": "r6:s-niu",
+      "path": "evidence/hansard-niuchwang.html",
+      "sha256": "70e9edf8873e9b8b31486a8e4d4a598228089fe94ad0348ffcbd24129619d483",
+      "bytes": 7909,
+      "format": "html",
+      "origin_url": "https://api.parliament.uk/historic-hansard/commons/1904/feb/10/niuchwang",
+      "inspection": "saved official HTML"
+    },
+    {
+      "id": "r6:asset-nikh-uiju.research-extract.json",
+      "source_id": "r6:s-uiju",
+      "path": "evidence/nikh-uiju.research-extract.json",
+      "sha256": "c93e3a110144ad7c050bc39ca1ad02242b7cd6e8fed8b2fc8a814339da584be0",
+      "bytes": 895,
+      "format": "json",
+      "origin_url": "https://db.history.go.kr/item/compareViewer.do?levelId=jh_019_0020_7580",
+      "inspection": "current researcher-selected extract; not original and not full-source snapshot"
+    },
+    {
+      "id": "r6:asset-nikh-protocol.reference-extract.json",
+      "source_id": "r6:s-protocol-ref",
+      "path": "evidence/nikh-protocol.reference-extract.json",
+      "sha256": "6ab484321c9426b7ba2d51bf5211ae79be7d9f89f85719e0e74d26593f1f1712",
+      "bytes": 483,
+      "format": "json",
+      "origin_url": "https://contents.history.go.kr/front/hm/view.do?levelId=hm_121_0010",
+      "inspection": "current researcher-selected extract; not original and not full-source snapshot"
+    },
+    {
+      "id": "r6:asset-frus1904.official-tei.xml",
+      "source_id": "r6:s-125",
+      "path": "evidence/frus1904.official-tei.xml",
+      "sha256": "2c0a893bcb646d32945c9773695d2fe9043af7d95e0346fcb1232e19cf1cebfa",
+      "bytes": 6716875,
+      "format": "xml",
+      "origin_url": "https://raw.githubusercontent.com/HistoryAtState/frus/master/volumes/frus1904.xml",
+      "inspection": "official full TEI downloaded; used elements inspected, not all volume claims reviewed"
+    },
+    {
+      "id": "r6:asset-frus1904-d100.txt",
+      "source_id": "r6:s-100",
+      "path": "evidence/frus1904-d100.txt",
+      "sha256": "e265c8eb8f53650d3a134ab45be05ba118f368ecc59f4a141391a1ba5e5814bf",
+      "bytes": 3914,
+      "format": "text",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d100",
+      "inspection": "Current whitespace-normalized TEI text extraction"
+    },
+    {
+      "id": "r6:asset-frus1904-d103.txt",
+      "source_id": "r6:s-103",
+      "path": "evidence/frus1904-d103.txt",
+      "sha256": "0db6f3e11831f850e88e7f37d64f03317a483132eaa0308faa25b0f2907edc35",
+      "bytes": 6337,
+      "format": "text",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d103",
+      "inspection": "Current whitespace-normalized TEI text extraction"
+    },
+    {
+      "id": "r6:asset-frus1904-d124.txt",
+      "source_id": "r6:s-124",
+      "path": "evidence/frus1904-d124.txt",
+      "sha256": "717311ce1811462c83479e3da0adf423352acd9203e05b22155f40870e2f2c17",
+      "bytes": 514,
+      "format": "text",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d124",
+      "inspection": "Current whitespace-normalized TEI text extraction"
+    },
+    {
+      "id": "r6:asset-frus1904-d125.txt",
+      "source_id": "r6:s-125",
+      "path": "evidence/frus1904-d125.txt",
+      "sha256": "403f43fef87ec13f22c379c37eda62d2d5bb806e55b29343a0771c032af87493",
+      "bytes": 381,
+      "format": "text",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d125",
+      "inspection": "Current whitespace-normalized TEI text extraction"
+    },
+    {
+      "id": "r6:asset-frus1904-d126.txt",
+      "source_id": "r6:s-126",
+      "path": "evidence/frus1904-d126.txt",
+      "sha256": "6e358b9955a3db8850475fee55085f7bafcab1ffc0f93048e9792034af6f2b4f",
+      "bytes": 442,
+      "format": "text",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d126",
+      "inspection": "Current whitespace-normalized TEI text extraction"
+    },
+    {
+      "id": "r6:asset-frus1904-d127.txt",
+      "source_id": "r6:s-127",
+      "path": "evidence/frus1904-d127.txt",
+      "sha256": "a16cc55b9511ca04658f4fe171b3fc1170f67a70c2bb7c65f98fdee1695c7728",
+      "bytes": 321,
+      "format": "text",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d127",
+      "inspection": "Current whitespace-normalized TEI text extraction"
+    },
+    {
+      "id": "r6:asset-frus1904-d17.txt",
+      "source_id": "r6:s-17",
+      "path": "evidence/frus1904-d17.txt",
+      "sha256": "81d41488a3b5917d7095a8764fd7f7db38bc811274be7033ca644b96f6bca3f4",
+      "bytes": 3336,
+      "format": "text",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d17",
+      "inspection": "Current whitespace-normalized TEI text extraction"
+    },
+    {
+      "id": "r6:asset-frus1904-d18.txt",
+      "source_id": "r6:s-18",
+      "path": "evidence/frus1904-d18.txt",
+      "sha256": "ffce3998780b99251a3b6ff14f2a6ec770fbf68c12fab3b4fd005c5fc63b230e",
+      "bytes": 9052,
+      "format": "text",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d18",
+      "inspection": "Current whitespace-normalized TEI text extraction"
+    },
+    {
+      "id": "r6:asset-frus1904-d430.txt",
+      "source_id": "frus:1904:430",
+      "path": "evidence/frus1904-d430.txt",
+      "sha256": "dbdb7b55e39787690c3118531318a875709ee1a4cefc698b738dc5f78c30a598",
+      "bytes": 2733,
+      "format": "text",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d430",
+      "inspection": "Current whitespace-normalized TEI text extraction"
+    },
+    {
+      "id": "r6:asset-frus1904-d430.xml",
+      "source_id": "frus:1904:430",
+      "path": "evidence/frus1904-d430.xml",
+      "sha256": "aa0167f06e631f784a5f34eddad771cdc810803bf8fe1860dc4935f0169032ff",
+      "bytes": 5219,
+      "format": "xml",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d430",
+      "inspection": "Official TEI element extracted by XML serialization, not original"
+    },
+    {
+      "id": "r6:asset-frus1904-d431.txt",
+      "source_id": "r6:s-431",
+      "path": "evidence/frus1904-d431.txt",
+      "sha256": "ae188adef6fb56807813a9a8cfa39b5f17266b340d8957c7bc3baa83ca7bf0e0",
+      "bytes": 1705,
+      "format": "text",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d431",
+      "inspection": "Current whitespace-normalized TEI text extraction"
+    },
+    {
+      "id": "r6:asset-frus1904-d450.txt",
+      "source_id": "r6:s-450",
+      "path": "evidence/frus1904-d450.txt",
+      "sha256": "da8cb2f0a8419dc5d7a0349dbf19d12908367db10eb708d6b46d6d88cfc23aa3",
+      "bytes": 346,
+      "format": "text",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d450",
+      "inspection": "Current whitespace-normalized TEI text extraction"
+    },
+    {
+      "id": "r6:asset-frus1904-d92.txt",
+      "source_id": "r6:s-92",
+      "path": "evidence/frus1904-d92.txt",
+      "sha256": "48ccf6cb7b8110b5310721364127a5ffabc4a633c64d0ba4c172411f2919ea34",
+      "bytes": 7140,
+      "format": "text",
+      "origin_url": "https://history.state.gov/historicaldocuments/frus1904/d92",
+      "inspection": "Current whitespace-normalized TEI text extraction"
+    }
+  ],
+  "methods": [
+    "Official full TEI downloaded, selected document elements extracted using XML serializer",
+    "Official Hansard HTML downloaded, debate text inspected",
+    "NIKH text inspected via web; selected current extracts saved, HTTP400downloads recorded"
+  ],
+  "original_images_confirmed": 0
+}

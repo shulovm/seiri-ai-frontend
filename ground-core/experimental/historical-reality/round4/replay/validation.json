@@ -1,0 +1,50 @@
+{
+  "dataset_sha256": "055fb122cf4fa9137f3d9145b579885a41fbe0e3812441bf921bd950a34b6807",
+  "counts": {
+    "actors": 67,
+    "sources": 42,
+    "claims": 147,
+    "relations": 149,
+    "new_actors": 24,
+    "new_sources": 10,
+    "new_claims": 83,
+    "records": 103,
+    "record_kinds": {
+      "event_candidate": 6,
+      "episode_alignment": 4,
+      "observation": 6,
+      "temporal_evidence": 11,
+      "spatial_evidence": 8,
+      "quantity": 23,
+      "contrast": 16,
+      "independence": 5,
+      "state_description": 6,
+      "knowledge_stage": 8,
+      "silence": 2,
+      "modality_boundary": 1,
+      "reconstruction": 7
+    },
+    "documentary_records": 39,
+    "searches": 10,
+    "assets": 17,
+    "reconstruction_versions": 1
+  },
+  "derived_traces": 142,
+  "assets_validated_including_parents": 31,
+  "parent_integrity": "Round1–3 datasets and Round1 landscape SHA256 matched; inherited assets matched",
+  "canonical_projection": {
+    "claims": 147,
+    "historical_events": 0,
+    "historical_states": 0,
+    "scope": "Source content only; inherited0.95isuncalibratedtext-attributionestimate"
+  },
+  "validation": "serialize/reload/materialize equality; every derived record traces to source; asset hash/size/magic; file-store reload; core support routes retained",
+  "limits": [
+    "Novik representation partial",
+    "Russian local clock and calendar not independently calibrated",
+    "Original logs/messages/repair records not inspected",
+    "Pallada/Pallida alignment probable only",
+    "Photograph uninspected; catalogue only",
+    "No government reading/knowledge inferred"
+  ]
+}

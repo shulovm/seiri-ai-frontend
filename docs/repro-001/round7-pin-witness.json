@@ -1,0 +1,3061 @@
+{
+  "files": [
+    {
+      "path": "docs/HISTORICAL_REALITY_RUSSO_JAPANESE_WAR_ROUND1.md",
+      "sha256": "21f098c8d0bc7b200bfaee70c5c7179eef3794989caaba4816db7fa3e2bf4dc6"
+    },
+    {
+      "path": "docs/HISTORICAL_REALITY_RUSSO_JAPANESE_WAR_ROUND2.md",
+      "sha256": "bea2d8815ae304529a55721a1e3db6662f7f1a5a3c791da1e0f1757d52bc8f9a"
+    },
+    {
+      "path": "docs/HISTORICAL_REALITY_RUSSO_JAPANESE_WAR_ROUND3.md",
+      "sha256": "c63042dbdaa28cd19e8968941723f5b3640a2be47b1f266efa13e8cef9f6668d"
+    },
+    {
+      "path": "docs/HISTORICAL_REALITY_RUSSO_JAPANESE_WAR_ROUND4.md",
+      "sha256": "a252719fc8cc65e46bdec10d9daf8b95e0b2d1f6f59efe098b9d0d27de7f32ab"
+    },
+    {
+      "path": "docs/HISTORICAL_REALITY_RUSSO_JAPANESE_WAR_ROUND5.md",
+      "sha256": "fd7ee93870cf7ee07997728b7ebd8554f86977d6281a12b1a807a74a57fb2ca4"
+    },
+    {
+      "path": "docs/HISTORICAL_REALITY_RUSSO_JAPANESE_WAR_ROUND6.md",
+      "sha256": "85f6f17236f2cbcd62b660d0a34ab061a9f9d24acd909e690cd795e29ba29d06"
+    },
+    {
+      "path": "ground-core/__tests__/agency-core.test.ts",
+      "sha256": "d4d6dcdcaf218aaad6868a810122e97fb9c868b0c4c388e9856848a6eb176b95"
+    },
+    {
+      "path": "ground-core/__tests__/attention-basis-coverage-core.test.ts",
+      "sha256": "462d7fde971dc1fca22d202c88f30699db0ccb7b63655925052137df565e33fd"
+    },
+    {
+      "path": "ground-core/__tests__/attention-basis-requirement-core.test.ts",
+      "sha256": "44fa0d4e668b94dde27f4a91a1f60773a9812224ef7fe6e445413ab7ad461f3a"
+    },
+    {
+      "path": "ground-core/__tests__/attention-basis-resolution-core.test.ts",
+      "sha256": "8bc6fab8747f47788b56c5a36657c9d3633153ccf7860cc66d3f7036e3a8bc9a"
+    },
+    {
+      "path": "ground-core/__tests__/attention-candidate-core.test.ts",
+      "sha256": "2cfe073497d17752241669d3ef5569fcc438a6a476e506d2af98a40d90028b21"
+    },
+    {
+      "path": "ground-core/__tests__/attention-consideration-core.test.ts",
+      "sha256": "078a4c306d7ad404e44edf1af0a8282effb376608912831aa54c2d1508c8ecee"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-applicability-composition-core.test.ts",
+      "sha256": "e41fe3b8d88c082897ed313d526ece6d6ffeac0dd23108f7965a6be3f36a92db"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-availability-core.test.ts",
+      "sha256": "27070586fae0024635cd55cdb27fbd0e7034171933d44d2b81be97ca59297b1a"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-availability-temporal-applicability-core.test.ts",
+      "sha256": "4d631e2218f8f484c946be3d2fc6d78219747d0d615ea8ad28996119cd94da23"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-declaration-match-core.test.ts",
+      "sha256": "d5f40e07c7806fe7ecfeb09b03f732d2b6b8301785b7aab22eae538e5a111815"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-declaration-temporal-applicability-core.test.ts",
+      "sha256": "3c3544c440b912bc3f9835306177969891536e735994af871b3ab0398dddac48"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-dimension-acceptance-criteria-core.test.ts",
+      "sha256": "68d0f42c7f6661d2e59bb29d746e899521a6c682dff0f7370171dc0dcc84f96b"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-dimension-source-aggregation-outcome-core.test.ts",
+      "sha256": "cb59238214b2dc62915a478c429315cba899696feef192bd883e7a392ce735d8"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-dimension-source-aggregation-policy-core.test.ts",
+      "sha256": "145e2af6b3c048e0c3306c9508ce761c7a66febb91f466ba84ce3ba08d9fcb72"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-evaluation-dimension-policy-core.test.ts",
+      "sha256": "4d4d9c3347947873d9671c33709fd7a2531f50e73d70c030fdd722860c35c2e5"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-interpretation-core.test.ts",
+      "sha256": "6d8cf693d1cd76d0b41f6d47722f10278f516a189264456268b936e8c09cf2d4"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-interpretation-policy-core.test.ts",
+      "sha256": "29e15dbb2bdc4835119f687f4fd06b7b5068a63f26218b83d646a82f4611b243"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-required-dimension-coverage-core.test.ts",
+      "sha256": "1d8db2d562cf6f896d49545e169c6f6393ea3fb29ff1c16a3d30ab55900827c7"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-required-dimension-evaluation-state-core.test.ts",
+      "sha256": "7d4273e0d897e430cdd5c272a80fb1bef6dd10bc07d8378f22fa03b6d0c7adc1"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-requirement-core.test.ts",
+      "sha256": "fb26ba8f0e0eebdf02b52dbd047b1a135db05f848d1046ffe06f234bb91027a4"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-requirement-dimension-aggregation-policy-core.test.ts",
+      "sha256": "0bc2e25fe00a9e0f044eb60e508066a63c375a73c40bbf1fea41b4dc24797a4f"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-requirement-dimension-aggregation-readiness-core.test.ts",
+      "sha256": "eb3e16259c4403a4fa68bfd5ba80983be2ce6069ae0b7ddfb22aac65070c491b"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-requirement-dimension-aggregation-readiness-policy-core.test.ts",
+      "sha256": "8b05d1669dd836bbd7e90be871f2840de423fd479529d4feefacf242dc549cb0"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-requirement-dimension-aggregation-result-core.test.ts",
+      "sha256": "7dead0fcb4d5d31b1a32d1ad9326f4000b15e9d9078c20f1b374b655076915de"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-requirement-evaluation-state-core.test.ts",
+      "sha256": "658ca81cf81c24aed010e86774fcbebea3c00fcb2ae7e28bb08eb3c5d1829487"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-requirement-satisfaction-core.test.ts",
+      "sha256": "62f8fbdd7f8cee90f55431600c644c3b149546fb514a9e3ef19d07058a4eb8d4"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-requirement-satisfaction-interpretation-core.test.ts",
+      "sha256": "6ebd83cd243d0956059bd0e696cce8a5b4e5c4c0902351a53fd958448716ec4b"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-requirement-satisfaction-interpretation-policy-core.test.ts",
+      "sha256": "37d1929626af772d771bcc822d8299db4e2cadf481f8da59bdb532b0cec11c7d"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-requirement-set-composition-policy-core.test.ts",
+      "sha256": "530c2473c5dcc6f1ffe69dbdfcb519d464125e3e41b5711a6afea2d7c0203b78"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-requirement-set-composition-readiness-core.test.ts",
+      "sha256": "90dc08f4d8262056e5e66cfccd544ea8b26d0e0898aeb6d4fede5eebf465ad5d"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-requirement-set-composition-readiness-policy-core.test.ts",
+      "sha256": "8daa98540cd9f2857de547972a8b97187a3659798c45b967c70725b21e63f818"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-requirement-set-composition-result-core.test.ts",
+      "sha256": "04dbbc9b6b8a6faedc1ffb6cc4dac20dda405db384240dbb4b66654f20e932c6"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-requirement-set-evaluation-state-core.test.ts",
+      "sha256": "fa399f0d0cf2a69aed67ec3017b7477b35e584a16401425ed734cd331bdd3143"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-scope-applicability-core.test.ts",
+      "sha256": "91194bb1e9ba3def9c45d75911943f5c78dcc6cecc29435f55ca36c5c62ad3b6"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-scope-requirement-core.test.ts",
+      "sha256": "ac7d6596d668222ea499ebbe0809256cdc712f3f84e08abcdd40f0274f7c0ca5"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-source-acceptance-match-core.test.ts",
+      "sha256": "2e7e066ec6ffcead027cbe6cd9a3f9ee11e1a6033cf747f89ffe560cbdaa57ee"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-state-composition-core.test.ts",
+      "sha256": "187c914ff0dbab1ca758878765f1097b4d1bbf51966d6aa1b3004b2f9a07ce86"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-state-core.test.ts",
+      "sha256": "345cf0282c1986a3ea15109349313fbf1cfd3ddcee6107c91b3ac9dbfc9a5137"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-temporal-requirement-core.test.ts",
+      "sha256": "1dbcdaaa6a9e90433a95e3ea0577c0985a1ce6db5578cea9ebdcb4c08cb0e9d1"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-verification-core.test.ts",
+      "sha256": "fad1b44ce806b35518205fbba9efa5b5d7c7032bea94c5adcd37b88a85f1aab6"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-capability-verification-temporal-applicability-core.test.ts",
+      "sha256": "3b8b89e9c54b92a8c4b5e86f85486fae49c51184ce62027ff4ebd82a86437b6b"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-declared-permission-assessment-core.test.ts",
+      "sha256": "f376e0566bcbc7a15d6c70d6e217f541516dbd4b015bf3dead4da2b6d93a6fa2"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-declared-permission-interpretation-core.test.ts",
+      "sha256": "49c8a65e0d8dc99415cf140fde4eb96ce565c0c15d5d8c827c82441a9ea9d5b7"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-declared-permission-interpretation-policy-core.test.ts",
+      "sha256": "b2b348b1f9267059926f57181a6bb4073848e831f21026aca75c99c9f3424d41"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-eligibility-core.test.ts",
+      "sha256": "c6a59ac11b08eb988f3d4f1c5c13d6d77022510515ee00d86e4ebcd3d4901dc0"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-observer-candidate-core.test.ts",
+      "sha256": "1d83d730f7b07fe36ef4064543dd7c73544b8200bbd6b12c8151f8c271c865ec"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-dimension-evaluation-state-core.test.ts",
+      "sha256": "f04bf6ffdbb78c227d196f8e220c914fa32ec99326584eeb92ba17753edd9b0a"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-dimension-evaluation-state-interpretation-basis-core.test.ts",
+      "sha256": "be4ba0ffa6e743701dad181b8288e428e5748ad856a5cea6fa360aef74acc086"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-dimension-evaluation-state-interpretation-policy-core.test.ts",
+      "sha256": "467f9bdc5a8104f9c7e7182c74f10473ef4f8d67d80001cc62416991183c1857"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-dimension-satisfaction-state-core.test.ts",
+      "sha256": "6c7c7bb56ea0c7fa7a0afbe89803aff3ca4b04d2e3be6c38bd97a7e24704c72b"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-evaluation-instant-core.test.ts",
+      "sha256": "67fb72a2d32d3320e704e5db62f21f1d8d72575db188eed40517f468ced654ab"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-evidence-evaluation-state-core.test.ts",
+      "sha256": "9f920955f9424992755345044c2371dce89de1603103fb45fd0909ee80008bf1"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-evidence-evaluation-state-interpretation-basis-core.test.ts",
+      "sha256": "0699ae0e8ac78caa298dcbbe7fc96570fdc1d4a6ab81d0760bb9778130a40b20"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-evidence-evaluation-state-interpretation-policy-core.test.ts",
+      "sha256": "279e31e08b69ac5351fb100832f6acffe8d2926a07900d7e5713361efc8791da"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-observation-context-binding-core.test.ts",
+      "sha256": "f039e39d6425d14420fcde63dbee5502d5de90090ab6dfde9211dc4fa83f853f"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-required-dimension-coverage-core.test.ts",
+      "sha256": "28645e30e4270f063bc53b690308c045f2e992b58d10a6878e03a71c4647924c"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-source-acceptance-criteria-core.test.ts",
+      "sha256": "288a05b1f9f2bf5deb2f8302f86e3e2a002b24f31c379fba1c2bf4b1edcbf23f"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-source-acceptance-match-core.test.ts",
+      "sha256": "36ca0ddef2bac5ba5b10dfac66645f65adea5728aa8dd4f5048bd8fd4d24444f"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-source-aggregation-policy-core.test.ts",
+      "sha256": "a3d515e19a223fa40935ed71d73259a18061cd4c6b8d076f5c89a28ed1ff3b1e"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-source-aggregation-readiness-basis-core.test.ts",
+      "sha256": "7fe99e4369a968ee4f74d78b4604524b8163d59827ee1628ba70197c62841ba8"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-source-aggregation-readiness-policy-core.test.ts",
+      "sha256": "02460c167818b1a9eed34f03559c82de64d869259ad47ccc39f2a1d475b0237e"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-source-aggregation-result-core.test.ts",
+      "sha256": "0329c61c136c2a227b87d82eb78c572675c17a0adde1a9f65ce60028c90f76ff"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-source-bridge-core.test.ts",
+      "sha256": "5e6663a639f3485ecded52038780192c41b2d95799124adb6296aa6b015de69f"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-authority-source-resolution-classification-core.test.ts",
+      "sha256": "9e2e2b924e04b17271e1a2b9f1beae4796648a196e2614c9d44a4eecce1f6d04"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-canonical-authority-state-core.test.ts",
+      "sha256": "93515f9644531d5f1def3d3f9fbfd81889b35b8b740c36ef09ea2df072d5d378"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-canonical-per-binding-resource-readiness-evidence-state-core.test.ts",
+      "sha256": "89d4913202ab28dba9be1e160f56907472df0284a7880d11c5834a9a4cb1f995"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-canonical-per-requirement-resource-readiness-binding-evidence-composition-state-core.test.ts",
+      "sha256": "83e97e7e4423bb87348fde9b4f52bc2b1a91da5c4348e939089a2f60a708f874"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-capability-state-source-core.test.ts",
+      "sha256": "f1500db6c1785051438083778362c90e3e3be6da57c4537730608788b0de7b89"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-dimension-policy-core.test.ts",
+      "sha256": "288eaaa94fc458cdd2bf48c7d4642f6a660569c74ae9edae7ce3538f6b848360"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-observation-context-authority-provenance-assessment-core.test.ts",
+      "sha256": "8963779759e640232c1f46f5862d4dadbae692224d28b265b67a07542c754ed1"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-observation-context-declared-authority-assessment-core.test.ts",
+      "sha256": "e8f8224186a6d300ebbee961cfe606ed2ce86ed1d15efc0784dc87d6f870aac3"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-permission-dimension-evaluation-state-core.test.ts",
+      "sha256": "0c034816198160d6ec80f834569a352022db4b6a660777531547adcb7b07fd41"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-permission-dimension-evaluation-state-interpretation-basis-core.test.ts",
+      "sha256": "7b5d94095d37ab569af1a53b0f8df2871c818ce5670bc7655469ffa19af607f1"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-permission-dimension-evaluation-state-interpretation-policy-core.test.ts",
+      "sha256": "8fba9e8c7d089c3453b3b005447a344fc582f1767dfc1fc3dbb56ce3ac83df39"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-permission-dimension-satisfaction-state-core.test.ts",
+      "sha256": "1862a83a33b80efe92a86846b613e80630ff15005304ab049b3f0f414a27a742"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-permission-required-dimension-coverage-core.test.ts",
+      "sha256": "1d90696de4c64ef8e74ee745809633713b5a2b2ff8d17fac58238472c1106583"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-permission-source-acceptance-criteria-core.test.ts",
+      "sha256": "59c793791ddf60a94498c56042b43665ef8f29dd5aac3bb178f114e7b0535ea1"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-permission-source-acceptance-match-core.test.ts",
+      "sha256": "55368685053a95fd23410ab4595af2fb1f3e9fb672e086a5ecd1a66a9e2b91b9"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-permission-source-aggregation-policy-core.test.ts",
+      "sha256": "8b3324b9cab03feeddad9c2213722a79f31a0c3f422a195eb6a66ee87e42cba7"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-permission-source-aggregation-readiness-basis-core.test.ts",
+      "sha256": "8b1738f4dbb61ca20c7f0315581462f892bbeff24ed2a5c7c9d58dd3d8bfffdf"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-permission-source-aggregation-readiness-policy-core.test.ts",
+      "sha256": "77d9f06346df3acaf37a20b072228eb07d3312f441b921316dedba0cc1091f24"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-permission-source-aggregation-result-core.test.ts",
+      "sha256": "cee02750bb3543985dc6d7ee129685ddd6809079c23b0f2f89fa4cb4e5a80dce"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-permission-source-resolution-classification-core.test.ts",
+      "sha256": "f6027866c65707e76ea9c43e166182a939b774ce7ffa34fca7d1946fcfb85812"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-permission-state-source-core.test.ts",
+      "sha256": "002eac6a27c4d566fef12dc9495d8a60b8e0d2c3cfc8baf45c67ca50f6b362dd"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-policy-core.test.ts",
+      "sha256": "adeacb041edd4520ddc57d767b97a96f202b04aa689ad226e9f217693b80df4b"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-readiness-basis-core.test.ts",
+      "sha256": "19ad9040b9fa414d7c3f9e540696ad473dc8880d7c11df353633a735e52aa065"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-readiness-policy-core.test.ts",
+      "sha256": "8c7ba01409bace9997bffc726a6ce517486d30690337b8e00ba696d94796e73d"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-result-core.test.ts",
+      "sha256": "af89d394ef41ade3d22be9f19adf327969e9573ab83b43564dd583a43ffc2b70"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-result-interpretation-basis-core.test.ts",
+      "sha256": "f448f11a01e61fed7424e962ec9187bda8f9ff1c6bdc8cbaffdf04557a66e6a6"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-result-interpretation-policy-core.test.ts",
+      "sha256": "de577d9fca67db875524534e91ccb6d385855577d28a3ac151a55c715a91431c"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-canonical-aggregated-declared-potential-contribution-capacity-compatibility-evidence-state-core.test.ts",
+      "sha256": "55f046a2c57eea58349d05d60ce797978346d8179008598d9424dc767daa4eae"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-canonical-declared-potential-contribution-required-amount-compatibility-evidence-state-core.test.ts",
+      "sha256": "3346888416fae45d54d6946c1f631503df6c0da9664f02fcb04f8b59772ee132"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-canonical-per-source-declared-potential-contribution-capacity-relation-evidence-state-core.test.ts",
+      "sha256": "c9901f8b7277615c1f64263431a925a4603e5db71c3e75a67dad953938c670a7"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-policy-core.test.ts",
+      "sha256": "0c79ed9d8066d266d230f3f583bbfb550e8703909edd944d63d98287bc82a93c"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-readiness-basis-core.test.ts",
+      "sha256": "bd4e381b2ef936e8c6e743337135a608d5d690912ce2fef922e40b0537e91f7f"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-readiness-policy-core.test.ts",
+      "sha256": "549f4cbab5257acfecfa3e43d5a911ab719620deb7059c04ceeeeddcf3199895"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-result-core.test.ts",
+      "sha256": "49207353aa5cc32da6bc6dbc6cb128d1bd16cc16c43bf9c03b37d87bf8bef729"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-result-interpretation-basis-core.test.ts",
+      "sha256": "c503ac82152d36df06bb7a97b1c9598947c41b0c6735e2b0551d5d70e0a93d1b"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-result-interpretation-policy-core.test.ts",
+      "sha256": "3d35d066c95541b1e930d12266eab433b133194051f0bfcf9b639a506849c96c"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-relation-interpretation-basis-core.test.ts",
+      "sha256": "9e85d54171f4571b320a85e1ad6dceadf0c3c14cd8e5877f4b1e8660023347ca"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-relation-interpretation-policy-core.test.ts",
+      "sha256": "53898d9e61f28696e6116543cf459bdffaf929552af185932688bae99d24e795"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-quantity-compatibility-heterogeneous-evaluation-core.test.ts",
+      "sha256": "b897d574a1c72d9a8ff95cb425646a5b9a1298fdc55d2c926f770d01515b2575"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-raw-relation-basis-core.test.ts",
+      "sha256": "c8d5a9ce51cf83eddccbb210ff447e24d8e9b0e2b2b15057a7023d8f55f0c4b4"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-required-amount-compatibility-basis-core.test.ts",
+      "sha256": "38a05007b5d2cfd3f2d24c1fe5bc2dfbada571197f2a0c6bb517cc197f9408dc"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-evaluation-instant-core.test.ts",
+      "sha256": "452bbff47ca3f7fb07f59e96752631819c092caf5159b110fb0718e12f9ba541"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-evidence-evaluation-state-core.test.ts",
+      "sha256": "bad1375ab59dc959a5d2fa8743dc9ceef63549f57cb73ab9b1ec5c08b477dfa4"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-evidence-evaluation-state-interpretation-basis-core.test.ts",
+      "sha256": "9599ddeb998aa011cc30d3f7a718e1b4bf7109010b856ae9e1459a22428d9507"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-evidence-evaluation-state-interpretation-policy-core.test.ts",
+      "sha256": "f742340f4c50b905590ea7fcd4e49551a66672f5aad47ec2249a5611bf72b42c"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-observation-context-binding-core.test.ts",
+      "sha256": "6e3f6261c6f472e3dd84845fc94c06f50d1e81e429277996b3a1b1e527030cc5"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-per-binding-declared-capacity-required-amount-quantity-relation-basis-core.test.ts",
+      "sha256": "33b64cd242633e056b4bb415c02202fd24b61b49dbedc113b79e30175985c400"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-physical-potential-contribution-declaration-core.test.ts",
+      "sha256": "d28af114f7e088142d7fa796347e74834cad1d658018021798dd12dd4da32bff"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-operational-eligibility-resource-readiness-raw-evidence-assessment-core.test.ts",
+      "sha256": "7063dd08fa3281966b6a701a59677ba0b945e766cdc004007789f1137864ff34"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-permission-context-binding-core.test.ts",
+      "sha256": "ba8136fa90658a861563e3bf913b6e7bd25d276d9301843ebfedc669a7efa0ff"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-permission-state-core.test.ts",
+      "sha256": "f142ab6f906cf1c07c733e55596687b249fc923666fc1d19c59bb815e0346fb3"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-planning-core.test.ts",
+      "sha256": "8b6ccb8ba593310c09df8eb061901cda2f40347bd609692e85efdab57b846b5f"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-resource-declared-potential-contribution-quantity-kind-semantic-declaration-core.test.ts",
+      "sha256": "bd3178adf6159b6ee09db6a640950c63a5cfb2486ade50fe8ccdc14a42b5c56a"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-resource-required-amount-semantic-declaration-core.test.ts",
+      "sha256": "94e98bce67625de921abd2da4f6fc8f3c687bb4440ce0a23fb699d31068e9086"
+    },
+    {
+      "path": "ground-core/__tests__/attention-observation-resource-requirement-core.test.ts",
+      "sha256": "b8fdf9ccb8702b857759f21c2108d4c4b93464401b3870ef4484878c3bb5763c"
+    },
+    {
+      "path": "ground-core/__tests__/attention-resolution-eligibility-core.test.ts",
+      "sha256": "32a36e188ea0e5092d54f6c46aa905f8586e02ac0662fa908810066cb6579fee"
+    },
+    {
+      "path": "ground-core/__tests__/belief-reconciliation.test.ts",
+      "sha256": "685fb958cb01d99d590151842ca4e3f1c6ba5144a6714401895c0f062bc57c18"
+    },
+    {
+      "path": "ground-core/__tests__/brief-flow-notes.test.ts",
+      "sha256": "3bcff2fd5c846c481ac24c546d43b9bf9c774775bfebfbf124fef42a0a55e912"
+    },
+    {
+      "path": "ground-core/__tests__/brief-risk-diversity.test.ts",
+      "sha256": "8b719f818eee15613ee3e59566b55786f7d05c860d700c13229cb749c9eefb18"
+    },
+    {
+      "path": "ground-core/__tests__/canonical-selected-source-aggregated-declared-resource-availability-evidence-state-core.test.ts",
+      "sha256": "168d0404bb5f3eab9fd7e44421653ed02600809b179b4393fd0204b3e21a91f2"
+    },
+    {
+      "path": "ground-core/__tests__/capability-core.test.ts",
+      "sha256": "ed74293834176d9c1509b87c15bba273ef14f8ab69b1d9e16174182da921e7ae"
+    },
+    {
+      "path": "ground-core/__tests__/cli.test.ts",
+      "sha256": "accca1a77787b55efbbca0183841253638a4680261b2bc5b372db1954cc4cce1"
+    },
+    {
+      "path": "ground-core/__tests__/commitment-acceptance-core.test.ts",
+      "sha256": "753f99d15d49b0f168c4d7dabc934e9bc797ddac83e81aff677060a76d93f343"
+    },
+    {
+      "path": "ground-core/__tests__/commitment-conditional-term-core.test.ts",
+      "sha256": "02ca070158d49ad3f9a526ba34d3b8c268856d6e5b83e5d831e26810d7bef091"
+    },
+    {
+      "path": "ground-core/__tests__/commitment-core.test.ts",
+      "sha256": "5e913c92152e65490d01fe02ac29ab56273ec5b7d4385c655db0a771ff73f8b6"
+    },
+    {
+      "path": "ground-core/__tests__/commitment-temporal-term-core.test.ts",
+      "sha256": "d85aab677f66e6849635d4e3a81c857b7fb6773c52b9d56bca417634aa661463"
+    },
+    {
+      "path": "ground-core/__tests__/decision-core.test.ts",
+      "sha256": "a9df2791576bb61041e5abdddaaae7e55921a2589f67c78feb6f99aa4faf125b"
+    },
+    {
+      "path": "ground-core/__tests__/decision-memory-core.test.ts",
+      "sha256": "151a0456e2dcdf216390a069361401ebdbf994844d95e6ec1781ff8e7a49868f"
+    },
+    {
+      "path": "ground-core/__tests__/declared-resource-availability-per-source-evidence-state-core.test.ts",
+      "sha256": "3eaacb87c862ba5aaf0b8e39c12f515568c30aee4e446b3e9e77cba20ec17059"
+    },
+    {
+      "path": "ground-core/__tests__/declared-resource-availability-source-aggregation-policy-core.test.ts",
+      "sha256": "17481f38666b36a787432eaff112ade5972bbf5c50b8b433694e4c75e322fc0b"
+    },
+    {
+      "path": "ground-core/__tests__/declared-resource-availability-source-aggregation-readiness-basis-core.test.ts",
+      "sha256": "5eb39503a0d76ea590eec62a9e83ab07d69e95fa6a56640011ab8cb41e11c17e"
+    },
+    {
+      "path": "ground-core/__tests__/declared-resource-availability-source-aggregation-readiness-policy-core.test.ts",
+      "sha256": "92ccd3884ef9f4bbd5f3634fd2408a6e6d465f62eb6739e431cf03faf5b5c77f"
+    },
+    {
+      "path": "ground-core/__tests__/declared-resource-availability-source-aggregation-result-core.test.ts",
+      "sha256": "d3cd66a2f4ae1f0de00e7a5814d0cb48081196ec95e477287f7651d40054637e"
+    },
+    {
+      "path": "ground-core/__tests__/declared-resource-availability-source-aggregation-result-interpretation-basis-core.test.ts",
+      "sha256": "f1eb885d9e39e54c1431a2e8ec581d76087dd9e9261570808f7fbca950b855be"
+    },
+    {
+      "path": "ground-core/__tests__/declared-resource-availability-source-aggregation-result-interpretation-policy-core.test.ts",
+      "sha256": "565d2d5765e14ef9b4688a8fc4646b95e40373836941b97fbc813398d104f4bd"
+    },
+    {
+      "path": "ground-core/__tests__/director-engine.test.ts",
+      "sha256": "6e7b02a93acc595abc15bcac8a8d51fdcc7aab3d95d27732d2afc7f8973b6e16"
+    },
+    {
+      "path": "ground-core/__tests__/discovery.test.ts",
+      "sha256": "27da7e63297eaf1537d5393a2e5a52af9953f3cdbac45085429d9e76735a563c"
+    },
+    {
+      "path": "ground-core/__tests__/epistemic-core.test.ts",
+      "sha256": "84105d79eba3a69e59c5d866070ee4783c231f884f7c4ed2773bf671e28db0f1"
+    },
+    {
+      "path": "ground-core/__tests__/epistemic-gaps.test.ts",
+      "sha256": "e74d9f6356494e582aa1deb699952f2ee6252166f4fdaff64baf42844963d615"
+    },
+    {
+      "path": "ground-core/__tests__/extraction.test.ts",
+      "sha256": "5f1c11be8fd9fd6c973dbb3bbf339d611c9bc43b41b20b67422cb4a9a51da659"
+    },
+    {
+      "path": "ground-core/__tests__/feasibility-core.test.ts",
+      "sha256": "7e11fff0790eb3ea892537645ec74a58499eae5709c453eb1837be839632637b"
+    },
+    {
+      "path": "ground-core/__tests__/file-store.test.ts",
+      "sha256": "6f72cd8fbba23c99d8ab06d457bea0eb7384a87636abedf4874765820c11ce2e"
+    },
+    {
+      "path": "ground-core/__tests__/fixtures/mode-golden-fixtures.ts",
+      "sha256": "89fe61dc54e4d9de5e52807429f002c4b4eb76bf8f96a76f9cb56cda4b41edb9"
+    },
+    {
+      "path": "ground-core/__tests__/fixtures.ts",
+      "sha256": "451bc00ade7984274ddf37de803ddf9c295729728a1f985d91c1217db8b845a2"
+    },
+    {
+      "path": "ground-core/__tests__/governance-core.test.ts",
+      "sha256": "86ef8c63242c1fa95ecc560ee791b01ab8e8d22bcbdf6df52f88f879b3626a1a"
+    },
+    {
+      "path": "ground-core/__tests__/governance-provenance.test.ts",
+      "sha256": "3192efbaa74ac375f9f2f3ae9af6a2cb0b648c1086dacc4b8ef0874ea53141e1"
+    },
+    {
+      "path": "ground-core/__tests__/historical-reality-round1.test.ts",
+      "sha256": "1057aa8223455f26f211d9eccd3f9f0a278d45d345e0c8e3c0f1463643f8df00"
+    },
+    {
+      "path": "ground-core/__tests__/historical-reality-round2.test.ts",
+      "sha256": "975cc34d57a5339872bd73ce2cd5f3f96a55416e0bcf12d51796b75d32ce0e37"
+    },
+    {
+      "path": "ground-core/__tests__/historical-reality-round3.test.ts",
+      "sha256": "c22f705c8e30e66a3b3fb4b245509fa352c9005a752fa308f4c2be9e962de273"
+    },
+    {
+      "path": "ground-core/__tests__/historical-reality-round4.test.ts",
+      "sha256": "0bed5a223fd3935708bf3cab3380588472ea5049cc8655c15f225f18a9c2c728"
+    },
+    {
+      "path": "ground-core/__tests__/historical-reality-round5.test.ts",
+      "sha256": "4881ca55ad6f514a48c6a1a7b243e76cf8f57e983522d9304a47dd11b3a70b93"
+    },
+    {
+      "path": "ground-core/__tests__/historical-reality-round6.test.ts",
+      "sha256": "d43eb5ed4e8a8cdf7f34e75d2f504992d2ae9d76316825a24a0567dd68dff0ef"
+    },
+    {
+      "path": "ground-core/__tests__/human-review-bridge.test.ts",
+      "sha256": "cb90ac3d9139a805c01dd0dbd082d818abe6cba9a4fffa8229555fa985945197"
+    },
+    {
+      "path": "ground-core/__tests__/impact-core.test.ts",
+      "sha256": "0651ef2c84e38e9738aa62f2beed0a37214fa9fc3d097e65c20066a8f60bd4bc"
+    },
+    {
+      "path": "ground-core/__tests__/impact-measurement.test.ts",
+      "sha256": "882a46f21f73a8dfbbab26c5bf1a597eb0c6e8a75f06759c88c2a13508344c8f"
+    },
+    {
+      "path": "ground-core/__tests__/inquiry.test.ts",
+      "sha256": "6ffec892f51c9bed85eac3b28f20583ad3b1b896f0e7fc43e33aa11de735a4d7"
+    },
+    {
+      "path": "ground-core/__tests__/intake.test.ts",
+      "sha256": "46fc67d9b29cd84061618c81dffc7655c90aada2e85bf3143c8c82103b8a6590"
+    },
+    {
+      "path": "ground-core/__tests__/intent-core.test.ts",
+      "sha256": "a0d871169a0472c29008ea96a27346483db863e0b79838633c65bbc60ce6c148"
+    },
+    {
+      "path": "ground-core/__tests__/intervention-core.test.ts",
+      "sha256": "8ae4ba08b2564743438f58cbd105347f0b0636f36ffe69fb21c70733bd3d23cd"
+    },
+    {
+      "path": "ground-core/__tests__/mode-golden-fixtures.test.ts",
+      "sha256": "6b9f4368c8b3966a91f6917cc2e2a106659057f9101cd7125142f150c8492010"
+    },
+    {
+      "path": "ground-core/__tests__/moshimo-first-episode-seed.test.ts",
+      "sha256": "b6a6ca6a993db9cc4d4e187401a8592d6894cf544ebd1e411a4bb0d40b13510a"
+    },
+    {
+      "path": "ground-core/__tests__/nl-canonical.test.ts",
+      "sha256": "96554e450cea3e5ad3b4b043e28cbef1d79a698d3bbf62c04038fdd7d479e672"
+    },
+    {
+      "path": "ground-core/__tests__/nl-channel.test.ts",
+      "sha256": "735f730d73cc4b84ea6211bd84d081ae1b7467640362031b31b95c18271e5ce0"
+    },
+    {
+      "path": "ground-core/__tests__/nl-lifecycle.test.ts",
+      "sha256": "c86b4b2ac9659adea4e2dd3ce9a4d323efabfb011fe1934b965e1d03d70b820f"
+    },
+    {
+      "path": "ground-core/__tests__/normative-discovery.test.ts",
+      "sha256": "97750e2c25f45b72824510597b3502d6d3b0363c0bc8b5ca331cd0a4180368f2"
+    },
+    {
+      "path": "ground-core/__tests__/objective-core.test.ts",
+      "sha256": "86d58091ea1f2cf623e45579b4f314384b9ccafe16924c29439e0a820d56ceef"
+    },
+    {
+      "path": "ground-core/__tests__/objective-discovery.test.ts",
+      "sha256": "8db83ad98dde1b0d71aed7d81f649082c781a1f2ef4b1468dc293ae76d65bba0"
+    },
+    {
+      "path": "ground-core/__tests__/observation-need.test.ts",
+      "sha256": "51c17b82a02d565bf579d33149b489fc9696535d13a967e69c673482df9619ea"
+    },
+    {
+      "path": "ground-core/__tests__/permission-core.test.ts",
+      "sha256": "c72c2252b94c1642238cbb7e88439b1fb21740cd8430430cdf3b69f513d1cb62"
+    },
+    {
+      "path": "ground-core/__tests__/portfolio-director.test.ts",
+      "sha256": "eba388b7cb29d0d7cffb5be42b3bc2769451bfe01bf0a1eaf9b246f306160965"
+    },
+    {
+      "path": "ground-core/__tests__/prospective-core.test.ts",
+      "sha256": "0d16665751390baec63e511db1c65838904b0b2a7e0cf9165eea3d7af8dc7cb1"
+    },
+    {
+      "path": "ground-core/__tests__/prospective-risk-discovery.test.ts",
+      "sha256": "9d6fbd74187dbcb8af6a0098d377ea5719ca4d3fe31dad88135fad04fdd827da"
+    },
+    {
+      "path": "ground-core/__tests__/reality-core.test.ts",
+      "sha256": "9c9333de1e1b7bf59aec79ac11f86e27181d698bde3a59024c177a22f9df1b02"
+    },
+    {
+      "path": "ground-core/__tests__/reality-loop.test.ts",
+      "sha256": "2343623e0820d56afccda790ff9c13aeebc009d0300e12026464fd21966a3816"
+    },
+    {
+      "path": "ground-core/__tests__/reality-semantics.test.ts",
+      "sha256": "25a8ed83d80bd22b4114024a658cca33c1f167d18fa5de808ef8bc5c61924582"
+    },
+    {
+      "path": "ground-core/__tests__/reality-worldline.test.ts",
+      "sha256": "fd9916e89747aa9a0ac7217b4e70b56f8c7fd1f801aaee9b111e3bc65e30370a"
+    },
+    {
+      "path": "ground-core/__tests__/reconcile.test.ts",
+      "sha256": "96fd6ae55e8999e7a590ed52b0cd71a293b3ce107da403a243afa3b1918ce99d"
+    },
+    {
+      "path": "ground-core/__tests__/reference-state.test.ts",
+      "sha256": "81708fec238bb0b71d16c32dcee6c1efda9dae58cf4cf1ad2a5f80a95572e7f1"
+    },
+    {
+      "path": "ground-core/__tests__/resource-commitment-core.test.ts",
+      "sha256": "47dd2e18835252195fe117e1307d864e368264b60c8220daffdc8cb7a541a216"
+    },
+    {
+      "path": "ground-core/__tests__/resource-contention-discovery.test.ts",
+      "sha256": "aae8e9c5980be7cd61d04742407f4248cff7d0b980747713a0ebe688988d9eeb"
+    },
+    {
+      "path": "ground-core/__tests__/resource-core.test.ts",
+      "sha256": "d2c04492576cb76d3583f9fef27d64ab36be9250d4d4c39fdc6446df714a1bc7"
+    },
+    {
+      "path": "ground-core/__tests__/resource-reservation-capacity-pressure-core.test.ts",
+      "sha256": "5dc5bb1297b85ddd109d670a77dd171942d62646de7fd700d4cf6040074f8dba"
+    },
+    {
+      "path": "ground-core/__tests__/resource-reservation-contention-core.test.ts",
+      "sha256": "d80de5504886d2a81619848faa2eaea96c50c9960dc4dc0b8f6e52a17288fc4c"
+    },
+    {
+      "path": "ground-core/__tests__/resource-reservation-core.test.ts",
+      "sha256": "97b1f270ea9d4c2c67497b3f7de33719ca914a2ae52e72707cb0d2842c2896ad"
+    },
+    {
+      "path": "ground-core/__tests__/resource-situation.test.ts",
+      "sha256": "b5dd1418a39d64ade42a3153b8f3083a68720c95ddd577371d389b5b165a6ee2"
+    },
+    {
+      "path": "ground-core/__tests__/semantic-extraction.test.ts",
+      "sha256": "cdcdba85d505f8a4f98d91c4702d0dd0cdb81c6f98d9a27ea2c50cf14adc2682"
+    },
+    {
+      "path": "ground-core/__tests__/session-patch-helper.test.ts",
+      "sha256": "e5851195055834a7038d61b6fb7b463647ec3d3c06035bb3749c91bac543544e"
+    },
+    {
+      "path": "ground-core/__tests__/situation.test.ts",
+      "sha256": "534d57d50d83cc799c0fdf52023678b291f1b7d0ab081af4753f0697797dd2bc"
+    },
+    {
+      "path": "ground-core/__tests__/state-engine.test.ts",
+      "sha256": "df85ae7628489dd95bb5e18b0addee8fe46bb330e72ed298358e43d1bf7c8a7e"
+    },
+    {
+      "path": "ground-core/__tests__/studio-brief-cli.test.ts",
+      "sha256": "1cfcc990bf6cd7d9c16212fc447350eb61e734c42a162500d3266b09d2bae89b"
+    },
+    {
+      "path": "ground-core/__tests__/studio-brief-deep-work-candidates.test.ts",
+      "sha256": "53b096ea34baf64a1fae5f4e1b66c431de8ca0f68205694389eebca3817ad860"
+    },
+    {
+      "path": "ground-core/__tests__/studio-brief-deep-work-focus.test.ts",
+      "sha256": "2d067cc03fc3f7e1f10d38ac69a3d339b6f40e980c763204871c8ebe69708152"
+    },
+    {
+      "path": "ground-core/__tests__/studio-brief-renderer.test.ts",
+      "sha256": "37d85fb2b7bce30b5f7dbd6ff40eced6d148650260c7948f6c9cb6bc950a43e5"
+    },
+    {
+      "path": "ground-core/__tests__/studio-brief-session-focus.test.ts",
+      "sha256": "523ff16945b2ffdc420b4239b4e544e7e2795626022703b3ee8534da299b75ed"
+    },
+    {
+      "path": "ground-core/__tests__/studio-engine.test.ts",
+      "sha256": "b833c7f62e861b41cfaadf54460519cb1093af5baf02fa6c0231996838d3964b"
+    },
+    {
+      "path": "ground-core/__tests__/studio-narrative.test.ts",
+      "sha256": "870c2f927c470fa877e2eea181a87b0293ecbb9c40dbd4e163b5fad291ec56c5"
+    },
+    {
+      "path": "ground-core/__tests__/v0.1.1.test.ts",
+      "sha256": "ab2198ffc703ef343611623692826f7615f1cc9811bd60e453c5945527ddfb30"
+    },
+    {
+      "path": "ground-core/__tests__/validate.test.ts",
+      "sha256": "d768cb1250a6d963ffc7f96f449576b5918399e64411caf2689317d404e144c1"
+    },
+    {
+      "path": "ground-core/cli.ts",
+      "sha256": "7e414b928dd279b1f3247f090b3fce39e44f83f9e7c1d287550b0a3f07c3d1ee"
+    },
+    {
+      "path": "ground-core/director/explain.ts",
+      "sha256": "560e7bd718e674160a9cbf6a6fb860c4cb0f29e948b8974300ef588180ff6694"
+    },
+    {
+      "path": "ground-core/director/portfolio-director.ts",
+      "sha256": "9678a698bcc23d28fe381097fd2853439311913f5d609cada9dcc747c26937e7"
+    },
+    {
+      "path": "ground-core/director/portfolio-scoring.ts",
+      "sha256": "22f6b7f261c1dfa2d54de7f8f2b246d04267cec33595655f5b39c2b3b9ca7627"
+    },
+    {
+      "path": "ground-core/director/portfolio-types.ts",
+      "sha256": "c22d247b2d3d83201eaf4d2e8ffb768e07b3963f4caaab569b6f191e62b97589"
+    },
+    {
+      "path": "ground-core/director/rule-director.ts",
+      "sha256": "ff5816ea9ede54990542d52c574a84de88e11aeae345cd34029ed2d3890821b7"
+    },
+    {
+      "path": "ground-core/director/scoring.ts",
+      "sha256": "951c7f9b76d8cbfc1853a4480c6394e7db7fe70c72299aeeaf2aea4cda97e775"
+    },
+    {
+      "path": "ground-core/director/types.ts",
+      "sha256": "dd29eed07505dedb7a23dc47e608e5db77fe290778c8fb02f13bba9b6064f94d"
+    },
+    {
+      "path": "ground-core/errors.ts",
+      "sha256": "dd920afcade96af30034e07ebb583a2942c6a780ddcffd5d410ae824413a1227"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/README.md",
+      "sha256": "ece32917a264fed2ad9cab6ad1cbb4f9fba4909b2e9bb07e4115ee98a2a801aa"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/manifest.json",
+      "sha256": "329db2fea45bf9714604ecfe8dfd121febfb68686d3e51312bf527cb4970b77a"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/replay/19041904-1904-4904-8904-190419041904.json",
+      "sha256": "863545f650835b2b36c283ed2455cfe6fc31f10fbad78ee8647dc264ae56ad6c"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/replay/reconstruction-traces.json",
+      "sha256": "e74e66ac8168069543b383e83bb3b0bf6bfef0d9df0ab2d639abcb64e2cc1e00"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/replay/source-assertions.patch.json",
+      "sha256": "daab613d326c3a5aede5609dbf21750b27d8823be271ff39e6c4bf562feb6947"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/replay/validation.json",
+      "sha256": "94ff0649909f34dceb1311625099041f35caa550876f8ccadd39b507b50df332"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/replay.ts",
+      "sha256": "836fff0128a15ed2b485f86c8e392a2723d353ea863fa9771b5d5fdbe7fcc2de"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round1.dataset.json",
+      "sha256": "5bc32592aa80ee4742f8e01b09d4381dacc1ce080fb930772a7a1ea2b24c70c2"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round1.landscape.json",
+      "sha256": "40c3d8b4094e67359d5469c09fcf30dcba9479e3bb123401fb618d465021960f"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/README.md",
+      "sha256": "64cffd8391c03655ac40603fa0fdb6e4e45f2228fcc1f591a491aea979f1e07f"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/acquisition-manifest.json",
+      "sha256": "d6fb56304d06be6751fb8b306f87fb0650128695dfc21a331140cdb274f835a9"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/evidence/komura-preview-acquisition.json",
+      "sha256": "90bf49b7b5ba56a9f834bd10578c21e9a281a03d53545bb3642a10ca33e6a1ae"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/evidence/komura-telegram-published-preview.jpg",
+      "sha256": "677ad6809810fefcb998f8db1af55aa705172e4e149c0ac9dd94286190d8f108"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/evidence/rj-chemulpo.pdf",
+      "sha256": "0dcd19d160873e4919ae0007f2dee345fdbaed23377d5f12ef2ebe08cf4b08f8"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/evidence/rj-correspondence-1904.pdf",
+      "sha256": "b6aff58114b3351a99e358d46d22e733ce8b3eabaf6365acac8a1e6d028a3628"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/evidence/rj-komura-bundle.pdf",
+      "sha256": "db6dbb5c221acec6ec16abdbfe24b5e6c2232d1876247e01b9043d32d50304cb"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/evidence/rj-pak-2023.pdf",
+      "sha256": "4f2b8413eaa61207d316d637769ff8be5930890a6d6c06e93b049a1d43e419e1"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/evidence/rj-portarthur.pdf",
+      "sha256": "da72ab0296335459e8e55664be317e66842e7a5a29a002166d4f12c4823822b6"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/propagation.ts",
+      "sha256": "a1ce0eb929c4c8c0d41838ac804c93de3bc299225ce9f04ec519b2bea59a10fa"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/replay/19041904-1904-4904-8904-190419042004.json",
+      "sha256": "c68f2157723c5ef97fc61b2038d58a681200513fc97c44b72e009a333a7d5baf"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/replay/actor-queries.json",
+      "sha256": "8560c380251f05609c0f9a6cc14c279df05f8b8e8e3b7c1bf962aa4a14760054"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/replay/materialized.dataset.json",
+      "sha256": "49fd7373bdcbafd1c89caddbc7d2742468ebdfd1d2f543f754f7333559ebdd09"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/replay/propagation-traces.json",
+      "sha256": "7e3dbe2bcd8cce405022ad950e07522333dc31de5676c5fd07788d4a9043c495"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/replay/reconstruction-traces.json",
+      "sha256": "d82c8d7a169e5368be4bc3f89f2e22726aaedeb5867a212622b33f1ed3d29473"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/replay/source-assertions.patch.json",
+      "sha256": "5fc1a4765d76353acd8669176e3cb8e501003ffea5908ef60ad56b924cc19e2d"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/replay/validation.json",
+      "sha256": "e90a1a810385b4e8f752ec88c648c8bf22019ea81ac8d988488c116a5b65a6b3"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/replay.ts",
+      "sha256": "48622a6870efae26f318ef792147afdfd5451bb5fb369c068304498953e56552"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/round2.dataset.json",
+      "sha256": "8fa0c1087b1945dfcbc1aa991c014d2b44796e4e4667eb3243d5a9a27d097d3c"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/semantic-gap-signals.json",
+      "sha256": "6516cc370a9c0a0a24df6f882167e61043e866f2f80269b3e78f721058b7574a"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round2/verification.json",
+      "sha256": "8680e510ea663288dbe8ff7a47d1efd1e4e2bef9621818935d9ee9262c67ab33"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/README.md",
+      "sha256": "1852532485966bb778ac2ea896692d8c3ebf0feef257761b197c6d61a0ca760b"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/acquisition-manifest.json",
+      "sha256": "d2340281a13d476486c9f1fc11229d362a8c0a10b0e55240a7325400b72722b8"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/evidence/frus708.png",
+      "sha256": "4fbc0a9643b6d2d8caf86037e08ae6fa0e34b8718b5b7d5a7d1346d31b1ee60d"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/evidence/frus709.png",
+      "sha256": "60fab66aaa636e65c6c7bbc79c0e76bcc295e585afe3ad4502bae1fec338a97f"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/evidence/hathi-denied.html",
+      "sha256": "9a496f3474882c49d6021771c2028a24cd93b90d771828d9c7c4eb8e60033ee2"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/evidence/ia-search.json",
+      "sha256": "19fe87604bb6d18d8a91d0dc5b4b35320c7384577a74b60ce06d12db0ef0be8c"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/evidence/jacar-transcription.html",
+      "sha256": "22ef3ca993e3805bfcb5edb3a0c4b7f568536f5f14b582f591a291df1510c23b"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/evidence/penn-lead.html",
+      "sha256": "db7f82351189021c538e06ea1591497139de0f00540da12501d61431f50ff5b5"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/evidence/rosen-memoir.pdf",
+      "sha256": "29a7c756a6e79f829f6c95dce9f497886584923ce97026d5dd6d8e724f2955ef"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/evidence/rosen-metadata.json",
+      "sha256": "a5e7ba38a6860e536d6f629302bc64da8b9c30ad82ec13d268314fe756d3eacc"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/evidence/rsl-html-response.html",
+      "sha256": "e539d0e34705288fd2e1dd4861585fb12ee3e8af2f2a075d2124364c9391bc07"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/lineage.ts",
+      "sha256": "389592244a52e01c885203c4780dce1f12877d1f037e4570c4639a95226bdb69"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/promotion-watch.json",
+      "sha256": "591b6e60128cce66039b3318f30dda3add2f5b36c898787c715cdee252e103b8"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/replay/19041904-1904-4904-8904-190419043004.json",
+      "sha256": "debc15bab0ee192e7978203afe568ee555018ad78d0c0555ec2cc04fbd331501"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/replay/actor-queries.json",
+      "sha256": "d5bf501e6e329497d92c5b867aa76f608f8165adc74fa8e5bf624a1b2887edcc"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/replay/documentary-traces.json",
+      "sha256": "07678c5ac871b302751d71afbc2c9de6b29b6b9f9836b643abe6273a151155c7"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/replay/materialized.dataset.json",
+      "sha256": "e11f10d08fd137b24be07be4d0c4f6e745c4ac449508171fdc27e2d689808a57"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/replay/negative-search-records.json",
+      "sha256": "1fe76404d770b4ad29544cf3a953b1c109ab2753b49135afc8a3adf18e90ed41"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/replay/sidecar.reload.json",
+      "sha256": "3f5da8eaee7ef0683abe9d3cf3c35b965b1e798f7458910a02cccc6f30418714"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/replay/source-assertions.patch.json",
+      "sha256": "c9cead699d2bb93a9815068a143ca2c3a311de5155a33d680c6aa1644f8cba23"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/replay/validation.json",
+      "sha256": "ce543dec1a49eb39cdbda1a0a5bd45e8d7e7e5e9a6f351aaeb398778f4aba25d"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/replay.ts",
+      "sha256": "4b31475f324d43cf076d25251a6b55b44c7b2eea23c4da6347f52109af8bb60a"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/round3.dataset.json",
+      "sha256": "3f5da8eaee7ef0683abe9d3cf3c35b965b1e798f7458910a02cccc6f30418714"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/semantic-gap-signals.json",
+      "sha256": "c944f827f3ee049754adc50a3f28ea19d3b97964ad8326ceae7a1eb39bfc4f0c"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round3/verification.json",
+      "sha256": "57035e10a55596128e5960d0a305518102638dee2fa4499062d3663b29c4d8f2"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/README.md",
+      "sha256": "7bd70394f35103c5eb2b0617de70f53a82ff2b9f2875d88d6de66aaaf7617b9d"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/acquisition-manifest.json",
+      "sha256": "07b90a266e699bcf5cf6d61cb997eb6c24c5c8d1013b3d0c5e981333c7c66957"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-astorian-1.png",
+      "sha256": "f8932d0fa47ac9184b4bae0ad353790cf28b4e2f3116e79bb716fef665774598"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-astorian.html",
+      "sha256": "c390db1ea1f51d6187e1b94d7bc75d01baa14990dbc73a979d1b77f68f9a83ce"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-astorian.pdf",
+      "sha256": "3da0b55d6d721eb433932164323df36a7bf6e3eb16421368d9c6e8a3b5b8fb16"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-check07.png",
+      "sha256": "6254bac62261bb5e652a8f2ddea21bae221d537e41ab45f6c47812b0455e2a4d"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-cherkasov-edition.html",
+      "sha256": "0086e6301f5d92d1e07110b0646c196d6440d0dba7d37ff4880287614ea35413"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-cherkasov.html",
+      "sha256": "39980b850fd386cc71700abf2561b8f68040b92eea456983fc96032d064f7d52"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-clarendon-1.png",
+      "sha256": "e2f48bbbe477f1e2b05770e3d85bf0062e2372b1c37a2f07dbab9f45e71b82cf"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-clarendon.pdf",
+      "sha256": "5a9d87a01db8a1eafe5cc461432e7ec009c7642e5837a383b7e17f0693367d9a"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-jacar-guide.html",
+      "sha256": "fa91c84f8e6ddc0d123fd1c55b9ac8fdb001e1c826efc9cccbf658a98586d953"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-local-16.png",
+      "sha256": "c4fd723bf2e84ad78125545764565b0ffb34d38198195b458c63e5e773fa9d15"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-local-19.png",
+      "sha256": "3f789df886136fd14702d84da955e3955f049b0d15297b9869b6747abc89bf2c"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-local-20.png",
+      "sha256": "1276fc712e25d33be105a5ab04de1ac98c44df68e2a68e4bd3e90d47f0486b73"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-novik.html",
+      "sha256": "036eab8c92c59756ce51e633bbae74473505b117708adfb0b63daadac90b2a52"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-photo-catalog.html",
+      "sha256": "ed86fdbf757a8634e45d18be09da4e4479f592c1eb72e224dabe6ec519813252"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-sevastopol.html",
+      "sha256": "1f6d4936b0aa56c8e170b6d94208fac9dac827ba671866886ea6857b40537731"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-stark.html",
+      "sha256": "8daae291046c9cf6499b2ba90f82262564c9d43df244c5498f67784171634966"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/evidence/rj4-togo-english.html",
+      "sha256": "38eca20c64e71807e5dd0c7f5c2bcac65d6d29eb872f34ee0c360843d444c841"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/promotion-watch.json",
+      "sha256": "6ae2714e9afe09f380ac0da0184002e560949f8c6a655669a31753f6858072d1"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/reconstruction.ts",
+      "sha256": "0498fbb06b439e0e4a3409dfc4ece7b3f23aa2e5e6a2688c9987727a4f70168b"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/replay/19041904-1904-4904-8904-190419044004.json",
+      "sha256": "41450c0c849f2d10a9afdb1ba9e23eeabe28d6724c0f3457c3fad37274cdb3b9"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/replay/actor-queries.json",
+      "sha256": "e168a1239791e5ef1806fbbd6b2db57bf420a3cb5ece8eee2161298cdc46c34b"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/replay/contrasts.json",
+      "sha256": "e3787ac638042a597a6896ef6d41da55fd40e38c54bdf1febace9ef3dbf9bb0b"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/replay/evidence-traces.json",
+      "sha256": "50ef448dcd3c99060433fdc133e3f2175e03661f9ed67aa94c7f8d010c55e71d"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/replay/materialized.dataset.json",
+      "sha256": "61480890115785ea07f487efe69371865bc8dc9da7c0cd321010698ccda205d3"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/replay/negative-search-records.json",
+      "sha256": "435b0a6aa04046eac7f4225fd6848683f9c671dea3cc1f70bfee5c25b3a3833f"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/replay/reconstruction-v1.json",
+      "sha256": "4f16401a63962aba983765b1dfda432bd865576f39fa93dbe96e26d100682c0e"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/replay/sidecar.reload.json",
+      "sha256": "055fb122cf4fa9137f3d9145b579885a41fbe0e3812441bf921bd950a34b6807"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/replay/source-assertions.patch.json",
+      "sha256": "1874d871a8906b9af8d39712241fc726687fd446e9ae07df6a19624d3e951cc7"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/replay/validation.json",
+      "sha256": "c2b4641dfcb32f4e81cac0038fc9f71e01c9d924a4f140e61fecd3fa0520c34f"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/replay.ts",
+      "sha256": "2c10642738d3e212661aab22abe3526da52d2338a20937ef175bcf0f8940bb10"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/round4.dataset.json",
+      "sha256": "055fb122cf4fa9137f3d9145b579885a41fbe0e3812441bf921bd950a34b6807"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/semantic-gap-signals.json",
+      "sha256": "d9b70a1f2a3921441a0560792f6a468d11d710a08796cb4a308b0b89a766c678"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round4/verification.json",
+      "sha256": "adf570ac27373b991de01bd3f301faa9df991d10b320f05ec243f9039d3d87b4"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/README.md",
+      "sha256": "f330b0b9757b66ac420e88359a27ece5fed609d6952d9f64d75c691be60bbc89"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/architecture-decisions.json",
+      "sha256": "918c677da5a089b9c0fd34f4f09d8801e1660cb06dd8d22761051bd040495083"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/candidate-inventory.json",
+      "sha256": "587ecca1bdbb702efce8afd33ca7236ed2708213d16c61d46721bd0df93961e2"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/gate.ts",
+      "sha256": "52d990f907deb523527c87d9b8b18f438d0f73ae661fc789e649c2a4b4845cfb"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/immutable-baseline.json",
+      "sha256": "a7e9099689dbd2d361968c27eaf32908fb8fa605c37bbff9716e27a439747993"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/promotion-records.json",
+      "sha256": "8dd6eff1b42bf60cd071c0f658641d461e3e281b2abd3fb94b67db0782069b69"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/replay/19041904-1904-4904-8904-190419045001.json",
+      "sha256": "664e0ac1d4bc4d721e9e97c4d0281695a84ab04c10aacffae851c5ce03405214"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/replay/19041904-1904-4904-8904-190419045002.json",
+      "sha256": "5aaaebb9465fcac6ab470bee8b8c813965acef86a407d9e84474d08cb64921e5"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/replay/19041904-1904-4904-8904-190419045003.json",
+      "sha256": "145c07cb9ebbfb6196b8b6280b2e271340b094765c74ef9190f1b89e05eecc37"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/replay/19041904-1904-4904-8904-190419045004.json",
+      "sha256": "2a2cf045948edd50a22d225df599f55b4ea97d89b8a76dae204aae36e3d9a166"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/replay/candidate-evidence.json",
+      "sha256": "71a6d3fc8f137ba15b7786ce5b3608b40984ab6ea933c7df3f53087a1d441aa0"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/replay/composition-proofs.json",
+      "sha256": "cc6cba1f47104b617dc79bf878482bd40ac056ba93839a4dad6b28f3092fcf75"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/replay/dataset-compatibility.json",
+      "sha256": "cfe443fb354afe0210091f0d4d6f9dafedebc33f7b732680037a340e5db18631"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/replay/historical-source-traversals.json",
+      "sha256": "1db556d6ba41e09072a43d50637edb90b6337921d51a6dc1cacdd790356bc1aa"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/replay/inventory.reload.json",
+      "sha256": "587ecca1bdbb702efce8afd33ca7236ed2708213d16c61d46721bd0df93961e2"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/replay/predicate-scope-counterexample.json",
+      "sha256": "d40bcc1f511d657202e8055c2152aaac7c49c9a46b89941c51a882aa17b18550"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/replay/round1.patch.json",
+      "sha256": "a2c03e685790200dad2e91933c9fa6e212482ebc1fc026eb3bcd1662e481c54a"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/replay/round2.patch.json",
+      "sha256": "66d9c224084dd0227ca270c6db1698feb76936993fa057b997b1583b5435c5f3"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/replay/round3.patch.json",
+      "sha256": "ea5eaf9f470c7df6ef06c27baf14e26edf4dcd7f6b8f17a357a610267f6323e5"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/replay/round4.patch.json",
+      "sha256": "baa8b6f166c240803244591f38e9c0479cd211173028b73c80eba90977b7d30a"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/replay/validation.json",
+      "sha256": "abb37a19982a64ed9d1e2d6dfaed7477e041cdbee7cd95deeecb488adb5ed042"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/replay.ts",
+      "sha256": "0b1d140190046d6d18405a4207cab537c7cf9726b20449d57b0527277d5c9881"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/semantic-gap-signals.json",
+      "sha256": "97dbd27e3d5181113d874ad01105e70411320c2915706cfc98b2afbe6e671950"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/semantic-signal-index.json",
+      "sha256": "7a8974981cd4118e06b426997daf60749b99324a5c760130d61c848e9c10caec"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/source-contract.ts",
+      "sha256": "17f3b57f9c70b336c323a794a760f9c82acbc2e2b799ba0fd88ca4f21a855ed7"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round5/verification.json",
+      "sha256": "fbb6e09c2001d3f9114f2da0a179efa4f3dd4422aa693c51ba12dffe6445c890"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/README.md",
+      "sha256": "a86c8823d85bf173d9d8264995ce0bf72bfd0489247bbb41d8e22854a0e1f7c4"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/acquisition-manifest.json",
+      "sha256": "da4937df81bfb288f4d8399987ce2a91f882e8dfeb1d5f5294950c27b476b6a2"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/composition-change-record.json",
+      "sha256": "6b87c6ba65fadcd4eaf50965bf8f90fff990070756e358cb351d79bbf3b47a13"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d100.txt",
+      "sha256": "e265c8eb8f53650d3a134ab45be05ba118f368ecc59f4a141391a1ba5e5814bf"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d100.xml",
+      "sha256": "3aa5fa8f2a998bc3d507558db60df2be8fcf4e78881fa3e9112438cc3578ca40"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d103.txt",
+      "sha256": "0db6f3e11831f850e88e7f37d64f03317a483132eaa0308faa25b0f2907edc35"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d103.xml",
+      "sha256": "f79c0f420019c37945c44cdca1cbfed6a3981d8cfd32683bfefc81ba16fd6f2c"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d124.txt",
+      "sha256": "717311ce1811462c83479e3da0adf423352acd9203e05b22155f40870e2f2c17"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d124.xml",
+      "sha256": "5d5fc336325361424f931add01271b849a3d7504bbc33112f8e26327f991eb7a"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d125.txt",
+      "sha256": "403f43fef87ec13f22c379c37eda62d2d5bb806e55b29343a0771c032af87493"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d125.xml",
+      "sha256": "c4410b1454fc099659511c3ed8b8a76617c1bad6b535859448f9c70c1932bdfa"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d126.txt",
+      "sha256": "6e358b9955a3db8850475fee55085f7bafcab1ffc0f93048e9792034af6f2b4f"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d126.xml",
+      "sha256": "63a8b9a6981b0c85805c9ce6412716c77e8f896d7b42cdcd5a82d8c6ff59de04"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d127.txt",
+      "sha256": "a16cc55b9511ca04658f4fe171b3fc1170f67a70c2bb7c65f98fdee1695c7728"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d127.xml",
+      "sha256": "4d3c801debb6ef16a0ffc2101db4d094b9eb767aa0f88e75276a4523da4904c4"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d17.txt",
+      "sha256": "81d41488a3b5917d7095a8764fd7f7db38bc811274be7033ca644b96f6bca3f4"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d17.xml",
+      "sha256": "eb816187bb41ea181370c67c453aa3b11b5e47ef262019c151a87524e59533c1"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d18.txt",
+      "sha256": "ffce3998780b99251a3b6ff14f2a6ec770fbf68c12fab3b4fd005c5fc63b230e"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d18.xml",
+      "sha256": "d83cc1d019ad542aaf2a94e5d23ef966f26ba70d5bd2bb0714879e7373bf1e74"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d430.txt",
+      "sha256": "dbdb7b55e39787690c3118531318a875709ee1a4cefc698b738dc5f78c30a598"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d430.xml",
+      "sha256": "aa0167f06e631f784a5f34eddad771cdc810803bf8fe1860dc4935f0169032ff"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d431.txt",
+      "sha256": "ae188adef6fb56807813a9a8cfa39b5f17266b340d8957c7bc3baa83ca7bf0e0"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d431.xml",
+      "sha256": "ff7b05a391e55d97114debee778e1b66a8b62b2c4f2a5b45ccd00d9aef16a031"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d450.txt",
+      "sha256": "da8cb2f0a8419dc5d7a0349dbf19d12908367db10eb708d6b46d6d88cfc23aa3"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d450.xml",
+      "sha256": "a6bf98f44e94a231cbfdb9290751501b5fa66adf41ece9b4e94526202125d03a"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d92.txt",
+      "sha256": "48ccf6cb7b8110b5310721364127a5ffabc4a633c64d0ba4c172411f2919ea34"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904-d92.xml",
+      "sha256": "cd60a8f62682049217bc2b33f45527cc307d86a112d85e36a5e813e0709565dc"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/frus1904.official-tei.xml",
+      "sha256": "2c0a893bcb646d32945c9773695d2fe9043af7d95e0346fcb1232e19cf1cebfa"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/hansard-customs.html",
+      "sha256": "2dbbc7771bc32a995ec0dbd802f7f151a0a0b58b8a41b60ea1cf34d37837c486"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/hansard-niuchwang.html",
+      "sha256": "70e9edf8873e9b8b31486a8e4d4a598228089fe94ad0348ffcbd24129619d483"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/nikh-protocol.reference-extract.json",
+      "sha256": "6ab484321c9426b7ba2d51bf5211ae79be7d9f89f85719e0e74d26593f1f1712"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/evidence/nikh-uiju.research-extract.json",
+      "sha256": "c93e3a110144ad7c050bc39ca1ad02242b7cd6e8fed8b2fc8a814339da584be0"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/immutable-baseline.json",
+      "sha256": "fff9a19888e2cc7b9deecf4c47f1d55cfb191c7e57c66df1efdcccb825ab0db2"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/replay/19041904-1904-4904-8904-190419046006.json",
+      "sha256": "288d914fbcf185c4d4c0d4d1ee34b6f8134886b5f7c6da5b57c1bb7428a56bbe"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/replay/b-candidate-revalidation.json",
+      "sha256": "59b1fb9ccf58fd35e6a27e0e690e12bdddc1f76de4158f07ec3a2674cbf09927"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/replay/composition-proofs.json",
+      "sha256": "622a252e700df4020693c870839065711fc9615b4714c04991364be3874d4eb4"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/replay/evidence-traces.json",
+      "sha256": "b737a2f1a6f895351600cedb1efe3fd3c34eefbcb61aea50d2438b6c8e9770d8"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/replay/focused-tests-summary.txt",
+      "sha256": "b45437fc1db308869b47bd7391871dd4990d3f02b41c0c0f4022d91f9301f8aa"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/replay/full-tests-summary.txt",
+      "sha256": "5014156d9bcfc40dfe05f6bdb2e5b53cc780468191f66a2216e2b13c094b387a"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/replay/materialized.dataset.json",
+      "sha256": "7b74b6c0245130c83677420ac1bfdac826369675c528372e00f6780859263d66"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/replay/parent-round5-validation.json",
+      "sha256": "abb37a19982a64ed9d1e2d6dfaed7477e041cdbee7cd95deeecb488adb5ed042"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/replay/search-diagnostics.json",
+      "sha256": "58f1d5a4a5203d796ca2f33f867a2476018d85e72830b2a5694ac3a05a53c5fa"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/replay/sidecar.reload.json",
+      "sha256": "647234b3cab9157eadb4da101bc88c322874ab02d768b3c4c6ec7107f9ae4569"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/replay/source-assertions.patch.json",
+      "sha256": "da19afaa0a91b05efe953b9c2ba07469f75f4f0c219769e1a7d427dfbdeb32a2"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/replay/tei-extraction-validation.json",
+      "sha256": "b3e54f9a0cce87cb5fe816a90149f83da5905fb88df76534d4cc2aff2efb1e15"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/replay/territorial-queries.json",
+      "sha256": "c938bc69bd52eef5f54680cc399694a135b48f0996e6d393ddaeeb26060f261a"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/replay/territorial-reconstruction-v1.json",
+      "sha256": "ab12133422e78f72a3bbbcdbe97e632698ac4dddf5d86984c69028251456b486"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/replay/validation.json",
+      "sha256": "47dbeca1dea42f449c746ee62f5be7b067663c1dbe9b2a5330c92fa18519ff38"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/replay.ts",
+      "sha256": "c3ae4cd270bc2eaeb9ab2beb632879096f36feb2ce6b5687c9992cd4c36fb1ab"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/round6.dataset.json",
+      "sha256": "647234b3cab9157eadb4da101bc88c322874ab02d768b3c4c6ec7107f9ae4569"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/semantic-gap-signals.json",
+      "sha256": "f2e1171fe7984b36ffccdcbe94ce9da516d06ebd4fdae7c89c652809a35f2629"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/territory.ts",
+      "sha256": "1f4c93c565b26a39ff5b2a29c89992ba53c13ce764a07cd28866ee722bd51a7d"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/validate-provenance.py",
+      "sha256": "2055ead8a3d79ccb2742b70b1d3f58154a62e2269344ae41a33da1ac61eb29b4"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/round6/verification.json",
+      "sha256": "fdabcad07ba6c0e7565548da475ee85c63cd202f8b2dbe610fea58a4179560e1"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/substrate.ts",
+      "sha256": "96b42fee5b7350a5aa83c43dfd5c6c185ee6e0918d2c5091ce8ecafd9b6bf79a"
+    },
+    {
+      "path": "ground-core/experimental/historical-reality/verification.json",
+      "sha256": "61d6d437c4dcfd0f97eeceac4d9c50824abdf21c093698657234743a9253481d"
+    },
+    {
+      "path": "ground-core/extraction/dry-run.ts",
+      "sha256": "e8321ff74823912d85a0f5d5786a8d403823d0e6049fb8a073492295563f27ca"
+    },
+    {
+      "path": "ground-core/extraction/mock-extractor.ts",
+      "sha256": "10778a516de97dab89022bbe05814d13e2ae2cdd04deed93e20dd098cd7b3848"
+    },
+    {
+      "path": "ground-core/extraction/propose.ts",
+      "sha256": "37ac18505146c3708506ed63dd24c6ce03e2e32b624f93d9f116cd2acdceb8d3"
+    },
+    {
+      "path": "ground-core/extraction/review/build-approved-patch.ts",
+      "sha256": "5658f9203011f6d2a6d24dc6b05c8e5dc2ff013f75439d52ac7a867257190cea"
+    },
+    {
+      "path": "ground-core/extraction/review/review-gates.ts",
+      "sha256": "c97fd95ea23f9d1e72b467cd0519e01185089d4c74dd5320f7d2a10dc797340d"
+    },
+    {
+      "path": "ground-core/extraction/review/types.ts",
+      "sha256": "903f196536f59efb2b93cff267d343323b548df8199353401d7c036145095720"
+    },
+    {
+      "path": "ground-core/extraction/semantic/event-detector.ts",
+      "sha256": "74cdd9be951911f254c8a49eed709d5e5b0cf4441252d03aa0678512177e9050"
+    },
+    {
+      "path": "ground-core/extraction/semantic/event-resolver.ts",
+      "sha256": "225a8804c005b642940b794e2513677b8ebfe64da41420fd296050465bdaadd8"
+    },
+    {
+      "path": "ground-core/extraction/semantic/resolver-types.ts",
+      "sha256": "afad72cd2aef59aed3b2928bf3a46c117c7ef616583dbd01b67de358d52e803d"
+    },
+    {
+      "path": "ground-core/extraction/semantic/rule-modality-detector.ts",
+      "sha256": "1a370333a720f87e6a7df1004a1a7ee4cefa633e2c4b401d6700422e630abd02"
+    },
+    {
+      "path": "ground-core/extraction/semantic/semantic-propose.ts",
+      "sha256": "9948d117f053d366606a3a11216b31a2a9e3e925592ff2f8298b50da13ec88f6"
+    },
+    {
+      "path": "ground-core/extraction/semantic/token-match-resolver.ts",
+      "sha256": "604478994db4231699fff5a857df9bcc44cb13fa6a0add2e4c89ee42fc5fceae"
+    },
+    {
+      "path": "ground-core/extraction/semantic/types.ts",
+      "sha256": "9f4f84f1bd197379277ac1f531bc158b4c008386df69547c0ad5ae81f12419f2"
+    },
+    {
+      "path": "ground-core/extraction/types.ts",
+      "sha256": "a6ad5f7866b47588d3a91bb7212dd554813f5411192bae9e60b935b46308ea5d"
+    },
+    {
+      "path": "ground-core/file-store.ts",
+      "sha256": "297b3cfc8c8a952e9fb16d2a678bae5fe40a7b16596ea084df0b925536877055"
+    },
+    {
+      "path": "ground-core/index.ts",
+      "sha256": "8bd6e8b9286efabadfc860d4fbc2c2a14d1b4a083fa557b45063164a73e66a2f"
+    },
+    {
+      "path": "ground-core/intake/action-intent.ts",
+      "sha256": "c14d62aad93232e9aa930f07db85a9857d767d31d47a8db21dbef12cddd3f64e"
+    },
+    {
+      "path": "ground-core/intake/create-project-from-seed.ts",
+      "sha256": "465e5d15a05bf57d48aec35dde5babac6eb42fcba0bfc5e38baef8093bf574bc"
+    },
+    {
+      "path": "ground-core/intake/types.ts",
+      "sha256": "e59a7e6c003a49f4350acff4777bd856690f558985cb8396c45c0053e756f8a9"
+    },
+    {
+      "path": "ground-core/intake/validate-seed.ts",
+      "sha256": "bd28493ce6662449529215384f50774b2eeaa06598a0a284dee54562ba527a5e"
+    },
+    {
+      "path": "ground-core/migrate.ts",
+      "sha256": "9987e255bed4e674ed53faebf9ba7001625d3847478bd55da040da494abd0f23"
+    },
+    {
+      "path": "ground-core/reality/agency-core.ts",
+      "sha256": "5356a2cc986bb88f573c730ce4724ee1261b78d6b1cbe7314faac18d2af4bbc9"
+    },
+    {
+      "path": "ground-core/reality/agency-types.ts",
+      "sha256": "19b40d04fb3101254fb3aab3f6a51338d0fcaa4f1748fa94094c2e69ca7837b0"
+    },
+    {
+      "path": "ground-core/reality/apply.ts",
+      "sha256": "5454b0baf00f130df7500e08b8724b2fdf0bf9c8852f7206e477a9f430e4b84f"
+    },
+    {
+      "path": "ground-core/reality/attention-basis-coverage-core.ts",
+      "sha256": "f67f76f55ccb16a71de8b56cc9c21e9c8e546e2c6279f2114808c4fc55b97129"
+    },
+    {
+      "path": "ground-core/reality/attention-basis-coverage-types.ts",
+      "sha256": "9290cd63240a9d44a671b6878af6ae89c8218c26ef78ba2f7f62389579ac5720"
+    },
+    {
+      "path": "ground-core/reality/attention-basis-requirement-core.ts",
+      "sha256": "d0b4b6c57172dd66783d3490e1a2dab120eb0a1ff5f3bf2abae1d5091ad54c21"
+    },
+    {
+      "path": "ground-core/reality/attention-basis-requirement-types.ts",
+      "sha256": "676cfbce90f7309af57e9fbb9e8ed88e41292499a8fe0f9ce68076d34d51638c"
+    },
+    {
+      "path": "ground-core/reality/attention-basis-resolution-core.ts",
+      "sha256": "c026b70a502ad0bc10e3a812968cc4b71897d6377caf1f258a5b20af0168f3e6"
+    },
+    {
+      "path": "ground-core/reality/attention-basis-resolution-types.ts",
+      "sha256": "3757cde94486cbb26f8c331391d44374bbf147c09a317d54711970ac270f1d16"
+    },
+    {
+      "path": "ground-core/reality/attention-candidate-core.ts",
+      "sha256": "68516fff55b6c9cd6d8c19aa00c237e558d98de28f23b31aebb1a1f039f88996"
+    },
+    {
+      "path": "ground-core/reality/attention-candidate-types.ts",
+      "sha256": "5904dccb07926026a29f2294772566e5064c8c9dcd447aec8ca556c907fe41f4"
+    },
+    {
+      "path": "ground-core/reality/attention-consideration-core.ts",
+      "sha256": "f35fb4c2ff6553110a6852dba2f6c79c76b844628af56f2b33723768b47f1fb2"
+    },
+    {
+      "path": "ground-core/reality/attention-consideration-types.ts",
+      "sha256": "c4850ea191584cffb4265ecf7a430c3884abd962c84c02b8de0f7115cdc9a626"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-applicability-composition-core.ts",
+      "sha256": "1e28b5d2fa0383921fa53b2cdcd40cb68d295dccedb5167367c3672b9abc5222"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-applicability-composition-types.ts",
+      "sha256": "7351cf47531ce226b8804e7de1316e324b6fe4926e85031d8bc8fc04bb494be2"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-availability-core.ts",
+      "sha256": "27338cb973ac5d0d2ee6571648ba80cc0d3aeab9a5b34b5180112fad5fa1d43b"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-availability-temporal-applicability-core.ts",
+      "sha256": "7e6d4955f89a92e03da61331eb03fcdcf8bbe7a3dba76518350ffd3737af5c0d"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-availability-temporal-applicability-types.ts",
+      "sha256": "471097e32e18a77c0fd162a9098cc3c46a315e72ab0f7792c0dd5926d9dce4d7"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-availability-types.ts",
+      "sha256": "9c985aeff1c25938a4675a2d0539889c7227a232bf9275bdf5fb2411ebcae24d"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-declaration-match-core.ts",
+      "sha256": "deb9096a57d129dc3324e87fb7318f2442c5a8093cecc71db90e5e764bbbbe0e"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-declaration-match-types.ts",
+      "sha256": "a324fd6769796fe01eb4733585acc75d77b4cbdf34959c02e18f91e66b55fd89"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-declaration-temporal-applicability-core.ts",
+      "sha256": "8c33c0e597e1a6d9f78954e4c6adf85471aa75321ca30a48124f95143c1ccd9f"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-declaration-temporal-applicability-types.ts",
+      "sha256": "0d3c6d9f92599de181de90a0892b9744ecc9cad9570f3fdf811247f5f18ba62a"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-dimension-acceptance-criteria-core.ts",
+      "sha256": "d36cde6f3413216679858cbc1723270369bc81323c871fa8abfb1af1485cffd3"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-dimension-acceptance-criteria-types.ts",
+      "sha256": "bda37d34986d7a9a4d64874a20142e2c96a76cbbb237fe5955b81c218aea29de"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-dimension-source-aggregation-outcome-core.ts",
+      "sha256": "36e3db9754f3ae94b222364bf403d5b65763518f32fdb038fe9a924722cf2275"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-dimension-source-aggregation-outcome-types.ts",
+      "sha256": "5936a108121f85008640cd74b9a33787980cb9d14c947f2a881045e825c6f804"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-dimension-source-aggregation-policy-core.ts",
+      "sha256": "946f5de24d871f3a7e7e3a38322061c5d90b1e0c3c0c3c670cd57574014356dc"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-dimension-source-aggregation-policy-types.ts",
+      "sha256": "359e0bcf53b0bd2a816b87dac8757264e176b66a6321f35b013d3ee4d830aa7b"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-evaluation-dimension-policy-core.ts",
+      "sha256": "48294ae1b991b11b47ca2239d00ebfce7bf66c1d77c43b8bdefeb6804916bf5e"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-evaluation-dimension-policy-types.ts",
+      "sha256": "fe5e4a31c9b83486c158f7c6fbeda96f374187c0151445e60d7582e42d2a2646"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-interpretation-core.ts",
+      "sha256": "367c0559b500c7c31a592b0e470e8086ff4bc51a27720ced3fd6ea6c0e04be4d"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-interpretation-policy-core.ts",
+      "sha256": "f11936075181f94ad536ddcef669d6a42d42be3341dbd484ce6aa4100f8a8de1"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-interpretation-policy-types.ts",
+      "sha256": "010d50a4cea5ff74fe4d4f2912c8a22922d25e3f70f1ed6fa656370b5a22d84b"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-interpretation-types.ts",
+      "sha256": "31f7a44a0d5b6955e85c1a30f5aa05fd3dc9c68694f7fb13d1ce4d64c0d3df3b"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-required-dimension-coverage-core.ts",
+      "sha256": "0aadae5b61270f965fc317126d966d67a83ab6cc851fae6b47b56adbaa544b6f"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-required-dimension-coverage-types.ts",
+      "sha256": "9ca22c895997428b8aab65b8d08e133ef9e7a170932c9a04a99357943bc2f6e1"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-required-dimension-evaluation-state-core.ts",
+      "sha256": "d4f1ba6487b8f449b872559c25ead74dcdc90818d506cdcc362627edcedbf2ea"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-required-dimension-evaluation-state-types.ts",
+      "sha256": "28d7668d31961b202bfaa7aa4aae4cb35f645bd6ff4b12b132b725ff9326a973"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-core.ts",
+      "sha256": "ff130ae9ca7b88307e43d0f4c6852bfc7b2f295953ccada3da14f4614fd3d11d"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-dimension-aggregation-policy-core.ts",
+      "sha256": "c5771ddf3ed5d0ac074a33a0454b9ef7d00892483862f0651d0c1ab33e77c35c"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-dimension-aggregation-policy-types.ts",
+      "sha256": "6c01d0d5232933db449318a048d63762ed7eb42f7f1cbb715a9405e048de8606"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-dimension-aggregation-readiness-core.ts",
+      "sha256": "508f11de65628ef84936c010a86c90e8bdc853810c8a220a8cbb02e900f32b92"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-dimension-aggregation-readiness-policy-core.ts",
+      "sha256": "42dc8be84320a4ef6da514bf7df1b0fd5770b25969721db4df5efe1b57509746"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-dimension-aggregation-readiness-policy-types.ts",
+      "sha256": "aec3088bd6536693800e775a1d1837fb9519c66b6896ad8b17eae07ae6cd10d1"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-dimension-aggregation-readiness-types.ts",
+      "sha256": "358293b934886bfc21356ec3eb0e90965726ac5cbdd949c938cbbb771af48935"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-dimension-aggregation-result-core.ts",
+      "sha256": "bf94b2ca19136b06747b3c42930a5ca8fc1bf9987b2a7bef8977193e1e6d568e"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-dimension-aggregation-result-types.ts",
+      "sha256": "e18d3678be35d7f1d862ad05951dfde95ce40303c3e3f1338aa87f1b83e9823d"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-evaluation-state-core.ts",
+      "sha256": "6c52a5981ee96c138470a809b0b1680c241a28e05212fe9bae84f5746c2fa4bc"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-evaluation-state-types.ts",
+      "sha256": "4068320469c7773af5c813db61f6d930e48442112efb9caecbb7bf24bbcc4aa7"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-satisfaction-core.ts",
+      "sha256": "51226461e5f6dcf7ce33b3b3a54e36637d968653e5e7b8e8bc0946762d7a244f"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-satisfaction-interpretation-core.ts",
+      "sha256": "f229e5bd64ab1840061e049dc6e7c76f42ecd44048fc51ea1732d2cf2146cd82"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-satisfaction-interpretation-policy-core.ts",
+      "sha256": "e3e7e82785e5f0cadb946f7204c0974776e03ad75ed8b2e3318446572996f3ba"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-satisfaction-interpretation-policy-types.ts",
+      "sha256": "ec7fdc2afe6d07ba431bc76a51b38b7f7058bbe381802e3c6f53102de33cae37"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-satisfaction-interpretation-types.ts",
+      "sha256": "7763df498f2f87c1dc0c1efb49eeb9f6a72499f4c45e0aa5a184b0cf645e0536"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-satisfaction-types.ts",
+      "sha256": "d92ee12fff1b5941103feca1dc47ad82bd13937cf5e8f12643db8827746ad165"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-set-composition-policy-core.ts",
+      "sha256": "2b2c3230dbaca96b0897e355153a16183b9ae799509c85e2bb7863c4151c5fea"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-set-composition-policy-types.ts",
+      "sha256": "e5490bdb2b9e3202485c360161c46b2a759fc6c5353c1c978c23f7f80641ea2d"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-set-composition-readiness-core.ts",
+      "sha256": "e7c551ced4af42fa46adabb898e32d4815f38b57bdb5e81bc8540de2268a96e6"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-set-composition-readiness-policy-core.ts",
+      "sha256": "973c776b0d6bea6060723d12230961ff439acf30f9c05c7ef3266f0c7af46e44"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-set-composition-readiness-policy-types.ts",
+      "sha256": "e1402e568656d26ade8a320e345a62b1474069b5eedc520b66fc780017b1cdce"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-set-composition-readiness-types.ts",
+      "sha256": "9e6f7a38e63d759e35bddf86007f2b9cdefd1746a83b1faff4941386498e0146"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-set-composition-result-core.ts",
+      "sha256": "08b86da8f0bdb9d4bf53565d5c9a6cdc29539185e7fb6fff716f97f4a4cfc450"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-set-composition-result-types.ts",
+      "sha256": "6ea977c70518e7525b91afd0fcf1c88f399fcf9e2ed7a367797fe50381fc5c2b"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-set-evaluation-state-core.ts",
+      "sha256": "2c89372ae421e3b427dd0f173003a6e00618fa503cc864c80e48bf6dd6b663ba"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-set-evaluation-state-types.ts",
+      "sha256": "ffca35b33e2f0e36957d9bceb9bdd57692a0f3b1e487af3fca11a8b8054ff7f8"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-set-identity.ts",
+      "sha256": "056897112a45c317d76a536039654e12f84f47de216b7e0ed37c5ff597c1d06d"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-requirement-types.ts",
+      "sha256": "0e9b1401f25a40cddc4f90b7325ebc848631fa45bc47bcc2e7730997147f97ab"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-scope-applicability-core.ts",
+      "sha256": "d6fefb28338a72fe0fe5db72ad71e9fb2fe2ebd1cf7d9223bf927b8a443f7838"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-scope-applicability-types.ts",
+      "sha256": "c6563ed12a2a71caca5a2d42eb99bf2dfccbb936c10d6d077d9373d552ed86a3"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-scope-requirement-core.ts",
+      "sha256": "2d1eca75bfa4a55045a9ae3f2f6cfa48be242c3a76b1059e88bbbeea7529d6bc"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-scope-requirement-types.ts",
+      "sha256": "65d022311b6755a8870b43abd3c4e4421693d18282259c96f881a847cb83d414"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-source-acceptance-match-core.ts",
+      "sha256": "761f846c301af3b75c450bbd91d5be7106b2af12df038c0f5cabfb859f517b7c"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-source-acceptance-match-types.ts",
+      "sha256": "41e356b6f103efb0357f83db09cb45ddb4b4c631dfc31c93261c4d76a4e7dec2"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-state-composition-core.ts",
+      "sha256": "7768f84ec075002e56798ae08c292d477caeabf774ad4d21c1ede5b69a2e05f0"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-state-composition-types.ts",
+      "sha256": "74d25f515f8e70b3732b4721bd949ae8af555ba2bd620cab1b9d77a6f55d7977"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-state-core.ts",
+      "sha256": "89aeba8ce5a7998117825947e8a651171fde8a9b207f47c4922d7d4c9ec58b30"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-state-types.ts",
+      "sha256": "98eb5f856c1384ac111662e9392ffe515774df56afcc47e02539156d7fa4e59e"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-temporal-requirement-core.ts",
+      "sha256": "dd837e29bd4b8e58adca50ca0e60edae8ea43977d19f1c0cb4b39200d07e3010"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-temporal-requirement-types.ts",
+      "sha256": "cd798c3200dc8adb64c0bdb5a4ab921f7356158af5e04d73c762dd174e754f33"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-verification-core.ts",
+      "sha256": "54c80a35c4ae115fb681a1d9dbfbb1434bb4641ab0a739860110bc75c37004ff"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-verification-temporal-applicability-core.ts",
+      "sha256": "11fb20f9c15b8b2145bb41e9ba7c074e8d300a322f2a49d71dbabaa685a9356c"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-verification-temporal-applicability-types.ts",
+      "sha256": "35b12bc06bd47379b2a7cd3cbbfae06d9b8b03047e1b62fd1f3a3fa4d4dd17d9"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-capability-verification-types.ts",
+      "sha256": "e423b81a51e955bba01d3ec3d6c450d9a179329321b41b75b57ffe2657d216a0"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-declared-permission-assessment-core.ts",
+      "sha256": "037d3961a2d7aac95452b670530183a1d87f3a6d5877d07b14de0c3a0500669f"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-declared-permission-assessment-types.ts",
+      "sha256": "b447b699e88351bd0dcd49e13676092426c08745797691ada23783ba301f407b"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-declared-permission-interpretation-core.ts",
+      "sha256": "0d5cab08f72b056eefa8ee1fab00fb9decb7311ff08bac67b81154a60e701134"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-declared-permission-interpretation-policy-core.ts",
+      "sha256": "d662cc1712ad35125927f178fd1d717aeb107b49a783a61092bb08d8b0aa630e"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-declared-permission-interpretation-policy-types.ts",
+      "sha256": "43c2d2ff18cd0a6234a3965538a873e1f08ccb42d73453db6f2f670a0bfbb833"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-declared-permission-interpretation-types.ts",
+      "sha256": "fa4cf730b06bd8f8bb82c2acc9544802d996fb5820e2cdb532c4364ea6497777"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-eligibility-core.ts",
+      "sha256": "87d0de1c12cb6b91cf012f0a8a1647a94208798604b727d82d5f3a505bacb4b4"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-eligibility-types.ts",
+      "sha256": "3b0d5e27f4d1c980492ded4a697ce05f0687c0a5401eb1e7048ad88614ad60dd"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-observer-candidate-core.ts",
+      "sha256": "1ff4d55427f5faea25bd94e17774afbda67b68289babbffda4a7e2e57a60e8b5"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-observer-candidate-types.ts",
+      "sha256": "73cb18b14039bff9a734b94455ebdb8539ca133f640b721872b5d2afa4c04cc7"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-dimension-evaluation-state-core.ts",
+      "sha256": "dbddf620acbdf3cf46f66946ab5f71e2fe76bb402e670b04dfd3b2b4b0f9e3ae"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-dimension-evaluation-state-interpretation-basis-core.ts",
+      "sha256": "ad381b7ebba097a9c79fbeece010ba4d67d811b85301d1d7da337a85152af7cd"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-dimension-evaluation-state-interpretation-basis-types.ts",
+      "sha256": "aa9eccb49f8e4a51b2d40075f6d7c0972e9d54e3cb8b871346986737e3e08a72"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-dimension-evaluation-state-interpretation-policy-core.ts",
+      "sha256": "8c0d1c1756dd4698e0d1778a20ff5b2b03b8d7dfccf1b88753f0637f632bf023"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-dimension-evaluation-state-interpretation-policy-types.ts",
+      "sha256": "2e23dc1b105d49f9af2a904ad73c1bf0fe7cb8d9d6feebeefa0caa750d7cf06e"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-dimension-evaluation-state-types.ts",
+      "sha256": "231b9464caa94169200bfc8ab4f6edbe8ba93e18cc5486eff6b6973245186a1b"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-dimension-satisfaction-state-core.ts",
+      "sha256": "ea2ec5188dcc3a1890d5e081d4076a2490f94a36cc5575f571d7e43e66f3c17a"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-dimension-satisfaction-state-types.ts",
+      "sha256": "2b9b7fc1ffe5f97d1b3a459bace13c56d22e04b165d3fb89c2d1d391088b28e1"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-evaluation-instant-core.ts",
+      "sha256": "56fa6ee8f8f51b396a4a8caba72bd41aba2eab9049ff8bfcf63bb98dc1847198"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-evaluation-instant-types.ts",
+      "sha256": "193d507a496b3797e886997ec00dca890df2716f66ec893b8adccb53384f935b"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-evidence-evaluation-state-core.ts",
+      "sha256": "64564413ff76d9b58464c74c04d43f48111d005006f0a90b5700b43b95275d16"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-evidence-evaluation-state-interpretation-basis-core.ts",
+      "sha256": "c855086220af3392ca7518fe5dcd8af4364b61b51997640eb5acf5dac1a8f2f7"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-evidence-evaluation-state-interpretation-basis-types.ts",
+      "sha256": "cabec4c720f975b6e93fcc3db05989fb0f3e8e264e571d6a4f75c883f9ae9ad9"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-evidence-evaluation-state-interpretation-policy-core.ts",
+      "sha256": "45294658bd730cbd3262ae4c18f2a6acb80f2da3976062cbe4458d76593db3a6"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-evidence-evaluation-state-interpretation-policy-types.ts",
+      "sha256": "9d92edf5afe9c4292c4b4c5e7eba89459119a5c33e9808f65ef98d39f1d8623f"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-evidence-evaluation-state-types.ts",
+      "sha256": "895c2918987891be55be642faa2d8892b90ad831a022510644d5f06d68fdd390"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-observation-context-binding-core.ts",
+      "sha256": "2a47274f111c0d3696beb6e35b5a28864d2821e8404af2b29c37c697282d53d3"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-observation-context-binding-types.ts",
+      "sha256": "24dfc9f8f7bcad0c7a3dbe1bd7d9035dd67bf6999cf841583b71b5d1393db20c"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-required-dimension-coverage-core.ts",
+      "sha256": "eaddf963438cd85492515618189179d9867d4c1d86afd5df6323d92ba8ab43cc"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-required-dimension-coverage-types.ts",
+      "sha256": "2baf763536c294db165755031b06f46aecb433af309c4673696aaf679951ec38"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-source-acceptance-criteria-core.ts",
+      "sha256": "468976a9201831b47abaad42da7a1ee764ac9db2c3fd7434a3c6f521a2adb735"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-source-acceptance-criteria-types.ts",
+      "sha256": "a6fb77fedd123313e9e4309eb1563099645cb0eec8bbb0070a38510ac177754c"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-source-acceptance-match-core.ts",
+      "sha256": "2256b892a4ba1b5a9b487274781c66414cf30875719a887e3126d9f79dc7d3de"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-source-acceptance-match-types.ts",
+      "sha256": "61f34f6886246329d4e4cd0e78b86d4adea64da9af5eacc64cb8650e7634ed84"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-source-aggregation-policy-core.ts",
+      "sha256": "64d30fb8c909fd35db940783240af609af0c9225981a29aef044a97326f565a0"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-source-aggregation-policy-types.ts",
+      "sha256": "32364a163ba178973432cdfebb6a28cba65cd73809bd8b738d74d687bf60a86e"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-source-aggregation-readiness-basis-core.ts",
+      "sha256": "c7a2ccb3445967a48dc5e46111bba590b2dc8523243c842c3e4639dc0aee32ca"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-source-aggregation-readiness-basis-types.ts",
+      "sha256": "305b922ddd27ef663fe01e5e3eb71396305607eac94a5b5df3bab1104ab80a00"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-source-aggregation-readiness-policy-core.ts",
+      "sha256": "6f3af7ec86d2979214b760fdb2e46db08a334fa3067fe970c357f6ce8b22c045"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-source-aggregation-readiness-policy-types.ts",
+      "sha256": "26b6935fcdab9dc26bc85406c31b5ffbd0dcdf1703799eeb3ec94a3a15fcb61e"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-source-aggregation-result-core.ts",
+      "sha256": "9c6f94f511da3067cba03af12e7e57f274a7c9236fc4a2ccf9f5161408b5cd44"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-source-aggregation-result-types.ts",
+      "sha256": "84fe2f09a5c49264d0ffcd4de8634fa57e5ff1b17a8f043bf13ad02266798ead"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-source-bridge-core.ts",
+      "sha256": "daaa8741468433617d2e3b93cfefb282984b2be982451b6792717c8447ee6b4c"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-source-bridge-types.ts",
+      "sha256": "1626b92cb3f597f4124fc16a22a417cf1d8f3756a90593ff101c13835c3baa5f"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-source-resolution-classification-core.ts",
+      "sha256": "91c471f8b29902d7e62e4e2cc39e62375f034973eb0bc8c6bd36cfe712516c3b"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-authority-source-resolution-classification-types.ts",
+      "sha256": "8ea18fc83d329ef680dc4d73cb0145f67fa5058e0983816a1e57d8a2ad767983"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-canonical-authority-state-core.ts",
+      "sha256": "228ce238d88bfd3e4001635997f13a8fbc73b408ecf2cf4c304a32e123078b2d"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-canonical-authority-state-types.ts",
+      "sha256": "a4c2d54d675bcf7f0f5a00f6e9730d3de373b4731887d7fc3ddded58e2ec5508"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-canonical-per-binding-resource-readiness-evidence-state-core.ts",
+      "sha256": "bd109a9175ee246ebfbad72664884f0c3a6237576fc7d2935a860c4f99a760bc"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-canonical-per-binding-resource-readiness-evidence-state-types.ts",
+      "sha256": "9f3b24e008f1ccdddd4f29b0a6f9d1ee3c976906c91a8886523be9bedb87ab7e"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-canonical-per-requirement-resource-readiness-binding-evidence-composition-state-core.ts",
+      "sha256": "25fb7813473e2377e8ba04403fc1a91f593e583a0ceccd487bebf77c9b6b0dc7"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-canonical-per-requirement-resource-readiness-binding-evidence-composition-state-types.ts",
+      "sha256": "14c9ba9e60f6be79909d7138f7a80013b38f2b5a813b0f09cd54c79fa4a28f6a"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-capability-state-source-core.ts",
+      "sha256": "3364695462869075e0e34f3baa66463e0245f84f1eaf3fc35d212f5285c87eec"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-capability-state-source-types.ts",
+      "sha256": "b8c4cff1efc5ad700861e7c6fbae60a36007596a22d9648c88859ed51cec9d63"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-dimension-policy-core.ts",
+      "sha256": "0cca53725d32126bc16d4ca2f25e63b88a571e549e0f4ee4573498028e9d7dad"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-dimension-policy-types.ts",
+      "sha256": "3fc24cab5a6d295a373452b85df6b60c6d2f6765a2a765fd9cb3676624dbcd06"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-observation-context-authority-provenance-assessment-core.ts",
+      "sha256": "2ce11afd2a58f82105d9cb1c02f7656df8f62945afcdcc8a43fd61364e34bc0d"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-observation-context-authority-provenance-assessment-types.ts",
+      "sha256": "d5036072734e24782e86a519c0e8567e56c423a25fa2662caa5f38ac51cb4b7b"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-observation-context-declared-authority-assessment-core.ts",
+      "sha256": "d2e85c606a469a91e7c8eb9b0d7dcaaba60e3a27d85259eb0109a0189cc56615"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-observation-context-declared-authority-assessment-types.ts",
+      "sha256": "0ebd46a234846fbb82fe07811d2d2e727b391c6c1ad441f01583176b7196bf20"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-dimension-evaluation-state-core.ts",
+      "sha256": "d0c6a49309230a6cfc4b8734f6260d402f680cfb37c994a7ec44f4b33fc976dc"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-dimension-evaluation-state-interpretation-basis-core.ts",
+      "sha256": "36260af761e128b431083588edd1a0dc5d898afb0f3988c1bcb987af31f1d78b"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-dimension-evaluation-state-interpretation-basis-types.ts",
+      "sha256": "278208fd9b74164963859fb29ae49285e83c552ab4b0f047e74729636dbf89c9"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-dimension-evaluation-state-interpretation-policy-core.ts",
+      "sha256": "92cfd8c125ca94288e1c0f6007a71af20a036bbc9fa297c0fc2f07b191b110d8"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-dimension-evaluation-state-interpretation-policy-types.ts",
+      "sha256": "cf52f96cc7cb5b82dc0648e94ad1ac8031e83bb394f5f0e2120a371e24cc9542"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-dimension-evaluation-state-types.ts",
+      "sha256": "3e1ba237d1c1a89d86ffe8e518c1fcb3fde9195fb2afcf8ce5f030a734ad5afe"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-dimension-satisfaction-state-core.ts",
+      "sha256": "df7cfd917e7b820f8e92089314adec70e260fcc693717d0b13b8cc7d65fff5f8"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-dimension-satisfaction-state-types.ts",
+      "sha256": "eea0963dd398678c205608bb4c313a42cee9573908840a2d5d3dafa5da720eb8"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-required-dimension-coverage-core.ts",
+      "sha256": "883e487824e394c8076373db5fd7505a450add0148925596af6084063926f3c2"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-required-dimension-coverage-types.ts",
+      "sha256": "342b97a5e836c7036342837b95cd9d5eef319bd443f2d4389590a6800ab4222c"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-source-acceptance-criteria-core.ts",
+      "sha256": "55116c05b30c04e2ad60d0d54041a8f024b56f4f6f520a5da7a2ad8427e2449d"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-source-acceptance-criteria-types.ts",
+      "sha256": "91149325b86bcb52b67fa8b5231d8ba69be77c6139506fa58709fb47c8bfaea9"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-source-acceptance-match-core.ts",
+      "sha256": "bf21c606afb1d3c6b4dfd601512200a51193711a92363d68d5a32bc9abef5774"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-source-acceptance-match-types.ts",
+      "sha256": "02ba1e9d6c10f42538a6c9ab78202a510603ffcd4f54ae8a15ec149c233c6a9f"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-source-aggregation-policy-core.ts",
+      "sha256": "24816aee4a47ea279e43da43222560b448a1b3abf8e41605a039797e8c1c5df3"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-source-aggregation-policy-types.ts",
+      "sha256": "a42af0483a256f3a72d72aa33db1a18371f50774d05d63e4fba97f8c0e7a52c1"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-source-aggregation-readiness-basis-core.ts",
+      "sha256": "454f721d0489c13ad179de93454cfa9a3c86a7d9ff13e27b4f12f588db17cc42"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-source-aggregation-readiness-basis-types.ts",
+      "sha256": "e0b0874a08aed828c0159517448a249106d799df3a8f8ca00b365a14108f76e4"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-source-aggregation-readiness-policy-core.ts",
+      "sha256": "417efcea36bf8b9be289d929bf5fcbfb00504c1fca2911212bfd205f8544a867"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-source-aggregation-readiness-policy-types.ts",
+      "sha256": "5ef2091aba062fcb48a9db23d9ce52d5ebf5bd573c15cd852a4ee0d6b34e4bac"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-source-aggregation-result-core.ts",
+      "sha256": "8b9ac9d6ddfb58a860ce099f5905254fa40995c9d476c61b21d920e96e0c5784"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-source-aggregation-result-types.ts",
+      "sha256": "8a73e5ff6241b58ff1785da93a96d8f687d1c425af4010bda5e129fbf31a8d26"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-source-resolution-classification-core.ts",
+      "sha256": "15a65c64bb313ad38812cdfdcf7cafba78db3302d06f2ccdc4f7826286e34866"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-source-resolution-classification-types.ts",
+      "sha256": "a7f4af73aba9027816a266394cc1d27eff5d645dca868a2c4e53227df9b672ca"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-state-source-core.ts",
+      "sha256": "4e80e3ceeacd5ce47a0cf8bba75bd6468c8011f0da44f7900f1f93dbf4ced759"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-permission-state-source-types.ts",
+      "sha256": "5796bf4ed006134bfe25311b8123a3e1e9df1d8a78e6786088e253b0b2ceaf4f"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-policy-core.ts",
+      "sha256": "aef5029a20cc56948ae7c20ff761953789fb81627ff2bd0d5a0c305c8017a6fe"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-policy-types.ts",
+      "sha256": "bf5dd22f110812e152a9c138ad2ef1496f11099e2f7aa36f6bf844fc400d476d"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-readiness-basis-core.ts",
+      "sha256": "60e9ff61496864e65a6e74a09a35366c803fb91e0bea766d02a05a9d74723eaa"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-readiness-basis-types.ts",
+      "sha256": "f1853faabfe0fbcf43b311f08a75a53464d5e65e13ca534e3f1c1da6107f1be5"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-readiness-policy-core.ts",
+      "sha256": "a7a5f54c78da1f078df53fe170b9ca28eeb76582a763551dd147ded5530c1614"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-readiness-policy-types.ts",
+      "sha256": "81a6e80d16693dd0356631bddcd866dd8aed7635b9aecfd0b80636ad552e1451"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-result-core.ts",
+      "sha256": "5f1c77c2ec675e77278c55ae10c88c5d0c8e82cfc2b54231bb7efe4fccf4625b"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-result-interpretation-basis-core.ts",
+      "sha256": "a99403eafe3d85b7f8d1b12ac6b86560aed9c0696b6015f8b94296c702840c83"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-result-interpretation-basis-types.ts",
+      "sha256": "8a79e7b6d7b42fa650620fb11be7c7808d543a6a24837bc15521e40490bcc30e"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-result-interpretation-policy-core.ts",
+      "sha256": "ab5f24699284a33828a6b06791f874b004b3d5b36f84d1c98f67f2a5d2dae41d"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-result-interpretation-policy-types.ts",
+      "sha256": "597fad18bb26ef4fba5fa0641890b2f0b6babf4777411916e50d039e62af6fb5"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-result-types.ts",
+      "sha256": "8a8ad1161cc4bdcc0cb330052c01e191d018e5a71e5782f4456ce5804461c2dc"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-canonical-aggregated-declared-potential-contribution-capacity-compatibility-evidence-state-core.ts",
+      "sha256": "11b90e6f5788885184f45591b3e4eb86624b4c14162a50ad9070055f42e0083b"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-canonical-aggregated-declared-potential-contribution-capacity-compatibility-evidence-state-types.ts",
+      "sha256": "f213e7981df9b9e31c0609b03dcdb6dbf3b7c845e776891f38c68bfea6f4b614"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-canonical-declared-potential-contribution-required-amount-compatibility-evidence-state-core.ts",
+      "sha256": "005fc29cb309dfff879c64182cb62ca1d3ffde8e2a0cefa83053d3a4946cbc38"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-canonical-declared-potential-contribution-required-amount-compatibility-evidence-state-types.ts",
+      "sha256": "886313b77699ab1f9c43caa97371d9a3c7f380b91639fe467aec7544feca6904"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-canonical-per-source-declared-potential-contribution-capacity-relation-evidence-state-core.ts",
+      "sha256": "215db347a56737d32a16fa656e735d33058b023ac61fadb5f8e68d529706abff"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-canonical-per-source-declared-potential-contribution-capacity-relation-evidence-state-types.ts",
+      "sha256": "fa51b466cd976756784cb236c50713eb0c65ec5ac0e9537bd52a9fd0922087bb"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-policy-core.ts",
+      "sha256": "c28318212e3641c523bbe4e57f093e813f8797fcac1556bd537d7de1a6082418"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-policy-types.ts",
+      "sha256": "15ad54eafa479e418be39f4e4c66b3985fc9c4a4b7b7509f98aa42aa8053f89a"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-readiness-basis-core.ts",
+      "sha256": "9e6eefc6f9940756696ccbdfc14dbe30fa402a3b26c54317b2f3fa5d8c8b2ec1"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-readiness-basis-types.ts",
+      "sha256": "6f06150192b0f6b42baa5187c9e9e915837035d08c3d77f2cbc19fd28ae1b718"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-readiness-policy-core.ts",
+      "sha256": "5b49f0c6b68b64c296bc5edc126afe48610e2a7fd14053f486465708e959e93f"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-readiness-policy-types.ts",
+      "sha256": "a9eba227e745b3b2348ddb3cd9e22e97b87846ba2feb5a9e69356ed21667cdad"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-result-core.ts",
+      "sha256": "9432fa9a986335a190f7d979d63170acaf18afa54276f352fec515d28b842baf"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-result-interpretation-basis-core.ts",
+      "sha256": "5aa6ebd17af2022f8c3343c87af12ed62499735a4630c57f157159a856786877"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-result-interpretation-basis-types.ts",
+      "sha256": "f9bbc69cdef2c0ea3d2e8ff3039d261c576d9bbf73572057a1085bd0f7c07b6a"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-result-interpretation-policy-core.ts",
+      "sha256": "d55d86cd2de5b084a89c629c2fc1f3e11df7a48fadfb63ba48d0b504171de067"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-result-interpretation-policy-types.ts",
+      "sha256": "422fe9a76b5d52cbc7aa7dc0350c02072de04e74b36d601c10cbc08e2b67c9e2"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-result-types.ts",
+      "sha256": "2776144ce17185759942f3a36ee9f3b1f27beacae465dd112e16ffadf7c22c4e"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-relation-interpretation-basis-core.ts",
+      "sha256": "198206c9344a5249333621b362c65ca958d5ae3591a70f3f82bc703c13c01ab8"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-relation-interpretation-basis-types.ts",
+      "sha256": "6ca7fc67688cc25c62ca144c758d0dda3ff1717de9e09e6ca0262835802cf6a4"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-relation-interpretation-policy-core.ts",
+      "sha256": "7f9b07c7a0f8ba0b3365797fac802176c0ce3c1c295bec89806a88c7943587a5"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-relation-interpretation-policy-types.ts",
+      "sha256": "2fcdd9dd13101991236ea3fdb3ff05fac3a7ddda69720df082a2353cab3ffa75"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-quantity-compatibility-heterogeneous-evaluation-core.ts",
+      "sha256": "3034c1314b687d9129c19061d42a093edf58d20014213b3739b2d1b52dc6f7cd"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-quantity-compatibility-heterogeneous-evaluation-types.ts",
+      "sha256": "efc4447435a7712ec23296355fbf3efabb81177f49e73aa0e9a8c446546764f8"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-raw-relation-basis-core.ts",
+      "sha256": "8df5fee9a01cd0e7f95f4544cfdf874b1cf308e4dee710c2644c7af5810bb861"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-raw-relation-basis-types.ts",
+      "sha256": "f07f4dc01542ae9c06d9aea33d364699c96023cacf588da28124ed5927d32178"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-required-amount-compatibility-basis-core.ts",
+      "sha256": "4e2d57b29f8cf830ca8ed0b7cd8bcc902b89852adcfcf0b88a542112c0fce87a"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-required-amount-compatibility-basis-types.ts",
+      "sha256": "1b054f9c1ba94059131724c1f0a0a46de4db7db5d95ff13ca325422c8b471d94"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-evaluation-instant-core.ts",
+      "sha256": "33962fa650bb6bd10fbd07a93de164dc4c7fd1148a07c34969d687121006dc4c"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-evaluation-instant-types.ts",
+      "sha256": "d8d4f8754324f3c6a7f9e5e64e5b278d7ec5a14074191e66d36b59d072281458"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-evidence-evaluation-state-core.ts",
+      "sha256": "a7b4d1c2734bfffec02907f97cdf4fc654a246248b4123e592f61a610b4aa5fe"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-evidence-evaluation-state-interpretation-basis-core.ts",
+      "sha256": "354f06b915e3e913c396c29e142e56b1614d4589fada2354956530a724a168ac"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-evidence-evaluation-state-interpretation-basis-types.ts",
+      "sha256": "b8a6d600a99706c476bcbe5159e75e7dd3cb0c364807684f30f569f62def5272"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-evidence-evaluation-state-interpretation-policy-core.ts",
+      "sha256": "c35c930f6165f9286df562b53c6c15baf16e854bf125739b9aedb1547eff5b38"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-evidence-evaluation-state-interpretation-policy-types.ts",
+      "sha256": "40a5d5682870ac75f3a020bef9edba7dc5ec35ab81c3e1bd751ae62e2574ae75"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-evidence-evaluation-state-types.ts",
+      "sha256": "b542f2966541bd1c51cd443f3e8ed6508e80bfceabcf26d248587722cdd7207b"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-observation-context-binding-core.ts",
+      "sha256": "3d4de81707a8e44fa9eff0f0d30ff38d958215f896d1c3f25c41f62399dd3111"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-observation-context-binding-types.ts",
+      "sha256": "0cf5677e005efb1dc4b749a110123d98b56467b57485d85be0f142e421c5b4b1"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-per-binding-declared-capacity-required-amount-quantity-relation-basis-core.ts",
+      "sha256": "e94c801840ed74876f8d627dfe99c9d33b6874bc58e4074ab2d22dbba199f245"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-per-binding-declared-capacity-required-amount-quantity-relation-basis-types.ts",
+      "sha256": "e432654646053038b52a0caeaffd2f62bf99c82128e36ab36bff9542a23fe4e2"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-physical-potential-contribution-declaration-core.ts",
+      "sha256": "b0d3bb475c41f09e51aa0f259d479532c15f7595d8b78409cab0b42dfca98d42"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-physical-potential-contribution-declaration-types.ts",
+      "sha256": "b87dfc7045b4261a41536c15e5e8891d37dfa29374dc4469a52a25ac698df07f"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-raw-evidence-assessment-core.ts",
+      "sha256": "2ad4d9f4ca77d09570c71e743ec8263746e3cfae8cbdd4d98d3b185659168767"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-operational-eligibility-resource-readiness-raw-evidence-assessment-types.ts",
+      "sha256": "f33565985e8de12c73ddb9b0dff31d7dca348b5e686ef7268401251e85bb7cbc"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-permission-context-binding-core.ts",
+      "sha256": "388abc31e35dcfb2d93719c726759fb686289d19747c005219f5936987999210"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-permission-context-binding-types.ts",
+      "sha256": "b0b53cb7dec9841de63c4418377d92797ef64e79c923fbb30a694d21ad372b8e"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-permission-state-core.ts",
+      "sha256": "4a59d322c4e01900e59347a7c439438c02c2f370f487ef95730585cafde8f9e7"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-permission-state-types.ts",
+      "sha256": "3ec64514dda5e706d01386b3c4824ef37826c6d10113512410dc9b0d0bf0d922"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-planning-core.ts",
+      "sha256": "7b868758bea7a25d33bf76a410108750a52b038dee384df8c862491ee14193ff"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-planning-types.ts",
+      "sha256": "47be554857386362384f6f794b4fb8ecd4eb04c1e720acab5a1f193b8a929d68"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-resource-declared-potential-contribution-quantity-kind-semantic-declaration-core.ts",
+      "sha256": "f8cacbf13c28058e0551d83cffdba8d3020b3b383f4cd1c22335147c986433d7"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-resource-declared-potential-contribution-quantity-kind-semantic-declaration-types.ts",
+      "sha256": "629a60a085b5ffbb87d9c8ce0b1cf4a50426431578b18c27bc289b0dbcbb6732"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-resource-required-amount-semantic-declaration-core.ts",
+      "sha256": "325e2637ca9a326e45d095d3c672dd82bffe8a03df032b227d509a3214f02a06"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-resource-required-amount-semantic-declaration-types.ts",
+      "sha256": "09f973fa36d7f70d6bdd0f654801fcb6d89e98358f666123933912db5ee7d370"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-resource-requirement-core.ts",
+      "sha256": "1b1eaf2cd68e6af81f3222db1d5c3c8271da35877213170329b88255b64b521a"
+    },
+    {
+      "path": "ground-core/reality/attention-observation-resource-requirement-types.ts",
+      "sha256": "f045422a6501069427d04c96b90dee4144d9c9929070ef02c40b191b3bbe0397"
+    },
+    {
+      "path": "ground-core/reality/attention-resolution-eligibility-core.ts",
+      "sha256": "4f18dbadc572e2f5a33a3d1150a15896e99a05d6b9403032c2cc67f0fdc4f8cd"
+    },
+    {
+      "path": "ground-core/reality/attention-resolution-eligibility-types.ts",
+      "sha256": "d9e165522f7f87727e12fb7d7d2bd2b69de63a3a02ff166faf6d9b67417b6e5f"
+    },
+    {
+      "path": "ground-core/reality/belief-types.ts",
+      "sha256": "33c8f46f49e109642f9effc8ea7a2f1b9b2a52cc3c7df0a97c9b9aabbba68bbd"
+    },
+    {
+      "path": "ground-core/reality/belief.ts",
+      "sha256": "c064b37a7fbcd3de0aa706765d9ceda8108dc632f7f96062177a9e24b7d62cd9"
+    },
+    {
+      "path": "ground-core/reality/canonical-selected-source-aggregated-declared-resource-availability-evidence-state-core.ts",
+      "sha256": "1e8ad0f14afd10e0d45c5cf00142f31c7ec56f94a8db54a43fe49bb60fea3214"
+    },
+    {
+      "path": "ground-core/reality/canonical-selected-source-aggregated-declared-resource-availability-evidence-state-types.ts",
+      "sha256": "4c878cd751413c882707de8da3d964ce2a5793d98a1a4e56aaf5601641a1f903"
+    },
+    {
+      "path": "ground-core/reality/canonical-translation.ts",
+      "sha256": "dfc5e94b8e52e24c55483f1dcaf5340cd4dfaca12bc6646a2840a9d2a8076795"
+    },
+    {
+      "path": "ground-core/reality/capability-core.ts",
+      "sha256": "f75e8ed597645eeb966f55a596a86cd4399c57923304c59d59f4ae61cc56d727"
+    },
+    {
+      "path": "ground-core/reality/capability-types.ts",
+      "sha256": "c123a9a9aa63edd81f1f5751538924d4f629f80e5533cec06d3d504681b6c061"
+    },
+    {
+      "path": "ground-core/reality/commitment-acceptance-core.ts",
+      "sha256": "a6d29d6ecb038950c25c56c147472d7116f2a26033494572ff40425511221ab2"
+    },
+    {
+      "path": "ground-core/reality/commitment-acceptance-types.ts",
+      "sha256": "117accc656049bd79363af63756272ce77b428e23a58162e985197c98fd1ccb8"
+    },
+    {
+      "path": "ground-core/reality/commitment-conditional-term-core.ts",
+      "sha256": "f22903e105fc7a1e9355deeb1b561a28bee666fb818bfd5cad41c6497d5b90af"
+    },
+    {
+      "path": "ground-core/reality/commitment-conditional-term-types.ts",
+      "sha256": "ed3d2c1446458e631931dd79e6a53ef783c71b622f7f3fdf58a5b742523e58b8"
+    },
+    {
+      "path": "ground-core/reality/commitment-core.ts",
+      "sha256": "102104f3c04b3ba6f55ca33f3f5b51fd13f5103d6c89541f2b7f9b56d0e23240"
+    },
+    {
+      "path": "ground-core/reality/commitment-temporal-term-core.ts",
+      "sha256": "f9cfc6e45cd4f242a758c2f91fddae1387b16d4cb857a319a7c97bb0ab965eda"
+    },
+    {
+      "path": "ground-core/reality/commitment-temporal-term-types.ts",
+      "sha256": "314977df0fad91cbd8931b51799007a08c8359b7bb69f8171b6d3f00cc88f73e"
+    },
+    {
+      "path": "ground-core/reality/commitment-types.ts",
+      "sha256": "80c533083abc5f897ca2907bf42ec44d3222db6ad6a89b7d895ac99ec5b4aa80"
+    },
+    {
+      "path": "ground-core/reality/decision-core.ts",
+      "sha256": "dc8d88c0338b037aa6bbbef861d6848c7a94de4e040161e8ab7243c09dbc3451"
+    },
+    {
+      "path": "ground-core/reality/decision-lifecycle.ts",
+      "sha256": "76784345bd51dbca20af6fe1e9342f04ce59bf5352d8977e7eb14f0890738076"
+    },
+    {
+      "path": "ground-core/reality/decision-memory-core.ts",
+      "sha256": "d32669dc6e909fb4cc30b8469af40899ce900b55227e3f9bf71879d0c0792afe"
+    },
+    {
+      "path": "ground-core/reality/decision-memory-types.ts",
+      "sha256": "0158c309594d06402273ce7140632ed04a07ea639f210a2ef4d8a0484b148654"
+    },
+    {
+      "path": "ground-core/reality/decision-types.ts",
+      "sha256": "e0fe33effdb517d76e5afe429c2993301113261ba80a7fb96889b8cb08eb8883"
+    },
+    {
+      "path": "ground-core/reality/declared-resource-availability-per-source-evidence-state-core.ts",
+      "sha256": "ecfc63b1a6ef8cebc1459436e81cd09c402ee17faf026a8c7693400db767e192"
+    },
+    {
+      "path": "ground-core/reality/declared-resource-availability-per-source-evidence-state-types.ts",
+      "sha256": "bb8f2b08f08cc073926767ab5cf9048d5e46038fa011e62a9338cb1d590bb971"
+    },
+    {
+      "path": "ground-core/reality/declared-resource-availability-source-aggregation-policy-core.ts",
+      "sha256": "ee227bc15dd72beeeaf6af07aa4f35ddb41e4a035f95bcae8393d69bc145c7cb"
+    },
+    {
+      "path": "ground-core/reality/declared-resource-availability-source-aggregation-policy-types.ts",
+      "sha256": "7f36f5ce52af6ed09d9205fd20c38388463f99c4b76a5b6d6a12dfcbc5dcc59f"
+    },
+    {
+      "path": "ground-core/reality/declared-resource-availability-source-aggregation-readiness-basis-core.ts",
+      "sha256": "61ea05831efc53cf394b13bf465536fae1b755947608af14a388b17dca204383"
+    },
+    {
+      "path": "ground-core/reality/declared-resource-availability-source-aggregation-readiness-basis-types.ts",
+      "sha256": "f835a7f0136decb73f6775c6ab5f585a7ae05524f588d565af35ae73666d80a7"
+    },
+    {
+      "path": "ground-core/reality/declared-resource-availability-source-aggregation-readiness-policy-core.ts",
+      "sha256": "84b7882e309f9924c99715ac5c892c98626e906c5e94906b405c29283912285c"
+    },
+    {
+      "path": "ground-core/reality/declared-resource-availability-source-aggregation-readiness-policy-types.ts",
+      "sha256": "c63dff4eabeace838a1f1a024a8c50ca2620308c2a61eec307e105b45b9dc159"
+    },
+    {
+      "path": "ground-core/reality/declared-resource-availability-source-aggregation-result-core.ts",
+      "sha256": "7d6400ff7097d5476882eaf6381e5da78c89266332e3790668fb38a5b5654327"
+    },
+    {
+      "path": "ground-core/reality/declared-resource-availability-source-aggregation-result-interpretation-basis-core.ts",
+      "sha256": "3dd36fde6eb5283a5b404c6e0dbda3bb69f3da5c95a8e56591df7efdd8eeba15"
+    },
+    {
+      "path": "ground-core/reality/declared-resource-availability-source-aggregation-result-interpretation-basis-types.ts",
+      "sha256": "eb48010790dbda72a21d069dea6f94711b1046fb787a950510fb58a118dce709"
+    },
+    {
+      "path": "ground-core/reality/declared-resource-availability-source-aggregation-result-interpretation-policy-core.ts",
+      "sha256": "4faf1fc11863b8730f873eb70ef7f1574e4255dd691a2abb0aa3abf02ea2a9c9"
+    },
+    {
+      "path": "ground-core/reality/declared-resource-availability-source-aggregation-result-interpretation-policy-types.ts",
+      "sha256": "318663b160f293d06ac42b1cfdca6002d07974256cdc5f9d158982e214c2e03b"
+    },
+    {
+      "path": "ground-core/reality/declared-resource-availability-source-aggregation-result-types.ts",
+      "sha256": "c5c9b103551cdb69b458450c26f627a4adbd1eab45d4a293bc4d87fec1bc16d5"
+    },
+    {
+      "path": "ground-core/reality/discovery-types.ts",
+      "sha256": "60302f5d5ffae5d5065d803162d196e3206a441bb92b50a0b404a308336fec13"
+    },
+    {
+      "path": "ground-core/reality/discovery.ts",
+      "sha256": "95a434308a403d1e88cc5dca15f79d9413c20ccd981506ceae564b1a32154216"
+    },
+    {
+      "path": "ground-core/reality/draft.ts",
+      "sha256": "91858aba17041930c76eca0572082814747fba0dd8d180483c821172016633c7"
+    },
+    {
+      "path": "ground-core/reality/epistemic-gap-types.ts",
+      "sha256": "cf4ee868284f0f4a594c5195af81508103a1e08f51af81e8603e93ee4d0584e1"
+    },
+    {
+      "path": "ground-core/reality/epistemic-gaps.ts",
+      "sha256": "5285ea09664eb52820c1c4af5407b8f5e70f0933b46ed31818a035a688cbda28"
+    },
+    {
+      "path": "ground-core/reality/epistemic.ts",
+      "sha256": "a93dce1f2f0ccde437360b02f38c2a485b6f55e55ed057af6c0fa76eb699b836"
+    },
+    {
+      "path": "ground-core/reality/feasibility-core.ts",
+      "sha256": "a8a451adcc5485475a4fff82f19740896e9f9dee7361fe81e3ebcdab985a5bb5"
+    },
+    {
+      "path": "ground-core/reality/feasibility-types.ts",
+      "sha256": "6d2c61b717780b6ccb6f2a26c027a790e1742c44144813215cbd270e092e76fa"
+    },
+    {
+      "path": "ground-core/reality/governance-core.ts",
+      "sha256": "e521b2fae392fcd95f88bc76d70aed5cb201e45b4cd628432482ef95c4052fe9"
+    },
+    {
+      "path": "ground-core/reality/governance-provenance.ts",
+      "sha256": "0b1d2f5f9d5e6a2d9dab53464220b8f27ce7bb3cfcb642c2c072c3abdef11f38"
+    },
+    {
+      "path": "ground-core/reality/governance-types.ts",
+      "sha256": "cdc5b98bbd537935791dd420688e05a9e9c9304e57a7c7798a5c2b438a996ba4"
+    },
+    {
+      "path": "ground-core/reality/impact-core.ts",
+      "sha256": "f9e13a9a486fe633c1be86144bad78198456185f751450542a6c55c395fa0839"
+    },
+    {
+      "path": "ground-core/reality/impact-measurement-types.ts",
+      "sha256": "c66491a563058c87fa24e69f2e6d72954a74f16e3eb432064971cd2f05c4133a"
+    },
+    {
+      "path": "ground-core/reality/impact-measurement.ts",
+      "sha256": "7f1bcab3a7c8854bff8bd7892016c42428d7807986f43a805249fd4d2980660b"
+    },
+    {
+      "path": "ground-core/reality/impact-types.ts",
+      "sha256": "55243190b398bc3f050b32fe45fc9aea76fa7bd0a63a298b39b04db7145ba5f9"
+    },
+    {
+      "path": "ground-core/reality/inquiry-types.ts",
+      "sha256": "7771e810ca70c8d1545a811b39b43223015c1c3fa83dc1a55271300f50cdcfb9"
+    },
+    {
+      "path": "ground-core/reality/inquiry.ts",
+      "sha256": "47202221ab436e32328e4288107c74973c7eb543015d974a5c6c9d47af9e4df0"
+    },
+    {
+      "path": "ground-core/reality/intent-core.ts",
+      "sha256": "2675bb471051b040910907be0e1f87335dabf5760b89f87f963879dcb25079f5"
+    },
+    {
+      "path": "ground-core/reality/intent-types.ts",
+      "sha256": "a82e0c5e3133a395f6ad233a7c57b74b449e49fdffaf41967dfb7b4aec098a59"
+    },
+    {
+      "path": "ground-core/reality/intervention-core.ts",
+      "sha256": "7dd35e340e8df2da49cb7eaa526260431ec959c1634ff36010e48b0470303e27"
+    },
+    {
+      "path": "ground-core/reality/intervention-types.ts",
+      "sha256": "e1aa04813b8cffb955be4edb0bf3deadfcaba45c076f5f8a074a06fe74b7e986"
+    },
+    {
+      "path": "ground-core/reality/normative-discovery-types.ts",
+      "sha256": "27486a2e0b960f998c4e44c887a5814022523493289daccfefee7ac273d42612"
+    },
+    {
+      "path": "ground-core/reality/normative-discovery.ts",
+      "sha256": "204d16fa7fa5aa09dee79c4be4ed9cfae9ef373645c9eeec8116c02b374ef167"
+    },
+    {
+      "path": "ground-core/reality/objective-core.ts",
+      "sha256": "54548ab59bf0d87c03fffc9c8b01b75305ee2f8aa5e6d84d86f0a4b96e115f18"
+    },
+    {
+      "path": "ground-core/reality/objective-discovery-types.ts",
+      "sha256": "170542afdbf5ea46bf4a4c8cb306baea4f4fbf7104e9b58a90b3f2895c740544"
+    },
+    {
+      "path": "ground-core/reality/objective-discovery.ts",
+      "sha256": "e7557dbb3cd9e3c93f0baaee331e23f08ca4c1173bbfde27e431797b93d16f0d"
+    },
+    {
+      "path": "ground-core/reality/objective-types.ts",
+      "sha256": "014c56a7404dfebafdc2274cd8a6ca21c72d025949d19e8bf77601d56b915339"
+    },
+    {
+      "path": "ground-core/reality/observation-need-types.ts",
+      "sha256": "c7e485c2d24391e39f5ea3b3825fbd48e6be22a6bc306ffea6e7310b829987b1"
+    },
+    {
+      "path": "ground-core/reality/observation-need.ts",
+      "sha256": "e44beb234df75ee85ccacc923b445bafafa7c0e5e70c3313d3e5f3851cd4a4a5"
+    },
+    {
+      "path": "ground-core/reality/permission-core.ts",
+      "sha256": "8789c13d4283b20570a747312b44731a9d6c21b3398e8f2e420e46dff09e72a6"
+    },
+    {
+      "path": "ground-core/reality/permission-types.ts",
+      "sha256": "99d1908032ffe22744aa102904dd6299ebcc24ce42a1a275f53512c19dd7f0e5"
+    },
+    {
+      "path": "ground-core/reality/propose.ts",
+      "sha256": "a95f860ae722f66f54971335a44cc81250c50ea6218605a38714900a3347026f"
+    },
+    {
+      "path": "ground-core/reality/prospective-core.ts",
+      "sha256": "9fdfee1de1f217f012ee7cceeaf7972cbfee589c7f700f1bf232a82c9fe9ede1"
+    },
+    {
+      "path": "ground-core/reality/prospective-risk-discovery-types.ts",
+      "sha256": "443c84289becbd2ac8f04e8f7a7f914aafe0e5f9e0e2c2938bab9a61768a70ab"
+    },
+    {
+      "path": "ground-core/reality/prospective-risk-discovery.ts",
+      "sha256": "0a2dac5ff4556d192e9cb2db5378fec5934f8eb01be804df7252e68ec9171c41"
+    },
+    {
+      "path": "ground-core/reality/prospective-types.ts",
+      "sha256": "d4f2289bfbed28594a4958ba26cff77309f89799424476cc4b8872feb3ba2ccd"
+    },
+    {
+      "path": "ground-core/reality/reference-criterion.ts",
+      "sha256": "d962f68e7aed0ed018df693745a647f559f213284087f933ef2c18fc8c64d394"
+    },
+    {
+      "path": "ground-core/reality/reference-state.ts",
+      "sha256": "14ee3fb7406675538c5bb5fa473a8438a733e300cb862eb3ea04f0095652b43e"
+    },
+    {
+      "path": "ground-core/reality/reference-types.ts",
+      "sha256": "a451563ae38fa4417459604f55df7ce7c07fcbf876aa8e45d576f2668b7d03b8"
+    },
+    {
+      "path": "ground-core/reality/resource-commitment-core.ts",
+      "sha256": "f7b0852b1dfa896e2f062901c5f6abab5c21fa637aedbe2566ee7746974c8d02"
+    },
+    {
+      "path": "ground-core/reality/resource-commitment-types.ts",
+      "sha256": "2fdc70801fcab2f3b29e9ae3a1d71d7763c3f4be1b82875def8bbc728c489883"
+    },
+    {
+      "path": "ground-core/reality/resource-contention-discovery-types.ts",
+      "sha256": "cbaa8057dc2c1fb3f74a3c2e96f773d5857c720a9be290720b393c93ec7ce00b"
+    },
+    {
+      "path": "ground-core/reality/resource-contention-discovery.ts",
+      "sha256": "6e99a19939872c9c61213110e86670c329c477103fe93004845f22527f0a0603"
+    },
+    {
+      "path": "ground-core/reality/resource-core.ts",
+      "sha256": "88143d3453ac2ef98077ad4b0a5b93ec3f83c1608cc3ee4577446cab7ef2103f"
+    },
+    {
+      "path": "ground-core/reality/resource-reservation-capacity-pressure-core.ts",
+      "sha256": "ad248443ead58ce574084cb2a1bd77c3cfe40184d48c459a4fd20aa78b01b9da"
+    },
+    {
+      "path": "ground-core/reality/resource-reservation-capacity-pressure-types.ts",
+      "sha256": "a4212804ab2014b10f8e00fc8811fe942aad3abd317894c70f32de5a87e18f7e"
+    },
+    {
+      "path": "ground-core/reality/resource-reservation-contention-core.ts",
+      "sha256": "d29c73b63557470c70dd5cf8770a37f01b8d1d31bad0ecc15b6ec16fc420199e"
+    },
+    {
+      "path": "ground-core/reality/resource-reservation-contention-types.ts",
+      "sha256": "c61cf8c48425daabbec08d9e65164210e7605e13f1632ba9f5a9143f71ab72c0"
+    },
+    {
+      "path": "ground-core/reality/resource-reservation-core.ts",
+      "sha256": "ec9c009be4c701deefaca9c1176b92c41f93f1cfb1fd73d1cf9e78720a14bfa4"
+    },
+    {
+      "path": "ground-core/reality/resource-reservation-types.ts",
+      "sha256": "4109e45218e830276b990bf6f60cea81e50eeb8d2da7aade5066e6da8b50d052"
+    },
+    {
+      "path": "ground-core/reality/resource-situation-types.ts",
+      "sha256": "1af4da67aebffccf53d49f16e8bfaccd04d6b2a828c9f108c81aa40238bbdefa"
+    },
+    {
+      "path": "ground-core/reality/resource-situation.ts",
+      "sha256": "dd5f9545602e6312f051094e4cf744d1d91dcef0c43b9196d03448f3ea28c47e"
+    },
+    {
+      "path": "ground-core/reality/resource-types.ts",
+      "sha256": "2635452c4e098ab695a1907cac2ed5fe58614a34cc1c5bea101f3e8ed348fe77"
+    },
+    {
+      "path": "ground-core/reality/semantic-equality.ts",
+      "sha256": "5e8bfa27764fcdb450e70574f5587a8a7f803b6ba563b17185f0896838f4797d"
+    },
+    {
+      "path": "ground-core/reality/semantics.ts",
+      "sha256": "187f143dfa26e422296124f24766d4edf75a7aa3d0fde8b41b3f563b90fb4027"
+    },
+    {
+      "path": "ground-core/reality/situation-types.ts",
+      "sha256": "339028ff79d45c20a7edd32f113365f661ac5ed72e681240dada2151ce03f98d"
+    },
+    {
+      "path": "ground-core/reality/situation.ts",
+      "sha256": "8a40804deebe29b0529686bae5fdbb7413c03cdb80931a86f3a8b9d92cce48b3"
+    },
+    {
+      "path": "ground-core/reality/types.ts",
+      "sha256": "179665ff3e17c899574ae72ca53b7e673a19913aff0af6e929e471510914f89e"
+    },
+    {
+      "path": "ground-core/reality/worldline-types.ts",
+      "sha256": "5945c6dcf676ec368ad80939588630adaf96de9e8d442678ad375cfdddb51cdc"
+    },
+    {
+      "path": "ground-core/reality/worldline.ts",
+      "sha256": "200efa28befdd51421836b93b1795d8524d3cc773ded4312fbf39a255b852102"
+    },
+    {
+      "path": "ground-core/reconcile/propose.ts",
+      "sha256": "45ca09dcf8687fef3050b29ed49e314b85753fb55b42fce04be08f70d8dd8653"
+    },
+    {
+      "path": "ground-core/reconcile/types.ts",
+      "sha256": "6cebf1f79481108b09c030f7bf8f61a6b2ddaabca5e3b8e1807f5c4e971fe8e7"
+    },
+    {
+      "path": "ground-core/session/build-complete-action-patch.ts",
+      "sha256": "0f8ec903f096a4ba826cb7a33fc335f0d13cac521ef2c0ab5e902881ca316d04"
+    },
+    {
+      "path": "ground-core/session/preview-formatters.ts",
+      "sha256": "eddc3723448ebb76300340b3e42700d7319b48ec2c0d81e89bfef4cc061d2aba"
+    },
+    {
+      "path": "ground-core/session/types.ts",
+      "sha256": "123099f2de1c02f0492b9c6a3eff9cf70de959c59b199ff34eb444c02fe7d9fa"
+    },
+    {
+      "path": "ground-core/state-engine.ts",
+      "sha256": "f0fa768ad76525551e533fd939a4d7c515ca01c5a1124986e84dac979a40ee80"
+    },
+    {
+      "path": "ground-core/studio/analyzers.ts",
+      "sha256": "2978ad08dfeef2ff86808bd947a7ef7cde27376e836da20a8b5af0dc9b97aa28"
+    },
+    {
+      "path": "ground-core/studio/brief-adapter.ts",
+      "sha256": "630bf6d35b1ad911979a6cc091be56fe8db35a9615444297635faa28cf8c1993"
+    },
+    {
+      "path": "ground-core/studio/brief-formatters.ts",
+      "sha256": "dc884629de5e28c20a394862c78cfea3bc8c256738964787de4107189a31e82c"
+    },
+    {
+      "path": "ground-core/studio/brief-renderer.ts",
+      "sha256": "f1ef1186368e22cbf4653e72424abe8ffe6722407cd0e3e031b360adf3919e16"
+    },
+    {
+      "path": "ground-core/studio/brief-types.ts",
+      "sha256": "55939cf1ae11e3b58c9f082e06b4d2a23defeb46b273badd21b4623de7b929e3"
+    },
+    {
+      "path": "ground-core/studio/narrative-builder.ts",
+      "sha256": "dc00763344564745e20643045cbb00854a27b7f4fc4f4529d7ee96b834edc1d0"
+    },
+    {
+      "path": "ground-core/studio/narrative-formatters.ts",
+      "sha256": "a7297953adf5d2f2f8aa878afd9097e893178ea732ed9d2560fae5ae00b5f06f"
+    },
+    {
+      "path": "ground-core/studio/narrative-rules.ts",
+      "sha256": "c85cf9039567f24cb2367c1dbe0f326bb4544e43ba70691d47dc879c6c9ed8d3"
+    },
+    {
+      "path": "ground-core/studio/narrative-types.ts",
+      "sha256": "03d2d94963bc7e0343eabe026f77e72223212766febccf0214297abe12c4de73"
+    },
+    {
+      "path": "ground-core/studio/rule-studio.ts",
+      "sha256": "b4b8666c466d3c7ee3a97f5fa22954ad35e020c6fe34a555c88d69db1578f368"
+    },
+    {
+      "path": "ground-core/studio/scoring.ts",
+      "sha256": "5226038b56f1a3142d3824b67ec4cc921ee5b5f46694d899c19b1e1313e4d8f1"
+    },
+    {
+      "path": "ground-core/studio/studio-brief.ts",
+      "sha256": "d44df5084f9771fb0743bb2d2d29eaf28c3393652f5b94e9e320cfece5b5c847"
+    },
+    {
+      "path": "ground-core/studio/types.ts",
+      "sha256": "91d6f2ab20d0fb024d8981ad043747565e70533abad4c40f8da9b96df76af3de"
+    },
+    {
+      "path": "ground-core/types.ts",
+      "sha256": "17fa8c27c58a2143203b2c3194e6b550916a3ef2eb2a99be024331a53bb130d7"
+    },
+    {
+      "path": "ground-core/validate.ts",
+      "sha256": "db84fb88d5aeefa7c0388dc9957f1dd2d85d425a8e698debbd228e715654b4d1"
+    }
+  ],
+  "scope": "Current Round1\u20136 artifacts and every existing core TS, including unrelated current edits; no claim these edits were made here"
+}

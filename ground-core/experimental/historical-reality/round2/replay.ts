@@ -1,0 +1,21 @@
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {dirname,resolve} from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createEmptyProject,applyPatch} from '../../../state-engine.js';
+import {saveProject,loadProject} from '../../../file-store.js';
+import {getEvidenceForClaim} from '../../../reality/epistemic.js';
+import {projectSourceAssertions,traceReconstruction} from '../substrate.js';
+import {materializeRound2,actorPropagationAt,tracePropagation,type Round2} from './propagation.js';
+const here=dirname(fileURLToPath(import.meta.url));const round=JSON.parse(readFileSync(resolve(here,'round2.dataset.json'),'utf8')) as Round2;
+const data=materializeRound2(readFileSync(resolve(here,round.parent.path),'utf8'),round);
+if(createHash('sha256').update(readFileSync(resolve(here,'../round1.landscape.json'))).digest('hex')!==round.parent.landscape_sha256)throw new Error('Round1 landscape changed');
+for(const a of round.assets){const bytes=readFileSync(resolve(here,a.path));if(bytes.subarray(0,5).toString()!=='%PDF-'||bytes.length!==a.bytes||createHash('sha256').update(bytes).digest('hex')!==a.sha256)throw new Error('PDF integrity mismatch');}
+const output=resolve(process.argv[2]??resolve(here,'replay'));mkdirSync(output,{recursive:true});
+const project=createEmptyProject({title:'Historical Reality — Round2',summary:'Source-content projection with sparse historical propagation sidecar.'});
+project.project.id='19041904-1904-4904-8904-190419042004';project.current_state.project_id=project.project.id;
+const patch=projectSourceAssertions(data,project,'2026-09-14T00:00:00.000Z');const state=applyPatch(project,patch);saveProject(state,{storageDir:output});const loaded=loadProject(state.project.id,{storageDir:output});
+if(loaded.reality_events.length||loaded.reality_states.length||loaded.claims.some(c=>getEvidenceForClaim(loaded,c.id).supports.length!==1))throw new Error('Unsafe projection or broken persistence trace');
+const summary={counts:{sources:data.sources.length,claims:data.claims.length,relations:data.evidence_relations.length,actors:data.actors.length,reconstructions:data.reconstructions.length,nodes:round.propagation.nodes.length,edges:round.propagation.edges.length,actor_records:round.propagation.actor_records.length,scoped_assessments:round.propagation.assessments.length,assets:round.assets.length},parent_integrity:'dataset and landscape SHA256 verified',canonical_projection:{claims:loaded.claims.length,historical_events:0,historical_states:0,confidence_scope:'Inherited 0.95 is an uncalibrated source-text attribution estimate only; scoped historical assessments remain sidecar.'},validation:'Materialized, validated, canonical patch applied, file-store round-trip, all source traces retained, PDF magic/size/hash verified.',limits:['No authentication of historical originals','No missing stage or UTC instant inferred','Actor query includes inherited Round1 records and a supplementary Round2 layer','Full PDFs acquired; only declared pages inspected']};
+const write=(name:string,value:unknown)=>writeFileSync(resolve(output,name),JSON.stringify(value,null,2)+'\n');
+write('validation.json',summary);write('source-assertions.patch.json',patch);write('materialized.dataset.json',data);write('propagation-traces.json',round.propagation.nodes.map(n=>tracePropagation(data,round,n.id)));write('reconstruction-traces.json',data.reconstructions.map(r=>traceReconstruction(data,r.id)));write('actor-queries.json',['jp-fm-receiving-office','jp-minister-ru','jp-cabinet','jp-army-command','navy-minister','hayashi-london','togo'].map(a=>actorPropagationAt(data,round,a,'1904-02-10')));console.log(JSON.stringify(summary,null,2));

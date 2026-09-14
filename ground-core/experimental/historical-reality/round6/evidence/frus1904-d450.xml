@@ -1,0 +1,18 @@
+<ns0:div xmlns:ns0="http://www.tei-c.org/ns/1.0" xmlns:ns1="http://history.state.gov/frus/ns/1.0" ns1:doc-dateTime-max="1904-02-27T23:59:59-05:00" ns1:doc-dateTime-min="1904-02-27T00:00:00-05:00" n="450" subtype="historical-document" type="document" xml:id="d450">
+                        <ns0:head><ns0:hi rend="italic">Mr. <ns0:persName type="from">Allen</ns0:persName> to Mr.
+                                    <ns0:persName type="to">Hay</ns0:persName>.</ns0:hi></ns0:head>
+                        <ns0:opener><ns0:dateline rendition="#right"><ns0:placeName><ns0:hi rend="smallcaps">American Legation</ns0:hi>,<ns0:lb /><ns0:hi rend="italic">Seoul,
+                                        Korea</ns0:hi></ns0:placeName>, <ns0:date calendar="gregorian" when="1904-02-27"><ns0:hi rend="italic">February 27,
+                                    1904</ns0:hi></ns0:date>.</ns0:dateline>
+                            <ns0:seg rendition="#left">No. 681.]</ns0:seg></ns0:opener>
+                        <ns0:p><ns0:hi rend="smallcaps">Sir</ns0:hi>:</ns0:p>
+                        <ns0:p rend="center">* * * * * * *</ns0:p>
+                        <ns0:p>Mr. Hayashi, the Japanese minister, during his call on yesterday
+                            afternoon handed me a translation of the new agreement with Korea, a
+                            copy of which I inclosed.<ns0:note n="a" xml:id="d450fna">Agreement printed
+                                under Japan, <ns0:ref target="#pg_437">page 437</ns0:ref>.</ns0:note></ns0:p>
+                        <ns0:p rend="center">* * * * * * *</ns0:p>
+                        <ns0:p>I have, etc.,</ns0:p>
+                        <ns0:closer><ns0:signed><ns0:hi rend="smallcaps">Horace N. Allen</ns0:hi>.</ns0:signed></ns0:closer>
+                    </ns0:div>
+                

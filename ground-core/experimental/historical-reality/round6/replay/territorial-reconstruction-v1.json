@@ -1,0 +1,1790 @@
+[
+  {
+    "id": "r6:recon-seoul",
+    "version": 1,
+    "previous_version_id": null,
+    "evaluated_at": "2026-09-14T04:15:55Z",
+    "evidence_cutoff": "2026-09-14 source acquisition session; not historical event cutoff",
+    "dataset_basis": "this Round6 envelope + SHA-pinned Round1–5 parents; see verification dataset hash",
+    "method": "current_system_manual_evidence_scoped_composition",
+    "row_ids": [
+      "r6:row-se-sovereignty",
+      "r6:row-se-advice",
+      "r6:row-se-occupation",
+      "r6:row-se-telegraph",
+      "r6:row-se-allen",
+      "r6:row-se-gris",
+      "r6:row-se-supervision",
+      "r6:row-se-police"
+    ],
+    "opposition": "No direct exclusive same-dimension/scope/time historical negation authenticated in located corpus",
+    "alternatives": [
+      "Attributed statements accurate but limited",
+      "Implementation partial/different or source reporting mistaken"
+    ],
+    "canonical_territorial_controller": null,
+    "label": "漢城外交・電信要請",
+    "window_raw": "1904-02-12–26, March17retrospectiveassessment",
+    "rows": [
+      {
+        "id": "r6:row-se-sovereignty",
+        "case_id": "r6:case-seoul",
+        "place_id": "r6:p-korea",
+        "actor_id": "jp-government",
+        "dimension": "independence_integrity_guarantee",
+        "assertion_form": "legal_text",
+        "value": "Japan guarantees Korean independence/territorial integrity",
+        "scope": {
+          "spatial": "r6:p-korea",
+          "functional": "independence_integrity_guarantee",
+          "actor": "jp-government",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "se-sovereignty"
+        },
+        "time": {
+          "raw": "23d instant",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-23",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "declared_right_or_position",
+        "claim_ids": [
+          "c430-guarantee"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Effective extent/onset and independent field verification not established",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-se-advice",
+        "case_id": "r6:case-seoul",
+        "place_id": "r6:p-korea",
+        "actor_id": "kr-government",
+        "dimension": "administrative_advice",
+        "assertion_form": "legal_text",
+        "value": "Korea to adopt Japanese advice",
+        "scope": {
+          "spatial": "r6:p-korea",
+          "functional": "administrative_advice",
+          "actor": "kr-government",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "se-advice"
+        },
+        "time": {
+          "raw": "23d instant",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-23",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "declared_right_or_position",
+        "claim_ids": [
+          "r6:c-advice"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Effective extent/onset and independent field verification not established",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-se-occupation",
+        "case_id": "r6:case-seoul",
+        "place_id": "r6:p-korea",
+        "actor_id": "jp-government",
+        "dimension": "conditional_strategic_occupation",
+        "assertion_form": "legal_text",
+        "value": "May occupy necessary strategic places when specified conditions require",
+        "scope": {
+          "spatial": "r6:p-korea",
+          "functional": "conditional_strategic_occupation",
+          "actor": "jp-government",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "se-occupation"
+        },
+        "time": {
+          "raw": "23d instant",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-23",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "declared_right_or_position",
+        "claim_ids": [
+          "c430-occupation"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "No specific occupied Seoul site identified by clause; no completed exercise",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-se-telegraph",
+        "case_id": "r6:case-seoul",
+        "place_id": "r6:p-korea",
+        "actor_id": "hayashi",
+        "dimension": "telegraph_access",
+        "assertion_form": "request",
+        "value": "Requests permission to use lines for northward advance",
+        "scope": {
+          "spatial": "r6:p-korea",
+          "functional": "telegraph_access",
+          "actor": "hayashi",
+          "population": "not specified by source",
+          "infrastructure": "Korean northward route telegraph lines",
+          "temporal_key": "se-telegraph"
+        },
+        "time": {
+          "raw": "February12",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-12",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "research_scope",
+        "claim_ids": [
+          "cnikh-telegraph"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Permission grant, operator orders, receipt and actual network use unlocated",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-se-allen",
+        "case_id": "r6:case-seoul",
+        "place_id": "r6:p-seoul",
+        "actor_id": "r6:allen",
+        "dimension": "protocol_copy_possession",
+        "assertion_form": "documented_transmission",
+        "value": "Handed translation yesterday afternoon",
+        "scope": {
+          "spatial": "r6:p-seoul",
+          "functional": "protocol_copy_possession",
+          "actor": "r6:allen",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "se-allen"
+        },
+        "time": {
+          "raw": "yesterday afternoon / February27 heading",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-26",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "documented_stage",
+        "claim_ids": [
+          "r6:c-allen-receipt"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Effective extent/onset and independent field verification not established",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-se-gris",
+        "case_id": "r6:case-seoul",
+        "place_id": "r6:p-korea",
+        "actor_id": "griscom",
+        "dimension": "protocol_copy_possession",
+        "assertion_form": "documented_transmission",
+        "value": "Handed copy in Tokyo25Feb",
+        "scope": {
+          "spatial": "r6:p-korea",
+          "functional": "protocol_copy_possession",
+          "actor": "griscom",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "se-gris"
+        },
+        "time": {
+          "raw": "25th ultimo / March17",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-25",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "documented_stage",
+        "claim_ids": [
+          "r6:c-gris-receipt"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Place is protocol subject scope Korea, not Griscom physical location; Tokyo possession not Seoul knowledge",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-se-supervision",
+        "case_id": "r6:case-seoul",
+        "place_id": "r6:p-korea",
+        "actor_id": "griscom",
+        "dimension": "administrative_supervision",
+        "assertion_form": "actor_stance",
+        "value": "Reports supervision already begun; belief re future integrity",
+        "scope": {
+          "spatial": "r6:p-korea",
+          "functional": "administrative_supervision",
+          "actor": "griscom",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "se-supervision"
+        },
+        "time": {
+          "raw": "March17; already begun onset unplaced",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-03-17",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "declared_right_or_position",
+        "claim_ids": [
+          "r6:c-gris-interpret"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "No named Seoul office/court/tax procedure inspected",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-se-police",
+        "case_id": "r6:case-seoul",
+        "place_id": "r6:p-seoul",
+        "actor_id": "kr-government",
+        "dimension": "local_policing",
+        "assertion_form": "unresolved_state",
+        "value": {
+          "status": "unknown",
+          "reason": "Known place/polity, no located policing authority/exercise evidence in inspected protocol and Allen item"
+        },
+        "scope": {
+          "spatial": "r6:p-seoul",
+          "functional": "local_policing",
+          "actor": "kr-government",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "se-police"
+        },
+        "time": {
+          "raw": "February23–26 research window",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "research_scope",
+        "claim_ids": [
+          "r6:c-allen-receipt"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "unresolved",
+        "competing_claim_ids": [],
+        "unknown_reason": "Known place/polity, no located policing authority/exercise evidence in inspected protocol and Allen item",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      }
+    ]
+  },
+  {
+    "id": "r6:recon-niu",
+    "version": 1,
+    "previous_version_id": null,
+    "evaluated_at": "2026-09-14T04:15:55Z",
+    "evidence_cutoff": "2026-09-14 source acquisition session; not historical event cutoff",
+    "dataset_basis": "this Round6 envelope + SHA-pinned Round1–5 parents; see verification dataset hash",
+    "method": "current_system_manual_evidence_scoped_composition",
+    "row_ids": [
+      "r6:row-ni-good",
+      "r6:row-ni-consent",
+      "r6:row-ni-receipt",
+      "r6:row-ni-send",
+      "r6:row-ni-arrest",
+      "r6:row-ni-contact",
+      "r6:row-ni-native",
+      "r6:row-ni-occupation",
+      "r6:row-ni-grain",
+      "r6:row-ni-orders",
+      "r6:row-ni-tax"
+    ],
+    "opposition": "No direct exclusive same-dimension/scope/time historical negation authenticated in located corpus",
+    "alternatives": [
+      "Attributed statements accurate but limited",
+      "Implementation partial/different or source reporting mistaken"
+    ],
+    "canonical_territorial_controller": null,
+    "label": "牛荘港の領事保護・native customs",
+    "window_raw": "1904-02-04–24, March9customs-rulecontext",
+    "rows": [
+      {
+        "id": "r6:row-ni-good",
+        "case_id": "r6:case-niu",
+        "place_id": "r6:p-niu",
+        "actor_id": "r6:miller",
+        "dimension": "good_offices",
+        "assertion_form": "instruction",
+        "value": "Conditional US good-offices role, no Japanese functions",
+        "scope": {
+          "spatial": "r6:p-niu",
+          "functional": "good_offices",
+          "actor": "r6:miller",
+          "population": "Japanese subjects and interests",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ni-good"
+        },
+        "time": {
+          "raw": "February9",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-09",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "research_scope",
+        "claim_ids": [
+          "r6:c-goodoffices",
+          "r6:c-no-jp-authority"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Chinese assent separately attested, not consummated protection",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ni-consent",
+        "case_id": "r6:case-niu",
+        "place_id": "r6:p-niu",
+        "actor_id": "qing-government",
+        "dimension": "good_offices_assent",
+        "assertion_form": "actor_stance",
+        "value": "Consent reported by Conger",
+        "scope": {
+          "spatial": "r6:p-niu",
+          "functional": "good_offices_assent",
+          "actor": "qing-government",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ni-consent"
+        },
+        "time": {
+          "raw": "Before February13 report",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "declared_right_or_position",
+        "claim_ids": [
+          "r6:c-qing-consent"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Effective extent/onset and independent field verification not established",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ni-receipt",
+        "case_id": "r6:case-niu",
+        "place_id": "r6:p-niu",
+        "actor_id": "conger",
+        "dimension": "good_offices_message",
+        "assertion_form": "documented_transmission",
+        "value": "Conger received ministry telegram10Feb",
+        "scope": {
+          "spatial": "r6:p-niu",
+          "functional": "good_offices_message",
+          "actor": "conger",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ni-receipt"
+        },
+        "time": {
+          "raw": "received February10",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "documented_stage",
+        "claim_ids": [
+          "r6:c-conger-receipt"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Effective extent/onset and independent field verification not established",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ni-send",
+        "case_id": "r6:case-niu",
+        "place_id": "r6:p-niu",
+        "actor_id": "conger",
+        "dimension": "good_offices_message",
+        "assertion_form": "documented_transmission",
+        "value": "Telegraphic instructions sent to Miller",
+        "scope": {
+          "spatial": "r6:p-niu",
+          "functional": "good_offices_message",
+          "actor": "conger",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ni-send"
+        },
+        "time": {
+          "raw": "have sent; no send instant",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "documented_stage",
+        "claim_ids": [
+          "r6:c-miller-dispatch"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Miller receipt/read/action not established",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ni-arrest",
+        "case_id": "r6:case-niu",
+        "place_id": "r6:p-niu",
+        "actor_id": "r6:arrest-authority-unidentified",
+        "dimension": "exit_movement_denial",
+        "assertion_form": "reported_exercise",
+        "value": "Japanese arriving interior trying to leave arrested/taken Port Arthur",
+        "scope": {
+          "spatial": "r6:p-niu",
+          "functional": "exit_movement_denial",
+          "actor": "r6:arrest-authority-unidentified",
+          "population": "Japanese arrivals from interior trying to leave",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ni-arrest"
+        },
+        "time": {
+          "raw": "Reported February14; event time unknown",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "reported_event",
+        "claim_ids": [
+          "r6:c-arrest"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Arresting actor/units unnamed in d126; destination PortArthur does not identify agent. No arrest log/names or quantified coverage; all is Miller reported quantifier, not universal Reality.",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ni-contact",
+        "case_id": "r6:case-niu",
+        "place_id": "r6:p-niu",
+        "actor_id": "r6:ru-local",
+        "dimension": "detainee_information_access",
+        "assertion_form": "reported_exercise",
+        "value": "Information/representative contact refused",
+        "scope": {
+          "spatial": "r6:p-niu",
+          "functional": "detainee_information_access",
+          "actor": "r6:ru-local",
+          "population": "Japanese subjects addressed in telegraphic information",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ni-contact"
+        },
+        "time": {
+          "raw": "Report February24, refusal onset unknown",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "reported_event",
+        "claim_ids": [
+          "r6:c-contact-denial"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Effective extent/onset and independent field verification not established",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ni-native",
+        "case_id": "r6:case-niu",
+        "place_id": "r6:p-niu",
+        "actor_id": "r6:native-nominee",
+        "dimension": "native_customs_administration",
+        "assertion_form": "reported_exercise",
+        "value": "Replacement of Maritime Customs staff by Russian nominee heard",
+        "scope": {
+          "spatial": "r6:p-niu",
+          "functional": "native_customs_administration",
+          "actor": "r6:native-nominee",
+          "population": "not specified by source",
+          "infrastructure": "native customs institution",
+          "temporal_key": "ni-native"
+        },
+        "time": {
+          "raw": "Heard by February4; replacement date unknown",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "reported_event",
+        "claim_ids": [
+          "r6:c-native-replaced"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Heard report; appointment order, staff identity, collection ledger uninspected",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ni-occupation",
+        "case_id": "r6:case-niu",
+        "place_id": "r6:p-niu",
+        "actor_id": "r6:percy",
+        "dimension": "belligerent_occupation_assessment",
+        "assertion_form": "actor_stance",
+        "value": "British ministerial answer considers neutralisation impracticable",
+        "scope": {
+          "spatial": "r6:p-niu",
+          "functional": "belligerent_occupation_assessment",
+          "actor": "r6:percy",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ni-occupation"
+        },
+        "time": {
+          "raw": "10 February1904",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "declared_right_or_position",
+        "claim_ids": [
+          "r6:c-niu-occupation"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Actor-specific diplomatic assessment, not independently mapped control boundaries",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ni-grain",
+        "case_id": "r6:case-niu",
+        "place_id": "r6:p-niu",
+        "actor_id": "qing-government",
+        "dimension": "grain_import_restriction",
+        "assertion_form": "legal_text",
+        "value": "Manchurian ports named category forbidden grain/flour destination",
+        "scope": {
+          "spatial": "r6:p-niu",
+          "functional": "inter-port grain/flour shipping",
+          "actor": "qing-government",
+          "population": "not specified by source",
+          "infrastructure": "Manchurian port customs",
+          "temporal_key": "ni-grain"
+        },
+        "time": {
+          "raw": "March9",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-03-09",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "declared_right_or_position",
+        "claim_ids": [
+          "r6:c-grain-ban"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Regional port-category rule; Niuchwang receipt/enforcement not located",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ni-orders",
+        "case_id": "r6:case-niu",
+        "place_id": "r6:p-niu",
+        "actor_id": "r6:hart",
+        "dimension": "customs_instruction_transmission",
+        "assertion_form": "documented_transmission",
+        "value": "Reported orders to all ports",
+        "scope": {
+          "spatial": "r6:p-niu",
+          "functional": "customs_instruction_transmission",
+          "actor": "r6:hart",
+          "population": "not specified by source",
+          "infrastructure": "customs ports network",
+          "temporal_key": "ni-orders"
+        },
+        "time": {
+          "raw": "Reported before March4; local delivery unknown",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "documented_stage",
+        "claim_ids": [
+          "r6:c-ports-orders"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "All ports assertion not Niuchwang receipt or order execution",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ni-tax",
+        "case_id": "r6:case-niu",
+        "place_id": "r6:p-niu",
+        "actor_id": "qing-government",
+        "dimension": "local_tax_collection",
+        "assertion_form": "unresolved_state",
+        "value": {
+          "status": "unknown",
+          "reason": "Native customs staffing report does not attest all municipal taxation/collection"
+        },
+        "scope": {
+          "spatial": "r6:p-niu",
+          "functional": "local_tax_collection",
+          "actor": "qing-government",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ni-tax"
+        },
+        "time": {
+          "raw": "February4–24 research window",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "research_scope",
+        "claim_ids": [
+          "r6:c-native-replaced"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "unresolved",
+        "competing_claim_ids": [],
+        "unknown_reason": "Native customs staffing report does not attest all municipal taxation/collection",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      }
+    ]
+  },
+  {
+    "id": "r6:recon-uiju",
+    "version": 1,
+    "previous_version_id": null,
+    "evaluated_at": "2026-09-14T04:15:55Z",
+    "evidence_cutoff": "2026-09-14 source acquisition session; not historical event cutoff",
+    "dataset_basis": "this Round6 envelope + SHA-pinned Round1–5 parents; see verification dataset hash",
+    "method": "current_system_manual_evidence_scoped_composition",
+    "row_ids": [
+      "r6:row-ui-admin",
+      "r6:row-ui-custody",
+      "r6:row-ui-promise",
+      "r6:row-ui-receipt",
+      "r6:row-ui-decision",
+      "r6:row-ui-plan",
+      "r6:row-ui-action",
+      "r6:row-ui-police",
+      "r6:row-ui-courier",
+      "r6:row-ui-police-receipt",
+      "r6:row-ui-telegraph",
+      "r6:row-ui-inspect",
+      "r6:row-ui-sovereignty"
+    ],
+    "opposition": "No direct exclusive same-dimension/scope/time historical negation authenticated in located corpus",
+    "alternatives": [
+      "Attributed statements accurate but limited",
+      "Implementation partial/different or source reporting mistaken"
+    ],
+    "canonical_territorial_controller": null,
+    "label": "義州・対岸退避と財産/通信施設",
+    "window_raw": "1904-01-27–02-05; forwardedApril25copy",
+    "rows": [
+      {
+        "id": "r6:row-ui-admin",
+        "case_id": "r6:case-uiju",
+        "place_id": "r6:p-uiju",
+        "actor_id": "r6:county",
+        "dimension": "horse_acquisition_assistance",
+        "assertion_form": "reported_exercise",
+        "value": "Few horses obtained with county official assistance",
+        "scope": {
+          "spatial": "r6:p-uiju",
+          "functional": "horse_acquisition_assistance",
+          "actor": "r6:county",
+          "population": "Withdrawal group",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ui-admin"
+        },
+        "time": {
+          "raw": "二月五日",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "reported_event",
+        "claim_ids": [
+          "r6:c-horses"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Limited logistics, not all administrative powers",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ui-custody",
+        "case_id": "r6:case-uiju",
+        "place_id": "r6:p-uiju",
+        "actor_id": "r6:li",
+        "dimension": "office_property_custody",
+        "assertion_form": "reported_exercise",
+        "value": "Caretaker left in rented office",
+        "scope": {
+          "spatial": "r6:p-uiju",
+          "functional": "office_property_custody",
+          "actor": "r6:li",
+          "population": "not specified by source",
+          "infrastructure": "rented diplomatic assistant office and belongings",
+          "temporal_key": "ui-custody"
+        },
+        "time": {
+          "raw": "二月五日",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "reported_event",
+        "claim_ids": [
+          "r6:c-custody-li"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Effective extent/onset and independent field verification not established",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ui-promise",
+        "case_id": "r6:case-uiju",
+        "place_id": "r6:p-uiju",
+        "actor_id": "r6:county",
+        "dimension": "resident_property_protection",
+        "assertion_form": "undertaking",
+        "value": "Chief undertook protection",
+        "scope": {
+          "spatial": "r6:p-uiju",
+          "functional": "resident_property_protection",
+          "actor": "r6:county",
+          "population": "Japanese residents’ retained property",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ui-promise"
+        },
+        "time": {
+          "raw": "二月五日",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "research_scope",
+        "claim_ids": [
+          "r6:c-county-promise"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Promise not subsequent prevention of trespass or title validity",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ui-receipt",
+        "case_id": "r6:case-uiju",
+        "place_id": "r6:p-uiju",
+        "actor_id": "r6:okabe",
+        "dimension": "withdrawal_order",
+        "assertion_form": "documented_transmission",
+        "value": "Urgent relay received01:00",
+        "scope": {
+          "spatial": "r6:p-uiju",
+          "functional": "withdrawal_order",
+          "actor": "r6:okabe",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ui-receipt"
+        },
+        "time": {
+          "raw": "二月五日午前一時",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "documented_stage",
+        "claim_ids": [
+          "r6:c-okabe-order"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Effective extent/onset and independent field verification not established",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ui-decision",
+        "case_id": "r6:case-uiju",
+        "place_id": "r6:p-uiju",
+        "actor_id": "r6:okabe",
+        "dimension": "withdrawal_plan",
+        "assertion_form": "reported_decision",
+        "value": "Consulted Major Togo, secret arrangements",
+        "scope": {
+          "spatial": "r6:p-uiju",
+          "functional": "withdrawal_plan",
+          "actor": "r6:okabe",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ui-decision"
+        },
+        "time": {
+          "raw": "二月五日深更",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "research_scope",
+        "claim_ids": [
+          "r6:c-withdraw-decision"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Effective extent/onset and independent field verification not established",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ui-plan",
+        "case_id": "r6:case-uiju",
+        "place_id": "r6:p-uiju",
+        "actor_id": "r6:okabe",
+        "dimension": "departure_time",
+        "assertion_form": "announced_plan",
+        "value": "Planned13:00",
+        "scope": {
+          "spatial": "r6:p-uiju",
+          "functional": "departure_time",
+          "actor": "r6:okabe",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "uiju-departure"
+        },
+        "time": {
+          "raw": "二月五日 午后一時 planned",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "research_scope",
+        "claim_ids": [
+          "r6:c-notice-plan"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Effective extent/onset and independent field verification not established",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ui-action",
+        "case_id": "r6:case-uiju",
+        "place_id": "r6:p-uiju",
+        "actor_id": "r6:okabe",
+        "dimension": "departure_time",
+        "assertion_form": "reported_exercise",
+        "value": "Reported16:00 actual",
+        "scope": {
+          "spatial": "r6:p-uiju",
+          "functional": "departure_time",
+          "actor": "r6:okabe",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "uiju-departure"
+        },
+        "time": {
+          "raw": "二月五日 午后四時",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "reported_event",
+        "claim_ids": [
+          "r6:c-withdraw-action"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Effective extent/onset and independent field verification not established",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ui-police",
+        "case_id": "r6:case-uiju",
+        "place_id": "r6:p-buk",
+        "actor_id": "r6:police",
+        "dimension": "escort_protection",
+        "assertion_form": "reported_exercise",
+        "value": "Constables assist residents withdrawal14:00",
+        "scope": {
+          "spatial": "r6:p-buk",
+          "functional": "escort_protection",
+          "actor": "r6:police",
+          "population": "Antung/北下洞 withdrawal residents",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ui-police"
+        },
+        "time": {
+          "raw": "二月五日 午后二時",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "reported_event",
+        "claim_ids": [
+          "r6:c-residents-leave"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Not territorial policing jurisdiction; group/time differs Uiju16:00",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ui-courier",
+        "case_id": "r6:case-uiju",
+        "place_id": "r6:p-antung",
+        "actor_id": "r6:gendarme",
+        "dimension": "withdrawal_message",
+        "assertion_form": "documented_transmission",
+        "value": "Courier departed04:00towardAntung",
+        "scope": {
+          "spatial": "r6:p-antung",
+          "functional": "withdrawal_message",
+          "actor": "r6:gendarme",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ui-courier"
+        },
+        "time": {
+          "raw": "二月五日午前四時",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "documented_stage",
+        "claim_ids": [
+          "r6:c-courier-send"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Courier departure not destination receipt instant",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ui-police-receipt",
+        "case_id": "r6:case-uiju",
+        "place_id": "r6:p-buk",
+        "actor_id": "r6:police",
+        "dimension": "withdrawal_message",
+        "assertion_form": "documented_transmission",
+        "value": "Constables reportedly received letter",
+        "scope": {
+          "spatial": "r6:p-buk",
+          "functional": "withdrawal_message",
+          "actor": "r6:police",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ui-police-receipt"
+        },
+        "time": {
+          "raw": "二月五日未明",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "documented_stage",
+        "claim_ids": [
+          "r6:c-police-receipt"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Effective extent/onset and independent field verification not established",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ui-telegraph",
+        "case_id": "r6:case-uiju",
+        "place_id": "r6:p-uiju",
+        "actor_id": "r6:okabe",
+        "dimension": "russian_telegraph_use",
+        "assertion_form": "reported_nonuse",
+        "value": "No Russian entrusted telegrams sinceNovember1903 reported",
+        "scope": {
+          "spatial": "r6:p-uiju",
+          "functional": "russian_telegraph_use",
+          "actor": "r6:okabe",
+          "population": "not specified by source",
+          "infrastructure": "義州電信局",
+          "temporal_key": "ui-telegraph"
+        },
+        "time": {
+          "raw": "三十六年十一月以降",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "research_scope",
+        "claim_ids": [
+          "r6:c-uiju-telegraph"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Scoped nonuse report; not no bureau operation or no communication elsewhere",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ui-inspect",
+        "case_id": "r6:case-uiju",
+        "place_id": "r6:p-mireuk",
+        "actor_id": "r6:police",
+        "dimension": "cable_reinstallation",
+        "assertion_form": "inspection_order",
+        "value": "Constable sent to inspect feared reinstallation",
+        "scope": {
+          "spatial": "r6:p-mireuk",
+          "functional": "cable_reinstallation",
+          "actor": "r6:police",
+          "population": "not specified by source",
+          "infrastructure": "water cable land connection",
+          "temporal_key": "ui-inspect"
+        },
+        "time": {
+          "raw": "二月四日",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-04",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "research_scope",
+        "claim_ids": [
+          "r6:c-mireuk-inspect"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Suspicion and order not confirmed cable construction/operation",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ui-sovereignty",
+        "case_id": "r6:case-uiju",
+        "place_id": "r6:p-uiju",
+        "actor_id": "kr-government",
+        "dimension": "local_sovereignty_status",
+        "assertion_form": "unresolved_state",
+        "value": {
+          "status": "unknown",
+          "reason": "Copy distinguishes national river banks but does not authenticate sovereignty title or local administrative boundary"
+        },
+        "scope": {
+          "spatial": "r6:p-uiju",
+          "functional": "local_sovereignty_status",
+          "actor": "kr-government",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ui-sovereignty"
+        },
+        "time": {
+          "raw": "Jan27–Feb5 research window",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "research_scope",
+        "claim_ids": [
+          "r6:c-uiju-place"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "unresolved",
+        "competing_claim_ids": [],
+        "unknown_reason": "Copy distinguishes national river banks but does not authenticate sovereignty title or local administrative boundary",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      }
+    ]
+  },
+  {
+    "id": "r6:recon-cer",
+    "version": 1,
+    "previous_version_id": null,
+    "evaluated_at": "2026-09-14T04:15:55Z",
+    "evidence_cutoff": "2026-09-14 source acquisition session; not historical event cutoff",
+    "dataset_basis": "this Round6 envelope + SHA-pinned Round1–5 parents; see verification dataset hash",
+    "method": "current_system_manual_evidence_scoped_composition",
+    "row_ids": [
+      "r6:row-ce-duty",
+      "r6:row-ce-threat",
+      "r6:row-ce-purchase",
+      "r6:row-ce-post",
+      "r6:row-ce-sovereignty",
+      "r6:row-ce-incapacity",
+      "r6:row-ce-operation",
+      "r6:row-ce-ownership"
+    ],
+    "opposition": "No direct exclusive same-dimension/scope/time historical negation authenticated in located corpus",
+    "alternatives": [
+      "Attributed statements accurate but limited",
+      "Implementation partial/different or source reporting mistaken"
+    ],
+    "canonical_territorial_controller": null,
+    "label": "東清鉄道・地区通信線の保護命令",
+    "window_raw": "Russian calendarFeb3; Feb12territorialstance; March1report",
+    "rows": [
+      {
+        "id": "r6:row-ce-duty",
+        "case_id": "r6:case-cer",
+        "place_id": "r6:p-cer",
+        "actor_id": "r6:elders",
+        "dimension": "infrastructure_protection",
+        "assertion_form": "declared_duty",
+        "value": "Local officers/gentry/elders/people assigned protective responsibility",
+        "scope": {
+          "spatial": "r6:p-cer",
+          "functional": "infrastructure_protection",
+          "actor": "r6:elders",
+          "population": "not specified by source",
+          "infrastructure": "railway, district telegraph/telephone wires",
+          "temporal_key": "ce-duty"
+        },
+        "time": {
+          "raw": "Russian calendar February3,1904",
+          "precision": "unknown",
+          "calendar": "Russian calendar as printed; original/Julian conversion not authenticated",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Raw Russian calendar preserved without unconditional day placement"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "declared_right_or_position",
+        "claim_ids": [
+          "r6:c-cer-duty"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "No local recipient/reading, patrol, repair or protected segment attested",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ce-threat",
+        "case_id": "r6:case-cer",
+        "place_id": "r6:p-cer",
+        "actor_id": "ru-government",
+        "dimension": "punishment_enforcement",
+        "assertion_form": "declared_duty",
+        "value": "Collective punishment threatened",
+        "scope": {
+          "spatial": "r6:p-cer",
+          "functional": "punishment_enforcement",
+          "actor": "ru-government",
+          "population": "Plotters and nearby officials/people",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ce-threat"
+        },
+        "time": {
+          "raw": "Russian calendar February3,1904",
+          "precision": "unknown",
+          "calendar": "Russian calendar as printed; original/Julian conversion not authenticated",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Raw Russian calendar preserved without unconditional day placement"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "declared_right_or_position",
+        "claim_ids": [
+          "r6:c-cer-threat"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "No case of applied penalty or effective enforcement located",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ce-purchase",
+        "case_id": "r6:case-cer",
+        "place_id": "r6:p-manchuria",
+        "actor_id": "r6:elders",
+        "dimension": "local_supply_facilitation",
+        "assertion_form": "declared_duty",
+        "value": "Officials urged to assist local grain/forage purchase",
+        "scope": {
+          "spatial": "r6:p-manchuria",
+          "functional": "local purchase of grain/forage by troops",
+          "actor": "r6:elders",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ce-purchase"
+        },
+        "time": {
+          "raw": "Russian calendar February3,1904",
+          "precision": "unknown",
+          "calendar": "Russian calendar as printed; original/Julian conversion not authenticated",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Raw Russian calendar preserved without unconditional day placement"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "declared_right_or_position",
+        "claim_ids": [
+          "r6:c-local-purchase"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Not inter-port imports banned by March9rule; no actual purchases proved",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ce-post",
+        "case_id": "r6:case-cer",
+        "place_id": "r6:p-manchuria",
+        "actor_id": "conger",
+        "dimension": "proclamation_distribution",
+        "assertion_form": "documented_transmission",
+        "value": "Conger reports posted throughout Manchuria",
+        "scope": {
+          "spatial": "r6:p-manchuria",
+          "functional": "proclamation_distribution",
+          "actor": "conger",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ce-post"
+        },
+        "time": {
+          "raw": "March1 report; posting unplaced",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "documented_stage",
+        "claim_ids": [
+          "r6:c-cer-posted"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Regional report of posting not any district actor reading/knowledge",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ce-sovereignty",
+        "case_id": "r6:case-cer",
+        "place_id": "r6:p-manchuria",
+        "actor_id": "qing-government",
+        "dimension": "territorial_sovereignty_claim",
+        "assertion_form": "actor_stance",
+        "value": "Prince Ch’ing claims Manchuria remains/reverts Chinese sovereignty",
+        "scope": {
+          "spatial": "r6:p-manchuria",
+          "functional": "territorial_sovereignty_claim",
+          "actor": "qing-government",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ce-sovereignty"
+        },
+        "time": {
+          "raw": "February12",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-12",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "declared_right_or_position",
+        "claim_ids": [
+          "r6:c-qing-sovereignty"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Effective extent/onset and independent field verification not established",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ce-incapacity",
+        "case_id": "r6:case-cer",
+        "place_id": "r6:p-manchuria",
+        "actor_id": "qing-government",
+        "dimension": "neutrality_enforcement",
+        "assertion_form": "actor_stance",
+        "value": "Waiwu Pu acknowledges insufficient power in unevacuatedterritory",
+        "scope": {
+          "spatial": "r6:p-manchuria",
+          "functional": "neutrality_enforcement",
+          "actor": "qing-government",
+          "population": "not specified by source",
+          "infrastructure": "not infrastructure-specific",
+          "temporal_key": "ce-incapacity"
+        },
+        "time": {
+          "raw": "February12",
+          "precision": "day",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": "1904-02-12",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "declared_right_or_position",
+        "claim_ids": [
+          "r6:c-qing-incapacity"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "possible",
+        "competing_claim_ids": [],
+        "unknown_reason": "Regional admitted incapacity, not every function/railway segment absent",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ce-operation",
+        "case_id": "r6:case-cer",
+        "place_id": "r6:p-cer",
+        "actor_id": "r6:railway-operator-unidentified",
+        "dimension": "railway_operation",
+        "assertion_form": "unresolved_state",
+        "value": {
+          "status": "unknown",
+          "reason": "Protection clause does not identify operator, train movement or operating capability"
+        },
+        "scope": {
+          "spatial": "r6:p-cer",
+          "functional": "railway_operation",
+          "actor": "r6:railway-operator-unidentified",
+          "population": "not specified by source",
+          "infrastructure": "Chinese Eastern Railway",
+          "temporal_key": "ce-operation"
+        },
+        "time": {
+          "raw": "Opening phase proclamation scope",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "research_scope",
+        "claim_ids": [
+          "r6:c-cer-duty"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "unresolved",
+        "competing_claim_ids": [],
+        "unknown_reason": "Protection clause does not identify operator, train movement or operating capability",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      },
+      {
+        "id": "r6:row-ce-ownership",
+        "case_id": "r6:case-cer",
+        "place_id": "r6:p-cer",
+        "actor_id": "ru-government",
+        "dimension": "territorial_ownership",
+        "assertion_form": "unresolved_state",
+        "value": {
+          "status": "unknown",
+          "reason": "No located title/concession original; protection responsibility is not territorial ownership"
+        },
+        "scope": {
+          "spatial": "r6:p-cer",
+          "functional": "territorial_ownership",
+          "actor": "ru-government",
+          "population": "not specified by source",
+          "infrastructure": "railway traversed land",
+          "temporal_key": "ce-ownership"
+        },
+        "time": {
+          "raw": "Opening phase proclamation scope",
+          "precision": "unknown",
+          "calendar": "edition civil date; no offset established",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Original date/order within day not established; no interpolation"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No independently calibrated clock/offset"
+          }
+        },
+        "time_role": "research_scope",
+        "claim_ids": [
+          "r6:c-cer-duty"
+        ],
+        "record_ids": [],
+        "source_content_certainty": "strongly_established for attributed inspected edition; extraction not original authentication",
+        "source_identity_certainty": "published manifestation identified; historical originals not inspected",
+        "reality_certainty": "unresolved",
+        "competing_claim_ids": [],
+        "unknown_reason": "No located title/concession original; protection responsibility is not territorial ownership",
+        "canonical_state": false,
+        "exclusivity": "not asserted",
+        "limit": "Scope belongs to attributed proposition; no automatic sovereignty/control/capability inference"
+      }
+    ]
+  }
+]

@@ -1,0 +1,2685 @@
+{
+  "schema_version": "0.1.24",
+  "project_id": "19041904-1904-4904-8904-190419042004",
+  "source": "import",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "24f3b23d-4dfd-5bf0-a6c6-fc6fe6f37dbe",
+      "payload": {
+        "id": "24f3b23d-4dfd-5bf0-a6c6-fc6fe6f37dbe",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "FRUS 1904, document 392",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:392"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "69ac44f5-7647-5ada-adde-bb49865a6d86",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "69ac44f5-7647-5ada-adde-bb49865a6d86",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d392",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"392\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "24f3b23d-4dfd-5bf0-a6c6-fc6fe6f37dbe",
+          "external_id": "frus:1904:392",
+          "label": "FRUS 1904, document 392"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "9c2caa6c-65fc-509a-aced-e8e879371a0c",
+      "payload": {
+        "id": "9c2caa6c-65fc-509a-aced-e8e879371a0c",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "FRUS 1904, document 393",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:393"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "1075572b-2a90-50df-ad43-eb31980794ec",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "1075572b-2a90-50df-ad43-eb31980794ec",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d393",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"393\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "9c2caa6c-65fc-509a-aced-e8e879371a0c",
+          "external_id": "frus:1904:393",
+          "label": "FRUS 1904, document 393"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "fa875740-11df-5e29-a737-3305b15cabb4",
+      "payload": {
+        "id": "fa875740-11df-5e29-a737-3305b15cabb4",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "FRUS 1904, document 394",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:394"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "ce7eb890-a426-5906-a6e5-a50d0aba7637",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "ce7eb890-a426-5906-a6e5-a50d0aba7637",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d394",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"394\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "fa875740-11df-5e29-a737-3305b15cabb4",
+          "external_id": "frus:1904:394",
+          "label": "FRUS 1904, document 394"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "c13cb698-bead-5397-ac24-1e1e16a70112",
+      "payload": {
+        "id": "c13cb698-bead-5397-ac24-1e1e16a70112",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "FRUS 1904, document 395",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:395"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "9e2419ec-b15f-56e5-a94e-d46b0ba495d1",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "9e2419ec-b15f-56e5-a94e-d46b0ba495d1",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d395",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"395\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "c13cb698-bead-5397-ac24-1e1e16a70112",
+          "external_id": "frus:1904:395",
+          "label": "FRUS 1904, document 395"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "0a6970c6-48a9-578f-a85a-9b9f8ca6b58e",
+      "payload": {
+        "id": "0a6970c6-48a9-578f-a85a-9b9f8ca6b58e",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "FRUS 1904, document 396",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:396"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "da1ec273-d955-5fd4-ac4d-0cc637831b4d",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "da1ec273-d955-5fd4-ac4d-0cc637831b4d",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d396",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"396\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "0a6970c6-48a9-578f-a85a-9b9f8ca6b58e",
+          "external_id": "frus:1904:396",
+          "label": "FRUS 1904, document 396"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "ad6aaa12-bea7-5d9c-a1c7-475d08c04e85",
+      "payload": {
+        "id": "ad6aaa12-bea7-5d9c-a1c7-475d08c04e85",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "FRUS 1904, document 678",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:678"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "4e52ddcf-025a-5e66-ac9c-58e5aecaed3e",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "4e52ddcf-025a-5e66-ac9c-58e5aecaed3e",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d678",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"678\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "ad6aaa12-bea7-5d9c-a1c7-475d08c04e85",
+          "external_id": "frus:1904:678",
+          "label": "FRUS 1904, document 678"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "5cf89699-e95f-521a-a9fa-e133a8cd7f91",
+      "payload": {
+        "id": "5cf89699-e95f-521a-a9fa-e133a8cd7f91",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "FRUS 1904, document 679",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:679"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "01688a2d-5069-5c69-a467-3310a4c01ce0",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "01688a2d-5069-5c69-a467-3310a4c01ce0",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d679",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"679\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "5cf89699-e95f-521a-a9fa-e133a8cd7f91",
+          "external_id": "frus:1904:679",
+          "label": "FRUS 1904, document 679"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "80a8c22c-8fdc-5d32-af48-8d289fbfa045",
+      "payload": {
+        "id": "80a8c22c-8fdc-5d32-af48-8d289fbfa045",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "FRUS 1904, document 680",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:680"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "8b847b74-aafe-565e-af2d-99e9b36ecb4a",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "8b847b74-aafe-565e-af2d-99e9b36ecb4a",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d680",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"680\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "80a8c22c-8fdc-5d32-af48-8d289fbfa045",
+          "external_id": "frus:1904:680",
+          "label": "FRUS 1904, document 680"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "d7985c95-c30b-5dee-a1cb-132537e031ce",
+      "payload": {
+        "id": "d7985c95-c30b-5dee-a1cb-132537e031ce",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "FRUS 1904, document 86",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:86"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "32016271-f810-57a5-a5ce-4a706bd30c96",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "32016271-f810-57a5-a5ce-4a706bd30c96",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d86",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"86\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "d7985c95-c30b-5dee-a1cb-132537e031ce",
+          "external_id": "frus:1904:86",
+          "label": "FRUS 1904, document 86"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "74b1cdc5-5f68-5652-a7e9-0a5026a18de2",
+      "payload": {
+        "id": "74b1cdc5-5f68-5652-a7e9-0a5026a18de2",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "FRUS 1904, document 430",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:430"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "8bfce4e6-5889-5faa-aad4-6aa601826d80",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "8bfce4e6-5889-5faa-aad4-6aa601826d80",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d430",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"430\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "74b1cdc5-5f68-5652-a7e9-0a5026a18de2",
+          "external_id": "frus:1904:430",
+          "label": "FRUS 1904, document 430"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "d9183a87-f593-54b4-adbe-545fc468583b",
+      "payload": {
+        "id": "d9183a87-f593-54b4-adbe-545fc468583b",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "FRUS 1904, document 815",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:815"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "ed4e8211-4505-5fb7-afde-4fd06c4fd519",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "ed4e8211-4505-5fb7-afde-4fd06c4fd519",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d815",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"815\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "d9183a87-f593-54b4-adbe-545fc468583b",
+          "external_id": "frus:1904:815",
+          "label": "FRUS 1904, document 815"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "28ba41ba-7d3a-59b5-a9e3-6f9cd16a058b",
+      "payload": {
+        "id": "28ba41ba-7d3a-59b5-a9e3-6f9cd16a058b",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "[일본군 북진에 따른 韓國電信線 사용 윤허에 관한 件]",
+        "attrs": {
+          "experimental_source_identity": "nikh:jh_024r_0050_0050"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "a2e43175-9f9c-57ab-a59e-9f3b182729c4",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "a2e43175-9f9c-57ab-a59e-9f3b182729c4",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://db.history.go.kr/joseon/level.do?levelId=jh_024r_0050_0050",
+        "summary": "translation_text_inspected; locator {\"level_id\":\"jh_024r_0050_0050\",\"document_number\":\"上奏文\",\"item\":\"(5)\"}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "28ba41ba-7d3a-59b5-a9e3-6f9cd16a058b",
+          "external_id": "nikh:jh_024r_0050_0050",
+          "label": "[일본군 북진에 따른 韓國電信線 사용 윤허에 관한 件]"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "cd6e77d7-4d70-5b16-a290-71f16b6ea811",
+      "payload": {
+        "id": "cd6e77d7-4d70-5b16-a290-71f16b6ea811",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "海上の戦い（解説を読む）仁川沖海戦",
+        "attrs": {
+          "experimental_source_identity": "jacar:chemulpo-guide"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "183f008d-2210-5fb9-ab08-9d429f23c11c",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "183f008d-2210-5fb9-ab08-9d429f23c11c",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://www.jacar.go.jp/exhibition/nichiro2/sensoushi/kaijou_02_outline.html",
+        "summary": "guide_text_inspected; locator {\"reference_codes\":[\"C05110032100\",\"C05110134800\"],\"images\":[\"C05110032100:6–11 (guide locator)\",\"C05110134800:33 (guide locator)\"]}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "cd6e77d7-4d70-5b16-a290-71f16b6ea811",
+          "external_id": "jacar:chemulpo-guide",
+          "label": "海上の戦い（解説を読む）仁川沖海戦"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "5500856c-1778-5052-a7ae-87754d52cd31",
+      "payload": {
+        "id": "5500856c-1778-5052-a7ae-87754d52cd31",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "Japanese Peace Commission & other",
+        "attrs": {
+          "experimental_source_identity": "loc:2005680338"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "f8636c9d-b911-5dc0-aa93-28ef9aa820b9",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "f8636c9d-b911-5dc0-aa93-28ef9aa820b9",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://www.loc.gov/item/2005680338/",
+        "summary": "catalog_metadata_inspected; locator {\"control_number\":\"2005680338\"}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "5500856c-1778-5052-a7ae-87754d52cd31",
+          "external_id": "loc:2005680338",
+          "label": "Japanese Peace Commission & other"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "af24e6e9-ef3f-57fc-a725-89a4bf98e372",
+      "payload": {
+        "id": "af24e6e9-ef3f-57fc-a725-89a4bf98e372",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "Correspondence regarding negotiations, presented to Imperial Diet March 1904 (Translation)",
+        "attrs": {
+          "experimental_source_identity": "r2:jp-whitebook"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "cfbd2918-e7dc-551f-a946-28235f8dc050",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "cfbd2918-e7dc-551f-a946-28235f8dc050",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://archive.org/details/correspondencere00japarich",
+        "summary": "Digitized 1904 published English translation; cover and PDF pp60,64,65 visually inspected; No49 text extracted pp62–63, not visually collated to Japanese original.; locator {\"edition\":\"March 1904 Japanese diplomatic published translation\",\"inspected\":\"No48–51; printed pp56–61; PDF pp60–65\",\"download_url\":\"https://archive.org/download/correspondencere00japarich/correspondencere00japarich.pdf\"}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "af24e6e9-ef3f-57fc-a725-89a4bf98e372",
+          "external_id": "r2:jp-whitebook",
+          "label": "Correspondence regarding negotiations, presented to Imperial Diet March 1904 (Translation)"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "f2de5dc8-070f-5578-a5de-646aba51732c",
+      "payload": {
+        "id": "f2de5dc8-070f-5578-a5de-646aba51732c",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "聖坡得斯堡・外交電報簿 B07090546900",
+        "attrs": {
+          "experimental_source_identity": "r2:komura-bundle"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "4c65c221-4d15-58bf-a730-93160f778355",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "4c65c221-4d15-58bf-a730-93160f778355",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://www.jacar.archives.go.jp/das/meta/B07090546900",
+        "summary": "Archival digitized telegram records; PDF images4–6,8–12 visually inspected. Outgoing copies and receiving annotations are not original Russian reply or proof of minister reading.; locator {\"ref\":\"B07090546900\",\"repository\":\"外務省外交史料館\",\"call\":\"5.2.1.14_003\",\"download_url\":\"https://www.jacar.archives.go.jp/content/item/aj12/C200147290500/raw/B07090546900.b5_0029.5-0267.00000006.pdf\",\"images\":\"4–6,8–12; frame0009–0017\"}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "f2de5dc8-070f-5578-a5de-646aba51732c",
+          "external_id": "r2:komura-bundle",
+          "label": "聖坡得斯堡・外交電報簿 B07090546900"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "96c24e88-297a-51f9-a4e5-f8977b7fc99e",
+      "payload": {
+        "id": "96c24e88-297a-51f9-a4e5-f8977b7fc99e",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "第2艦隊戦闘詳報(1) C09050255300",
+        "attrs": {
+          "experimental_source_identity": "r2:togo-copy"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "7e268d8e-59ce-507d-a610-ebc534abd6d5",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "7e268d8e-59ce-507d-a610-ebc534abd6d5",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+        "summary": "Digitized contemporary report copy bearing 写; images1,3,5 visually inspected. Not minister receipt original.; locator {\"ref\":\"C09050255300\",\"repository\":\"防衛研究所\",\"call\":\"海軍省-日露-M37-5\",\"download_url\":\"https://www.jacar.archives.go.jp/content/item/aj12/C200091076000/raw/C09050255300.c0754804001.11nitiro_002.0003_01.pdf\",\"images\":\"1,3,5\"}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "96c24e88-297a-51f9-a4e5-f8977b7fc99e",
+          "external_id": "r2:togo-copy",
+          "label": "第2艦隊戦闘詳報(1) C09050255300"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "70ec3976-c9d5-5294-abb4-b31605a80ea9",
+      "payload": {
+        "id": "70ec3976-c9d5-5294-abb4-b31605a80ea9",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "極秘明治37.8年海戦史 第1部戦紀巻2 備考文書 C05110032100",
+        "attrs": {
+          "experimental_source_identity": "r2:chemulpo-edition"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "db5fd4e0-95b7-5acd-af13-1c7c822e260f",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "db5fd4e0-95b7-5acd-af13-1c7c822e260f",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://www.jacar.archives.go.jp/das/meta/C05110032100",
+        "summary": "Later compiled official naval history documents; images4–6,10–11 visually inspected. Printed telegram reproductions, not transmitted originals.; locator {\"ref\":\"C05110032100\",\"repository\":\"防衛研究所\",\"call\":\"⑨その他-千代田-470\",\"download_url\":\"https://www.jacar.archives.go.jp/content/item/aj12/C200054612800/raw/C05110032100.c0460906001.rokaisen_002.0237_01.pdf\",\"inspected\":\"備考文書No1–3; printed pp1–2,10–13\"}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "70ec3976-c9d5-5294-abb4-b31605a80ea9",
+          "external_id": "r2:chemulpo-edition",
+          "label": "極秘明治37.8年海戦史 第1部戦紀巻2 備考文書 C05110032100"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "7ea6ba4e-5600-5f20-afa1-666320709952",
+      "payload": {
+        "id": "7ea6ba4e-5600-5f20-afa1-666320709952",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "B. B. Pak, 2023, pp128–139",
+        "attrs": {
+          "experimental_source_identity": "r2:pak"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "040642d2-fee0-529e-a668-30e829760589",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "040642d2-fee0-529e-a668-30e829760589",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf",
+        "summary": "Later historian; PDF text searched and p135 visually inspected. Bibliography is a discovery path, not original telegram inspection.; locator {\"inspected\":\"p135 and footnotes19–21\",\"download_url\":\"https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf\"}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "7ea6ba4e-5600-5f20-afa1-666320709952",
+          "external_id": "r2:pak",
+          "label": "B. B. Pak, 2023, pp128–139"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "079b79af-cd96-5e50-a041-0abde9ed6777",
+      "payload": {
+        "id": "079b79af-cd96-5e50-a041-0abde9ed6777",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "Документы по переговорам с Японией 1903–1904 гг. (1905)",
+        "attrs": {
+          "experimental_source_identity": "r2:rsl-catalog"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "c5d3e80e-dd61-575c-ae72-d47bfa5f3f18",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "c5d3e80e-dd61-575c-ae72-d47bfa5f3f18",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://rusneb.ru/catalog/000199_000009_007506064/",
+        "summary": "Official catalog indexed metadata located; viewer blocked, PDF endpoint returned HTML; original pages not inspected.; locator {\"repository\":\"Russian State Library / NEB\",\"edition\":\"Синодальная типография, Санкт-Петербург, 1905; 49+[1] pp\",\"calls\":[\"FB M125/38\",\"Я71/56\",\"MFK801-14/1944\"],\"raw_endpoint\":\"http://dlib.rsl.ru/rsl01007000000/rsl01007506000/rsl01007506064/rsl01007506064.pdf\"}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "079b79af-cd96-5e50-a041-0abde9ed6777",
+          "external_id": "r2:rsl-catalog",
+          "label": "Документы по переговорам с Японией 1903–1904 гг. (1905)"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "98b71960-df9e-533f-a0cf-60d580dd89ae",
+      "payload": {
+        "id": "98b71960-df9e-533f-a0cf-60d580dd89ae",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "Возникновение русско-японской войны, т3, приложения",
+        "attrs": {
+          "experimental_source_identity": "r2:rgia-catalog"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "84a714f3-03d3-5cd3-a8fd-069c095ab2df",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "84a714f3-03d3-5cd3-a8fd-069c095ab2df",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://www.prlib.ru/item/324328",
+        "summary": "Official archival catalog metadata only; no folio inspection and no identification with the RSL edition.; locator {\"repository\":\"РГИА\",\"fund\":\"1622\",\"inventory\":\"1\",\"file\":\"301-г\",\"folios\":\"29\",\"catalog_date\":\"1903; negotiation documents described as 1903–1904\"}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "98b71960-df9e-533f-a0cf-60d580dd89ae",
+          "external_id": "r2:rgia-catalog",
+          "label": "Возникновение русско-японской войны, т3, приложения"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "92ea7bf4-4426-52ee-a5b1-c9f45a6f9ca7",
+      "payload": {
+        "id": "92ea7bf4-4426-52ee-a5b1-c9f45a6f9ca7",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "Indianapolis Sunday Journal, 7 February 1904, p1",
+        "attrs": {
+          "experimental_source_identity": "r2:journal"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "57cfc5e4-1a1f-51ac-a054-fe91ed690578",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "57cfc5e4-1a1f-51ac-a054-fe91ed690578",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://www.loc.gov/resource/sn82015679/1904-02-07/ed-1/?sp=1",
+        "summary": "Official page OCR inspected; scan retrieval failed (HTML instead of PDF). Anonymous dispatches, not direct legation records.; locator {\"repository\":\"Library of Congress\",\"issue\":\"1904-02-07\",\"page\":\"1\",\"scan_attempt\":\"https://tile.loc.gov/storage-services/service/ndnp/in/batch_in_hoosier_ver01/data/sn82015679/00202191769/1904020701/0091.pdf\"}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "92ea7bf4-4426-52ee-a5b1-c9f45a6f9ca7",
+          "external_id": "r2:journal",
+          "label": "Indianapolis Sunday Journal, 7 February 1904, p1"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "8fd9c73b-c2d3-5f1c-a71d-f1c5897e0abf",
+      "payload": {
+        "id": "8fd9c73b-c2d3-5f1c-a71d-f1c5897e0abf",
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "kind": "document",
+        "label": "御勅語並に奉答文配布の件 C06040574900",
+        "attrs": {
+          "experimental_source_identity": "r2:army-control"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "0e650442-ff8e-511c-a4ea-a343ce20a6b0",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "0e650442-ff8e-511c-a4ea-a343ce20a6b0",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://www.jacar.archives.go.jp/das/meta/C06040574900",
+        "summary": "Catalog transcription inspected only; original images unconfirmed. Explicit February12 distribution and February26 numbering, outside window.; locator {\"repository\":\"防衛研究所\",\"call\":\"大本営-日露戦役-M37-10-144\",\"ref\":\"C06040574900\",\"images\":\"4; not inspected\"}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "8fd9c73b-c2d3-5f1c-a71d-f1c5897e0abf",
+          "external_id": "r2:army-control",
+          "label": "御勅語並に奉答文配布の件 C06040574900"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "89cb0ff5-e85d-5096-a204-3c5c467b24ba",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "89cb0ff5-e85d-5096-a204-3c5c467b24ba",
+        "subject_id": "24f3b23d-4dfd-5bf0-a6c6-fc6fe6f37dbe",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c392-instruction",
+          "proposition": "present termination note and break diplomatic relations",
+          "predicate": "instructed_to",
+          "extraction_context": "d392 parenthetical paraphrase; instruction is not proof of delivery"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "24f3b23d-4dfd-5bf0-a6c6-fc6fe6f37dbe",
+          "external_id": "frus:1904:392"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "ac6aa870-0c7f-54f2-ab9f-33e0f9e54d78",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "ac6aa870-0c7f-54f2-ab9f-33e0f9e54d78",
+        "claim_id": "89cb0ff5-e85d-5096-a204-3c5c467b24ba",
+        "evidence_id": "69ac44f5-7647-5ada-adde-bb49865a6d86",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "c19bfbae-aed9-573a-ae18-f08cc6190e9b",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "c19bfbae-aed9-573a-ae18-f08cc6190e9b",
+        "subject_id": "9c2caa6c-65fc-509a-aced-e8e879371a0c",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c393-termination",
+          "proposition": "terminate present negotiations and reserve independent action",
+          "predicate": "declares_intention",
+          "extraction_context": "copied note, concluding paragraphs; no original delivery timestamp"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "9c2caa6c-65fc-509a-aced-e8e879371a0c",
+          "external_id": "frus:1904:393"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "13732016-0b8f-502f-ab89-b90ee770224d",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "13732016-0b8f-502f-ab89-b90ee770224d",
+        "claim_id": "c19bfbae-aed9-573a-ae18-f08cc6190e9b",
+        "evidence_id": "1075572b-2a90-50df-ad43-eb31980794ec",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "218ed9bb-2d28-5b1c-a01f-25384ba4dc7d",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "218ed9bb-2d28-5b1c-a01f-25384ba4dc7d",
+        "subject_id": "fa875740-11df-5e29-a737-3305b15cabb4",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c394-departure",
+          "proposition": "1904-02-12",
+          "predicate": "expected_departure_date",
+          "extraction_context": "future-oriented report on February 7; actual departure not verified"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "fa875740-11df-5e29-a737-3305b15cabb4",
+          "external_id": "frus:1904:394"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "8791c764-60d2-58cd-a79e-f6cade6d193e",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "8791c764-60d2-58cd-a79e-f6cade6d193e",
+        "claim_id": "218ed9bb-2d28-5b1c-a01f-25384ba4dc7d",
+        "evidence_id": "ce7eb890-a426-5906-a6e5-a50d0aba7637",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "62f7423d-39e3-5a33-ac5d-8514273c6766",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "62f7423d-39e3-5a33-ac5d-8514273c6766",
+        "subject_id": "c13cb698-bead-5397-ac24-1e1e16a70112",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c395-captured",
+          "proposition": "captured",
+          "predicate": "reported_fate",
+          "extraction_context": "foreign minister informs Griscom; upstream naval telegram not inspected"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "c13cb698-bead-5397-ac24-1e1e16a70112",
+          "external_id": "frus:1904:395"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "a23309ea-56fe-5a0f-a27c-642f956d0846",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "a23309ea-56fe-5a0f-a27c-642f956d0846",
+        "claim_id": "62f7423d-39e3-5a33-ac5d-8514273c6766",
+        "evidence_id": "9e2419ec-b15f-56e5-a94e-d46b0ba495d1",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "ff45930d-5f1f-5c43-a8f7-689a0b5de78a",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "ff45930d-5f1f-5c43-a8f7-689a0b5de78a",
+        "subject_id": "c13cb698-bead-5397-ac24-1e1e16a70112",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c395-sunk",
+          "proposition": "sunk",
+          "predicate": "reported_fate",
+          "extraction_context": "same telegram as captured claim; separate proposition"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "c13cb698-bead-5397-ac24-1e1e16a70112",
+          "external_id": "frus:1904:395"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "3c1f1c4d-01a9-59c9-acfc-3610c42ca52c",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "3c1f1c4d-01a9-59c9-acfc-3610c42ca52c",
+        "claim_id": "ff45930d-5f1f-5c43-a8f7-689a0b5de78a",
+        "evidence_id": "9e2419ec-b15f-56e5-a94e-d46b0ba495d1",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "751d21dd-7428-58d6-a64a-838294f553df",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "751d21dd-7428-58d6-a64a-838294f553df",
+        "subject_id": "c13cb698-bead-5397-ac24-1e1e16a70112",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c395-first-fire",
+          "proposition": "opened fire on Japanese torpedo boats",
+          "predicate": "alleged_initiator",
+          "extraction_context": "edition explicitly says upstream telegram alleges; its author and event timing unverified"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "c13cb698-bead-5397-ac24-1e1e16a70112",
+          "external_id": "frus:1904:395"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "4cd408e0-d8cc-5a84-a549-d78c9da036c5",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "4cd408e0-d8cc-5a84-a549-d78c9da036c5",
+        "claim_id": "751d21dd-7428-58d6-a64a-838294f553df",
+        "evidence_id": "9e2419ec-b15f-56e5-a94e-d46b0ba495d1",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "ba7b1814-61cd-52dd-a0f7-f95e99e3aa17",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "ba7b1814-61cd-52dd-a0f7-f95e99e3aa17",
+        "subject_id": "0a6970c6-48a9-578f-a85a-9b9f8ca6b58e",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c396-declaration",
+          "proposition": "1904-02-10",
+          "predicate": "reported_declaration_date",
+          "extraction_context": "reported February 11; declaration act and report time differ"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "0a6970c6-48a9-578f-a85a-9b9f8ca6b58e",
+          "external_id": "frus:1904:396"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "f063e025-f699-5818-ab79-4c0a47e085de",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "f063e025-f699-5818-ab79-4c0a47e085de",
+        "claim_id": "ba7b1814-61cd-52dd-a0f7-f95e99e3aa17",
+        "evidence_id": "da1ec273-d955-5fd4-ac4d-0cc637831b4d",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "7e291e7f-6b47-5bd4-a3a6-02db0d1ef6d8",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "7e291e7f-6b47-5bd4-a3a6-02db0d1ef6d8",
+        "subject_id": "ad6aaa12-bea7-5d9c-a1c7-475d08c04e85",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c678-uncertainty",
+          "proposition": "no positive knowledge of Russian reply",
+          "predicate": "reported_knowledge_state",
+          "extraction_context": "no positive knowledge is not complete ignorance; time of conversation unknown"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "ad6aaa12-bea7-5d9c-a1c7-475d08c04e85",
+          "external_id": "frus:1904:678"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "9408f2a8-bc62-5eb3-af06-a2158bec5f07",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "9408f2a8-bc62-5eb3-af06-a2158bec5f07",
+        "claim_id": "7e291e7f-6b47-5bd4-a3a6-02db0d1ef6d8",
+        "evidence_id": "4e52ddcf-025a-5e66-ac9c-58e5aecaed3e",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "06109846-8430-5110-a0ba-96e7c0d9020f",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "06109846-8430-5110-a0ba-96e7c0d9020f",
+        "subject_id": "ad6aaa12-bea7-5d9c-a1c7-475d08c04e85",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c678-sent",
+          "proposition": "reply sent to Admiral Alexieff, with modification authority",
+          "predicate": "reported_reply_status",
+          "extraction_context": "nested reported speech; proposed conditions described as foreign minister own view"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "ad6aaa12-bea7-5d9c-a1c7-475d08c04e85",
+          "external_id": "frus:1904:678"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "7445e055-1638-5457-af41-4c246acdcd0c",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "7445e055-1638-5457-af41-4c246acdcd0c",
+        "claim_id": "06109846-8430-5110-a0ba-96e7c0d9020f",
+        "evidence_id": "4e52ddcf-025a-5e66-ac9c-58e5aecaed3e",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "23a5b1c4-0112-5d09-af30-f96677d256aa",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "23a5b1c4-0112-5d09-af30-f96677d256aa",
+        "subject_id": "5cf89699-e95f-521a-a9fa-e133a8cd7f91",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c679-held",
+          "proposition": "Russian reply when Japanese minister requested passports",
+          "predicate": "reportedly_possessed",
+          "extraction_context": "possession by Russian minister is not receipt by Japanese government"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "5cf89699-e95f-521a-a9fa-e133a8cd7f91",
+          "external_id": "frus:1904:679"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "3992102d-5dae-5f34-a715-bf6177705802",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "3992102d-5dae-5f34-a715-bf6177705802",
+        "claim_id": "23a5b1c4-0112-5d09-af30-f96677d256aa",
+        "evidence_id": "01688a2d-5069-5c69-a467-3310a4c01ce0",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "44c8860d-6669-5724-a1f9-e7da9fba39f5",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "44c8860d-6669-5724-a1f9-e7da9fba39f5",
+        "subject_id": "80a8c22c-8fdc-5d32-af48-8d289fbfa045",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c680-attack",
+          "proposition": "Japanese torpedo boats attacked Russian squadron",
+          "predicate": "reported_attacked_at_anchor",
+          "extraction_context": "translated February 9 telegram deposited February 10"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "80a8c22c-8fdc-5d32-af48-8d289fbfa045",
+          "external_id": "frus:1904:680"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "e470832c-0bd1-5ae2-a253-61ba989ee4d3",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "e470832c-0bd1-5ae2-a253-61ba989ee4d3",
+        "claim_id": "44c8860d-6669-5724-a1f9-e7da9fba39f5",
+        "evidence_id": "8b847b74-aafe-565e-af2d-99e9b36ecb4a",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "643bedec-6ebe-5647-a830-1e1547478ad4",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "643bedec-6ebe-5647-a830-1e1547478ad4",
+        "subject_id": "d7985c95-c30b-5dee-a1cb-132537e031ce",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c86-request",
+          "proposition": "Conger to convey US desire for Chinese neutrality and administrative entity to be respected",
+          "predicate": "instructs",
+          "extraction_context": "policy desire is not evidence that neutrality was respected"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "d7985c95-c30b-5dee-a1cb-132537e031ce",
+          "external_id": "frus:1904:86"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "2d43a8b3-1769-5aa9-a9f1-908d8e2fe58d",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "2d43a8b3-1769-5aa9-a9f1-908d8e2fe58d",
+        "claim_id": "643bedec-6ebe-5647-a830-1e1547478ad4",
+        "evidence_id": "32016271-f810-57a5-a5ce-4a706bd30c96",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "65469373-a030-51d5-a3a8-191d8da68dcb",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "65469373-a030-51d5-a3a8-191d8da68dcb",
+        "subject_id": "74b1cdc5-5f68-5652-a7e9-0a5026a18de2",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c430-consent",
+          "proposition": "use of Korean ports and territory has full Korean knowledge and consent",
+          "predicate": "asserts",
+          "extraction_context": "preamble representation; not proof of uncoerced Korean consent"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "74b1cdc5-5f68-5652-a7e9-0a5026a18de2",
+          "external_id": "frus:1904:430"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "0ae6e1a0-d099-50a2-a4af-d3d51bffd743",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "0ae6e1a0-d099-50a2-a4af-d3d51bffd743",
+        "claim_id": "65469373-a030-51d5-a3a8-191d8da68dcb",
+        "evidence_id": "8bfce4e6-5889-5faa-aad4-6aa601826d80",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "0919718f-7c1d-5743-ab93-988d3f24a644",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "0919718f-7c1d-5743-ab93-988d3f24a644",
+        "subject_id": "74b1cdc5-5f68-5652-a7e9-0a5026a18de2",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c430-guarantee",
+          "proposition": "independence and territorial integrity of Korean Empire",
+          "predicate": "protocol_text_guarantees",
+          "extraction_context": "Article III; legal text does not establish actual sovereignty or control"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "74b1cdc5-5f68-5652-a7e9-0a5026a18de2",
+          "external_id": "frus:1904:430"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "d9f72c18-1e8a-57f2-ab79-37508cbc1adc",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "d9f72c18-1e8a-57f2-ab79-37508cbc1adc",
+        "claim_id": "0919718f-7c1d-5743-ab93-988d3f24a644",
+        "evidence_id": "8bfce4e6-5889-5faa-aad4-6aa601826d80",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "9550912e-ad3e-591c-ae1b-d1a9b47aa56d",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "9550912e-ad3e-591c-ae1b-d1a9b47aa56d",
+        "subject_id": "74b1cdc5-5f68-5652-a7e9-0a5026a18de2",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c430-occupation",
+          "proposition": "occupation of strategically necessary places for stated object",
+          "predicate": "protocol_text_allows_conditionally",
+          "extraction_context": "Article IV; conditional permission distinct from actual occupation"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "74b1cdc5-5f68-5652-a7e9-0a5026a18de2",
+          "external_id": "frus:1904:430"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "18e2928c-9d90-5d2d-aaf7-491b38ce9386",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "18e2928c-9d90-5d2d-aaf7-491b38ce9386",
+        "claim_id": "9550912e-ad3e-591c-ae1b-d1a9b47aa56d",
+        "evidence_id": "8bfce4e6-5889-5faa-aad4-6aa601826d80",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "0cf8296d-fea8-5eeb-a4fd-1611229d475b",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "0cf8296d-fea8-5eeb-a4fd-1611229d475b",
+        "subject_id": "d9183a87-f593-54b4-adbe-545fc468583b",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "c815-inquiry",
+          "proposition": "impartial inquiry at Vigo, with bilateral representatives and neutral umpire; offers Hull inquiry",
+          "predicate": "reportedly_demands",
+          "extraction_context": "demand after rejection of Russian admiral statement; does not prove commission findings"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "d9183a87-f593-54b4-adbe-545fc468583b",
+          "external_id": "frus:1904:815"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "07d6e94b-ab6b-5fb1-a96a-f83a1caa69f7",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "07d6e94b-ab6b-5fb1-a96a-f83a1caa69f7",
+        "claim_id": "0cf8296d-fea8-5eeb-a4fd-1611229d475b",
+        "evidence_id": "ed4e8211-4505-5fb7-afde-4fd06c4fd519",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "06568074-e55a-5de0-a031-c823a91ee7ca",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "06568074-e55a-5de0-a031-c823a91ee7ca",
+        "subject_id": "28ba41ba-7d3a-59b5-a9e3-6f9cd16a058b",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "cnikh-telegraph",
+          "proposition": "use Korean telegraph lines along Japanese northward advance",
+          "predicate": "requests_permission",
+          "extraction_context": "translated memorial; request is not permission granted or network use completed"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "28ba41ba-7d3a-59b5-a9e3-6f9cd16a058b",
+          "external_id": "nikh:jh_024r_0050_0050"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "7227da14-ad86-5e0a-ac44-fd7d931078f5",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "7227da14-ad86-5e0a-ac44-fd7d931078f5",
+        "claim_id": "06568074-e55a-5de0-a031-c823a91ee7ca",
+        "evidence_id": "a2e43175-9f9c-57ab-a59e-9f3b182729c4",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "34de8907-d885-58d3-a10a-d90d7bd9ea4c",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "34de8907-d885-58d3-a10a-d90d7bd9ea4c",
+        "subject_id": "cd6e77d7-4d70-5b16-a290-71f16b6ea811",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "cjacar-selfsink",
+          "proposition": "returned to port and self-sank; directs reader to C05110134800 image 33",
+          "predicate": "later_guide_describes",
+          "extraction_context": "later guide, not extracted original; date discrepancy deliberately retained"
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "cd6e77d7-4d70-5b16-a290-71f16b6ea811",
+          "external_id": "jacar:chemulpo-guide"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "a354f8ec-6eab-533b-abe4-ff88e2b533bc",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "a354f8ec-6eab-533b-abe4-ff88e2b533bc",
+        "claim_id": "34de8907-d885-58d3-a10a-d90d7bd9ea4c",
+        "evidence_id": "183f008d-2210-5fb9-ab08-9d429f23c11c",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "7ece2aff-2657-5d19-a509-08f68dfc769b",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "7ece2aff-2657-5d19-a509-08f68dfc769b",
+        "subject_id": "af24e6e9-ef3f-57fc-a725-89a4bf98e372",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-reply-sent",
+          "proposition": "栗野は2月4日20時の面談で、ラムズドルフが回答の趣旨をアレクセーエフへ送りローゼンへ転送させると述べた、と報告。原回答本文・発送原票は未確認。",
+          "predicate": "reported_dispatch",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "af24e6e9-ef3f-57fc-a725-89a4bf98e372",
+          "external_id": "r2:jp-whitebook"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "886fff18-1623-5770-ae87-11d965196d71",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "886fff18-1623-5770-ae87-11d965196d71",
+        "claim_id": "7ece2aff-2657-5d19-a509-08f68dfc769b",
+        "evidence_id": "cfbd2918-e7dc-551f-a946-28235f8dc050",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "d163984f-a2ac-5023-a355-d756afb5a731",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "d163984f-a2ac-5023-a355-d756afb5a731",
+        "subject_id": "af24e6e9-ef3f-57fc-a725-89a4bf98e372",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-personal-view",
+          "proposition": "栗野はラムズドルフの四条件を個人的見解と明示し、回答と同一とは言えないと留保。",
+          "predicate": "personal_view_not_answer",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "af24e6e9-ef3f-57fc-a725-89a4bf98e372",
+          "external_id": "r2:jp-whitebook"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "ab4d688a-5d1b-5c5e-a357-cabc08fd2334",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "ab4d688a-5d1b-5c5e-a357-cabc08fd2334",
+        "claim_id": "d163984f-a2ac-5023-a355-d756afb5a731",
+        "evidence_id": "cfbd2918-e7dc-551f-a946-28235f8dc050",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "1fd34596-5291-5a50-a676-4c47e0c209fa",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "1fd34596-5291-5a50-a676-4c47e0c209fa",
+        "subject_id": "af24e6e9-ef3f-57fc-a725-89a4bf98e372",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-no50-receipt",
+          "proposition": "公刊文書No50の発信地日付はPetersburg Feb5 5.5 A.M.、東京受信欄はFeb5 5.15 P.M.。Komura本人の閲読時刻はない。",
+          "predicate": "telegram_received_annotation",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "af24e6e9-ef3f-57fc-a725-89a4bf98e372",
+          "external_id": "r2:jp-whitebook"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "05dc70f8-114f-53be-ad96-4fbdf7104b41",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "05dc70f8-114f-53be-ad96-4fbdf7104b41",
+        "claim_id": "1fd34596-5291-5a50-a676-4c47e0c209fa",
+        "evidence_id": "cfbd2918-e7dc-551f-a946-28235f8dc050",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "19bbed2f-1bd1-5464-af55-05c7bf12c515",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "19bbed2f-1bd1-5464-af55-05c7bf12c515",
+        "subject_id": "f2de5dc8-070f-5578-a5de-646aba51732c",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-order54",
+          "proposition": "No54: 2月5日2-pm発信表記。No50/51/52を一つの通告、No53を同時に提出。ロシア回答の発送・内容によらず実施、各受領と提出の即時電報報告を指示。",
+          "predicate": "instruction_sent_copy",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "f2de5dc8-070f-5578-a5de-646aba51732c",
+          "external_id": "r2:komura-bundle"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "d8f75477-ffe1-5fa9-a7ab-30d1e4be0330",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "d8f75477-ffe1-5fa9-a7ab-30d1e4be0330",
+        "claim_id": "19bbed2f-1bd1-5464-af55-05c7bf12c515",
+        "evidence_id": "4c65c221-4d15-58bf-a730-93160f778355",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "202013f4-0083-5326-ac99-d50a8405336d",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "202013f4-0083-5326-ac99-d50a8405336d",
+        "subject_id": "af24e6e9-ef3f-57fc-a725-89a4bf98e372",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-order48",
+          "proposition": "公刊文書No48/49はFeb5 2.15 P.M.。No54の2-pmと同一時刻へ丸めない。文書番号と電報番号を区別。",
+          "predicate": "published_instruction_dateline",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "af24e6e9-ef3f-57fc-a725-89a4bf98e372",
+          "external_id": "r2:jp-whitebook"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "a3fcb69c-83c5-5e69-a299-bc4cc7e96aff",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "a3fcb69c-83c5-5e69-a299-bc4cc7e96aff",
+        "claim_id": "202013f4-0083-5326-ac99-d50a8405336d",
+        "evidence_id": "cfbd2918-e7dc-551f-a946-28235f8dc050",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "786ab8f5-db51-5451-ab49-0c06ea0780db",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "786ab8f5-db51-5451-ab49-0c06ea0780db",
+        "subject_id": "f2de5dc8-070f-5578-a5de-646aba51732c",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-ack82",
+          "proposition": "栗野No82は「貴電五〇、五三悉ス」。2月5日6.15pM日付、東京2月6日4.40aM受信。No51/52受領はこの文から拡張しない。",
+          "predicate": "acknowledged_messages",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "f2de5dc8-070f-5578-a5de-646aba51732c",
+          "external_id": "r2:komura-bundle"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "bd053f25-f461-582c-aae7-6b7fa9c2118d",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "bd053f25-f461-582c-aae7-6b7fa9c2118d",
+        "claim_id": "786ab8f5-db51-5451-ab49-0c06ea0780db",
+        "evidence_id": "4c65c221-4d15-58bf-a730-93160f778355",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "f93b0522-bb0d-5f78-a1ac-16cffd4a5c09",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "f93b0522-bb0d-5f78-a1ac-16cffd4a5c09",
+        "subject_id": "f2de5dc8-070f-5578-a5de-646aba51732c",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-ack82-receipt",
+          "proposition": "栗野No82の受信欄は6/2/1904 4.40aM。東京受信事務の記録であり小村本人閲読・閣議共有ではない。",
+          "predicate": "telegram_received_annotation",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "f2de5dc8-070f-5578-a5de-646aba51732c",
+          "external_id": "r2:komura-bundle"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "3eac7ded-9afb-5b59-a505-a1be627c2ce0",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "3eac7ded-9afb-5b59-a505-a1be627c2ce0",
+        "claim_id": "f93b0522-bb0d-5f78-a1ac-16cffd4a5c09",
+        "evidence_id": "4c65c221-4d15-58bf-a730-93160f778355",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "a29eaa8d-6419-5e4d-aec0-68e59e3b55c9",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "a29eaa8d-6419-5e4d-aec0-68e59e3b55c9",
+        "subject_id": "af24e6e9-ef3f-57fc-a725-89a4bf98e372",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-note-presented",
+          "proposition": "公刊No51で栗野がFeb6 TODAY 4P.M.にラムズドルフへ両通告を提出したと報告。離露10日は予定であり実行証明ではない。",
+          "predicate": "reported_note_delivery",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "af24e6e9-ef3f-57fc-a725-89a4bf98e372",
+          "external_id": "r2:jp-whitebook"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "e1d83570-8c63-5d2b-aaa5-6557c5313b9d",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "e1d83570-8c63-5d2b-aaa5-6557c5313b9d",
+        "claim_id": "a29eaa8d-6419-5e4d-aec0-68e59e3b55c9",
+        "evidence_id": "cfbd2918-e7dc-551f-a946-28235f8dc050",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "9c96ee11-dfbf-5451-a255-74c4eb33daf1",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "9c96ee11-dfbf-5451-a255-74c4eb33daf1",
+        "subject_id": "af24e6e9-ef3f-57fc-a725-89a4bf98e372",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-note-report-receipt",
+          "proposition": "No51はPetersburg Feb6 5.57P.M.日付、Received Feb7 5.45A.M.。受信欄と通告提出時刻を分離。",
+          "predicate": "telegram_received_annotation",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "af24e6e9-ef3f-57fc-a725-89a4bf98e372",
+          "external_id": "r2:jp-whitebook"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "aee189f4-ae78-58ff-adc2-750e9b68130a",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "aee189f4-ae78-58ff-adc2-750e9b68130a",
+        "claim_id": "9c96ee11-dfbf-5451-a255-74c4eb33daf1",
+        "evidence_id": "cfbd2918-e7dc-551f-a946-28235f8dc050",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "50966845-b808-5b76-ac3d-e75933a31dfb",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "50966845-b808-5b76-ac3d-e75933a31dfb",
+        "subject_id": "f2de5dc8-070f-5578-a5de-646aba51732c",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-london-response",
+          "proposition": "林No59は小村No65を参照し栗野撤退後の情報収集拠点を提案。London Feb5 10.50p.m.、東京Feb6 11.20a.m.受信。ロシア回答受領の知識ではない。",
+          "predicate": "proposal_references_instruction",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "f2de5dc8-070f-5578-a5de-646aba51732c",
+          "external_id": "r2:komura-bundle"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "93fb2926-29fd-5a07-a436-56e9698f74d4",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "93fb2926-29fd-5a07-a436-56e9698f74d4",
+        "claim_id": "50966845-b808-5b76-ac3d-e75933a31dfb",
+        "evidence_id": "4c65c221-4d15-58bf-a730-93160f778355",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "343241d1-ad07-5b7e-aad7-22d8e21e4e82",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "343241d1-ad07-5b7e-aad7-22d8e21e4e82",
+        "subject_id": "f2de5dc8-070f-5578-a5de-646aba51732c",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-london-protection-order",
+          "proposition": "London林宛No67、Feb6 11-25a発信表記。英国による在露日本利益保護を依頼。林の受信・閲読はこの発信控からは分からない。",
+          "predicate": "outgoing_protection_request",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "f2de5dc8-070f-5578-a5de-646aba51732c",
+          "external_id": "r2:komura-bundle"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "829183cb-127a-511b-a75c-4922dc09ce77",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "829183cb-127a-511b-a75c-4922dc09ce77",
+        "claim_id": "343241d1-ad07-5b7e-aad7-22d8e21e4e82",
+        "evidence_id": "4c65c221-4d15-58bf-a730-93160f778355",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "6932e66c-6a2b-57eb-a74e-5ad0ce8d9209",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "6932e66c-6a2b-57eb-a74e-5ad0ce8d9209",
+        "subject_id": "96c24e88-297a-51f9-a4e5-f8977b7fc99e",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-togo-event",
+          "proposition": "東郷報告は9日零時前後の水雷艇攻撃と9日昼の旅順口外交戦を叙述。敵損傷認定は認ム・未明瞭との留保を伴う。",
+          "predicate": "retrospective_battle_report",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "96c24e88-297a-51f9-a4e5-f8977b7fc99e",
+          "external_id": "r2:togo-copy"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "1c4c921d-80ba-54f7-a81a-d93852c76a18",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "1c4c921d-80ba-54f7-a81a-d93852c76a18",
+        "claim_id": "6932e66c-6a2b-57eb-a74e-5ad0ce8d9209",
+        "evidence_id": "7e268d8e-59ce-507d-a610-ebc534abd6d5",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "a064433b-8fc0-5d8d-ae49-354e8aa98659",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "a064433b-8fc0-5d8d-ae49-354e8aa98659",
+        "subject_id": "96c24e88-297a-51f9-a4e5-f8977b7fc99e",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-togo-created",
+          "proposition": "写の報告末尾に明治三十七年二月十日、東郷平八郎。艦船当日航海日誌と同一視しない。",
+          "predicate": "report_dated",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "96c24e88-297a-51f9-a4e5-f8977b7fc99e",
+          "external_id": "r2:togo-copy"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "70c66072-39a8-569f-ad56-b3c927a62a7c",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "70c66072-39a8-569f-ad56-b3c927a62a7c",
+        "claim_id": "a064433b-8fc0-5d8d-ae49-354e8aa98659",
+        "evidence_id": "7e268d8e-59ce-507d-a610-ebc534abd6d5",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "4a6ffc8f-941d-5979-afc1-a8f4161f2e20",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "4a6ffc8f-941d-5979-afc1-a8f4161f2e20",
+        "subject_id": "96c24e88-297a-51f9-a4e5-f8977b7fc99e",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-togo-dispatch",
+          "proposition": "海軍大臣宛戦闘報告の冒頭注記は二月十一日仁川ヨリ発電。受信・閲読欄は今回未確認。",
+          "predicate": "report_dispatch_annotation",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "96c24e88-297a-51f9-a4e5-f8977b7fc99e",
+          "external_id": "r2:togo-copy"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "c37bd38a-8bb1-5457-a626-784788696b16",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "c37bd38a-8bb1-5457-a626-784788696b16",
+        "claim_id": "4a6ffc8f-941d-5979-afc1-a8f4161f2e20",
+        "evidence_id": "7e268d8e-59ce-507d-a610-ebc534abd6d5",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "9beeb3af-35a4-5633-a73a-d33479cdbdf7",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "9beeb3af-35a4-5633-a73a-d33479cdbdf7",
+        "subject_id": "70ec3976-c9d5-5294-abb4-b31605a80ea9",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-uriu1",
+          "proposition": "No1はFeb9 午後十二時三十五分仁川発電、午後四時五十分佐世保発電。前日夕刻のコレーツ発砲などを主張し当日正午期限の退去通告を報告。",
+          "predicate": "telegram_dispatch_reproduced",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "70ec3976-c9d5-5294-abb4-b31605a80ea9",
+          "external_id": "r2:chemulpo-edition"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "02462450-1b88-5e1c-a92d-016ea22c197e",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "02462450-1b88-5e1c-a92d-016ea22c197e",
+        "claim_id": "9beeb3af-35a4-5633-a73a-d33479cdbdf7",
+        "evidence_id": "db5fd4e0-95b7-5acd-af13-1c7c822e260f",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "a07fe372-e363-5199-ac31-9636278ceb77",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "a07fe372-e363-5199-ac31-9636278ceb77",
+        "subject_id": "70ec3976-c9d5-5294-abb4-b31605a80ea9",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-uriu1-relay",
+          "proposition": "No1括弧内はFeb9 午後四時五十分佐世保発電。佐世保発電は海軍大臣東京受信ではない。",
+          "predicate": "relay_dispatch_reproduced",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "70ec3976-c9d5-5294-abb4-b31605a80ea9",
+          "external_id": "r2:chemulpo-edition"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "e5a471b6-b10b-52d8-a8f0-c68cb9ef3856",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "e5a471b6-b10b-52d8-a8f0-c68cb9ef3856",
+        "claim_id": "a07fe372-e363-5199-ac31-9636278ceb77",
+        "evidence_id": "db5fd4e0-95b7-5acd-af13-1c7c822e260f",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "f08766c9-4c2a-509e-a64d-fd677e3bd81e",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "f08766c9-4c2a-509e-a64d-fd677e3bd81e",
+        "subject_id": "70ec3976-c9d5-5294-abb4-b31605a80ea9",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-uriu2",
+          "proposition": "No2はFeb10 午後三時三十五分仁川発電。9日35分交戦・露艦退却と夕刻破壊、己方無損害を主張。観測・推定・敵艦状態を一つの確定Realityにしない。",
+          "predicate": "telegram_dispatch_reproduced",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "70ec3976-c9d5-5294-abb4-b31605a80ea9",
+          "external_id": "r2:chemulpo-edition"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "84e3b255-4349-583f-a059-ce4b9226819d",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "84e3b255-4349-583f-a059-ce4b9226819d",
+        "claim_id": "f08766c9-4c2a-509e-a64d-fd677e3bd81e",
+        "evidence_id": "db5fd4e0-95b7-5acd-af13-1c7c822e260f",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "78501f29-a14c-5b81-a13d-e773982bbd79",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "78501f29-a14c-5b81-a13d-e773982bbd79",
+        "subject_id": "70ec3976-c9d5-5294-abb4-b31605a80ea9",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-uriu2-relay",
+          "proposition": "No2括弧内はFeb10 午後八時三十五分佐世保発電。受信先の受領時刻は示さない。",
+          "predicate": "relay_dispatch_reproduced",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "70ec3976-c9d5-5294-abb4-b31605a80ea9",
+          "external_id": "r2:chemulpo-edition"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "569870b3-13d3-51b5-aea6-38e75a90a69d",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "569870b3-13d3-51b5-aea6-38e75a90a69d",
+        "claim_id": "78501f29-a14c-5b81-a13d-e773982bbd79",
+        "evidence_id": "db5fd4e0-95b7-5acd-af13-1c7c822e260f",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "7fe3e456-e4ce-598d-a188-334b05ded25d",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "7fe3e456-e4ce-598d-a188-334b05ded25d",
+        "subject_id": "70ec3976-c9d5-5294-abb4-b31605a80ea9",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-uriu3-dependence",
+          "proposition": "Feb13 No3はNo2と同じ電報を再録し、海軍大臣宛電報後に千代田艦長報告を得た旨を注記。後の叙述は独立観測数を増やさない。",
+          "predicate": "report_reuses_telegram",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "70ec3976-c9d5-5294-abb4-b31605a80ea9",
+          "external_id": "r2:chemulpo-edition"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "ab2a8f2c-64fb-582a-ae5e-3616a65b0d1b",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "ab2a8f2c-64fb-582a-ae5e-3616a65b0d1b",
+        "claim_id": "7fe3e456-e4ce-598d-a188-334b05ded25d",
+        "evidence_id": "db5fd4e0-95b7-5acd-af13-1c7c822e260f",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "d2eea379-bf88-5715-a5d9-8a3373758458",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "d2eea379-bf88-5715-a5d9-8a3373758458",
+        "subject_id": "7ea6ba4e-5600-5f20-afa1-666320709952",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-pak-dates",
+          "proposition": "Pakは皇帝承認、2月2/3日送信、長崎経由ローゼン2月7日到着を再構成。前二者の脚注は1906年公刊文書、後者は1979/1973年研究。原電報・長崎ログ未確認。",
+          "predicate": "later_reconstruction",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "7ea6ba4e-5600-5f20-afa1-666320709952",
+          "external_id": "r2:pak"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "41e2f2bb-453a-5103-a720-cfa14e0fd2b4",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "41e2f2bb-453a-5103-a720-cfa14e0fd2b4",
+        "claim_id": "d2eea379-bf88-5715-a5d9-8a3373758458",
+        "evidence_id": "040642d2-fee0-529e-a668-30e829760589",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "4c4ad030-e06a-5f32-a17e-173a89f0f204",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "4c4ad030-e06a-5f32-a17e-173a89f0f204",
+        "subject_id": "92ea7bf4-4426-52ee-a5b1-c9f45a6f9ca7",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-press-tokyo",
+          "proposition": "Tokyo Feb7通信は回答提示TODAYと小村・ローゼン会談を報じる。受領原簿ではない。",
+          "predicate": "anonymous_press_report",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "92ea7bf4-4426-52ee-a5b1-c9f45a6f9ca7",
+          "external_id": "r2:journal"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "a924d80f-293a-55cd-a755-a98150ff3100",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "a924d80f-293a-55cd-a755-a98150ff3100",
+        "claim_id": "4c4ad030-e06a-5f32-a17e-173a89f0f204",
+        "evidence_id": "57cfc5e4-1a1f-51ac-a054-fe91ed690578",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "576c89f6-0717-5ee4-a907-8d93996f1132",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "576c89f6-0717-5ee4-a907-8d93996f1132",
+        "subject_id": "92ea7bf4-4426-52ee-a5b1-c9f45a6f9ca7",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-press-london",
+          "proposition": "London通信は土曜遅く日本公館当局者に新聞通信以外の回答受領の示唆がなかったと報じる。他の訓令についての無知を意味しない。",
+          "predicate": "reported_no_reply_intimation",
+          "extraction_context": "Saturday interpreted relative to February7 Sunday issue; exact clock and official identities unknown; OCR only."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "92ea7bf4-4426-52ee-a5b1-c9f45a6f9ca7",
+          "external_id": "r2:journal"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "c9d2be5a-acbd-5edf-a86a-1459600ff08a",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "c9d2be5a-acbd-5edf-a86a-1459600ff08a",
+        "claim_id": "576c89f6-0717-5ee4-a907-8d93996f1132",
+        "evidence_id": "57cfc5e4-1a1f-51ac-a054-fe91ed690578",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "e760626c-f877-57dc-a8da-fb7fd14c7e9f",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "e760626c-f877-57dc-a8da-fb7fd14c7e9f",
+        "subject_id": "8fd9c73b-c2d3-5f1c-a71d-f1c5897e0abf",
+        "predicate_kind": "attribute",
+        "predicate": "inspected_source_assertion",
+        "value": {
+          "experimental_claim_id": "r2:c-army-control",
+          "proposition": "二月十二日配賦済文書を二月二十六日に番号付けし、奉読を命じる。十二日配賦・命令を六〜十日の陸軍知識へ逆流させない。",
+          "predicate": "later_distribution_record",
+          "extraction_context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "8fd9c73b-c2d3-5f1c-a71d-f1c5897e0abf",
+          "external_id": "r2:army-control"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "e0f6e58f-be75-5bda-a336-c28bed791c0f",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419042004",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "e0f6e58f-be75-5bda-a336-c28bed791c0f",
+        "claim_id": "e760626c-f877-57dc-a8da-fb7fd14c7e9f",
+        "evidence_id": "0e650442-ff8e-511c-a4ea-a343ce20a6b0",
+        "relation": "SUPPORTS"
+      }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "r6:search-uiju-original",
+    "what": "Original Okabe attached report/image",
+    "where": "NIKH compareViewer/joseon text endpoints",
+    "query_or_locator": "NIKH compareViewer/joseon text endpoints",
+    "searched_on": "2026-09-14",
+    "result": "Web transcription inspected; twocurlHTTP400; image not obtained",
+    "classification": "source_known_as_copy_original_unconfirmed",
+    "limitation": "Copyheading寫 is not authenticated original",
+    "absence_inference": false
+  },
+  {
+    "id": "r6:search-protocol-original",
+    "what": "Protocol signed originals",
+    "where": "NIKH catalogue references; JACARB13091012600",
+    "query_or_locator": "NIKH catalogue references; JACARB13091012600",
+    "searched_on": "2026-09-14",
+    "result": "Official reference leads; JACAR web unavailable; original images uninspected",
+    "classification": "referenced_original_unavailable_in_session",
+    "limitation": "Custody asserted by publisher; no original language/signature inspection",
+    "absence_inference": false
+  },
+  {
+    "id": "r6:search-miller-original",
+    "what": "Consul Miller original arrest/refusal telegram",
+    "where": "FRUSd126/d127 vsofficialTEI",
+    "query_or_locator": "FRUSd126/d127 vsofficialTEI",
+    "searched_on": "2026-09-14",
+    "result": "Paraphrase located; original telegraphic text not located",
+    "classification": "no_evidence_currently_located",
+    "limitation": "No inferred document loss/nonexistence; informant d127 unnamed",
+    "absence_inference": false
+  },
+  {
+    "id": "r6:search-customs-ledger",
+    "what": "Native customs appointment/collection ledger",
+    "where": "HansardFeb4, FRUSChinese customs instructions",
+    "query_or_locator": "HansardFeb4, FRUSChinese customs instructions",
+    "searched_on": "2026-09-14",
+    "result": "Hearing and transmission evidence only; local ledger not located",
+    "classification": "no_evidence_currently_located",
+    "limitation": "Not proof tax collection absent",
+    "absence_inference": false
+  },
+  {
+    "id": "r6:search-local-voices",
+    "what": "Independent Korean/Chinese local/civilian accounts",
+    "where": "NIKHOkabe report, FRUS, parliamentarycorpus",
+    "query_or_locator": "NIKHOkabe report, FRUS, parliamentarycorpus",
+    "searched_on": "2026-09-14",
+    "result": "Named local actors in external report; independent voices not located",
+    "classification": "actor_left_no_record_currently_located_not_asserted",
+    "limitation": "Statepapers cannot fill local view",
+    "absence_inference": false
+  },
+  {
+    "id": "r6:search-cer-ops",
+    "what": "Railway operating record and concession/land title",
+    "where": "FRUSd100protectiveclause and diplomatic landscape",
+    "query_or_locator": "FRUSd100protectiveclause and diplomatic landscape",
+    "searched_on": "2026-09-14",
+    "result": "Named facility/duty found; operational/title original not located",
+    "classification": "no_evidence_currently_located",
+    "limitation": "No absenceofoperation/ownership inferred",
+    "absence_inference": false
+  },
+  {
+    "id": "r6:search-map",
+    "what": "Historical boundary/railway map",
+    "where": "Inherited BArchPH3/1472 catalogue lead and named place descriptions",
+    "query_or_locator": "Inherited BArchPH3/1472 catalogue lead and named place descriptions",
+    "searched_on": "2026-09-14",
+    "result": "No itemimage newly inspected; precision remainsnamed/relative",
+    "classification": "reference_lead_not_inspected",
+    "limitation": "No modern polygon or coordinate assigned",
+    "absence_inference": false
+  },
+  {
+    "id": "r6:search-neutrality-condition",
+    "what": "Local effective date of neutral regulations",
+    "where": "FRUSd18finalpublication/dispatchcondition",
+    "query_or_locator": "FRUSd18finalpublication/dispatchcondition",
+    "searched_on": "2026-09-14",
+    "result": "Condition located; locality completion timestamp not located",
+    "classification": "no_evidence_currently_located",
+    "limitation": "February17documentheadingnotuniversaleffectiveinstant",
+    "absence_inference": false
+  }
+]

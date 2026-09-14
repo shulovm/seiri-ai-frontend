@@ -40,3 +40,12 @@ dist-ssr
 
 # GROUND Core local project state (Phase B file store)
 ground-core/storage/projects/
+
+# Legacy test scratch outputs only; reproducibility runner keeps new runs in OS temp.
+ground-core/storage/.impact-test-tmp/
+ground-core/storage/.impact-measure-tmp/
+ground-core/storage/.ref-test-tmp/
+ground-core/storage/.governance-tmp/
+ground-core/storage/.governance-prov-tmp/
+ground-core/storage/.obj-test-tmp/
+ground-core/storage/.prosp-test-tmp/

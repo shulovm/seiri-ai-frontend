@@ -1,0 +1,2913 @@
+{
+  "schema_version": "0.1.24",
+  "project_id": "19041904-1904-4904-8904-190419045001",
+  "source": "import",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "6c28f14a-9a0a-5e13-ac43-7e925d62d508",
+      "payload": {
+        "id": "6c28f14a-9a0a-5e13-ac43-7e925d62d508",
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "kind": "document",
+        "label": "FRUS 1904, document 392",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:392"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "431cf101-bc13-5900-aa17-4cfd8691ec00",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "431cf101-bc13-5900-aa17-4cfd8691ec00",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d392",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"392\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "6c28f14a-9a0a-5e13-ac43-7e925d62d508",
+          "external_id": "frus:1904:392",
+          "label": "FRUS 1904, document 392"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "94deaf67-b2d7-5e36-ac70-c395f0100226",
+      "payload": {
+        "id": "94deaf67-b2d7-5e36-ac70-c395f0100226",
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "kind": "document",
+        "label": "FRUS 1904, document 393",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:393"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "25e7fbd7-9e3e-53fc-a33f-3ea1d89ea104",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "25e7fbd7-9e3e-53fc-a33f-3ea1d89ea104",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d393",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"393\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "94deaf67-b2d7-5e36-ac70-c395f0100226",
+          "external_id": "frus:1904:393",
+          "label": "FRUS 1904, document 393"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "8ced5500-e3eb-552a-a32c-4a78a58d59a8",
+      "payload": {
+        "id": "8ced5500-e3eb-552a-a32c-4a78a58d59a8",
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "kind": "document",
+        "label": "FRUS 1904, document 394",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:394"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "91098bd3-c704-5611-a634-a9ccb95cf34a",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "91098bd3-c704-5611-a634-a9ccb95cf34a",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d394",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"394\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "8ced5500-e3eb-552a-a32c-4a78a58d59a8",
+          "external_id": "frus:1904:394",
+          "label": "FRUS 1904, document 394"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "a17034de-144e-5acc-abc7-f154da14ef75",
+      "payload": {
+        "id": "a17034de-144e-5acc-abc7-f154da14ef75",
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "kind": "document",
+        "label": "FRUS 1904, document 395",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:395"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "1101f982-b0f6-56fa-a281-b7c9331bb621",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "1101f982-b0f6-56fa-a281-b7c9331bb621",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d395",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"395\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "a17034de-144e-5acc-abc7-f154da14ef75",
+          "external_id": "frus:1904:395",
+          "label": "FRUS 1904, document 395"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "c092fac8-e72e-5007-a5f6-55040decb268",
+      "payload": {
+        "id": "c092fac8-e72e-5007-a5f6-55040decb268",
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "kind": "document",
+        "label": "FRUS 1904, document 396",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:396"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "a9870395-b023-55e2-a12d-38e0e99efb57",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "a9870395-b023-55e2-a12d-38e0e99efb57",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d396",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"396\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "c092fac8-e72e-5007-a5f6-55040decb268",
+          "external_id": "frus:1904:396",
+          "label": "FRUS 1904, document 396"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "fc2a7d41-8eb2-58ab-ab64-784f9da801fd",
+      "payload": {
+        "id": "fc2a7d41-8eb2-58ab-ab64-784f9da801fd",
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "kind": "document",
+        "label": "FRUS 1904, document 678",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:678"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "49046f63-ca50-5996-ab3b-581b6b25ddfa",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "49046f63-ca50-5996-ab3b-581b6b25ddfa",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d678",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"678\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "fc2a7d41-8eb2-58ab-ab64-784f9da801fd",
+          "external_id": "frus:1904:678",
+          "label": "FRUS 1904, document 678"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "f2ee7f08-c14f-5dea-aaa7-c961e81e7adc",
+      "payload": {
+        "id": "f2ee7f08-c14f-5dea-aaa7-c961e81e7adc",
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "kind": "document",
+        "label": "FRUS 1904, document 679",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:679"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "00389928-abe5-5c74-a023-3cae4ae3da31",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "00389928-abe5-5c74-a023-3cae4ae3da31",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d679",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"679\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "f2ee7f08-c14f-5dea-aaa7-c961e81e7adc",
+          "external_id": "frus:1904:679",
+          "label": "FRUS 1904, document 679"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "13049dbf-9e40-5543-adac-b151762eae73",
+      "payload": {
+        "id": "13049dbf-9e40-5543-adac-b151762eae73",
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "kind": "document",
+        "label": "FRUS 1904, document 680",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:680"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "dd9e92c3-26cb-528f-ac5b-6fb06f37d2bb",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "dd9e92c3-26cb-528f-ac5b-6fb06f37d2bb",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d680",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"680\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "13049dbf-9e40-5543-adac-b151762eae73",
+          "external_id": "frus:1904:680",
+          "label": "FRUS 1904, document 680"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "8c8ffe0b-dbc4-5e91-a734-252eaf85520c",
+      "payload": {
+        "id": "8c8ffe0b-dbc4-5e91-a734-252eaf85520c",
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "kind": "document",
+        "label": "FRUS 1904, document 86",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:86"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "cb0f7779-a92b-5859-a98a-ef3b0fa83525",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "cb0f7779-a92b-5859-a98a-ef3b0fa83525",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d86",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"86\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "8c8ffe0b-dbc4-5e91-a734-252eaf85520c",
+          "external_id": "frus:1904:86",
+          "label": "FRUS 1904, document 86"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "e4f669a4-19f3-51a4-a28d-0d21785ebdb3",
+      "payload": {
+        "id": "e4f669a4-19f3-51a4-a28d-0d21785ebdb3",
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "kind": "document",
+        "label": "FRUS 1904, document 430",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:430"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "cc27a843-fb16-51a0-af69-bae44efd86ca",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "cc27a843-fb16-51a0-af69-bae44efd86ca",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d430",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"430\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "e4f669a4-19f3-51a4-a28d-0d21785ebdb3",
+          "external_id": "frus:1904:430",
+          "label": "FRUS 1904, document 430"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "fae46b76-cd3a-5038-ae3b-9d4e0a1eb65f",
+      "payload": {
+        "id": "fae46b76-cd3a-5038-ae3b-9d4e0a1eb65f",
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "kind": "document",
+        "label": "FRUS 1904, document 815",
+        "attrs": {
+          "experimental_source_identity": "frus:1904:815"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "5ff013c4-ad29-53a3-a8f5-d76ab8328363",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "5ff013c4-ad29-53a3-a8f5-d76ab8328363",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://history.state.gov/historicaldocuments/frus1904/d815",
+        "summary": "edition_text_inspected; locator {\"document_number\":\"815\",\"page\":{\"status\":\"unknown\",\"reason\":\"HTML page marker not inspected for this record\"}}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "fae46b76-cd3a-5038-ae3b-9d4e0a1eb65f",
+          "external_id": "frus:1904:815",
+          "label": "FRUS 1904, document 815"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "7d481c12-622c-597f-a1c8-74c82bce296c",
+      "payload": {
+        "id": "7d481c12-622c-597f-a1c8-74c82bce296c",
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "kind": "document",
+        "label": "[일본군 북진에 따른 韓國電信線 사용 윤허에 관한 件]",
+        "attrs": {
+          "experimental_source_identity": "nikh:jh_024r_0050_0050"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "592ca4a6-467d-598a-a6cf-91d9394aa050",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "592ca4a6-467d-598a-a6cf-91d9394aa050",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://db.history.go.kr/joseon/level.do?levelId=jh_024r_0050_0050",
+        "summary": "translation_text_inspected; locator {\"level_id\":\"jh_024r_0050_0050\",\"document_number\":\"上奏文\",\"item\":\"(5)\"}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "7d481c12-622c-597f-a1c8-74c82bce296c",
+          "external_id": "nikh:jh_024r_0050_0050",
+          "label": "[일본군 북진에 따른 韓國電信線 사용 윤허에 관한 件]"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "05bae6fb-fe5b-51f6-ac6c-1d405c5ddb4a",
+      "payload": {
+        "id": "05bae6fb-fe5b-51f6-ac6c-1d405c5ddb4a",
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "kind": "document",
+        "label": "海上の戦い（解説を読む）仁川沖海戦",
+        "attrs": {
+          "experimental_source_identity": "jacar:chemulpo-guide"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "c980ead1-804b-52fb-af48-d88428b5c60d",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "c980ead1-804b-52fb-af48-d88428b5c60d",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://www.jacar.go.jp/exhibition/nichiro2/sensoushi/kaijou_02_outline.html",
+        "summary": "guide_text_inspected; locator {\"reference_codes\":[\"C05110032100\",\"C05110134800\"],\"images\":[\"C05110032100:6–11 (guide locator)\",\"C05110134800:33 (guide locator)\"]}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "05bae6fb-fe5b-51f6-ac6c-1d405c5ddb4a",
+          "external_id": "jacar:chemulpo-guide",
+          "label": "海上の戦い（解説を読む）仁川沖海戦"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reality_entity",
+      "entity_id": "25392822-03e3-539b-a452-0aaf8ee822f8",
+      "payload": {
+        "id": "25392822-03e3-539b-a452-0aaf8ee822f8",
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "kind": "document",
+        "label": "Japanese Peace Commission & other",
+        "attrs": {
+          "experimental_source_identity": "loc:2005680338"
+        },
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "evidence",
+      "entity_id": "6d35184c-5ad9-5a66-ae22-6ac2c57cf2dc",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "6d35184c-5ad9-5a66-ae22-6ac2c57cf2dc",
+        "kind": "external_ref",
+        "observation_id": null,
+        "external_ref": "https://www.loc.gov/item/2005680338/",
+        "summary": "catalog_metadata_inspected; locator {\"control_number\":\"2005680338\"}",
+        "provenance": {
+          "kind": "document",
+          "entity_id": "25392822-03e3-539b-a452-0aaf8ee822f8",
+          "external_id": "loc:2005680338",
+          "label": "Japanese Peace Commission & other"
+        }
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "4c34708a-ec64-50b0-a23d-9db6219cd92f",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "4c34708a-ec64-50b0-a23d-9db6219cd92f",
+        "subject_id": "6c28f14a-9a0a-5e13-ac43-7e925d62d508",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/c392-instruction",
+        "value": {
+          "experimental_claim_id": "c392-instruction",
+          "proposition": "present termination note and break diplomatic relations",
+          "predicate": "instructed_to",
+          "extraction_context": "d392 parenthetical paraphrase; instruction is not proof of delivery",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "frus:1904:392",
+            "locator": {
+              "document_number": "392",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            },
+            "inspection": "edition_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "c392-instruction",
+            "source_id": "frus:1904:392",
+            "subject_id": "jp-minister-ru",
+            "predicate": "instructed_to",
+            "object": "present termination note and break diplomatic relations",
+            "claimant_id": "jp-fm",
+            "report_chain": [
+              "jp-fm",
+              "griscom",
+              "hay"
+            ],
+            "temporal_scope": {
+              "raw": "before report of February 6",
+              "precision": "unknown",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "not established by inspected edition"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "St. Petersburg / Tokyo",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "d392 parenthetical paraphrase; instruction is not proof of delivery"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "griscom",
+              "label": "Mr. Griscom, American Legation, Tokyo",
+              "kind": "person",
+              "identity_boundary": "本文表記を保持。氏名補完は未検証",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "hay",
+              "label": "Mr. Hay",
+              "kind": "person",
+              "identity_boundary": "Secretary of Stateという役職と人物を分離",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "jp-fm",
+              "label": "Japanese minister for foreign affairs",
+              "kind": "office",
+              "identity_boundary": "d395の役職表記。個人同定は未確定",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "jp-minister-ru",
+              "label": "Japanese minister at St. Petersburg",
+              "kind": "office",
+              "identity_boundary": "d678の認識主体。日本全体へ拡張しない",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904-02-06",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-02-06",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "6c28f14a-9a0a-5e13-ac43-7e925d62d508",
+          "external_id": "frus:1904:392"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "164b2975-787e-5279-a645-0a55c49a82aa",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "164b2975-787e-5279-a645-0a55c49a82aa",
+        "claim_id": "4c34708a-ec64-50b0-a23d-9db6219cd92f",
+        "evidence_id": "431cf101-bc13-5900-aa17-4cfd8691ec00",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "02b23186-0ad0-5a67-a01d-a2198c47d858",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "02b23186-0ad0-5a67-a01d-a2198c47d858",
+        "subject_id": "94deaf67-b2d7-5e36-ac70-c395f0100226",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/c393-termination",
+        "value": {
+          "experimental_claim_id": "c393-termination",
+          "proposition": "terminate present negotiations and reserve independent action",
+          "predicate": "declares_intention",
+          "extraction_context": "copied note, concluding paragraphs; no original delivery timestamp",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "frus:1904:393",
+            "locator": {
+              "document_number": "393",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            },
+            "inspection": "edition_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "c393-termination",
+            "source_id": "frus:1904:393",
+            "subject_id": "jp-government",
+            "predicate": "declares_intention",
+            "object": "terminate present negotiations and reserve independent action",
+            "claimant_id": "jp-government",
+            "report_chain": [
+              "jp-government",
+              "hay"
+            ],
+            "temporal_scope": {
+              "raw": "Washington memorandum February 6",
+              "precision": "day",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": "1904-02-06",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "Washington / St. Petersburg",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "copied note, concluding paragraphs; no original delivery timestamp"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "jp-government",
+              "label": "Imperial Japanese Government",
+              "kind": "government",
+              "identity_boundary": "国家・皇帝・外務省・軍司令部を統合しない",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "hay",
+              "label": "Mr. Hay",
+              "kind": "person",
+              "identity_boundary": "Secretary of Stateという役職と人物を分離",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904-02-06",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-02-06",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "94deaf67-b2d7-5e36-ac70-c395f0100226",
+          "external_id": "frus:1904:393"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "9debdd35-b25e-5c9c-a77e-f21e87ee5b92",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "9debdd35-b25e-5c9c-a77e-f21e87ee5b92",
+        "claim_id": "02b23186-0ad0-5a67-a01d-a2198c47d858",
+        "evidence_id": "25e7fbd7-9e3e-53fc-a33f-3ea1d89ea104",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "1bb74b6f-3350-51c4-a006-998d6b66dee7",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "1bb74b6f-3350-51c4-a006-998d6b66dee7",
+        "subject_id": "8ced5500-e3eb-552a-a32c-4a78a58d59a8",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/c394-departure",
+        "value": {
+          "experimental_claim_id": "c394-departure",
+          "proposition": "1904-02-12",
+          "predicate": "expected_departure_date",
+          "extraction_context": "future-oriented report on February 7; actual departure not verified",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "frus:1904:394",
+            "locator": {
+              "document_number": "394",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            },
+            "inspection": "edition_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "c394-departure",
+            "source_id": "frus:1904:394",
+            "subject_id": "ru-minister-jp",
+            "predicate": "expected_departure_date",
+            "object": "1904-02-12",
+            "claimant_id": "griscom",
+            "report_chain": [
+              "griscom",
+              "hay"
+            ],
+            "temporal_scope": {
+              "raw": "12th instant",
+              "precision": "day",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": "1904-02-12",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "Tokyo",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "future-oriented report on February 7; actual departure not verified"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "griscom",
+              "label": "Mr. Griscom, American Legation, Tokyo",
+              "kind": "person",
+              "identity_boundary": "本文表記を保持。氏名補完は未検証",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "hay",
+              "label": "Mr. Hay",
+              "kind": "person",
+              "identity_boundary": "Secretary of Stateという役職と人物を分離",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "ru-minister-jp",
+              "label": "Russian minister at Tokyo",
+              "kind": "office",
+              "identity_boundary": "回答を所持したという伝聞の対象",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904-02-07",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-02-07",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "8ced5500-e3eb-552a-a32c-4a78a58d59a8",
+          "external_id": "frus:1904:394"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "025c00cb-0a24-5189-a947-e1c9f9f7d085",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "025c00cb-0a24-5189-a947-e1c9f9f7d085",
+        "claim_id": "1bb74b6f-3350-51c4-a006-998d6b66dee7",
+        "evidence_id": "91098bd3-c704-5611-a634-a9ccb95cf34a",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "9531a69b-352a-59ca-af7b-9e6825635b3a",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "9531a69b-352a-59ca-af7b-9e6825635b3a",
+        "subject_id": "a17034de-144e-5acc-abc7-f154da14ef75",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/c395-captured",
+        "value": {
+          "experimental_claim_id": "c395-captured",
+          "proposition": "captured",
+          "predicate": "reported_fate",
+          "extraction_context": "foreign minister informs Griscom; upstream naval telegram not inspected",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "frus:1904:395",
+            "locator": {
+              "document_number": "395",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            },
+            "inspection": "edition_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "c395-captured",
+            "source_id": "frus:1904:395",
+            "subject_id": "variag",
+            "predicate": "reported_fate",
+            "object": "captured",
+            "claimant_id": "jp-fm",
+            "report_chain": [
+              "jp-fm",
+              "griscom",
+              "hay"
+            ],
+            "temporal_scope": {
+              "raw": "to-day, February 9",
+              "precision": "day",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": "1904-02-09",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "near Chemulpo",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "foreign minister informs Griscom; upstream naval telegram not inspected"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "griscom",
+              "label": "Mr. Griscom, American Legation, Tokyo",
+              "kind": "person",
+              "identity_boundary": "本文表記を保持。氏名補完は未検証",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "hay",
+              "label": "Mr. Hay",
+              "kind": "person",
+              "identity_boundary": "Secretary of Stateという役職と人物を分離",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "jp-fm",
+              "label": "Japanese minister for foreign affairs",
+              "kind": "office",
+              "identity_boundary": "d395の役職表記。個人同定は未確定",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "variag",
+              "label": "Variag / ワリヤーグ",
+              "kind": "ship",
+              "identity_boundary": "宗谷への同一船体・改称・編入は資料導線のみ。時点未確定",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904-02-09",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-02-09",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "a17034de-144e-5acc-abc7-f154da14ef75",
+          "external_id": "frus:1904:395"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "092afa1f-dc35-5f19-a1ea-9708e86b95f9",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "092afa1f-dc35-5f19-a1ea-9708e86b95f9",
+        "claim_id": "9531a69b-352a-59ca-af7b-9e6825635b3a",
+        "evidence_id": "1101f982-b0f6-56fa-a281-b7c9331bb621",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "35b4dc83-0a4c-5f97-abd0-7ac857bbe5ec",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "35b4dc83-0a4c-5f97-abd0-7ac857bbe5ec",
+        "subject_id": "a17034de-144e-5acc-abc7-f154da14ef75",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/c395-sunk",
+        "value": {
+          "experimental_claim_id": "c395-sunk",
+          "proposition": "sunk",
+          "predicate": "reported_fate",
+          "extraction_context": "same telegram as captured claim; separate proposition",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "frus:1904:395",
+            "locator": {
+              "document_number": "395",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            },
+            "inspection": "edition_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "c395-sunk",
+            "source_id": "frus:1904:395",
+            "subject_id": "korietz",
+            "predicate": "reported_fate",
+            "object": "sunk",
+            "claimant_id": "jp-fm",
+            "report_chain": [
+              "jp-fm",
+              "griscom",
+              "hay"
+            ],
+            "temporal_scope": {
+              "raw": "to-day, February 9",
+              "precision": "day",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": "1904-02-09",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "near Chemulpo",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "same telegram as captured claim; separate proposition"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "griscom",
+              "label": "Mr. Griscom, American Legation, Tokyo",
+              "kind": "person",
+              "identity_boundary": "本文表記を保持。氏名補完は未検証",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "hay",
+              "label": "Mr. Hay",
+              "kind": "person",
+              "identity_boundary": "Secretary of Stateという役職と人物を分離",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "jp-fm",
+              "label": "Japanese minister for foreign affairs",
+              "kind": "office",
+              "identity_boundary": "d395の役職表記。個人同定は未確定",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "korietz",
+              "label": "Korietz / コレーツ",
+              "kind": "ship",
+              "identity_boundary": "原文表記。船名aliasのauthorityは要確認",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904-02-09",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-02-09",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "a17034de-144e-5acc-abc7-f154da14ef75",
+          "external_id": "frus:1904:395"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "e8e34179-c265-520f-a7eb-fb724cb0d3ff",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "e8e34179-c265-520f-a7eb-fb724cb0d3ff",
+        "claim_id": "35b4dc83-0a4c-5f97-abd0-7ac857bbe5ec",
+        "evidence_id": "1101f982-b0f6-56fa-a281-b7c9331bb621",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "836204ac-375a-5f7a-a52c-da86db7a59e0",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "836204ac-375a-5f7a-a52c-da86db7a59e0",
+        "subject_id": "a17034de-144e-5acc-abc7-f154da14ef75",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/c395-first-fire",
+        "value": {
+          "experimental_claim_id": "c395-first-fire",
+          "proposition": "opened fire on Japanese torpedo boats",
+          "predicate": "alleged_initiator",
+          "extraction_context": "edition explicitly says upstream telegram alleges; its author and event timing unverified",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "frus:1904:395",
+            "locator": {
+              "document_number": "395",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            },
+            "inspection": "edition_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "c395-first-fire",
+            "source_id": "frus:1904:395",
+            "subject_id": "korietz",
+            "predicate": "alleged_initiator",
+            "object": "opened fire on Japanese torpedo boats",
+            "claimant_id": "jp-fm",
+            "report_chain": [
+              "jp-fm",
+              "griscom",
+              "hay"
+            ],
+            "temporal_scope": {
+              "raw": "telegram announces engagement",
+              "precision": "unknown",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "not established by inspected edition"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "Chemulpo vicinity",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "edition explicitly says upstream telegram alleges; its author and event timing unverified"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "griscom",
+              "label": "Mr. Griscom, American Legation, Tokyo",
+              "kind": "person",
+              "identity_boundary": "本文表記を保持。氏名補完は未検証",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "hay",
+              "label": "Mr. Hay",
+              "kind": "person",
+              "identity_boundary": "Secretary of Stateという役職と人物を分離",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "jp-fm",
+              "label": "Japanese minister for foreign affairs",
+              "kind": "office",
+              "identity_boundary": "d395の役職表記。個人同定は未確定",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "korietz",
+              "label": "Korietz / コレーツ",
+              "kind": "ship",
+              "identity_boundary": "原文表記。船名aliasのauthorityは要確認",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904-02-09",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-02-09",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "a17034de-144e-5acc-abc7-f154da14ef75",
+          "external_id": "frus:1904:395"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "ed353535-265a-5e38-a8d3-237742446b59",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "ed353535-265a-5e38-a8d3-237742446b59",
+        "claim_id": "836204ac-375a-5f7a-a52c-da86db7a59e0",
+        "evidence_id": "1101f982-b0f6-56fa-a281-b7c9331bb621",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "34113681-dff7-552d-abfb-504d5f30bac6",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "34113681-dff7-552d-abfb-504d5f30bac6",
+        "subject_id": "c092fac8-e72e-5007-a5f6-55040decb268",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/c396-declaration",
+        "value": {
+          "experimental_claim_id": "c396-declaration",
+          "proposition": "1904-02-10",
+          "predicate": "reported_declaration_date",
+          "extraction_context": "reported February 11; declaration act and report time differ",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "frus:1904:396",
+            "locator": {
+              "document_number": "396",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            },
+            "inspection": "edition_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "c396-declaration",
+            "source_id": "frus:1904:396",
+            "subject_id": "jp-government",
+            "predicate": "reported_declaration_date",
+            "object": "1904-02-10",
+            "claimant_id": "griscom",
+            "report_chain": [
+              "griscom",
+              "hay"
+            ],
+            "temporal_scope": {
+              "raw": "10th instant",
+              "precision": "day",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": "1904-02-10",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "Japan",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "reported February 11; declaration act and report time differ"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "jp-government",
+              "label": "Imperial Japanese Government",
+              "kind": "government",
+              "identity_boundary": "国家・皇帝・外務省・軍司令部を統合しない",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "griscom",
+              "label": "Mr. Griscom, American Legation, Tokyo",
+              "kind": "person",
+              "identity_boundary": "本文表記を保持。氏名補完は未検証",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "hay",
+              "label": "Mr. Hay",
+              "kind": "person",
+              "identity_boundary": "Secretary of Stateという役職と人物を分離",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904-02-11",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-02-11",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "c092fac8-e72e-5007-a5f6-55040decb268",
+          "external_id": "frus:1904:396"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "710751b1-60fb-5d6b-a544-04fbfa880987",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "710751b1-60fb-5d6b-a544-04fbfa880987",
+        "claim_id": "34113681-dff7-552d-abfb-504d5f30bac6",
+        "evidence_id": "a9870395-b023-55e2-a12d-38e0e99efb57",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "e00d5996-fed1-57b7-addb-52276fc17205",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "e00d5996-fed1-57b7-addb-52276fc17205",
+        "subject_id": "fc2a7d41-8eb2-58ab-ab64-784f9da801fd",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/c678-uncertainty",
+        "value": {
+          "experimental_claim_id": "c678-uncertainty",
+          "proposition": "no positive knowledge of Russian reply",
+          "predicate": "reported_knowledge_state",
+          "extraction_context": "no positive knowledge is not complete ignorance; time of conversation unknown",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "frus:1904:678",
+            "locator": {
+              "document_number": "678",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            },
+            "inspection": "edition_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "c678-uncertainty",
+            "source_id": "frus:1904:678",
+            "subject_id": "jp-minister-ru",
+            "predicate": "reported_knowledge_state",
+            "object": "no positive knowledge of Russian reply",
+            "claimant_id": "jp-minister-ru",
+            "report_chain": [
+              "jp-minister-ru",
+              "mccormick",
+              "hay"
+            ],
+            "temporal_scope": {
+              "raw": "as reported February 7",
+              "precision": "day",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": "1904-02-07",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "St. Petersburg",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "no positive knowledge is not complete ignorance; time of conversation unknown"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "mccormick",
+              "label": "Mr. McCormick, American Embassy, St. Petersburg",
+              "kind": "person",
+              "identity_boundary": "米国外交官の報告とロシア政府の認識は別",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "hay",
+              "label": "Mr. Hay",
+              "kind": "person",
+              "identity_boundary": "Secretary of Stateという役職と人物を分離",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "jp-minister-ru",
+              "label": "Japanese minister at St. Petersburg",
+              "kind": "office",
+              "identity_boundary": "d678の認識主体。日本全体へ拡張しない",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904-02-07",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-02-07",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "fc2a7d41-8eb2-58ab-ab64-784f9da801fd",
+          "external_id": "frus:1904:678"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "a9a30087-3925-5e0d-aefb-88fb5bb3db70",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "a9a30087-3925-5e0d-aefb-88fb5bb3db70",
+        "claim_id": "e00d5996-fed1-57b7-addb-52276fc17205",
+        "evidence_id": "49046f63-ca50-5996-ab3b-581b6b25ddfa",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "58345870-e33c-51ca-a533-ded27a9b976b",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "58345870-e33c-51ca-a533-ded27a9b976b",
+        "subject_id": "fc2a7d41-8eb2-58ab-ab64-784f9da801fd",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/c678-sent",
+        "value": {
+          "experimental_claim_id": "c678-sent",
+          "proposition": "reply sent to Admiral Alexieff, with modification authority",
+          "predicate": "reported_reply_status",
+          "extraction_context": "nested reported speech; proposed conditions described as foreign minister own view",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "frus:1904:678",
+            "locator": {
+              "document_number": "678",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            },
+            "inspection": "edition_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "c678-sent",
+            "source_id": "frus:1904:678",
+            "subject_id": "ru-government",
+            "predicate": "reported_reply_status",
+            "object": "reply sent to Admiral Alexieff, with modification authority",
+            "claimant_id": "ru-fm",
+            "report_chain": [
+              "ru-fm",
+              "jp-minister-ru",
+              "mccormick",
+              "hay"
+            ],
+            "temporal_scope": {
+              "raw": "before February 7 report",
+              "precision": "unknown",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "not established by inspected edition"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "St. Petersburg / Far East",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "nested reported speech; proposed conditions described as foreign minister own view"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "ru-government",
+              "label": "Imperial Russian Government",
+              "kind": "government",
+              "identity_boundary": "現代ロシア連邦との無条件同一視をしない",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "mccormick",
+              "label": "Mr. McCormick, American Embassy, St. Petersburg",
+              "kind": "person",
+              "identity_boundary": "米国外交官の報告とロシア政府の認識は別",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "hay",
+              "label": "Mr. Hay",
+              "kind": "person",
+              "identity_boundary": "Secretary of Stateという役職と人物を分離",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "jp-minister-ru",
+              "label": "Japanese minister at St. Petersburg",
+              "kind": "office",
+              "identity_boundary": "d678の認識主体。日本全体へ拡張しない",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "ru-fm",
+              "label": "Russian minister for foreign affairs / Count Lamsdorff",
+              "kind": "office",
+              "identity_boundary": "d680の固有名と他文書の役職の同定は要確認",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904-02-07",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-02-07",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "fc2a7d41-8eb2-58ab-ab64-784f9da801fd",
+          "external_id": "frus:1904:678"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "7e839599-f87e-5197-a3bc-4c84d89a1be7",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "7e839599-f87e-5197-a3bc-4c84d89a1be7",
+        "claim_id": "58345870-e33c-51ca-a533-ded27a9b976b",
+        "evidence_id": "49046f63-ca50-5996-ab3b-581b6b25ddfa",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "360ec681-9fa8-5b87-a9fd-e09db1bbf4b0",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "360ec681-9fa8-5b87-a9fd-e09db1bbf4b0",
+        "subject_id": "f2ee7f08-c14f-5dea-aaa7-c961e81e7adc",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/c679-held",
+        "value": {
+          "experimental_claim_id": "c679-held",
+          "proposition": "Russian reply when Japanese minister requested passports",
+          "predicate": "reportedly_possessed",
+          "extraction_context": "possession by Russian minister is not receipt by Japanese government",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "frus:1904:679",
+            "locator": {
+              "document_number": "679",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            },
+            "inspection": "edition_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "c679-held",
+            "source_id": "frus:1904:679",
+            "subject_id": "ru-minister-jp",
+            "predicate": "reportedly_possessed",
+            "object": "Russian reply when Japanese minister requested passports",
+            "claimant_id": "ru-fm",
+            "report_chain": [
+              "ru-fm",
+              "mccormick",
+              "hay"
+            ],
+            "temporal_scope": {
+              "raw": "when passports requested",
+              "precision": "unknown",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "not established by inspected edition"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "Tokyo",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "possession by Russian minister is not receipt by Japanese government"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "mccormick",
+              "label": "Mr. McCormick, American Embassy, St. Petersburg",
+              "kind": "person",
+              "identity_boundary": "米国外交官の報告とロシア政府の認識は別",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "hay",
+              "label": "Mr. Hay",
+              "kind": "person",
+              "identity_boundary": "Secretary of Stateという役職と人物を分離",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "ru-fm",
+              "label": "Russian minister for foreign affairs / Count Lamsdorff",
+              "kind": "office",
+              "identity_boundary": "d680の固有名と他文書の役職の同定は要確認",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "ru-minister-jp",
+              "label": "Russian minister at Tokyo",
+              "kind": "office",
+              "identity_boundary": "回答を所持したという伝聞の対象",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904-02-08",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-02-08",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "f2ee7f08-c14f-5dea-aaa7-c961e81e7adc",
+          "external_id": "frus:1904:679"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "524d6a33-8de7-56af-a331-4c1082b6801a",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "524d6a33-8de7-56af-a331-4c1082b6801a",
+        "claim_id": "360ec681-9fa8-5b87-a9fd-e09db1bbf4b0",
+        "evidence_id": "00389928-abe5-5c74-a023-3cae4ae3da31",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "b9cc5b9d-06ed-5c61-aad3-429e92e70276",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "b9cc5b9d-06ed-5c61-aad3-429e92e70276",
+        "subject_id": "13049dbf-9e40-5543-adac-b151762eae73",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/c680-attack",
+        "value": {
+          "experimental_claim_id": "c680-attack",
+          "proposition": "Japanese torpedo boats attacked Russian squadron",
+          "predicate": "reported_attacked_at_anchor",
+          "extraction_context": "translated February 9 telegram deposited February 10",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "frus:1904:680",
+            "locator": {
+              "document_number": "680",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            },
+            "inspection": "edition_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "c680-attack",
+            "source_id": "frus:1904:680",
+            "subject_id": "ru-navy",
+            "predicate": "reported_attacked_at_anchor",
+            "object": "Japanese torpedo boats attacked Russian squadron",
+            "claimant_id": "ru-fm",
+            "report_chain": [
+              "ru-fm",
+              "us-state"
+            ],
+            "temporal_scope": {
+              "raw": "night 27th January [9th February]",
+              "precision": "day",
+              "calendar": "edition dual date; no exact instant",
+              "normalized_day": "1904-02-09",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "Port Arthur outer roadstead",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "translated February 9 telegram deposited February 10"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "us-state",
+              "label": "United States Department of State",
+              "kind": "organization",
+              "identity_boundary": "Hayの受信と米国市民の認識は別",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "ru-fm",
+              "label": "Russian minister for foreign affairs / Count Lamsdorff",
+              "kind": "office",
+              "identity_boundary": "d680の固有名と他文書の役職の同定は要確認",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "ru-navy",
+              "label": "Imperial Russian Navy",
+              "kind": "organization",
+              "identity_boundary": "旅順艦隊・第二太平洋艦隊・各艦を分離",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904-02-10",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-02-10",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "13049dbf-9e40-5543-adac-b151762eae73",
+          "external_id": "frus:1904:680"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "b9cf72ba-b9cf-5efe-a05c-85c789656f7c",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "b9cf72ba-b9cf-5efe-a05c-85c789656f7c",
+        "claim_id": "b9cc5b9d-06ed-5c61-aad3-429e92e70276",
+        "evidence_id": "dd9e92c3-26cb-528f-ac5b-6fb06f37d2bb",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "ca10f15a-8b6e-5688-a674-9c29a23910dd",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "ca10f15a-8b6e-5688-a674-9c29a23910dd",
+        "subject_id": "8c8ffe0b-dbc4-5e91-a734-252eaf85520c",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/c86-request",
+        "value": {
+          "experimental_claim_id": "c86-request",
+          "proposition": "Conger to convey US desire for Chinese neutrality and administrative entity to be respected",
+          "predicate": "instructs",
+          "extraction_context": "policy desire is not evidence that neutrality was respected",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "frus:1904:86",
+            "locator": {
+              "document_number": "86",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            },
+            "inspection": "edition_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "c86-request",
+            "source_id": "frus:1904:86",
+            "subject_id": "hay",
+            "predicate": "instructs",
+            "object": "Conger to convey US desire for Chinese neutrality and administrative entity to be respected",
+            "claimant_id": "hay",
+            "report_chain": [
+              "hay",
+              "conger"
+            ],
+            "temporal_scope": {
+              "raw": "February 10",
+              "precision": "day",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": "1904-02-10",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "Washington / China",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "policy desire is not evidence that neutrality was respected"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "hay",
+              "label": "Mr. Hay",
+              "kind": "person",
+              "identity_boundary": "Secretary of Stateという役職と人物を分離",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "conger",
+              "label": "Mr. Conger",
+              "kind": "person",
+              "identity_boundary": "d86の指示宛先。指示の履行は未確定",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904-02-10",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-02-10",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "8c8ffe0b-dbc4-5e91-a734-252eaf85520c",
+          "external_id": "frus:1904:86"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "af9ce9c0-472f-5ee2-a88f-7762bb106c51",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "af9ce9c0-472f-5ee2-a88f-7762bb106c51",
+        "claim_id": "ca10f15a-8b6e-5688-a674-9c29a23910dd",
+        "evidence_id": "cb0f7779-a92b-5859-a98a-ef3b0fa83525",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "57996d6c-e103-5cad-aa43-193861bcdb3e",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "57996d6c-e103-5cad-aa43-193861bcdb3e",
+        "subject_id": "e4f669a4-19f3-51a4-a28d-0d21785ebdb3",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/c430-consent",
+        "value": {
+          "experimental_claim_id": "c430-consent",
+          "proposition": "use of Korean ports and territory has full Korean knowledge and consent",
+          "predicate": "asserts",
+          "extraction_context": "preamble representation; not proof of uncoerced Korean consent",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "frus:1904:430",
+            "locator": {
+              "document_number": "430",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            },
+            "inspection": "edition_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "c430-consent",
+            "source_id": "frus:1904:430",
+            "subject_id": "jp-government",
+            "predicate": "asserts",
+            "object": "use of Korean ports and territory has full Korean knowledge and consent",
+            "claimant_id": "jp-government",
+            "report_chain": [
+              "jp-government",
+              "hay"
+            ],
+            "temporal_scope": {
+              "raw": "communication deposited February 26",
+              "precision": "day",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": "1904-02-26",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "Korea / Washington",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "preamble representation; not proof of uncoerced Korean consent"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "jp-government",
+              "label": "Imperial Japanese Government",
+              "kind": "government",
+              "identity_boundary": "国家・皇帝・外務省・軍司令部を統合しない",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "hay",
+              "label": "Mr. Hay",
+              "kind": "person",
+              "identity_boundary": "Secretary of Stateという役職と人物を分離",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904-02-26",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-02-26",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "e4f669a4-19f3-51a4-a28d-0d21785ebdb3",
+          "external_id": "frus:1904:430"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "a6446da3-b849-54cb-af53-f0f3b1ade248",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "a6446da3-b849-54cb-af53-f0f3b1ade248",
+        "claim_id": "57996d6c-e103-5cad-aa43-193861bcdb3e",
+        "evidence_id": "cc27a843-fb16-51a0-af69-bae44efd86ca",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "af3b375f-0adc-5a18-adce-c865b05ccbb5",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "af3b375f-0adc-5a18-adce-c865b05ccbb5",
+        "subject_id": "e4f669a4-19f3-51a4-a28d-0d21785ebdb3",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/c430-guarantee",
+        "value": {
+          "experimental_claim_id": "c430-guarantee",
+          "proposition": "independence and territorial integrity of Korean Empire",
+          "predicate": "protocol_text_guarantees",
+          "extraction_context": "Article III; legal text does not establish actual sovereignty or control",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "frus:1904:430",
+            "locator": {
+              "document_number": "430",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            },
+            "inspection": "edition_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "c430-guarantee",
+            "source_id": "frus:1904:430",
+            "subject_id": "jp-government",
+            "predicate": "protocol_text_guarantees",
+            "object": "independence and territorial integrity of Korean Empire",
+            "claimant_id": "jp-government",
+            "report_chain": [
+              "jp-government",
+              "hay"
+            ],
+            "temporal_scope": {
+              "raw": "protocol dated February 23",
+              "precision": "day",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": "1904-02-23",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "Korean Empire",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "Article III; legal text does not establish actual sovereignty or control"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "jp-government",
+              "label": "Imperial Japanese Government",
+              "kind": "government",
+              "identity_boundary": "国家・皇帝・外務省・軍司令部を統合しない",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "hay",
+              "label": "Mr. Hay",
+              "kind": "person",
+              "identity_boundary": "Secretary of Stateという役職と人物を分離",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904-02-26",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-02-26",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "e4f669a4-19f3-51a4-a28d-0d21785ebdb3",
+          "external_id": "frus:1904:430"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "d9c8da1c-ef4b-5a01-accd-1559305d0291",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "d9c8da1c-ef4b-5a01-accd-1559305d0291",
+        "claim_id": "af3b375f-0adc-5a18-adce-c865b05ccbb5",
+        "evidence_id": "cc27a843-fb16-51a0-af69-bae44efd86ca",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "d9c47901-154d-5e1f-a2e3-b446f5d49d24",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "d9c47901-154d-5e1f-a2e3-b446f5d49d24",
+        "subject_id": "e4f669a4-19f3-51a4-a28d-0d21785ebdb3",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/c430-occupation",
+        "value": {
+          "experimental_claim_id": "c430-occupation",
+          "proposition": "occupation of strategically necessary places for stated object",
+          "predicate": "protocol_text_allows_conditionally",
+          "extraction_context": "Article IV; conditional permission distinct from actual occupation",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "frus:1904:430",
+            "locator": {
+              "document_number": "430",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            },
+            "inspection": "edition_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "c430-occupation",
+            "source_id": "frus:1904:430",
+            "subject_id": "jp-government",
+            "predicate": "protocol_text_allows_conditionally",
+            "object": "occupation of strategically necessary places for stated object",
+            "claimant_id": "jp-government",
+            "report_chain": [
+              "jp-government",
+              "hay"
+            ],
+            "temporal_scope": {
+              "raw": "protocol dated February 23",
+              "precision": "day",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": "1904-02-23",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "Korean Empire",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "Article IV; conditional permission distinct from actual occupation"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "jp-government",
+              "label": "Imperial Japanese Government",
+              "kind": "government",
+              "identity_boundary": "国家・皇帝・外務省・軍司令部を統合しない",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "hay",
+              "label": "Mr. Hay",
+              "kind": "person",
+              "identity_boundary": "Secretary of Stateという役職と人物を分離",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904-02-26",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-02-26",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "e4f669a4-19f3-51a4-a28d-0d21785ebdb3",
+          "external_id": "frus:1904:430"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "fdfc1875-a39f-5715-a4c3-26a9e65c7e46",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "fdfc1875-a39f-5715-a4c3-26a9e65c7e46",
+        "claim_id": "d9c47901-154d-5e1f-a2e3-b446f5d49d24",
+        "evidence_id": "cc27a843-fb16-51a0-af69-bae44efd86ca",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "a5a63222-f5e8-52ab-a09c-154d62b4787c",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "a5a63222-f5e8-52ab-a09c-154d62b4787c",
+        "subject_id": "fae46b76-cd3a-5038-ae3b-9d4e0a1eb65f",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/c815-inquiry",
+        "value": {
+          "experimental_claim_id": "c815-inquiry",
+          "proposition": "impartial inquiry at Vigo, with bilateral representatives and neutral umpire; offers Hull inquiry",
+          "predicate": "reportedly_demands",
+          "extraction_context": "demand after rejection of Russian admiral statement; does not prove commission findings",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "frus:1904:815",
+            "locator": {
+              "document_number": "815",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            },
+            "inspection": "edition_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "c815-inquiry",
+            "source_id": "frus:1904:815",
+            "subject_id": "british-embassy",
+            "predicate": "reportedly_demands",
+            "object": "impartial inquiry at Vigo, with bilateral representatives and neutral umpire; offers Hull inquiry",
+            "claimant_id": "eddy",
+            "report_chain": [
+              "eddy",
+              "hay"
+            ],
+            "temporal_scope": {
+              "raw": "October 28 report",
+              "precision": "day",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": "1904-10-28",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "St. Petersburg / Vigo / Hull",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "demand after rejection of Russian admiral statement; does not prove commission findings"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "hay",
+              "label": "Mr. Hay",
+              "kind": "person",
+              "identity_boundary": "Secretary of Stateという役職と人物を分離",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "british-embassy",
+              "label": "British embassy, St. Petersburg",
+              "kind": "organization",
+              "identity_boundary": "英国政府全体・漁民・艦隊と区別",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "eddy",
+              "label": "Mr. Eddy, American Embassy",
+              "kind": "person",
+              "identity_boundary": "d815の報告者",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904-10-28",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-10-28",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "fae46b76-cd3a-5038-ae3b-9d4e0a1eb65f",
+          "external_id": "frus:1904:815"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "4e5903db-1206-5748-abea-692f29932c15",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "4e5903db-1206-5748-abea-692f29932c15",
+        "claim_id": "a5a63222-f5e8-52ab-a09c-154d62b4787c",
+        "evidence_id": "5ff013c4-ad29-53a3-a8f5-d76ab8328363",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "a5279f31-2d3f-5bef-a1ce-f29e0ce242d5",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "a5279f31-2d3f-5bef-a1ce-f29e0ce242d5",
+        "subject_id": "7d481c12-622c-597f-a1c8-74c82bce296c",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/cnikh-telegraph",
+        "value": {
+          "experimental_claim_id": "cnikh-telegraph",
+          "proposition": "use Korean telegraph lines along Japanese northward advance",
+          "predicate": "requests_permission",
+          "extraction_context": "translated memorial; request is not permission granted or network use completed",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "nikh:jh_024r_0050_0050",
+            "locator": {
+              "level_id": "jh_024r_0050_0050",
+              "document_number": "上奏文",
+              "item": "(5)"
+            },
+            "inspection": "translation_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "cnikh-telegraph",
+            "source_id": "nikh:jh_024r_0050_0050",
+            "subject_id": "hayashi",
+            "predicate": "requests_permission",
+            "object": "use Korean telegraph lines along Japanese northward advance",
+            "claimant_id": "hayashi",
+            "report_chain": [
+              "hayashi",
+              "korean-emperor"
+            ],
+            "temporal_scope": {
+              "raw": "February 12",
+              "precision": "day",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": "1904-02-12",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "Korea",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "translated memorial; request is not permission granted or network use completed"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "hayashi",
+              "label": "日本公使 林權助",
+              "kind": "person",
+              "identity_boundary": "1904年2月12日の発信者。役職任期全体は未入力",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            },
+            {
+              "id": "korean-emperor",
+              "label": "大皇帝陛下, recipient of Hayashi memorial",
+              "kind": "office",
+              "identity_boundary": "宛先表記。受信・読了・許可を意味しない",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "1904년 2월 12일",
+            "precision": "day",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": "1904-02-12",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "7d481c12-622c-597f-a1c8-74c82bce296c",
+          "external_id": "nikh:jh_024r_0050_0050"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "6f11eaf6-5761-58e0-ab54-b85fc2923249",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "6f11eaf6-5761-58e0-ab54-b85fc2923249",
+        "claim_id": "a5279f31-2d3f-5bef-a1ce-f29e0ce242d5",
+        "evidence_id": "592ca4a6-467d-598a-a6cf-91d9394aa050",
+        "relation": "SUPPORTS"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim",
+      "entity_id": "2d780e5b-b4cc-5c6d-a7b2-d3da387dabc1",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "2d780e5b-b4cc-5c6d-a7b2-d3da387dabc1",
+        "subject_id": "05bae6fb-fe5b-51f6-ac6c-1d405c5ddb4a",
+        "predicate_kind": "attribute",
+        "predicate": "source_assertion/cjacar-selfsink",
+        "value": {
+          "experimental_claim_id": "cjacar-selfsink",
+          "proposition": "returned to port and self-sank; directs reader to C05110134800 image 33",
+          "predicate": "later_guide_describes",
+          "extraction_context": "later guide, not extracted original; date discrepancy deliberately retained",
+          "assertion_contract": "source-assertion/v1",
+          "content_scope": {
+            "source_id": "jacar:chemulpo-guide",
+            "locator": {
+              "reference_codes": [
+                "C05110032100",
+                "C05110134800"
+              ],
+              "images": [
+                "C05110032100:6–11 (guide locator)",
+                "C05110134800:33 (guide locator)"
+              ]
+            },
+            "inspection": "guide_text_inspected"
+          },
+          "attributed_claim": {
+            "id": "cjacar-selfsink",
+            "source_id": "jacar:chemulpo-guide",
+            "subject_id": "variag",
+            "predicate": "later_guide_describes",
+            "object": "returned to port and self-sank; directs reader to C05110134800 image 33",
+            "claimant_id": {
+              "status": "unknown",
+              "reason": "claim extracted from later JACAR guide, not directly from Imperial Japanese Navy record"
+            },
+            "report_chain": [],
+            "temporal_scope": {
+              "raw": "guide says February 8; other report February 9",
+              "precision": "unknown",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": {
+                "status": "unknown",
+                "reason": "not established by inspected edition"
+              },
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "spatial_scope": "Chemulpo / Incheon",
+            "extraction": {
+              "status": "researcher_paraphrase",
+              "confidence": "high for attribution to inspected edition; not a truth score",
+              "context": "later guide, not extracted original; date discrepancy deliberately retained"
+            },
+            "epistemic_limit": "source assertion; not promoted to historical reality"
+          },
+          "actor_descriptors": [
+            {
+              "id": "variag",
+              "label": "Variag / ワリヤーグ",
+              "kind": "ship",
+              "identity_boundary": "宗谷への同一船体・改称・編入は資料導線のみ。時点未確定",
+              "documented_scope": "sample documents, 1904",
+              "lifetime": {
+                "status": "unknown",
+                "reason": "sample scope is not an identity lifetime"
+              }
+            }
+          ],
+          "source_creation": {
+            "raw": "current exhibition page",
+            "precision": "unknown",
+            "calendar": "not applicable",
+            "normalized_day": {
+              "status": "unknown",
+              "reason": "not established by inspected edition"
+            },
+            "time_standard": {
+              "status": "unknown",
+              "reason": "not established by inspected edition"
+            }
+          },
+          "scope_limit": "Confidence applies to inspected source-content attribution at ingestion only; reported reality/actor reading/knowledge not asserted. Raw historical time is retained and does not replace applicability."
+        },
+        "provenance": {
+          "kind": "document",
+          "entity_id": "05bae6fb-fe5b-51f6-ac6c-1d405c5ddb4a",
+          "external_id": "jacar:chemulpo-guide"
+        },
+        "confidence": 0.95,
+        "applicable_from": "2026-09-14T00:00:00.000Z",
+        "applicable_until": null
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "claim_evidence_link",
+      "entity_id": "14d4099b-f226-58db-a07a-2abbfb62fa64",
+      "payload": {
+        "project_id": "19041904-1904-4904-8904-190419045001",
+        "recorded_at": "2026-09-14T00:00:00.000Z",
+        "created_at": "2026-09-14T00:00:00.000Z",
+        "updated_at": "2026-09-14T00:00:00.000Z",
+        "id": "14d4099b-f226-58db-a07a-2abbfb62fa64",
+        "claim_id": "2d780e5b-b4cc-5c6d-a7b2-d3da387dabc1",
+        "evidence_id": "c980ead1-804b-52fb-af48-d88428b5c60d",
+        "relation": "SUPPORTS"
+      }
+    }
+  ]
+}

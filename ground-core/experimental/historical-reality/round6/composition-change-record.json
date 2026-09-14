@@ -1,0 +1,24 @@
+{
+  "historical_case": [
+    "Protocol advice/occupation",
+    "Uiju promise vs custody/plan vs departure",
+    "CERprotective duty vs operator/title"
+  ],
+  "lost_meaning": "Actor/place/day alone mixes function, normative stage and actual episode coverage; null valid-time does not express unknown historical time",
+  "proposed_semantic": "Experimental exact scoped reported-proposition selector and conservative contrast comparator; source projection remainssource-assertion/v1 unchanged",
+  "alternatives_considered": [
+    "Single owned_by rejected due multidimensionalmeaningloss",
+    "Territory primitive rejected: existing Entity/Claim/Evidence support representation",
+    "Core canonical State for source assertions rejected: certainty promotion",
+    "Document-only uniquepredicate retained, but cannot serve cross-source territorial alignment"
+  ],
+  "implementation": [
+    "territory.ts",
+    "round6.dataset.json"
+  ],
+  "tests": "historical-reality-round6.test.ts",
+  "replay": "replay.ts outputs data/queries/traces/prooftransfer",
+  "legacy_impact": "SHA-pinned R1–5/core byteunchanged; optin-only",
+  "promotion_threshold": "Round5 ten criteria inherited; no new atomgain established; C0",
+  "correction": "New Reconstruction v1 has explicit session cutoff and dataset basis; do not rewrite old R4"
+}

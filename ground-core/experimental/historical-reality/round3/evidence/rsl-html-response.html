@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <LINK rel="shortcut icon" type="image/x-icon" href="https://dlib.rsl.ru/favicon.ico" />
+    <title>Просмотр документа</title>
+    <meta name="google-site-verification" content="f1g8eEuuo29HDWSC-T-lZvJ6TOdxxA-d0lxqyiJ0u3o" />
+    <link rel="stylesheet" type="text/css" href="/css/jqueryui/overcast/jquery-ui-1.8.9.custom.css" />
+    <link rel="stylesheet" type="text/css" href="/css/viewer/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/infoForm.css" />
+    <link rel="stylesheet" type="text/css" href="/css/downloadConfirm.css" />
+    <link rel="stylesheet" type="text/css" href="/css/loaderMobile.css" />
+    <script type="text/javascript" src="/js/libs/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/js/libs/jquery-ui-1.8.19.custom.min.js"></script>
+    <script type="text/javascript" src="https://search.rsl.ru/js/serviceMenu.js"></script>
+
+    <style>
+        .maincontainer, .logo {
+            display: none;
+        }
+    </style>
+</head>
+
+<body style="overflow-y: auto;">
+    <div class="logo" id="logoBlock">
+        <a id="logoImage" title="Российская Государственная Библиотека" href="/"><img src="/i/logo.png" alt="РГБ" /></a>
+        <div class="logoText">
+            <span class="logoName">РОССИЙСКАЯ ГОСУДАРСТВЕННАЯ БИБЛИОТЕКА</span>
+            <br />
+            <a class="captionLogo" href="/">Просмотр документа</a>
+        </div>
+    </div>
+
+<div class="menu-wrapper-block">
+    </div>
+
+	<div class="maincontainer">
+        <div class="titleDoc"></div>
+		<div class="line"></div>
+			<span class="greenTitle">
+				Документ находится в свободном доступе.
+			</span>
+		<div class="text_block" style="display: none;">
+			<p>
+				Документ находится в свободном доступе.
+			</p>
+		</div>
+		<div class="line"></div>
+		<form action="/loader/view/01007506064" method = "get">
+			<fieldset>
+				<div class="radio">
+					<p>
+						<label><input class="radio" type="radio" name="get" value="online" checked="checked" />Онлайн-просмотр</label>
+                        <input type="hidden" name="page" value="" />
+					</p>
+					<p class="description">
+						Документ открывается в браузере.
+					</p>
+
+					<!--<p>
+						<label><input class="radio" type="radio" name="get" value="pdf" />Acrobat Reader</label>
+					</p>
+					<p class="description">
+						Документ сохраняется в формате pdf на вашем компьютере. Требуется предварительная установка программы <a target="_blank" href="http://get.adobe.com/ru/reader/otherversions/">Adobe Acrobat Reader</a>.
+					</p>-->
+
+					                                            <p>
+                   			<label><input class="radio" type="radio" name="get" value="2dlviewer" />2DL.Viewer</label>
+                   		</p>
+                   		<p class="description">
+                   			Система защищенного просмотра документов
+                   		</p>
+                                        				</div>
+				<input type="submit" class="button" value="Открыть документ" title="Открыть документ" id="download" />
+			</fieldset>
+		</form>
+
+		<p class="small" style="display: none;">
+			<span class="info"> </span>
+			Acrobat Reader - бесплатная программа Adobe Reader 9 обеспечивает удобство просмотра и печати файлов PDF, а также совместной работы с ними.
+			<br />
+			<a href="http://get.adobe.com/reader/" title="Перейти на страницу разработчика, чтобы скачать программу">Перейти на страницу разработчка, чтобы скачать программу</a>
+		</p>
+
+        <script type="text/javascript">
+    $(document).ready(function() {
+        $( "#confirmDownload" ).dialog({
+			autoOpen: false,
+			show: "fade",
+			hide: "fade",
+            resizable: false,
+            modal: true,
+            width: 600
+		});
+
+        $('#download').click(function() {
+            if ($('input[name=get]:checked').val() == 'pdf') {
+                $('#confirmDownload').dialog('open');
+                return false;
+            }
+        });
+
+        //for viewer
+        $('#downloadDoc').click(function() {
+            $('#confirmDownload').dialog('open');
+            return false;
+        });
+    });
+</script>
+<div id="confirmDownload" title="Загрузка документа" style="display: none;">
+    <!--<strong>Уважаемые читатели! <br />По техническим причинам временно отключена возможность скачивания документов в формате PDF из Электронной библиотеки РГБ. Приносим извинения за доставленные неудобства.</strong>-->
+    <strong>Для скачивания войдите в свой аккаунт РГБ</strong>
+    <br />
+    <a style="margin-right: 0;" class="login-btn" href="?login=1">Войти</a>
+</div>
+	</div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            location.href = location.href.replace('https://dlib.rsl.ru/', 'https://viewer.rsl.ru/rsl');
+        });
+
+
+    <!-- Yandex.Metrika counter -->
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter963545 = new Ya.Metrika({id:963545,
+                        clickmap:true,
+                        trackLinks:true, webvisor:true});
+            } catch(e) {}
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/963545" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+        
+</body>
+</html>

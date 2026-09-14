@@ -1,0 +1,149 @@
+{
+  "epistemic_boundaries": [
+    {
+      "concept": "Reality",
+      "representation": "Existing RealityEntity/RealityEvent/RealityState",
+      "decision": "Ontic acceptance; never created from this review source assertions"
+    },
+    {
+      "concept": "Observation",
+      "representation": "Existing EpistemicObservation; observer/coverage descriptor contract B",
+      "decision": "No new Observation primitive; source text describing observation is a Claim, not direct observation"
+    },
+    {
+      "concept": "Report",
+      "representation": "Document/message identity plus attributed relation Claims",
+      "decision": "No standalone Report primitive; documentary manifestation details D"
+    },
+    {
+      "concept": "Claim",
+      "representation": "Existing proposition with provenance and confidence",
+      "decision": "Separate proposition/subject/predicate before assessment; correct reconciliation query key"
+    },
+    {
+      "concept": "Knowledge",
+      "representation": "Actor-scoped attested relations, with unknown receipt/read/interpretation edges",
+      "decision": "Do not introduce Knowledge truth/lifecycle primitive"
+    },
+    {
+      "concept": "Belief",
+      "representation": "Current-system BeliefAssessment versus attributed actor belief Claim",
+      "decision": "Do not use current-system assessment as historical actor belief"
+    },
+    {
+      "concept": "Inference",
+      "representation": "Explicit current-system attribution plus basis/time",
+      "decision": "Inspection uncertainty is current-system diagnostic, not commander assertion"
+    },
+    {
+      "concept": "Reconstruction",
+      "representation": "Evidence-grounded derived assessment, not ontic State/Claim/Narrative",
+      "decision": "B cross-scope evaluation/basis contract; E generic lifecycle/version/retraction"
+    }
+  ],
+  "certainty": {
+    "decision": "Distinct assessment targets over existing propositions/evidence; no family of certainty primitives, no fused generic confidence. A source/world separation, B generic target/method/basis contract, E probability calibration.",
+    "targets": [
+      {
+        "target": "source_identity",
+        "scope": "Which representation/original/document identity is asserted"
+      },
+      {
+        "target": "source_content",
+        "scope": "What the inspected representation says"
+      },
+      {
+        "target": "external_reality",
+        "scope": "What occurred, not what was said"
+      },
+      {
+        "target": "claim_extraction",
+        "scope": "Current extraction of a specific passage; tentative minute is system uncertainty"
+      },
+      {
+        "target": "event_identity",
+        "scope": "Manual target/episode alignment, not source authenticity"
+      },
+      {
+        "target": "temporal_resolution",
+        "scope": "Raw clock/calendar/observable and conversion evidence"
+      },
+      {
+        "target": "spatial_resolution",
+        "scope": "Frame/precision/bounded positions, no invented coordinates"
+      },
+      {
+        "target": "reconstruction",
+        "scope": "Evidence snapshot, scope, alternatives and derived outcome"
+      }
+    ],
+    "existing_core_underestimated": "Claim.confidence already concerns its own proposition; separate Claim scopes prevent automatic inheritance. Belief confidence mean is descriptive, not fused.",
+    "remaining_constraint": "Claim numeric confidence is mandatory; an uncalibrated source estimate is not unknown/reality probability. Qualitative assessment/reason/method remains sidecar, not fabricated numeric truth."
+  },
+  "unknown": {
+    "general_contract": "Target+reason+basis+inspection/search scope; structural gaps reused; domain reason codes remain sidecar",
+    "distinctions": [
+      {
+        "status": "UNKNOWN",
+        "interpretation": "Target value/role unresolved, no inferred replacement"
+      },
+      {
+        "status": "NOT_RECORDED",
+        "interpretation": "No persisted record in explicit query/snapshot; not no-world-event"
+      },
+      {
+        "status": "NOT_OBSERVED",
+        "interpretation": "Explicit statement about observation/coverage; not general absence"
+      },
+      {
+        "status": "NOT_AVAILABLE",
+        "interpretation": "Access/availability evidence about named target; not lost/nonexistent"
+      },
+      {
+        "status": "NOT_RESOLVED",
+        "interpretation": "Unresolved inference/identity/contrast; not negative value"
+      },
+      {
+        "status": "NEGATIVE",
+        "interpretation": "Explicit evidence-bearing negative proposition, not a search failure"
+      }
+    ],
+    "research_statuses": "not_searched,searched_not_found,inaccessible,lost,archive_incomplete are domain search/survival metadata; only asserted with appropriate evidence. No new claim that these historical originals are lost."
+  },
+  "temporal_role": {
+    "decision": "Existing instant/interval fields keep intended roles; generic role-labelled Time Assertion is B composition. Historical raw notation/conversion details D.",
+    "composition": "Existing subject or reported candidate + relation Claim identifying time role + raw time/precision/clock/conversion status + Evidence",
+    "forbidden": "No created/recorded timestamp backfill; no null applicability=unknown shortcut; no new per-stage timestamp field proliferation"
+  },
+  "propagation": {
+    "decision": "B sparse actor/message/stage/time evidence relations; no pipeline primitive",
+    "forbidden": "No required stage list; no send→receipt→read→understood implication",
+    "branches": "Recipient/payload/reference relations can branch; absent edge remains unknown. This review does not claim demonstrated loss/partial-delivery lifecycle."
+  },
+  "provenance": {
+    "general": "B scoped evidence-bearing upstream endpoint relation; already-existing source provenance retained",
+    "domain": "D digitization/edition/translation/folio/shelfmark/archival custody operations",
+    "limit": "cites_for does not prove copied_from; no imported FRBR ontology or automatic authenticity verdict"
+  },
+  "evidence_dependency": {
+    "decision": "B scoped dependency/common-ancestor traversal; E independent corroboration verdict",
+    "limit": "Distinct sources/IDs and explicit selected policy members are not independent roots. Existing resource ANY/ALL policy is a selected-source composition rule, not truth/independence/probability."
+  },
+  "contradiction": {
+    "decision": "Reuse core SUPPORTS/CONTRADICTS for genuine Evidence opposition and Belief divergence for one aligned proposition slot. B contrast dimension/alignment contract over reported propositions.",
+    "case": "Pallada/Pallida direct negation conditional on manual probable target alignment;53/54maybetransformationdifference;23:35explosionvs23:45gunfireisobservable difference.",
+    "not_promoted": "Universal closed contradiction taxonomy/automatic target matcher; later correction cannot be assumed from all differing values"
+  },
+  "reconstruction": {
+    "definition": "Derived assessment of explicitly available evidence at an evaluation boundary, retaining basis, scope, opposition and alternatives; not accepted ontic reality or a Narrative.",
+    "existing_general_analogue": "BeliefAssessment and DecisionContextSnapshotV1 with evidence/claim/basis data, append-only Decision declarations",
+    "decision": "B generic cross-scope assessment/evidence snapshot contract; E general revision/retraction/supersession lifecycle",
+    "round4_limit": "Version1 has no explicit full evidence-cutoff instant. Source access dates and report dates are not a replacement; do not retroactively fill it."
+  },
+  "evaluation_snapshot": {
+    "review_created_at_utc": "2026-09-14T03:55:02.490484+00:00",
+    "baseline_manifest_sha256": "a7e9099689dbd2d361968c27eaf32908fb8fa605c37bbff9716e27a439747993",
+    "scope": "This Round5 review evaluates frozen Round1–4 file snapshots; not historical actor knowledge or evidence available in1904."
+  },
+  "core_change": false
+}

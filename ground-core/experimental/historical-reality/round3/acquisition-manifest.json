@@ -1,0 +1,102 @@
+{
+  "accessed_on": "2026-09-14",
+  "assets": [
+    {
+      "id": "asset-frus708.png",
+      "source_id": "r3:frus-print-images",
+      "path": "evidence/frus708.png",
+      "sha256": "4fbc0a9643b6d2d8caf86037e08ae6fa0e34b8718b5b7d5a7d1346d31b1ee60d",
+      "bytes": 74830,
+      "format": "png",
+      "origin_url": "https://static.history.state.gov/frus/frus1904/medium/0796.png",
+      "inspection": "Visually inspected printed708; notoriginaltelegram"
+    },
+    {
+      "id": "asset-frus709.png",
+      "source_id": "r3:frus-print-images",
+      "path": "evidence/frus709.png",
+      "sha256": "60fab66aaa636e65c6c7bbc79c0e76bcc295e585afe3ad4502bae1fec338a97f",
+      "bytes": 96669,
+      "format": "png",
+      "origin_url": "https://static.history.state.gov/frus/frus1904/medium/0797.png",
+      "inspection": "Visually inspected printed709; modern679absent"
+    },
+    {
+      "id": "asset-jacar-transcription.html",
+      "source_id": "r3:jacar-text",
+      "path": "evidence/jacar-transcription.html",
+      "sha256": "22ef3ca993e3805bfcb5edb3a0c4b7f568536f5f14b582f591a291df1510c23b",
+      "bytes": 5936,
+      "format": "html",
+      "origin_url": "https://www.jacar.go.jp/exhibition/nichiro/komura_telegram_txt.htm",
+      "inspection": "Shift_JISdecodedandread, rawbytesretained"
+    },
+    {
+      "id": "asset-rosen-memoir.pdf",
+      "source_id": "r3:rosen-memoir",
+      "path": "evidence/rosen-memoir.pdf",
+      "sha256": "29a7c756a6e79f829f6c95dce9f497886584923ce97026d5dd6d8e724f2955ef",
+      "bytes": 7353539,
+      "format": "pdf",
+      "origin_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Forty_years_of_diplomacy_%28IA_cu31924071193662%29.pdf",
+      "inspection": "328pages; selectiveimageinspectionandtextsearch"
+    },
+    {
+      "id": "asset-rosen-metadata.json",
+      "source_id": "r3:rosen-metadata",
+      "path": "evidence/rosen-metadata.json",
+      "sha256": "a5e7ba38a6860e536d6f629302bc64da8b9c30ad82ec13d268314fe756d3eacc",
+      "bytes": 6023,
+      "format": "json",
+      "origin_url": "https://archive.org/metadata/cu31924071193662",
+      "inspection": "Publicmetadataread; nohistoricaloriginalinferred"
+    },
+    {
+      "id": "asset-rsl-html-response.html",
+      "source_id": "r3:rsl-metadata",
+      "path": "evidence/rsl-html-response.html",
+      "sha256": "e539d0e34705288fd2e1dd4861585fb12ee3e8af2f2a075d2124364c9391bc07",
+      "bytes": 6811,
+      "format": "html",
+      "origin_url": "https://dlib.rsl.ru/rsl01007000000/rsl01007506000/rsl01007506064/rsl01007506064.pdf",
+      "inspection": "FailedPDFacquisition response retainedasHTMLnotPDF"
+    },
+    {
+      "id": "asset-ia-search.json",
+      "source_id": "r3:rsl-metadata",
+      "path": "evidence/ia-search.json",
+      "sha256": "19fe87604bb6d18d8a91d0dc5b4b35320c7384577a74b60ce06d12db0ef0be8c",
+      "bytes": 332,
+      "format": "json",
+      "origin_url": "https://archive.org/advancedsearch.php?q=%22Dokumenty%22+AND+%22Iaponiei%22&output=json",
+      "inspection": "Query-specificzeroresultnotabsence"
+    },
+    {
+      "id": "asset-hathi-denied.html",
+      "source_id": "r3:hathi-lead",
+      "path": "evidence/hathi-denied.html",
+      "sha256": "9a496f3474882c49d6021771c2028a24cd93b90d771828d9c7c4eb8e60033ee2",
+      "bytes": 5503,
+      "format": "html",
+      "origin_url": "https://catalog.hathitrust.org/Record/103219007",
+      "inspection": "403response; nohistoricalpagesinspected"
+    },
+    {
+      "id": "asset-penn-lead.html",
+      "source_id": "r3:hathi-lead",
+      "path": "evidence/penn-lead.html",
+      "sha256": "db7f82351189021c538e06ea1591497139de0f00540da12501d61431f50ff5b5",
+      "bytes": 33126,
+      "format": "html",
+      "origin_url": "https://onlinebooks.library.upenn.edu/webbin/book/browse?c=x&key=Earthquakes+--+Japan+--+History+--+Sources&type=lcsubc",
+      "inspection": "BibliographiclistingreadnotHathipages"
+    }
+  ],
+  "inherited_assets": "Round2manifestassetsreusedwithoutmodification; selectednewPak/KomuraimageinspectiondeclaredinRound3sources",
+  "limits": [
+    "Rawresponsehashdoesnotauthenticatehistoricaloriginal",
+    "OriginalRussiantelegramand1905/1906collectionpagesnotacquired",
+    "No translator/source-language statusinvented forEnglishmemoir",
+    "UnsuccessfuldownloadsretainedasHTMLandnotcountedasPDF"
+  ]
+}

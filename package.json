@@ -16,7 +16,7 @@
     "prod": "npm run build && node server.js",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test:ground-core": "tsx --test ground-core/__tests__/**/*.test.ts",
+    "test:ground-core": "node scripts/repro/test-ground.mjs",
     "ground-core": "tsx ground-core/cli.ts"
   },
   "dependencies": {

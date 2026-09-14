@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-14",
+  "tests": {
+    "pass": 67,
+    "fail": 0,
+    "round2": 11,
+    "round1": 6,
+    "legacy_related": 50
+  },
+  "typecheck": {
+    "exit_code": 0
+  },
+  "replay": "Successful canonical file-store round-trip and source/propagation traces",
+  "parent": {
+    "path": "../round1.dataset.json",
+    "sha256": "5bc32592aa80ee4742f8e01b09d4381dacc1ce080fb930772a7a1ea2b24c70c2",
+    "landscape_sha256": "40c3d8b4094e67359d5469c09fcf30dcba9479e3bb123401fb618d465021960f"
+  },
+  "dataset_sha256": "8fa0c1087b1945dfcbc1aa991c014d2b44796e4e4667eb3243d5a9a27d097d3c",
+  "validation_scope": "Local integrity and semantic regression boundaries; no historical authenticity or external-truth certification"
+}

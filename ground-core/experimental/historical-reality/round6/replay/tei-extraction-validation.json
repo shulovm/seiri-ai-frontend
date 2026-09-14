@@ -1,0 +1,20 @@
+{
+  "checked_document_ids": [
+    "d100",
+    "d103",
+    "d124",
+    "d125",
+    "d126",
+    "d127",
+    "d17",
+    "d18",
+    "d430",
+    "d431",
+    "d450",
+    "d92"
+  ],
+  "xml_well_formed": true,
+  "element_serialization_matches_download": true,
+  "normalized_text_matches": true,
+  "historical_originals_authenticated": false
+}

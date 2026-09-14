@@ -1,0 +1,337 @@
+[
+  {
+    "actor_id": "jp-fm-receiving-office",
+    "day": "1904-02-10",
+    "inherited_round1_records": {
+      "actor_id": "jp-fm-receiving-office",
+      "day": "1904-02-10",
+      "documented_before_day": [],
+      "same_day_order_unknown": [],
+      "unplaced": [],
+      "conclusion": "Documentary records only; no inference of truth, continued belief, access, or ignorance."
+    },
+    "documented_before_day": [
+      {
+        "id": "k-fm-no50",
+        "actor_id": "jp-fm-receiving-office",
+        "node_id": "n-no50-receipt",
+        "claim_id": "r2:c-no50-receipt",
+        "stance": "receipt_annotated",
+        "payload": "Report of reply dispatch and explicitly personal views; not final Russian reply text.",
+        "limit": "Bounded source-attested epistemic act, not continuing knowledge or organisation-wide belief.",
+        "node": {
+          "id": "n-no50-receipt",
+          "stage": "receipt",
+          "actor_id": "jp-fm-receiving-office",
+          "time": {
+            "raw": "1904-02-05",
+            "precision": "day",
+            "calendar": "Gregorian as printed; local clock standard unverified",
+            "normalized_day": "1904-02-05",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "No verified clock standard or UTC offset"
+            },
+            "clock": "5.15 P.M.",
+            "place": "Tokyo",
+            "normalized_instant": {
+              "status": "unknown",
+              "reason": "No UTC conversion without a verified time standard"
+            }
+          },
+          "claim_ids": [
+            "r2:c-no50-receipt"
+          ],
+          "attestation_form": "source_asserts"
+        }
+      },
+      {
+        "id": "k-fm-notes",
+        "actor_id": "jp-fm-receiving-office",
+        "node_id": "n-notes-receipt",
+        "claim_id": "r2:c-note-report-receipt",
+        "stance": "receipt_annotated",
+        "payload": "Kurino report of note delivery; minister reading unknown.",
+        "limit": "Bounded source-attested epistemic act, not continuing knowledge or organisation-wide belief.",
+        "node": {
+          "id": "n-notes-receipt",
+          "stage": "receipt",
+          "actor_id": "jp-fm-receiving-office",
+          "time": {
+            "raw": "1904-02-07",
+            "precision": "day",
+            "calendar": "Gregorian as printed; local clock standard unverified",
+            "normalized_day": "1904-02-07",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "No verified clock standard or UTC offset"
+            },
+            "clock": "5.45 A.M.",
+            "place": "Tokyo",
+            "normalized_instant": {
+              "status": "unknown",
+              "reason": "No UTC conversion without a verified time standard"
+            }
+          },
+          "claim_ids": [
+            "r2:c-note-report-receipt"
+          ],
+          "attestation_form": "source_asserts"
+        }
+      }
+    ],
+    "same_day_order_unknown": [],
+    "unplaced": [],
+    "conclusion": "Retrospective documentary attestation only. Empty results mean no record in this layer; never actor ignorance, continued belief or contemporary public access."
+  },
+  {
+    "actor_id": "jp-minister-ru",
+    "day": "1904-02-10",
+    "inherited_round1_records": {
+      "actor_id": "jp-minister-ru",
+      "day": "1904-02-10",
+      "documented_before_day": [],
+      "same_day_order_unknown": [],
+      "unplaced": [
+        {
+          "id": "k678",
+          "actor_id": "jp-minister-ru",
+          "claim_id": "c678-uncertainty",
+          "stance": "explicit_no_positive_knowledge",
+          "source_id": "frus:1904:678",
+          "as_of": {
+            "raw": "conversation reported February 7",
+            "precision": "unknown",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": {
+              "status": "unknown",
+              "reason": "not established by inspected edition"
+            },
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "limit": "do not replace with did_not_know; no exact conversation time"
+        },
+        {
+          "id": "k678-told",
+          "actor_id": "jp-minister-ru",
+          "claim_id": "c678-sent",
+          "stance": "was_told",
+          "source_id": "frus:1904:678",
+          "as_of": {
+            "raw": "conversation reported February 7",
+            "precision": "unknown",
+            "calendar": "edition date; original calendar unverified",
+            "normalized_day": {
+              "status": "unknown",
+              "reason": "not established by inspected edition"
+            },
+            "time_standard": {
+              "status": "unknown",
+              "reason": "no clock time or offset in inspected text"
+            }
+          },
+          "limit": "hearsay about sent reply is not knowledge of reply text"
+        }
+      ],
+      "conclusion": "Documentary records only; no inference of truth, continued belief, access, or ignorance."
+    },
+    "documented_before_day": [
+      {
+        "id": "k-kurino-ack",
+        "actor_id": "jp-minister-ru",
+        "node_id": "n-ack82",
+        "claim_id": "r2:c-ack82",
+        "stance": "acknowledged_message",
+        "payload": "Telegram numbers50 and53 only; reference not expanded to51/52/54.",
+        "limit": "Bounded source-attested epistemic act, not continuing knowledge or organisation-wide belief.",
+        "node": {
+          "id": "n-ack82",
+          "stage": "record",
+          "actor_id": "jp-minister-ru",
+          "time": {
+            "raw": "1904-02-05",
+            "precision": "day",
+            "calendar": "Gregorian as printed; local clock standard unverified",
+            "normalized_day": "1904-02-05",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "No verified clock standard or UTC offset"
+            },
+            "clock": "6.15pM",
+            "place": "Petersburg",
+            "normalized_instant": {
+              "status": "unknown",
+              "reason": "No UTC conversion without a verified time standard"
+            }
+          },
+          "claim_ids": [
+            "r2:c-ack82"
+          ],
+          "attestation_form": "source_asserts"
+        }
+      }
+    ],
+    "same_day_order_unknown": [],
+    "unplaced": [],
+    "conclusion": "Retrospective documentary attestation only. Empty results mean no record in this layer; never actor ignorance, continued belief or contemporary public access."
+  },
+  {
+    "actor_id": "jp-cabinet",
+    "day": "1904-02-10",
+    "inherited_round1_records": {
+      "actor_id": "jp-cabinet",
+      "day": "1904-02-10",
+      "documented_before_day": [],
+      "same_day_order_unknown": [],
+      "unplaced": [],
+      "conclusion": "Documentary records only; no inference of truth, continued belief, access, or ignorance."
+    },
+    "documented_before_day": [],
+    "same_day_order_unknown": [],
+    "unplaced": [],
+    "conclusion": "Retrospective documentary attestation only. Empty results mean no record in this layer; never actor ignorance, continued belief or contemporary public access."
+  },
+  {
+    "actor_id": "jp-army-command",
+    "day": "1904-02-10",
+    "inherited_round1_records": {
+      "actor_id": "jp-army-command",
+      "day": "1904-02-10",
+      "documented_before_day": [],
+      "same_day_order_unknown": [],
+      "unplaced": [],
+      "conclusion": "Documentary records only; no inference of truth, continued belief, access, or ignorance."
+    },
+    "documented_before_day": [],
+    "same_day_order_unknown": [],
+    "unplaced": [],
+    "conclusion": "Retrospective documentary attestation only. Empty results mean no record in this layer; never actor ignorance, continued belief or contemporary public access."
+  },
+  {
+    "actor_id": "navy-minister",
+    "day": "1904-02-10",
+    "inherited_round1_records": {
+      "actor_id": "navy-minister",
+      "day": "1904-02-10",
+      "documented_before_day": [],
+      "same_day_order_unknown": [],
+      "unplaced": [],
+      "conclusion": "Documentary records only; no inference of truth, continued belief, access, or ignorance."
+    },
+    "documented_before_day": [],
+    "same_day_order_unknown": [],
+    "unplaced": [],
+    "conclusion": "Retrospective documentary attestation only. Empty results mean no record in this layer; never actor ignorance, continued belief or contemporary public access."
+  },
+  {
+    "actor_id": "hayashi-london",
+    "day": "1904-02-10",
+    "inherited_round1_records": {
+      "actor_id": "hayashi-london",
+      "day": "1904-02-10",
+      "documented_before_day": [],
+      "same_day_order_unknown": [],
+      "unplaced": [],
+      "conclusion": "Documentary records only; no inference of truth, continued belief, access, or ignorance."
+    },
+    "documented_before_day": [
+      {
+        "id": "k-hayashi",
+        "actor_id": "hayashi-london",
+        "node_id": "n-hayashi",
+        "claim_id": "r2:c-london-response",
+        "stance": "references_instruction",
+        "payload": "Withdrawal plan in Komura65; no claim of knowing Russian reply text.",
+        "limit": "Bounded source-attested epistemic act, not continuing knowledge or organisation-wide belief.",
+        "node": {
+          "id": "n-hayashi",
+          "stage": "interpretation",
+          "actor_id": "hayashi-london",
+          "time": {
+            "raw": "1904-02-05",
+            "precision": "day",
+            "calendar": "Gregorian as printed; local clock standard unverified",
+            "normalized_day": "1904-02-05",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "No verified clock standard or UTC offset"
+            },
+            "clock": "10.50p.m.",
+            "place": "London",
+            "normalized_instant": {
+              "status": "unknown",
+              "reason": "No UTC conversion without a verified time standard"
+            }
+          },
+          "claim_ids": [
+            "r2:c-london-response"
+          ],
+          "attestation_form": "source_asserts"
+        }
+      }
+    ],
+    "same_day_order_unknown": [],
+    "unplaced": [],
+    "conclusion": "Retrospective documentary attestation only. Empty results mean no record in this layer; never actor ignorance, continued belief or contemporary public access."
+  },
+  {
+    "actor_id": "togo",
+    "day": "1904-02-10",
+    "inherited_round1_records": {
+      "actor_id": "togo",
+      "day": "1904-02-10",
+      "documented_before_day": [],
+      "same_day_order_unknown": [],
+      "unplaced": [],
+      "conclusion": "Documentary records only; no inference of truth, continued belief, access, or ignorance."
+    },
+    "documented_before_day": [],
+    "same_day_order_unknown": [
+      {
+        "id": "k-togo",
+        "actor_id": "togo",
+        "node_id": "n-togo-report",
+        "claim_id": "r2:c-togo-created",
+        "stance": "authored_report",
+        "payload": "Author report of naval operation; exact damage contested.",
+        "limit": "Bounded source-attested epistemic act, not continuing knowledge or organisation-wide belief.",
+        "node": {
+          "id": "n-togo-report",
+          "stage": "record",
+          "actor_id": "togo",
+          "time": {
+            "raw": "1904-02-10",
+            "precision": "day",
+            "calendar": "Gregorian as printed; local clock standard unverified",
+            "normalized_day": "1904-02-10",
+            "time_standard": {
+              "status": "unknown",
+              "reason": "No verified clock standard or UTC offset"
+            },
+            "clock": {
+              "status": "unknown",
+              "reason": "Clock not specified"
+            },
+            "place": {
+              "status": "unknown",
+              "reason": "Place not established"
+            },
+            "normalized_instant": {
+              "status": "unknown",
+              "reason": "No UTC conversion without a verified time standard"
+            }
+          },
+          "claim_ids": [
+            "r2:c-togo-created"
+          ],
+          "attestation_form": "source_asserts"
+        }
+      }
+    ],
+    "unplaced": [],
+    "conclusion": "Retrospective documentary attestation only. Empty results mean no record in this layer; never actor ignorance, continued belief or contemporary public access."
+  }
+]

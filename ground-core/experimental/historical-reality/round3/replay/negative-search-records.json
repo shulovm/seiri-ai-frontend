@@ -1,0 +1,398 @@
+[
+  {
+    "id": "search-rsl",
+    "records": [
+      {
+        "id": "search-rsl",
+        "what": "Collectionpp46–47 andoriginal No2",
+        "where": "NEB/RSL public catalogue anddownload endpoint",
+        "query_or_locator": "000199_000009_007506064; https://dlib.rsl.ru/rsl01007000000/rsl01007506000/rsl01007506064/rsl01007506064.pdf",
+        "searched_on": "2026-09-14",
+        "result": "Catalogue403; supposedPDFHTTP200text/html6811bytes, notPDF.",
+        "classification": "archive_inaccessible",
+        "limitation": "Catalogueindexedmetadata only; access failure doesnotestablishpageabsence.",
+        "source_ids": [
+          "r3:rsl-metadata"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r3:rsl-metadata",
+        "title": "RSL/NEB Russian collection bibliographic metadata",
+        "url": "https://rusneb.ru/catalog/000199_000009_007506064/",
+        "excerpt": "Catalogue: Synodal printing office, St Petersburg1905, 49,[1]pp; no title leaf; cover На правах рукописи. Pak cites1906.",
+        "inspection": "Indexed official catalogue metadata located; direct catalogue fetch403; supplied PDF endpoint returned HTML, not PDF; content pages not inspected.",
+        "locator": {
+          "record": "000199_000009_007506064",
+          "extent": "49, [1] с.",
+          "notes": [
+            "Без тит. л.",
+            "На обл.: На правах рукописи"
+          ]
+        },
+        "creation": {
+          "raw": "Date of current representation not stated",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "access_date": "2026-09-14"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  },
+  {
+    "id": "search-hathi",
+    "records": [
+      {
+        "id": "search-hathi",
+        "what": "Alternative1905collection pageimages",
+        "where": "PennOnlineBooks→HathiTrust",
+        "query_or_locator": "Hathi Record103219007",
+        "searched_on": "2026-09-14",
+        "result": "LeadlabelsUSaccessonly; directcatalogue403.",
+        "classification": "archive_inaccessible",
+        "limitation": "No region/securitybypass; editionidentityandpagesnotverified.",
+        "source_ids": [
+          "r3:hathi-lead"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r3:hathi-lead",
+        "title": "Penn Online Books lead to Hathi record103219007",
+        "url": "https://onlinebooks.library.upenn.edu/webbin/book/browse?c=x&key=Earthquakes+--+Japan+--+History+--+Sources&type=lcsubc",
+        "excerpt": "Listing locates Russian1905 collection at HathiTrust, with page images marked US access only.",
+        "inspection": "Listing HTML acquired and read; linked Hathi catalogue403; no pages inspected.",
+        "locator": {
+          "linked_catalogue": "https://catalog.hathitrust.org/Record/103219007"
+        },
+        "creation": {
+          "raw": "Date of current representation not stated",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "access_date": "2026-09-14"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  },
+  {
+    "id": "search-ia",
+    "records": [
+      {
+        "id": "search-ia",
+        "what": "Russian collection alternative scan",
+        "where": "InternetArchive advancedsearch",
+        "query_or_locator": "\"Dokumenty\" AND \"Iaponiei\"",
+        "searched_on": "2026-09-14",
+        "result": "API numFound0,332byteJSONsaved.",
+        "classification": "searched_but_not_found",
+        "limitation": "Exacttransliteration queryonly; variants/unindexedholdings notcovered; nothistoricalabsence.",
+        "source_ids": [
+          "r3:rsl-metadata"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r3:rsl-metadata",
+        "title": "RSL/NEB Russian collection bibliographic metadata",
+        "url": "https://rusneb.ru/catalog/000199_000009_007506064/",
+        "excerpt": "Catalogue: Synodal printing office, St Petersburg1905, 49,[1]pp; no title leaf; cover На правах рукописи. Pak cites1906.",
+        "inspection": "Indexed official catalogue metadata located; direct catalogue fetch403; supplied PDF endpoint returned HTML, not PDF; content pages not inspected.",
+        "locator": {
+          "record": "000199_000009_007506064",
+          "extent": "49, [1] с.",
+          "notes": [
+            "Без тит. л.",
+            "На обл.: На правах рукописи"
+          ]
+        },
+        "creation": {
+          "raw": "Date of current representation not stated",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "access_date": "2026-09-14"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  },
+  {
+    "id": "search-rgia",
+    "records": [
+      {
+        "id": "search-rgia",
+        "what": "Finalreplyoriginal within archivelead",
+        "where": "PresidentialLibraryRGIA catalogue",
+        "query_or_locator": "РГИА.1622/1/301-г; item324328",
+        "searched_on": "2026-09-14",
+        "result": "Typescriptoverviewdescriptionfound; targetoriginalnotidentified; imagesnotlocated.",
+        "classification": "source_referenced_but_unavailable",
+        "limitation": "Descriptivecatalogueonly; notfull29foliosread.",
+        "source_ids": [
+          "r3:rgia-metadata"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r3:rgia-metadata",
+        "title": "RGIA typescript overview catalogue: 1622/1/301-г",
+        "url": "https://www.prlib.ru/item/324328",
+        "excerpt": "Catalogue describes an unnumbered folder, typescript overview,29folios, date1903 and June10; not a direct identification of the final reply telegram.",
+        "inspection": "Official descriptive metadata read; no file images located or inspected.",
+        "locator": {
+          "record": "b386133b-e018-4010-b2bf-2b0623c300b5",
+          "shelfmark": "РГИА. 1622 / 1 / 301-г"
+        },
+        "creation": {
+          "raw": "Date of current representation not stated",
+          "precision": "unknown",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "access_date": "2026-09-14"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  },
+  {
+    "id": "search-jacar",
+    "records": [
+      {
+        "id": "search-jacar",
+        "what": "Nagasaki/Rosen replyreceiptprimaryrecord",
+        "where": "ExternalwebindexofJACAR",
+        "query_or_locator": "\"長崎\" \"電信\" \"露国\" \"明治３７\" site:jacar.archives.go.jp; \"ローゼン\" \"回答\" site:jacar.go.jp",
+        "searched_on": "2026-09-14",
+        "result": "Targetreceipt/ordernotlocated; ship/cableotherdate resultsoutside scope.",
+        "classification": "searched_but_not_found",
+        "limitation": "Externalindexonly, notexhaustiveinternalarchive search.",
+        "source_ids": [
+          "r2:komura-bundle"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r2:komura-bundle",
+        "title": "聖坡得斯堡・外交電報簿 B07090546900",
+        "url": "https://www.jacar.archives.go.jp/das/meta/B07090546900",
+        "inspection": "Archival digitized telegram records; PDF images4–6,8–12 visually inspected. Outgoing copies and receiving annotations are not original Russian reply or proof of minister reading.",
+        "locator": {
+          "ref": "B07090546900",
+          "repository": "外務省外交史料館",
+          "call": "5.2.1.14_003",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200147290500/raw/B07090546900.b5_0029.5-0267.00000006.pdf",
+          "images": "4–6,8–12; frame0009–0017"
+        },
+        "creation": {
+          "raw": "not located",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-komura-bundle.pdf"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  },
+  {
+    "id": "search-komura",
+    "records": [
+      {
+        "id": "search-komura",
+        "what": "KurinoNo50replyreport original",
+        "where": "B07090546900selectedarchiveimages",
+        "query_or_locator": "Images1–6,8–15; frames0006–0020 selected, image7notinspected",
+        "searched_on": "2026-09-14",
+        "result": "No54,53,82andsubsequentprotectingpowercommunicationsfound; No50originalnotlocatedintheseimages.",
+        "classification": "searched_but_not_found",
+        "limitation": "Selectedpagesonly, notcomplete58pagebundle search.",
+        "source_ids": [
+          "r2:komura-bundle"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r2:komura-bundle",
+        "title": "聖坡得斯堡・外交電報簿 B07090546900",
+        "url": "https://www.jacar.archives.go.jp/das/meta/B07090546900",
+        "inspection": "Archival digitized telegram records; PDF images4–6,8–12 visually inspected. Outgoing copies and receiving annotations are not original Russian reply or proof of minister reading.",
+        "locator": {
+          "ref": "B07090546900",
+          "repository": "外務省外交史料館",
+          "call": "5.2.1.14_003",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200147290500/raw/B07090546900.b5_0029.5-0267.00000006.pdf",
+          "images": "4–6,8–12; frame0009–0017"
+        },
+        "creation": {
+          "raw": "not located",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-komura-bundle.pdf"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  },
+  {
+    "id": "search-rosen",
+    "records": [
+      {
+        "id": "search-rosen",
+        "what": "IncomingreplyNagasakireceipt/read assertion",
+        "where": "RosenVolI1922 PDF328pages",
+        "query_or_locator": "Textlayer search Nagasaki/telegram/reply; printedpp231–232 inspected",
+        "searched_on": "2026-09-14",
+        "result": "RelevantpagesdescribeJapaneseinvitationandoutgoingwarnings; noincomingfinalreplyread/ack recordlocated.",
+        "classification": "searched_but_not_found",
+        "limitation": "OCR/textsearchandselectivepages; notcompletewitnessrecordsearch orproofactorleftnone.",
+        "source_ids": [
+          "r3:rosen-memoir"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r3:rosen-memoir",
+        "title": "Rosen, Forty years of diplomacy, Vol.I, 1922, Cornell scanned copy",
+        "url": "https://archive.org/details/cu31924071193662",
+        "excerpt": "pp231–232 recount receipt of Komura invitation on afternoon Feb6, call at4pm, and outgoing cipher warnings addressed to Port Arthur and St Petersburg. Publishers note lack of final revision after author death.",
+        "inspection": "PDF acquired (328 pages). Visually inspected PDF pages4,11,12,15,237,238; text searched for Nagasaki/telegram/reply; selective reading, not complete memoir verification.",
+        "locator": {
+          "printed_pages": [
+            231,
+            232
+          ],
+          "pdf_pages": [
+            4,
+            11,
+            12,
+            15,
+            237,
+            238
+          ],
+          "copy_accession": "A532366",
+          "volume": "I"
+        },
+        "creation": {
+          "raw": "First published 1922",
+          "precision": "year",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No verified Gregorian day for this temporal role"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "Clock standard not verified; no UTC conversion"
+          }
+        },
+        "access_date": "2026-09-14"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  }
+]
