@@ -86,7 +86,7 @@ export function decomposeReality(text:string):TranslationUnit[]{
  if(withheld){u.eventKinds=[];u.qualification='unknown';u.families.push('uncertainty-scope');u.properties.assertion_status='not asserted';u.properties.unresolved_occurrence_scope=span;delete u.properties.equipment_operating_status;delete u.properties.verified_reality_value;delete u.properties.verification_completed;delete u.properties.instruction_issued;if(u.properties.selection_completed===true)delete u.properties.selection_completed;}
  u.families=Array.from(new Set(u.families));u.eventKinds=Array.from(new Set(u.eventKinds));
  if(!u.families.length){u.status='unsupported';u.reason='No supported semantic grammar; preserved as residual input, no world assertion made.';}
- if(/^(?:それ|その人|この件|担当者がそれ)/.test(span)&&!units.some(x=>x.observer||x.reporter||x.record)){u.status='clarification required';u.reason='Unresolved referent materially changes the observation subject.';}
+ if(/^(?:それ(?:が|は|を|に)|その人(?:が|は)|担当者がそれ(?:を|に))/.test(span)&&u.families.includes('observation')){u.status='clarification required';u.reason='Unresolved referent materially changes the observation subject.';}
  u.disposition=u.status==='unsupported'?'unsupported':u.status==='clarification required'?'clarification required':['unknown','unresolved','hypothetical'].includes(u.qualification)?'safely unresolved':'compositionally canonicalized';
  units.push(u);
  }
