@@ -1,0 +1,52 @@
+{
+  "canonical_baseline_commit": "fbfafef737132c8049998f9ca7d1d5f68fa90c56",
+  "sources": [
+    {
+      "source_key": "human-001",
+      "fixture_path": "fixtures/human-interface/human-001/project-state.json",
+      "sha256": "863545f650835b2b36c283ed2455cfe6fc31f10fbad78ee8647dc264ae56ad6c",
+      "stored_schema": "0.1.24",
+      "read_schema": "0.1.25",
+      "project_id": "19041904-1904-4904-8904-190419041904",
+      "entity_id": "72bf5051-f100-524a-ac33-7a911f6d974a",
+      "source_origin": "Existing HUMAN-001 fixture; origin documented in its unchanged manifest.",
+      "source_qualification": "historical-replay-canonical-snapshot",
+      "purpose": "Baseline single document / claim proof.",
+      "known_limitations": [
+        "No populated Event, State or EpistemicObservation proof."
+      ]
+    },
+    {
+      "source_key": "e2-b15",
+      "fixture_path": "fixtures/human-interface/human-002/e2-b15/project-state.json",
+      "sha256": "f329089495be9aa12833f9352794eacff1093f7349584e48902066e12233fc99",
+      "stored_schema": "0.1.24",
+      "read_schema": "0.1.25",
+      "project_id": "b7c4492f-955a-4189-a913-5ece6c6a876a",
+      "entity_id": "3b35ea51-6db5-4dee-8759-bb17377cbc0c",
+      "source_origin": "/private/tmp/ground-e2-replay-check/stores/B15-D1-B-typed-reviewed-1/b7c4492f-955a-4189-a913-5ece6c6a876a.json",
+      "source_qualification": "controlled-experiment-canonical-snapshot",
+      "purpose": "Cross-shape proof of an existing controlled saved state.",
+      "known_limitations": [
+        "Controlled experiment; not evidence of actual real-world events.",
+        "Project Evidence exists but claim-linked evidence path returns none."
+      ]
+    },
+    {
+      "source_key": "historical-round4",
+      "fixture_path": "fixtures/human-interface/human-002/historical-round4/project-state.json",
+      "sha256": "41450c0c849f2d10a9afdb1ba9e23eeabe28d6724c0f3457c3fad37274cdb3b9",
+      "stored_schema": "0.1.24",
+      "read_schema": "0.1.25",
+      "project_id": "19041904-1904-4904-8904-190419044004",
+      "entity_id": "466b098e-ae25-5b28-ad11-a5dc931eeb75",
+      "source_origin": "/Users/macsaku/seiri-ai-frontend/ground-core/experimental/historical-reality/round4/replay/19041904-1904-4904-8904-190419044004.json",
+      "source_qualification": "historical-replay-canonical-snapshot",
+      "purpose": "Real-source multiplicity: 23 attributed Claims sharing one linked Evidence.",
+      "known_limitations": [
+        "Not historical truth, source ranking or verified history.",
+        "Not populated Event, State or EpistemicObservation proof."
+      ]
+    }
+  ]
+}
