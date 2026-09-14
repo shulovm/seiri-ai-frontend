@@ -25,3 +25,14 @@
 .hi-record { margin: 18px 0; padding: 20px; border: 1px solid #d9ddda; }
 .hi-evidence { margin: 24px 0; padding: 0 20px 16px; border-left: 2px solid #a8b0b0; }
 .hi-explorer footer { border-top: 1px solid #cdd1d1; padding-top: 20px; }
+.hi-transport { margin-top: 28px; padding: 20px; border: 1px dashed #a8b0b0; }
+.hi-note { color: #535a5d; font-size: 13px; max-width: 78ch; }
+.hi-field-group + .hi-field-group { border-top: 1px solid #d9ddda; margin-top: 20px; padding-top: 6px; }
+.hi-explorer code { font-style: normal; }
+@media (max-width: 720px) {
+  .hi-explorer { padding: 28px 18px 48px; }
+  .hi-fields > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .hi-collections li > strong { display: block; width: auto; }
+  .hi-record, .hi-transport { padding: 14px; }
+  .hi-evidence { padding-left: 12px; padding-right: 0; }
+}
