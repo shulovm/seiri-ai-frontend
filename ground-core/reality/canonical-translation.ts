@@ -80,7 +80,9 @@ export function decomposeReality(text:string):TranslationUnit[]{
  return units;
 }
 export function proposeCanonicalTranslation(state:ProjectState,input:RealityProposeInput):{result:PatchProposal|ClarificationResponse,trace:TranslationTrace}|null {
- const units=decomposeReality(input.input_text);if(!units.some(u=>u.families.length))return null;
+ const units=decomposeReality(input.input_text);
+ const reference=input.input_text.match(/(?:補足[：:]\s*)?(?:「?それ」?|その人|参照語)(?:は|の参照先は)\s*([^。\n]{1,40}?)(?:を指す|です|である)[。\n]?/);
+ if(reference)for(const u of units)if(u.status==='clarification required'){u.properties.resolved_referent=clean(reference[1]);u.status=u.families.length?'preserved':'unsupported';u.reason=undefined;if(u.observer&&/^(?:それ|その人)$/.test(u.observer))u.observer=clean(reference[1]);}
  const now=new Date().toISOString();const episode=randomUUID();const operations:PatchOperation[]=[];const targets:TranslationTrace['canonicalTargets']=[];const trace:TranslationTrace={input:input.input_text,units,canonicalTargets:targets,residuals:units.filter(u=>u.status!=='preserved').map(u=>({span:u.span,status:u.status,reason:u.reason??'Residual'}))};
  const material=units.filter(u=>u.status==='clarification required');if(material.length)return {trace,result:{type:'clarification',project_id:state.project.id,input_text:input.input_text,reason:'Observation subject is unresolved; no alternative subject is chosen.',questions:material.map(u=>`「${u.span}」の参照語は、どの対象を指していますか？`),risk_level:'medium',created_at:now}};
  const common=(id:string)=>({id,project_id:state.project.id,created_at:now,updated_at:now});
@@ -94,7 +96,7 @@ export function proposeCanonicalTranslation(state:ProjectState,input:RealityProp
   ids.push(addState(record,'interpretation_status',u.status,key+'|status'));
   if(u.timeExpression)ids.push(addState(record,'declared_time_expression',u.timeExpression,key+'|localtime'));
   for(const [kind,value] of Object.entries(u.properties))ids.push(addState(record,kind,value,key+'|'+kind));
-  const subjectName=u.span.match(/^(.{1,35}?)(?:には|は|が|の法的所有者|の所有者)/)?.[1];
+  const subjectName=typeof u.properties.resolved_referent==='string'?u.properties.resolved_referent:u.span.match(/^(.{1,35}?)(?:には|は|が|の法的所有者|の所有者)/)?.[1];
   if(subjectName&&!/^(それ|この件|その人|同社)$/.test(clean(subjectName)))ids.push(addState(record,'target_entity',entity(clean(subjectName),'unspecified'),key+'|target'));
   for(const [name,role] of [['owner_name','owner'],['custodian_name','custodian'],['selected_plan_name','selected_plan']] as const){const label=u.properties[name];if(typeof label==='string')ids.push(addState(record,role,entity(label,role==='selected_plan'?'plan':'unspecified'),key+'|role-'+role));}
   let provenance:EpistemicProvenance={kind:'document',entity_id:document};
@@ -116,7 +118,11 @@ export function proposeCanonicalTranslation(state:ProjectState,input:RealityProp
  });
  const legacy=randomUUID();operations.push({op:'upsert',entity:'observation',entity_id:legacy,payload:{...common(legacy),goal_id:null,title:'Reality semantic composition',body:input.input_text,source:input.source??'manual',observed_at:now}});
  // Local bounded proposal budget; do not broaden the legacy 8-op core/extraction safety limit.
- if(operations.length>512)return {trace,result:{type:'clarification',project_id:state.project.id,input_text:input.input_text,reason:'Translation exceeds bounded proposal budget; original input is retained.',questions:['この入力を意味単位を保持した複数の入力に分けられますか？'],risk_level:'medium',created_at:now}};
+ if(operations.length>512){
+  const retained=operations.filter(x=>x.entity==='reality_entity'&&x.entity_id===document||x.entity==='observation');operations.splice(0,operations.length,...retained);targets.splice(0);
+  const uid=randomUUID();operations.push({op:'upsert',entity:'reality_state',entity_id:uid,payload:{...common(uid),subject_id:document,kind:'interpretation_status',value:'unsupported: local translation budget exceeded',valid_from:now,valid_until:null,recorded_at:now}});
+  trace.residuals=units.map(u=>({span:u.span,status:'unsupported',reason:'Local translation budget exceeded; no partial world assertions committed.'}));
+ }
  const patch:StatePatch={schema_version:'0.1.24',project_id:state.project.id,source:'extraction',operations};const validation=validateStatePatch(patch);if(!validation.valid)throw new Error('Canonical translation patch invalid: '+JSON.stringify(validation.errors));const dry=dryRunPatch(state,patch);if(!dry.would_apply)throw new Error('Canonical translation dry-run failed: '+JSON.stringify(dry.errors));
  return {trace,result:{id:randomUUID(),project_id:state.project.id,input_text:input.input_text,summary:'Existing canonical composition; residual semantic units explicitly tracked.',confidence:1,risk_level:'medium',proposed_patch:patch,dry_run_result:dry,requires_human_approval:true,created_at:now}};
 }

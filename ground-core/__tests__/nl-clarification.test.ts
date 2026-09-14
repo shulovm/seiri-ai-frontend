@@ -1,0 +1,11 @@
+import {it} from 'node:test';
+import assert from 'node:assert/strict';
+import {createEmptyProject,applyPatch} from '../state-engine.js';
+import {proposeFromReality} from '../reality/propose.js';
+const s=createEmptyProject({title:'Clarification policy'});
+const propose=(input_text:string)=>proposeFromReality(s,{project_id:s.project.id,input_text},'canonical');
+it('truth uncertainty remains represented without asking for truth',()=>{const p=propose('A案かB案か未確定で比較中。Xは未確認。');assert.ok('proposed_patch' in p.result);});
+it('unsupported text is safe unresolved rather than confidence clarification',()=>{const p=propose('周辺の複雑な事情について補足する。');assert.ok('proposed_patch' in p.result);if('proposed_patch' in p.result){const n=applyPatch(s,p.result.proposed_patch);assert.ok(n.reality_states.some(x=>x.kind==='interpretation_status'&&x.value==='unsupported'));assert.equal(n.reality_events.length,0);}});
+it('a material unresolved referent asks only about that referent',()=>{const p=propose('それが直接見た。');assert.equal('type' in p.result&&p.result.type,'clarification');});
+it('explicit clarification resolves the original unit without discarding it',()=>{const p=propose('それが直接見た。\n補足：それは作業員Qを指す。');assert.ok('proposed_patch' in p.result);if('proposed_patch' in p.result){const n=applyPatch(s,p.result.proposed_patch);const q=n.reality_entities.find(x=>x.label==='作業員Q'&&x.kind==='person');assert.ok(q);assert.ok(n.reality_states.some(x=>x.kind==='direct_observer'&&x.value===q!.id));assert.ok(n.epistemic_observations.some(x=>x.content==='それが直接見た'));}});
+it('large inputs remain explicitly unsupported without requesting a split',()=>{const p=propose(Array.from({length:100},(_,i)=>`記録${i}は未確認。`).join(''));assert.ok('proposed_patch' in p.result);if('proposed_patch' in p.result){const n=applyPatch(s,p.result.proposed_patch);assert.ok(n.reality_states.some(x=>String(x.value).includes('budget exceeded')));assert.equal(n.reality_events.length,0);}});
