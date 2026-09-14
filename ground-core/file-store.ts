@@ -11,12 +11,14 @@ import { normalizeProjectState } from "./migrate.js";
 import { SCHEMA_VERSION, type ProjectState } from "./types.js";
 import { validateProjectState } from "./validate.js";
 
+import { assertPersistenceMode, assertStorageRead, assertStorageWrite, type PersistenceOptions } from "./storage-owner.js";
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DEFAULT_STORAGE_DIR = join(__dirname, "storage/projects");
 // UUID shape matches the canonical UUID format; no path components are accepted.
 const PROJECT_ID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
-export interface FileStoreOptions {
+export interface FileStoreOptions extends PersistenceOptions {
   /** Process configuration, never client input. Explicit selection alone is not ownership. */
   storageDir?: string;
 }
@@ -33,6 +35,7 @@ export interface ProjectSnapshot {
 }
 
 export function getStorageDir(options?: FileStoreOptions): string {
+  assertPersistenceMode(options);
   return options?.storageDir || process.env.GROUND_CORE_STORAGE_DIR || DEFAULT_STORAGE_DIR;
 }
 
@@ -49,7 +52,9 @@ function missing(error: unknown): boolean {
 function resolveRoot(options?: FileStoreOptions, create = false): string {
   const root = getStorageDir(options);
   if (create) mkdirSync(root, { recursive: true });
-  return realpathSync(root);
+  const resolved = realpathSync(root);
+  assertStorageRead(resolved, options);
+  return resolved;
 }
 
 function regularFile(path: string) {
@@ -70,6 +75,7 @@ export function saveProject(projectState: ProjectState, options?: FileStoreOptio
   if (!validation.valid) throw new ValidationError("Cannot save invalid ProjectState", validation.errors);
   assertProjectId(normalized.project.id);
   const bytes = Buffer.from(`${JSON.stringify(normalized, null, 2)}\n`, "utf8");
+  assertStorageWrite(getStorageDir(options), options);
   const root = resolveRoot(options, true);
   const path = join(root, `${normalized.project.id}.json`);
   let mode = 0o600;
@@ -138,7 +144,7 @@ export function loadProject(projectId: string, options?: FileStoreOptions): Proj
 /** Filename candidates only, not validated canonical Projects. No contents are loaded. */
 export function listProjects(options?: FileStoreOptions): string[] {
   let root: string;
-  try { root = resolveRoot(options); } catch (error) { if (missing(error)) return []; throw error; }
+  try { root = resolveRoot(options); } catch (error) { if (missing(error) && options?.mode !== 'canonical-live') return []; throw error; }
   return readdirSync(root, { withFileTypes: true })
     .filter(entry => entry.isFile() && !entry.isSymbolicLink() && entry.name.endsWith(".json") && PROJECT_ID.test(entry.name.slice(0, -5)))
     .map(entry => entry.name.slice(0, -5))
