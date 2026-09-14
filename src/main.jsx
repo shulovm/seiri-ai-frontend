@@ -7,12 +7,16 @@ import Landing from './Landing.jsx'
 import App from './App.jsx'
 import Plans from './Plans.jsx'
 import Explore from './Explore.jsx'
+import './human-interface/reality-explorer.css'
+import Browse from './human-interface/Browse.jsx'
 import RealityExplorer from './human-interface/RealityExplorer.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter basename={typeof window !== "undefined" && window.location.pathname.startsWith("/ma") ? "/ma" : import.meta.env.BASE_URL}>
       <Routes>
+        <Route path="/reality" element={<Browse catalog />} />
+        <Route path="/reality/:projectId" element={<Browse />} />
         <Route path="/reality/:projectId/:entityId" element={<RealityExplorer />} />
         <Route path="/" element={<App />} />
         <Route path="/plans" element={<Plans />} />

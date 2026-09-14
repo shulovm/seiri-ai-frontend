@@ -740,13 +740,13 @@ if (!isVercel && !apiOnly) {
   const frontendRoot = path.resolve(__dirname, "dist");
   const distExists = fs.existsSync(frontendRoot) && fs.existsSync(path.join(frontendRoot, "index.html"));
   if (distExists) {
-    app.get(["/", "/plans", "/welcome", "/reality/:projectId/:entityId"], (req, res, next) => {
+    app.get(["/", "/plans", "/welcome", "/reality", "/reality/:projectId", "/reality/:projectId/:entityId"], (req, res, next) => {
       res.sendFile("index.html", { root: frontendRoot }, (err) => {
         if (err) next();
       });
     });
     // ground.ink/ma/ 用: 同じ SPA を /ma 以下でも配信（1 つのビルドでルートと /ma 両対応）
-    app.get(["/ma", "/ma/", "/ma/plans", "/ma/welcome", "/ma/reality/:projectId/:entityId"], (req, res, next) => {
+    app.get(["/ma", "/ma/", "/ma/plans", "/ma/welcome", "/ma/reality", "/ma/reality/:projectId", "/ma/reality/:projectId/:entityId"], (req, res, next) => {
       res.sendFile("index.html", { root: frontendRoot }, (err) => {
         if (err) next();
       });

@@ -1,3 +1,58 @@
+# HUMAN-003C — Minimal Browse UI
+
+Baseline: Core v0 e769df3dabfee6f14b388cff8a150880ee323d37 and server boundary
+f640a4ce20ded2afbaa5dd23d38f4a03fca5c78c. The latter was pushed and verified
+on origin/ground/human-003 before this implementation.
+
+Routes (also under /ma):
+
+- /reality: GET /api/human-interface/projects. Displays only registered project_id,
+  source_key and source_qualification, without canonical titles, schemas, hashes
+  or integrity claims. No prefetch of Project or Entity content.
+- /reality/:projectId: GET /api/human-interface/projects/:projectId. Displays the
+  unchanged canonical Project fields, followed by RealityEntity identity links in
+  response order. The identity disclosure retains all four projected fields.
+  Transport / Snapshot source is a separate section. No counts or inferred status.
+- /reality/:projectId/:entityId: existing Entity read and Explorer, with Projects /
+  Project navigation. The new ENTITY_NOT_IN_SNAPSHOT explanation is limited to
+  membership in the selected verified snapshot, not absence in the world.
+
+Browse owns only route-specific request state and cancellation. Old scope content
+is not rendered while a new scope is loading. Catalog errors are described as
+registry catalog failures, never canonical read results. Project title is obtained
+only from a verified Project Browse response. Qualification is neutral origin
+metadata; saved Project summary text is transported without interpretation.
+
+server.js and vercel.json only add SPA entry routes; no API contract is changed.
+No search/filter/sort, metrics, source ranking, project-wide records, provenance
+traversal, temporal processing or write/action is added. Canonical records, schema,
+registry entries and fixture bytes are unchanged.
+
+Verification: 56 tests PASS across registry, Entity/Browse boundary, existing UI
+and new Browse UI tests. Adapter/core typechecks, focused Human Interface lint,
+Vite build and Foundation verification pass. Full frontend lint has the identical
+36 baseline errors. Full core suite not rerun; 3,753 PASS / 104 FAIL remains the
+previous measured baseline, not a new claim about execution.
+
+Real browser proof on localhost:3003: catalog → each of the three Projects →
+candidate and non-candidate Entity → back navigation. Lists contained 14 / 4 / 42
+identities. B15 Source A remained a normal person Entity with zero related records;
+Round4 candidate and Stark non-candidate retained 23 and 11 Claims respectively.
+390×844 catalog and Project layout checked; Round4 document scrollWidth equalled
+viewport width 390. Unknown Project and Entity absence were checked against real
+server responses. Integrity/catalog failure and delayed loading were checked via
+a disposable localhost:3004 response harness outside the repo, without changing
+snapshot bytes, registry or the production server contract.
+
+The semantic audit corrected a shared error sentence that incorrectly called a
+catalog failure a canonical response failure. HUMAN-003D should audit whether
+users distinguish catalog registration from verified Project content, neutral
+source origin from quality, stored order from importance, and selectable Entities
+from knowledge richness. Hosted deployment and third-party comprehension are
+not established by this checkpoint. HUMAN-003D is not started automatically.
+
+---
+
 # HUMAN-001C — First Reality Explorer
 
 Route: /reality/:projectId/:entityId (also under the existing /ma basename).
