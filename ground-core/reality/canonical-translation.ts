@@ -4,6 +4,7 @@ import type {PatchProposal,ClarificationResponse} from '../extraction/types.js';
 import {validateStatePatch} from '../validate.js';
 import {dryRunPatch} from '../extraction/dry-run.js';
 import type {RealityProposeInput} from './types.js';
+import {wholeIdentityRegistry,resolveWholeName} from './whole-identity.js';
 import {segmentWholeReality,timelineEntry} from './whole-sections.js';
 import {stripDeclaredTimePrefix} from './semantic-times.js';
 import {statedSourceRoles} from './source-roles.js';
@@ -112,7 +113,9 @@ export function proposeCanonicalTranslation(state:ProjectState,input:RealityProp
  const material=units.filter(u=>u.status==='clarification required');if(material.length)return {trace,result:{type:'clarification',project_id:state.project.id,input_text:input.input_text,reason:'Observation subject is unresolved; no alternative subject is chosen.',questions:material.map(u=>`「${u.span}」の参照語は、どの対象を指していますか？`),risk_level:'medium',created_at:now}};
  const common=(id:string)=>({id,project_id:state.project.id,created_at:now,updated_at:now});
  const entities=new Map<string,string>();
- function entity(label:string,kind:string){const key=kind+'|'+label;if(entities.has(key))return entities.get(key)!;const matches=state.reality_entities.filter(x=>x.label===label&&x.kind===kind);const uid=matches.length===1?matches[0].id:fingerprint(state.project.id+'|nl|'+key);entities.set(key,uid);if(matches.length!==1)operations.push({op:'upsert',entity:'reality_entity',entity_id:uid,payload:{...common(uid),kind,label}});return uid;}
+ const wholeRegistry=sections.recognized?wholeIdentityRegistry(sections.entities,sections.body):null;
+ function entity(label:string,kind:string){if(wholeRegistry&&!['semantic_record','text_record','document'].includes(kind)){const resolved=resolveWholeName(wholeRegistry,label);if(resolved.status==='resolved')label=resolved.label;}const key=(wholeRegistry&&['unspecified','person','organization'].includes(kind)?'whole-world':kind)+'|'+label;if(entities.has(key))return entities.get(key)!;const matches=state.reality_entities.filter(x=>x.label===label&&x.kind===kind);const uid=matches.length===1?matches[0].id:fingerprint(state.project.id+'|nl|'+key);entities.set(key,uid);if(matches.length!==1)operations.push({op:'upsert',entity:'reality_entity',entity_id:uid,payload:{...common(uid),kind,label}});return uid;}
+ if(wholeRegistry)for(const name of wholeRegistry.names)entity(name,'unspecified');
  const document=entity('Reality intake '+fingerprint(input.input_text),'text_record');
  const addState=(subject:string,kind:string,value:RealityStateValue,key:string)=>{const uid=fingerprint(state.project.id+'|nl-state|'+key);operations.push({op:'upsert',entity:'reality_state',entity_id:uid,payload:{...common(uid),subject_id:subject,kind,value,valid_from:now,valid_until:null,recorded_at:now}});return uid;};
  units.forEach((u,index)=>{const ids:string[]=[];const key=episode+'|'+input.input_text+'|'+index;const record=entity('Meaning record '+fingerprint(key),'semantic_record');ids.push(record);
