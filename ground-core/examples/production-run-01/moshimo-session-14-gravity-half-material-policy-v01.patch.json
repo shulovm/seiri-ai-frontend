@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "85c60c85-263f-4066-8c2c-0c4a108f45f6",
+      "payload": {
+        "id": "85c60c85-263f-4066-8c2c-0c4a108f45f6",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "重力半分回の生成素材方針v0.1を定義し、初回テスト生成候補をG02/G04/G06に絞る。",
+        "rationale": "session-13で、重力半分回の11カットは生成用カット仕様v0.1へ分解された。次に全カットを一律に生成プロンプト化すると、人体、群衆、交通、工事、都市遠景などの高リスクカットで品質が散る可能性が高い。そのため、まず各カットをVideo-native Cut、Still + Micro Motion、Composite Cut、Establishing Plate + Motion Elements、Sound-led Cutに分類し、素材化の単位を定義する。初回テスト生成は、物理挙動が分かりやすいG02コップ、自然カットの成立を確認するG04公園の噴水、身体運動を確認するG06バスケに絞る。End Residualは、冒頭と呼応するG11寝室シーツ残像を主候補とする。",
+        "alternatives_considered": [
+          "11カットを一律に動画生成する",
+          "高リスクカット（交差点・工事現場・都市遠景）から先にテスト生成する",
+          "End ResidualをB（歩道の落ち葉）またはC（公園の水滴）にする"
+        ],
+        "status": "active",
+        "decided_at": "2026-06-29T13:55:00.000Z",
+        "created_at": "2026-06-29T13:55:00.000Z",
+        "updated_at": "2026-06-29T13:55:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "3c4be744-cbb4-431e-8552-9d3ccab5eb99",
+      "payload": {
+        "id": "3c4be744-cbb4-431e-8552-9d3ccab5eb99",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "session-14: 重力半分回 生成素材方針 v0.1",
+        "body": "session-14。\n\nsession-13で作成した重力半分回の生成用カット仕様v0.1をもとに、生成素材方針v0.1を定義した。\n\n今回の目的:\n画像生成プロンプトや動画生成プロンプトを書くことではなく、11カットをどの素材タイプで扱うか、どの単位で分割するか、どのカットを最初にテスト生成するかを整理すること。\n\n素材タイプ:\nVideo-native Cut、Still + Micro Motion、Composite Cut、Establishing Plate + Motion Elements、Sound-led Cut、Test Candidate、High Risk Cut。\n\n11カット方針:\nG01 起床はVideo-native / High Risk。人物の浮きとシーツの制御が難しいため初回テストにはしない。\nG02 コップはVideo-native / Test Candidate。重力半分の物理挙動テストに最適。\nG03 通りはComposite / High Risk。群衆と小物が絡むため分割素材化する。\nG04 公園の噴水はComposite / Test Candidate。噴水、水滴、鳥、落ち葉を分けて考える。\nG05 交差点はComposite / High Risk。事故化しやすいため初回テストにはしない。\nG06 バスケはVideo-native / Test Candidate。身体運動の成立確認に向く。\nG07 工事現場はComposite / High Risk。建設事故化しやすいため後回し。\nG08 都市遠景はEstablishing Plate + Motion Elements / High Risk。動画生成だけに頼らない。\nG09 周辺の静けさはStill + Micro Motion / Sound-led Cut。\nG10 街の端はStill + Micro Motion / Sound-led Cut。\nG11 残像はStill + Micro Motion / Sound-led Cut。End Residual主候補は、朝の寝室に戻りシーツの端だけがまだ宙にある案。\n\n初回テスト生成候補:\n1. G02 コップ / 落下が遅い\n2. G04 公園の噴水 / 水滴・鳥・落ち葉が軽い\n3. G06 バスケ / 飛びすぎる\n\n補助テスト候補:\nG11 寝室シーツ残像。\n\nリスク分類:\n低リスク = G02、G09、G10、G11。\n中リスク = G04、G06。\n高リスク = G01、G03、G05、G07、G08。\n\n素材方針まとめ:\n11カットを一律に動画生成しない。G02/G04/G06を初回テスト生成候補にする。G11寝室シーツ残像をEnd Residual主候補にする。G03/G05/G07/G08は高リスクのため後回しにして分割素材化する。G09/G10/G11は静止画＋微細モーション＋音で成立させる。Cut04公園自然カットは1素材に詰め込まず、噴水・水滴・鳥・落ち葉に分けて考える。都市遠景は動画生成だけに頼らず、Establishing Plate + Motion Elementsで扱う。\n\n規格本文:\ndocs/MOSHIMO_VIDEO_01_GRAVITY_HALF_MATERIAL_POLICY_V0.1.md（生成素材方針v0.1完全版）\ndocs/MOSHIMO_VIDEO_01_GRAVITY_HALF_GENERATION_CUT_SPEC_V0.1.md（生成素材方針へ分解済みの注記を追記）",
+        "source": "manual",
+        "observed_at": "2026-06-29T13:55:00.000Z",
+        "created_at": "2026-06-29T13:55:00.000Z",
+        "updated_at": "2026-06-29T13:55:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "f171bd5c-4d79-43ef-872c-adf82ec828b7",
+      "payload": {
+        "id": "f171bd5c-4d79-43ef-872c-adf82ec828b7",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "blocker_id": null,
+        "depends_on_action_id": "97700398-e2e7-4095-9381-73b518c153ab",
+        "title": "重力半分回のテスト生成プロンプトを作る",
+        "description": "intent: design。生成素材方針v0.1で決めたテスト対象カット（G02コップ / G04公園の噴水 / G06バスケ、補助G11寝室シーツ残像）をもとに、最小限のテスト生成プロンプトを作る。本番全カットのプロンプト作成ではなく、まず勝ち筋を確認するためのテスト生成用プロンプトに絞る。各テストの成功条件・失敗時の修正方針・生成順も決める。まだ本番生成・全カットプロンプト化・制作順の完全確定には進まない。",
+        "status": "pending",
+        "due_at": null,
+        "sort_order": 9,
+        "created_at": "2026-06-29T13:55:00.000Z",
+        "updated_at": "2026-06-29T13:55:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "d6b9b143-829b-494f-970c-d0010164c922",
+      "payload": {
+        "id": "d6b9b143-829b-494f-970c-d0010164c922",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "blocker_id": null,
+        "depends_on_action_id": "f171bd5c-4d79-43ef-872c-adf82ec828b7",
+        "title": "編集順序を決める",
+        "description": null,
+        "status": "pending",
+        "due_at": null,
+        "sort_order": 10,
+        "created_at": "2026-06-24T15:21:05.099Z",
+        "updated_at": "2026-06-29T13:55:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "bac1b350-a506-4c82-9cfd-f4128c616ffd",
+      "payload": {
+        "primary_next_action_id": "f171bd5c-4d79-43ef-872c-adf82ec828b7",
+        "summary": "第1本目のテーマ「もしも地球の重力が半分になったら？」は、もしも動画シリーズ文法 v0.2.1 により Global Physical Field / Body-first / Portal不要として分類済み。session-12では、60秒映像台本v0.1をレビューし、階段・サッカー・高架道路を削除、公園の噴水・鳥・落ち葉の自然カットを追加して、11カット版v0.2を作成した。session-13では、この11カット版v0.2を生成用カット仕様v0.1へ分解した。session-14では、生成素材方針v0.1を定義し、11カットをVideo-native Cut、Still + Micro Motion、Composite Cut、Establishing Plate + Motion Elements、Sound-led Cutへ分類した。初回テスト生成候補はG02コップ、G04公園の噴水、G06バスケに絞り、End ResidualはG11寝室シーツ残像を主候補とした。まだ画像生成プロンプトや動画生成プロンプトは作成していない。次は、重力半分回のテスト生成プロンプトを作る。"
+      }
+    },
+    {
+      "op": "status_change",
+      "entity": "next_action",
+      "entity_id": "97700398-e2e7-4095-9381-73b518c153ab",
+      "status": "done"
+    }
+  ]
+}

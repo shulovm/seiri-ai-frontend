@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "status_change",
+      "entity": "next_action",
+      "entity_id": "ffc75000-6ed5-45e0-840d-3dff15437a02",
+      "status": "done"
+    },
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "fc5d74b9-1699-47c3-ab56-3ea639909a48",
+      "payload": {
+        "id": "fc5d74b9-1699-47c3-ab56-3ea639909a48",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "冒頭3秒のフックを、静かな寝室で男が起き上がった瞬間に体が浮き、頭が天井に近づく直前で切るカットに決定する。",
+        "rationale": "普通の朝という日常状態から始め、起き上がるだけで体が浮く異常を見せることで、説明なしに重力半分の世界を伝えられるため。衝突音の直前で切ることで、事件発生の瞬間をフックにし、次カットへの引きを作れるため。",
+        "alternatives_considered": [],
+        "status": "active",
+        "decided_at": "2026-06-25T06:28:18.429Z",
+        "created_at": "2026-06-25T06:28:18.429Z",
+        "updated_at": "2026-06-25T06:28:18.429Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "191d6a9c-69f0-4eb1-a082-9120d39049b0",
+      "payload": {
+        "id": "191d6a9c-69f0-4eb1-a082-9120d39049b0",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "冒頭3秒フックカット設計方針",
+        "body": "冒頭3秒は、説明文ではなく「通常状態 → 違和感 → 事件直前」のフックカットとして設計する。\n最初の0.5〜1秒で普通の朝を見せ、次に体が浮く違和感を出し、頭が天井に近づく事件直前で切る。\nこの方針により、視聴者に説明で理解させるのではなく、動画を見ただけで世界のルールが壊れていると感じさせる。",
+        "source": "manual",
+        "observed_at": "2026-06-25T06:28:18.429Z",
+        "created_at": "2026-06-25T06:28:18.429Z",
+        "updated_at": "2026-06-25T06:28:18.429Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "10c75b95-a3d0-4dd5-a0fc-028122310d25",
+      "payload": {
+        "id": "10c75b95-a3d0-4dd5-a0fc-028122310d25",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "次Action粒度の見直し（短い現象カット）",
+        "body": "Production Run 01のシリーズ文法v0.1では、当初seedにあった「6〜8カットに分解する」という粒度は狭すぎる。\n今後は固定の6〜8カットではなく、短い現象カットを多めに積む方針にする。\n次Actionは「短い現象カットに分解する」として扱う。",
+        "source": "manual",
+        "observed_at": "2026-06-25T06:28:18.429Z",
+        "created_at": "2026-06-25T06:28:18.429Z",
+        "updated_at": "2026-06-25T06:28:18.429Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "3ac7a73e-26ff-4524-8fba-913cd3aab0fe",
+      "payload": {
+        "title": "短い現象カットに分解する"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "bac1b350-a506-4c82-9cfd-f4128c616ffd",
+      "payload": {
+        "primary_next_action_id": "3ac7a73e-26ff-4524-8fba-913cd3aab0fe",
+        "summary": "第1本目のテーマは「もしも地球の重力が半分になったら？」に決定済み。1行コンセプトは「重力が半分になった世界を『生活・都市・スポーツ・危険』の4要素に絞って60秒で見せる」。60秒構成は、小さな室内の異変から都市規模の連鎖へ拡大する異常拡大型に決定済み。冒頭3秒は、静かな寝室で男が起き上がった瞬間に体が浮き、頭が天井に近づく直前で切るフックカットに決定済み。次は短い現象カットに分解する。"
+      }
+    }
+  ]
+}

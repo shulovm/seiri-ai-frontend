@@ -1,0 +1,313 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "34092589-569a-4eec-923d-a105b6b1402c",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "project",
+      "entity_id": "34092589-569a-4eec-923d-a105b6b1402c",
+      "payload": {
+        "summary": "ProjectState を中心に、人間の自然文を状態へ変換し、単一Project / 複数Projectの次の一手を説明付きで推薦する、さく個人用思考OSの中核。"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "goal",
+      "entity_id": "a1111111-1111-4111-8111-111111111111",
+      "payload": {
+        "id": "a1111111-1111-4111-8111-111111111111",
+        "project_id": "34092589-569a-4eec-923d-a105b6b1402c",
+        "parent_goal_id": null,
+        "title": "v0.5 GROUND Studio の設計に進む",
+        "description": "v0.4 までで記録・抽出・監督・Portfolio推薦が動いたため、次は GROUND Studio としてどこまでを v0.5 に含めるか設計する。",
+        "status": "active",
+        "priority": 1,
+        "sort_order": 0,
+        "created_at": "2026-06-07T03:16:22.045Z",
+        "updated_at": "2026-06-07T07:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "97c9bf64-12c3-4155-9868-7fbbd11a783b",
+      "payload": {
+        "primary_goal_id": "a1111111-1111-4111-8111-111111111111",
+        "primary_next_action_id": "c3333333-3333-4333-8333-333333333401",
+        "phase": "v0.4_completed",
+        "summary": "GROUND Core は v0.4 Multi Project Director まで到達。自然文→SemanticEvent→Resolver→HumanReview→Patch→Director→PortfolioRecommendation までCLIで動作し、FreeWater / Momotaro / GROUND Core の3Projectを横断して今日の一手を推薦できる。",
+        "confidence": 0.9
+      }
+    },
+    {
+      "op": "status_change",
+      "entity": "blocker",
+      "entity_id": "b2222222-2222-4222-8222-222222222222",
+      "status": "resolved"
+    },
+    {
+      "op": "upsert",
+      "entity": "blocker",
+      "entity_id": "b2222222-2222-4222-8222-222222222301",
+      "payload": {
+        "id": "b2222222-2222-4222-8222-222222222301",
+        "project_id": "34092589-569a-4eec-923d-a105b6b1402c",
+        "goal_id": "a1111111-1111-4111-8111-111111111111",
+        "title": "v0.5 の範囲が未確定",
+        "description": "GROUND Studio を v0.5 とする場合、Review UI、Director→propose連携、project間dependency、Goal Graph のどこまでを含めるか決める必要がある。",
+        "severity": "high",
+        "status": "open",
+        "created_at": "2026-06-07T07:00:00.000Z",
+        "updated_at": "2026-06-07T07:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "blocker",
+      "entity_id": "b2222222-2222-4222-8222-222222222302",
+      "payload": {
+        "id": "b2222222-2222-4222-8222-222222222302",
+        "project_id": "34092589-569a-4eec-923d-a105b6b1402c",
+        "goal_id": "a1111111-1111-4111-8111-111111111111",
+        "title": "GROUND Core と GROUND 本体の接続方針が未確定",
+        "description": "Core はCLIで動くが、ground.ink 本体や将来UIとどう接続するかはまだ決まっていない。",
+        "severity": "medium",
+        "status": "open",
+        "created_at": "2026-06-07T07:00:00.000Z",
+        "updated_at": "2026-06-07T07:00:00.000Z"
+      }
+    },
+    {
+      "op": "delete",
+      "entity": "next_action",
+      "entity_id": "c3333333-3333-4333-8333-333333333301"
+    },
+    {
+      "op": "delete",
+      "entity": "next_action",
+      "entity_id": "c3333333-3333-4333-8333-333333333302"
+    },
+    {
+      "op": "delete",
+      "entity": "next_action",
+      "entity_id": "c3333333-3333-4333-8333-333333333303"
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "c3333333-3333-4333-8333-333333333401",
+      "payload": {
+        "id": "c3333333-3333-4333-8333-333333333401",
+        "project_id": "34092589-569a-4eec-923d-a105b6b1402c",
+        "goal_id": "a1111111-1111-4111-8111-111111111111",
+        "blocker_id": "b2222222-2222-4222-8222-222222222301",
+        "depends_on_action_id": null,
+        "title": "v0.5 GROUND Studio の範囲を定義する",
+        "description": "v0.5 に含めるもの・含めないものを決める。",
+        "status": "pending",
+        "due_at": null,
+        "sort_order": 0,
+        "created_at": "2026-06-07T07:00:00.000Z",
+        "updated_at": "2026-06-07T07:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "c3333333-3333-4333-8333-333333333402",
+      "payload": {
+        "id": "c3333333-3333-4333-8333-333333333402",
+        "project_id": "34092589-569a-4eec-923d-a105b6b1402c",
+        "goal_id": "a1111111-1111-4111-8111-111111111111",
+        "blocker_id": null,
+        "depends_on_action_id": "c3333333-3333-4333-8333-333333333401",
+        "title": "Review UI と Director 連携の優先順位を決める",
+        "description": "先にUIを作るか、Director→propose連携を作るかを判断する。",
+        "status": "pending",
+        "due_at": null,
+        "sort_order": 1,
+        "created_at": "2026-06-07T07:00:00.000Z",
+        "updated_at": "2026-06-07T07:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "next_action",
+      "entity_id": "c3333333-3333-4333-8333-333333333403",
+      "payload": {
+        "id": "c3333333-3333-4333-8333-333333333403",
+        "project_id": "34092589-569a-4eec-923d-a105b6b1402c",
+        "goal_id": "a1111111-1111-4111-8111-111111111111",
+        "blocker_id": "b2222222-2222-4222-8222-222222222302",
+        "depends_on_action_id": "c3333333-3333-4333-8333-333333333402",
+        "title": "GROUND Core と GROUND 本体の接続方針を整理する",
+        "description": "CLI Core をWeb本体に接続する場合の境界・API・保存責任を整理する。",
+        "status": "pending",
+        "due_at": null,
+        "sort_order": 2,
+        "created_at": "2026-06-07T07:00:00.000Z",
+        "updated_at": "2026-06-07T07:00:00.000Z"
+      }
+    },
+    {
+      "op": "status_change",
+      "entity": "decision",
+      "entity_id": "d4444444-4444-4444-8444-444444444401",
+      "status": "superseded"
+    },
+    {
+      "op": "status_change",
+      "entity": "decision",
+      "entity_id": "d4444444-4444-4444-8444-444444444402",
+      "status": "superseded"
+    },
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "d4444444-4444-4444-8444-444444444403",
+      "payload": {
+        "id": "d4444444-4444-4444-8444-444444444403",
+        "project_id": "34092589-569a-4eec-923d-a105b6b1402c",
+        "goal_id": "a1111111-1111-4111-8111-111111111111",
+        "title": "v0.4 までは LLM API を使わず rule-based で進めた",
+        "rationale": "意味抽出・推薦・安全ゲートの構造を先に固めるため。",
+        "alternatives_considered": [],
+        "status": "active",
+        "decided_at": "2026-06-07T07:00:00.000Z",
+        "created_at": "2026-06-07T07:00:00.000Z",
+        "updated_at": "2026-06-07T07:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "d4444444-4444-4444-8444-444444444404",
+      "payload": {
+        "id": "d4444444-4444-4444-8444-444444444404",
+        "project_id": "34092589-569a-4eec-923d-a105b6b1402c",
+        "goal_id": "a1111111-1111-4111-8111-111111111111",
+        "title": "自動保存・自動適用は禁止を維持する",
+        "rationale": "人間の決定権を守り、GROUND が勝手に状態を書き換えないため。",
+        "alternatives_considered": [],
+        "status": "active",
+        "decided_at": "2026-06-07T07:00:00.000Z",
+        "created_at": "2026-06-07T07:00:00.000Z",
+        "updated_at": "2026-06-07T07:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "d4444444-4444-4444-8444-444444444405",
+      "payload": {
+        "id": "d4444444-4444-4444-8444-444444444405",
+        "project_id": "34092589-569a-4eec-923d-a105b6b1402c",
+        "goal_id": "a1111111-1111-4111-8111-111111111111",
+        "title": "v0.4 時点では Portfolio Director は patch を生成しない",
+        "rationale": "Portfolio の役割は今日の一手の推薦であり、状態変更は人間承認と既存 patch CLI に限定するため。",
+        "alternatives_considered": [],
+        "status": "active",
+        "decided_at": "2026-06-07T07:00:00.000Z",
+        "created_at": "2026-06-07T07:00:00.000Z",
+        "updated_at": "2026-06-07T07:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "hypothesis",
+      "entity_id": "e5555555-5555-4555-8555-555555555501",
+      "payload": {
+        "id": "e5555555-5555-4555-8555-555555555501",
+        "project_id": "34092589-569a-4eec-923d-a105b6b1402c",
+        "goal_id": "a1111111-1111-4111-8111-111111111111",
+        "statement": "v0.5 では Review UI より先に Director→propose 連携を設計した方が、GROUND Studio 化に近づく。",
+        "status": "untested",
+        "evidence_for": [],
+        "evidence_against": [],
+        "created_at": "2026-06-07T03:16:22.045Z",
+        "updated_at": "2026-06-07T07:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "hypothesis",
+      "entity_id": "e5555555-5555-4555-8555-555555555502",
+      "payload": {
+        "id": "e5555555-5555-4555-8555-555555555502",
+        "project_id": "34092589-569a-4eec-923d-a105b6b1402c",
+        "goal_id": "a1111111-1111-4111-8111-111111111111",
+        "statement": "GROUND Core をWeb本体に接続する前に、CLIで v0.5 の責務を定義した方が設計が歪みにくい。",
+        "status": "untested",
+        "evidence_for": [],
+        "evidence_against": [],
+        "created_at": "2026-06-07T03:16:22.045Z",
+        "updated_at": "2026-06-07T07:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reference_doc",
+      "entity_id": "a0101010-0101-4101-8101-010101010101",
+      "payload": {
+        "id": "a0101010-0101-4101-8101-010101010101",
+        "project_id": "34092589-569a-4eec-923d-a105b6b1402c",
+        "title": "GROUND Core v0.2.3 Status Report",
+        "path": "docs/GROUND_CORE_V0.2.3_STATUS_REPORT.md",
+        "kind": "manual_run",
+        "summary": "v0.1.0 から v0.2.3 までの到達点整理。",
+        "status": "active",
+        "created_at": "2026-06-07T07:00:00.000Z",
+        "updated_at": "2026-06-07T07:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reference_doc",
+      "entity_id": "a0202020-0202-4202-8202-020202020202",
+      "payload": {
+        "id": "a0202020-0202-4202-8202-020202020202",
+        "project_id": "34092589-569a-4eec-923d-a105b6b1402c",
+        "title": "GROUND Core v0.3 Director Engine",
+        "path": "docs/GROUND_CORE_V0.3_DIRECTOR_ENGINE.md",
+        "kind": "manual_run",
+        "summary": "単一 Project の次の一手を推薦する Director Engine 実装。",
+        "status": "active",
+        "created_at": "2026-06-07T07:00:00.000Z",
+        "updated_at": "2026-06-07T07:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reference_doc",
+      "entity_id": "a0303030-0303-4303-8303-030303030303",
+      "payload": {
+        "id": "a0303030-0303-4303-8303-030303030303",
+        "project_id": "34092589-569a-4eec-923d-a105b6b1402c",
+        "title": "GROUND Core v0.4 Multi Project Director",
+        "path": "docs/GROUND_CORE_V0.4_MULTI_PROJECT_DIRECTOR.md",
+        "kind": "manual_run",
+        "summary": "複数 Project を横断して今日の一手を推薦する Portfolio Director 実装。",
+        "status": "active",
+        "created_at": "2026-06-07T07:00:00.000Z",
+        "updated_at": "2026-06-07T07:00:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "reference_doc",
+      "entity_id": "a0404040-0404-4404-8404-040404040404",
+      "payload": {
+        "id": "a0404040-0404-4404-8404-040404040404",
+        "project_id": "34092589-569a-4eec-923d-a105b6b1402c",
+        "title": "GROUND Core v0.4 Portfolio Manual Run",
+        "path": "docs/GROUND_CORE_V0.4_PORTFOLIO_MANUAL_RUN.md",
+        "kind": "manual_run",
+        "summary": "3 project 横断 Portfolio Director の manual run ログ。",
+        "status": "active",
+        "created_at": "2026-06-07T07:00:00.000Z",
+        "updated_at": "2026-06-07T07:00:00.000Z"
+      }
+    }
+  ]
+}

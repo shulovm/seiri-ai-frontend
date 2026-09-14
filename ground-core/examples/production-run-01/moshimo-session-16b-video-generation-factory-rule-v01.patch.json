@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "99e35c98-d27b-4107-acac-829fcf22248c",
+      "payload": {
+        "id": "99e35c98-d27b-4107-acac-829fcf22248c",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "動画生成アップデートを前提に、もしも動画工場ではPrimitive + Reference Frame + Correction / Improvement / NGA の運用を標準化する。",
+        "rationale": "session-16AのG02評価では、Text-to-Video一発生成だけでは、構図、物体、水、落下、床、衝突直前カットを同時に制御しにくいことが分かった。一方で、良かった生成フレームを参照し、Correction / Improvement / NGAで動作だけを修正するFrame-guided correction方式は、構図を固定したまま生成結果を育てられるため、1000本工場の制作運用に適している。最近の動画生成モデルは、参照画像、Image-to-Video、モーション制御、修正生成の方向が強くなっているため、もしも動画工場では、Text-to-Video一発生成を標準にせず、Primitiveを定義し、Reference Frameを保存し、Correction / Improvement / NGAで修正し、Adopt / Retry / Redesign / Dropで評価する運用を標準化する。",
+        "alternatives_considered": [
+          "Text-to-Video一発生成を標準運用にする",
+          "1つの生成ツールに固定する",
+          "G02の学びをG02だけに閉じ、工場ルールへ拡張しない",
+          "G02をさらに深掘りしてからG06へ進む"
+        ],
+        "status": "active",
+        "decided_at": "2026-08-11T04:50:00.000Z",
+        "created_at": "2026-08-11T04:50:00.000Z",
+        "updated_at": "2026-08-11T04:50:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "8076bf34-ff34-46c3-8e73-3abb6eeb07b8",
+      "payload": {
+        "id": "8076bf34-ff34-46c3-8e73-3abb6eeb07b8",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "session-16B: 動画生成アップデート前提の工場運用ルール v0.1 / G06評価へ進む準備",
+        "body": "session-16B。\n\nsession-16Aで得たG02評価の学びを、もしも動画工場全体の生成運用ルールとして整理した。\n\n背景:\nG02では、Text-to-Video一発生成だけでは、グラスの落下方向、縦落ち回避、浮遊感の回避、水の自然なこぼれ、衝突直前カットを安定して制御しにくいことが分かった。一方で、良い生成フレームをReference Frameとして保存し、Correction / Improvement / NGAで動作だけを修正するFrame-guided correction方式が有効だった。\n\n工場運用ルール:\nText-to-Video一発生成を標準にしない。\nまずPrimitiveを定義する。\n良いフレームをReference Frameとして残す。\nCorrection / Improvement / NGAで動作を直す。\n生成結果はAdopt / Retry / Redesign / Dropで評価する。\n失敗もPrimitiveログとして保存する。\nKling / Runway / Luma / Veoをカットの性質に応じて使い分ける。\n1カットの完成より、1000本に再利用できる現象部品を残すことを優先する。\n\nツール役割分担:\nKlingは実験場。\nRunwayは本命の映像制作母艦候補。\nLumaは自然・余韻・静かなカット向き。\nVeoは後段候補。\n\n現在のPrimitive整理:\nG02 = Domestic Tip-Spill Primitive v0.1。Adopt候補 / Retry継続。\nG06 = Low Gravity Jump Primitive。次に評価する。\nG04 = Nature Half-Gravity Primitive。G04-A/B/Cに分割して評価する。\nG11 = Residual Micro Motion Primitive。後続評価。\n\n次の方針:\nG02はAdopt候補 / Retry継続として保存済みのため、次はG06バスケへ進み、身体運動系Primitiveの勝ち筋を確認する。\nG06では、普通のジャンプが高すぎる、リング基準で高さが読める、滞空が長い、スーパーヒーロー化しない、人体破綻しない、という点を見る。\n\n規格本文:\ndocs/MOSHIMO_VIDEO_GENERATION_FACTORY_RULE_V0.1.md（Video Generation Factory Rule v0.1完全版）\ndocs/MOSHIMO_VIDEO_01_GRAVITY_HALF_G02_TEST_EVALUATION_V0.1.md（工場ルールへ拡張済みの注記を追記）",
+        "source": "manual",
+        "observed_at": "2026-08-11T04:50:00.000Z",
+        "created_at": "2026-08-11T04:50:00.000Z",
+        "updated_at": "2026-08-11T04:50:00.000Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "bac1b350-a506-4c82-9cfd-f4128c616ffd",
+      "payload": {
+        "summary": "第1本目のテーマ「もしも地球の重力が半分になったら？」は、もしも動画シリーズ文法 v0.2.1 により Global Physical Field / Body-first / Portal不要として分類済み。session-12では11カット版v0.2を作成し、session-13では生成用カット仕様v0.1、session-14では生成素材方針v0.1、session-15ではG02/G06/G04-A/B/C/G11のテスト生成プロンプトv0.1を作成した。session-16AではG02コップ落下テストの途中評価を行い、G02をDomestic Tip-Spill Primitive v0.1として保存した。session-16Bでは、最近の動画生成アップデートを前提に、もしも動画工場の生成運用ルールv0.1を定義した。今後はText-to-Video一発生成を標準にせず、Primitiveを作り、Reference Frameを保存し、Correction / Improvement / NGAで動作を修正し、Adopt / Retry / Redesign / Dropで評価する。Klingは実験場、Runwayは本命の映像制作母艦候補、Lumaは自然・余韻向き、Veoは後段候補として使い分ける。現在のprimary action「重力半分回の初回テスト生成結果を評価する」はまだpendingのまま維持する。次はG06バスケへ進み、Low Gravity Jump Primitiveの勝ち筋を確認する。"
+      }
+    }
+  ]
+}

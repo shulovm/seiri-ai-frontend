@@ -1,0 +1,17 @@
+
+> seiri-ai-frontend@0.0.0 ground-core
+> tsx ground-core/cli.ts propose *** --text もう無理、やめたい
+
+{
+  "type": "clarification",
+  "project_id": "28d83a68-2064-43d7-94cb-72656b9006de",
+  "input_text": "もう無理、やめたい",
+  "reason": "感情・一時判断の可能性があるため、自動で停止判定しない",
+  "questions": [
+    "今日は一旦 hold にする？",
+    "revise として方針修正にする？",
+    "本当に stop 判断として記録したい？"
+  ],
+  "risk_level": "high",
+  "created_at": "2026-06-07T05:30:24.907Z"
+}

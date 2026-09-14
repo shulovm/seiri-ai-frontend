@@ -1,0 +1,111 @@
+/**
+ * Reality Core v0.7 — Attention Observation Operational Eligibility
+ * Canonical per-requirement RESOURCE_READINESS Binding Evidence Composition
+ * State types (GROUND-151).
+ *
+ * Derived only. Not persisted.
+ *
+ * GROUND-150 Result Interpretation Basis
+ * → Canonical per-requirement Binding Evidence Composition State only.
+ *
+ * EXPLICITLY_INTERPRETED_*_COMPOSITION_* ≠ RESOURCE_READY / NOT_READY
+ * UNRESOLVED_NO_CURRENT_RESULT ≠ NEGATIVE
+ * UNRESOLVED_NO_POLICY ≠ NEGATIVE
+ * UNRESOLVED_NO_MAPPING ≠ NEGATIVE
+ * NOT_APPLICABLE ≠ UNRESOLVED
+ * canonical State ≠ true Resource Readiness / OE Source / Dimension Satisfaction
+ */
+
+import type {
+  AttentionCandidateObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationBasisAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationBasisRequirementAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationBasisSetAssessment,
+} from "./attention-observation-operational-eligibility-resource-readiness-binding-evidence-composition-result-interpretation-basis-types.js";
+
+/**
+ * Exactly one semantic input — GROUND-150 only.
+ */
+export interface AttentionObservationOperationalEligibilityCanonicalPerRequirementResourceReadinessBindingEvidenceCompositionStateEvalInput {
+  resource_readiness_binding_evidence_composition_result_interpretation_basis_set: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationBasisSetAssessment;
+}
+
+/**
+ * Exact six canonical values — do not collapse unresolved causes.
+ * No RESOURCE_READY / RESOURCE_NOT_READY / SATISFIED / AVAILABLE / FEASIBLE.
+ */
+export type AttentionObservationOperationalEligibilityCanonicalPerRequirementResourceReadinessBindingEvidenceCompositionStateValue =
+  | "NOT_APPLICABLE_NO_EXPLICIT_RESOURCE_READINESS_BINDING_EVIDENCE_COMPOSITION_POLICY"
+  | "EXPLICITLY_INTERPRETED_RESOURCE_READINESS_BINDING_EVIDENCE_COMPOSITION_POSITIVE"
+  | "EXPLICITLY_INTERPRETED_RESOURCE_READINESS_BINDING_EVIDENCE_COMPOSITION_NEGATIVE"
+  | "UNRESOLVED_NO_CURRENT_RESOURCE_READINESS_BINDING_EVIDENCE_COMPOSITION_RESULT"
+  | "UNRESOLVED_NO_EXPLICIT_RESOURCE_READINESS_BINDING_EVIDENCE_COMPOSITION_RESULT_INTERPRETATION_POLICY"
+  | "UNRESOLVED_NO_EXPLICIT_RESOURCE_READINESS_BINDING_EVIDENCE_COMPOSITION_RESULT_INTERPRETATION_MAPPING_FOR_CURRENT_COMPOSITION_RESULT";
+
+/**
+ * Canonical per-requirement Binding Evidence Composition State.
+ * Narrow logical evidence-composition domain only.
+ */
+export interface AttentionObservationOperationalEligibilityCanonicalPerRequirementResourceReadinessBindingEvidenceCompositionState {
+  key: string;
+  candidate_key: string;
+  observation_need_key: string;
+  capability_requirement_set_key: string;
+  dimension: "RESOURCE_READINESS";
+  observation_resource_requirement_key: string;
+  value: AttentionObservationOperationalEligibilityCanonicalPerRequirementResourceReadinessBindingEvidenceCompositionStateValue;
+  resource_readiness_binding_evidence_composition_policy_key: string | null;
+  resource_readiness_binding_evidence_composition_result_interpretation_basis_key: string | null;
+}
+
+export type AttentionObservationOperationalEligibilityCanonicalPerRequirementResourceReadinessBindingEvidenceCompositionStateModelLimitation =
+  | "MULTIPLE_BINDING_COMPOSITION_GROUPS_PER_REQUIREMENT_NOT_MODELED"
+  | "NESTED_BOOLEAN_BINDING_COMPOSITION_NOT_MODELED"
+  | "PHYSICAL_RESOURCE_BINDING_ROLE_NOT_MODELED"
+  | "OBSERVATION_RESOURCE_QUANTITY_RELATION_NOT_MODELED"
+  | "RESOURCE_QUANTITY_CONTRIBUTION_NOT_MODELED"
+  | "RESOURCE_FUNGIBILITY_NOT_MODELED"
+  | "RESOURCE_SUBSTITUTION_NOT_MODELED"
+  | "OBSERVATION_RESOURCE_RESERVATION_EVIDENCE_NOT_INCLUDED"
+  | "OBSERVATION_RESOURCE_COMMITMENT_EVIDENCE_NOT_INCLUDED"
+  | "OBSERVATION_RESOURCE_CONTENTION_EVIDENCE_NOT_INCLUDED"
+  | "TRUE_PER_REQUIREMENT_RESOURCE_READINESS_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_DIMENSION_SATISFACTION_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_FEASIBILITY_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_CROSS_DIMENSION_COMPOSITION_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_STATE_NOT_MODELED"
+  | "CAN_EXECUTE_NOT_MODELED"
+  | "EXECUTION_NOT_MODELED";
+
+export interface AttentionObservationOperationalEligibilityCanonicalPerRequirementResourceReadinessBindingEvidenceCompositionStateRequirementAssessment {
+  observation_resource_requirement_key: string;
+  result_interpretation_basis_assessment: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationBasisRequirementAssessment;
+  canonical_state: AttentionObservationOperationalEligibilityCanonicalPerRequirementResourceReadinessBindingEvidenceCompositionState;
+  canonical_state_value: AttentionObservationOperationalEligibilityCanonicalPerRequirementResourceReadinessBindingEvidenceCompositionStateValue;
+}
+
+/**
+ * Candidate-level canonical State assessment.
+ * Summary booleans are existence only across Requirements.
+ * No Candidate verdict / aggregate Resource Readiness.
+ */
+export interface AttentionCandidateObservationOperationalEligibilityCanonicalPerRequirementResourceReadinessBindingEvidenceCompositionStateAssessment {
+  candidate_key: string;
+  resource_readiness_binding_evidence_composition_result_interpretation_basis_assessment: AttentionCandidateObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationBasisAssessment;
+  requirement_canonical_state_assessments: AttentionObservationOperationalEligibilityCanonicalPerRequirementResourceReadinessBindingEvidenceCompositionStateRequirementAssessment[];
+  has_explicitly_interpreted_resource_readiness_binding_evidence_composition_positive_states: boolean;
+  has_explicitly_interpreted_resource_readiness_binding_evidence_composition_negative_states: boolean;
+  has_unresolved_resource_readiness_binding_evidence_composition_states: boolean;
+  has_not_applicable_resource_readiness_binding_evidence_composition_states: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityCanonicalPerRequirementResourceReadinessBindingEvidenceCompositionStateModelLimitation[];
+}
+
+export interface AttentionObservationOperationalEligibilityCanonicalPerRequirementResourceReadinessBindingEvidenceCompositionStateSetAssessment {
+  resource_readiness_binding_evidence_composition_result_interpretation_basis_set: AttentionObservationOperationalEligibilityResourceReadinessBindingEvidenceCompositionResultInterpretationBasisSetAssessment;
+  candidate_assessments: AttentionCandidateObservationOperationalEligibilityCanonicalPerRequirementResourceReadinessBindingEvidenceCompositionStateAssessment[];
+  has_explicitly_interpreted_resource_readiness_binding_evidence_composition_positive_states: boolean;
+  has_explicitly_interpreted_resource_readiness_binding_evidence_composition_negative_states: boolean;
+  has_unresolved_resource_readiness_binding_evidence_composition_states: boolean;
+  has_not_applicable_resource_readiness_binding_evidence_composition_states: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityCanonicalPerRequirementResourceReadinessBindingEvidenceCompositionStateModelLimitation[];
+}

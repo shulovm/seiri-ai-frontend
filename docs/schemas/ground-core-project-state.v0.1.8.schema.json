@@ -1,0 +1,2166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ground.ink/schemas/ground-core/project-state/v0.1.8",
+  "title": "GROUND Core ProjectState",
+  "description": "Project Graph / State Engine with Reality + Epistemic + Reference + Objective + Prospective + Impact Core + Impact Measurement.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project",
+    "goals",
+    "current_state",
+    "blockers",
+    "next_actions",
+    "decisions",
+    "hypotheses",
+    "reference_docs",
+    "observations",
+    "judgments",
+    "goal_edges",
+    "reality_entities",
+    "reality_events",
+    "reality_states",
+    "epistemic_observations",
+    "evidence",
+    "claims",
+    "claim_evidence_links",
+    "reference_conditions",
+    "reality_objectives",
+    "objective_requirements",
+    "objective_dependencies",
+    "future_scenarios",
+    "scenario_state_projections",
+    "scenario_likelihood_estimates",
+    "impact_declarations",
+    "impact_measure_declarations",
+    "extensions",
+    "updated_at"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.8"
+    },
+    "project": {
+      "$ref": "#/$defs/project"
+    },
+    "goals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/goal"
+      }
+    },
+    "current_state": {
+      "$ref": "#/$defs/current_state"
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/blocker"
+      }
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/next_action"
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/decision"
+      }
+    },
+    "hypotheses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/hypothesis"
+      }
+    },
+    "reference_docs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reference_doc"
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "judgments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/judgment"
+      }
+    },
+    "goal_edges": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/goal_edge"
+      }
+    },
+    "reality_entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reality_entity"
+      }
+    },
+    "reality_events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reality_event"
+      }
+    },
+    "reality_states": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reality_state"
+      }
+    },
+    "extensions": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "$ref": "#/$defs/timestamp"
+    },
+    "epistemic_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/epistemic_observation"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/claim"
+      }
+    },
+    "claim_evidence_links": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/claim_evidence_link"
+      }
+    },
+    "reference_conditions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reference_condition"
+      }
+    },
+    "reality_objectives": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reality_objective"
+      }
+    },
+    "objective_requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/objective_requirement"
+      }
+    },
+    "objective_dependencies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/objective_dependency"
+      }
+    },
+    "future_scenarios": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/future_scenario"
+      }
+    },
+    "scenario_state_projections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/scenario_state_projection"
+      }
+    },
+    "scenario_likelihood_estimates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/scenario_likelihood_estimate"
+      }
+    },
+    "impact_declarations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/impact_declaration"
+      }
+    },
+    "impact_measure_declarations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/impact_measure_declaration"
+      }
+    }
+  },
+  "$defs": {
+    "uuid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "nullable_uuid": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/uuid"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "project_status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "paused",
+        "archived",
+        "completed"
+      ]
+    },
+    "goal_status": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "active",
+        "achieved",
+        "deferred",
+        "abandoned"
+      ]
+    },
+    "blocker_severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "blocker_status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "mitigated",
+        "resolved",
+        "accepted"
+      ]
+    },
+    "next_action_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "in_progress",
+        "done",
+        "cancelled"
+      ]
+    },
+    "decision_status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "superseded",
+        "reversed"
+      ]
+    },
+    "hypothesis_status": {
+      "type": "string",
+      "enum": [
+        "untested",
+        "testing",
+        "validated",
+        "invalidated"
+      ]
+    },
+    "goal_edge_type": {
+      "type": "string",
+      "enum": [
+        "subgoal_of",
+        "depends_on",
+        "blocks",
+        "supports"
+      ]
+    },
+    "reference_doc_kind": {
+      "type": "string",
+      "enum": [
+        "design",
+        "schema",
+        "manual_run",
+        "prompt_bible",
+        "other"
+      ]
+    },
+    "reference_doc_status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "archived"
+      ]
+    },
+    "observation_source": {
+      "type": "string",
+      "enum": [
+        "manual",
+        "field_test",
+        "conversation",
+        "system"
+      ]
+    },
+    "judgment_outcome": {
+      "type": "string",
+      "enum": [
+        "go",
+        "stop",
+        "revise",
+        "hold"
+      ]
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "project": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "summary",
+        "status",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "summary": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "status": {
+          "$ref": "#/$defs/project_status"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 50
+          }
+        }
+      }
+    },
+    "goal": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "parent_goal_id",
+        "title",
+        "description",
+        "status",
+        "priority",
+        "sort_order",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "parent_goal_id": {
+          "$ref": "#/$defs/nullable_uuid"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "status": {
+          "$ref": "#/$defs/goal_status"
+        },
+        "priority": {
+          "$ref": "#/$defs/priority"
+        },
+        "sort_order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "goal_edge": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "from_goal_id",
+        "to_goal_id",
+        "edge_type",
+        "created_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "from_goal_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "to_goal_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "edge_type": {
+          "$ref": "#/$defs/goal_edge_type"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "current_state": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "primary_goal_id",
+        "primary_next_action_id",
+        "summary",
+        "phase",
+        "confidence",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "primary_goal_id": {
+          "$ref": "#/$defs/nullable_uuid"
+        },
+        "primary_next_action_id": {
+          "$ref": "#/$defs/nullable_uuid"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "phase": {
+          "oneOf": [
+            {
+              "type": "string",
+              "maxLength": 100
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "confidence": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/confidence"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "blocker": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "goal_id",
+        "title",
+        "description",
+        "severity",
+        "status",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "goal_id": {
+          "$ref": "#/$defs/nullable_uuid"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "severity": {
+          "$ref": "#/$defs/blocker_severity"
+        },
+        "status": {
+          "$ref": "#/$defs/blocker_status"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "next_action": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "goal_id",
+        "blocker_id",
+        "depends_on_action_id",
+        "title",
+        "description",
+        "status",
+        "due_at",
+        "sort_order",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "goal_id": {
+          "$ref": "#/$defs/nullable_uuid"
+        },
+        "blocker_id": {
+          "$ref": "#/$defs/nullable_uuid"
+        },
+        "depends_on_action_id": {
+          "$ref": "#/$defs/nullable_uuid"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "description": {
+          "oneOf": [
+            {
+              "type": "string",
+              "maxLength": 4000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "$ref": "#/$defs/next_action_status"
+        },
+        "due_at": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sort_order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "goal_id",
+        "title",
+        "rationale",
+        "alternatives_considered",
+        "status",
+        "decided_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "goal_id": {
+          "$ref": "#/$defs/nullable_uuid"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "rationale": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "alternatives_considered": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 500
+          }
+        },
+        "status": {
+          "$ref": "#/$defs/decision_status"
+        },
+        "decided_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "hypothesis": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "goal_id",
+        "statement",
+        "status",
+        "evidence_for",
+        "evidence_against",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "goal_id": {
+          "$ref": "#/$defs/nullable_uuid"
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "status": {
+          "$ref": "#/$defs/hypothesis_status"
+        },
+        "evidence_for": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 1000
+          }
+        },
+        "evidence_against": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 1000
+          }
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "reference_doc": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "title",
+        "path",
+        "kind",
+        "summary",
+        "status",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "kind": {
+          "$ref": "#/$defs/reference_doc_kind"
+        },
+        "summary": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "status": {
+          "$ref": "#/$defs/reference_doc_status"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "goal_id",
+        "title",
+        "body",
+        "source",
+        "observed_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "goal_id": {
+          "$ref": "#/$defs/nullable_uuid"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8000
+        },
+        "source": {
+          "$ref": "#/$defs/observation_source"
+        },
+        "observed_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "judgment": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "goal_id",
+        "observation_id",
+        "title",
+        "outcome",
+        "rationale",
+        "decided_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "goal_id": {
+          "$ref": "#/$defs/nullable_uuid"
+        },
+        "observation_id": {
+          "$ref": "#/$defs/nullable_uuid"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "outcome": {
+          "$ref": "#/$defs/judgment_outcome"
+        },
+        "rationale": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "decided_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "reality_entity": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "kind",
+        "label",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "attrs": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "reality_event": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "kind",
+        "subject_ids",
+        "occurred_at",
+        "recorded_at",
+        "summary",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "subject_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/uuid"
+          }
+        },
+        "occurred_at": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "attrs": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "reality_state": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "subject_id",
+        "kind",
+        "value",
+        "valid_from",
+        "valid_until",
+        "recorded_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "subject_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "value": {
+          "description": "Evolvable state body; not a Claim/Observation/Prediction"
+        },
+        "valid_from": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "valid_until": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "epistemic_provenance": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "human",
+            "organization",
+            "sensor",
+            "satellite",
+            "api",
+            "document",
+            "ai_model",
+            "system"
+          ]
+        },
+        "entity_id": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "external_id": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "label": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "epistemic_observation": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "kind",
+        "content",
+        "provenance",
+        "subject_ids",
+        "observed_at",
+        "recorded_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "content": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000
+        },
+        "provenance": {
+          "$ref": "#/$defs/epistemic_provenance"
+        },
+        "subject_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/uuid"
+          }
+        },
+        "observed_at": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "kind",
+        "observation_id",
+        "external_ref",
+        "summary",
+        "provenance",
+        "recorded_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "observation_ref",
+            "external_ref"
+          ]
+        },
+        "observation_id": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "external_ref": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "provenance": {
+          "$ref": "#/$defs/epistemic_provenance"
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "subject_id",
+        "predicate_kind",
+        "predicate",
+        "value",
+        "provenance",
+        "confidence",
+        "applicable_from",
+        "applicable_until",
+        "recorded_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "subject_id": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "predicate_kind": {
+          "type": "string",
+          "enum": [
+            "state",
+            "event",
+            "attribute",
+            "relation",
+            "other"
+          ]
+        },
+        "predicate": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "value": {
+          "description": "Asserted proposition body; not ontic RealityState"
+        },
+        "provenance": {
+          "$ref": "#/$defs/epistemic_provenance"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "applicable_from": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "applicable_until": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "claim_evidence_link": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "claim_id",
+        "evidence_id",
+        "relation",
+        "recorded_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "claim_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "evidence_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "relation": {
+          "type": "string",
+          "enum": [
+            "SUPPORTS",
+            "CONTRADICTS"
+          ]
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "reference_declarer": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "human",
+            "organization",
+            "system",
+            "document",
+            "policy",
+            "model",
+            "external"
+          ]
+        },
+        "entity_id": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "external_id": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "label": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "reference_criterion_equals": {
+      "type": "object",
+      "required": [
+        "kind",
+        "value"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "EQUALS"
+        },
+        "value": {}
+      }
+    },
+    "reference_criterion_one_of": {
+      "type": "object",
+      "required": [
+        "kind",
+        "values"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "ONE_OF"
+        },
+        "values": {
+          "type": "array",
+          "minItems": 1,
+          "items": {}
+        }
+      }
+    },
+    "reference_criterion_numeric_range": {
+      "type": "object",
+      "required": [
+        "kind",
+        "min",
+        "max",
+        "min_inclusive",
+        "max_inclusive"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "NUMERIC_RANGE"
+        },
+        "min": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "max": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "min_inclusive": {
+          "type": "boolean"
+        },
+        "max_inclusive": {
+          "type": "boolean"
+        }
+      }
+    },
+    "reference_criterion": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/reference_criterion_equals"
+        },
+        {
+          "$ref": "#/$defs/reference_criterion_one_of"
+        },
+        {
+          "$ref": "#/$defs/reference_criterion_numeric_range"
+        }
+      ]
+    },
+    "reference_condition": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "subject_id",
+        "state_kind",
+        "reference_kind",
+        "criterion",
+        "valid_from",
+        "valid_until",
+        "declared_by",
+        "recorded_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "subject_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "state_kind": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "reference_kind": {
+          "type": "string",
+          "enum": [
+            "EXPECTED",
+            "DESIRED",
+            "ACCEPTABLE"
+          ]
+        },
+        "criterion": {
+          "$ref": "#/$defs/reference_criterion"
+        },
+        "valid_from": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "valid_until": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "declared_by": {
+          "$ref": "#/$defs/reference_declarer"
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "note": {
+          "oneOf": [
+            {
+              "type": "string",
+              "maxLength": 5000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "reality_objective": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "kind",
+        "label",
+        "target_reference_condition_ids",
+        "valid_from",
+        "valid_until",
+        "declared_by",
+        "recorded_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "STATE_TARGET"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "description": {
+          "oneOf": [
+            {
+              "type": "string",
+              "maxLength": 5000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "target_reference_condition_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/uuid"
+          }
+        },
+        "valid_from": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "valid_until": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "declared_by": {
+          "$ref": "#/$defs/reference_declarer"
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "objective_requirement": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "label",
+        "reference_condition_id",
+        "valid_from",
+        "valid_until",
+        "declared_by",
+        "recorded_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "description": {
+          "oneOf": [
+            {
+              "type": "string",
+              "maxLength": 5000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reference_condition_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "valid_from": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "valid_until": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "declared_by": {
+          "$ref": "#/$defs/reference_declarer"
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "objective_dependency": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "objective_id",
+        "requirement_id",
+        "kind",
+        "valid_from",
+        "valid_until",
+        "declared_by",
+        "recorded_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "objective_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "requirement_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "REQUIRES"
+          ]
+        },
+        "valid_from": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "valid_until": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "declared_by": {
+          "$ref": "#/$defs/reference_declarer"
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "future_scenario": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "label",
+        "as_of",
+        "declared_by",
+        "recorded_at",
+        "basis_state_ids",
+        "basis_claim_ids",
+        "basis_evidence_ids",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "description": {
+          "oneOf": [
+            {
+              "type": "string",
+              "maxLength": 5000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "as_of": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "declared_by": {
+          "$ref": "#/$defs/reference_declarer"
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "basis_state_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/uuid"
+          }
+        },
+        "basis_claim_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/uuid"
+          }
+        },
+        "basis_evidence_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/uuid"
+          }
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "scenario_state_projection": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "scenario_id",
+        "subject_id",
+        "state_kind",
+        "projected_value",
+        "projected_for",
+        "recorded_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "scenario_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "subject_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "state_kind": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "projected_value": {
+          "description": "Prospective state body; same evolvable value space as RealityState.value — not ontic Reality"
+        },
+        "projected_for": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "scenario_likelihood_estimate": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "scenario_id",
+        "probability",
+        "estimated_by",
+        "estimated_at",
+        "recorded_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "scenario_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "probability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "estimated_by": {
+          "$ref": "#/$defs/reference_declarer"
+        },
+        "estimated_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "method_label": {
+          "oneOf": [
+            {
+              "type": "string",
+              "maxLength": 500
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "impact_basis_reference_deviation": {
+      "type": "object",
+      "required": [
+        "kind",
+        "reference_condition_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "REFERENCE_DEVIATION"
+        },
+        "reference_condition_id": {
+          "$ref": "#/$defs/uuid"
+        }
+      }
+    },
+    "impact_declaration": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "basis",
+        "affected_entity_id",
+        "dimension",
+        "direction",
+        "valid_from",
+        "valid_until",
+        "declared_by",
+        "recorded_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "project_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "basis": {
+          "$ref": "#/$defs/impact_basis_reference_deviation"
+        },
+        "affected_entity_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "dimension": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "direction": {
+          "type": "string",
+          "enum": [
+            "ADVERSE",
+            "BENEFICIAL"
+          ]
+        },
+        "description": {
+          "oneOf": [
+            {
+              "type": "string",
+              "maxLength": 5000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "valid_from": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "valid_until": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "declared_by": {
+          "$ref": "#/$defs/reference_declarer"
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "impact_measure_point": {
+      "type": "object",
+      "required": ["kind", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "type": "string", "const": "POINT" },
+        "value": { "type": "number", "minimum": 0 }
+      }
+    },
+    "impact_measure_range": {
+      "type": "object",
+      "required": ["kind", "min", "max"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "type": "string", "const": "RANGE" },
+        "min": { "type": "number", "minimum": 0 },
+        "max": { "type": "number", "minimum": 0 }
+      }
+    },
+    "impact_measure": {
+      "oneOf": [
+        { "$ref": "#/$defs/impact_measure_point" },
+        { "$ref": "#/$defs/impact_measure_range" }
+      ]
+    },
+    "impact_measure_declaration": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "impact_declaration_id",
+        "metric_key",
+        "unit",
+        "measure",
+        "valid_from",
+        "valid_until",
+        "declared_by",
+        "recorded_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/uuid" },
+        "project_id": { "$ref": "#/$defs/uuid" },
+        "impact_declaration_id": { "$ref": "#/$defs/uuid" },
+        "metric_key": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "unit": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "measure": { "$ref": "#/$defs/impact_measure" },
+        "valid_from": { "$ref": "#/$defs/timestamp" },
+        "valid_until": {
+          "oneOf": [
+            { "$ref": "#/$defs/timestamp" },
+            { "type": "null" }
+          ]
+        },
+        "declared_by": { "$ref": "#/$defs/reference_declarer" },
+        "recorded_at": { "$ref": "#/$defs/timestamp" },
+        "created_at": { "$ref": "#/$defs/timestamp" },
+        "updated_at": { "$ref": "#/$defs/timestamp" }
+      }
+    }
+
+  }
+}

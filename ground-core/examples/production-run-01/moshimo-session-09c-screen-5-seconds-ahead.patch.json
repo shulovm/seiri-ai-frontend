@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.1.1",
+  "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+  "source": "manual",
+  "operations": [
+    {
+      "op": "upsert",
+      "entity": "decision",
+      "entity_id": "19254079-384d-4928-94c4-8491849f0b6d",
+      "payload": {
+        "id": "19254079-384d-4928-94c4-8491849f0b6d",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "Theme Validation 03として「もしも画面だけ、5秒先を映したら」を採用し、Screen-first Themeとしてv0.2を検証する。",
+        "rationale": "このテーマは、重力半分のようなBody-first、水だけ上に落ちるようなEnvironment-first、街じゅうの信号が全部青になるようなSystem-firstとは異なり、ライブ映像を映す画面だけが現実より5秒先を表示するInformation Ruleである。10秒先では60秒動画として間延びし、未来予知ドラマに寄りやすいため、ズレを理解しつつテンポを保てる5秒先を標準とする。画面と現実のズレから始め、個人画面、施設、交通、街頭ビジョン、都市の画面網、周辺の静けさへ拡大できるため、Opening Entry SelectorとRule Scope ClassifierがScreen-firstにも対応できるかを検証するのに適している。",
+        "alternatives_considered": [
+          "時間差を10秒先にする",
+          "時間差を3秒先にする",
+          "未来予知ドラマ/説明テロップ型で作る"
+        ],
+        "status": "active",
+        "decided_at": "2026-06-26T22:04:48.631Z",
+        "created_at": "2026-06-26T22:04:48.631Z",
+        "updated_at": "2026-06-26T22:04:48.631Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "observation",
+      "entity_id": "e29aeb05-453d-4220-b59b-a8035c1b4730",
+      "payload": {
+        "id": "e29aeb05-453d-4220-b59b-a8035c1b4730",
+        "project_id": "4afb2707-4c06-43b7-a9e6-6803e9431b88",
+        "goal_id": "835e2c01-f4b1-40be-baca-d21f3580fee2",
+        "title": "Theme Validation 03: 画面だけ、5秒先を映したら / Screen-first検証",
+        "body": "Theme Validation 03として「もしも画面だけ、5秒先を映したら」を扱う。\n\nRule Change:\n現実そのものは今のまま進む。人間の目も、物理現象も、社会システムも通常通り。ただし、ライブ映像を映している画面だけが、現実より5秒先の映像を表示する。\n\n5秒にする理由:\n10秒先は、60秒動画では間延びしやすく、未来予知ドラマに寄りやすい。\n3秒先は、ズレを理解する前に現実が追いつく危険がある。\n5秒先は、ズレを理解でき、かつ長すぎないため、Screen-first検証の標準として妥当である。\n\n編集上のルール（Time Offset Compression）:\nRule Change上は「画面だけ5秒先」だが、編集上リアル5秒を毎回待たせる必要はない。\n見せるのは、画面と現実のズレ、そして現実が追いつく瞬間である。\nズレは1〜2秒で見せ、追いついた瞬間で切る。\n\n対象:\n監視カメラ映像、スマホのカメラプレビュー、車のバックモニター/車載カメラ、駅やビルの防犯モニター、テレビのライブ映像、街頭ビジョンのライブ表示、ドアホン/インターホン映像、エレベーター内カメラ映像、交通管制モニター。\n\n対象外:\n人間の肉眼、記憶、夢、録画済み映像、映画や編集済み動画、紙の写真、SNSの過去投稿、単なる時計や数字表示。\n\nRule Scope:\nInformation Rule。\n\nEntry Type:\nScreen-first。\n\n理由:\nこのテーマで最初にズレるのは、身体でも物質でも自然でも社会装置そのものでもなく、画面に映る情報と現実の時間である。したがって、画面から始めるScreen-firstが妥当である。\n\nPortal Type:\nScreen Portal。\nただし、説明ではなくスケール拡大のために使う。個人画面から、施設、交通、駅、都市の画面網へ拡大する。\n\nTransition:\nScreen Lead Cut / Reality Catch-up Cut。\n画面の中で先に出来事が起き、現実が後から追いつく。\n\nv0.2適用:\nMomentは、防犯モニターの中でだけドアが先に開いており、現実ではまだ閉まっている状態。\nImmediateは、スマホカメラの画面にまだ起きていない出来事が映る状態。\nInitial Spreadは、インターホン画面など生活画面にもズレが広がる状態。\nAdapted Fieldは、車のバックモニターで5秒後の歩行者や自転車が先に映る状態。\nSystem Fieldは、駅の監視モニターや交通管制モニターが現実より5秒先を映し、運用判断がズレる状態。\nWide Fieldは、街頭ビジョンに街の5秒後が映る状態。\nMacro Fieldは、都市の画面網全体が現実より少し先に進んでいる状態。\nAfter Fieldは、誰もいない廊下の小さな監視モニターだけが5秒後の人影を先に映す状態。\nEnd Residualは、画面だけが先に暗くなり、現実が後から黒に追いつく状態。\n\n評価:\nこのテーマはv0.2のPhase構造に乗る可能性が高い。特にScreen Portalを説明装置ではなく、個人画面から都市の画面網へ拡大する入口として使える点が重要。ただし、未来予知ドラマや説明テロップに寄ると弱くなるため、画面と現実のズレそのものを見せる必要がある。\n\n4テーマ比較:\n重力半分は Global Physical Field / Body-first / Portal不要。\n水回は Material-specific Rule / Environment-first / 家スタート可 / Aperture Match Cut。\n信号回は Social System Rule / System-first / 原則No-Portal Opening。\n画面回は Information Rule / Screen-first / Screen Portal / Time Offset Compression。\n\nv0.2.1候補:\nScreen-first Entry、Information Rule、Screen Portal、Screen Lead Cut、Reality Catch-up Cut、Time Offset Compression。\n\n規格本文:\ndocs/MOSHIMO_VIDEO_THEME_VALIDATION_03_SCREEN_5_SECONDS_AHEAD.md（画面回の完全版）\ndocs/MOSHIMO_VIDEO_OPENING_ENTRY_SELECTOR_V0.1.md（Screen-first / Screen Portal / Time Offset Compression追記）\ndocs/MOSHIMO_VIDEO_RULE_SCOPE_CLASSIFIER_V0.1.md（画面回分類・4テーマ比較追記）",
+        "source": "manual",
+        "observed_at": "2026-06-26T22:04:48.631Z",
+        "created_at": "2026-06-26T22:04:48.631Z",
+        "updated_at": "2026-06-26T22:04:48.631Z"
+      }
+    },
+    {
+      "op": "upsert",
+      "entity": "current_state",
+      "entity_id": "bac1b350-a506-4c82-9cfd-f4128c616ffd",
+      "payload": {
+        "summary": "第1本目のテーマ「もしも地球の重力が半分になったら？」は制作設計済み。1000本用の「もしも動画 60秒拡大型カット構造 v0.2」も定義済み。現在はv0.2を複数テーマで検証中。Theme Validation 01「もしも水だけが上に落ちたら」では、Material-specific Rule / Environment-first / Aperture Match Cut を検証済み。session-09A補強では、家スタートの扱いと Rule Scope Classifier v0.1 を定義し、Theme → Rule Scope → Entry Type → Portal Type → v0.2 Phase の判断順を記録した。Theme Validation 02「もしも街じゅうの信号が全部青になったら」では、Social System Rule / System-first / No-Portal Opening を検証済み。Theme Validation 03として「もしも画面だけ、5秒先を映したら」を採用し、Information Rule / Screen-first / Screen Portal としてv0.2を検証した。画面回では、ライブ映像を映す画面だけが現実より5秒先を表示し、個人画面、インターホン、車載画面、駅の監視モニター、交通管制、街頭ビジョン、都市の画面網、周辺の小さなモニター、画面だけが先に暗くなる残像へ拡大する。5秒はRule上の時間差であり、編集上はリアル5秒を毎回待たせず、ズレと追いつきだけを圧縮して見せる。次も引き続きv0.2を別テーマで検証する。"
+      }
+    }
+  ]
+}

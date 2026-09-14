@@ -1,0 +1,155 @@
+/**
+ * Reality Core v0.7 — Attention Observation Operational Eligibility
+ * Explicit Declared Potential Contribution Capacity-Compatibility
+ * Source Aggregation Readiness Policy types (GROUND-164).
+ *
+ * Derived only. Not persisted.
+ *
+ * GROUND-163 Capacity-Compatibility Source Aggregation Policy Set
+ * + explicit Aggregation Readiness Policy Specification
+ * → Explicit Capacity-Compatibility Source Aggregation Readiness Policy
+ *
+ * Declaration only. Does NOT inspect current GROUND-161 States.
+ * Does NOT evaluate readiness HOLDS / DOES_NOT_HOLD.
+ * Does NOT execute ANY/ALL. Does NOT create Aggregation Result.
+ *
+ * readiness proposition:
+ * SELECTED_CAPACITY_SOURCE_EVIDENCE_COMPOSITION_IS_EVALUABLE_ONLY_WHEN_ALL_SELECTED_SOURCE_EVIDENCE_STATES_ARE_RESOLVED
+ *
+ * readiness policy ≠ readiness currently HOLDS
+ * POLICY_PRESENT ≠ CONDITION_HOLDS / Resource Readiness
+ * NO_READINESS_POLICY ≠ readiness DOES_NOT_HOLD
+ * NOT_APPLICABLE ≠ readiness failure
+ * all-selected-resolved ≠ all SUPPORTING
+ * CONTRADICTING is resolved; resolved ≠ supporting
+ * ANY/ALL short-circuit readiness not modeled
+ */
+
+import type {
+  AttentionCandidateObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationPolicyAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationPolicyBindingAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationPolicySetAssessment,
+} from "./attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-policy-types.js";
+
+/**
+ * Sole supported readiness rule for selected GROUND-163 capacity sources.
+ * Declaration only — not evaluated against current GROUND-161 States.
+ *
+ * Conceptual GROUND-161 resolved States (documentation only):
+ *   EXPLICITLY_INTERPRETED_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_COMPATIBILITY_SUPPORTING
+ *   EXPLICITLY_INTERPRETED_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_COMPATIBILITY_CONTRADICTING
+ * Conceptual GROUND-161 unresolved States (documentation only):
+ *   UNRESOLVED_NO_EXPLICIT_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_RELATION_INTERPRETATION_POLICY
+ *   UNRESOLVED_NO_EXPLICIT_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_RELATION_INTERPRETATION_MAPPING_FOR_CURRENT_EVALUATION_STATE
+ *
+ * resolved = SUPPORTING or CONTRADICTING (not SUPPORTING-only)
+ * all resolved ≠ all SUPPORTING
+ */
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessRequirement =
+  "REQUIRE_ALL_SELECTED_CAPACITY_SOURCE_EVIDENCE_STATES_RESOLVED_BEFORE_AGGREGATION";
+
+/**
+ * Specification entry anchored to exact GROUND-163 Aggregation Policy key.
+ * Does NOT independently supply member keys / operator / Binding identity.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicyInput {
+  capacity_compatibility_source_aggregation_policy_key: string;
+  readiness_requirement: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessRequirement;
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicySpecification {
+  policies: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicyInput[];
+}
+
+/**
+ * Combined evaluation input.
+ * Consumes GROUND-163 + specification — not GROUND-161 / ProjectState.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicyEvalInput {
+  resource_readiness_declared_potential_contribution_capacity_compatibility_source_aggregation_policy_set: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationPolicySetAssessment;
+  specification: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicySpecification;
+}
+
+/**
+ * Runtime-only Aggregation Readiness Policy declaration.
+ * No current source States / readiness_result / CONDITION_HOLDS.
+ * Lineage fields are stable identity from GROUND-163 Aggregation Policy.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicy {
+  key: string;
+  candidate_key: string;
+  observation_need_key: string;
+  capability_requirement_set_key: string;
+  dimension: "RESOURCE_READINESS";
+  observation_resource_requirement_key: string;
+  resource_readiness_observation_context_binding_key: string;
+  resource_declaration_id: string;
+  capacity_compatibility_source_aggregation_policy_key: string;
+  readiness_requirement: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessRequirement;
+}
+
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicyStatus =
+  | "NOT_APPLICABLE_NO_EXPLICIT_RESOURCE_READINESS_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_COMPATIBILITY_SOURCE_AGGREGATION_POLICY"
+  | "NO_EXPLICIT_RESOURCE_READINESS_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_COMPATIBILITY_SOURCE_AGGREGATION_READINESS_POLICY_DECLARED"
+  | "EXPLICIT_RESOURCE_READINESS_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_COMPATIBILITY_SOURCE_AGGREGATION_READINESS_POLICY_PRESENT";
+
+export type AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicyModelLimitation =
+  | "CURRENT_SELECTED_CAPACITY_SOURCE_PRESENCE_NOT_EVALUATED"
+  | "CURRENT_SELECTED_CAPACITY_SOURCE_RESOLVEDNESS_NOT_EVALUATED"
+  | "MISSING_SELECTED_CAPACITY_SOURCE_REASON_NOT_MODELED"
+  | "UNRESOLVED_SELECTED_CAPACITY_SOURCE_REASON_NOT_MODELED"
+  | "CAPACITY_SOURCE_AGGREGATION_READINESS_BASIS_NOT_MODELED"
+  | "CAPACITY_SOURCE_AGGREGATION_RESULT_NOT_MODELED"
+  | "CAPACITY_SOURCE_AGGREGATION_RESULT_INTERPRETATION_POLICY_NOT_MODELED"
+  | "CAPACITY_SOURCE_AGGREGATION_RESULT_INTERPRETATION_BASIS_NOT_MODELED"
+  | "AGGREGATED_CAPACITY_COMPATIBILITY_EVIDENCE_STATE_NOT_MODELED"
+  | "MULTIPLE_CAPACITY_SOURCE_AGGREGATION_GROUPS_PER_BINDING_NOT_MODELED"
+  | "REQUIRED_AMOUNT_RELATION_INTERPRETATION_NOT_MODELED"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_VERIFICATION_NOT_MODELED"
+  | "PHYSICAL_CONTRIBUTION_EVIDENCE_COMPOSITION_NOT_MODELED"
+  | "RESOURCE_AVAILABILITY_INTERPRETATION_NOT_MODELED"
+  | "RESOURCE_RESERVATION_SEMANTIC_EXTENSION_NOT_MODELED"
+  | "RESERVATION_AWARE_FREE_QUANTITY_NOT_MODELED"
+  | "EFFECTIVE_POTENTIAL_CONTRIBUTION_NOT_MODELED"
+  | "RESOURCE_DIVISIBILITY_NOT_MODELED"
+  | "RESOURCE_QUANTITY_CARDINALITY_NOT_MODELED"
+  | "RESOURCE_REQUIRED_AMOUNT_STOCK_VS_FLOW_SEMANTICS_NOT_MODELED"
+  | "LOGICAL_PHYSICAL_EVIDENCE_CONVERGENCE_NOT_MODELED"
+  | "PHYSICAL_RESOURCE_BINDING_GROUP_NOT_MODELED"
+  | "RESOURCE_FUNGIBILITY_NOT_MODELED"
+  | "RESOURCE_SUBSTITUTION_NOT_MODELED"
+  | "CROSS_BINDING_QUANTITY_COMPOSITION_NOT_MODELED"
+  | "PHYSICAL_RESOURCE_COMPOSITION_NOT_MODELED"
+  | "TRUE_PER_REQUIREMENT_RESOURCE_READINESS_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_DIMENSION_SATISFACTION_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_FEASIBILITY_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_STATE_NOT_MODELED"
+  | "CAN_EXECUTE_NOT_MODELED"
+  | "EXECUTION_NOT_MODELED";
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicyBindingAssessment {
+  observation_resource_requirement_key: string;
+  resource_readiness_observation_context_binding_key: string;
+  resource_declaration_id: string;
+  aggregation_policy_assessment: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationPolicyBindingAssessment;
+  status: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicyStatus;
+  readiness_policy: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicy | null;
+  has_explicit_capacity_compatibility_source_aggregation_readiness_policy: boolean;
+}
+
+export interface AttentionCandidateObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicyAssessment {
+  candidate_key: string;
+  capacity_compatibility_source_aggregation_policy_assessment: AttentionCandidateObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationPolicyAssessment;
+  binding_readiness_policy_assessments: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicyBindingAssessment[];
+  has_explicit_capacity_compatibility_source_aggregation_readiness_policies: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicyModelLimitation[];
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicySetAssessment {
+  resource_readiness_declared_potential_contribution_capacity_compatibility_source_aggregation_policy_set: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationPolicySetAssessment;
+  specification: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicySpecification;
+  candidate_assessments: AttentionCandidateObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicyAssessment[];
+  has_explicit_capacity_compatibility_source_aggregation_readiness_policies: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationReadinessPolicyModelLimitation[];
+}

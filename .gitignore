@@ -37,3 +37,6 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# GROUND Core runtime project state and generated test scratch files
+ground-core/storage/

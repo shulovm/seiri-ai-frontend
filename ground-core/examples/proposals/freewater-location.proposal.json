@@ -1,0 +1,88 @@
+{
+  "id": "be49d325-aab1-436a-86b3-425119c1155d",
+  "project_id": "28d83a68-2064-43d7-94cb-72656b9006de",
+  "input_text": "FreeWaterの配布場所、新宿中央公園にしようと思う",
+  "summary": "配布場所を決定する方向で observation を記録し、配布場所 action を完了、次の primary action に移す提案。",
+  "confidence": 0.86,
+  "risk_level": "low",
+  "proposed_patch": {
+    "schema_version": "0.1.1",
+    "project_id": "28d83a68-2064-43d7-94cb-72656b9006de",
+    "source": "extraction",
+    "operations": [
+      {
+        "op": "upsert",
+        "entity": "observation",
+        "entity_id": "d18a3039-1bb3-43ca-a1f0-dfb48597ffb6",
+        "payload": {
+          "id": "d18a3039-1bb3-43ca-a1f0-dfb48597ffb6",
+          "project_id": "28d83a68-2064-43d7-94cb-72656b9006de",
+          "goal_id": "f1111111-1111-4111-8111-111111111111",
+          "title": "配布場所の検討",
+          "body": "配布場所を新宿中央公園にしようとしている。",
+          "source": "conversation",
+          "observed_at": "2026-06-07T04:56:49.552Z",
+          "created_at": "2026-06-07T04:56:49.552Z",
+          "updated_at": "2026-06-07T04:56:49.552Z"
+        }
+      },
+      {
+        "op": "status_change",
+        "entity": "blocker",
+        "entity_id": "f2222222-2222-4222-8222-222222222201",
+        "status": "mitigated"
+      },
+      {
+        "op": "status_change",
+        "entity": "next_action",
+        "entity_id": "f3333333-3333-4333-8333-333333333301",
+        "status": "done"
+      },
+      {
+        "op": "upsert",
+        "entity": "current_state",
+        "entity_id": "5cd9d7bb-8464-4321-a2ee-603c3625e521",
+        "payload": {
+          "primary_next_action_id": "f3333333-3333-4333-8333-333333333302"
+        }
+      }
+    ]
+  },
+  "dry_run_result": {
+    "valid": true,
+    "would_apply": true,
+    "operation_count": 4,
+    "operation_summaries": [
+      {
+        "operation": "upsert",
+        "entity": "observation",
+        "entity_id": "d18a3039-1bb3-43ca-a1f0-dfb48597ffb6",
+        "label": "observation: 配布場所の検討",
+        "effect": "新規 observation を追加"
+      },
+      {
+        "operation": "status_change",
+        "entity": "blocker",
+        "entity_id": "f2222222-2222-4222-8222-222222222201",
+        "label": "blocker: 配布場所が未確定",
+        "effect": "blocker: 配布場所が未確定 → mitigated"
+      },
+      {
+        "operation": "status_change",
+        "entity": "next_action",
+        "entity_id": "f3333333-3333-4333-8333-333333333301",
+        "label": "next_action: 配布場所を1つ決める",
+        "effect": "next_action: 配布場所を1つ決める → done"
+      },
+      {
+        "operation": "upsert",
+        "entity": "current_state",
+        "entity_id": "5cd9d7bb-8464-4321-a2ee-603c3625e521",
+        "label": "current_state: 水2ケースとA4看板を用意する",
+        "effect": "primary_next_action_id → 水2ケースとA4看板を用意する"
+      }
+    ]
+  },
+  "requires_human_approval": true,
+  "created_at": "2026-06-07T04:56:49.561Z"
+}

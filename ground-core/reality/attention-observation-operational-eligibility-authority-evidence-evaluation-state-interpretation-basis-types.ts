@@ -1,0 +1,115 @@
+/**
+ * Reality Core v0.7 — Attention Observation Operational Eligibility
+ * Authority Evidence Evaluation State Interpretation Basis types (GROUND-115).
+ *
+ * Derived only. Not persisted.
+ *
+ * GROUND-113 current Authority Evidence Evaluation State
+ * + GROUND-114 Explicit Authority Evidence Evaluation State Interpretation Policy
+ * → Authority Evidence Evaluation State Interpretation Basis only.
+ *
+ * NO_POLICY ≠ NO_MAPPING
+ * NO_MAPPING ≠ negative Authority
+ * Interpretation Basis ≠ canonical Authority State
+ * INTERPRET_AS_* ≠ effective/legal Authority
+ */
+
+import type {
+  AttentionCandidateObservationOperationalEligibilityAuthorityEvidenceEvaluationStateAssessment,
+  AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationState,
+  AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateSetAssessment,
+  AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateValue,
+} from "./attention-observation-operational-eligibility-authority-evidence-evaluation-state-types.js";
+import type {
+  AttentionCandidateObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationPolicyAssessment,
+  AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretation,
+  AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationPolicyBindingAssessment,
+  AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationPolicySetAssessment,
+} from "./attention-observation-operational-eligibility-authority-evidence-evaluation-state-interpretation-policy-types.js";
+import type { AuthorityPower, GovernanceScope } from "../types.js";
+
+export type AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationBasisStatus =
+  | "NO_EXPLICIT_AUTHORITY_EVIDENCE_EVALUATION_STATE_INTERPRETATION_POLICY_DECLARED"
+  | "NO_EXPLICIT_AUTHORITY_EVIDENCE_EVALUATION_STATE_INTERPRETATION_MAPPING_FOR_CURRENT_EVALUATION_STATE"
+  | "AUTHORITY_EVIDENCE_EVALUATION_STATE_INTERPRETATION_BASIS_PRESENT";
+
+export interface AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationBasis {
+  key: string;
+  candidate_key: string;
+  observation_need_key: string;
+  capability_requirement_set_key: string;
+  dimension: "AUTHORITY";
+  authority_observation_context_binding_key: string;
+  authority_holder_entity_id: string;
+  authority_power: AuthorityPower;
+  governance_scope: GovernanceScope;
+  governance_scope_key: string;
+  authority_evaluation_instant_key: string;
+  authority_evaluation_at: string;
+  authority_evidence_evaluation_state_key: string;
+  authority_evidence_evaluation_state_basis_key: string;
+  authority_evidence_evaluation_state_value: AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateValue;
+  authority_evidence_evaluation_state_value_canonical_key: string;
+  authority_evidence_evaluation_state_interpretation_policy_key: string;
+  matched_mapping_source_value_canonical_key: string;
+  interpretation: AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretation;
+}
+
+export interface AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationBasisAssessment {
+  authority_evidence_evaluation_state: AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationState;
+  authority_evidence_evaluation_state_interpretation_policy_binding_assessment: AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationPolicyBindingAssessment;
+  status: AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationBasisStatus;
+  authority_evidence_evaluation_state_interpretation_basis: AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationBasis | null;
+  has_authority_evidence_evaluation_state_interpretation_basis: boolean;
+}
+
+export type AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationBasisCandidateStatus =
+  | "NOT_APPLICABLE_NO_OBSERVATION_PLANNING_BASIS"
+  | "NOT_APPLICABLE_NO_EXPLICIT_CAPABILITY_REQUIREMENTS"
+  | "NO_EXPLICIT_AUTHORITY_OBSERVATION_CONTEXT_BINDINGS_DECLARED"
+  | "NO_EXPLICIT_AUTHORITY_EVALUATION_INSTANT_DECLARED"
+  | "AUTHORITY_EVIDENCE_EVALUATION_STATE_INTERPRETATION_BASIS_ASSESSMENTS_PRESENT";
+
+export type AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationBasisModelLimitation =
+  | "OPERATIONAL_ELIGIBILITY_CANONICAL_AUTHORITY_STATE_NOT_MODELED"
+  | "FINAL_CANONICAL_AUTHORITY_STATE_VOCABULARY_NOT_MODELED"
+  | "EFFECTIVE_AUTHORITY_NOT_MODELED"
+  | "LEGAL_AUTHORITY_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_AUTHORITY_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_AUTHORITY_SOURCE_RESOLUTION_CLASSIFICATION_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_AUTHORITY_SOURCE_ACCEPTANCE_CRITERIA_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_AUTHORITY_SOURCE_ACCEPTANCE_MATCH_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_AUTHORITY_SOURCE_AGGREGATION_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_AUTHORITY_DIMENSION_EVALUATION_STATE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_AUTHORITY_DIMENSION_SATISFACTION_STATE_NOT_MODELED"
+  | "GENERIC_OPERATIONAL_ELIGIBILITY_DIMENSION_SOURCE_UNION_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_STATE_NOT_MODELED"
+  | "CAN_EXECUTE_NOT_MODELED"
+  | "EXECUTION_NOT_MODELED";
+
+export interface AttentionCandidateObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationBasisAssessment {
+  candidate_key: string;
+  authority_evidence_evaluation_state_assessment: AttentionCandidateObservationOperationalEligibilityAuthorityEvidenceEvaluationStateAssessment;
+  authority_evidence_evaluation_state_interpretation_policy_assessment: AttentionCandidateObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationPolicyAssessment;
+  status: AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationBasisCandidateStatus;
+  interpretation_basis_assessments: AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationBasisAssessment[];
+  has_authority_evidence_evaluation_state_interpretation_bases: boolean;
+  has_states_without_explicit_authority_evidence_interpretation_policy: boolean;
+  has_states_without_explicit_authority_evidence_interpretation_mapping: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationBasisModelLimitation[];
+}
+
+export interface AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationBasisEvalInput {
+  authority_evidence_evaluation_state_set: AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateSetAssessment;
+  authority_evidence_evaluation_state_interpretation_policy_set: AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationPolicySetAssessment;
+}
+
+export interface AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationBasisSetAssessment {
+  authority_evidence_evaluation_state_set: AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateSetAssessment;
+  authority_evidence_evaluation_state_interpretation_policy_set: AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationPolicySetAssessment;
+  candidate_assessments: AttentionCandidateObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationBasisAssessment[];
+  has_authority_evidence_evaluation_state_interpretation_bases: boolean;
+  has_states_without_explicit_authority_evidence_interpretation_policy: boolean;
+  has_states_without_explicit_authority_evidence_interpretation_mapping: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityAuthorityEvidenceEvaluationStateInterpretationBasisModelLimitation[];
+}

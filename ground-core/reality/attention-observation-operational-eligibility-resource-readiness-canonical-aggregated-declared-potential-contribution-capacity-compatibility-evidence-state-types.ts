@@ -1,0 +1,128 @@
+/**
+ * Reality Core v0.7 — Attention Observation Operational Eligibility
+ * Canonical Aggregated Declared Potential Contribution
+ * Capacity-Compatibility Evidence State types (GROUND-169).
+ *
+ * Derived only. Not persisted.
+ *
+ * GROUND-168 Current Aggregation Result Interpretation Basis
+ * → Canonical Aggregated Capacity-Compatibility Evidence State
+ *
+ * Normalization only. Sole runtime authority: GROUND-168.
+ *
+ * NOT_APPLICABLE ≠ UNRESOLVED
+ * SUPPORTING ≠ capacity compatibility true
+ * CONTRADICTING ≠ capacity compatibility false
+ * NO_CURRENT_RESULT ≠ CONTRADICTING
+ * canonical State ≠ Resource Ready / contribution verified
+ */
+
+import type {
+  AttentionCandidateObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationResultInterpretationBasisAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationResultInterpretationBasisBindingAssessment,
+  AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationResultInterpretationBasisSetAssessment,
+} from "./attention-observation-operational-eligibility-resource-readiness-declared-potential-contribution-capacity-compatibility-source-aggregation-result-interpretation-basis-types.js";
+
+/**
+ * Exactly one semantic runtime input — GROUND-168 only.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateEvalInput {
+  resource_readiness_declared_potential_contribution_capacity_compatibility_source_aggregation_result_interpretation_basis_set: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationResultInterpretationBasisSetAssessment;
+}
+
+/**
+ * Exactly seven canonical aggregated evidence States.
+ * Never HOLDS / DOES_NOT_HOLD / READY / VERIFIED / COMPATIBLE.
+ */
+export type AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateValue =
+  | "NOT_APPLICABLE_NO_EXPLICIT_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_COMPATIBILITY_SOURCE_AGGREGATION_POLICY"
+  | "UNRESOLVED_NO_EXPLICIT_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_COMPATIBILITY_SOURCE_AGGREGATION_READINESS_POLICY"
+  | "UNRESOLVED_NO_CURRENT_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_COMPATIBILITY_SOURCE_AGGREGATION_RESULT_BECAUSE_READINESS_CONDITION_DOES_NOT_HOLD"
+  | "UNRESOLVED_NO_EXPLICIT_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_COMPATIBILITY_SOURCE_AGGREGATION_RESULT_INTERPRETATION_POLICY"
+  | "UNRESOLVED_NO_EXPLICIT_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_COMPATIBILITY_SOURCE_AGGREGATION_RESULT_INTERPRETATION_MAPPING_FOR_CURRENT_RESULT"
+  | "EXPLICITLY_INTERPRETED_AGGREGATED_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_COMPATIBILITY_EVIDENCE_SUPPORTING"
+  | "EXPLICITLY_INTERPRETED_AGGREGATED_DECLARED_POTENTIAL_CONTRIBUTION_CAPACITY_COMPATIBILITY_EVIDENCE_CONTRADICTING";
+
+export type AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateModelLimitation =
+  | "CAPACITY_COMPATIBILITY_PROPOSITION_TRUTH_NOT_MODELED"
+  | "MULTIPLE_CAPACITY_SOURCE_AGGREGATION_GROUPS_PER_BINDING_NOT_MODELED"
+  | "REQUIRED_AMOUNT_RELATION_INTERPRETATION_NOT_MODELED"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_PROVENANCE_CARDINALITY_SEMANTICS_REQUIRE_REAUDIT_BEFORE_CONTRIBUTION_VERIFICATION"
+  | "DECLARED_POTENTIAL_CONTRIBUTION_VERIFICATION_NOT_MODELED"
+  | "PHYSICAL_CONTRIBUTION_EVIDENCE_EVALUATION_STATE_NOT_MODELED"
+  | "PHYSICAL_CONTRIBUTION_EVIDENCE_COMPOSITION_NOT_MODELED"
+  | "RESOURCE_AVAILABILITY_INTERPRETATION_NOT_MODELED"
+  | "RESOURCE_RESERVATION_SEMANTIC_EXTENSION_NOT_MODELED"
+  | "RESERVATION_AWARE_FREE_QUANTITY_NOT_MODELED"
+  | "EFFECTIVE_POTENTIAL_CONTRIBUTION_NOT_MODELED"
+  | "RESOURCE_DIVISIBILITY_NOT_MODELED"
+  | "RESOURCE_QUANTITY_CARDINALITY_NOT_MODELED"
+  | "RESOURCE_REQUIRED_AMOUNT_STOCK_VS_FLOW_SEMANTICS_NOT_MODELED"
+  | "LOGICAL_PHYSICAL_EVIDENCE_CONVERGENCE_NOT_MODELED"
+  | "PHYSICAL_RESOURCE_BINDING_GROUP_NOT_MODELED"
+  | "RESOURCE_FUNGIBILITY_NOT_MODELED"
+  | "RESOURCE_SUBSTITUTION_NOT_MODELED"
+  | "CROSS_BINDING_QUANTITY_COMPOSITION_NOT_MODELED"
+  | "PHYSICAL_RESOURCE_COMPOSITION_NOT_MODELED"
+  | "TRUE_PER_REQUIREMENT_RESOURCE_READINESS_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_RESOURCE_READINESS_DIMENSION_SATISFACTION_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_FEASIBILITY_SOURCE_BRIDGE_NOT_MODELED"
+  | "OPERATIONAL_ELIGIBILITY_STATE_NOT_MODELED"
+  | "CAN_EXECUTE_NOT_MODELED"
+  | "EXECUTION_NOT_MODELED";
+
+/**
+ * Canonical aggregated capacity-compatibility evidence State.
+ * One GROUND-168 Binding assessment → one State.
+ */
+export interface AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceState {
+  key: string;
+  candidate_key: string;
+  observation_need_key: string;
+  capability_requirement_set_key: string;
+  dimension: "RESOURCE_READINESS";
+  observation_resource_requirement_key: string;
+  resource_readiness_observation_context_binding_key: string;
+  resource_declaration_id: string;
+  evaluation_at: string | null;
+  capacity_compatibility_source_aggregation_policy_key: string | null;
+  aggregation_result_interpretation_basis_key: string | null;
+  value: AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateValue;
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateBindingAssessment {
+  observation_resource_requirement_key: string;
+  resource_readiness_observation_context_binding_key: string;
+  resource_declaration_id: string;
+  aggregation_result_interpretation_basis_assessment: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationResultInterpretationBasisBindingAssessment;
+  canonical_state: AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceState;
+  canonical_state_value: AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateValue;
+}
+
+/**
+ * Candidate-level assessment. Summary booleans are existence-only.
+ * No Candidate verdict / compatibility truth / Resource Readiness.
+ */
+export interface AttentionCandidateObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateAssessment {
+  candidate_key: string;
+  capacity_compatibility_source_aggregation_result_interpretation_basis_assessment: AttentionCandidateObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationResultInterpretationBasisAssessment;
+  binding_state_assessments: AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateBindingAssessment[];
+  has_applicable_aggregated_capacity_compatibility_evidence_states: boolean;
+  has_resolved_aggregated_capacity_compatibility_evidence_states: boolean;
+  has_supporting_aggregated_capacity_compatibility_evidence_states: boolean;
+  has_contradicting_aggregated_capacity_compatibility_evidence_states: boolean;
+  has_unresolved_aggregated_capacity_compatibility_evidence_states: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateModelLimitation[];
+}
+
+export interface AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateSetAssessment {
+  resource_readiness_declared_potential_contribution_capacity_compatibility_source_aggregation_result_interpretation_basis_set: AttentionObservationOperationalEligibilityResourceReadinessDeclaredPotentialContributionCapacityCompatibilitySourceAggregationResultInterpretationBasisSetAssessment;
+  candidate_assessments: AttentionCandidateObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateAssessment[];
+  has_applicable_aggregated_capacity_compatibility_evidence_states: boolean;
+  has_resolved_aggregated_capacity_compatibility_evidence_states: boolean;
+  has_supporting_aggregated_capacity_compatibility_evidence_states: boolean;
+  has_contradicting_aggregated_capacity_compatibility_evidence_states: boolean;
+  has_unresolved_aggregated_capacity_compatibility_evidence_states: boolean;
+  model_limitations: AttentionObservationOperationalEligibilityResourceReadinessCanonicalAggregatedDeclaredPotentialContributionCapacityCompatibilityEvidenceStateModelLimitation[];
+}

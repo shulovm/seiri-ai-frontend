@@ -1,0 +1,327 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ground.ink/schemas/ground-core/project-state/v0.1.0",
+  "title": "GROUND Core ProjectState",
+  "description": "Project Graph / State Engine aggregate root. Stores trunk and branches, not conversation leaves.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project",
+    "goals",
+    "current_state",
+    "blockers",
+    "next_actions",
+    "decisions",
+    "hypotheses",
+    "goal_edges",
+    "extensions",
+    "updated_at"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "project": { "$ref": "#/$defs/project" },
+    "goals": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/goal" }
+    },
+    "current_state": { "$ref": "#/$defs/current_state" },
+    "blockers": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/blocker" }
+    },
+    "next_actions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/next_action" }
+    },
+    "decisions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/decision" }
+    },
+    "hypotheses": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/hypothesis" }
+    },
+    "goal_edges": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/goal_edge" }
+    },
+    "extensions": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "updated_at": { "$ref": "#/$defs/timestamp" }
+  },
+  "$defs": {
+    "uuid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "nullable_uuid": {
+      "oneOf": [
+        { "$ref": "#/$defs/uuid" },
+        { "type": "null" }
+      ]
+    },
+    "project_status": {
+      "type": "string",
+      "enum": ["active", "paused", "archived", "completed"]
+    },
+    "goal_status": {
+      "type": "string",
+      "enum": ["proposed", "active", "achieved", "deferred", "abandoned"]
+    },
+    "blocker_severity": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "blocker_status": {
+      "type": "string",
+      "enum": ["open", "mitigated", "resolved", "accepted"]
+    },
+    "next_action_status": {
+      "type": "string",
+      "enum": ["pending", "in_progress", "done", "cancelled"]
+    },
+    "decision_status": {
+      "type": "string",
+      "enum": ["active", "superseded", "reversed"]
+    },
+    "hypothesis_status": {
+      "type": "string",
+      "enum": ["untested", "testing", "validated", "invalidated"]
+    },
+    "goal_edge_type": {
+      "type": "string",
+      "enum": ["subgoal_of", "depends_on", "blocks", "supports"]
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "project": {
+      "type": "object",
+      "required": ["id", "title", "summary", "status", "created_at", "updated_at"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/uuid" },
+        "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "summary": { "type": "string", "maxLength": 2000 },
+        "status": { "$ref": "#/$defs/project_status" },
+        "created_at": { "$ref": "#/$defs/timestamp" },
+        "updated_at": { "$ref": "#/$defs/timestamp" },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string", "maxLength": 50 }
+        }
+      }
+    },
+    "goal": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "parent_goal_id",
+        "title",
+        "description",
+        "status",
+        "priority",
+        "sort_order",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/uuid" },
+        "project_id": { "$ref": "#/$defs/uuid" },
+        "parent_goal_id": { "$ref": "#/$defs/nullable_uuid" },
+        "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "description": { "type": "string", "maxLength": 4000 },
+        "status": { "$ref": "#/$defs/goal_status" },
+        "priority": { "$ref": "#/$defs/priority" },
+        "sort_order": { "type": "integer", "minimum": 0 },
+        "created_at": { "$ref": "#/$defs/timestamp" },
+        "updated_at": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "goal_edge": {
+      "type": "object",
+      "required": ["id", "project_id", "from_goal_id", "to_goal_id", "edge_type", "created_at"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/uuid" },
+        "project_id": { "$ref": "#/$defs/uuid" },
+        "from_goal_id": { "$ref": "#/$defs/uuid" },
+        "to_goal_id": { "$ref": "#/$defs/uuid" },
+        "edge_type": { "$ref": "#/$defs/goal_edge_type" },
+        "created_at": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "current_state": {
+      "type": "object",
+      "required": ["id", "project_id", "primary_goal_id", "summary", "phase", "confidence", "updated_at"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/uuid" },
+        "project_id": { "$ref": "#/$defs/uuid" },
+        "primary_goal_id": { "$ref": "#/$defs/nullable_uuid" },
+        "summary": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "phase": {
+          "oneOf": [
+            { "type": "string", "maxLength": 100 },
+            { "type": "null" }
+          ]
+        },
+        "confidence": {
+          "oneOf": [
+            { "$ref": "#/$defs/confidence" },
+            { "type": "null" }
+          ]
+        },
+        "updated_at": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "blocker": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "goal_id",
+        "title",
+        "description",
+        "severity",
+        "status",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/uuid" },
+        "project_id": { "$ref": "#/$defs/uuid" },
+        "goal_id": { "$ref": "#/$defs/nullable_uuid" },
+        "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "description": { "type": "string", "maxLength": 4000 },
+        "severity": { "$ref": "#/$defs/blocker_severity" },
+        "status": { "$ref": "#/$defs/blocker_status" },
+        "created_at": { "$ref": "#/$defs/timestamp" },
+        "updated_at": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "next_action": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "goal_id",
+        "blocker_id",
+        "title",
+        "description",
+        "status",
+        "due_at",
+        "sort_order",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/uuid" },
+        "project_id": { "$ref": "#/$defs/uuid" },
+        "goal_id": { "$ref": "#/$defs/nullable_uuid" },
+        "blocker_id": { "$ref": "#/$defs/nullable_uuid" },
+        "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "description": {
+          "oneOf": [
+            { "type": "string", "maxLength": 4000 },
+            { "type": "null" }
+          ]
+        },
+        "status": { "$ref": "#/$defs/next_action_status" },
+        "due_at": {
+          "oneOf": [
+            { "$ref": "#/$defs/timestamp" },
+            { "type": "null" }
+          ]
+        },
+        "sort_order": { "type": "integer", "minimum": 0 },
+        "created_at": { "$ref": "#/$defs/timestamp" },
+        "updated_at": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "goal_id",
+        "title",
+        "rationale",
+        "alternatives_considered",
+        "status",
+        "decided_at",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/uuid" },
+        "project_id": { "$ref": "#/$defs/uuid" },
+        "goal_id": { "$ref": "#/$defs/nullable_uuid" },
+        "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "rationale": { "type": "string", "maxLength": 4000 },
+        "alternatives_considered": {
+          "type": "array",
+          "items": { "type": "string", "maxLength": 500 }
+        },
+        "status": { "$ref": "#/$defs/decision_status" },
+        "decided_at": { "$ref": "#/$defs/timestamp" },
+        "created_at": { "$ref": "#/$defs/timestamp" },
+        "updated_at": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "hypothesis": {
+      "type": "object",
+      "required": [
+        "id",
+        "project_id",
+        "goal_id",
+        "statement",
+        "status",
+        "evidence_for",
+        "evidence_against",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/uuid" },
+        "project_id": { "$ref": "#/$defs/uuid" },
+        "goal_id": { "$ref": "#/$defs/nullable_uuid" },
+        "statement": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "status": { "$ref": "#/$defs/hypothesis_status" },
+        "evidence_for": {
+          "type": "array",
+          "items": { "type": "string", "maxLength": 1000 }
+        },
+        "evidence_against": {
+          "type": "array",
+          "items": { "type": "string", "maxLength": 1000 }
+        },
+        "created_at": { "$ref": "#/$defs/timestamp" },
+        "updated_at": { "$ref": "#/$defs/timestamp" }
+      }
+    }
+  }
+}
