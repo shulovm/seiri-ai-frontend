@@ -1,4 +1,4 @@
-# HUMAN-002C — Registry-Resolved Read Boundary
+# HUMAN-003B — Project / Entity Browse Boundary
 
 The existing JavaScript server mounts `http-route.js`, which uses scoped `tsx`
 `tsImport` to load the adapter and canonical TypeScript core. No global runtime
@@ -13,12 +13,13 @@ Hosted deployment and Docker image build are not verified by this checkpoint.
 The server-only `source-registry.ts` is the sole snapshot selection authority.
 Its checked-in manifest explicitly registers `human-001`, `e2-b15` and
 `historical-round4`. The project ID uniquely resolves one entry; the entity ID
-must match that entry's proof candidate. An Entity present elsewhere in the
-same ProjectState is still outside this HTTP scope. Source keys are metadata,
+is checked for membership in that same verified ProjectState. Every saved
+RealityEntity is permitted, including Entities with zero subject-related records.
+The manifest candidate remains proof metadata/fixture validation, not access control. Source keys are metadata,
 not alternative request selectors. No path, filename, registry override, scan,
 nearest match, fallback, newest selection or multi-source merge is supported.
 
-After scope checks, each request reads its registered fixture once, verifies
+After resolving the registered Project, each canonical request reads its registered fixture once, verifies
 fresh bytes against its registered SHA-256 before parsing, then calls existing
 core normalization and validation. Stored schema remains 0.1.24; read schema is
 0.1.25. Every canonical reader receives that same normalized ProjectState.
@@ -35,7 +36,7 @@ The route and `human-interface-reality-read.v1` response shape remain:
   as the existing compatibility field, now set to the registered source key.
   Hash, stored/read schema and canonical baseline commit are retained. Filesystem
   paths and original source paths are not sent to clients.
-- `canonical_records`: unchanged Project, candidate RealityEntity, Observations
+- `canonical_records`: unchanged Project, selected RealityEntity, Observations
   and Claims returned by core.
 - `core_read_results`: complete unchanged worldline and per-Claim Evidence
   bundles, including links, supports, contradicts and canonical provenance.
@@ -67,8 +68,10 @@ Responses use `Cache-Control: no-store`. Failure responses contain only
 `transport_error`, never replacement empty Reality data:
 
 - 404 `PROJECT_SCOPE_MISMATCH`: project has no registered source; no file read.
-- 404 `ENTITY_NOT_FOUND`: retained compatibility code for an entity outside the
-  registered proof scope; this does not assert absence from ProjectState.
+- 404 `ENTITY_NOT_IN_SNAPSHOT`: after integrity, normalization and validation,
+  the ID is absent from the selected snapshot’s RealityEntity collection. This
+  says nothing about the world, history, other snapshots or all GROUND knowledge.
+  Integrity failure takes precedence over Entity membership.
 - 400 `UNSUPPORTED_QUERY_PARAMETERS`: all query parameters rejected.
 - 405 `METHOD_NOT_ALLOWED`, `Allow: GET`: includes HEAD and OPTIONS.
 - 503 `FIXTURE_INTEGRITY_FAILURE`: no parse/normalization/fallback/writeback.
@@ -79,41 +82,70 @@ Responses use `Cache-Control: no-store`. Failure responses contain only
 - 503 `READ_RUNTIME_UNAVAILABLE`: runtime import/registry initialization failure.
   Duplicate registration fails closed during initialization.
 
-## Verification
+## Catalog and Project Browse
+
+`GET /api/human-interface/projects` returns
+`{ transport: { contract: "human-interface-project-catalog.v1" }, registered_projects }`.
+Each catalog entry contains only `project_id`, `source_key`, `source_qualification`.
+It enumerates the explicit registry in registry order, reads zero snapshot bytes,
+and performs no storage scan. It does not claim verified integrity, loaded Project,
+canonical title or confirmed schemas. Source qualification describes origin, not
+quality, Project kind/status, warning severity or rank.
+
+`GET /api/human-interface/projects/:projectId` returns:
+
+- `transport`: contract `human-interface-project-browse.v1`, `requested_scope.project_id`,
+  and `source` containing source_key, source_qualification, sha256,
+  stored_schema_version, read_schema_version and canonical_baseline_commit.
+- `canonical_project`: complete unchanged canonical Project, including title,
+  summary, status, timestamps and tags if present. Strings such as Historical’s
+  `historical sidecar required` are carried, never interpreted as instructions.
+- `canonical_entities`: exactly `id`, `project_id`, `kind`, `label` from each
+  saved RealityEntity. This is a transport projection, not a new canonical type.
+
+Stored collection order is preserved; no semantic ordering is asserted.
+No identity counts, ranking, temporal summaries, search or filtering are added.
+Each canonical request reads exactly one fresh snapshot and verifies its hash
+before parsing/normalization/validation. Catalog is the explicit zero-read case.
+Both new routes use the same GET-only, no-query, no-store and failure boundary.
+No filesystem path or internal source origin is exposed.
+
+The permitted browse scope is identity enumeration plus the existing selected
+Entity read path. Project-wide Evidence, Claims, Observations, Events/States,
+raw ProjectState download, reverse provenance, cross-Entity traversal, derived
+ranking and write/action remain outside scope. A selectable Entity does not
+imply rich knowledge about that Entity. No React changes are included.
+
+## Verification — HUMAN-003B
 
 ```sh
-node --import tsx --test server/human-interface/source-registry.test.ts server/human-interface/read-boundary.test.ts server/human-interface/ui.test.tsx
+node --import tsx --test server/human-interface/source-registry.test.ts server/human-interface/read-boundary.test.ts server/human-interface/browse-boundary.test.ts server/human-interface/ui.test.tsx
 node --import tsx scripts/human-interface/verify-human-001.ts
 node_modules/.bin/tsc -p server/human-interface/tsconfig.json
 node_modules/.bin/tsc -p ground-core/tsconfig.json
-node_modules/.bin/eslint src
 node_modules/.bin/eslint src/human-interface server/human-interface/http-route.js
 npm run build
 ```
 
-33 tests PASS: registry 9, HTTP 18, existing UI 6. Tests compare complete HTTP
-canonical results against direct existing readers for all sources, verify each
-request uses exactly one fresh snapshot, reject in-project but out-of-scope
-entities before reading, and exercise per-source corruption and method/query
-restrictions. Malformed/invalid source cases use server-only byte injection;
-no fixture or manifest is altered. All three fixture hashes and source bytes
-remain identical to HUMAN-002B; Foundation verifier passes.
+50 tests PASS (registry, existing Entity boundary, Browse boundary and existing UI).
+Tests cover catalog with an unavailable byte reader (zero reads), exact Project
+fields and identity-only projections (14 / 4 / 42), saved ordering, one fresh
+snapshot per request, hash failures, cross-project rejection and all 60 Entity
+results compared to direct canonical readers. Existing three proof routes retain
+identical canonical results. Representative non-candidate HTTP proofs:
 
-Plain Node (without a global TS loader) also serves all three registered routes with HTTP 200.
+- B15 `15399c69-cad8-4c41-8243-00df797258d0`: source person, all subject collections zero.
+- HUMAN-001 `bac9d6f2-862c-5006-af95-2dfd85d1475c`: 1 Claim and 1 linked bundle.
+- Round4 `c7e61d36-1a63-5e61-a2f0-c146dde96887`: 11 Claims and 11 linked bundles.
 
-The core suite reproduces 3,753 PASS / 104 FAIL out of 3,857 tests; remaining
-failures are missing ignored storage fixtures, matching the known baseline.
-A sandboxed run initially added one CLI subprocess failure; rerunning with the
-required local process permissions removed that environment-only failure.
-No core files or missing storage fixtures were changed.
+Fixture bytes, manifest, core and schema are unchanged. Foundation verification,
+adapter/core typechecks, focused lint and Vite build pass. Full frontend lint
+retains the same 36 baseline errors; they are outside this change. The full core
+suite is not rerun: its known baseline remains 3,753 PASS / 104 FAIL from missing
+storage fixtures, not a newly measured result.
 
-Adapter/core typechecks and Vite build pass. Focused Human Interface/HTTP lint
-passes. Full frontend lint has 36 pre-existing errors in App.jsx, Explore.jsx,
-kakera.js and prefs.js; diagnostic content matches the unchanged HUMAN-001D
-frontend baseline exactly. No React or lint configuration changes are made.
-
-HUMAN-002D can consume these three proof routes and separate transport source
-qualification from canonical records. It must still decide presentation of
-populated records. Arbitrary Entity browsing, project-wide Evidence and reference
-expansion remain future read-scope decisions. No source selector, index, lens,
-ranking, summary or write/action capability is included here.
+HUMAN-003C may consume the catalog, verified Project Browse and generalized
+Entity endpoint. The old UI’s candidate-scope error wording is unchanged here;
+003C must handle ENTITY_NOT_IN_SNAPSHOT explicitly. Other read-failure handling
+and existing proof rendering remain covered by existing UI tests. Hosted
+deployment and browser browse UI are not verified or implemented here.

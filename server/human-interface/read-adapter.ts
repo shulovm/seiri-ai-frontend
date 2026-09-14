@@ -8,30 +8,32 @@ export class HumanReadTransportError extends Error {
   }
 }
 
+function readVerifiedProject(registry: typeof realitySourceRegistry, projectId: string) {
+  try {
+    return registry.read(projectId);
+  } catch (error) {
+    if (error instanceof RealitySourceError) {
+      const codes: Record<string, string> = {
+        UNKNOWN_PROJECT: 'PROJECT_SCOPE_MISMATCH',
+        SOURCE_UNAVAILABLE: 'FIXTURE_SOURCE_UNAVAILABLE',
+        FIXTURE_INTEGRITY_FAILURE: 'FIXTURE_INTEGRITY_FAILURE',
+        CANONICAL_SOURCE_INVALID: 'CANONICAL_SOURCE_INVALID',
+      };
+      const code = codes[error.message];
+      if (code) throw new HumanReadTransportError(code === 'PROJECT_SCOPE_MISMATCH' ? 404 : 503, code);
+    }
+    // Parse/normalization and unexpected failures reach the HTTP read-failure boundary.
+    throw error;
+  }
+}
+
 // Registry injection is server-only; HTTP accepts project/entity IDs, never sources or paths.
 export function createHumanRealityReader(registry: typeof realitySourceRegistry = realitySourceRegistry) {
   return (projectId: string, entityId: string) => {
-    const { source, state } = (() => {
-      try {
-        const selected = registry.resolve(projectId);
-        // Proof-scope policy, not an assertion that this Entity is absent from ProjectState.
-        if (entityId !== selected.entity_id) throw new HumanReadTransportError(404, 'ENTITY_NOT_FOUND');
-        return registry.read(projectId);
-      } catch (error) {
-        if (error instanceof RealitySourceError) {
-          const codes: Record<string, string> = {
-            UNKNOWN_PROJECT: 'PROJECT_SCOPE_MISMATCH',
-            SOURCE_UNAVAILABLE: 'FIXTURE_SOURCE_UNAVAILABLE',
-            FIXTURE_INTEGRITY_FAILURE: 'FIXTURE_INTEGRITY_FAILURE',
-            CANONICAL_SOURCE_INVALID: 'CANONICAL_SOURCE_INVALID',
-          };
-          const code = codes[error.message];
-          if (code) throw new HumanReadTransportError(code === 'PROJECT_SCOPE_MISMATCH' ? 404 : 503, code);
-        }
-        // Parse/normalization and unexpected failures reach the HTTP read-failure boundary.
-        throw error;
-      }
-    })();
+    const { source, state } = readVerifiedProject(registry, projectId);
+    if (!state.reality_entities.some(entity => entity.id === entityId && entity.project_id === state.project.id)) {
+      throw new HumanReadTransportError(404, 'ENTITY_NOT_IN_SNAPSHOT');
+    }
     // All canonical readers share this one verified, normalized ProjectState.
     const worldline = getRealityWorldline(state, entityId);
     const observations = getObservationsForSubject(state, entityId);
@@ -57,3 +59,35 @@ export function createHumanRealityReader(registry: typeof realitySourceRegistry 
 export const readHumanReality = createHumanRealityReader();
 // Transport-only structural type, not a GROUND canonical schema/type.
 export type HumanRealityReadTransport = ReturnType<typeof readHumanReality>;
+
+// Catalog is registry metadata only: no bytes read or canonical content claimed.
+export function createHumanBrowseReader(registry: typeof realitySourceRegistry = realitySourceRegistry) {
+  return {
+    catalog() {
+      return {
+        transport: { contract: 'human-interface-project-catalog.v1' },
+        registered_projects: registry.sources.map(source => ({ project_id: source.project_id,
+          source_key: source.source_key, source_qualification: source.source_qualification })),
+      };
+    },
+    project(projectId: string) {
+      const { source, state } = readVerifiedProject(registry, projectId);
+      return {
+        transport: {
+          contract: 'human-interface-project-browse.v1',
+          source: { source_key: source.source_key, source_qualification: source.source_qualification,
+            sha256: source.sha256, stored_schema_version: source.stored_schema,
+            read_schema_version: state.schema_version, canonical_baseline_commit: canonicalBaselineCommit },
+          requested_scope: { project_id: projectId },
+        },
+        canonical_project: state.project,
+        // Transport projection of existing identity fields, not a new canonical type.
+        // Stored collection order is preserved; no semantic ordering is asserted.
+        canonical_entities: state.reality_entities.map(({ id, project_id, kind, label }) => ({ id, project_id, kind, label })),
+      };
+    },
+  };
+}
+export const humanBrowseReader = createHumanBrowseReader();
+export type HumanProjectCatalogTransport = ReturnType<typeof humanBrowseReader.catalog>;
+export type HumanProjectBrowseTransport = ReturnType<typeof humanBrowseReader.project>;

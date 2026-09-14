@@ -7,15 +7,14 @@ const adapter = tsImport('./read-adapter.ts', import.meta.url);
 // rejection while the existing server is idle.
 adapter.catch(() => {});
 const transportStatuses = {
-  PROJECT_SCOPE_MISMATCH: 404, ENTITY_NOT_FOUND: 404,
+  PROJECT_SCOPE_MISMATCH: 404, ENTITY_NOT_IN_SNAPSHOT: 404,
   FIXTURE_SOURCE_UNAVAILABLE: 503, FIXTURE_INTEGRITY_FAILURE: 503,
   CANONICAL_SOURCE_INVALID: 503,
 };
 
-export function createHumanInterfaceRouter(reader) {
+export function createHumanInterfaceRouter(reader, browseReader) {
   const router = Router();
-  const route = '/reality/:projectId/:entityId';
-  router.all(route, async (req, res) => {
+  const handle = select => async (req, res) => {
     res.set('Cache-Control', 'no-store');
     if (req.method !== 'GET') {
       res.set('Allow', 'GET');
@@ -25,9 +24,9 @@ export function createHumanInterfaceRouter(reader) {
       return res.status(400).json({ transport_error: { code: 'UNSUPPORTED_QUERY_PARAMETERS' } });
     }
     try {
-      const { readHumanReality } = await adapter;
+      const loaded = await adapter;
       try {
-        return res.json((reader ?? readHumanReality)(req.params.projectId, req.params.entityId));
+        return res.json(select(loaded, req));
       } catch (error) {
         if (Object.hasOwn(transportStatuses, error?.code)) {
           return res.status(transportStatuses[error.code]).json({ transport_error: { code: error.code } });
@@ -40,6 +39,10 @@ export function createHumanInterfaceRouter(reader) {
     } catch {
       return res.status(503).json({ transport_error: { code: 'READ_RUNTIME_UNAVAILABLE' } });
     }
-  });
+  };
+  router.all('/projects', handle(loaded => (browseReader ?? loaded.humanBrowseReader).catalog()));
+  router.all('/projects/:projectId', handle((loaded, req) => (browseReader ?? loaded.humanBrowseReader).project(req.params.projectId)));
+  router.all('/reality/:projectId/:entityId', handle((loaded, req) =>
+    (reader ?? loaded.readHumanReality)(req.params.projectId, req.params.entityId)));
   return router;
 }
