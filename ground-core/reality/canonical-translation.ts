@@ -4,6 +4,7 @@ import type {PatchProposal,ClarificationResponse} from '../extraction/types.js';
 import {validateStatePatch} from '../validate.js';
 import {dryRunPatch} from '../extraction/dry-run.js';
 import type {RealityProposeInput} from './types.js';
+import {segmentWholeReality,timelineEntry} from './whole-sections.js';
 import {stripDeclaredTimePrefix} from './semantic-times.js';
 import {statedSourceRoles} from './source-roles.js';
 import {ownershipRoles,quantityRole} from './semantic-roles.js';
@@ -96,7 +97,15 @@ export function decomposeReality(text:string):TranslationUnit[]{
  return units;
 }
 export function proposeCanonicalTranslation(state:ProjectState,input:RealityProposeInput):{result:PatchProposal|ClarificationResponse,trace:TranslationTrace}|null {
- const units=decomposeReality(input.input_text);
+ const sections=segmentWholeReality(input.input_text);
+ const units=decomposeReality(sections.recognized?[...sections.body,...sections.known].join('\n'):input.input_text);
+ if(sections.recognized){
+  const whole=(span:string,family:string,qualification:TranslationUnit['qualification'],properties:Record<string,RealityStateValue>):TranslationUnit=>({span,sourceSentence:span,families:[family],qualification,properties,eventKinds:[],time:null,status:'preserved',disposition:qualification==='unknown'||qualification==='unresolved'?'safely unresolved':'compositionally canonicalized'});
+  for(const span of sections.unknown)units.push(whole(span,'whole-unknown','unknown',{knowledge_scope:span,knowledge_status:'unknown'}));
+  for(const span of sections.timeline){const e=timelineEntry(span);if(e&&e.description!=='現在')units.push(whole(span,'whole-timeline','reported',{event_description:e.description,event_time_expression:e.expression,event_time_basis:'explicit source timeline; absolute year/timezone unresolved'}));}
+  if(sections.decision.length)units.push(whole(sections.decision.join('\n'),'whole-options','unresolved',{decision_scope:sections.decision.join('\n'),selection_status:'unselected',selection_scope:'open alternatives query, not a declaration about past actor decisions'}));
+ }
+
  const reference=input.input_text.match(/(?:補足[：:]\s*)?(?:「?それ」?|その人|参照語)(?:は|の参照先は)\s*([^。\n]{1,40}?)(?:を指す|です|である)[。\n]?/);
  if(reference)for(const u of units)if(u.status==='clarification required'){u.properties.resolved_referent=clean(reference[1]);u.status=u.families.length?'preserved':'unsupported';u.reason=undefined;if(u.observer&&/^(?:それ|その人)$/.test(u.observer))u.observer=clean(reference[1]);}
  const now=new Date().toISOString();const episode=randomUUID();const operations:PatchOperation[]=[];const targets:TranslationTrace['canonicalTargets']=[];const trace:TranslationTrace={input:input.input_text,units,canonicalTargets:targets,residuals:units.filter(u=>u.status!=='preserved').map(u=>({span:u.span,status:u.status,reason:u.reason??'Residual'}))};
