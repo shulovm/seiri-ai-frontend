@@ -62,14 +62,14 @@ import type {
   ReconcileProposeResult,
 } from "./reconcile/types.js";
 
-export interface CliRuntimeOptions {
+export interface CliRuntimeOptions extends FileStoreOptions {
   storageDir?: string;
   writeOut?: (message: string) => void;
   writeErr?: (message: string) => void;
 }
 
 function fileStoreOptions(options: CliRuntimeOptions): FileStoreOptions {
-  return options.storageDir ? { storageDir: options.storageDir } : {};
+  return { storageDir: options.storageDir, mode: options.mode, ownerSession: options.ownerSession };
 }
 
 function parseFlag(args: string[], flag: string): string | undefined {

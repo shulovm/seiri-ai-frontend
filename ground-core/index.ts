@@ -3653,3 +3653,5 @@ export type { ContributionEvidenceBinding, ContributionRequiredEvidenceDimension
 
 export { resolveTemporalInstant, requireTemporalInstant, temporalInstantKey, compareTemporalInstants, TemporalResolutionError } from "./temporal.js";
 export type { ExactTemporalInstant, TemporalResolution } from "./temporal.js";
+
+export { withCanonicalWriter, type CanonicalOwnerConfig, type PersistenceOptions } from "./storage-owner.js";

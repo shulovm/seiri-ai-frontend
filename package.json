@@ -17,7 +17,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test:ground-core": "node scripts/repro/test-ground.mjs",
-    "ground-core": "tsx ground-core/cli.ts"
+    "ground-core": "tsx ground-core/cli.ts",
+    "ground-core:owner": "tsx ground-core/owner-cli.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
