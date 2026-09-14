@@ -47,3 +47,9 @@
   .hi-claim { padding: 0 10px; }
   .hi-worldline { padding-left: 20px; }
 }
+
+/* Core read results are visually bounded separately from canonical record panels. */
+.hi-core-read { border: 1px solid #a8b0b0; padding: 24px; margin-bottom: 28px; }
+@media (max-width: 720px) {
+  .hi-core-read { padding: 14px; }
+}

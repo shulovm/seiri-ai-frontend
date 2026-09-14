@@ -63,10 +63,16 @@ function EvidenceRead({ result }) {
 
 export function RealityReadFailure({ error }) {
   const integrity = error.code === 'FIXTURE_INTEGRITY_FAILURE';
+  const scopeExplanation = {
+    PROJECT_SCOPE_MISMATCH: 'この Project ID に登録された読取 source を解決できません。Reality の不存在を示す判定ではありません。',
+    ENTITY_NOT_FOUND: 'この Entity ID は登録された proof read scope の対象ではありません。ProjectState 内に Entity が存在しないという判定ではありません。',
+  }[error.code];
   return <main className="hi-explorer"><header><p>GROUND Human Interface · read-only</p><h1>Reality Explorer</h1></header>
     <section role="alert" className="hi-section"><h2>{integrity ? '読取基盤の異常 · fixture integrity failure' : error.status === 404 ? '読取 scope を解決できません' : 'Server read error'}</h2>
       <p>HTTP status: <code>{error.status ?? 'unavailable'}</code></p><p>Transport error: <code>{error.code ?? 'NETWORK_READ_FAILURE'}</code></p>
       <p>{integrity ? 'Fixture の整合性検証が失敗したため、canonical records は表示していません。' : 'この request の canonical read response を取得できませんでした。'}</p>
+      {scopeExplanation && <p>{scopeExplanation}</p>}
+      <p className="hi-note">読取エラーは、canonical records が0件という結果ではありません。</p>
     </section></main>;
 }
 
@@ -85,7 +91,7 @@ export default function RealityReadView({ response }) {
     ['Claim', transport.returned_counts.claims, records.claims],
   ];
   return <main className="hi-explorer">
-    <header className="hi-context"><p className="hi-eyebrow">GROUND Human Interface · read-only · HUMAN-002D</p>
+    <header className="hi-context"><p className="hi-eyebrow">GROUND Human Interface · read-only · HUMAN-002E</p>
       <h1>{records.entity.label}</h1><p>Reality Explorer · canonical records / existing core read results</p>
       <p>保存済み ProjectState の一つの RealityEntityと、その scope に対する既存 core 読取結果を見ています。</p>
       <h2>Canonical records · context</h2>
@@ -120,7 +126,7 @@ export default function RealityReadView({ response }) {
       </li>)}</ul>
     </section>
     <section className="hi-section"><h2>Canonical Entity</h2><RecordPanel record={records.entity} title="RealityEntity" /></section>
-    <section className="hi-section"><h2>Worldline</h2><p className="hi-kind">Existing core read result · getRealityWorldline</p>
+    <section className="hi-section hi-core-read"><h2>Worldline</h2><p className="hi-kind">Existing core read result · getRealityWorldline</p>
       <p className="hi-note">この Entity scope の既存 core 読取結果です。空の entries は、歴史上何も起きなかったという判定ではありません。</p>
       <p className="hi-note">この section は既存 core の Worldline result を表示します。この read scope の全recordを並べ直した chronology ではなく、latest_time は Reality 全体の最新時刻を示す表示ではありません。Observation collection は別に表示しています。</p>
       <h3>temporal_summary · core read result</h3>
@@ -140,7 +146,7 @@ export default function RealityReadView({ response }) {
     <section className="hi-section"><h2>RealityStates</h2><p>この read scope で返された RealityState records: {worldline.states.length}</p>
       {worldline.states.map(record => <RecordPanel key={record.id} record={record} title="RealityState" />)}
     </section>
-    <section className="hi-section"><h2>Observations</h2><p>この read scope で返された EpistemicObservation records: {records.observations.length}</p>
+    <section className="hi-section"><h2>Observations</h2><p className="hi-note">Observation collection は Worldline とは別の読取結果です。observed_at を Worldline の latest_time へ追加・置換する表示ではありません。</p><p>この read scope で返された EpistemicObservation records: {records.observations.length}</p>
       {records.observations.map(record => <RecordPanel key={record.id} record={record} title="EpistemicObservation" />)}
     </section>
     <section className="hi-section"><h2>Claims</h2><p>この read scope で返された Claim records: {records.claims.length}</p>
@@ -148,6 +154,8 @@ export default function RealityReadView({ response }) {
       <p>この read path の Claim-linked Evidence bundles: {reads.evidence_for_claim.length}</p>
       <p className="hi-note">ProjectState 全体の Evidence 件数ではありません。各Claimの bundle が同じ Evidence id を参照する場合があります。</p>
       {reads.evidence_for_claim.length > 0 && <p>ClaimEvidenceLink records returned: {linkCount}<br />Unique linked Evidence returned in this scope: {linkedEvidenceIds.size}</p>}
+      <p className="hi-note">この read path は Claim と Evidence の明示的な link を表示します。Event / State の根拠への接続を示すものではありません。</p>
+      {reads.evidence_for_claim.length > 0 && <p className="hi-note">Link の件数と Evidence identity の件数は別です。Unique linked Evidence は返却された bundle 内の異なる Evidence id の件数です。</p>}
       </div>
       {records.claims.map(claim => <details className="hi-claim" key={claim.id} open={records.claims.length === 1}>
         <summary>Claim · <code>{claim.id}</code><span>{claim.predicate}</span></summary>
