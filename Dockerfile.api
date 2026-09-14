@@ -9,5 +9,10 @@ COPY package.json package-lock.json* ./
 RUN npm ci --omit=dev 2>/dev/null || npm install --omit=dev
 
 COPY server.js ./
+COPY prompts ./prompts
+COPY server/human-interface ./server/human-interface
+COPY ground-core ./ground-core
+COPY docs/schemas ./docs/schemas
+COPY fixtures/human-interface ./fixtures/human-interface
 EXPOSE 3001
 CMD ["node", "server.js"]

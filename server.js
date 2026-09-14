@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import cors from "cors";
 import dotenv from "dotenv";
 import { SYSTEM_PROMPT_SHORT } from "./prompts/system.js";
+import { createHumanInterfaceRouter } from "./server/human-interface/http-route.js";
 
 dotenv.config();
 
@@ -44,6 +45,7 @@ if (isVercel) {
   });
 }
 const PORT = Number(process.env.PORT || 3001);
+app.use('/api/human-interface', createHumanInterfaceRouter());
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const MODEL = String(process.env.ANTHROPIC_MODEL || "claude-sonnet-4-20250514");
 const GATE_MODEL = String(process.env.ANTHROPIC_GATE_MODEL || (isVercel ? "claude-haiku-4-5" : MODEL));
