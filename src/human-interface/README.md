@@ -230,3 +230,93 @@ pages. Populated conflicts, unplaced/unresolved temporal cases, multi-subject
 Observation browser proof, larger datasets and natural-domain populated
 Event/State/Observation remain unproven by these three snapshots. No E work,
 new read scope, navigation, Lens, source ranking or write/action is included.
+
+## HUMAN-002E — Cross-Shape Semantic Audit / Explorer Core v0 Gate
+
+**Gate: PASS — GROUND Reality Explorer Core v0**, within the three registered
+proof scopes and the implementation-author audit described here. This is the
+minimal common core for directly exploring different saved canonical shapes
+without adding GROUND semantics. It is not a finished product, a third-party
+comprehension result, or a claim that nobody can misread these screens.
+
+The reusable [Comprehension Contract](./COMPREHENSION-CONTRACT.md) contains the
+unchanged-D cold audit, per-screen answerable questions and answer key, prohibited
+inferences, error probes and a future participant protocol. No independent third
+party participated. The author has prior project knowledge; the cold pass used
+only visible screen evidence before edits and is not a blinded study.
+
+HUMAN-002D 96ac39bf4d4755548c1778e76f32e7c980085a4a was pushed and confirmed on
+origin/ground/human-002 before auditing. All three D routes were opened before
+UI changes. Cold findings: the existing qualification/null/shared-ID handling
+was sound within visible evidence, but Worldline had a similar outline to
+canonical sections and its scope note was distant from the Observations below.
+Repeated bundles/English count labels imposed relation-vs-identity reading cost.
+ENTITY_NOT_FOUND could be read as canonical absence despite being scope policy.
+Full Claim/raw access worked; no new navigation framework was justified.
+
+Minimal corrections:
+
+- Bound the existing Worldline core result with a neutral outline; retain its
+  explicit core-result label and all fields, values and ordering.
+- Add a short Observation-side reminder that observed_at is not inserted into
+  or substituted for the Worldline latest_time.
+- Explain relation count versus unique Evidence identity count and that the
+  displayed Claim-linked path does not assert Event/State evidence relations.
+- Explain both 404 source/scope codes and state explicitly that read errors are
+  not zero canonical records. Existing error codes and HTTP behavior are unchanged.
+
+No qualification translation, null rewrite, temporal computation, ranking,
+new disclosure behavior, new read scope or canonical field was added.
+
+### Gate evidence
+
+1. Three shapes use the same renderer without domain/source-key semantic branches:
+   preserved cross-shape tests and actual browser inspection.
+2. Canonical records, existing core read results and transport metadata remain
+   separately labeled, with canonical/raw records and complete raw results.
+3. Controlled qualification stays ordinary transport metadata, with no warning,
+   truth, trust or confidence treatment; tests check exact value and separation.
+4. State null stays literal null and its existing field-specific open-ended note;
+   no unknown/missing/invalid classifier. true/false remain literal fields.
+5. Worldline remains the core result, with four B15 entries in unchanged order,
+   latest_time 11:00 and a separate 12:00 Observation. No all-record Timeline.
+6. Round 4 preserves 23 Claims, 23 links and one shared Evidence ID, with no
+   canonical aggregation, representative selection or record identity rewrite.
+7. Claim-linked bundle zero and rejected scope never assert Project/Reality
+   absence. Project-wide Evidence is not read or displayed.
+8. Every canonical record/raw result remains accessible. First/last Claim,
+   raw, Evidence, close and next-record operations were exercised again.
+9. All four error screens remain alerts with no canonical content or successful
+   empty response. 404s were checked on the actual server; 503s used the unchanged
+   router's error-only injection seam, without fixture modifications.
+10. HUMAN-001 retains label, identity, Claim/Link/Evidence path, confidence 0.95,
+    provenance, applicability, schema values and scope zeros; regression passes.
+11. No unresolved blocking semantic bug was identified in this bounded audit.
+
+After corrections, all three screens were re-opened at 390x844; width and
+scrollWidth were both 390. Field/value pairing, full IDs, link identity and raw
+JSON remained available. The viewport override was reset. Round 4 retains all
+23 summaries; first Claim/raw/Evidence can be opened, closed, and the last Claim
+reached. Shared Evidence ID was checked across those bundles. No collapse-all or
+new navigation was added because native per-record disclosure supported these
+operations. Repeated opening and technical terms remain usability limitations.
+
+Verification: 40 tests PASS (all prior 37 plus 3 semantic wording tests): registry
+9, HTTP 18, UI 13. UI-test/adapter/core typechecks, Human Interface lint, Vite
+build and Foundation verification PASS. All three fixture bytes and hashes are
+unchanged from D. Frontend-wide lint exactly reproduces the existing 36 errors.
+Schema/core/registry/HTTP contract have no diff. Full core suite was not rerun:
+C's verified 3,753 PASS / 104 FAIL (missing ignored storage fixtures) is the
+baseline; no core change occurred. No new failure in E's executed checks.
+
+Remaining unproved: independent human comprehension, populated conflict/unplaced/
+unresolved temporal cases, multi-subject Observation browser proof, larger
+Realities, natural-domain populated Event/State/Observation, arbitrary Entity
+browsing and additional reference scopes. The controlled snapshot remains
+controlled; Historical Round 4 is not a substitute for populated temporal proof.
+
+Next-phase candidates only: run an independent participant study using the fixed
+contract; obtain a naturally sourced canonical injection with currently unproved
+shapes; separately design a future read scope if wider Entity/Evidence access is
+wanted. No HUMAN-003, new Lens, source selector, ranking, summary, write or action
+work is started by this gate.

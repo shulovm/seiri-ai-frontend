@@ -143,3 +143,38 @@ test('all required read failures remain errors with no empty Reality rendering',
     assert.doesNotMatch(html,/Records in this read scope|Claim records: 0/);
   }
 });
+
+test('E qualification remains transport-only and neutral, while canonical raw objects stay exact', () => {
+  const body=readHumanReality('b7c4492f-955a-4189-a913-5ece6c6a876a','3b35ea51-6db5-4dee-8759-bb17377cbc0c');
+  const before=JSON.stringify(body);
+  const html=renderToStaticMarkup(<View response={body}/>);
+  assert.equal(JSON.stringify(body),before);
+  assert.equal(body.transport.source.source_qualification,'controlled-experiment-canonical-snapshot');
+  assert.ok(!JSON.stringify(body.canonical_records).includes('source_qualification'));
+  assert.ok(!JSON.stringify(body.core_read_results).includes('source_qualification'));
+  assert.ok(html.includes('<dt>source_qualification</dt><dd><code>controlled-experiment-canonical-snapshot</code>'));
+  assert.doesNotMatch(html,/role="alert"|class="[^\"]*(?:warning|danger)|unreliable|low confidence|fake|simulated truth/i);
+  assert.ok(html.includes('canonical record の field や真偽の評価ではありません'));
+});
+
+test('E scope notes keep worldline, observation and Evidence return scopes distinct', () => {
+  const body=readHumanReality('b7c4492f-955a-4189-a913-5ece6c6a876a','3b35ea51-6db5-4dee-8759-bb17377cbc0c');
+  const html=renderToStaticMarkup(<View response={body}/>);
+  assert.ok(html.includes('hi-section hi-core-read'));
+  assert.ok(html.includes('Observation collection は Worldline とは別の読取結果'));
+  assert.ok(html.includes('Event / State の根拠への接続を示すものではありません'));
+  assert.ok(html.includes('<dt>valid_until</dt><dd><code>null</code>'));
+  assert.doesNotMatch(html,/<dt>valid_until<\/dt><dd>[^<]*(?:unknown|missing|invalid|unresolved)/i);
+  const historical=renderToStaticMarkup(<View response={response}/>);
+  assert.ok(historical.includes('Link の件数と Evidence identity の件数は別'));
+});
+
+test('E scope and read error explanations do not assert canonical absence', () => {
+  for(const code of ['PROJECT_SCOPE_MISMATCH','ENTITY_NOT_FOUND','FIXTURE_INTEGRITY_FAILURE','CANONICAL_READ_FAILURE']) {
+    const html=renderToStaticMarkup(<RealityReadFailure error={{code,status:code.endsWith('FAILURE')?503:404}}/>);
+    assert.ok(html.includes('読取エラーは、canonical records が0件という結果ではありません'));
+    assert.doesNotMatch(html,/data-record-type=|Records in this read scope|Claim records: 0/);
+    if(code==='ENTITY_NOT_FOUND') assert.ok(html.includes('ProjectState 内に Entity が存在しないという判定ではありません'));
+    if(code==='PROJECT_SCOPE_MISMATCH') assert.ok(html.includes('Reality の不存在を示す判定ではありません'));
+  }
+});
