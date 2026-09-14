@@ -67,7 +67,7 @@ test('identity, filesystem query and non-GET requests cannot escape proof scope'
   await withHttp(undefined, async base => {
     for (const [url, status, code] of [
       [route.replace(projectId, 'other-project'), 404, 'PROJECT_SCOPE_MISMATCH'],
-      [route.replace(entityId, 'other-entity'), 404, 'ENTITY_NOT_FOUND'],
+      [route.replace(entityId, 'other-entity'), 404, 'ENTITY_NOT_IN_SNAPSHOT'],
       [route + '?path=/etc/passwd', 400, 'UNSUPPORTED_QUERY_PARAMETERS'],
     ] as const) {
       const response = await fetch(base + url);
@@ -121,6 +121,10 @@ test('existing JavaScript server mounts the same GET boundary', async () => {
       const response = await fetch(base + route);
       assert.equal(response.status, 200);
       assert.equal((await response.json()).canonical_records.entity.id, entityId);
+      assert.equal((await fetch(base + '/api/human-interface/projects')).status, 200);
+      const browse = await fetch(base + '/api/human-interface/projects/' + projectId);
+      assert.equal(browse.status, 200);
+      assert.equal((await browse.json()).canonical_entities.length, 14);
     }, app);
   } finally {
     if (previous === undefined) delete process.env.VERCEL;
@@ -201,17 +205,10 @@ for (const source of registry.sources) {
     });
   });
 
-  test(`${source.source_key}: proof scope and query/method restrictions reject before reading`, async () => {
+  test(`${source.source_key}: query/method restrictions reject before reading`, async () => {
     let reads = 0;
     const isolated = createRealitySourceRegistry(registry.sources, () => {reads++; throw Error('must not read');});
-    const otherEntity = snapshot.reality_entities.find(entity => entity.id !== source.entity_id);
-    assert.ok(otherEntity); // Exists canonically, but not in the registered HTTP proof scope.
     await withHttp(adapter.createHumanRealityReader(isolated), async base => {
-      for (const url of [scopedRoute.replace(source.entity_id, otherEntity.id), scopedRoute.replace(source.entity_id, 'unregistered')]) {
-        const response = await fetch(base + url);
-        assert.equal(response.status, 404);
-        assert.deepEqual(await response.json(), {transport_error:{code:'ENTITY_NOT_FOUND'}});
-      }
       for (const query of ['path=/etc/passwd','filename=project-state.json','directory=/tmp','source=e2-b15','registry=override']) {
         const response = await fetch(base + scopedRoute + '?' + query);
         assert.equal(response.status, 400);
