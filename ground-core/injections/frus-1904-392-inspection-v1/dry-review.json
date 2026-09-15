@@ -1,0 +1,217 @@
+{
+  "checkpoint": "SEMANTIC-002",
+  "policy_version": "frus-392-stored-inspection-v1",
+  "publication_authorized": false,
+  "recorded_at_binding": {
+    "final_recorded_at": "UNBOUND: future owner-controlled recording only",
+    "validation_only_clock": "2026-09-15T01:52:28.323Z",
+    "execution_time": "2026-09-15T01:52:28.323Z",
+    "explanation": "The following patch is schema-validation material only; its timestamp is not approved for a future live record. No owner or save was used."
+  },
+  "input_qualification": {
+    "origin": "Stored Historical dataset inspection report",
+    "source_id": "frus:1904:392",
+    "input_key": "c392-instruction",
+    "extraction": {
+      "status": "researcher_paraphrase",
+      "confidence": "high for attribution to inspected edition; not a truth score",
+      "context": "d392 parenthetical paraphrase; instruction is not proof of delivery"
+    },
+    "access_date": "2026-09-14",
+    "completeness": {
+      "status": "excerpt_only",
+      "reason": "short inspected excerpt plus researcher paraphrase; not a full document capture"
+    },
+    "authenticity": {
+      "status": "hosted_official_edition",
+      "limit": "original telegram, autograph, archival custody and editorial accuracy not authenticated"
+    }
+  },
+  "target_project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+  "ids": {
+    "document": "fbdfd235-1a5b-5a5d-ad30-6f2c170fe9f9",
+    "observation": "87ae62f9-9481-5577-a299-813c022d2007",
+    "evidence": "3151b313-d5bc-5b58-a17d-a61add22f22d"
+  },
+  "id_keys": {
+    "document": "frus-392-stored-inspection-v1:document:frus:1904:392",
+    "observation": "frus-392-stored-inspection-v1:inspection-result:frus:1904:392:c392-instruction",
+    "evidence": "frus-392-stored-inspection-v1:inspection-evidence:frus:1904:392:c392-instruction"
+  },
+  "before_fingerprint": "724f01bfdeeed0414d8e1c360195b84439ce9e30f15cb35909a7f5aca0b0f169",
+  "live_after_fingerprint": "724f01bfdeeed0414d8e1c360195b84439ce9e30f15cb35909a7f5aca0b0f169",
+  "stored_schema": "0.1.25",
+  "read_schema": "0.1.25",
+  "counts": {
+    "reality_entities": {
+      "before": 0,
+      "memory_preview": 1
+    },
+    "epistemic_observations": {
+      "before": 0,
+      "memory_preview": 1
+    },
+    "evidence": {
+      "before": 0,
+      "memory_preview": 1
+    },
+    "claims": {
+      "before": 0,
+      "memory_preview": 0
+    },
+    "claim_evidence_links": {
+      "before": 0,
+      "memory_preview": 0
+    },
+    "reality_events": {
+      "before": 0,
+      "memory_preview": 0
+    },
+    "reality_states": {
+      "before": 0,
+      "memory_preview": 0
+    },
+    "observations": {
+      "before": 0,
+      "memory_preview": 0
+    }
+  },
+  "patch_validation": {
+    "valid": true
+  },
+  "memory_validation": {
+    "valid": true
+  },
+  "preflight": "NOT_APPLIED",
+  "title_summary_current_state_preserved": true,
+  "validation_only_patch": {
+    "schema_version": "0.1.25",
+    "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+    "source": "import",
+    "operations": [
+      {
+        "op": "upsert",
+        "entity": "reality_entity",
+        "entity_id": "fbdfd235-1a5b-5a5d-ad30-6f2c170fe9f9",
+        "payload": {
+          "id": "fbdfd235-1a5b-5a5d-ad30-6f2c170fe9f9",
+          "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+          "kind": "document",
+          "label": "FRUS 1904, document 392",
+          "attrs": {
+            "source_id": "frus:1904:392",
+            "url": "https://history.state.gov/historicaldocuments/frus1904/d392",
+            "locator": {
+              "document_number": "392",
+              "page": {
+                "status": "unknown",
+                "reason": "HTML page marker not inspected for this record"
+              }
+            }
+          },
+          "created_at": "2026-09-15T01:52:28.323Z",
+          "updated_at": "2026-09-15T01:52:28.323Z"
+        }
+      },
+      {
+        "op": "upsert",
+        "entity": "epistemic_observation",
+        "entity_id": "87ae62f9-9481-5577-a299-813c022d2007",
+        "payload": {
+          "id": "87ae62f9-9481-5577-a299-813c022d2007",
+          "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+          "kind": "textual",
+          "content": "Recorded researcher-authored paraphrase: Japanese minister at St. Petersburg — instructed to present termination note and break diplomatic relations.",
+          "subject_ids": [
+            "fbdfd235-1a5b-5a5d-ad30-6f2c170fe9f9"
+          ],
+          "observed_at": null,
+          "recorded_at": "2026-09-15T01:52:28.323Z",
+          "provenance": {
+            "kind": "document",
+            "external_id": "round1.dataset.json#claims/c392-instruction",
+            "label": "Stored Historical Round1 inspection report; researcher-authored paraphrase"
+          },
+          "created_at": "2026-09-15T01:52:28.323Z",
+          "updated_at": "2026-09-15T01:52:28.323Z"
+        }
+      },
+      {
+        "op": "upsert",
+        "entity": "evidence",
+        "entity_id": "3151b313-d5bc-5b58-a17d-a61add22f22d",
+        "payload": {
+          "id": "3151b313-d5bc-5b58-a17d-a61add22f22d",
+          "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+          "kind": "observation_ref",
+          "observation_id": "87ae62f9-9481-5577-a299-813c022d2007",
+          "external_ref": null,
+          "summary": "Reference to the recorded document-inspection result.",
+          "provenance": {
+            "kind": "document",
+            "external_id": "round1.dataset.json#claims/c392-instruction",
+            "label": "Stored Historical Round1 inspection report; researcher-authored paraphrase"
+          },
+          "recorded_at": "2026-09-15T01:52:28.323Z",
+          "created_at": "2026-09-15T01:52:28.323Z",
+          "updated_at": "2026-09-15T01:52:28.323Z"
+        }
+      }
+    ]
+  },
+  "memory_records": {
+    "document": {
+      "id": "fbdfd235-1a5b-5a5d-ad30-6f2c170fe9f9",
+      "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+      "kind": "document",
+      "label": "FRUS 1904, document 392",
+      "attrs": {
+        "source_id": "frus:1904:392",
+        "url": "https://history.state.gov/historicaldocuments/frus1904/d392",
+        "locator": {
+          "document_number": "392",
+          "page": {
+            "status": "unknown",
+            "reason": "HTML page marker not inspected for this record"
+          }
+        }
+      },
+      "created_at": "2026-09-15T01:52:28.323Z",
+      "updated_at": "2026-09-15T01:52:28.332Z"
+    },
+    "observation": {
+      "id": "87ae62f9-9481-5577-a299-813c022d2007",
+      "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+      "kind": "textual",
+      "content": "Recorded researcher-authored paraphrase: Japanese minister at St. Petersburg — instructed to present termination note and break diplomatic relations.",
+      "subject_ids": [
+        "fbdfd235-1a5b-5a5d-ad30-6f2c170fe9f9"
+      ],
+      "observed_at": null,
+      "recorded_at": "2026-09-15T01:52:28.323Z",
+      "provenance": {
+        "kind": "document",
+        "external_id": "round1.dataset.json#claims/c392-instruction",
+        "label": "Stored Historical Round1 inspection report; researcher-authored paraphrase"
+      },
+      "created_at": "2026-09-15T01:52:28.323Z",
+      "updated_at": "2026-09-15T01:52:28.332Z"
+    },
+    "evidence": {
+      "id": "3151b313-d5bc-5b58-a17d-a61add22f22d",
+      "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+      "kind": "observation_ref",
+      "observation_id": "87ae62f9-9481-5577-a299-813c022d2007",
+      "external_ref": null,
+      "summary": "Reference to the recorded document-inspection result.",
+      "provenance": {
+        "kind": "document",
+        "external_id": "round1.dataset.json#claims/c392-instruction",
+        "label": "Stored Historical Round1 inspection report; researcher-authored paraphrase"
+      },
+      "recorded_at": "2026-09-15T01:52:28.323Z",
+      "created_at": "2026-09-15T01:52:28.323Z",
+      "updated_at": "2026-09-15T01:52:28.332Z"
+    }
+  }
+}
