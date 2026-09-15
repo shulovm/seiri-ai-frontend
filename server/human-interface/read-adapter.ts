@@ -1,6 +1,8 @@
 import { getRealityWorldline } from '../../ground-core/reality/worldline.js';
 import { getClaimsForSubject, getEvidenceForClaim, getObservationsForSubject } from '../../ground-core/reality/epistemic.js';
-import { realitySourceRegistry, RealitySourceError, canonicalBaselineCommit } from './source-registry.js';
+import { realitySourceRegistry, RealitySourceError } from './source-registry.js';
+
+import { asSourceResolver, humanSourceResolver, LiveSourceError, type HumanSourceResolver } from './source-resolver.js';
 
 export class HumanReadTransportError extends Error {
   constructor(public readonly status: number, public readonly code: string) {
@@ -8,10 +10,11 @@ export class HumanReadTransportError extends Error {
   }
 }
 
-function readVerifiedProject(registry: typeof realitySourceRegistry, projectId: string) {
+function readVerifiedProject(registry: HumanSourceResolver, projectId: string) {
   try {
-    return registry.read(projectId);
+    return registry.readSnapshot(projectId);
   } catch (error) {
+    if (error instanceof LiveSourceError) throw new HumanReadTransportError(503, error.code);
     if (error instanceof RealitySourceError) {
       const codes: Record<string, string> = {
         UNKNOWN_PROJECT: 'PROJECT_SCOPE_MISMATCH',
@@ -28,7 +31,8 @@ function readVerifiedProject(registry: typeof realitySourceRegistry, projectId: 
 }
 
 // Registry injection is server-only; HTTP accepts project/entity IDs, never sources or paths.
-export function createHumanRealityReader(registry: typeof realitySourceRegistry = realitySourceRegistry) {
+export function createHumanRealityReader(sourceResolver: HumanSourceResolver | typeof realitySourceRegistry = humanSourceResolver) {
+  const registry = asSourceResolver(sourceResolver);
   return (projectId: string, entityId: string) => {
     const { source, state } = readVerifiedProject(registry, projectId);
     if (!state.reality_entities.some(entity => entity.id === entityId && entity.project_id === state.project.id)) {
@@ -42,10 +46,7 @@ export function createHumanRealityReader(registry: typeof realitySourceRegistry 
     return {
       transport: {
         contract: 'human-interface-reality-read.v1',
-        source: { fixture: source.source_key, source_key: source.source_key,
-          source_qualification: source.source_qualification, sha256: source.sha256,
-          stored_schema_version: source.stored_schema, read_schema_version: state.schema_version,
-          canonical_baseline_commit: canonicalBaselineCommit },
+        source: { ...source, ...(source.source_mode === 'immutable_proof_snapshot' ? {fixture:source.source_key} : {}) },
         requested_scope: { project_id: projectId, entity_id: entityId },
         returned_counts: { observations: observations.length, claims: claims.length,
           events: worldline.events.length, states: worldline.states.length },
@@ -61,13 +62,14 @@ export const readHumanReality = createHumanRealityReader();
 export type HumanRealityReadTransport = ReturnType<typeof readHumanReality>;
 
 // Catalog is registry metadata only: no bytes read or canonical content claimed.
-export function createHumanBrowseReader(registry: typeof realitySourceRegistry = realitySourceRegistry) {
+export function createHumanBrowseReader(sourceResolver: HumanSourceResolver | typeof realitySourceRegistry = humanSourceResolver) {
+  const registry = asSourceResolver(sourceResolver);
   return {
     catalog() {
       return {
         transport: { contract: 'human-interface-project-catalog.v1' },
         registered_projects: registry.sources.map(source => ({ project_id: source.project_id,
-          source_key: source.source_key, source_qualification: source.source_qualification })),
+          source_key: source.source_key, source_mode: source.source_mode, source_qualification: source.source_qualification })),
       };
     },
     project(projectId: string) {
@@ -75,9 +77,7 @@ export function createHumanBrowseReader(registry: typeof realitySourceRegistry =
       return {
         transport: {
           contract: 'human-interface-project-browse.v1',
-          source: { source_key: source.source_key, source_qualification: source.source_qualification,
-            sha256: source.sha256, stored_schema_version: source.stored_schema,
-            read_schema_version: state.schema_version, canonical_baseline_commit: canonicalBaselineCommit },
+          source,
           requested_scope: { project_id: projectId },
         },
         canonical_project: state.project,

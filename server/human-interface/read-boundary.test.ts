@@ -151,7 +151,7 @@ for (const source of registry.sources) {
       assert.deepEqual(body.core_read_results, {worldline,evidence_for_claim:bundles});
       assert.deepEqual(body.transport.source, {
         fixture:source.source_key, source_key:source.source_key, source_qualification:source.source_qualification,
-        sha256:source.sha256, stored_schema_version:'0.1.24', read_schema_version:'0.1.25',
+        source_mode:"immutable_proof_snapshot", snapshot_fingerprint:source.sha256, sha256:source.sha256, stored_schema_version:'0.1.24', read_schema_version:'0.1.25',
         canonical_baseline_commit:'fbfafef737132c8049998f9ca7d1d5f68fa90c56',
       });
       assert.deepEqual(body.transport.requested_scope, {project_id:source.project_id,entity_id:source.entity_id});

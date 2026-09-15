@@ -30,7 +30,7 @@ test('catalog returns only three registered transport identities without reading
     assert.equal(response.headers.get('cache-control'), 'no-store');
     assert.deepEqual(await response.json(), {
       transport: { contract: 'human-interface-project-catalog.v1' },
-      registered_projects: registry.sources.map(s => ({project_id:s.project_id,source_key:s.source_key,source_qualification:s.source_qualification})),
+      registered_projects: registry.sources.map(s => ({project_id:s.project_id,source_key:s.source_key,source_mode:"immutable_proof_snapshot",source_qualification:s.source_qualification})),
     });
   });
   assert.equal(reads, 0);
@@ -57,7 +57,7 @@ for (const [index, source] of registry.sources.entries()) {
       assert.equal(body.canonical_entities.length, [14,4,42][index]);
       assert.deepEqual(body.transport, {
         contract:'human-interface-project-browse.v1',
-        source:{source_key:source.source_key,source_qualification:source.source_qualification,sha256:source.sha256,
+        source:{source_key:source.source_key,source_qualification:source.source_qualification,source_mode:"immutable_proof_snapshot", snapshot_fingerprint:source.sha256, sha256:source.sha256,
           stored_schema_version:'0.1.24',read_schema_version:'0.1.25',canonical_baseline_commit:'fbfafef737132c8049998f9ca7d1d5f68fa90c56'},
         requested_scope:{project_id:source.project_id},
       });
