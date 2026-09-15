@@ -59,3 +59,7 @@
 .hi-browse-list { list-style: none; padding: 0; margin: 0; }
 .hi-browse-list > li { padding: 18px 0; border-bottom: 1px solid #cdd1d1; overflow-wrap: anywhere; }
 .hi-explorer h1 { overflow-wrap: anywhere; }
+
+.hi-observation-evidence { margin: 0 0 28px; padding: 16px; border-left: 2px solid #a8b0b0; }
+.hi-observation-evidence > p { overflow-wrap: anywhere; }
+@media (max-width: 720px) { .hi-observation-evidence { padding: 12px 0 12px 12px; } }

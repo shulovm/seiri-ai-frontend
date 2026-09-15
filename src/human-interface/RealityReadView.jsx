@@ -61,6 +61,21 @@ function EvidenceRead({ result }) {
   </details>;
 }
 
+function ObservationEvidenceRead({ observationId, result }) {
+  return <section className="hi-observation-evidence" aria-label="Evidence linked to this Observation" data-observation-id={observationId}>
+    <h3>Evidence linked to this Observation</h3>
+    <p className="hi-kind">Existing core read result · getEvidenceForObservation</p>
+    <p>Observation ID: <code>{observationId}</code></p>
+    <p className="hi-note">このsectionは、このObservationをexplicit observation_refで参照するEvidence recordsのみを表示します。保存参照は Evidence.observation_id → EpistemicObservation.id です。</p>
+    <p className="hi-note">Evidenceはtruth verdictではありません。0件はこの明示relation scopeでの返却件数であり、Evidence一般の不存在やObservationの根拠・真偽を判定するものではありません。</p>
+    {result ? <>
+      <p>このread scopeで返された明示参照Evidence records: {result.evidence.length}</p>
+      <p className="hi-note">server response順です。重要度を表しません。ObservationとEvidenceには同じEntity responseのsnapshot_fingerprintが適用されます。</p>
+      {result.evidence.map(evidence => <RecordPanel key={evidence.id} record={evidence} title="Evidence" />)}
+    </> : <p role="alert">このObservationのread resultが提供されていません。Evidence 0件という結果ではありません。</p>}
+  </section>;
+}
+
 export function RealityReadFailure({ error, context = 'Reality Explorer' }) {
   const integrity = error.code === 'FIXTURE_INTEGRITY_FAILURE';
   const scopeExplanation = {
@@ -157,7 +172,10 @@ export default function RealityReadView({ response }) {
       {worldline.states.map(record => <RecordPanel key={record.id} record={record} title="RealityState" />)}
     </section>
     <section className="hi-section"><h2>Observations</h2><p className="hi-note">Observation collection は Worldline とは別の読取結果です。observed_at を Worldline の latest_time へ追加・置換する表示ではありません。</p><p>この read scope で返された EpistemicObservation records: {records.observations.length}</p>
-      {records.observations.map(record => <RecordPanel key={record.id} record={record} title="EpistemicObservation" />)}
+      {records.observations.map(record => <div key={record.id} className="hi-observation-group">
+        <RecordPanel record={record} title="EpistemicObservation" />
+        <ObservationEvidenceRead observationId={record.id} result={reads.evidence_for_observation?.find(bundle => bundle.observation_id === record.id)} />
+      </div>)}
     </section>
     <section className="hi-section"><h2>Claims</h2><p>この read scope で返された Claim records: {records.claims.length}</p>
       <div className="hi-linked-scope"><h3>Claim-linked Evidence · read scope</h3>
