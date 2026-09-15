@@ -1,5 +1,5 @@
 import { getRealityWorldline } from '../../ground-core/reality/worldline.js';
-import { getClaimsForSubject, getEvidenceForClaim, getObservationsForSubject } from '../../ground-core/reality/epistemic.js';
+import { getClaimsForSubject, getEvidenceForClaim, getEvidenceForObservation, getObservationsForSubject } from '../../ground-core/reality/epistemic.js';
 import { realitySourceRegistry, RealitySourceError } from './source-registry.js';
 
 import { asSourceResolver, humanSourceResolver, LiveSourceError, type HumanSourceResolver } from './source-resolver.js';
@@ -43,6 +43,9 @@ export function createHumanRealityReader(sourceResolver: HumanSourceResolver | t
     const observations = getObservationsForSubject(state, entityId);
     const claims = getClaimsForSubject(state, entityId);
     const evidenceResults = claims.map(claim => getEvidenceForClaim(state, claim.id));
+    const observationEvidence = observations.map(observation => ({
+      observation_id: observation.id, evidence: getEvidenceForObservation(state, observation.id),
+    }));
     return {
       transport: {
         contract: 'human-interface-reality-read.v1',
@@ -52,7 +55,7 @@ export function createHumanRealityReader(sourceResolver: HumanSourceResolver | t
           events: worldline.events.length, states: worldline.states.length },
       },
       canonical_records: { project: state.project, entity: worldline.entity, observations, claims },
-      core_read_results: { worldline, evidence_for_claim: evidenceResults },
+      core_read_results: { worldline, evidence_for_claim: evidenceResults, evidence_for_observation: observationEvidence },
     };
   };
 }

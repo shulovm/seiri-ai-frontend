@@ -11,7 +11,7 @@ import { loadProjectSnapshot, saveProject } from '../../ground-core/file-store.j
 import { withCanonicalWriter, type CanonicalOwnerConfig } from '../../ground-core/storage-owner.js';
 import { createEmptyProject } from '../../ground-core/state-engine.js';
 import { getRealityWorldline } from '../../ground-core/reality/worldline.js';
-import { getObservationsForSubject, getClaimsForSubject, getEvidenceForClaim } from '../../ground-core/reality/epistemic.js';
+import { getObservationsForSubject, getClaimsForSubject, getEvidenceForClaim, getEvidenceForObservation } from '../../ground-core/reality/epistemic.js';
 const { default: express } = await tsImport('express', import.meta.url);
 const { createHumanInterfaceRouter } = await tsImport('./http-route.js', import.meta.url);
 function setup(t: TestContext) {
@@ -47,7 +47,7 @@ test('explicit enablement: zero snapshot catalog reads, no automatic discovery o
 
 test('one snapshot across every canonical reader even when writer publishes B immediately after acquisition A',t=>{
  const x=setup(t);const a=loadProjectSnapshot(LIVE_PROJECT_ID,x.config);let reads=0;
- const b=structuredClone(x.state);b.project.title='Next test snapshot';b.epistemic_observations=[];b.reality_events=[];b.reality_states=[];
+ const b=structuredClone(x.state);b.project.title='Next test snapshot';b.epistemic_observations=[];b.evidence=[];b.reality_events=[];b.reality_states=[];
  const resolver=createHumanSourceResolver({runtimeConfigPath:x.runtimeConfigPath},(id,options)=>{
    reads++;const snapshot=loadProjectSnapshot(id,options);
    if(reads===1)withCanonicalWriter(x.config,o=>saveProject(b,o));
@@ -58,8 +58,10 @@ test('one snapshot across every canonical reader even when writer publishes B im
  const claims=getClaimsForSubject(a.state,entity.id);
  assert.equal(reads,1);assert.equal(first.transport.source.snapshot_fingerprint,a.fingerprint);
  assert.deepEqual(first.canonical_records,{project:a.state.project,entity:getRealityWorldline(a.state,entity.id).entity,observations:getObservationsForSubject(a.state,entity.id),claims});
- assert.deepEqual(first.core_read_results,{worldline:getRealityWorldline(a.state,entity.id),evidence_for_claim:claims.map(c=>getEvidenceForClaim(a.state,c.id))});
+ assert.deepEqual(first.core_read_results,{worldline:getRealityWorldline(a.state,entity.id),evidence_for_claim:claims.map(c=>getEvidenceForClaim(a.state,c.id)),evidence_for_observation:getObservationsForSubject(a.state,entity.id).map(o=>({observation_id:o.id,evidence:getEvidenceForObservation(a.state,o.id)}))});
  const next=reader(LIVE_PROJECT_ID,entity.id);assert.equal(reads,2);assert.notEqual(next.transport.source.snapshot_fingerprint,a.fingerprint);
+ assert.deepEqual(next.core_read_results.evidence_for_observation,[]);
+ assert.equal(first.core_read_results.evidence_for_observation.reduce((n,b)=>n+b.evidence.length,0),1);
  assert.equal(next.canonical_records.project.title,b.project.title);assert.equal(next.canonical_records.observations.length,0);
  assert.equal(next.core_read_results.worldline.events.length,0);assert.equal(next.core_read_results.worldline.states.length,0);
 });
@@ -120,3 +122,19 @@ for(const [name,code] of [['root','LIVE_ROOT_UNAVAILABLE'],['missing','LIVE_PROJ
   }});
  });
 }
+
+
+test('ambiguous Observation errors propagate through HTTP, never empty Evidence bundles',async t=>{
+ const x=setup(t);
+ const resolver=createHumanSourceResolver({runtimeConfigPath:x.runtimeConfigPath},(id,o)=>{
+  const snapshot=loadProjectSnapshot(id,o);
+  snapshot.state.epistemic_observations.push(structuredClone(snapshot.state.epistemic_observations[0]));
+  return snapshot;
+ });
+ const entity=x.state.epistemic_observations[0].subject_ids[0];
+ await http(resolver,async url=>{
+  const response=await fetch(`${url}/reality/${LIVE_PROJECT_ID}/${entity}`);
+  assert.equal(response.status,503);
+  assert.deepEqual(await response.json(),{transport_error:{code:'CANONICAL_READ_FAILURE',core_error_code:'VALIDATION_ERROR'}});
+ });
+});

@@ -1,3 +1,67 @@
+# HUMAN-005B — Observation-linked Evidence Read Boundary
+
+The Entity response now additively includes
+`core_read_results.evidence_for_observation: [{ observation_id, evidence: Evidence[] }]`.
+`canonical_records.observations` and existing Claim-linked results are unchanged.
+No endpoint, metadata count, canonical type/schema or UI change is introduced.
+
+`getEvidenceForObservation(state, observationId)` is a public core pure reader in
+`ground-core/reality/epistemic.ts`, exported through `ground-core/index.ts`.
+It requires exactly one Observation with matching ID and project_id in the supplied
+ProjectState. Missing/foreign-only Observation throws existing NotFoundError;
+ambiguous local IDs throw existing ValidationError. Neither becomes an empty result.
+The HTTP boundary propagates unexpected reader errors as CANONICAL_READ_FAILURE.
+
+It returns only Evidence where project_id equals state.project.id,
+kind is observation_ref, and observation_id equals the requested ID. URL, subject,
+provenance, summary, source identity and timestamp similarity are never relation
+criteria. external_ref records are excluded even if observation_id happens to match.
+All matching canonical records/fields are returned unchanged in stored Evidence
+collection order, without ranking or inferred authority. Return cardinality is 0..N.
+
+The existing Entity membership check and getObservationsForSubject determine the
+Observation scope. Each Observation gets a bundle, including an empty evidence
+array for zero matches; zero Observations yields zero bundles. Evidence linked to
+an Observation is not renamed Entity Evidence. ClaimEvidenceLink relations remain
+in the separate evidence_for_claim result. No generic Project Evidence array exists.
+
+All readers consume the same one acquired snapshot. No reload, index, backlink,
+repair, writeback or source expansion occurs. The existing snapshot_fingerprint
+identifies the exact bytes used for the additional result as well. Evidence presence
+does not establish Observation truth. Zero means zero explicit observation_ref
+matches in this scope, not Evidence absence, unsupported content or low confidence.
+
+Verification: live Observation 87ae62f9-9481-5577-a299-813c022d2007 returns Evidence
+3151b313-d5bc-5b58-a17d-a61add22f22d, with full canonical field equality. Live Project
+fingerprint before/after is
+f1ed694f3e0c3a10d383e816f43ca003cd6c123dad18c3f0688d2289c0f3e3bc;
+root file bytes are unchanged. Opt-in reproduction uses existing GROUND_RUNTIME_CONFIG:
+`node --import tsx scripts/human-interface/verify-human-005b-live.ts`.
+
+B15 returns two bundles, for 1e8a9b55-a7fe-4bdd-8bc0-e6169ee941d2 (0 Evidence)
+and 27e042ed-38da-44c1-8a78-0a594e04fa7a (Evidence
+731d5de8-f456-4f4d-8de0-2b5b6627ee13). HUMAN-001 and Round4 return no Observation
+bundles despite their external_ref Evidence. Claim-linked results remain identical.
+The A/B mutable snapshot test publishes B immediately after acquiring A, verifies
+all A reader results including linked Evidence, then verifies B on the next request.
+
+Tests: 9 new core cases PASS; new reader plus existing epistemic-core tests 21 PASS;
+server/registry/Browse/Entity/resolver and existing UI tests 79 PASS. Full core was
+rerun on baseline C and B in the same environment: baseline 3,783 PASS / 104 FAIL;
+B 3,792 PASS / 104 FAIL (3,896 total). Failure-name sets are identical; missing
+ignored storage fixture failures were not fixed, restored or suppressed.
+Core/adapter typecheck, Human Interface lint, Vite build and Foundation all PASS.
+
+HUMAN-005C may display the Observation bundles and full canonical Evidence raw
+records under the explicit relation. This checkpoint does not modify presentation
+or claim a UI proof. No implementation blocker remains. No HUMAN-005C work started.
+
+---
+
+The following records the HUMAN-004B baseline, before the additive 005B scope above.
+Its references to Observation-linked Evidence being outside the Entity response
+are historical boundary descriptions, superseded by the contract above.
+
 # HUMAN-004B — Mutable Canonical Storage Read Boundary
 
 The existing JavaScript server mounts `http-route.js`, which uses scoped `tsx`

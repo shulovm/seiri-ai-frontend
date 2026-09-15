@@ -4,5 +4,5 @@
     "strict": true, "skipLibCheck": true, "noEmit": true,
     "esModuleInterop": true, "types": ["node"]
   },
-  "include": ["read-adapter.ts", "read-boundary.test.ts", "browse-boundary.test.ts", "source-registry.ts", "source-registry.test.ts", "source-resolver.ts", "source-resolver.test.ts", "../../scripts/human-interface/verify-human-004b-live.ts"]
+  "include": ["read-adapter.ts", "read-boundary.test.ts", "browse-boundary.test.ts", "source-registry.ts", "source-registry.test.ts", "source-resolver.ts", "source-resolver.test.ts", "../../scripts/human-interface/verify-human-004b-live.ts", "../../scripts/human-interface/verify-human-005b-live.ts"]
 }

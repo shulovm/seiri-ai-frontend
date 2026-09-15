@@ -6,7 +6,7 @@ import { tsImport } from 'tsx/esm/api';
 import type { RealitySourceMetadata } from './source-registry.js';
 import { normalizeProjectState } from '../../ground-core/migrate.js';
 import { getRealityWorldline } from '../../ground-core/reality/worldline.js';
-import { getClaimsForSubject, getEvidenceForClaim, getObservationsForSubject } from '../../ground-core/reality/epistemic.js';
+import { getClaimsForSubject, getEvidenceForClaim, getEvidenceForObservation, getObservationsForSubject } from '../../ground-core/reality/epistemic.js';
 
 import * as adapter from './read-adapter.js';
 import { realitySourceRegistry as registry, createRealitySourceRegistry } from './source-registry.js';
@@ -45,7 +45,7 @@ test('HTTP GET preserves exact core results, fields, temporal strings and empty 
       entity: getRealityWorldline(state, entityId).entity,
       observations: getObservationsForSubject(state, entityId), claims });
     assert.deepEqual(body.core_read_results, { worldline: getRealityWorldline(state, entityId),
-      evidence_for_claim: claims.map(claim => getEvidenceForClaim(state, claim.id)) });
+      evidence_for_claim: claims.map(claim => getEvidenceForClaim(state, claim.id)), evidence_for_observation:getObservationsForSubject(state,entityId).map(o=>({observation_id:o.id,evidence:getEvidenceForObservation(state,o.id)})) });
     assert.deepEqual(body.transport.returned_counts, { observations: 0, claims: 1, events: 0, states: 0 });
     assert.equal(body.transport.source.stored_schema_version, '0.1.24');
     assert.equal(body.transport.source.read_schema_version, '0.1.25');
@@ -148,7 +148,7 @@ for (const source of registry.sources) {
       const claims = getClaimsForSubject(snapshot, source.entity_id);
       const bundles = claims.map(claim => getEvidenceForClaim(snapshot, claim.id));
       assert.deepEqual(body.canonical_records, {project:snapshot.project,entity:worldline.entity,observations,claims});
-      assert.deepEqual(body.core_read_results, {worldline,evidence_for_claim:bundles});
+      assert.deepEqual(body.core_read_results, {worldline,evidence_for_claim:bundles,evidence_for_observation:observations.map(o=>({observation_id:o.id,evidence:getEvidenceForObservation(snapshot,o.id)}))});
       assert.deepEqual(body.transport.source, {
         fixture:source.source_key, source_key:source.source_key, source_qualification:source.source_qualification,
         source_mode:"immutable_proof_snapshot", snapshot_fingerprint:source.sha256, sha256:source.sha256, stored_schema_version:'0.1.24', read_schema_version:'0.1.25',
@@ -177,7 +177,7 @@ for (const source of registry.sources) {
       // No project-wide Evidence count or expansion is introduced by the adapter.
       assert.deepEqual(Object.keys(body.transport.returned_counts).sort(), ['claims','events','observations','states']);
       assert.deepEqual(Object.keys(body.canonical_records).sort(), ['claims','entity','observations','project']);
-      assert.deepEqual(Object.keys(body.core_read_results).sort(), ['evidence_for_claim','worldline']);
+      assert.deepEqual(Object.keys(body.core_read_results).sort(), ['evidence_for_claim','evidence_for_observation','worldline']);
     });
     assert.deepEqual(readFileSync(fixtureUrl), snapshotBytes);
   });

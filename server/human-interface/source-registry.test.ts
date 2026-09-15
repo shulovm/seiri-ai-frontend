@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { realitySourceRegistry as registry, createRealitySourceRegistry } from './source-registry.js';
 import { getRealityWorldline } from '../../ground-core/reality/worldline.js';
-import { getClaimsForSubject, getEvidenceForClaim, getObservationsForSubject } from '../../ground-core/reality/epistemic.js';
+import { getClaimsForSubject, getEvidenceForClaim, getEvidenceForObservation, getObservationsForSubject } from '../../ground-core/reality/epistemic.js';
 import { readHumanReality } from './read-adapter.js';
 const root = new URL('../../', import.meta.url);
 for (const source of registry.sources) {
@@ -31,7 +31,7 @@ for (const source of registry.sources) {
     }
     if (source.source_key === 'human-001') {
       const baseline = readHumanReality(source.project_id, source.entity_id);
-      assert.deepEqual(baseline.core_read_results, {worldline,evidence_for_claim:bundles});
+      assert.deepEqual(baseline.core_read_results, {worldline,evidence_for_claim:bundles,evidence_for_observation:observations.map(o=>({observation_id:o.id,evidence:getEvidenceForObservation(state,o.id)}))});
       assert.deepEqual(baseline.canonical_records, {project:state.project,entity:worldline.entity,observations,claims});
     }
     assert.deepEqual(readFileSync(new URL(source.fixture_path, root)), before);
@@ -70,4 +70,18 @@ test('each read selects exactly one source and verifies fresh bytes without merg
   assert.equal(reads, 1); assert.equal(result.state.project.id, a.project_id);
   assert.ok(result.state.reality_entities.every(entity => entity.project_id !== b.project_id));
   assert.throws(() => r.read(a.project_id), /FIXTURE_INTEGRITY_FAILURE/); assert.equal(reads, 2);
+});
+
+
+test('Observation bundles preserve B15 one/zero matches; Historical external refs remain outside scope',()=>{
+ for(const source of registry.sources){
+  const result=readHumanReality(source.project_id,source.entity_id);
+  const bundles=result.core_read_results.evidence_for_observation;
+  if(source.source_key==='e2-b15'){
+   assert.deepEqual(bundles.map(b=>[b.observation_id,b.evidence.map(e=>e.id)]),[
+    ['1e8a9b55-a7fe-4bdd-8bc0-e6169ee941d2',[]],
+    ['27e042ed-38da-44c1-8a78-0a594e04fa7a',['731d5de8-f456-4f4d-8de0-2b5b6627ee13']],
+   ]);
+  }else assert.deepEqual(bundles,[]);
+ }
 });

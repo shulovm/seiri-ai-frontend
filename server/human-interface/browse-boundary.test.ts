@@ -6,7 +6,7 @@ import { createHumanBrowseReader, createHumanRealityReader } from './read-adapte
 import { realitySourceRegistry as registry, createRealitySourceRegistry } from './source-registry.js';
 import { normalizeProjectState } from '../../ground-core/migrate.js';
 import { getRealityWorldline } from '../../ground-core/reality/worldline.js';
-import { getClaimsForSubject, getEvidenceForClaim, getObservationsForSubject } from '../../ground-core/reality/epistemic.js';
+import { getClaimsForSubject, getEvidenceForClaim, getEvidenceForObservation, getObservationsForSubject } from '../../ground-core/reality/epistemic.js';
 const { default: express } = await tsImport('express', import.meta.url);
 const { createHumanInterfaceRouter } = await tsImport('./http-route.js', import.meta.url);
 const load = (path: string) => readFileSync(new URL(`../../${path}`, import.meta.url));
@@ -78,7 +78,7 @@ for (const [index, source] of registry.sources.entries()) {
       const result = reader(source.project_id, entity.id);
       const claims = getClaimsForSubject(state, entity.id);
       assert.deepEqual(result.canonical_records, {project:state.project,entity,observations:getObservationsForSubject(state,entity.id),claims});
-      assert.deepEqual(result.core_read_results, {worldline:getRealityWorldline(state,entity.id),evidence_for_claim:claims.map(claim=>getEvidenceForClaim(state,claim.id))});
+      assert.deepEqual(result.core_read_results, {worldline:getRealityWorldline(state,entity.id),evidence_for_claim:claims.map(claim=>getEvidenceForClaim(state,claim.id)),evidence_for_observation:getObservationsForSubject(state,entity.id).map(o=>({observation_id:o.id,evidence:getEvidenceForObservation(state,o.id)}))});
     }
     assert.equal(reads, state.reality_entities.length);
   });
