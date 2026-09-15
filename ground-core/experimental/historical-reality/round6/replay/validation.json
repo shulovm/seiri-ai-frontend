@@ -1,0 +1,43 @@
+{
+  "dataset_sha256": "647234b3cab9157eadb4da101bc88c322874ab02d768b3c4c6ec7107f9ae4569",
+  "counts": {
+    "actors": 93,
+    "sources": 57,
+    "claims": 187,
+    "relations": 189,
+    "new_actors": 26,
+    "new_sources": 15,
+    "new_claims": 40,
+    "places": 9,
+    "rows": 40,
+    "cases": 4,
+    "contrasts": 5,
+    "chains": 4,
+    "searches": 8,
+    "b_revalidated": 18,
+    "composition_transfers": 9,
+    "new_assets": 29,
+    "documentary_records": 19,
+    "dependency_records": 2
+  },
+  "legacy_files_unchanged": 703,
+  "assets_validated_including_parents": 60,
+  "derived_traces": 87,
+  "canonical_projection": {
+    "source_claims": 187,
+    "historical_events": 0,
+    "historical_states": 0,
+    "direct_historical_observations": 0,
+    "confidence": "Inherited0.95uncalibratedsource-attributionestimate; not territorial Reality probability"
+  },
+  "validation": "Round1–5 parent pins; every inherited/new asset hash+size+format; materialize/reload exact equality; all derived records Source rooted; file-store content/attribution/scope roundtrip;9source-contract transfers;18B review",
+  "core_changes": 0,
+  "new_C_candidates": 0,
+  "limits": [
+    "No historical original images newly inspected",
+    "CERnetwork duty has no precise operating segment",
+    "No authenticated same-dimension exclusive territorial contradiction located",
+    "Local voices mediated by Japanese diplomat/foreign official papers",
+    "No local effective coverage inferred from legal scope or region-wide distribution"
+  ]
+}

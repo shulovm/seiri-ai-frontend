@@ -1,0 +1,621 @@
+{
+  "status": "Round 1 reconnaissance; non-exhaustive and verification-level explicit",
+  "access_date": "2026-09-14",
+  "source_classes": [
+    {
+      "class": "contemporary diplomatic communications",
+      "observed_sources": [
+        "frus:1904:392",
+        "frus:1904:678",
+        "frus:1904:680"
+      ],
+      "boundary": "report time, nested speaker, translation, editorial paraphrase"
+    },
+    {
+      "class": "treaty / formal diplomatic position",
+      "observed_sources": [
+        "frus:1904:393",
+        "frus:1904:430"
+      ],
+      "boundary": "copied/reproduced text, obligation and intention ≠ actual control or consent"
+    },
+    {
+      "class": "administrative requests / communication infrastructure",
+      "observed_sources": [
+        "nikh:jh_024r_0050_0050"
+      ],
+      "boundary": "request ≠ granted permission ≠ operational use"
+    },
+    {
+      "class": "operational military documents within later compilation",
+      "observed_sources": [
+        "jacar:chemulpo-guide"
+      ],
+      "boundary": "only guide inspected; embedded report date ≠ compilation date; primary image pending"
+    },
+    {
+      "class": "personal manuscripts / memoirs",
+      "archive_leads": [
+        "a-rgavmf",
+        "a-british-library",
+        "a-loc-memoir"
+      ],
+      "boundary": "private circulation, recollection, selection; original text pending"
+    },
+    {
+      "class": "public press and visual/material records",
+      "observed_sources": [
+        "loc:2005680338"
+      ],
+      "archive_leads": [
+        "a-loc-press",
+        "a-loc-photo"
+      ],
+      "boundary": "caption ≠ image observation; capture, print and catalog dates differ; wire-service dependence"
+    },
+    {
+      "class": "quantitative / geographic records",
+      "archive_leads": [
+        "a-jacar",
+        "a-germany",
+        "a-nara"
+      ],
+      "boundary": "unit, counting definition, aggregation and map semantics; no validated numeric dataset yet"
+    },
+    {
+      "class": "later guides / editions / research",
+      "observed_sources": [
+        "jacar:chemulpo-guide"
+      ],
+      "boundary": "source discovery and later interpretation; not independent 1904 eyewitness evidence"
+    }
+  ],
+  "archives": [
+    {
+      "id": "a-jacar",
+      "country_scope": "Japan",
+      "institution": "JACAR / National Archives of Japan, Diplomatic Archives, NIDS",
+      "collection": "日露戦争特別展2; 極秘 明治37.8年海戦史",
+      "identifiers": [
+        "C05110032100",
+        "C05110134800"
+      ],
+      "classes": [
+        "military orders/reports",
+        "diplomatic",
+        "later official compilation",
+        "quantitative gunnery tables"
+      ],
+      "url": "https://www.jacar.go.jp/exhibition/nichiro2/sensoushi/kaijou_02_outline.html",
+      "verification": "guide text inspected; original image viewer could not be opened",
+      "access": "guide public; original secrecy/access in 1904 unknown",
+      "next_step": "collate C05110032100 images 6–11 and C05110134800 image 33; distinguish report creation from compilation"
+    },
+    {
+      "id": "a-frus",
+      "country_scope": "United States; multi-country diplomacy",
+      "institution": "Office of the Historian, US Department of State",
+      "collection": "FRUS 1904, published 1905",
+      "identifiers": [
+        "documents 86,392–396,430,678–680,815"
+      ],
+      "classes": [
+        "telegrams",
+        "paraphrases",
+        "copies",
+        "translations",
+        "protocols"
+      ],
+      "url": "https://history.state.gov/historicaldocuments/frus1904",
+      "verification": "volume imprint and eleven document texts inspected",
+      "access": "public online edition; no original archival accession verified",
+      "next_step": "locate original telegrams and editorial selection/paraphrase process"
+    },
+    {
+      "id": "a-nara",
+      "country_scope": "United States",
+      "institution": "National Archives and Records Administration",
+      "collection": "Guide to Federal Records: Russo-Japanese War index",
+      "identifiers": [
+        "38.4.3",
+        "77.12.2",
+        "165.21"
+      ],
+      "classes": [
+        "naval",
+        "engineering",
+        "military intelligence"
+      ],
+      "url": "https://www.archives.gov/research/guide-fed-records/index-alpha/r.html",
+      "verification": "official finding-aid search result; contents not acquired",
+      "access": "index public; item access unverified",
+      "next_step": "follow section entries to item-level series descriptions"
+    },
+    {
+      "id": "a-rgavmf",
+      "country_scope": "Russian Empire / Russia archive host",
+      "institution": "РГАВМФ (Russian State Archive of the Navy)",
+      "collection": "Фонд 763. ДНЕВНИКИ, ЗАМЕТКИ, ЗАПИСКИ, ВЫРЕЗКИ ИЗ ГАЗЕТ О РУССКО-ЯПОНСКОЙ ВОЙНЕ (КОЛЛЕКЦИЯ)",
+      "identifiers": [
+        "fond 763"
+      ],
+      "classes": [
+        "diaries",
+        "notes",
+        "newspaper clippings"
+      ],
+      "url": "https://online.archives.ru/search/10000000001012/10000055816012/",
+      "verification": "official portal indexed description; opening failed; no Russian original acquired",
+      "access": "item scans and access restrictions unverified",
+      "next_step": "find opis/delo/folio and distinguish private diary from press extract"
+    },
+    {
+      "id": "a-nikh",
+      "country_scope": "Korean Empire; Japanese diplomatic record collection",
+      "institution": "National Institute of Korean History",
+      "collection": "주한일본공사관기록·통감부문서",
+      "identifiers": [
+        "jh_024r_0050_0050"
+      ],
+      "classes": [
+        "memorial",
+        "diplomatic correspondence",
+        "translated edition"
+      ],
+      "url": "https://db.history.go.kr/joseon/level.do?levelId=jh_024r_0050_0050",
+      "verification": "translated item text, sender, recipient, date and document designation inspected",
+      "access": "translation public; linked original image uninspected",
+      "next_step": "inspect original view and compare Japanese source collection; seek Korean response and actual telegraph use"
+    },
+    {
+      "id": "a-korean-protocol",
+      "country_scope": "Korean Empire / later Korean editorial host",
+      "institution": "NIKH, 우리역사넷",
+      "collection": "사료로 본 한국사: 한·일 의정서",
+      "identifiers": [
+        "hm_121_0010"
+      ],
+      "classes": [
+        "treaty text",
+        "modern translation",
+        "later interpretation"
+      ],
+      "url": "https://contents.history.go.kr/front/hm/view.do?levelId=hm_121_0010",
+      "verification": "official source-education page discovered; interpretation and treaty reproduction need separate extraction",
+      "access": "public",
+      "next_step": "collate protocol original text with FRUS d430, not independent witness counting"
+    },
+    {
+      "id": "a-british-library",
+      "country_scope": "United Kingdom",
+      "institution": "British Library",
+      "collection": "Additional Manuscripts, Lansdowne-related papers",
+      "identifiers": [
+        "Add MS 88906/22/15",
+        "record 040-002403829"
+      ],
+      "classes": [
+        "correspondence",
+        "memorandum drafts",
+        "printed papers"
+      ],
+      "url": "https://searcharchives.bl.uk/catalog/040-002403829",
+      "verification": "catalog description inspected; 1903–1904, one folder; physical items not read",
+      "access": "catalog public; physical manuscripts consulted in London with reader access",
+      "next_step": "separate printed repetitions from private drafts; identify North Sea incident documents"
+    },
+    {
+      "id": "a-tna",
+      "country_scope": "United Kingdom",
+      "institution": "The National Archives, Kew",
+      "collection": "WO 106, Directorate of Military Operations and Military Intelligence correspondence/papers",
+      "identifiers": [
+        "WO 106 (series lead only)"
+      ],
+      "classes": [
+        "military observer reports",
+        "intelligence",
+        "correspondence"
+      ],
+      "url": "https://discovery.nationalarchives.gov.uk/results/r/2?_ps=60&_q=WO+106",
+      "verification": "official indexed finding-aid lead; specific Russo-Japanese item reference not verified",
+      "access": "catalog lead; original access unknown",
+      "next_step": "resolve exact item references; do not reuse unrelated WO 106/739 result"
+    },
+    {
+      "id": "a-france-shd",
+      "country_scope": "France",
+      "institution": "Service historique de la Défense",
+      "collection": "Guerre russo-japonaise",
+      "identifiers": [
+        "ark/1134995"
+      ],
+      "classes": [
+        "military record finding aid"
+      ],
+      "url": "https://www.servicehistorique.sga.defense.gouv.fr/ark/1134995",
+      "verification": "official notice opened; no record text acquired",
+      "access": "notice public; original access unverified",
+      "next_step": "extract shelfmark, dates and creator before using as evidence"
+    },
+    {
+      "id": "a-france-diplomatic",
+      "country_scope": "France",
+      "institution": "Centre des Archives diplomatiques de Nantes",
+      "collection": "Tokyo, légation, 1861–1977; Londres, ambassade, 1814–1919",
+      "identifiers": [
+        "697PO/A",
+        "378PO/K"
+      ],
+      "classes": [
+        "diplomatic",
+        "Japanese press extracts",
+        "financial/railway references"
+      ],
+      "url": "https://archivesdiplomatiques.diplomatie.gouv.fr/media/82316dd3-d8da-4f21-9cf5-a869bd889880.pdf",
+      "verification": "official inventory indexed; pages/items not yet collated",
+      "access": "finding aid online; original record access unknown",
+      "next_step": "resolve article numbers for 1904–1905; distinguish contemporary press from embassy interpretation"
+    },
+    {
+      "id": "a-germany",
+      "country_scope": "German Empire / Prussian cartographic producer",
+      "institution": "Bundesarchiv via Deutsche Digitale Bibliothek",
+      "collection": "Übersichtskarte des russisch-japanischen Kriegsschauplatzes von 1904",
+      "identifiers": [
+        "BArch PH 3/1472"
+      ],
+      "classes": [
+        "map",
+        "cartographic production"
+      ],
+      "url": "https://www.deutsche-digitale-bibliothek.de/item/6BHU4QB4AD424XBVM7UYLZSLLJ4GMFJ4",
+      "verification": "institutional catalog search result; map not visually inspected",
+      "access": "catalog; scan/access unknown",
+      "next_step": "record scale, projection, legend, map date and depicted administrative/military boundaries separately"
+    },
+    {
+      "id": "a-loc-photo",
+      "country_scope": "United States; Japanese/Russian diplomatic and war images",
+      "institution": "Library of Congress",
+      "collection": "Prints & Photographs",
+      "identifiers": [
+        "2005680338",
+        "LOT 3372 / 2005679313"
+      ],
+      "classes": [
+        "photographs",
+        "stereographs",
+        "copy negatives",
+        "captions"
+      ],
+      "url": "https://www.loc.gov/item/2005680338/",
+      "verification": "catalog metadata inspected; photograph itself uninspected",
+      "access": "catalog public; rights and manifestations item-specific",
+      "next_step": "inspect image; do not infer event date, identities or photographer from caption alone"
+    },
+    {
+      "id": "a-loc-press",
+      "country_scope": "United States; public wartime reports",
+      "institution": "Library of Congress, Chronicling America",
+      "collection": "Russo-Japanese War topics guide",
+      "identifiers": [
+        "topic guide; issue/page identifiers not collected"
+      ],
+      "classes": [
+        "newspapers",
+        "public reports",
+        "illustrations"
+      ],
+      "url": "https://guides.loc.gov/chronicling-america-russo-japanese-war",
+      "verification": "official guide discovered",
+      "access": "guide public; issue-level acquisition pending",
+      "next_step": "resolve newspaper issue/page and wire-service origins to measure dependent repetition"
+    },
+    {
+      "id": "a-loc-memoir",
+      "country_scope": "Russian Empire through English published memoir",
+      "institution": "Library of Congress",
+      "collection": "Rasplata (The Reckoning)",
+      "identifiers": [
+        "gdc.09023804"
+      ],
+      "classes": [
+        "memoir",
+        "translation",
+        "retrospective testimony"
+      ],
+      "url": "https://www.loc.gov/resource/gdc.09023804/",
+      "verification": "catalog/resource lead; text not inspected",
+      "access": "resource lead; edition and translation must be verified",
+      "next_step": "identify creator/translator/edition and distinguish recollection from contemporary diary"
+    },
+    {
+      "id": "a-qing-gap",
+      "country_scope": "Qing",
+      "institution": "Chinese archival collections: item-level route unresolved in this round",
+      "collection": "direct Qing-origin neutrality, local administration and resident records sought",
+      "identifiers": [],
+      "classes": [
+        "administrative",
+        "diplomatic",
+        "local civilian records"
+      ],
+      "url": "https://history.state.gov/historicaldocuments/frus1904/ch30",
+      "verification": "FRUS China section verified as external diplomatic lead only; NOT a Qing-origin archive sample",
+      "access": "Qing original access unknown",
+      "next_step": "identify direct Qing-origin items; US requests cannot substitute for Qing decisions or local reality"
+    }
+  ],
+  "semantic_gap_signals": [
+    {
+      "id": "SG-01",
+      "observed_historical_case": [
+        "c395-captured",
+        "c678-sent"
+      ],
+      "current_representation": "Claim.provenance identifies one source; Claim lacks separate claimant/report chain",
+      "lost_meaning": "foreign minister → diplomatic observer → intended recipient; neither belief nor receipt established",
+      "severity": "high",
+      "recurrence_likelihood": "observed twice in diplomatic samples",
+      "proposed_direction": "sidecar claimant, report chain and documentary epistemic records; core Claim remains source-text projection",
+      "status": "experimental signal; not canonical primitive proposal"
+    },
+    {
+      "id": "SG-02",
+      "observed_historical_case": [
+        "frus:1904:680",
+        "frus:1904:430"
+      ],
+      "current_representation": "recorded_at is GROUND ingestion; observed_at/applicable_* cannot represent all roles",
+      "lost_meaning": "underlying creation, translation, deposition, reception, event date and edition publication differ",
+      "severity": "high",
+      "recurrence_likelihood": "observed across telegram and protocol",
+      "proposed_direction": "raw historical time, precision, calendar and role-specific source annotations; never synthesize midnight",
+      "status": "experimental signal; not canonical primitive proposal"
+    },
+    {
+      "id": "SG-03",
+      "observed_historical_case": [
+        "c678-uncertainty",
+        "c678-sent"
+      ],
+      "current_representation": "BeliefAssessment groups applicable propositions, not an actor epistemic biography",
+      "lost_meaning": "was told / no positive knowledge / belief / knew / could have known",
+      "severity": "high",
+      "recurrence_likelihood": "multiple nested reports",
+      "proposed_direction": "explicit narrow stances; actorEvidenceAt returns documentary records and unplaced times, never a knowledge verdict",
+      "status": "experimental signal; not canonical primitive proposal"
+    },
+    {
+      "id": "SG-04",
+      "observed_historical_case": [
+        "frus:1904:392",
+        "frus:1904:680",
+        "nikh:jh_024r_0050_0050"
+      ],
+      "current_representation": "EpistemicProvenance kind/entity_id/external_id/label is minimal",
+      "lost_meaning": "original versus paraphrase/translation/copy, editor, archive location, locator and custody uncertainty",
+      "severity": "high",
+      "recurrence_likelihood": "three manifestations directly observed",
+      "proposed_direction": "bibliographic sidecar with inspection level, short excerpt, original verification and explicit unknown",
+      "status": "experimental signal; not canonical primitive proposal"
+    },
+    {
+      "id": "SG-05",
+      "observed_historical_case": [
+        "e-fate-qualifies",
+        "e-reply-qualifies"
+      ],
+      "current_representation": "ClaimEvidenceRelation enum SUPPORTS | CONTRADICTS",
+      "lost_meaning": "qualification; different actors or loose fate terminology are not automatically contradictions",
+      "severity": "high",
+      "recurrence_likelihood": "two distinct qualification cases",
+      "proposed_direction": "sidecar scope + reason; no projection of QUALIFIES to binary core link",
+      "status": "experimental signal; not canonical primitive proposal"
+    },
+    {
+      "id": "SG-06",
+      "observed_historical_case": [
+        "c395-captured",
+        "cjacar-selfsink"
+      ],
+      "current_representation": "provenance fingerprint exposes source identity but not upstream derivation",
+      "lost_meaning": "edition/guide copies cannot count as independent corroboration",
+      "severity": "high",
+      "recurrence_likelihood": "risk identified; actual shared upstream lineage not established",
+      "proposed_direction": "retain chain and source manifestation; require positive independence evidence; do not implement independence classifier yet",
+      "status": "experimental signal; not canonical primitive proposal"
+    },
+    {
+      "id": "SG-07",
+      "observed_historical_case": [
+        "r-reply",
+        "r-variag"
+      ],
+      "current_representation": "EpistemicGap exposes structural absence/tension, not research history or surviving-evidence assessment",
+      "lost_meaning": "not searched / inaccessible / no surviving evidence / unresolved cause",
+      "severity": "high",
+      "recurrence_likelihood": "multiple unresolved fields",
+      "proposed_direction": "explicit unknown reasons and reconstruction rationale; no claim of no surviving evidence",
+      "status": "experimental signal; not canonical primitive proposal"
+    },
+    {
+      "id": "SG-08",
+      "observed_historical_case": [
+        "r-protocol-text",
+        "r-portarthur"
+      ],
+      "current_representation": "ontic RealityEvent/State + derived BeliefAssessment; no distinct sourced reconstruction record",
+      "lost_meaning": "text certainty versus external-world certainty; assessment alternatives, limits and date",
+      "severity": "high",
+      "recurrence_likelihood": "four reconstruction records",
+      "proposed_direction": "sidecar reconstruction with claim/relation routes, nonnumeric statuses; no promotion into RealityState/Event",
+      "status": "experimental signal; not canonical primitive proposal"
+    },
+    {
+      "id": "SG-09",
+      "observed_historical_case": [
+        "c430-guarantee",
+        "c430-occupation",
+        "cnikh-telegraph"
+      ],
+      "current_representation": "RealityEntity attrs can hold identity; RealityState generic kind/value can express control if verified",
+      "lost_meaning": "historical role holder, label validity, legal provision versus actual local occupation and infrastructure use",
+      "severity": "medium",
+      "recurrence_likelihood": "protocol and memorial examples",
+      "proposed_direction": "use actor/entity distinctions now; keep legal provision in Claim; no ontic territorial control without evidence; no identity/territory primitive added",
+      "status": "experimental signal; not canonical primitive proposal"
+    },
+    {
+      "id": "SG-10",
+      "observed_historical_case": [
+        "frus:1904:680",
+        "cjacar-selfsink"
+      ],
+      "current_representation": "ISO occurrence/applicability dates expect normalized instants",
+      "lost_meaning": "dual dates, ambiguous night interval, guide Feb 8/report Feb 9 discrepancy",
+      "severity": "high",
+      "recurrence_likelihood": "dual-calendar and differing-date cases",
+      "proposed_direction": "retain raw+normalization basis; leave exact instants and unresolved guide day unplaced",
+      "status": "experimental signal; not canonical primitive proposal"
+    },
+    {
+      "id": "SG-11",
+      "observed_historical_case": [
+        "frus:1904:392",
+        "loc:2005680338"
+      ],
+      "current_representation": "Evidence references inspectable source, but no actor-access relation",
+      "lost_meaning": "source existence / addressee / receipt / public edition / present discoverability",
+      "severity": "high",
+      "recurrence_likelihood": "diplomatic and photo manifestation cases",
+      "proposed_direction": "access_at_time explicitly unknown; only d430 documented received/deposited dates retained; do not invent public knowledge",
+      "status": "experimental signal; not canonical primitive proposal"
+    },
+    {
+      "id": "SG-12",
+      "observed_historical_case": [
+        "i-selfdefense",
+        "i-consent",
+        "n-jp-diplomatic"
+      ],
+      "current_representation": "Claim can preserve propositions; no explicit interpretation/narrative evidence path",
+      "lost_meaning": "issuer self-defense/consent framing becomes external fact if flattened",
+      "severity": "high",
+      "recurrence_likelihood": "two diplomatic framing cases",
+      "proposed_direction": "separate experimental interpretation/narrative records linked back to claims and sources; no national historiography generalization",
+      "status": "experimental signal; not canonical primitive proposal"
+    }
+  ],
+  "micro_stress_test_candidates": [
+    {
+      "id": "W1",
+      "time_window": "1904-02-06–1904-02-10 (edition/Gregorian day labels; exact ordering unresolved)",
+      "actors": [
+        "Japanese government and envoys",
+        "Russian government and envoys",
+        "US legations and State Department",
+        "Korean Empire",
+        "naval units near Chemulpo / Port Arthur"
+      ],
+      "available_evidence": [
+        "FRUS d392–396,678–680: inspected edition text",
+        "JACAR C05110032100 images 6–11, C05110134800 image 33: guide-verified, primary images pending"
+      ],
+      "stressed_boundaries": [
+        "nested communication",
+        "dispatch/receipt/action timing",
+        "lack of positive knowledge",
+        "alleged first fire",
+        "captured/self-sank terminology",
+        "dual calendar",
+        "later compilation"
+      ],
+      "difficulty": "high; original naval images and Russian diplomatic reply needed",
+      "value_to_ground": "highest current sample density and demonstrated semantic failures",
+      "recommendation": "first; use two linked diplomatic/naval subwindows, do not assume they share one information flow"
+    },
+    {
+      "id": "W2",
+      "time_window": "1904-02-23–1904-02-26",
+      "actors": [
+        "Imperial Japanese Government",
+        "Imperial Korean Government",
+        "Hayashi and Korean foreign-affairs signatory",
+        "Japanese Legation Washington",
+        "US State Department"
+      ],
+      "available_evidence": [
+        "FRUS d430 inspected",
+        "NIKH hm_121_0010 protocol lead",
+        "NIKH Feb 12 telegraph memorial inspected as preceding dependency"
+      ],
+      "stressed_boundaries": [
+        "protocol date/telegram reception/deposition",
+        "consent representation",
+        "conditional occupation/actual control",
+        "translation dependence"
+      ],
+      "difficulty": "medium-high; Korean negotiation and local implementation evidence missing",
+      "value_to_ground": "territory/control and authority statements without ontic inflation",
+      "recommendation": "second; require Korean-origin response or negotiation evidence"
+    },
+    {
+      "id": "W3",
+      "time_window": "1904-10-27–1904-10-29, diplomatic response to North Sea incident",
+      "actors": [
+        "Russian naval command",
+        "British embassy/government",
+        "US embassy",
+        "civilian fishing interests"
+      ],
+      "available_evidence": [
+        "FRUS d815 inspected; d814–817 neighboring document leads",
+        "BL Add MS 88906/22/15 catalog verified"
+      ],
+      "stressed_boundaries": [
+        "competing official statements",
+        "demand for inquiry/actual findings",
+        "military belief versus civilian reality",
+        "private memorandum/printed repetition"
+      ],
+      "difficulty": "high; witness testimony and commission report not acquired",
+      "value_to_ground": "strong next falsification of epistemic stances outside East Asia",
+      "recommendation": "third; exact incident night not established by inspected d815; response window chosen to avoid unsupported chronology"
+    },
+    {
+      "id": "W4",
+      "time_window": "1905-09-04–1905-09-06, provisional Portsmouth signing window",
+      "actors": [
+        "Japanese/Russian delegations",
+        "US facilitators",
+        "press and public",
+        "naval-yard personnel"
+      ],
+      "available_evidence": [
+        "LOC 2005680338 catalog inspected, year only",
+        "NARA Boston navy finding-aid signing-date lead",
+        "FRUS 1905 negotiation records require acquisition"
+      ],
+      "stressed_boundaries": [
+        "negotiation/communication/signature/publication",
+        "photo date/caption",
+        "territorial concession versus legal effect/actual control",
+        "public expectation versus private negotiator knowledge"
+      ],
+      "difficulty": "high until item-level negotiation sources acquired",
+      "value_to_ground": "knowledge-about-past and transition-state replay",
+      "recommendation": "fourth; provisional scope, not an already reconstructed event"
+    }
+  ],
+  "coverage_gaps": [
+    "direct Russian-language originals",
+    "direct Qing-origin records",
+    "Korean negotiating/recipient response evidence",
+    "local civilian testimony",
+    "financial/bond/logistics/weather datasets",
+    "commission witness testimony",
+    "cross-country historiography; no national narrative inferred"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "new_signals": [
+    {
+      "id": "SG13",
+      "semantic": "assessment target",
+      "case_claim_id": "c395-captured",
+      "lost_meaning": "Text assertion clarity does not establish capture in external reality.",
+      "status": "experimental; not promoted"
+    },
+    {
+      "id": "SG14",
+      "semantic": "actor and payload",
+      "case_claim_id": "r2:c-ack82",
+      "lost_meaning": "Acknowledges telegram50/53, not every instruction or Russian reply.",
+      "status": "experimental; not promoted"
+    },
+    {
+      "id": "SG15",
+      "semantic": "sparse propagation",
+      "case_claim_id": "r2:c-uriu2-relay",
+      "lost_meaning": "Sasebo dispatch is not destination receipt.",
+      "status": "experimental; not promoted"
+    },
+    {
+      "id": "SG16",
+      "semantic": "report time vs target time",
+      "case_claim_id": "c679-held",
+      "lost_meaning": "February8 report does not date Rosen possession.",
+      "status": "experimental; not promoted"
+    },
+    {
+      "id": "SG17",
+      "semantic": "public accessibility",
+      "case_claim_id": "r2:c-order48",
+      "lost_meaning": "March edition reference does not establish actor possession or reading in February.",
+      "status": "experimental; not promoted"
+    },
+    {
+      "id": "SG18",
+      "semantic": "message/edition identity",
+      "case_claim_id": "r2:c-order48",
+      "lost_meaning": "Published document numbering differs from telegram numbers; 2pm/2.15pm markers remain distinct.",
+      "status": "experimental; not promoted"
+    }
+  ],
+  "repeated": [
+    "SG01",
+    "SG02",
+    "SG03",
+    "SG04",
+    "SG05",
+    "SG07",
+    "SG08",
+    "SG10",
+    "SG11"
+  ],
+  "newly_confirmed": [
+    "SG06"
+  ],
+  "not_retested_sufficiently": [
+    "SG09",
+    "SG12"
+  ]
+}

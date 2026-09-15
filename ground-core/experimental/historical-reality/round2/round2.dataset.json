@@ -1,0 +1,2522 @@
+{
+  "schema_version": "historical-reality-experimental/round2",
+  "window": {
+    "from": "1904-02-06",
+    "through": "1904-02-10",
+    "prewindow_baseline_and_postwindow_controls": "Explicitly marked, never backfilled into window."
+  },
+  "parent": {
+    "path": "../round1.dataset.json",
+    "sha256": "5bc32592aa80ee4742f8e01b09d4381dacc1ce080fb930772a7a1ea2b24c70c2",
+    "landscape_sha256": "40c3d8b4094e67359d5469c09fcf30dcba9479e3bb123401fb618d465021960f"
+  },
+  "delta": {
+    "actors": [
+      {
+        "id": "togo",
+        "label": "東郷平八郎",
+        "kind": "individual",
+        "identity_boundary": "This source-attested scope only; no automatic office, government or command-wide equivalence."
+      },
+      {
+        "id": "uriu",
+        "label": "瓜生外吉",
+        "kind": "individual",
+        "identity_boundary": "This source-attested scope only; no automatic office, government or command-wide equivalence."
+      },
+      {
+        "id": "navy-minister",
+        "label": "海軍大臣（受信先表記）",
+        "kind": "office",
+        "identity_boundary": "This source-attested scope only; no automatic office, government or command-wide equivalence."
+      },
+      {
+        "id": "jp-fm-receiving-office",
+        "label": "東京・外務省電報受信事務（受信欄の範囲）",
+        "kind": "office",
+        "identity_boundary": "This source-attested scope only; no automatic office, government or command-wide equivalence."
+      },
+      {
+        "id": "jp-cabinet",
+        "label": "日本内閣・政治指導部",
+        "kind": "organization",
+        "identity_boundary": "This source-attested scope only; no automatic office, government or command-wide equivalence."
+      },
+      {
+        "id": "jp-army-command",
+        "label": "日本陸軍統帥部",
+        "kind": "organization",
+        "identity_boundary": "This source-attested scope only; no automatic office, government or command-wide equivalence."
+      },
+      {
+        "id": "jp-public",
+        "label": "日本の公衆",
+        "kind": "population",
+        "identity_boundary": "This source-attested scope only; no automatic office, government or command-wide equivalence."
+      },
+      {
+        "id": "hayashi-london",
+        "label": "林董・在英公使",
+        "kind": "individual",
+        "identity_boundary": "This source-attested scope only; no automatic office, government or command-wide equivalence."
+      },
+      {
+        "id": "pak-2023",
+        "label": "B. B. Pak（2023年論文著者）",
+        "kind": "individual",
+        "identity_boundary": "This source-attested scope only; no automatic office, government or command-wide equivalence."
+      },
+      {
+        "id": "journal-editor",
+        "label": "Indianapolis Sunday Journal編集主体",
+        "kind": "publication",
+        "identity_boundary": "This source-attested scope only; no automatic office, government or command-wide equivalence."
+      },
+      {
+        "id": "tokyo-correspondent",
+        "label": "同紙の匿名東京通信者",
+        "kind": "unidentified_individual",
+        "identity_boundary": "This source-attested scope only; no automatic office, government or command-wide equivalence."
+      },
+      {
+        "id": "london-correspondent",
+        "label": "同紙の匿名ロンドン通信者",
+        "kind": "unidentified_individual",
+        "identity_boundary": "This source-attested scope only; no automatic office, government or command-wide equivalence."
+      },
+      {
+        "id": "london-legation-staff",
+        "label": "同紙が言及する日本在英公館の匿名当局者",
+        "kind": "bounded_group",
+        "identity_boundary": "This source-attested scope only; no automatic office, government or command-wide equivalence."
+      }
+    ],
+    "sources": [
+      {
+        "id": "r2:jp-whitebook",
+        "title": "Correspondence regarding negotiations, presented to Imperial Diet March 1904 (Translation)",
+        "url": "https://archive.org/details/correspondencere00japarich",
+        "inspection": "Digitized 1904 published English translation; cover and PDF pp60,64,65 visually inspected; No49 text extracted pp62–63, not visually collated to Japanese original.",
+        "locator": {
+          "edition": "March 1904 Japanese diplomatic published translation",
+          "inspected": "No48–51; printed pp56–61; PDF pp60–65",
+          "download_url": "https://archive.org/download/correspondencere00japarich/correspondencere00japarich.pdf"
+        },
+        "creation": {
+          "raw": "March 1904",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-correspondence-1904.pdf"
+      },
+      {
+        "id": "r2:komura-bundle",
+        "title": "聖坡得斯堡・外交電報簿 B07090546900",
+        "url": "https://www.jacar.archives.go.jp/das/meta/B07090546900",
+        "inspection": "Archival digitized telegram records; PDF images4–6,8–12 visually inspected. Outgoing copies and receiving annotations are not original Russian reply or proof of minister reading.",
+        "locator": {
+          "ref": "B07090546900",
+          "repository": "外務省外交史料館",
+          "call": "5.2.1.14_003",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200147290500/raw/B07090546900.b5_0029.5-0267.00000006.pdf",
+          "images": "4–6,8–12; frame0009–0017"
+        },
+        "creation": {
+          "raw": "not located",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-komura-bundle.pdf"
+      },
+      {
+        "id": "r2:togo-copy",
+        "title": "第2艦隊戦闘詳報(1) C09050255300",
+        "url": "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+        "inspection": "Digitized contemporary report copy bearing 写; images1,3,5 visually inspected. Not minister receipt original.",
+        "locator": {
+          "ref": "C09050255300",
+          "repository": "防衛研究所",
+          "call": "海軍省-日露-M37-5",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200091076000/raw/C09050255300.c0754804001.11nitiro_002.0003_01.pdf",
+          "images": "1,3,5"
+        },
+        "creation": {
+          "raw": "明治三十七年二月十日",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-portarthur.pdf"
+      },
+      {
+        "id": "r2:chemulpo-edition",
+        "title": "極秘明治37.8年海戦史 第1部戦紀巻2 備考文書 C05110032100",
+        "url": "https://www.jacar.archives.go.jp/das/meta/C05110032100",
+        "inspection": "Later compiled official naval history documents; images4–6,10–11 visually inspected. Printed telegram reproductions, not transmitted originals.",
+        "locator": {
+          "ref": "C05110032100",
+          "repository": "防衛研究所",
+          "call": "⑨その他-千代田-470",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200054612800/raw/C05110032100.c0460906001.rokaisen_002.0237_01.pdf",
+          "inspected": "備考文書No1–3; printed pp1–2,10–13"
+        },
+        "creation": {
+          "raw": "not located",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-chemulpo.pdf"
+      },
+      {
+        "id": "r2:pak",
+        "title": "B. B. Pak, 2023, pp128–139",
+        "url": "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf",
+        "inspection": "Later historian; PDF text searched and p135 visually inspected. Bibliography is a discovery path, not original telegram inspection.",
+        "locator": {
+          "inspected": "p135 and footnotes19–21",
+          "download_url": "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf"
+        },
+        "creation": {
+          "raw": "2023",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-pak-2023.pdf"
+      },
+      {
+        "id": "r2:rsl-catalog",
+        "title": "Документы по переговорам с Японией 1903–1904 гг. (1905)",
+        "url": "https://rusneb.ru/catalog/000199_000009_007506064/",
+        "inspection": "Official catalog indexed metadata located; viewer blocked, PDF endpoint returned HTML; original pages not inspected.",
+        "locator": {
+          "repository": "Russian State Library / NEB",
+          "edition": "Синодальная типография, Санкт-Петербург, 1905; 49+[1] pp",
+          "calls": [
+            "FB M125/38",
+            "Я71/56",
+            "MFK801-14/1944"
+          ],
+          "raw_endpoint": "http://dlib.rsl.ru/rsl01007000000/rsl01007506000/rsl01007506064/rsl01007506064.pdf"
+        },
+        "creation": {
+          "raw": "1905",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14"
+      },
+      {
+        "id": "r2:rgia-catalog",
+        "title": "Возникновение русско-японской войны, т3, приложения",
+        "url": "https://www.prlib.ru/item/324328",
+        "inspection": "Official archival catalog metadata only; no folio inspection and no identification with the RSL edition.",
+        "locator": {
+          "repository": "РГИА",
+          "fund": "1622",
+          "inventory": "1",
+          "file": "301-г",
+          "folios": "29",
+          "catalog_date": "1903; negotiation documents described as 1903–1904"
+        },
+        "creation": {
+          "raw": "not located",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14"
+      },
+      {
+        "id": "r2:journal",
+        "title": "Indianapolis Sunday Journal, 7 February 1904, p1",
+        "url": "https://www.loc.gov/resource/sn82015679/1904-02-07/ed-1/?sp=1",
+        "inspection": "Official page OCR inspected; scan retrieval failed (HTML instead of PDF). Anonymous dispatches, not direct legation records.",
+        "locator": {
+          "repository": "Library of Congress",
+          "issue": "1904-02-07",
+          "page": "1",
+          "scan_attempt": "https://tile.loc.gov/storage-services/service/ndnp/in/batch_in_hoosier_ver01/data/sn82015679/00202191769/1904020701/0091.pdf"
+        },
+        "creation": {
+          "raw": "1904-02-07",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-07",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14"
+      },
+      {
+        "id": "r2:army-control",
+        "title": "御勅語並に奉答文配布の件 C06040574900",
+        "url": "https://www.jacar.archives.go.jp/das/meta/C06040574900",
+        "inspection": "Catalog transcription inspected only; original images unconfirmed. Explicit February12 distribution and February26 numbering, outside window.",
+        "locator": {
+          "repository": "防衛研究所",
+          "call": "大本営-日露戦役-M37-10-144",
+          "ref": "C06040574900",
+          "images": "4; not inspected"
+        },
+        "creation": {
+          "raw": "二月二十六日・二月十二日配賦を番号付け",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-26",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14"
+      }
+    ],
+    "claims": [
+      {
+        "id": "r2:c-reply-sent",
+        "source_id": "r2:jp-whitebook",
+        "subject_id": "ru-fm",
+        "predicate": "reported_dispatch",
+        "object": "栗野は2月4日20時の面談で、ラムズドルフが回答の趣旨をアレクセーエフへ送りローゼンへ転送させると述べた、と報告。原回答本文・発送原票は未確認。",
+        "claimant_id": "jp-minister-ru",
+        "report_chain": [
+          "jp-minister-ru",
+          "ru-fm"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-04",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-04",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "8 P.M.",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-personal-view",
+        "source_id": "r2:jp-whitebook",
+        "subject_id": "ru-fm",
+        "predicate": "personal_view_not_answer",
+        "object": "栗野はラムズドルフの四条件を個人的見解と明示し、回答と同一とは言えないと留保。",
+        "claimant_id": "jp-minister-ru",
+        "report_chain": [
+          "jp-minister-ru",
+          "ru-fm"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-04",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-04",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-no50-receipt",
+        "source_id": "r2:jp-whitebook",
+        "subject_id": "jp-fm-receiving-office",
+        "predicate": "telegram_received_annotation",
+        "object": "公刊文書No50の発信地日付はPetersburg Feb5 5.5 A.M.、東京受信欄はFeb5 5.15 P.M.。Komura本人の閲読時刻はない。",
+        "claimant_id": "jp-minister-ru",
+        "report_chain": [
+          "jp-minister-ru"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-05",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "5.15 P.M.",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-order54",
+        "source_id": "r2:komura-bundle",
+        "subject_id": "jp-fm",
+        "predicate": "instruction_sent_copy",
+        "object": "No54: 2月5日2-pm発信表記。No50/51/52を一つの通告、No53を同時に提出。ロシア回答の発送・内容によらず実施、各受領と提出の即時電報報告を指示。",
+        "claimant_id": "jp-fm",
+        "report_chain": [
+          "jp-fm"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-05",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "2-pm",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-order48",
+        "source_id": "r2:jp-whitebook",
+        "subject_id": "jp-fm",
+        "predicate": "published_instruction_dateline",
+        "object": "公刊文書No48/49はFeb5 2.15 P.M.。No54の2-pmと同一時刻へ丸めない。文書番号と電報番号を区別。",
+        "claimant_id": "jp-fm",
+        "report_chain": [
+          "jp-fm"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-05",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "2.15 P.M.",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-ack82",
+        "source_id": "r2:komura-bundle",
+        "subject_id": "jp-minister-ru",
+        "predicate": "acknowledged_messages",
+        "object": "栗野No82は「貴電五〇、五三悉ス」。2月5日6.15pM日付、東京2月6日4.40aM受信。No51/52受領はこの文から拡張しない。",
+        "claimant_id": "jp-minister-ru",
+        "report_chain": [
+          "jp-minister-ru"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-05",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "6.15pM",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-ack82-receipt",
+        "source_id": "r2:komura-bundle",
+        "subject_id": "jp-fm-receiving-office",
+        "predicate": "telegram_received_annotation",
+        "object": "栗野No82の受信欄は6/2/1904 4.40aM。東京受信事務の記録であり小村本人閲読・閣議共有ではない。",
+        "claimant_id": "jp-minister-ru",
+        "report_chain": [
+          "jp-fm-receiving-office"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-06",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-06",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "4.40aM",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-note-presented",
+        "source_id": "r2:jp-whitebook",
+        "subject_id": "jp-minister-ru",
+        "predicate": "reported_note_delivery",
+        "object": "公刊No51で栗野がFeb6 TODAY 4P.M.にラムズドルフへ両通告を提出したと報告。離露10日は予定であり実行証明ではない。",
+        "claimant_id": "jp-minister-ru",
+        "report_chain": [
+          "jp-minister-ru"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-06",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-06",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "4 P.M.",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-note-report-receipt",
+        "source_id": "r2:jp-whitebook",
+        "subject_id": "jp-fm-receiving-office",
+        "predicate": "telegram_received_annotation",
+        "object": "No51はPetersburg Feb6 5.57P.M.日付、Received Feb7 5.45A.M.。受信欄と通告提出時刻を分離。",
+        "claimant_id": "jp-minister-ru",
+        "report_chain": [
+          "jp-fm-receiving-office"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-07",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-07",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "5.45 A.M.",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-london-response",
+        "source_id": "r2:komura-bundle",
+        "subject_id": "hayashi-london",
+        "predicate": "proposal_references_instruction",
+        "object": "林No59は小村No65を参照し栗野撤退後の情報収集拠点を提案。London Feb5 10.50p.m.、東京Feb6 11.20a.m.受信。ロシア回答受領の知識ではない。",
+        "claimant_id": "hayashi-london",
+        "report_chain": [
+          "hayashi-london"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-05",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "10.50p.m.",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-london-protection-order",
+        "source_id": "r2:komura-bundle",
+        "subject_id": "jp-fm",
+        "predicate": "outgoing_protection_request",
+        "object": "London林宛No67、Feb6 11-25a発信表記。英国による在露日本利益保護を依頼。林の受信・閲読はこの発信控からは分からない。",
+        "claimant_id": "jp-fm",
+        "report_chain": [
+          "jp-fm"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-06",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-06",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "11-25a",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-togo-event",
+        "source_id": "r2:togo-copy",
+        "subject_id": "togo",
+        "predicate": "retrospective_battle_report",
+        "object": "東郷報告は9日零時前後の水雷艇攻撃と9日昼の旅順口外交戦を叙述。敵損傷認定は認ム・未明瞭との留保を伴う。",
+        "claimant_id": "togo",
+        "report_chain": [
+          "togo"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-09",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-09",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-togo-created",
+        "source_id": "r2:togo-copy",
+        "subject_id": "togo",
+        "predicate": "report_dated",
+        "object": "写の報告末尾に明治三十七年二月十日、東郷平八郎。艦船当日航海日誌と同一視しない。",
+        "claimant_id": "togo",
+        "report_chain": [
+          "togo"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-10",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-togo-dispatch",
+        "source_id": "r2:togo-copy",
+        "subject_id": "navy-minister",
+        "predicate": "report_dispatch_annotation",
+        "object": "海軍大臣宛戦闘報告の冒頭注記は二月十一日仁川ヨリ発電。受信・閲読欄は今回未確認。",
+        "claimant_id": "togo",
+        "report_chain": [
+          "navy-minister"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-11",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-11",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-uriu1",
+        "source_id": "r2:chemulpo-edition",
+        "subject_id": "uriu",
+        "predicate": "telegram_dispatch_reproduced",
+        "object": "No1はFeb9 午後十二時三十五分仁川発電、午後四時五十分佐世保発電。前日夕刻のコレーツ発砲などを主張し当日正午期限の退去通告を報告。",
+        "claimant_id": "uriu",
+        "report_chain": [
+          "uriu"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-09",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-09",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "午後十二時三十五分",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-uriu1-relay",
+        "source_id": "r2:chemulpo-edition",
+        "subject_id": "uriu",
+        "predicate": "relay_dispatch_reproduced",
+        "object": "No1括弧内はFeb9 午後四時五十分佐世保発電。佐世保発電は海軍大臣東京受信ではない。",
+        "claimant_id": "uriu",
+        "report_chain": [
+          "uriu"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-09",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-09",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "午後四時五十分",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-uriu2",
+        "source_id": "r2:chemulpo-edition",
+        "subject_id": "uriu",
+        "predicate": "telegram_dispatch_reproduced",
+        "object": "No2はFeb10 午後三時三十五分仁川発電。9日35分交戦・露艦退却と夕刻破壊、己方無損害を主張。観測・推定・敵艦状態を一つの確定Realityにしない。",
+        "claimant_id": "uriu",
+        "report_chain": [
+          "uriu"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-10",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "午後三時三十五分",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-uriu2-relay",
+        "source_id": "r2:chemulpo-edition",
+        "subject_id": "uriu",
+        "predicate": "relay_dispatch_reproduced",
+        "object": "No2括弧内はFeb10 午後八時三十五分佐世保発電。受信先の受領時刻は示さない。",
+        "claimant_id": "uriu",
+        "report_chain": [
+          "uriu"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-10",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "午後八時三十五分",
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-uriu3-dependence",
+        "source_id": "r2:chemulpo-edition",
+        "subject_id": "uriu",
+        "predicate": "report_reuses_telegram",
+        "object": "Feb13 No3はNo2と同じ電報を再録し、海軍大臣宛電報後に千代田艦長報告を得た旨を注記。後の叙述は独立観測数を増やさない。",
+        "claimant_id": "uriu",
+        "report_chain": [
+          "uriu"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-13",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-13",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-pak-dates",
+        "source_id": "r2:pak",
+        "subject_id": "pak-2023",
+        "predicate": "later_reconstruction",
+        "object": "Pakは皇帝承認、2月2/3日送信、長崎経由ローゼン2月7日到着を再構成。前二者の脚注は1906年公刊文書、後者は1979/1973年研究。原電報・長崎ログ未確認。",
+        "claimant_id": "pak-2023",
+        "report_chain": [
+          "pak-2023"
+        ],
+        "temporal_scope": {
+          "raw": "not located",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-press-tokyo",
+        "source_id": "r2:journal",
+        "subject_id": "ru-minister-jp",
+        "predicate": "anonymous_press_report",
+        "object": "Tokyo Feb7通信は回答提示TODAYと小村・ローゼン会談を報じる。受領原簿ではない。",
+        "claimant_id": "journal-editor",
+        "report_chain": [
+          "journal-editor",
+          "tokyo-correspondent"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-07",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-07",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      },
+      {
+        "id": "r2:c-press-london",
+        "source_id": "r2:journal",
+        "subject_id": "london-legation-staff",
+        "predicate": "reported_no_reply_intimation",
+        "object": "London通信は土曜遅く日本公館当局者に新聞通信以外の回答受領の示唆がなかったと報じる。他の訓令についての無知を意味しない。",
+        "claimant_id": "journal-editor",
+        "report_chain": [
+          "journal-editor",
+          "london-correspondent",
+          "london-legation-staff"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-06",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-06",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Saturday interpreted relative to February7 Sunday issue; exact clock and official identities unknown; OCR only."
+        }
+      },
+      {
+        "id": "r2:c-army-control",
+        "source_id": "r2:army-control",
+        "subject_id": "jp-army-command",
+        "predicate": "later_distribution_record",
+        "object": "二月十二日配賦済文書を二月二十六日に番号付けし、奉読を命じる。十二日配賦・命令を六〜十日の陸軍知識へ逆流させない。",
+        "claimant_id": "jp-army-command",
+        "report_chain": [
+          "jp-army-command"
+        ],
+        "temporal_scope": {
+          "raw": "1904-02-12",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-12",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "extraction": {
+          "status": "inspected_recorded_assertion",
+          "confidence": "clear attribution unless explicitly qualified",
+          "context": "Paraphrase of inspected source; statement attribution does not establish external reality."
+        }
+      }
+    ],
+    "evidence_relations": [
+      {
+        "id": "e:r2:c-reply-sent",
+        "source_id": "r2:jp-whitebook",
+        "claim_id": "r2:c-reply-sent",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-personal-view",
+        "source_id": "r2:jp-whitebook",
+        "claim_id": "r2:c-personal-view",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-no50-receipt",
+        "source_id": "r2:jp-whitebook",
+        "claim_id": "r2:c-no50-receipt",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-order54",
+        "source_id": "r2:komura-bundle",
+        "claim_id": "r2:c-order54",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-order48",
+        "source_id": "r2:jp-whitebook",
+        "claim_id": "r2:c-order48",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-ack82",
+        "source_id": "r2:komura-bundle",
+        "claim_id": "r2:c-ack82",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-ack82-receipt",
+        "source_id": "r2:komura-bundle",
+        "claim_id": "r2:c-ack82-receipt",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-note-presented",
+        "source_id": "r2:jp-whitebook",
+        "claim_id": "r2:c-note-presented",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-note-report-receipt",
+        "source_id": "r2:jp-whitebook",
+        "claim_id": "r2:c-note-report-receipt",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-london-response",
+        "source_id": "r2:komura-bundle",
+        "claim_id": "r2:c-london-response",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-london-protection-order",
+        "source_id": "r2:komura-bundle",
+        "claim_id": "r2:c-london-protection-order",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-togo-event",
+        "source_id": "r2:togo-copy",
+        "claim_id": "r2:c-togo-event",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-togo-created",
+        "source_id": "r2:togo-copy",
+        "claim_id": "r2:c-togo-created",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-togo-dispatch",
+        "source_id": "r2:togo-copy",
+        "claim_id": "r2:c-togo-dispatch",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-uriu1",
+        "source_id": "r2:chemulpo-edition",
+        "claim_id": "r2:c-uriu1",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-uriu1-relay",
+        "source_id": "r2:chemulpo-edition",
+        "claim_id": "r2:c-uriu1-relay",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-uriu2",
+        "source_id": "r2:chemulpo-edition",
+        "claim_id": "r2:c-uriu2",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-uriu2-relay",
+        "source_id": "r2:chemulpo-edition",
+        "claim_id": "r2:c-uriu2-relay",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-uriu3-dependence",
+        "source_id": "r2:chemulpo-edition",
+        "claim_id": "r2:c-uriu3-dependence",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-pak-dates",
+        "source_id": "r2:pak",
+        "claim_id": "r2:c-pak-dates",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-press-tokyo",
+        "source_id": "r2:journal",
+        "claim_id": "r2:c-press-tokyo",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-press-london",
+        "source_id": "r2:journal",
+        "claim_id": "r2:c-press-london",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      },
+      {
+        "id": "e:r2:c-army-control",
+        "source_id": "r2:army-control",
+        "claim_id": "r2:c-army-control",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "Source contains this attributed assertion; no external truth promotion."
+      }
+    ],
+    "actor_epistemic_records": [],
+    "reconstructions": [
+      {
+        "id": "r2:r-reply",
+        "proposition": "Russian final reply end-to-end delivery to Japan",
+        "status": "unresolved",
+        "claim_ids": [
+          "r2:c-reply-sent",
+          "r2:c-personal-view",
+          "c678-sent",
+          "c679-held",
+          "r2:c-pak-dates",
+          "r2:c-press-tokyo"
+        ],
+        "relation_ids": [
+          "e:r2:c-reply-sent",
+          "e:r2:c-personal-view",
+          "e-c678-sent",
+          "e-c679-held",
+          "e:r2:c-pak-dates",
+          "e:r2:c-press-tokyo"
+        ],
+        "reason": "Transmission is attributed through incompatible levels of reporting; final text, logs, receipt/read and revision identity unverified.",
+        "alternatives": [
+          "Reporting error, differing stage or version, or incomplete surviving transmission record; not automatically reconciled."
+        ],
+        "unknowns": [
+          "Original route/receipt/read records and verified time standards"
+        ],
+        "assessed_on": "2026-09-14"
+      },
+      {
+        "id": "r2:r-fm-receipt",
+        "proposition": "Published/archival receiving annotations",
+        "status": "strongly_established",
+        "claim_ids": [
+          "r2:c-no50-receipt",
+          "r2:c-ack82-receipt",
+          "r2:c-note-report-receipt"
+        ],
+        "relation_ids": [
+          "e:r2:c-no50-receipt",
+          "e:r2:c-ack82-receipt",
+          "e:r2:c-note-report-receipt"
+        ],
+        "reason": "Strong as inspected record contents; not proof of Komura reading or cabinet knowledge.",
+        "alternatives": [
+          "Reporting error, differing stage or version, or incomplete surviving transmission record; not automatically reconciled."
+        ],
+        "unknowns": [
+          "Original route/receipt/read records and verified time standards"
+        ],
+        "assessed_on": "2026-09-14"
+      },
+      {
+        "id": "r2:r-naval",
+        "proposition": "Navy minister recognized these actions by February10",
+        "status": "unresolved",
+        "claim_ids": [
+          "r2:c-togo-dispatch",
+          "r2:c-uriu1-relay",
+          "r2:c-uriu2-relay"
+        ],
+        "relation_ids": [
+          "e:r2:c-togo-dispatch",
+          "e:r2:c-uriu1-relay",
+          "e:r2:c-uriu2-relay"
+        ],
+        "reason": "Dispatch and relay markers do not provide destination receipt; Togo dispatch annotation is February11.",
+        "alternatives": [
+          "Reporting error, differing stage or version, or incomplete surviving transmission record; not automatically reconciled."
+        ],
+        "unknowns": [
+          "Original route/receipt/read records and verified time standards"
+        ],
+        "assessed_on": "2026-09-14"
+      },
+      {
+        "id": "r2:r-variag",
+        "proposition": "Variag fate and propagation of captured claim",
+        "status": "unresolved",
+        "claim_ids": [
+          "c395-captured",
+          "r2:c-uriu2",
+          "cjacar-selfsink"
+        ],
+        "relation_ids": [
+          "e-c395-captured",
+          "e:r2:c-uriu2",
+          "e-cjacar-selfsink"
+        ],
+        "reason": "Edition report weakens captured as an external fact; upstream cause of February9 foreign-ministry claim not located.",
+        "alternatives": [
+          "Reporting error, differing stage or version, or incomplete surviving transmission record; not automatically reconciled."
+        ],
+        "unknowns": [
+          "Original route/receipt/read records and verified time standards"
+        ],
+        "assessed_on": "2026-09-14"
+      }
+    ],
+    "interpretations": [],
+    "narratives": []
+  },
+  "propagation": {
+    "nodes": [
+      {
+        "id": "n-reply-report",
+        "stage": "record",
+        "actor_id": "jp-minister-ru",
+        "time": {
+          "raw": "1904-02-05",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "5.5 A.M.",
+          "place": "Petersburg",
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "r2:c-reply-sent"
+        ],
+        "attestation_form": "source_reports_actor_assertion"
+      },
+      {
+        "id": "n-no50-receipt",
+        "stage": "receipt",
+        "actor_id": "jp-fm-receiving-office",
+        "time": {
+          "raw": "1904-02-05",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "5.15 P.M.",
+          "place": "Tokyo",
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "r2:c-no50-receipt"
+        ],
+        "attestation_form": "source_asserts"
+      },
+      {
+        "id": "n-instruction54",
+        "stage": "order",
+        "actor_id": "jp-fm",
+        "time": {
+          "raw": "1904-02-05",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "2-pm",
+          "place": "Tokyo",
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "r2:c-order54"
+        ],
+        "attestation_form": "source_asserts"
+      },
+      {
+        "id": "n-ack82",
+        "stage": "record",
+        "actor_id": "jp-minister-ru",
+        "time": {
+          "raw": "1904-02-05",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "6.15pM",
+          "place": "Petersburg",
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "r2:c-ack82"
+        ],
+        "attestation_form": "source_asserts"
+      },
+      {
+        "id": "n-ack82-receipt",
+        "stage": "receipt",
+        "actor_id": "jp-fm-receiving-office",
+        "time": {
+          "raw": "1904-02-06",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-06",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "4.40aM",
+          "place": "Tokyo",
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "r2:c-ack82-receipt"
+        ],
+        "attestation_form": "source_asserts"
+      },
+      {
+        "id": "n-notes-delivery",
+        "stage": "action",
+        "actor_id": "jp-minister-ru",
+        "time": {
+          "raw": "1904-02-06",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-06",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "4 P.M.",
+          "place": "Petersburg",
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "r2:c-note-presented"
+        ],
+        "attestation_form": "source_asserts"
+      },
+      {
+        "id": "n-notes-receipt",
+        "stage": "receipt",
+        "actor_id": "jp-fm-receiving-office",
+        "time": {
+          "raw": "1904-02-07",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-07",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "5.45 A.M.",
+          "place": "Tokyo",
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "r2:c-note-report-receipt"
+        ],
+        "attestation_form": "source_asserts"
+      },
+      {
+        "id": "n-hayashi",
+        "stage": "interpretation",
+        "actor_id": "hayashi-london",
+        "time": {
+          "raw": "1904-02-05",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-05",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "10.50p.m.",
+          "place": "London",
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "r2:c-london-response"
+        ],
+        "attestation_form": "source_asserts"
+      },
+      {
+        "id": "n-togo-report",
+        "stage": "record",
+        "actor_id": "togo",
+        "time": {
+          "raw": "1904-02-10",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "r2:c-togo-created"
+        ],
+        "attestation_form": "source_asserts"
+      },
+      {
+        "id": "n-togo-dispatch",
+        "stage": "transmission",
+        "actor_id": "togo",
+        "time": {
+          "raw": "1904-02-11",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-11",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": "Chemulpo",
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "r2:c-togo-dispatch"
+        ],
+        "attestation_form": "source_asserts"
+      },
+      {
+        "id": "n-uriu1",
+        "stage": "transmission",
+        "actor_id": "uriu",
+        "time": {
+          "raw": "1904-02-09",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-09",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "午後十二時三十五分",
+          "place": "Chemulpo",
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "r2:c-uriu1"
+        ],
+        "attestation_form": "later_reconstruction"
+      },
+      {
+        "id": "n-uriu1-relay",
+        "stage": "transmission",
+        "actor_id": "uriu",
+        "time": {
+          "raw": "1904-02-09",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-09",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "午後四時五十分",
+          "place": "Sasebo",
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "r2:c-uriu1-relay"
+        ],
+        "attestation_form": "later_reconstruction"
+      },
+      {
+        "id": "n-uriu2",
+        "stage": "transmission",
+        "actor_id": "uriu",
+        "time": {
+          "raw": "1904-02-10",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "午後三時三十五分",
+          "place": "Chemulpo",
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "r2:c-uriu2"
+        ],
+        "attestation_form": "later_reconstruction"
+      },
+      {
+        "id": "n-uriu2-relay",
+        "stage": "transmission",
+        "actor_id": "uriu",
+        "time": {
+          "raw": "1904-02-10",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": "午後八時三十五分",
+          "place": "Sasebo",
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "r2:c-uriu2-relay"
+        ],
+        "attestation_form": "later_reconstruction"
+      },
+      {
+        "id": "n-army-control",
+        "stage": "order",
+        "actor_id": "jp-army-command",
+        "time": {
+          "raw": "1904-02-12",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-12",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "r2:c-army-control"
+        ],
+        "attestation_form": "source_asserts"
+      },
+      {
+        "id": "n-whitebook-publication",
+        "stage": "publication",
+        "actor_id": "jp-public",
+        "time": {
+          "raw": "March 1904; presented to Diet; precise public access unknown",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "No independently placed day"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "r2:c-order48"
+        ],
+        "attestation_form": "source_asserts"
+      },
+      {
+        "id": "n-rosen-held",
+        "stage": "source_possession",
+        "actor_id": "ru-minister-jp",
+        "time": {
+          "raw": "Reported February8: Rosen had reply when passports were asked; possession time not directly dated",
+          "precision": "unknown",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "Report dateline is not Rosen possession time"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "claim_ids": [
+          "c679-held"
+        ],
+        "attestation_form": "source_reports_actor_assertion"
+      }
+    ],
+    "edges": [
+      {
+        "id": "link-no50",
+        "from_id": "n-reply-report",
+        "to_id": "n-no50-receipt",
+        "relation": "received_report",
+        "claim_ids": [
+          "r2:c-no50-receipt"
+        ],
+        "limit": "Attributed documentary linkage only; no implied intermediate stage or successful reading."
+      },
+      {
+        "id": "link-ack",
+        "from_id": "n-instruction54",
+        "to_id": "n-ack82",
+        "relation": "references_instruction",
+        "claim_ids": [
+          "r2:c-order54",
+          "r2:c-ack82"
+        ],
+        "limit": "Attributed documentary linkage only; no implied intermediate stage or successful reading."
+      },
+      {
+        "id": "link-ack-receipt",
+        "from_id": "n-ack82",
+        "to_id": "n-ack82-receipt",
+        "relation": "received_report",
+        "claim_ids": [
+          "r2:c-ack82-receipt"
+        ],
+        "limit": "Attributed documentary linkage only; no implied intermediate stage or successful reading."
+      },
+      {
+        "id": "link-notes",
+        "from_id": "n-notes-delivery",
+        "to_id": "n-notes-receipt",
+        "relation": "reported_action",
+        "claim_ids": [
+          "r2:c-note-presented",
+          "r2:c-note-report-receipt"
+        ],
+        "limit": "Attributed documentary linkage only; no implied intermediate stage or successful reading."
+      },
+      {
+        "id": "link-togo",
+        "from_id": "n-togo-report",
+        "to_id": "n-togo-dispatch",
+        "relation": "dispatched_report",
+        "claim_ids": [
+          "r2:c-togo-dispatch"
+        ],
+        "limit": "Attributed documentary linkage only; no implied intermediate stage or successful reading."
+      },
+      {
+        "id": "link-uriu1",
+        "from_id": "n-uriu1",
+        "to_id": "n-uriu1-relay",
+        "relation": "relay_annotation",
+        "claim_ids": [
+          "r2:c-uriu1",
+          "r2:c-uriu1-relay"
+        ],
+        "limit": "Attributed documentary linkage only; no implied intermediate stage or successful reading."
+      },
+      {
+        "id": "link-uriu2",
+        "from_id": "n-uriu2",
+        "to_id": "n-uriu2-relay",
+        "relation": "relay_annotation",
+        "claim_ids": [
+          "r2:c-uriu2",
+          "r2:c-uriu2-relay"
+        ],
+        "limit": "Attributed documentary linkage only; no implied intermediate stage or successful reading."
+      }
+    ],
+    "actor_records": [
+      {
+        "id": "k-fm-no50",
+        "actor_id": "jp-fm-receiving-office",
+        "node_id": "n-no50-receipt",
+        "claim_id": "r2:c-no50-receipt",
+        "stance": "receipt_annotated",
+        "payload": "Report of reply dispatch and explicitly personal views; not final Russian reply text.",
+        "limit": "Bounded source-attested epistemic act, not continuing knowledge or organisation-wide belief."
+      },
+      {
+        "id": "k-kurino-ack",
+        "actor_id": "jp-minister-ru",
+        "node_id": "n-ack82",
+        "claim_id": "r2:c-ack82",
+        "stance": "acknowledged_message",
+        "payload": "Telegram numbers50 and53 only; reference not expanded to51/52/54.",
+        "limit": "Bounded source-attested epistemic act, not continuing knowledge or organisation-wide belief."
+      },
+      {
+        "id": "k-fm-notes",
+        "actor_id": "jp-fm-receiving-office",
+        "node_id": "n-notes-receipt",
+        "claim_id": "r2:c-note-report-receipt",
+        "stance": "receipt_annotated",
+        "payload": "Kurino report of note delivery; minister reading unknown.",
+        "limit": "Bounded source-attested epistemic act, not continuing knowledge or organisation-wide belief."
+      },
+      {
+        "id": "k-hayashi",
+        "actor_id": "hayashi-london",
+        "node_id": "n-hayashi",
+        "claim_id": "r2:c-london-response",
+        "stance": "references_instruction",
+        "payload": "Withdrawal plan in Komura65; no claim of knowing Russian reply text.",
+        "limit": "Bounded source-attested epistemic act, not continuing knowledge or organisation-wide belief."
+      },
+      {
+        "id": "k-togo",
+        "actor_id": "togo",
+        "node_id": "n-togo-report",
+        "claim_id": "r2:c-togo-created",
+        "stance": "authored_report",
+        "payload": "Author report of naval operation; exact damage contested.",
+        "limit": "Bounded source-attested epistemic act, not continuing knowledge or organisation-wide belief."
+      },
+      {
+        "id": "k-army-control",
+        "actor_id": "jp-army-command",
+        "node_id": "n-army-control",
+        "claim_id": "r2:c-army-control",
+        "stance": "distribution_reported",
+        "payload": "Outside-window rescript distribution; no evidence of actual reading.",
+        "limit": "Bounded source-attested epistemic act, not continuing knowledge or organisation-wide belief."
+      }
+    ],
+    "assessments": [
+      {
+        "id": "a:source_assertion:r2:c-reply-sent",
+        "target": {
+          "kind": "source_assertion",
+          "claim_id": "r2:c-reply-sent"
+        },
+        "status": "strongly_established",
+        "reason": "Inspected record assertion is attributable; external proposition requires independent observations/version and route confirmation.",
+        "claim_ids": [
+          "r2:c-reply-sent"
+        ]
+      },
+      {
+        "id": "a:external_reality:r2:c-reply-sent",
+        "target": {
+          "kind": "external_reality",
+          "claim_id": "r2:c-reply-sent"
+        },
+        "status": "unresolved",
+        "reason": "Inspected record assertion is attributable; external proposition requires independent observations/version and route confirmation.",
+        "claim_ids": [
+          "r2:c-reply-sent"
+        ]
+      },
+      {
+        "id": "a:source_assertion:r2:c-togo-event",
+        "target": {
+          "kind": "source_assertion",
+          "claim_id": "r2:c-togo-event"
+        },
+        "status": "strongly_established",
+        "reason": "Inspected record assertion is attributable; external proposition requires independent observations/version and route confirmation.",
+        "claim_ids": [
+          "r2:c-togo-event"
+        ]
+      },
+      {
+        "id": "a:external_reality:r2:c-togo-event",
+        "target": {
+          "kind": "external_reality",
+          "claim_id": "r2:c-togo-event"
+        },
+        "status": "unresolved",
+        "reason": "Inspected record assertion is attributable; external proposition requires independent observations/version and route confirmation.",
+        "claim_ids": [
+          "r2:c-togo-event"
+        ]
+      },
+      {
+        "id": "a:source_assertion:r2:c-uriu2",
+        "target": {
+          "kind": "source_assertion",
+          "claim_id": "r2:c-uriu2"
+        },
+        "status": "strongly_established",
+        "reason": "Inspected record assertion is attributable; external proposition requires independent observations/version and route confirmation.",
+        "claim_ids": [
+          "r2:c-uriu2"
+        ]
+      },
+      {
+        "id": "a:external_reality:r2:c-uriu2",
+        "target": {
+          "kind": "external_reality",
+          "claim_id": "r2:c-uriu2"
+        },
+        "status": "unresolved",
+        "reason": "Inspected record assertion is attributable; external proposition requires independent observations/version and route confirmation.",
+        "claim_ids": [
+          "r2:c-uriu2"
+        ]
+      },
+      {
+        "id": "a:source_assertion:c395-captured",
+        "target": {
+          "kind": "source_assertion",
+          "claim_id": "c395-captured"
+        },
+        "status": "strongly_established",
+        "reason": "Inspected record assertion is attributable; external proposition requires independent observations/version and route confirmation.",
+        "claim_ids": [
+          "c395-captured"
+        ]
+      },
+      {
+        "id": "a:external_reality:c395-captured",
+        "target": {
+          "kind": "external_reality",
+          "claim_id": "c395-captured"
+        },
+        "status": "unresolved",
+        "reason": "Inspected record assertion is attributable; external proposition requires independent observations/version and route confirmation.",
+        "claim_ids": [
+          "c395-captured"
+        ]
+      },
+      {
+        "id": "a:source_assertion:r2:c-pak-dates",
+        "target": {
+          "kind": "source_assertion",
+          "claim_id": "r2:c-pak-dates"
+        },
+        "status": "strongly_established",
+        "reason": "Inspected record assertion is attributable; external proposition requires independent observations/version and route confirmation.",
+        "claim_ids": [
+          "r2:c-pak-dates"
+        ]
+      },
+      {
+        "id": "a:external_reality:r2:c-pak-dates",
+        "target": {
+          "kind": "external_reality",
+          "claim_id": "r2:c-pak-dates"
+        },
+        "status": "unresolved",
+        "reason": "Inspected record assertion is attributable; external proposition requires independent observations/version and route confirmation.",
+        "claim_ids": [
+          "r2:c-pak-dates"
+        ]
+      }
+    ],
+    "reply_lifecycle": [
+      {
+        "role": "drafted_at",
+        "status": "unknown",
+        "claim_ids": [],
+        "unknown_reason": "Final Russian answer identity, original telegram/receipt/read or action linkage not verified. Personal views and hearsay are not the final answer."
+      },
+      {
+        "role": "approved_at",
+        "status": "reported_candidates",
+        "claim_ids": [
+          "r2:c-pak-dates"
+        ],
+        "unknown_reason": "Final Russian answer identity, original telegram/receipt/read or action linkage not verified. Personal views and hearsay are not the final answer."
+      },
+      {
+        "role": "signed_at",
+        "status": "unknown",
+        "claim_ids": [],
+        "unknown_reason": "Final Russian answer identity, original telegram/receipt/read or action linkage not verified. Personal views and hearsay are not the final answer."
+      },
+      {
+        "role": "held_by",
+        "status": "reported_candidates",
+        "claim_ids": [
+          "c679-held"
+        ],
+        "unknown_reason": "Final Russian answer identity, original telegram/receipt/read or action linkage not verified. Personal views and hearsay are not the final answer."
+      },
+      {
+        "role": "dispatched_at",
+        "status": "reported_candidates",
+        "claim_ids": [
+          "r2:c-reply-sent",
+          "c678-sent",
+          "r2:c-pak-dates"
+        ],
+        "unknown_reason": "Final Russian answer identity, original telegram/receipt/read or action linkage not verified. Personal views and hearsay are not the final answer."
+      },
+      {
+        "role": "transmission_mechanism",
+        "status": "unknown",
+        "claim_ids": [],
+        "unknown_reason": "Final Russian answer identity, original telegram/receipt/read or action linkage not verified. Personal views and hearsay are not the final answer."
+      },
+      {
+        "role": "arrived_at",
+        "status": "reported_candidates",
+        "claim_ids": [
+          "r2:c-pak-dates",
+          "r2:c-press-tokyo"
+        ],
+        "unknown_reason": "Final Russian answer identity, original telegram/receipt/read or action linkage not verified. Personal views and hearsay are not the final answer."
+      },
+      {
+        "role": "received_by",
+        "status": "unknown",
+        "claim_ids": [],
+        "unknown_reason": "Final Russian answer identity, original telegram/receipt/read or action linkage not verified. Personal views and hearsay are not the final answer."
+      },
+      {
+        "role": "opened_read_at",
+        "status": "unknown",
+        "claim_ids": [],
+        "unknown_reason": "Final Russian answer identity, original telegram/receipt/read or action linkage not verified. Personal views and hearsay are not the final answer."
+      },
+      {
+        "role": "understood_interpreted_at",
+        "status": "unknown",
+        "claim_ids": [],
+        "unknown_reason": "Final Russian answer identity, original telegram/receipt/read or action linkage not verified. Personal views and hearsay are not the final answer."
+      },
+      {
+        "role": "known_by_actor",
+        "status": "reported_candidates",
+        "claim_ids": [
+          "c678-uncertainty",
+          "r2:c-personal-view"
+        ],
+        "unknown_reason": "Final Russian answer identity, original telegram/receipt/read or action linkage not verified. Personal views and hearsay are not the final answer."
+      },
+      {
+        "role": "acted_upon_at",
+        "status": "unknown",
+        "claim_ids": [],
+        "unknown_reason": "Final Russian answer identity, original telegram/receipt/read or action linkage not verified. Personal views and hearsay are not the final answer."
+      }
+    ],
+    "missing_evidence": [
+      {
+        "id": "m-russian-original",
+        "classification": "known_to_have_existed_but_unavailable",
+        "target": "RSL/NEB1905 public collection",
+        "reason": "Viewer reports connection/VPN restriction; PDF endpoint returned HTML. No original page inspected.",
+        "searched_on": "2026-09-14",
+        "absence_inference": false
+      },
+      {
+        "id": "m-russian-1906",
+        "classification": "no_evidence_currently_located",
+        "target": "1906 edition cited by Pak",
+        "reason": "1905 official catalog located, exact1906 edition and pp44–47 not collated; edition difference unresolved.",
+        "searched_on": "2026-09-14",
+        "absence_inference": false
+      },
+      {
+        "id": "m-rgia-folios",
+        "classification": "known_to_have_existed_but_unavailable",
+        "target": "RGIA1622/1/301-г",
+        "reason": "Catalog only; folios not viewed. Cannot bind to specific reply telegram.",
+        "searched_on": "2026-09-14",
+        "absence_inference": false
+      },
+      {
+        "id": "m-nagasaki",
+        "classification": "no_evidence_currently_located",
+        "target": "Nagasaki relay/receipt and censorship order",
+        "reason": "Pak cites later studies for February7 arrival; no original routing log or detention order acquired.",
+        "searched_on": "2026-09-14",
+        "absence_inference": false
+      },
+      {
+        "id": "m-read",
+        "classification": "no_evidence_currently_located",
+        "target": "Komura/cabinet/army/navy minister read/briefing records in Feb6–10",
+        "reason": "Acquired dispatch copies and receipt annotations do not identify minister reading or command/government recognition.",
+        "searched_on": "2026-09-14",
+        "absence_inference": false
+      },
+      {
+        "id": "m-shiplogs",
+        "classification": "source_searched_and_not_found",
+        "target": "Port Arthur/Chemulpo contemporaneous ship logs or original transmitted telegrams",
+        "reason": "JACAR exhibition and NIDS120th pointers searched; acquired contemporary copy and later compilation only. Not a declaration logs do not exist.",
+        "searched_on": "2026-09-14",
+        "absence_inference": false
+      },
+      {
+        "id": "m-locscan",
+        "classification": "known_to_have_existed_but_unavailable",
+        "target": "LOC February7 p1 scan",
+        "reason": "Official OCR accessible; screenshot retrieval failed; download returned HTML, not PDF.",
+        "searched_on": "2026-09-14",
+        "absence_inference": false
+      },
+      {
+        "id": "m-original-clock",
+        "classification": "no_evidence_currently_located",
+        "target": "Clock standards for all dispatch/receipt annotations",
+        "reason": "No global standard assumed; raw clocks retained, no UTC instants computed.",
+        "searched_on": "2026-09-14",
+        "absence_inference": false
+      }
+    ],
+    "source_availability": {
+      "r2:jp-whitebook": {
+        "limit": "Conservative month boundary, not actual publication/access day. Reference boundary only; no claim of earliest possible access or absence before that date.",
+        "documented_publication_reference": "1904-03-01"
+      },
+      "r2:pak": {
+        "limit": "Year lower bound, not actual publication day. Reference boundary only; no claim of earliest possible access or absence before that date.",
+        "documented_publication_reference": "2023-01-01"
+      },
+      "r2:journal": {
+        "limit": "Issue date, not individual possession or reading. Reference boundary only; no claim of earliest possible access or absence before that date.",
+        "documented_publication_reference": "1904-02-07"
+      }
+    }
+  },
+  "assets": [
+    {
+      "source_id": "r2:jp-whitebook",
+      "path": "evidence/rj-correspondence-1904.pdf",
+      "download_url": "https://archive.org/download/correspondencere00japarich/correspondencere00japarich.pdf",
+      "sha256": "b6aff58114b3351a99e358d46d22e733ce8b3eabaf6365acac8a1e6d028a3628",
+      "bytes": 2818613,
+      "pages": 72,
+      "inspection": "Only listed pages visually inspected; full acquisition is not full reading.",
+      "acquired_on": "2026-09-14",
+      "authenticity": "local byte integrity; not authentication of original historical document"
+    },
+    {
+      "source_id": "r2:komura-bundle",
+      "path": "evidence/rj-komura-bundle.pdf",
+      "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200147290500/raw/B07090546900.b5_0029.5-0267.00000006.pdf",
+      "sha256": "db6dbb5c221acec6ec16abdbfe24b5e6c2232d1876247e01b9043d32d50304cb",
+      "bytes": 7069457,
+      "pages": 58,
+      "inspection": "Only listed pages visually inspected; full acquisition is not full reading.",
+      "acquired_on": "2026-09-14",
+      "authenticity": "local byte integrity; not authentication of original historical document"
+    },
+    {
+      "source_id": "r2:togo-copy",
+      "path": "evidence/rj-portarthur.pdf",
+      "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200091076000/raw/C09050255300.c0754804001.11nitiro_002.0003_01.pdf",
+      "sha256": "da72ab0296335459e8e55664be317e66842e7a5a29a002166d4f12c4823822b6",
+      "bytes": 7193427,
+      "pages": 53,
+      "inspection": "Only listed pages visually inspected; full acquisition is not full reading.",
+      "acquired_on": "2026-09-14",
+      "authenticity": "local byte integrity; not authentication of original historical document"
+    },
+    {
+      "source_id": "r2:chemulpo-edition",
+      "path": "evidence/rj-chemulpo.pdf",
+      "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200054612800/raw/C05110032100.c0460906001.rokaisen_002.0237_01.pdf",
+      "sha256": "0dcd19d160873e4919ae0007f2dee345fdbaed23377d5f12ef2ebe08cf4b08f8",
+      "bytes": 17624531,
+      "pages": 101,
+      "inspection": "Only listed pages visually inspected; full acquisition is not full reading.",
+      "acquired_on": "2026-09-14",
+      "authenticity": "local byte integrity; not authentication of original historical document"
+    },
+    {
+      "source_id": "r2:pak",
+      "path": "evidence/rj-pak-2023.pdf",
+      "download_url": "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf",
+      "sha256": "4f2b8413eaa61207d316d637769ff8be5930890a6d6c06e93b049a1d43e419e1",
+      "bytes": 165591,
+      "pages": 12,
+      "inspection": "Only listed pages visually inspected; full acquisition is not full reading.",
+      "acquired_on": "2026-09-14",
+      "authenticity": "local byte integrity; not authentication of original historical document"
+    }
+  ]
+}

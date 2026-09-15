@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import cors from "cors";
 import dotenv from "dotenv";
 import { SYSTEM_PROMPT_SHORT } from "./prompts/system.js";
+import { createHumanInterfaceRouter } from "./server/human-interface/http-route.js";
 
 dotenv.config();
 
@@ -44,6 +45,7 @@ if (isVercel) {
   });
 }
 const PORT = Number(process.env.PORT || 3001);
+app.use('/api/human-interface', createHumanInterfaceRouter());
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const MODEL = String(process.env.ANTHROPIC_MODEL || "claude-sonnet-4-20250514");
 const GATE_MODEL = String(process.env.ANTHROPIC_GATE_MODEL || (isVercel ? "claude-haiku-4-5" : MODEL));
@@ -738,13 +740,13 @@ if (!isVercel && !apiOnly) {
   const frontendRoot = path.resolve(__dirname, "dist");
   const distExists = fs.existsSync(frontendRoot) && fs.existsSync(path.join(frontendRoot, "index.html"));
   if (distExists) {
-    app.get(["/", "/plans", "/welcome"], (req, res, next) => {
+    app.get(["/", "/plans", "/welcome", "/reality", "/reality/:projectId", "/reality/:projectId/:entityId"], (req, res, next) => {
       res.sendFile("index.html", { root: frontendRoot }, (err) => {
         if (err) next();
       });
     });
     // ground.ink/ma/ 用: 同じ SPA を /ma 以下でも配信（1 つのビルドでルートと /ma 両対応）
-    app.get(["/ma", "/ma/", "/ma/plans", "/ma/welcome"], (req, res, next) => {
+    app.get(["/ma", "/ma/", "/ma/plans", "/ma/welcome", "/ma/reality", "/ma/reality/:projectId", "/ma/reality/:projectId/:entityId"], (req, res, next) => {
       res.sendFile("index.html", { root: frontendRoot }, (err) => {
         if (err) next();
       });

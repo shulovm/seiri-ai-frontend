@@ -1,0 +1,71 @@
+{
+  "watch": [
+    {
+      "candidate": "epistemic actor scope",
+      "round1_appearance": "Nested Kurino/Lamsdorff attribution",
+      "round2_appearance": "FM receiving office and50/53payload",
+      "round3_appearance": "Rosen recipient versus reported authority/unknown custodian",
+      "historical_specific": "No; historical calendars and archive practices are case-specific aspects.",
+      "general_reality_semantics": "Potentially general to current/future evidence, communications and document transformations; not validated outside this historical case.",
+      "current_core_possibility": "Entity/Claim can store values; system BeliefAssessment does not encode historical actor knowledge",
+      "formal_promotion": "Not promoted. Actor scope is promising; organization-to-individual access needs another case.",
+      "stability_criterion": "Meaning boundary across contrasting evidence, not frequency of occurrence."
+    },
+    {
+      "candidate": "information propagation stage",
+      "round1_appearance": "Dispatch versus possession",
+      "round2_appearance": "Sasebo relay versus destination receipt",
+      "round3_appearance": "Address,locationholding,delivery,possession versus reading",
+      "historical_specific": "No; historical calendars and archive practices are case-specific aspects.",
+      "general_reality_semantics": "Potentially general to current/future evidence, communications and document transformations; not validated outside this historical case.",
+      "current_core_possibility": "Canonical Event asserts ontic behavior; arbitrary Claim value lacks stage query contracts",
+      "formal_promotion": "Not promoted. Sparse attributed stages stable in this case; no closed universal stage vocabulary.",
+      "stability_criterion": "Meaning boundary across contrasting evidence, not frequency of occurrence."
+    },
+    {
+      "candidate": "scoped certainty",
+      "round1_appearance": "Enemy fate assertion versus reality",
+      "round2_appearance": "Capture source assertion versus external capture",
+      "round3_appearance": "Content,documentary identity,external delivery",
+      "historical_specific": "No; historical calendars and archive practices are case-specific aspects.",
+      "general_reality_semantics": "Potentially general to current/future evidence, communications and document transformations; not validated outside this historical case.",
+      "current_core_possibility": "One Claim confidence cannot represent independent target assessments",
+      "formal_promotion": "Not promoted. Explicit target is stable; calibration and assessment lifecycle unproven.",
+      "stability_criterion": "Meaning boundary across contrasting evidence, not frequency of occurrence."
+    },
+    {
+      "candidate": "temporal role",
+      "round1_appearance": "Source/event/publication/calendar distinctions",
+      "round2_appearance": "Send/receipt/report andunplaced possession",
+      "round3_appearance": "Publication/digitization/access versus read gap",
+      "historical_specific": "No; historical calendars and archive practices are case-specific aspects.",
+      "general_reality_semantics": "Potentially general to current/future evidence, communications and document transformations; not validated outside this historical case.",
+      "current_core_possibility": "Observed/recorded/applicability clocks exist; raw documentary role/calendar contract incomplete",
+      "formal_promotion": "Not promoted. Raw+role+precision+reason promising; verified clock conversion still untested.",
+      "stability_criterion": "Meaning boundary across contrasting evidence, not frequency of occurrence."
+    },
+    {
+      "candidate": "provenance lineage",
+      "round1_appearance": "Original/paraphrase/translation gap",
+      "round2_appearance": "Edition/message identity",
+      "round3_appearance": "Typed upstream,citation dependency,reference endpoint",
+      "historical_specific": "No; historical calendars and archive practices are case-specific aspects.",
+      "general_reality_semantics": "Potentially general to current/future evidence, communications and document transformations; not validated outside this historical case.",
+      "current_core_possibility": "Evidence provenance/external_ref stores values; transformation and endpoint contract absent",
+      "formal_promotion": "Not promoted. Identity/content distinction stable; edge vocabulary and exact-copy identity immature.",
+      "stability_criterion": "Meaning boundary across contrasting evidence, not frequency of occurrence."
+    },
+    {
+      "candidate": "unknown reason",
+      "round1_appearance": "Research unknown versus structural gap",
+      "round2_appearance": "Unavailable versus no evidence located",
+      "round3_appearance": "403/HTML,unavailable citation,date absent,edition incomplete",
+      "historical_specific": "No; historical calendars and archive practices are case-specific aspects.",
+      "general_reality_semantics": "Potentially general to current/future evidence, communications and document transformations; not validated outside this historical case.",
+      "current_core_possibility": "Structural epistemic gaps do not represent research search scope and access failures",
+      "formal_promotion": "Not promoted. Search scope and reason are stable boundary; fixed taxonomy and absence rules premature.",
+      "stability_criterion": "Meaning boundary across contrasting evidence, not frequency of occurrence."
+    }
+  ],
+  "core_promotions": []
+}

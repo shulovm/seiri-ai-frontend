@@ -1,0 +1,16 @@
+{
+  "new_adapter_signal": {
+    "id": "SG-36",
+    "kind": "adapter_query_scope_failure_not_missing_core_primitive",
+    "candidate_id": "R5-C33",
+    "historical_cases": [
+      "r4:c-jp-night",
+      "r4:c-jp-wounded"
+    ],
+    "proof_path": "replay/predicate-scope-counterexample.json",
+    "lost_meaning": "23 distinct source assertions appear as alternatives when projected to the same singleton predicate",
+    "resolution": "Opt-in per-extracted-proposition source assertion slots; inherited adapter and core left unchanged"
+  },
+  "inherited_signals": 35,
+  "legacy_files_unchanged": true
+}

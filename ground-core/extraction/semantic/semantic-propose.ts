@@ -119,6 +119,12 @@ function buildObservationOperation(
   observationId: string,
   timestamp: string
 ): PatchOperation {
+  const lifecycle = event.evidence.find((item) => item.startsWith("lifecycle:"))?.slice(10);
+  const lifecycleLabels: Record<string, string> = {
+    considered: "未選択の検討記録", candidate: "候補の記録", preferred: "推奨案の記録",
+    intended: "意図の記録", planned: "予定の記録", instructed: "指示の記録",
+    executing: "実行開始の記録", completed: "実行完了の記録",
+  };
   return {
     op: "upsert",
     entity: "observation",
@@ -127,9 +133,9 @@ function buildObservationOperation(
       id: observationId,
       project_id: input.project_state.project.id,
       goal_id: input.project_state.current_state.primary_goal_id,
-      title: observationTitle(event.type),
+      title: lifecycle ? lifecycleLabels[lifecycle] ?? observationTitle(event.type) : observationTitle(event.type),
       body: event.raw_span ?? input.input_text,
-      source: "conversation",
+      source: input.source ?? "conversation",
       observed_at: timestamp,
       created_at: timestamp,
       updated_at: timestamp,

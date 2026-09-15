@@ -8,6 +8,8 @@ export interface ExtractionInput {
   project_id: string;
   input_text: string;
   project_state: ProjectState;
+  /** Intake channel, independent of the observer/reporter in the text. */
+  source?: "manual" | "field_test" | "conversation" | "system";
 }
 
 export interface OperationSummary {

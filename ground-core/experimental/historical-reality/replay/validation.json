@@ -1,0 +1,76 @@
+{
+  "schema_version": "historical-reality-experimental/round1",
+  "counts": {
+    "sources": 14,
+    "claims": 18,
+    "relations": 20,
+    "actors": 23,
+    "reconstructions": 4
+  },
+  "canonical_projection": {
+    "document_entities": 14,
+    "source_content_claims": 18,
+    "evidence": 14,
+    "historical_events": 0,
+    "historical_states": 0
+  },
+  "historical_actor_query": {
+    "actor_id": "jp-minister-ru",
+    "day": "1904-02-07",
+    "documented_before_day": [],
+    "same_day_order_unknown": [],
+    "unplaced": [
+      {
+        "id": "k678",
+        "actor_id": "jp-minister-ru",
+        "claim_id": "c678-uncertainty",
+        "stance": "explicit_no_positive_knowledge",
+        "source_id": "frus:1904:678",
+        "as_of": {
+          "raw": "conversation reported February 7",
+          "precision": "unknown",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "limit": "do not replace with did_not_know; no exact conversation time"
+      },
+      {
+        "id": "k678-told",
+        "actor_id": "jp-minister-ru",
+        "claim_id": "c678-sent",
+        "stance": "was_told",
+        "source_id": "frus:1904:678",
+        "as_of": {
+          "raw": "conversation reported February 7",
+          "precision": "unknown",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "limit": "hearsay about sent reply is not knowledge of reply text"
+      }
+    ],
+    "conclusion": "Documentary records only; no inference of truth, continued belief, access, or ignorance."
+  },
+  "canonical_worldline_entries": 0,
+  "validation": "canonical patch applied; canonical file-store saved and loaded; every projected claim retains one source evidence; reconstruction traces include sidecar sources",
+  "limits": [
+    "No original naval scans or Russian-language originals inspected",
+    "No assertion of actual actor knowledge from source date",
+    "Canonical projection is partial; preserve dataset sidecar with it",
+    "Structural validation does not authenticate sources or establish historical truth"
+  ]
+}

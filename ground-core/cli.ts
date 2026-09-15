@@ -270,7 +270,7 @@ export function cmdRealityPropose(
   const projectId = args[0];
   if (!projectId) {
     throw new Error(
-      "Usage: ground-core reality-propose <project_id> --text <text> | --file <path> [--source manual|field_test|conversation|system] [--extractor semantic|mock] [--out <path>]"
+      "Usage: ground-core reality-propose <project_id> --text <text> | --file <path> [--source manual|field_test|conversation|system] [--extractor canonical|semantic|mock] [--out <path>]"
     );
   }
 
@@ -290,7 +290,7 @@ export function cmdRealityPropose(
       input_text: inputText,
       source: parseRealitySource(rest),
     },
-    parseExtractor(rest)
+    parseFlag(rest, "--extractor") === "canonical" ? "canonical" : parseExtractor(rest)
   );
 }
 
@@ -1033,8 +1033,8 @@ function formatUsage(): string {
     "  ground-core show <project_id>",
     "  ground-core propose <project_id> --text <text> [--extractor semantic|mock] [--out <proposal_json_path>]",
     "  ground-core propose <project_id> --file <input_txt_path> [--extractor semantic|mock] [--out <proposal_json_path>]",
-    "  ground-core reality-propose <project_id> --text <text> [--source manual|field_test|conversation|system] [--extractor semantic|mock] [--out <path>]",
-    "  ground-core reality-propose <project_id> --file <input_txt_path> [--source manual|field_test|conversation|system] [--extractor semantic|mock] [--out <path>]",
+    "  ground-core reality-propose <project_id> --text <text> [--source manual|field_test|conversation|system] [--extractor canonical|semantic|mock] [--out <path>]",
+    "  ground-core reality-propose <project_id> --file <input_txt_path> [--source manual|field_test|conversation|system] [--extractor canonical|semantic|mock] [--out <path>]",
     "  ground-core reality-apply <project_id> --proposal <proposal_or_reality_propose_json_path>",
     "  ground-core reconcile-propose <project_id> --op resolve-blocker --blocker-id <id> --evidence <text> [--reason <text>] [--out <path>]",
     "  ground-core reconcile-propose <project_id> --op complete-action --action-id <id> [--out <path>]",

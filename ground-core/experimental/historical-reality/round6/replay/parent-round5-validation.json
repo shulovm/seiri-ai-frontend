@@ -1,0 +1,78 @@
+{
+  "checked_on": "2026-09-14",
+  "core_schema_version": "0.1.24",
+  "core_changes": 0,
+  "canonical_new_primitives": 0,
+  "canonical_new_relations": 0,
+  "opt_in_adapter_usage_contracts": 1,
+  "candidates": 33,
+  "classifications": {
+    "A": 5,
+    "B": 18,
+    "C": 0,
+    "D": 4,
+    "E": 6
+  },
+  "signals_indexed": 35,
+  "immutable_files_verified": 675,
+  "historical_trace_records": 238,
+  "composition_proofs": 9,
+  "historical_dataset_compatibility": [
+    {
+      "round": 1,
+      "sources": 14,
+      "claims": 18,
+      "source_content_assertions": 18,
+      "projection": "Partial opt-in source-assertion composition only",
+      "historical_events": 0,
+      "historical_states": 0,
+      "attribution_reload_equivalent": true,
+      "relation_reconstruction_migration": "Not migrated; original sidecar retained",
+      "old_new_difference": "New per-extracted-proposition predicate slot and explicit original attribution/scope/time. Old broad predicate remains unchanged in inherited adapter."
+    },
+    {
+      "round": 2,
+      "sources": 23,
+      "claims": 41,
+      "source_content_assertions": 41,
+      "projection": "Partial opt-in source-assertion composition only",
+      "historical_events": 0,
+      "historical_states": 0,
+      "attribution_reload_equivalent": true,
+      "relation_reconstruction_migration": "Not migrated; original sidecar retained",
+      "old_new_difference": "New per-extracted-proposition predicate slot and explicit original attribution/scope/time. Old broad predicate remains unchanged in inherited adapter."
+    },
+    {
+      "round": 3,
+      "sources": 32,
+      "claims": 64,
+      "source_content_assertions": 64,
+      "projection": "Partial opt-in source-assertion composition only",
+      "historical_events": 0,
+      "historical_states": 0,
+      "attribution_reload_equivalent": true,
+      "relation_reconstruction_migration": "Not migrated; original sidecar retained",
+      "old_new_difference": "New per-extracted-proposition predicate slot and explicit original attribution/scope/time. Old broad predicate remains unchanged in inherited adapter."
+    },
+    {
+      "round": 4,
+      "sources": 42,
+      "claims": 147,
+      "source_content_assertions": 147,
+      "projection": "Partial opt-in source-assertion composition only",
+      "historical_events": 0,
+      "historical_states": 0,
+      "attribution_reload_equivalent": true,
+      "relation_reconstruction_migration": "Not migrated; original sidecar retained",
+      "old_new_difference": "New per-extracted-proposition predicate slot and explicit original attribution/scope/time. Old broad predicate remains unchanged in inherited adapter."
+    }
+  ],
+  "legacy_semantic_delta": "0 in core. New opt-in projection has per-proposition predicate slots and preserved attributed fields; legacy adapter behavior unchanged.",
+  "limits": [
+    "JSON retention alone is not generic semantic promotion",
+    "Claim0.95isuncalibratedsource-contentestimate, never a world score",
+    "No original authentication or new historical evidence acquired",
+    "Lineage/Knowledge/time conversion/reconstruction alternatives remain sidecar",
+    "No generic independence or version/retraction lifecycle promoted"
+  ]
+}

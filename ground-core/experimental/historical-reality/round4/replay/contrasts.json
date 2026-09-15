@@ -1,0 +1,346 @@
+[
+  {
+    "id": "r4:x-pallada",
+    "kind": "contrast",
+    "description": "Pallida sunk versus Pallada among three explicitly not sunk; contradiction conditional on probable target/episode identity",
+    "claim_ids": [
+      "r4:c-press-paris",
+      "r4:c-press-not-sunk"
+    ],
+    "record_ids": [
+      "r4:align-paris"
+    ],
+    "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+    "details": {
+      "category": "direct_negation",
+      "claim_pair": [
+        "r4:c-press-paris",
+        "r4:c-press-not-sunk"
+      ],
+      "alignment_limit": "Compare reported propositions only. Event/target alignment, role, scope and reporting date as stated in description; no winner chosen.",
+      "identity_alignment_id": "r4:align-paris"
+    }
+  },
+  {
+    "id": "r4:x-wounded",
+    "kind": "contrast",
+    "description": "53 versus54 in representations of same Japanese report",
+    "claim_ids": [
+      "r4:c-jp-wounded",
+      "r4:c-en-wounded"
+    ],
+    "record_ids": [
+      "r4:a-english",
+      "r4:a-jp",
+      "r4:q-jp-wounded",
+      "r4:q-en-wounded"
+    ],
+    "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+    "details": {
+      "category": "translation_or_transcription_difference",
+      "claim_pair": [
+        "r4:c-jp-wounded",
+        "r4:c-en-wounded"
+      ],
+      "alignment_limit": "Compare reported propositions only. Event/target alignment, role, scope and reporting date as stated in description; no winner chosen."
+    }
+  },
+  {
+    "id": "r4:x-type",
+    "kind": "contrast",
+    "description": "Poltava-type qualifier absent from English Poltava name",
+    "claim_ids": [
+      "r4:c-jp-type",
+      "r4:c-en-type"
+    ],
+    "record_ids": [
+      "r4:a-english",
+      "r4:a-jp"
+    ],
+    "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+    "details": {
+      "category": "translation_identity_difference",
+      "claim_pair": [
+        "r4:c-jp-type",
+        "r4:c-en-type"
+      ],
+      "alignment_limit": "Compare reported propositions only. Event/target alignment, role, scope and reporting date as stated in description; no winner chosen."
+    }
+  },
+  {
+    "id": "r4:x-fleet",
+    "kind": "contrast",
+    "description": "15 versus16 whole Japanese daytime force; observer/time coverage may differ",
+    "claim_ids": [
+      "r4:c-memo-count",
+      "r4:c-press-officer-count"
+    ],
+    "record_ids": [
+      "r4:q-ru-fleet",
+      "r4:q-press-fleet",
+      "r4:align-day"
+    ],
+    "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+    "details": {
+      "category": "quantitative_disagreement",
+      "claim_pair": [
+        "r4:c-memo-count",
+        "r4:c-press-officer-count"
+      ],
+      "alignment_limit": "Compare reported propositions only. Event/target alignment, role, scope and reporting date as stated in description; no winner chosen."
+    }
+  },
+  {
+    "id": "r4:x-night-clock",
+    "kind": "contrast",
+    "description": "23:35 heard explosion versus23:45 heard firing: different observable, not direct temporal contradiction",
+    "claim_ids": [
+      "r4:c-stark-explosion",
+      "r4:c-novik-heard"
+    ],
+    "record_ids": [
+      "r4:time-explosion",
+      "r4:time-gunfire"
+    ],
+    "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+    "details": {
+      "category": "observable_difference",
+      "claim_pair": [
+        "r4:c-stark-explosion",
+        "r4:c-novik-heard"
+      ],
+      "alignment_limit": "Compare reported propositions only. Event/target alignment, role, scope and reporting date as stated in description; no winner chosen."
+    }
+  },
+  {
+    "id": "r4:x-day-role",
+    "kind": "contrast",
+    "description": "10a.m. approach versus aroundnoon battle: separate stages",
+    "claim_ids": [
+      "r4:c-jp-approach",
+      "r4:c-jp-day"
+    ],
+    "record_ids": [
+      "r4:time-approach",
+      "r4:time-jp-day"
+    ],
+    "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+    "details": {
+      "category": "temporal_role_difference",
+      "claim_pair": [
+        "r4:c-jp-approach",
+        "r4:c-jp-day"
+      ],
+      "alignment_limit": "Compare reported propositions only. Event/target alignment, role, scope and reporting date as stated in description; no winner chosen."
+    }
+  },
+  {
+    "id": "r4:x-first-shell",
+    "kind": "contrast",
+    "description": "11:08 enemy firing versus11:25 first shell near Sevastopol: different local observable",
+    "claim_ids": [
+      "r4:c-sev-fire",
+      "r4:c-memo-shell"
+    ],
+    "record_ids": [
+      "r4:time-ru-fire",
+      "r4:time-first-shell"
+    ],
+    "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+    "details": {
+      "category": "perspective_difference",
+      "claim_pair": [
+        "r4:c-sev-fire",
+        "r4:c-memo-shell"
+      ],
+      "alignment_limit": "Compare reported propositions only. Event/target alignment, role, scope and reporting date as stated in description; no winner chosen."
+    }
+  },
+  {
+    "id": "r4:x-dead-scope",
+    "kind": "contrast",
+    "description": "Combinedfleet4dead versus secondsquadron0dead: nested actor scope",
+    "claim_ids": [
+      "r4:c-jp-killed",
+      "r4:c-jp-second-killed"
+    ],
+    "record_ids": [
+      "r4:q-jp-dead",
+      "r4:q-second-dead"
+    ],
+    "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+    "details": {
+      "category": "scope_difference",
+      "claim_pair": [
+        "r4:c-jp-killed",
+        "r4:c-jp-second-killed"
+      ],
+      "alignment_limit": "Compare reported propositions only. Event/target alignment, role, scope and reporting date as stated in description; no winner chosen."
+    }
+  },
+  {
+    "id": "r4:x-night-damage",
+    "kind": "contrast",
+    "description": "Night Japanese destroyers undamaged versus dayfleetlightdamage: different phase and units",
+    "claim_ids": [
+      "r4:c-press-night-undamaged",
+      "r4:c-jp-capability"
+    ],
+    "record_ids": [
+      "r4:separate-night-day"
+    ],
+    "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+    "details": {
+      "category": "phase_scope_difference",
+      "claim_pair": [
+        "r4:c-press-night-undamaged",
+        "r4:c-jp-capability"
+      ],
+      "alignment_limit": "Compare reported propositions only. Event/target alignment, role, scope and reporting date as stated in description; no winner chosen."
+    }
+  },
+  {
+    "id": "r4:x-sev-injury",
+    "kind": "contrast",
+    "description": "Captain3wounded versus memoir funnel fragments hitnobody: injury category scope; Petrov mechanism remains unresolved",
+    "claim_ids": [
+      "r4:c-sev-wounded",
+      "r4:c-memo-funnel"
+    ],
+    "record_ids": [],
+    "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+    "details": {
+      "category": "injury_scope_or_mechanism_unresolved",
+      "claim_pair": [
+        "r4:c-sev-wounded",
+        "r4:c-memo-funnel"
+      ],
+      "alignment_limit": "Compare reported propositions only. Event/target alignment, role, scope and reporting date as stated in description; no winner chosen."
+    }
+  },
+  {
+    "id": "r4:x-sev-petrov",
+    "kind": "contrast",
+    "description": "Captain Petrov fragment injury versus memoir lip/porthole concussion; original medical record absent",
+    "claim_ids": [
+      "r4:c-sev-wounded",
+      "r4:c-memo-petrov"
+    ],
+    "record_ids": [],
+    "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+    "details": {
+      "category": "injury_mechanism_unresolved",
+      "claim_pair": [
+        "r4:c-sev-wounded",
+        "r4:c-memo-petrov"
+      ],
+      "alignment_limit": "Compare reported propositions only. Event/target alignment, role, scope and reporting date as stated in description; no winner chosen."
+    }
+  },
+  {
+    "id": "r4:x-press-damage",
+    "kind": "contrast",
+    "description": "Headline3damaged versus fourshipslisted; update/aggregation unclear",
+    "claim_ids": [
+      "r4:c-press-headline",
+      "r4:c-press-day-damage"
+    ],
+    "record_ids": [],
+    "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+    "details": {
+      "category": "internal_quantity_disagreement",
+      "claim_pair": [
+        "r4:c-press-headline",
+        "r4:c-press-day-damage"
+      ],
+      "alignment_limit": "Compare reported propositions only. Event/target alignment, role, scope and reporting date as stated in description; no winner chosen."
+    }
+  },
+  {
+    "id": "r4:x-press-casualties",
+    "kind": "contrast",
+    "description": "9naval+1shore explains10killed;51men+2officers+3shore gives56wounded, notheadline54. Wounded difference unresolved",
+    "claim_ids": [
+      "r4:c-press-headline",
+      "r4:c-press-coast"
+    ],
+    "record_ids": [
+      "r4:q-ru-naval-killed",
+      "r4:q-ru-naval-wounded",
+      "r4:q-ru-coast",
+      "r4:q-headline"
+    ],
+    "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+    "details": {
+      "category": "aggregation_partly_resolved",
+      "claim_pair": [
+        "r4:c-press-headline",
+        "r4:c-press-coast"
+      ],
+      "alignment_limit": "Compare reported propositions only. Event/target alignment, role, scope and reporting date as stated in description; no winner chosen."
+    }
+  },
+  {
+    "id": "r4:x-guide-time",
+    "kind": "contrast",
+    "description": "Chart12:45cease versus bodydepartureafter14:00; cease/departure roles may differ; no exact synchronized stop",
+    "claim_ids": [
+      "r4:c-guide-chart",
+      "r4:c-guide-body"
+    ],
+    "record_ids": [],
+    "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+    "details": {
+      "category": "editorial_temporal_disagreement",
+      "claim_pair": [
+        "r4:c-guide-chart",
+        "r4:c-guide-body"
+      ],
+      "alignment_limit": "Compare reported propositions only. Event/target alignment, role, scope and reporting date as stated in description; no winner chosen."
+    }
+  },
+  {
+    "id": "r4:x-night-date",
+    "kind": "contrast",
+    "description": "9日午前0時 versus midnight on8th: night-label/translation boundary; no one-minute calibration",
+    "claim_ids": [
+      "r4:c-jp-night",
+      "r4:c-en-night"
+    ],
+    "record_ids": [
+      "r4:time-jp-night",
+      "r4:time-en-night"
+    ],
+    "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+    "details": {
+      "category": "night_date_wording_unresolved",
+      "claim_pair": [
+        "r4:c-jp-night",
+        "r4:c-en-night"
+      ],
+      "alignment_limit": "Compare reported propositions only. Event/target alignment, role, scope and reporting date as stated in description; no winner chosen."
+    }
+  },
+  {
+    "id": "r4:x-direction",
+    "kind": "contrast",
+    "description": "Officialsouth versus unnamedofficerlasttowardDalny; timing/bearing frame unknown",
+    "claim_ids": [
+      "r4:c-press-flug",
+      "r4:c-press-officer-direction"
+    ],
+    "record_ids": [
+      "r4:space-south",
+      "r4:space-dalny"
+    ],
+    "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+    "details": {
+      "category": "spatial_perspective_unresolved",
+      "claim_pair": [
+        "r4:c-press-flug",
+        "r4:c-press-officer-direction"
+      ],
+      "alignment_limit": "Compare reported propositions only. Event/target alignment, role, scope and reporting date as stated in description; no winner chosen."
+    }
+  }
+]

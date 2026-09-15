@@ -1,0 +1,34 @@
+{
+  "old_source_scope": {
+    "predicate": "inspected_source_assertion",
+    "status": "CONTESTED",
+    "applicable_claim_count": 23,
+    "claim_ids": [
+      "r4:c-jp-second-fire",
+      "r4:c-jp-second-count",
+      "r4:c-jp-record",
+      "r4:c-jp-day",
+      "r4:c-jp-copy",
+      "r4:c-jp-ammo-table",
+      "r4:c-jp-compile",
+      "r2:c-togo-event",
+      "r4:c-jp-await",
+      "r4:c-jp-fuji",
+      "r4:c-jp-askold",
+      "r4:c-jp-approach",
+      "r4:c-jp-killed",
+      "r4:c-jp-type",
+      "r4:c-jp-map-id",
+      "r2:c-togo-dispatch",
+      "r4:c-jp-cease",
+      "r4:c-jp-second-killed",
+      "r4:c-jp-map",
+      "r4:c-jp-wounded",
+      "r4:c-jp-capability",
+      "r2:c-togo-created",
+      "r4:c-jp-night"
+    ]
+  },
+  "new_scope": "source_assertion/<original_claim_id>, singleton inspected proposition only",
+  "conclusion": "Adapter query scope misuse, not an assessBeliefAt defect. Existing old adapter and historical files untouched."
+}

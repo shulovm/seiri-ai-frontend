@@ -1,0 +1,22 @@
+{
+  "status": "observed successful tool runs; not historical authenticity validation",
+  "date": "2026-09-14",
+  "tests": {
+    "command": "node --import tsx --test ground-core/__tests__/historical-reality-round1.test.ts ground-core/__tests__/epistemic-core.test.ts ground-core/__tests__/belief-reconciliation.test.ts ground-core/__tests__/epistemic-gaps.test.ts ground-core/__tests__/reality-worldline.test.ts",
+    "pass": 56,
+    "fail": 0,
+    "dedicated": 6,
+    "legacy_related": 50
+  },
+  "typecheck": {
+    "command": "node_modules/.bin/tsc -p ground-core/tsconfig.json --pretty false",
+    "exit_code": 0
+  },
+  "manifest_check": "SHA-256 verified for dataset and landscape",
+  "replay": "canonical latest-schema patch and file-store save/load successful; inspect replay/validation.json",
+  "limitations": [
+    "no source authentication",
+    "no image inspection",
+    "no historical truth certification"
+  ]
+}

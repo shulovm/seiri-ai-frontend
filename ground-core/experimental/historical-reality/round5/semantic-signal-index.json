@@ -1,0 +1,658 @@
+{
+  "signals": [
+    {
+      "id": "SG-01",
+      "original_id": "SG-01",
+      "round": 1,
+      "origin_path": "ground-core/experimental/historical-reality/round1.landscape.json",
+      "record": {
+        "id": "SG-01",
+        "observed_historical_case": [
+          "c395-captured",
+          "c678-sent"
+        ],
+        "current_representation": "Claim.provenance identifies one source; Claim lacks separate claimant/report chain",
+        "lost_meaning": "foreign minister → diplomatic observer → intended recipient; neither belief nor receipt established",
+        "severity": "high",
+        "recurrence_likelihood": "observed twice in diplomatic samples",
+        "proposed_direction": "sidecar claimant, report chain and documentary epistemic records; core Claim remains source-text projection",
+        "status": "experimental signal; not canonical primitive proposal"
+      }
+    },
+    {
+      "id": "SG-02",
+      "original_id": "SG-02",
+      "round": 1,
+      "origin_path": "ground-core/experimental/historical-reality/round1.landscape.json",
+      "record": {
+        "id": "SG-02",
+        "observed_historical_case": [
+          "frus:1904:680",
+          "frus:1904:430"
+        ],
+        "current_representation": "recorded_at is GROUND ingestion; observed_at/applicable_* cannot represent all roles",
+        "lost_meaning": "underlying creation, translation, deposition, reception, event date and edition publication differ",
+        "severity": "high",
+        "recurrence_likelihood": "observed across telegram and protocol",
+        "proposed_direction": "raw historical time, precision, calendar and role-specific source annotations; never synthesize midnight",
+        "status": "experimental signal; not canonical primitive proposal"
+      }
+    },
+    {
+      "id": "SG-03",
+      "original_id": "SG-03",
+      "round": 1,
+      "origin_path": "ground-core/experimental/historical-reality/round1.landscape.json",
+      "record": {
+        "id": "SG-03",
+        "observed_historical_case": [
+          "c678-uncertainty",
+          "c678-sent"
+        ],
+        "current_representation": "BeliefAssessment groups applicable propositions, not an actor epistemic biography",
+        "lost_meaning": "was told / no positive knowledge / belief / knew / could have known",
+        "severity": "high",
+        "recurrence_likelihood": "multiple nested reports",
+        "proposed_direction": "explicit narrow stances; actorEvidenceAt returns documentary records and unplaced times, never a knowledge verdict",
+        "status": "experimental signal; not canonical primitive proposal"
+      }
+    },
+    {
+      "id": "SG-04",
+      "original_id": "SG-04",
+      "round": 1,
+      "origin_path": "ground-core/experimental/historical-reality/round1.landscape.json",
+      "record": {
+        "id": "SG-04",
+        "observed_historical_case": [
+          "frus:1904:392",
+          "frus:1904:680",
+          "nikh:jh_024r_0050_0050"
+        ],
+        "current_representation": "EpistemicProvenance kind/entity_id/external_id/label is minimal",
+        "lost_meaning": "original versus paraphrase/translation/copy, editor, archive location, locator and custody uncertainty",
+        "severity": "high",
+        "recurrence_likelihood": "three manifestations directly observed",
+        "proposed_direction": "bibliographic sidecar with inspection level, short excerpt, original verification and explicit unknown",
+        "status": "experimental signal; not canonical primitive proposal"
+      }
+    },
+    {
+      "id": "SG-05",
+      "original_id": "SG-05",
+      "round": 1,
+      "origin_path": "ground-core/experimental/historical-reality/round1.landscape.json",
+      "record": {
+        "id": "SG-05",
+        "observed_historical_case": [
+          "e-fate-qualifies",
+          "e-reply-qualifies"
+        ],
+        "current_representation": "ClaimEvidenceRelation enum SUPPORTS | CONTRADICTS",
+        "lost_meaning": "qualification; different actors or loose fate terminology are not automatically contradictions",
+        "severity": "high",
+        "recurrence_likelihood": "two distinct qualification cases",
+        "proposed_direction": "sidecar scope + reason; no projection of QUALIFIES to binary core link",
+        "status": "experimental signal; not canonical primitive proposal"
+      }
+    },
+    {
+      "id": "SG-06",
+      "original_id": "SG-06",
+      "round": 1,
+      "origin_path": "ground-core/experimental/historical-reality/round1.landscape.json",
+      "record": {
+        "id": "SG-06",
+        "observed_historical_case": [
+          "c395-captured",
+          "cjacar-selfsink"
+        ],
+        "current_representation": "provenance fingerprint exposes source identity but not upstream derivation",
+        "lost_meaning": "edition/guide copies cannot count as independent corroboration",
+        "severity": "high",
+        "recurrence_likelihood": "risk identified; actual shared upstream lineage not established",
+        "proposed_direction": "retain chain and source manifestation; require positive independence evidence; do not implement independence classifier yet",
+        "status": "experimental signal; not canonical primitive proposal"
+      }
+    },
+    {
+      "id": "SG-07",
+      "original_id": "SG-07",
+      "round": 1,
+      "origin_path": "ground-core/experimental/historical-reality/round1.landscape.json",
+      "record": {
+        "id": "SG-07",
+        "observed_historical_case": [
+          "r-reply",
+          "r-variag"
+        ],
+        "current_representation": "EpistemicGap exposes structural absence/tension, not research history or surviving-evidence assessment",
+        "lost_meaning": "not searched / inaccessible / no surviving evidence / unresolved cause",
+        "severity": "high",
+        "recurrence_likelihood": "multiple unresolved fields",
+        "proposed_direction": "explicit unknown reasons and reconstruction rationale; no claim of no surviving evidence",
+        "status": "experimental signal; not canonical primitive proposal"
+      }
+    },
+    {
+      "id": "SG-08",
+      "original_id": "SG-08",
+      "round": 1,
+      "origin_path": "ground-core/experimental/historical-reality/round1.landscape.json",
+      "record": {
+        "id": "SG-08",
+        "observed_historical_case": [
+          "r-protocol-text",
+          "r-portarthur"
+        ],
+        "current_representation": "ontic RealityEvent/State + derived BeliefAssessment; no distinct sourced reconstruction record",
+        "lost_meaning": "text certainty versus external-world certainty; assessment alternatives, limits and date",
+        "severity": "high",
+        "recurrence_likelihood": "four reconstruction records",
+        "proposed_direction": "sidecar reconstruction with claim/relation routes, nonnumeric statuses; no promotion into RealityState/Event",
+        "status": "experimental signal; not canonical primitive proposal"
+      }
+    },
+    {
+      "id": "SG-09",
+      "original_id": "SG-09",
+      "round": 1,
+      "origin_path": "ground-core/experimental/historical-reality/round1.landscape.json",
+      "record": {
+        "id": "SG-09",
+        "observed_historical_case": [
+          "c430-guarantee",
+          "c430-occupation",
+          "cnikh-telegraph"
+        ],
+        "current_representation": "RealityEntity attrs can hold identity; RealityState generic kind/value can express control if verified",
+        "lost_meaning": "historical role holder, label validity, legal provision versus actual local occupation and infrastructure use",
+        "severity": "medium",
+        "recurrence_likelihood": "protocol and memorial examples",
+        "proposed_direction": "use actor/entity distinctions now; keep legal provision in Claim; no ontic territorial control without evidence; no identity/territory primitive added",
+        "status": "experimental signal; not canonical primitive proposal"
+      }
+    },
+    {
+      "id": "SG-10",
+      "original_id": "SG-10",
+      "round": 1,
+      "origin_path": "ground-core/experimental/historical-reality/round1.landscape.json",
+      "record": {
+        "id": "SG-10",
+        "observed_historical_case": [
+          "frus:1904:680",
+          "cjacar-selfsink"
+        ],
+        "current_representation": "ISO occurrence/applicability dates expect normalized instants",
+        "lost_meaning": "dual dates, ambiguous night interval, guide Feb 8/report Feb 9 discrepancy",
+        "severity": "high",
+        "recurrence_likelihood": "dual-calendar and differing-date cases",
+        "proposed_direction": "retain raw+normalization basis; leave exact instants and unresolved guide day unplaced",
+        "status": "experimental signal; not canonical primitive proposal"
+      }
+    },
+    {
+      "id": "SG-11",
+      "original_id": "SG-11",
+      "round": 1,
+      "origin_path": "ground-core/experimental/historical-reality/round1.landscape.json",
+      "record": {
+        "id": "SG-11",
+        "observed_historical_case": [
+          "frus:1904:392",
+          "loc:2005680338"
+        ],
+        "current_representation": "Evidence references inspectable source, but no actor-access relation",
+        "lost_meaning": "source existence / addressee / receipt / public edition / present discoverability",
+        "severity": "high",
+        "recurrence_likelihood": "diplomatic and photo manifestation cases",
+        "proposed_direction": "access_at_time explicitly unknown; only d430 documented received/deposited dates retained; do not invent public knowledge",
+        "status": "experimental signal; not canonical primitive proposal"
+      }
+    },
+    {
+      "id": "SG-12",
+      "original_id": "SG-12",
+      "round": 1,
+      "origin_path": "ground-core/experimental/historical-reality/round1.landscape.json",
+      "record": {
+        "id": "SG-12",
+        "observed_historical_case": [
+          "i-selfdefense",
+          "i-consent",
+          "n-jp-diplomatic"
+        ],
+        "current_representation": "Claim can preserve propositions; no explicit interpretation/narrative evidence path",
+        "lost_meaning": "issuer self-defense/consent framing becomes external fact if flattened",
+        "severity": "high",
+        "recurrence_likelihood": "two diplomatic framing cases",
+        "proposed_direction": "separate experimental interpretation/narrative records linked back to claims and sources; no national historiography generalization",
+        "status": "experimental signal; not canonical primitive proposal"
+      }
+    },
+    {
+      "id": "SG-13",
+      "original_id": "SG13",
+      "round": 2,
+      "origin_path": "ground-core/experimental/historical-reality/round2/semantic-gap-signals.json",
+      "record": {
+        "id": "SG13",
+        "semantic": "assessment target",
+        "case_claim_id": "c395-captured",
+        "lost_meaning": "Text assertion clarity does not establish capture in external reality.",
+        "status": "experimental; not promoted"
+      }
+    },
+    {
+      "id": "SG-14",
+      "original_id": "SG14",
+      "round": 2,
+      "origin_path": "ground-core/experimental/historical-reality/round2/semantic-gap-signals.json",
+      "record": {
+        "id": "SG14",
+        "semantic": "actor and payload",
+        "case_claim_id": "r2:c-ack82",
+        "lost_meaning": "Acknowledges telegram50/53, not every instruction or Russian reply.",
+        "status": "experimental; not promoted"
+      }
+    },
+    {
+      "id": "SG-15",
+      "original_id": "SG15",
+      "round": 2,
+      "origin_path": "ground-core/experimental/historical-reality/round2/semantic-gap-signals.json",
+      "record": {
+        "id": "SG15",
+        "semantic": "sparse propagation",
+        "case_claim_id": "r2:c-uriu2-relay",
+        "lost_meaning": "Sasebo dispatch is not destination receipt.",
+        "status": "experimental; not promoted"
+      }
+    },
+    {
+      "id": "SG-16",
+      "original_id": "SG16",
+      "round": 2,
+      "origin_path": "ground-core/experimental/historical-reality/round2/semantic-gap-signals.json",
+      "record": {
+        "id": "SG16",
+        "semantic": "report time vs target time",
+        "case_claim_id": "c679-held",
+        "lost_meaning": "February8 report does not date Rosen possession.",
+        "status": "experimental; not promoted"
+      }
+    },
+    {
+      "id": "SG-17",
+      "original_id": "SG17",
+      "round": 2,
+      "origin_path": "ground-core/experimental/historical-reality/round2/semantic-gap-signals.json",
+      "record": {
+        "id": "SG17",
+        "semantic": "public accessibility",
+        "case_claim_id": "r2:c-order48",
+        "lost_meaning": "March edition reference does not establish actor possession or reading in February.",
+        "status": "experimental; not promoted"
+      }
+    },
+    {
+      "id": "SG-18",
+      "original_id": "SG18",
+      "round": 2,
+      "origin_path": "ground-core/experimental/historical-reality/round2/semantic-gap-signals.json",
+      "record": {
+        "id": "SG18",
+        "semantic": "message/edition identity",
+        "case_claim_id": "r2:c-order48",
+        "lost_meaning": "Published document numbering differs from telegram numbers; 2pm/2.15pm markers remain distinct.",
+        "status": "experimental; not promoted"
+      }
+    },
+    {
+      "id": "SG-19",
+      "original_id": "SG19",
+      "round": 3,
+      "origin_path": "ground-core/experimental/historical-reality/round3/semantic-gap-signals.json",
+      "record": {
+        "id": "SG19",
+        "semantic": "unverified documentary reference endpoint",
+        "historical_case_claim_id": "r3:c-pak-quote",
+        "record_ids": [
+          "ref-reply-no2",
+          "g-reply-original"
+        ],
+        "lost_meaning": "A cited telegram does not establish an inspected original artifact.",
+        "proposed_semantic": "Attributed, scoped, reference-validated sidecar record; no truth or original authentication promotion.",
+        "alternatives_considered": [
+          "Free-text annotations lack traversable contracts",
+          "Canonical events/beliefs would conflate historical truth or actor knowledge",
+          "Full library ontology or exhaustive stage template would exceed observed cases"
+        ],
+        "implementation": "round3/lineage.ts and additive round3.dataset.json",
+        "tests": "ground-core/__tests__/historical-reality-round3.test.ts",
+        "replay": "round3/replay/documentary-traces.json",
+        "legacy_impact": "No core or Round1/2 changes; safe source-content partial projection retained.",
+        "status": "experimental; not promoted"
+      }
+    },
+    {
+      "id": "SG-20",
+      "original_id": "SG20",
+      "round": 3,
+      "origin_path": "ground-core/experimental/historical-reality/round3/semantic-gap-signals.json",
+      "record": {
+        "id": "SG20",
+        "semantic": "identifier namespace and assignment context",
+        "historical_case_claim_id": "r3:c-number-policy",
+        "record_ids": [
+          "a-frus-web679",
+          "a-frus-print709"
+        ],
+        "lost_meaning": "Modern679 is not a printed or historical telegram number.",
+        "proposed_semantic": "Attributed, scoped, reference-validated sidecar record; no truth or original authentication promotion.",
+        "alternatives_considered": [
+          "Free-text annotations lack traversable contracts",
+          "Canonical events/beliefs would conflate historical truth or actor knowledge",
+          "Full library ontology or exhaustive stage template would exceed observed cases"
+        ],
+        "implementation": "round3/lineage.ts and additive round3.dataset.json",
+        "tests": "ground-core/__tests__/historical-reality-round3.test.ts",
+        "replay": "round3/replay/documentary-traces.json",
+        "legacy_impact": "No core or Round1/2 changes; safe source-content partial projection retained.",
+        "status": "experimental; not promoted"
+      }
+    },
+    {
+      "id": "SG-21",
+      "original_id": "SG21",
+      "round": 3,
+      "origin_path": "ground-core/experimental/historical-reality/round3/semantic-gap-signals.json",
+      "record": {
+        "id": "SG21",
+        "semantic": "three scoped certainty targets",
+        "historical_case_claim_id": "r3:c-pak-delivery",
+        "record_ids": [
+          "q-delivery-content",
+          "q-reply-identity",
+          "q-delivery-reality"
+        ],
+        "lost_meaning": "Clear current wording does not establish exact documentary identity or external delivery.",
+        "proposed_semantic": "Attributed, scoped, reference-validated sidecar record; no truth or original authentication promotion.",
+        "alternatives_considered": [
+          "Free-text annotations lack traversable contracts",
+          "Canonical events/beliefs would conflate historical truth or actor knowledge",
+          "Full library ontology or exhaustive stage template would exceed observed cases"
+        ],
+        "implementation": "round3/lineage.ts and additive round3.dataset.json",
+        "tests": "ground-core/__tests__/historical-reality-round3.test.ts",
+        "replay": "round3/replay/documentary-traces.json",
+        "legacy_impact": "No core or Round1/2 changes; safe source-content partial projection retained.",
+        "status": "experimental; not promoted"
+      }
+    },
+    {
+      "id": "SG-22",
+      "original_id": "SG22",
+      "round": 3,
+      "origin_path": "ground-core/experimental/historical-reality/round3/semantic-gap-signals.json",
+      "record": {
+        "id": "SG22",
+        "semantic": "scope of original labels",
+        "historical_case_claim_id": "r3:c-ia-lineage",
+        "record_ids": [
+          "a-rosen-pdf",
+          "a-rosen-book"
+        ],
+        "lost_meaning": "Digitization original and original book do not identify a1904 original telegram.",
+        "proposed_semantic": "Attributed, scoped, reference-validated sidecar record; no truth or original authentication promotion.",
+        "alternatives_considered": [
+          "Free-text annotations lack traversable contracts",
+          "Canonical events/beliefs would conflate historical truth or actor knowledge",
+          "Full library ontology or exhaustive stage template would exceed observed cases"
+        ],
+        "implementation": "round3/lineage.ts and additive round3.dataset.json",
+        "tests": "ground-core/__tests__/historical-reality-round3.test.ts",
+        "replay": "round3/replay/documentary-traces.json",
+        "legacy_impact": "No core or Round1/2 changes; safe source-content partial projection retained.",
+        "status": "experimental; not promoted"
+      }
+    },
+    {
+      "id": "SG-23",
+      "original_id": "SG23",
+      "round": 3,
+      "origin_path": "ground-core/experimental/historical-reality/round3/semantic-gap-signals.json",
+      "record": {
+        "id": "SG23",
+        "semantic": "translation wording operation and comparison scope",
+        "historical_case_claim_id": "r3:c-jacar-expansion",
+        "record_ids": [
+          "tc-jacar"
+        ],
+        "lost_meaning": "Modern rendering adds names/place explanation; no exact semantic equivalence certified.",
+        "proposed_semantic": "Attributed, scoped, reference-validated sidecar record; no truth or original authentication promotion.",
+        "alternatives_considered": [
+          "Free-text annotations lack traversable contracts",
+          "Canonical events/beliefs would conflate historical truth or actor knowledge",
+          "Full library ontology or exhaustive stage template would exceed observed cases"
+        ],
+        "implementation": "round3/lineage.ts and additive round3.dataset.json",
+        "tests": "ground-core/__tests__/historical-reality-round3.test.ts",
+        "replay": "round3/replay/documentary-traces.json",
+        "legacy_impact": "No core or Round1/2 changes; safe source-content partial projection retained.",
+        "status": "experimental; not promoted"
+      }
+    },
+    {
+      "id": "SG-24",
+      "original_id": "SG24",
+      "round": 3,
+      "origin_path": "ground-core/experimental/historical-reality/round3/semantic-gap-signals.json",
+      "record": {
+        "id": "SG24",
+        "semantic": "documentary/reality/knowledge reconstruction domain",
+        "historical_case_claim_id": "r3:c-pak-delivery",
+        "record_ids": [
+          "dr-reply",
+          "hr-receipt",
+          "kr-rosen"
+        ],
+        "lost_meaning": "Documentary chain closure does not establish reality or actor reading.",
+        "proposed_semantic": "Attributed, scoped, reference-validated sidecar record; no truth or original authentication promotion.",
+        "alternatives_considered": [
+          "Free-text annotations lack traversable contracts",
+          "Canonical events/beliefs would conflate historical truth or actor knowledge",
+          "Full library ontology or exhaustive stage template would exceed observed cases"
+        ],
+        "implementation": "round3/lineage.ts and additive round3.dataset.json",
+        "tests": "ground-core/__tests__/historical-reality-round3.test.ts",
+        "replay": "round3/replay/documentary-traces.json",
+        "legacy_impact": "No core or Round1/2 changes; safe source-content partial projection retained.",
+        "status": "experimental; not promoted"
+      }
+    },
+    {
+      "id": "SG-25",
+      "original_id": "SG25",
+      "round": 3,
+      "origin_path": "ground-core/experimental/historical-reality/round3/semantic-gap-signals.json",
+      "record": {
+        "id": "SG25",
+        "semantic": "citation dependency versus documentary copying",
+        "historical_case_claim_id": "r3:c-pak-note21",
+        "record_ids": [
+          "l-pak-delivery79",
+          "l-pak-delivery73"
+        ],
+        "lost_meaning": "Cited historians are dependencies, not verified original telegram copies.",
+        "proposed_semantic": "Attributed, scoped, reference-validated sidecar record; no truth or original authentication promotion.",
+        "alternatives_considered": [
+          "Free-text annotations lack traversable contracts",
+          "Canonical events/beliefs would conflate historical truth or actor knowledge",
+          "Full library ontology or exhaustive stage template would exceed observed cases"
+        ],
+        "implementation": "round3/lineage.ts and additive round3.dataset.json",
+        "tests": "ground-core/__tests__/historical-reality-round3.test.ts",
+        "replay": "round3/replay/documentary-traces.json",
+        "legacy_impact": "No core or Round1/2 changes; safe source-content partial projection retained.",
+        "status": "experimental; not promoted"
+      }
+    },
+    {
+      "id": "SG-26",
+      "original_id": "SG26",
+      "round": 3,
+      "origin_path": "ground-core/experimental/historical-reality/round3/semantic-gap-signals.json",
+      "record": {
+        "id": "SG26",
+        "semantic": "unknown stage actor versus reported authority",
+        "historical_case_claim_id": "r3:c-pak-nagasaki",
+        "record_ids": [
+          "s-reply-send",
+          "s-reply-hold"
+        ],
+        "lost_meaning": "Ordering authority is not an identified physical custodian; sender not named in direct-dispatch sentence.",
+        "proposed_semantic": "Attributed, scoped, reference-validated sidecar record; no truth or original authentication promotion.",
+        "alternatives_considered": [
+          "Free-text annotations lack traversable contracts",
+          "Canonical events/beliefs would conflate historical truth or actor knowledge",
+          "Full library ontology or exhaustive stage template would exceed observed cases"
+        ],
+        "implementation": "round3/lineage.ts and additive round3.dataset.json",
+        "tests": "ground-core/__tests__/historical-reality-round3.test.ts",
+        "replay": "round3/replay/documentary-traces.json",
+        "legacy_impact": "No core or Round1/2 changes; safe source-content partial projection retained.",
+        "status": "experimental; not promoted"
+      }
+    },
+    {
+      "id": "SG-27",
+      "original_id": "SG-27",
+      "round": 4,
+      "origin_path": "ground-core/experimental/historical-reality/round4/semantic-gap-signals.json",
+      "record": {
+        "id": "SG-27",
+        "semantic": "episode identity at explicit granularity",
+        "historical_case": "Night/day candidates, Pallida/Pallada alignment",
+        "lost_meaning": "Name/time matching loses phase/target uncertainty",
+        "minimal_extension": "Manual probable episode alignment with limit; no canonical equivalence",
+        "status": "experimental_case_validated_not_core_promoted"
+      }
+    },
+    {
+      "id": "SG-28",
+      "original_id": "SG-28",
+      "round": 4,
+      "origin_path": "ground-core/experimental/historical-reality/round4/semantic-gap-signals.json",
+      "record": {
+        "id": "SG-28",
+        "semantic": "observable perspective and partial view",
+        "historical_case": "23:35 explosion vs23:45 gunfire; rearline sawnothing",
+        "lost_meaning": "Clock comparison or silence incorrectly negates attack",
+        "minimal_extension": "Observation modality/field limitation and contrast category",
+        "status": "experimental_case_validated_not_core_promoted"
+      }
+    },
+    {
+      "id": "SG-29",
+      "original_id": "SG-29",
+      "round": 4,
+      "origin_path": "ground-core/experimental/historical-reality/round4/semantic-gap-signals.json",
+      "record": {
+        "id": "SG-29",
+        "semantic": "spatial precision",
+        "historical_case": "Diagram relative route, unknown enemy position; south vsDalny",
+        "lost_meaning": "One coordinate or bearing hides viewpoint precision",
+        "minimal_extension": "Raw area/relative/diagram/range plus null coordinates",
+        "status": "experimental_case_validated_not_core_promoted"
+      }
+    },
+    {
+      "id": "SG-30",
+      "original_id": "SG-30",
+      "round": 4,
+      "origin_path": "ground-core/experimental/historical-reality/round4/semantic-gap-signals.json",
+      "record": {
+        "id": "SG-30",
+        "semantic": "quantity units and scope",
+        "historical_case": "53/54wounded,15/16ships,60holes,10/62ammunition",
+        "lost_meaning": "Numeric value alone conflates records and world quantities",
+        "minimal_extension": "Attributed unit/operator/scope; reality value null",
+        "status": "experimental_case_validated_not_core_promoted"
+      }
+    },
+    {
+      "id": "SG-31",
+      "original_id": "SG-31",
+      "round": 4,
+      "origin_path": "ground-core/experimental/historical-reality/round4/semantic-gap-signals.json",
+      "record": {
+        "id": "SG-31",
+        "semantic": "proposition-scoped corroboration",
+        "historical_case": "English/guide repeat Togo; Stark compiles logs",
+        "lost_meaning": "Source counting inflates support",
+        "minimal_extension": "Reuse lineage plus scoped independence assessment without numeric source count",
+        "status": "experimental_case_validated_not_core_promoted"
+      }
+    },
+    {
+      "id": "SG-32",
+      "original_id": "SG-32",
+      "round": 4,
+      "origin_path": "ground-core/experimental/historical-reality/round4/semantic-gap-signals.json",
+      "record": {
+        "id": "SG-32",
+        "semantic": "state transition without invented pre-state",
+        "historical_case": "Sevastopol funnel damage,operation,repair",
+        "lost_meaning": "Afterdamage conflates full health or lost capability",
+        "minimal_extension": "Unknownbefore + separate damage/operation/repair descriptors",
+        "status": "experimental_case_validated_not_core_promoted"
+      }
+    },
+    {
+      "id": "SG-33",
+      "original_id": "SG-33",
+      "round": 4,
+      "origin_path": "ground-core/experimental/historical-reality/round4/semantic-gap-signals.json",
+      "record": {
+        "id": "SG-33",
+        "semantic": "reconstruction version and proposition contrast",
+        "historical_case": "Pallada sinking conflict with version1 alternatives",
+        "lost_meaning": "Canonical CONTRADICTS confuses text truth and world disagreement; overwritten reconstruction loses history",
+        "minimal_extension": "Opposite reported propositions with alignment; append-only versions",
+        "status": "experimental_case_validated_not_core_promoted"
+      }
+    },
+    {
+      "id": "SG-34",
+      "original_id": "SG-34",
+      "round": 4,
+      "origin_path": "ground-core/experimental/historical-reality/round4/semantic-gap-signals.json",
+      "record": {
+        "id": "SG-34",
+        "semantic": "modality/metadata precision boundary",
+        "historical_case": "TePapaJan1 sentinel vsyearinterval; photo uninspected",
+        "lost_meaning": "Catalogue becomes exposure date/image observation",
+        "minimal_extension": "Catalogue-only record; year interval; no depicted identity confirmation",
+        "status": "experimental_case_validated_not_core_promoted"
+      }
+    },
+    {
+      "id": "SG-35",
+      "original_id": "SG-35",
+      "round": 4,
+      "origin_path": "ground-core/experimental/historical-reality/round4/semantic-gap-signals.json",
+      "record": {
+        "id": "SG-35",
+        "semantic": "representation availability and extraction correction",
+        "historical_case": "Novikpartialdownload; AstorianOCR18vsimage16",
+        "lost_meaning": "Partial rendering implies fullsourceknowledge; OCR correction becomes reality correction",
+        "minimal_extension": "Inspection/availability scope; scan-collated numeral remains attributed",
+        "status": "experimental_case_validated_not_core_promoted"
+      }
+    }
+  ],
+  "normalization": "Review-only SG13→SG-13 alias; original record and original ID preserved",
+  "expected_distinct_signals": 35
+}

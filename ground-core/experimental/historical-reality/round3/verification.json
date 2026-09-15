@@ -1,0 +1,70 @@
+{
+  "verified_on": "2026-09-14",
+  "parent_hashes": {
+    "round1.dataset.json": "5bc32592aa80ee4742f8e01b09d4381dacc1ce080fb930772a7a1ea2b24c70c2",
+    "round1.landscape.json": "40c3d8b4094e67359d5469c09fcf30dcba9479e3bb123401fb618d465021960f",
+    "round2/round2.dataset.json": "8fa0c1087b1945dfcbc1aa991c014d2b44796e4e4667eb3243d5a9a27d097d3c"
+  },
+  "round3_dataset_sha256": "3f5da8eaee7ef0683abe9d3cf3c35b965b1e798f7458910a02cccc6f30418714",
+  "tests": {
+    "round3": 16,
+    "inherited_round1": 6,
+    "inherited_round2": 11,
+    "related_legacy": 50,
+    "total": 83,
+    "failed": 0,
+    "final_command": "node --import tsx --test --test-reporter=dot ground-core/__tests__/historical-reality-round3.test.ts ground-core/__tests__/historical-reality-round2.test.ts ground-core/__tests__/historical-reality-round1.test.ts ground-core/__tests__/epistemic-core.test.ts ground-core/__tests__/belief-reconciliation.test.ts ground-core/__tests__/epistemic-gaps.test.ts ground-core/__tests__/reality-worldline.test.ts",
+    "exit_code": 0
+  },
+  "typescript": {
+    "command": "node_modules/.bin/tsc -p ground-core/tsconfig.json --pretty false",
+    "exit_code": 0
+  },
+  "replay": {
+    "counts": {
+      "sources": 32,
+      "claims": 64,
+      "actors": 43,
+      "relations": 66,
+      "artifacts": 14,
+      "references": 6,
+      "lineage": 12,
+      "messages": 4,
+      "stages": 9,
+      "assessments": 8,
+      "gaps": 16,
+      "searches": 7,
+      "reconstructions": 5,
+      "translation_checks": 1,
+      "assets": 9
+    },
+    "parent_integrity": "Round1, Round2 and Round1 landscape SHA256 verified; inherited PDF assets verified",
+    "dataset_sha256": "3f5da8eaee7ef0683abe9d3cf3c35b965b1e798f7458910a02cccc6f30418714",
+    "derived_traces": 75,
+    "canonical_projection": {
+      "claims": 64,
+      "historical_events": 0,
+      "historical_states": 0,
+      "scope": "Inherited 0.95 uncalibrated source-content attribution only"
+    },
+    "validation": "Sidecar serialize/reload/materialize; every derived basis traced; canonical file-store reload; new asset magic/size/hash plus inherited PDF integrity",
+    "limits": [
+      "No independent original authentication",
+      "No knowledge/read stage generated",
+      "1905/1906 edition link and underlying telegram remain unresolved",
+      "Full PDFs acquired; only declared pages inspected",
+      "Release announcement date is not exact scan creation date"
+    ]
+  },
+  "negative_search_traces": 7,
+  "new_signal_reference_validation": "8 signals resolve to experimental record IDs",
+  "required_report_sections": 18,
+  "core_schema_changes": 0,
+  "formal_promotions": [],
+  "limits": [
+    "Historical originals not independently authenticated",
+    "Russian telegram, collection46–47pages and Nagasaki/Rosen receipt/reading originals not inspected",
+    "Search diagnostics do not imply absence",
+    "Office receipt does not imply individual reading"
+  ]
+}

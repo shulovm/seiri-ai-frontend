@@ -1,0 +1,216 @@
+{
+  "new_signals": [
+    {
+      "id": "SG19",
+      "semantic": "unverified documentary reference endpoint",
+      "historical_case_claim_id": "r3:c-pak-quote",
+      "record_ids": [
+        "ref-reply-no2",
+        "g-reply-original"
+      ],
+      "lost_meaning": "A cited telegram does not establish an inspected original artifact.",
+      "proposed_semantic": "Attributed, scoped, reference-validated sidecar record; no truth or original authentication promotion.",
+      "alternatives_considered": [
+        "Free-text annotations lack traversable contracts",
+        "Canonical events/beliefs would conflate historical truth or actor knowledge",
+        "Full library ontology or exhaustive stage template would exceed observed cases"
+      ],
+      "implementation": "round3/lineage.ts and additive round3.dataset.json",
+      "tests": "ground-core/__tests__/historical-reality-round3.test.ts",
+      "replay": "round3/replay/documentary-traces.json",
+      "legacy_impact": "No core or Round1/2 changes; safe source-content partial projection retained.",
+      "status": "experimental; not promoted"
+    },
+    {
+      "id": "SG20",
+      "semantic": "identifier namespace and assignment context",
+      "historical_case_claim_id": "r3:c-number-policy",
+      "record_ids": [
+        "a-frus-web679",
+        "a-frus-print709"
+      ],
+      "lost_meaning": "Modern679 is not a printed or historical telegram number.",
+      "proposed_semantic": "Attributed, scoped, reference-validated sidecar record; no truth or original authentication promotion.",
+      "alternatives_considered": [
+        "Free-text annotations lack traversable contracts",
+        "Canonical events/beliefs would conflate historical truth or actor knowledge",
+        "Full library ontology or exhaustive stage template would exceed observed cases"
+      ],
+      "implementation": "round3/lineage.ts and additive round3.dataset.json",
+      "tests": "ground-core/__tests__/historical-reality-round3.test.ts",
+      "replay": "round3/replay/documentary-traces.json",
+      "legacy_impact": "No core or Round1/2 changes; safe source-content partial projection retained.",
+      "status": "experimental; not promoted"
+    },
+    {
+      "id": "SG21",
+      "semantic": "three scoped certainty targets",
+      "historical_case_claim_id": "r3:c-pak-delivery",
+      "record_ids": [
+        "q-delivery-content",
+        "q-reply-identity",
+        "q-delivery-reality"
+      ],
+      "lost_meaning": "Clear current wording does not establish exact documentary identity or external delivery.",
+      "proposed_semantic": "Attributed, scoped, reference-validated sidecar record; no truth or original authentication promotion.",
+      "alternatives_considered": [
+        "Free-text annotations lack traversable contracts",
+        "Canonical events/beliefs would conflate historical truth or actor knowledge",
+        "Full library ontology or exhaustive stage template would exceed observed cases"
+      ],
+      "implementation": "round3/lineage.ts and additive round3.dataset.json",
+      "tests": "ground-core/__tests__/historical-reality-round3.test.ts",
+      "replay": "round3/replay/documentary-traces.json",
+      "legacy_impact": "No core or Round1/2 changes; safe source-content partial projection retained.",
+      "status": "experimental; not promoted"
+    },
+    {
+      "id": "SG22",
+      "semantic": "scope of original labels",
+      "historical_case_claim_id": "r3:c-ia-lineage",
+      "record_ids": [
+        "a-rosen-pdf",
+        "a-rosen-book"
+      ],
+      "lost_meaning": "Digitization original and original book do not identify a1904 original telegram.",
+      "proposed_semantic": "Attributed, scoped, reference-validated sidecar record; no truth or original authentication promotion.",
+      "alternatives_considered": [
+        "Free-text annotations lack traversable contracts",
+        "Canonical events/beliefs would conflate historical truth or actor knowledge",
+        "Full library ontology or exhaustive stage template would exceed observed cases"
+      ],
+      "implementation": "round3/lineage.ts and additive round3.dataset.json",
+      "tests": "ground-core/__tests__/historical-reality-round3.test.ts",
+      "replay": "round3/replay/documentary-traces.json",
+      "legacy_impact": "No core or Round1/2 changes; safe source-content partial projection retained.",
+      "status": "experimental; not promoted"
+    },
+    {
+      "id": "SG23",
+      "semantic": "translation wording operation and comparison scope",
+      "historical_case_claim_id": "r3:c-jacar-expansion",
+      "record_ids": [
+        "tc-jacar"
+      ],
+      "lost_meaning": "Modern rendering adds names/place explanation; no exact semantic equivalence certified.",
+      "proposed_semantic": "Attributed, scoped, reference-validated sidecar record; no truth or original authentication promotion.",
+      "alternatives_considered": [
+        "Free-text annotations lack traversable contracts",
+        "Canonical events/beliefs would conflate historical truth or actor knowledge",
+        "Full library ontology or exhaustive stage template would exceed observed cases"
+      ],
+      "implementation": "round3/lineage.ts and additive round3.dataset.json",
+      "tests": "ground-core/__tests__/historical-reality-round3.test.ts",
+      "replay": "round3/replay/documentary-traces.json",
+      "legacy_impact": "No core or Round1/2 changes; safe source-content partial projection retained.",
+      "status": "experimental; not promoted"
+    },
+    {
+      "id": "SG24",
+      "semantic": "documentary/reality/knowledge reconstruction domain",
+      "historical_case_claim_id": "r3:c-pak-delivery",
+      "record_ids": [
+        "dr-reply",
+        "hr-receipt",
+        "kr-rosen"
+      ],
+      "lost_meaning": "Documentary chain closure does not establish reality or actor reading.",
+      "proposed_semantic": "Attributed, scoped, reference-validated sidecar record; no truth or original authentication promotion.",
+      "alternatives_considered": [
+        "Free-text annotations lack traversable contracts",
+        "Canonical events/beliefs would conflate historical truth or actor knowledge",
+        "Full library ontology or exhaustive stage template would exceed observed cases"
+      ],
+      "implementation": "round3/lineage.ts and additive round3.dataset.json",
+      "tests": "ground-core/__tests__/historical-reality-round3.test.ts",
+      "replay": "round3/replay/documentary-traces.json",
+      "legacy_impact": "No core or Round1/2 changes; safe source-content partial projection retained.",
+      "status": "experimental; not promoted"
+    },
+    {
+      "id": "SG25",
+      "semantic": "citation dependency versus documentary copying",
+      "historical_case_claim_id": "r3:c-pak-note21",
+      "record_ids": [
+        "l-pak-delivery79",
+        "l-pak-delivery73"
+      ],
+      "lost_meaning": "Cited historians are dependencies, not verified original telegram copies.",
+      "proposed_semantic": "Attributed, scoped, reference-validated sidecar record; no truth or original authentication promotion.",
+      "alternatives_considered": [
+        "Free-text annotations lack traversable contracts",
+        "Canonical events/beliefs would conflate historical truth or actor knowledge",
+        "Full library ontology or exhaustive stage template would exceed observed cases"
+      ],
+      "implementation": "round3/lineage.ts and additive round3.dataset.json",
+      "tests": "ground-core/__tests__/historical-reality-round3.test.ts",
+      "replay": "round3/replay/documentary-traces.json",
+      "legacy_impact": "No core or Round1/2 changes; safe source-content partial projection retained.",
+      "status": "experimental; not promoted"
+    },
+    {
+      "id": "SG26",
+      "semantic": "unknown stage actor versus reported authority",
+      "historical_case_claim_id": "r3:c-pak-nagasaki",
+      "record_ids": [
+        "s-reply-send",
+        "s-reply-hold"
+      ],
+      "lost_meaning": "Ordering authority is not an identified physical custodian; sender not named in direct-dispatch sentence.",
+      "proposed_semantic": "Attributed, scoped, reference-validated sidecar record; no truth or original authentication promotion.",
+      "alternatives_considered": [
+        "Free-text annotations lack traversable contracts",
+        "Canonical events/beliefs would conflate historical truth or actor knowledge",
+        "Full library ontology or exhaustive stage template would exceed observed cases"
+      ],
+      "implementation": "round3/lineage.ts and additive round3.dataset.json",
+      "tests": "ground-core/__tests__/historical-reality-round3.test.ts",
+      "replay": "round3/replay/documentary-traces.json",
+      "legacy_impact": "No core or Round1/2 changes; safe source-content partial projection retained.",
+      "status": "experimental; not promoted"
+    }
+  ],
+  "repeated": [
+    "SG01",
+    "SG02",
+    "SG03",
+    "SG04",
+    "SG06",
+    "SG07",
+    "SG08",
+    "SG10",
+    "SG11",
+    "SG13",
+    "SG14",
+    "SG15",
+    "SG16",
+    "SG18"
+  ],
+  "not_retested_sufficiently": [
+    "SG05",
+    "SG09",
+    "SG12",
+    "SG17"
+  ],
+  "corrections_or_weakening": [
+    {
+      "claim_ids": [
+        "r3:c-rgia-type"
+      ],
+      "finding": "RGIA lead is a typescript overview catalogue, not a verified final-reply original."
+    },
+    {
+      "claim_ids": [
+        "r3:c-pak-delivery"
+      ],
+      "finding": "Current Russian wording asserts delivery toRosen, not only arrival atNagasaki; still later assertion, not reading."
+    },
+    {
+      "claim_ids": [
+        "r3:c-pak-edition",
+        "r3:c-rsl-edition"
+      ],
+      "finding": "1905/1906 edition identity unresolved; parent records unchanged."
+    }
+  ]
+}

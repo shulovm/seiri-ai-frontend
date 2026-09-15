@@ -1,0 +1,533 @@
+[
+  {
+    "id": "r4:search-watch",
+    "records": [
+      {
+        "id": "r4:search-watch",
+        "what": "Original Petropavlovsk watch log",
+        "where": "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/",
+        "query_or_locator": "Original Petropavlovsk watch log",
+        "searched_on": "2026-09-14",
+        "result": "Known as compilation source in Stark; no original located",
+        "classification": "source_known_from_reference_but_unavailable",
+        "limitation": "Current bounded online search/inspection only; no claim of complete archive search, lost document, nonexistence, or actor ignorance",
+        "source_ids": [
+          "r4:s-stark"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r4:s-stark",
+        "title": "Stark report No. 628, modern OCR transcription",
+        "url": "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/",
+        "excerpt": "Full transcription inspected; original watch log and reports not inspected",
+        "inspection": "Full transcription inspected; original watch log and reports not inspected",
+        "creation": {
+          "raw": "modern representation; historical document date stored separately",
+          "precision": "unknown",
+          "calendar": "not stated",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "calendar/clock or creation day unverified"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "local clock standard not located"
+          }
+        },
+        "locator": {
+          "section": "named paragraphs / embedded metadata",
+          "asset": "evidence/rj4-stark.html"
+        },
+        "access_date": "2026-09-14",
+        "modality": "modern_text_representation",
+        "original_source_status": "not confirmed historical original",
+        "language": "Russian"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  },
+  {
+    "id": "r4:search-captains",
+    "records": [
+      {
+        "id": "r4:search-captains",
+        "what": "Original Russian captain reports/attachments",
+        "where": "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/",
+        "query_or_locator": "Original Russian captain reports/attachments",
+        "searched_on": "2026-09-14",
+        "result": "Current OCR excerpts located; archival originals not inspected",
+        "classification": "original_source_not_inspected",
+        "limitation": "Current bounded online search/inspection only; no claim of complete archive search, lost document, nonexistence, or actor ignorance",
+        "source_ids": [
+          "r4:s-sevastopol"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r4:s-sevastopol",
+        "title": "Sevastopol captain battle report excerpt, OCR transcription",
+        "url": "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/",
+        "excerpt": "Full displayed excerpt inspected; underlying captain manuscript/publication unverified",
+        "inspection": "Full displayed excerpt inspected; underlying captain manuscript/publication unverified",
+        "creation": {
+          "raw": "modern representation; historical document date stored separately",
+          "precision": "unknown",
+          "calendar": "not stated",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "calendar/clock or creation day unverified"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "local clock standard not located"
+          }
+        },
+        "locator": {
+          "section": "named paragraphs / embedded metadata",
+          "asset": "evidence/rj4-sevastopol.html"
+        },
+        "access_date": "2026-09-14",
+        "modality": "modern_text_representation",
+        "original_source_status": "not confirmed historical original",
+        "language": "Russian"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  },
+  {
+    "id": "r4:search-novik",
+    "records": [
+      {
+        "id": "r4:search-novik",
+        "what": "Full Novik No174 representation",
+        "where": "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_024/",
+        "query_or_locator": "Full Novik No174 representation",
+        "searched_on": "2026-09-14",
+        "result": "Two ordinary downloads interrupted; complete opening paragraphs retained",
+        "classification": "located_representation_partially_unavailable",
+        "limitation": "Current bounded online search/inspection only; no claim of complete archive search, lost document, nonexistence, or actor ignorance",
+        "source_ids": [
+          "r4:s-novik"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r4:s-novik",
+        "title": "Novik report No. 174, partial modern OCR transcription",
+        "url": "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_024/",
+        "excerpt": "Partial download ends mid-report after return around 04:00; opening paragraphs only inspected",
+        "inspection": "Partial download ends mid-report after return around 04:00; opening paragraphs only inspected",
+        "creation": {
+          "raw": "modern representation; historical document date stored separately",
+          "precision": "unknown",
+          "calendar": "not stated",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "calendar/clock or creation day unverified"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "local clock standard not located"
+          }
+        },
+        "locator": {
+          "section": "named paragraphs / embedded metadata",
+          "asset": "evidence/rj4-novik.html"
+        },
+        "access_date": "2026-09-14",
+        "modality": "modern_text_representation",
+        "original_source_status": "not confirmed historical original",
+        "language": "Russian"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  },
+  {
+    "id": "r4:search-paris",
+    "records": [
+      {
+        "id": "r4:search-paris",
+        "what": "French original sinking announcement",
+        "where": "https://newspapers.swco.ttu.edu/server/api/core/bitstreams/8ee25498-d4a8-42e0-8d4e-a6f2d31511d3/content",
+        "query_or_locator": "French original sinking announcement",
+        "searched_on": "2026-09-14",
+        "result": "Only newspaper attribution currently located",
+        "classification": "no_evidence_currently_located",
+        "limitation": "Current bounded online search/inspection only; no claim of complete archive search, lost document, nonexistence, or actor ignorance",
+        "source_ids": [
+          "r4:s-clarendon"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r4:s-clarendon",
+        "title": "Clarendon Chronicle, 10 February 1904, page 1",
+        "url": "https://newspapers.swco.ttu.edu/server/api/core/bitstreams/8ee25498-d4a8-42e0-8d4e-a6f2d31511d3/content",
+        "excerpt": "Page 1 scan visually inspected; other pages not inspected",
+        "inspection": "Page 1 scan visually inspected; other pages not inspected",
+        "creation": {
+          "raw": "10 February 1904",
+          "precision": "day",
+          "calendar": "Gregorian",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "local clock standard not located"
+          }
+        },
+        "locator": {
+          "section": "page 1",
+          "asset": "evidence/rj4-clarendon.pdf"
+        },
+        "access_date": "2026-09-14",
+        "modality": "newspaper_scan",
+        "original_source_status": "not confirmed historical original",
+        "language": "English"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  },
+  {
+    "id": "r4:search-flug",
+    "records": [
+      {
+        "id": "r4:search-flug",
+        "what": "Original Flug/Alexieff telegram",
+        "where": "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/",
+        "query_or_locator": "Original Flug/Alexieff telegram",
+        "searched_on": "2026-09-14",
+        "result": "Reprinted contemporary quotation only",
+        "classification": "source_known_from_reference_but_unavailable",
+        "limitation": "Current bounded online search/inspection only; no claim of complete archive search, lost document, nonexistence, or actor ignorance",
+        "source_ids": [
+          "r4:s-astorian"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r4:s-astorian",
+        "title": "Morning Astorian, 10 February 1904, page 1",
+        "url": "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/",
+        "excerpt": "Page 1 scan visually inspected; web OCR separately retained",
+        "inspection": "Page 1 scan visually inspected; web OCR separately retained",
+        "creation": {
+          "raw": "10 February 1904",
+          "precision": "day",
+          "calendar": "Gregorian",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "local clock standard not located"
+          }
+        },
+        "locator": {
+          "section": "page 1",
+          "asset": "evidence/rj4-astorian.pdf"
+        },
+        "access_date": "2026-09-14",
+        "modality": "newspaper_scan",
+        "original_source_status": "not confirmed historical original",
+        "language": "English"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  },
+  {
+    "id": "r4:search-repair",
+    "records": [
+      {
+        "id": "r4:search-repair",
+        "what": "Original Sevastopol repair record Jan28",
+        "where": "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html",
+        "query_or_locator": "Original Sevastopol repair record Jan28",
+        "searched_on": "2026-09-14",
+        "result": "Memoir recollection located, no work order",
+        "classification": "no_evidence_currently_located",
+        "limitation": "Current bounded online search/inspection only; no claim of complete archive search, lost document, nonexistence, or actor ignorance",
+        "source_ids": [
+          "r4:s-cherkasov"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r4:s-cherkasov",
+        "title": "Cherkasov memoir, 2000 edition web rendering",
+        "url": "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html",
+        "excerpt": "Printed page markers 17–20 and next-day repair context inspected, not whole memoir",
+        "inspection": "Printed page markers 17–20 and next-day repair context inspected, not whole memoir",
+        "creation": {
+          "raw": "modern representation; historical document date stored separately",
+          "precision": "unknown",
+          "calendar": "not stated",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "calendar/clock or creation day unverified"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "local clock standard not located"
+          }
+        },
+        "locator": {
+          "section": "named paragraphs / embedded metadata",
+          "asset": "evidence/rj4-cherkasov.html"
+        },
+        "access_date": "2026-09-14",
+        "modality": "modern_text_representation",
+        "original_source_status": "not confirmed historical original",
+        "language": "Russian"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  },
+  {
+    "id": "r4:search-photo",
+    "records": [
+      {
+        "id": "r4:search-photo",
+        "what": "Photograph O.005101 image",
+        "where": "https://collections.tepapa.govt.nz/object/272298",
+        "query_or_locator": "Photograph O.005101 image",
+        "searched_on": "2026-09-14",
+        "result": "Catalogue/media URL located; image not inspected",
+        "classification": "catalogued_image_not_inspected",
+        "limitation": "Current bounded online search/inspection only; no claim of complete archive search, lost document, nonexistence, or actor ignorance",
+        "source_ids": [
+          "r4:s-photo"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r4:s-photo",
+        "title": "Te Papa O.005101 photographic catalogue metadata",
+        "url": "https://collections.tepapa.govt.nz/object/272298",
+        "excerpt": "Embedded metadata inspected; photograph image not inspected",
+        "inspection": "Embedded metadata inspected; photograph image not inspected",
+        "creation": {
+          "raw": "modern representation; historical document date stored separately",
+          "precision": "unknown",
+          "calendar": "not stated",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "calendar/clock or creation day unverified"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "local clock standard not located"
+          }
+        },
+        "locator": {
+          "section": "named paragraphs / embedded metadata",
+          "asset": "evidence/rj4-photo-catalog.html"
+        },
+        "access_date": "2026-09-14",
+        "modality": "catalog_metadata",
+        "original_source_status": "not confirmed historical original",
+        "language": "English"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  },
+  {
+    "id": "r4:search-history",
+    "records": [
+      {
+        "id": "r4:search-history",
+        "what": "Later official Japanese war-history source",
+        "where": "https://www.jacar.go.jp/exhibition/nichiro2/sensoushi/kaijou_01_detail.html",
+        "query_or_locator": "Later official Japanese war-history source",
+        "searched_on": "2026-09-14",
+        "result": "Guide references C05110031900; original pages not inspected",
+        "classification": "referenced_source_not_inspected",
+        "limitation": "Current bounded online search/inspection only; no claim of complete archive search, lost document, nonexistence, or actor ignorance",
+        "source_ids": [
+          "r4:s-guide"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r4:s-guide",
+        "title": "JACAR modern Port Arthur explanatory guide",
+        "url": "https://www.jacar.go.jp/exhibition/nichiro2/sensoushi/kaijou_01_detail.html",
+        "excerpt": "Chart, explanation and source references inspected; modern reconstruction",
+        "inspection": "Chart, explanation and source references inspected; modern reconstruction",
+        "creation": {
+          "raw": "modern representation; historical document date stored separately",
+          "precision": "unknown",
+          "calendar": "not stated",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "calendar/clock or creation day unverified"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "local clock standard not located"
+          }
+        },
+        "locator": {
+          "section": "named paragraphs / embedded metadata",
+          "asset": "evidence/rj4-jacar-guide.html"
+        },
+        "access_date": "2026-09-14",
+        "modality": "modern_text_representation",
+        "original_source_status": "not confirmed historical original",
+        "language": "Japanese"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  },
+  {
+    "id": "r4:inspection-correction-1",
+    "records": [
+      {
+        "id": "r4:inspection-correction-1",
+        "what": "Reinspection correction of source extraction",
+        "where": "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+        "query_or_locator": "image7 frame0009",
+        "searched_on": "2026-09-14",
+        "result": "12:07 Second Squadron firing start -> Second Fleet report; noon-hour, handwritten minute unknown; distinct enemy/Izumo firing lines; Reinspection did not confirm minute numeral and command/table actor scopes differ",
+        "classification": "source_inspection_correction_diagnostic",
+        "limitation": "Source-content inspection diagnostic only, no correction of external reality. Initial draft reading retained here; final claim is separately attributed.",
+        "source_ids": [
+          "r2:togo-copy"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r2:togo-copy",
+        "title": "第2艦隊戦闘詳報(1) C09050255300",
+        "url": "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+        "inspection": "Digitized contemporary report copy bearing 写; images1,3,5 visually inspected. Not minister receipt original.",
+        "locator": {
+          "ref": "C09050255300",
+          "repository": "防衛研究所",
+          "call": "海軍省-日露-M37-5",
+          "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200091076000/raw/C09050255300.c0754804001.11nitiro_002.0003_01.pdf",
+          "images": "1,3,5"
+        },
+        "creation": {
+          "raw": "明治三十七年二月十日",
+          "precision": "day",
+          "calendar": "Gregorian as printed; local clock standard unverified",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "No verified clock standard or UTC offset"
+          },
+          "clock": {
+            "status": "unknown",
+            "reason": "Clock not specified"
+          },
+          "place": {
+            "status": "unknown",
+            "reason": "Place not established"
+          },
+          "normalized_instant": {
+            "status": "unknown",
+            "reason": "No UTC conversion without a verified time standard"
+          }
+        },
+        "excerpt": "Inspected passage is paraphrased in linked claims; manifestation limitations retained.",
+        "access_date": "2026-09-14",
+        "local_asset": "evidence/rj-portarthur.pdf"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  },
+  {
+    "id": "r4:inspection-correction-2",
+    "records": [
+      {
+        "id": "r4:inspection-correction-2",
+        "what": "Reinspection correction of source extraction",
+        "where": "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/",
+        "query_or_locator": "p1 anonymous officer paragraph",
+        "searched_on": "2026-09-14",
+        "result": "webOCR18 -> scan16; visually collated numeral; does not resolve actual fleet count",
+        "classification": "source_inspection_correction_diagnostic",
+        "limitation": "Source-content inspection diagnostic only, no correction of external reality. Initial draft reading retained here; final claim is separately attributed.",
+        "source_ids": [
+          "r4:s-astorian"
+        ],
+        "absence_inference": false
+      }
+    ],
+    "claims": [],
+    "relations": [],
+    "sources": [
+      {
+        "id": "r4:s-astorian",
+        "title": "Morning Astorian, 10 February 1904, page 1",
+        "url": "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/",
+        "excerpt": "Page 1 scan visually inspected; web OCR separately retained",
+        "inspection": "Page 1 scan visually inspected; web OCR separately retained",
+        "creation": {
+          "raw": "10 February 1904",
+          "precision": "day",
+          "calendar": "Gregorian",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "local clock standard not located"
+          }
+        },
+        "locator": {
+          "section": "page 1",
+          "asset": "evidence/rj4-astorian.pdf"
+        },
+        "access_date": "2026-09-14",
+        "modality": "newspaper_scan",
+        "original_source_status": "not confirmed historical original",
+        "language": "English"
+      }
+    ],
+    "terminal_references": [],
+    "boundary": "Search diagnostic with declared scope and limitations, not evidence of historical absence or actor ignorance."
+  }
+]

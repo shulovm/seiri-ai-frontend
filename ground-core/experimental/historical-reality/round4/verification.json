@@ -1,0 +1,78 @@
+{
+  "dataset_sha256": "055fb122cf4fa9137f3d9145b579885a41fbe0e3812441bf921bd950a34b6807",
+  "counts": {
+    "actors": 67,
+    "sources": 42,
+    "claims": 147,
+    "relations": 149,
+    "new_actors": 24,
+    "new_sources": 10,
+    "new_claims": 83,
+    "records": 103,
+    "record_kinds": {
+      "event_candidate": 6,
+      "episode_alignment": 4,
+      "observation": 6,
+      "temporal_evidence": 11,
+      "spatial_evidence": 8,
+      "quantity": 23,
+      "contrast": 16,
+      "independence": 5,
+      "state_description": 6,
+      "knowledge_stage": 8,
+      "silence": 2,
+      "modality_boundary": 1,
+      "reconstruction": 7
+    },
+    "documentary_records": 39,
+    "searches": 10,
+    "assets": 17,
+    "reconstruction_versions": 1
+  },
+  "derived_traces": 142,
+  "assets_validated_including_parents": 31,
+  "parent_integrity": "Round1–3 datasets and Round1 landscape SHA256 matched; inherited assets matched",
+  "canonical_projection": {
+    "claims": 147,
+    "historical_events": 0,
+    "historical_states": 0,
+    "scope": "Source content only; inherited0.95isuncalibratedtext-attributionestimate"
+  },
+  "validation": "serialize/reload/materialize equality; every derived record traces to source; asset hash/size/magic; file-store reload; core support routes retained",
+  "limits": [
+    "Novik representation partial",
+    "Russian local clock and calendar not independently calibrated",
+    "Original logs/messages/repair records not inspected",
+    "Pallada/Pallida alignment probable only",
+    "Photograph uninspected; catalogue only",
+    "No government reading/knowledge inferred"
+  ],
+  "executed_checks": [
+    {
+      "command": "node --import tsx --test ground-core/__tests__/{historical-reality-round1,historical-reality-round2,historical-reality-round3,historical-reality-round4,epistemic-core,belief-reconciliation,epistemic-gaps,reality-worldline}.test.ts",
+      "exit_code": 0,
+      "tests": 105,
+      "passed": 105,
+      "failed": 0,
+      "round4_tests": 22,
+      "legacy_tests": 83
+    },
+    {
+      "command": "node_modules/.bin/tsc -p ground-core/tsconfig.json --pretty false",
+      "exit_code": 0
+    },
+    {
+      "command": "node --import tsx ground-core/experimental/historical-reality/round4/replay.ts",
+      "exit_code": 0
+    }
+  ],
+  "checked_on": "2026-09-14",
+  "core_schema_changes": 0,
+  "parent_dataset_sha256": {
+    "round1_sha256": "5bc32592aa80ee4742f8e01b09d4381dacc1ce080fb930772a7a1ea2b24c70c2",
+    "round2_sha256": "8fa0c1087b1945dfcbc1aa991c014d2b44796e4e4667eb3243d5a9a27d097d3c",
+    "round3_sha256": "3f5da8eaee7ef0683abe9d3cf3c35b965b1e798f7458910a02cccc6f30418714",
+    "landscape_sha256": "40c3d8b4094e67359d5469c09fcf30dcba9479e3bb123401fb618d465021960f"
+  },
+  "inspection_corrections": "Two source-inspection diagnostics traced; secondfleet/secondsquadron scope separated; handwritten minute left unresolved"
+}

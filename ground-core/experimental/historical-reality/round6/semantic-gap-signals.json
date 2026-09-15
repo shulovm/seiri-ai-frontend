@@ -1,0 +1,44 @@
+{
+  "legacy_signals_preserved": true,
+  "new": [
+    {
+      "id": "SG-37",
+      "signal": "Query semantic dimension/function/stage beyond actor-place-time",
+      "case_claim_ids": [
+        "r6:c-advice",
+        "r6:c-no-jp-authority",
+        "r6:c-native-replaced"
+      ],
+      "classification": "B composition contract refinement"
+    },
+    {
+      "id": "SG-38",
+      "signal": "Declared scope is not effective coverage/enforcement scope",
+      "case_claim_ids": [
+        "r6:c-cer-duty",
+        "r6:c-county-promise",
+        "r6:c-publication-condition"
+      ],
+      "classification": "B refinement of assessment/unknown target"
+    },
+    {
+      "id": "SG-39",
+      "signal": "Infrastructure endpoint and inhabited territory identity must not merge",
+      "case_claim_ids": [
+        "r6:c-uiju-place",
+        "r6:c-mireuk-inspect"
+      ],
+      "classification": "D historical identity operations; generic identity resolution E"
+    },
+    {
+      "id": "SG-40",
+      "signal": "Distributed effective-date condition requires local publication/dispatch evidence",
+      "case_claim_ids": [
+        "r6:c-publication-condition",
+        "r6:c-ports-orders"
+      ],
+      "classification": "B temporal scope boundary; domain condition D"
+    }
+  ],
+  "new_C": 0
+}

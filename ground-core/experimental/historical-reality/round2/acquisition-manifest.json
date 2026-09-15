@@ -1,0 +1,64 @@
+{
+  "assets": [
+    {
+      "source_id": "r2:jp-whitebook",
+      "path": "evidence/rj-correspondence-1904.pdf",
+      "download_url": "https://archive.org/download/correspondencere00japarich/correspondencere00japarich.pdf",
+      "sha256": "b6aff58114b3351a99e358d46d22e733ce8b3eabaf6365acac8a1e6d028a3628",
+      "bytes": 2818613,
+      "pages": 72,
+      "inspection": "Only listed pages visually inspected; full acquisition is not full reading.",
+      "acquired_on": "2026-09-14",
+      "authenticity": "local byte integrity; not authentication of original historical document"
+    },
+    {
+      "source_id": "r2:komura-bundle",
+      "path": "evidence/rj-komura-bundle.pdf",
+      "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200147290500/raw/B07090546900.b5_0029.5-0267.00000006.pdf",
+      "sha256": "db6dbb5c221acec6ec16abdbfe24b5e6c2232d1876247e01b9043d32d50304cb",
+      "bytes": 7069457,
+      "pages": 58,
+      "inspection": "Only listed pages visually inspected; full acquisition is not full reading.",
+      "acquired_on": "2026-09-14",
+      "authenticity": "local byte integrity; not authentication of original historical document"
+    },
+    {
+      "source_id": "r2:togo-copy",
+      "path": "evidence/rj-portarthur.pdf",
+      "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200091076000/raw/C09050255300.c0754804001.11nitiro_002.0003_01.pdf",
+      "sha256": "da72ab0296335459e8e55664be317e66842e7a5a29a002166d4f12c4823822b6",
+      "bytes": 7193427,
+      "pages": 53,
+      "inspection": "Only listed pages visually inspected; full acquisition is not full reading.",
+      "acquired_on": "2026-09-14",
+      "authenticity": "local byte integrity; not authentication of original historical document"
+    },
+    {
+      "source_id": "r2:chemulpo-edition",
+      "path": "evidence/rj-chemulpo.pdf",
+      "download_url": "https://www.jacar.archives.go.jp/content/item/aj12/C200054612800/raw/C05110032100.c0460906001.rokaisen_002.0237_01.pdf",
+      "sha256": "0dcd19d160873e4919ae0007f2dee345fdbaed23377d5f12ef2ebe08cf4b08f8",
+      "bytes": 17624531,
+      "pages": 101,
+      "inspection": "Only listed pages visually inspected; full acquisition is not full reading.",
+      "acquired_on": "2026-09-14",
+      "authenticity": "local byte integrity; not authentication of original historical document"
+    },
+    {
+      "source_id": "r2:pak",
+      "path": "evidence/rj-pak-2023.pdf",
+      "download_url": "https://hist.spbiiran.ru/wp-content/uploads/2023/04/pizh_1_37_2023_128-139_pak.pdf",
+      "sha256": "4f2b8413eaa61207d316d637769ff8be5930890a6d6c06e93b049a1d43e419e1",
+      "bytes": 165591,
+      "pages": 12,
+      "inspection": "Only listed pages visually inspected; full acquisition is not full reading.",
+      "acquired_on": "2026-09-14",
+      "authenticity": "local byte integrity; not authentication of original historical document"
+    }
+  ],
+  "rejected_non_pdf_downloads": [
+    "/private/tmp/rj-russian-1905.pdf",
+    "/private/tmp/rj-press-19040207.pdf"
+  ],
+  "integrity_scope": "Local bytes and catalog/source binding only; no historical authenticity or complete reading certification."
+}

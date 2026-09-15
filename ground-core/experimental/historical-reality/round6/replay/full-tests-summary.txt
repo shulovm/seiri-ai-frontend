@@ -1,0 +1,10 @@
+  ✔ rejects empty operations array (0.025ms)
+✔ validateStatePatch (4.956958ms)
+ℹ tests 3796
+ℹ suites 907
+ℹ pass 3796
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11149.7225

@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "module": "NodeNext", "moduleResolution": "NodeNext",
+    "strict": true, "skipLibCheck": true, "noEmit": true,
+    "esModuleInterop": true, "types": ["node"]
+  },
+  "include": ["read-adapter.ts", "read-boundary.test.ts", "browse-boundary.test.ts", "source-registry.ts", "source-registry.test.ts"]
+}

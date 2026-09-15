@@ -1,0 +1,55 @@
+{
+  "core_promotions": [],
+  "usage_contract_records": [
+    {
+      "semantic_name": "Source assertion composition usage contract",
+      "decision": "Accepted opt-in adapter/documentation proof only. Zero new core primitives, zero new canonical relations, zero schema changes. B candidates remain generic composition design gaps.",
+      "definition": "A Claim about an inspected source assertion is scoped to that source representation and preserves attribution without asserting the reported world proposition.",
+      "invariant": [
+        "Claim.subject_id is inspected document Entity, not reported actor/target",
+        "Claim.confidence concerns source-content attribution only",
+        "Original claimant/report_chain/locator/inspection/raw time remain explicit",
+        "Unknown historical applicability is never synthesized from core unbounded null bounds",
+        "No read/knowledge/event/state or independence verdict is generated",
+        "Core validator accepts ordinary legacy Claims without this opt-in adapter contract",
+        "Each distinct extracted proposition has its own predicate slot; do not reconcile a source assertion list as one single-valued predicate"
+      ],
+      "motivating_historical_case_claim_ids": [
+        "c395-captured",
+        "r3:c-pak-delivery",
+        "r4:c-press-paris",
+        "r4:c-jp-wounded",
+        "r4:c-jp-second-fire"
+      ],
+      "existing_core_failure": "Incorrect field composition can use source-content confidence for a world proposition; inherited partial adapter drops nested claimant/time fields from its core Claim value. Existing core atoms do not fail the ontic firewall; the gap is an opt-in usage/adapter contract. Additional demonstrated adapter failure: all distinct assertions from one source share inspected_source_assertion predicate, so singleton-value Belief reconciliation groups different propositions as divergent values.",
+      "rejected_alternatives": [
+        "Separate SourceIdentity/Content/Reality confidence primitives: distinct propositions can already be separate Claims",
+        "New Knowledge object: lifecycle and warranted knowledge not established",
+        "Promote all sidecar relations: would overfit archival/event granularity",
+        "Opaque embedding of complete dataset called full semantic support: byte preservation is not a core composition contract"
+      ],
+      "proposed_representation": "Existing RealityEntity(document)+Evidence(external_ref)+Claim(attribute source_assertion/<original_claim_id>)+SUPPORTS; enriched Claim.value contains content scope, original attributed claim/time and actor descriptors. Generic lineage/reconstruction remain in sidecar. Predicate slot source_assertion/<original_claim_id> separates extracted propositions. This changes the opt-in projection, not legacy core reconciliation.",
+      "migration_impact": "None to parents or legacy state. New proof outputs use same0.1.24schema. Optional fresh projection only, no automatic rewrite.",
+      "compatibility_risk": "Low for opt-in adapter; payload consumers must not interpret confidence as world certainty. No generic core helper or persisted primitive is added.",
+      "tests_required": [
+        "actual-case source-content versus world target counterexample",
+        "nested attribution preservation including current-system inspection diagnosis",
+        "raw unknown time not backfilled",
+        "old adapter/core acceptance unaffected",
+        "serialization/file-store replay/root provenance",
+        "all historical and nonhistorical tests/typecheck/build",
+        "old broad predicate produces heterogeneous source-assertion positions; new per-proposition query remains uncontested without world-truth promotion"
+      ],
+      "recorded_before_implementation": true,
+      "priority": "P0",
+      "not_promoted": [
+        "universal assessment target API",
+        "stage enum",
+        "lineage vocabulary",
+        "independence classifier",
+        "reconstruction lifecycle"
+      ]
+    }
+  ],
+  "promotion_gate_conclusion": "No candidate demonstrates the need for a new core atom beyond existing Claim/Observation/Entity/Evidence/derived assessment composition. Cross-modality domain evidence strengthens B boundaries, not a new primitive."
+}

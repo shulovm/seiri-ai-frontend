@@ -1,0 +1,95 @@
+{
+  "new": [
+    {
+      "id": "SG-27",
+      "semantic": "episode identity at explicit granularity",
+      "historical_case": "Night/day candidates, Pallida/Pallada alignment",
+      "lost_meaning": "Name/time matching loses phase/target uncertainty",
+      "minimal_extension": "Manual probable episode alignment with limit; no canonical equivalence",
+      "status": "experimental_case_validated_not_core_promoted"
+    },
+    {
+      "id": "SG-28",
+      "semantic": "observable perspective and partial view",
+      "historical_case": "23:35 explosion vs23:45 gunfire; rearline sawnothing",
+      "lost_meaning": "Clock comparison or silence incorrectly negates attack",
+      "minimal_extension": "Observation modality/field limitation and contrast category",
+      "status": "experimental_case_validated_not_core_promoted"
+    },
+    {
+      "id": "SG-29",
+      "semantic": "spatial precision",
+      "historical_case": "Diagram relative route, unknown enemy position; south vsDalny",
+      "lost_meaning": "One coordinate or bearing hides viewpoint precision",
+      "minimal_extension": "Raw area/relative/diagram/range plus null coordinates",
+      "status": "experimental_case_validated_not_core_promoted"
+    },
+    {
+      "id": "SG-30",
+      "semantic": "quantity units and scope",
+      "historical_case": "53/54wounded,15/16ships,60holes,10/62ammunition",
+      "lost_meaning": "Numeric value alone conflates records and world quantities",
+      "minimal_extension": "Attributed unit/operator/scope; reality value null",
+      "status": "experimental_case_validated_not_core_promoted"
+    },
+    {
+      "id": "SG-31",
+      "semantic": "proposition-scoped corroboration",
+      "historical_case": "English/guide repeat Togo; Stark compiles logs",
+      "lost_meaning": "Source counting inflates support",
+      "minimal_extension": "Reuse lineage plus scoped independence assessment without numeric source count",
+      "status": "experimental_case_validated_not_core_promoted"
+    },
+    {
+      "id": "SG-32",
+      "semantic": "state transition without invented pre-state",
+      "historical_case": "Sevastopol funnel damage,operation,repair",
+      "lost_meaning": "Afterdamage conflates full health or lost capability",
+      "minimal_extension": "Unknownbefore + separate damage/operation/repair descriptors",
+      "status": "experimental_case_validated_not_core_promoted"
+    },
+    {
+      "id": "SG-33",
+      "semantic": "reconstruction version and proposition contrast",
+      "historical_case": "Pallada sinking conflict with version1 alternatives",
+      "lost_meaning": "Canonical CONTRADICTS confuses text truth and world disagreement; overwritten reconstruction loses history",
+      "minimal_extension": "Opposite reported propositions with alignment; append-only versions",
+      "status": "experimental_case_validated_not_core_promoted"
+    },
+    {
+      "id": "SG-34",
+      "semantic": "modality/metadata precision boundary",
+      "historical_case": "TePapaJan1 sentinel vsyearinterval; photo uninspected",
+      "lost_meaning": "Catalogue becomes exposure date/image observation",
+      "minimal_extension": "Catalogue-only record; year interval; no depicted identity confirmation",
+      "status": "experimental_case_validated_not_core_promoted"
+    },
+    {
+      "id": "SG-35",
+      "semantic": "representation availability and extraction correction",
+      "historical_case": "Novikpartialdownload; AstorianOCR18vsimage16",
+      "lost_meaning": "Partial rendering implies fullsourceknowledge; OCR correction becomes reality correction",
+      "minimal_extension": "Inspection/availability scope; scan-collated numeral remains attributed",
+      "status": "experimental_case_validated_not_core_promoted"
+    }
+  ],
+  "repeated": [
+    "SG-02",
+    "SG-03",
+    "SG-06",
+    "SG-07",
+    "SG-11",
+    "SG-13",
+    "SG-14",
+    "SG-15",
+    "SG-16",
+    "SG-18",
+    "SG-19",
+    "SG-21",
+    "SG-23",
+    "SG-24",
+    "SG-25",
+    "SG-26"
+  ],
+  "legacy_signals": "Round1–3 files retained unchanged; repeated list denotes conceptual recurrence, not exact identity of each historical example"
+}

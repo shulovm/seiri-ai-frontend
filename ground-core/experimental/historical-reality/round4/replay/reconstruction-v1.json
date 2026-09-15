@@ -1,0 +1,302 @@
+{
+  "versions": [
+    {
+      "id": "r4:reconstruction-v1",
+      "version": 1,
+      "previous_version_id": null,
+      "proposition_ids": [
+        "r4:recon-night",
+        "r4:recon-day",
+        "r4:recon-pallada",
+        "r4:recon-jp-wounded",
+        "r4:recon-force",
+        "r4:recon-sev-state",
+        "r4:recon-knowledge"
+      ],
+      "change_reason": "First competing-evidence reconstruction; no prior version overwritten"
+    }
+  ],
+  "propositions": [
+    {
+      "id": "r4:recon-night",
+      "kind": "reconstruction",
+      "description": "Broad Japanese destroyer torpedo attack in Port Arthur outerroads is probable",
+      "claim_ids": [
+        "r4:c-jp-night",
+        "r4:c-stark-explosion",
+        "r4:c-novik-heard"
+      ],
+      "record_ids": [
+        "r4:align-night",
+        "r4:ind-night",
+        "r4:time-jp-night",
+        "r4:time-explosion"
+      ],
+      "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+      "details": {
+        "status": "probable",
+        "supporting_claim_ids": [
+          "r4:c-jp-night",
+          "r4:c-stark-explosion",
+          "r4:c-novik-heard"
+        ],
+        "contradicting_claim_ids": [],
+        "dependency_record_ids": [
+          "r4:ind-night"
+        ],
+        "temporal_uncertainty": "Original dates/clocks retained; Russian calendar conditional, no common calibrated instant",
+        "spatial_uncertainty": "Named outerroads/relative positions; no exact coordinates",
+        "source_identity_certainty": "Located copies/scans/transcriptions; originals and full transformation identity unverified",
+        "source_content_certainty": "Inspected named passages established at source-assertion level; partial Novik only complete opening paragraphs",
+        "reality_certainty": "probable",
+        "alternatives": [
+          "Exact attack start and explosion sequence unresolved",
+          "Togo target identifications may differ from damaged-ship identities"
+        ],
+        "rationale": "Opposing organizational report origins and ship local gunfire agree on broad episode; repetitions excluded; clocks and individual target identities not promoted"
+      }
+    },
+    {
+      "id": "r4:recon-day",
+      "kind": "reconstruction",
+      "description": "Broad day surface engagement after night attack is probable",
+      "claim_ids": [
+        "r4:c-jp-day",
+        "r4:c-sev-fire",
+        "r4:c-memo-shell"
+      ],
+      "record_ids": [
+        "r4:align-day",
+        "r4:ind-day",
+        "r4:time-second",
+        "r4:time-first-shell"
+      ],
+      "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+      "details": {
+        "status": "probable",
+        "supporting_claim_ids": [
+          "r4:c-jp-day",
+          "r4:c-sev-fire",
+          "r4:c-memo-shell"
+        ],
+        "contradicting_claim_ids": [],
+        "dependency_record_ids": [
+          "r4:ind-day"
+        ],
+        "temporal_uncertainty": "Original dates/clocks retained; Russian calendar conditional, no common calibrated instant",
+        "spatial_uncertainty": "Named outerroads/relative positions; no exact coordinates",
+        "source_identity_certainty": "Located copies/scans/transcriptions; originals and full transformation identity unverified",
+        "source_content_certainty": "Inspected named passages established at source-assertion level; partial Novik only complete opening paragraphs",
+        "reality_certainty": "probable",
+        "alternatives": [
+          "Exact first gunshot/ceasefire remains observer/clock dependent",
+          "Fleet approaches and local shell arrivals are distinct stages"
+        ],
+        "rationale": "Opposing Japanese/Russian accounts support broad engagement; noonJapaneseversus11Russian not synchronized or averaged"
+      }
+    },
+    {
+      "id": "r4:recon-pallada",
+      "kind": "reconstruction",
+      "description": "Pallada/Pallida sinking outcome remains contested in retained sources",
+      "claim_ids": [
+        "r4:c-press-not-sunk",
+        "r4:c-stark-pallada",
+        "r4:c-press-paris"
+      ],
+      "record_ids": [
+        "r4:x-pallada",
+        "r4:state-pallada",
+        "r4:dep-russian"
+      ],
+      "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+      "details": {
+        "status": "contested",
+        "supporting_claim_ids": [
+          "r4:c-press-not-sunk",
+          "r4:c-stark-pallada"
+        ],
+        "contradicting_claim_ids": [
+          "r4:c-press-paris"
+        ],
+        "dependency_record_ids": [
+          "r4:dep-russian"
+        ],
+        "temporal_uncertainty": "Original dates/clocks retained; Russian calendar conditional, no common calibrated instant",
+        "spatial_uncertainty": "Named outerroads/relative positions; no exact coordinates",
+        "source_identity_certainty": "Located copies/scans/transcriptions; originals and full transformation identity unverified",
+        "source_content_certainty": "Inspected named passages established at source-assertion level; partial Novik only complete opening paragraphs",
+        "reality_certainty": "contested",
+        "alternatives": [
+          "Paris announcement may be inaccurate or refer to misidentified target",
+          "Russian report may reflect earlier state; original telegram/inspection missing"
+        ],
+        "rationale": "Explicit notsunk/afloat report opposes sunk announcement; latter is nested unverified press attribution. No majority-vote truth selection"
+      }
+    },
+    {
+      "id": "r4:recon-jp-wounded",
+      "kind": "reconstruction",
+      "description": "Exact Japanese wounded count cannot be resolved by comparing dependent copies",
+      "claim_ids": [
+        "r4:c-jp-wounded",
+        "r4:c-en-wounded"
+      ],
+      "record_ids": [
+        "r4:x-wounded",
+        "r4:dep-japanese"
+      ],
+      "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+      "details": {
+        "status": "unresolved",
+        "supporting_claim_ids": [
+          "r4:c-jp-wounded"
+        ],
+        "contradicting_claim_ids": [
+          "r4:c-en-wounded"
+        ],
+        "dependency_record_ids": [
+          "r4:dep-japanese"
+        ],
+        "temporal_uncertainty": "Original dates/clocks retained; Russian calendar conditional, no common calibrated instant",
+        "spatial_uncertainty": "Named outerroads/relative positions; no exact coordinates",
+        "source_identity_certainty": "Located copies/scans/transcriptions; originals and full transformation identity unverified",
+        "source_content_certainty": "Inspected named passages established at source-assertion level; partial Novik only complete opening paragraphs",
+        "reality_certainty": "unresolved",
+        "alternatives": [
+          "53 belongs Japanesecopy;54Englishtransformation",
+          "Later casualty corrections possible but no record located"
+        ],
+        "rationale": "Content53/54isclear;dependenttranslationisnotindependentbattlecasualtyaudit"
+      }
+    },
+    {
+      "id": "r4:recon-force",
+      "kind": "reconstruction",
+      "description": "Exact Japanese daytime fleet count remains contested",
+      "claim_ids": [
+        "r4:c-memo-count",
+        "r4:c-press-officer-count"
+      ],
+      "record_ids": [
+        "r4:x-fleet",
+        "r4:q-sev-initial",
+        "r4:q-sev-added"
+      ],
+      "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+      "details": {
+        "status": "contested",
+        "supporting_claim_ids": [
+          "r4:c-memo-count"
+        ],
+        "contradicting_claim_ids": [
+          "r4:c-press-officer-count"
+        ],
+        "dependency_record_ids": [],
+        "temporal_uncertainty": "Original dates/clocks retained; Russian calendar conditional, no common calibrated instant",
+        "spatial_uncertainty": "Named outerroads/relative positions; no exact coordinates",
+        "source_identity_certainty": "Located copies/scans/transcriptions; originals and full transformation identity unverified",
+        "source_content_certainty": "Inspected named passages established at source-assertion level; partial Novik only complete opening paragraphs",
+        "reality_certainty": "contested",
+        "alternatives": [
+          "Different observation times/coverage",
+          "Shipclass misidentification or press transmission error"
+        ],
+        "rationale": "Retain15and16andsequential12+4withoutmeanorwinner;same-shipcaptain/memoirmaynotbeindependent"
+      }
+    },
+    {
+      "id": "r4:recon-sev-state",
+      "kind": "reconstruction",
+      "description": "Reported Sevastopol funnel damage is probable; complete state transition/capability unresolved",
+      "claim_ids": [
+        "r4:c-sev-funnel",
+        "r4:c-memo-funnel",
+        "r4:c-sev-anchor",
+        "r4:c-memo-repair"
+      ],
+      "record_ids": [
+        "r4:state-sev-before",
+        "r4:state-sev-after",
+        "r4:state-sev-operating",
+        "r4:state-sev-repair",
+        "r4:x-sev-petrov"
+      ],
+      "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+      "details": {
+        "status": "probable",
+        "supporting_claim_ids": [
+          "r4:c-sev-funnel",
+          "r4:c-memo-funnel",
+          "r4:c-sev-anchor",
+          "r4:c-memo-repair"
+        ],
+        "contradicting_claim_ids": [],
+        "dependency_record_ids": [],
+        "temporal_uncertainty": "Original dates/clocks retained; Russian calendar conditional, no common calibrated instant",
+        "spatial_uncertainty": "Named outerroads/relative positions; no exact coordinates",
+        "source_identity_certainty": "Located copies/scans/transcriptions; originals and full transformation identity unverified",
+        "source_content_certainty": "Inspected named passages established at source-assertion level; partial Novik only complete opening paragraphs",
+        "reality_certainty": "probable",
+        "alternatives": [
+          "Prebattle state unknown",
+          "Repair date conditionalcalendar/context; original workorder missing",
+          "Injury mechanism not resolved"
+        ],
+        "rationale": "Captain/memoir convergeonfunneldamagebutsharelocalorigin;anchoring/repairdoesnotprovefullcapabilityorcorrectinjurymechanism"
+      }
+    },
+    {
+      "id": "r4:recon-knowledge",
+      "kind": "reconstruction",
+      "description": "A sparse actor-specific event knowledge chain is recoverable",
+      "claim_ids": [
+        "r4:c-stark-belief",
+        "r4:c-stark-signal",
+        "r4:c-novik-order",
+        "r4:c-memo-wireless",
+        "r4:c-jp-record",
+        "r4:c-jp-copy",
+        "r4:c-jp-compile",
+        "r4:c-press-flug"
+      ],
+      "record_ids": [
+        "r4:k-flag-initial",
+        "r4:k-flag-signals",
+        "r4:k-novik-order",
+        "r4:k-cherkasov-wireless",
+        "r4:k-togo-record",
+        "r4:k-togo-dispatch",
+        "r4:k-kamimura-record",
+        "r4:k-public"
+      ],
+      "limit": "Source-attributed case record. No canonical event/state, actor knowledge, exact clock/location, or independent corroboration automatically inferred.",
+      "details": {
+        "status": "possible",
+        "supporting_claim_ids": [
+          "r4:c-stark-belief",
+          "r4:c-stark-signal",
+          "r4:c-novik-order",
+          "r4:c-memo-wireless",
+          "r4:c-jp-record",
+          "r4:c-jp-copy",
+          "r4:c-jp-compile",
+          "r4:c-press-flug"
+        ],
+        "contradicting_claim_ids": [],
+        "dependency_record_ids": [],
+        "temporal_uncertainty": "Original dates/clocks retained; Russian calendar conditional, no common calibrated instant",
+        "spatial_uncertainty": "Named outerroads/relative positions; no exact coordinates",
+        "source_identity_certainty": "Located copies/scans/transcriptions; originals and full transformation identity unverified",
+        "source_content_certainty": "Inspected named passages established at source-assertion level; partial Novik only complete opening paragraphs",
+        "reality_certainty": "possible",
+        "alternatives": [
+          "No located NavyMinistry/headquartersreceipt or readingedge",
+          "Governmentawarenessnotderivedfromshiprecord",
+          "Retrospectiverecollectionsareattributednotcontemporaneousproof"
+        ],
+        "rationale": "Explicitreportstagesretainedonly;calendarunknownstaysunplaced,Feb16addressdoesnotbackdatefleetknowledgeonFeb9"
+      }
+    }
+  ]
+}

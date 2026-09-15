@@ -5,6 +5,7 @@ import { isClarification } from "../extraction/types.js";
 import { ruleModalityDetector } from "../extraction/semantic/rule-modality-detector.js";
 import type { ProjectState } from "../types.js";
 import { proposeFromRealitySemantics } from "./draft.js";
+import { proposeCanonicalTranslation } from "./canonical-translation.js";
 import type {
   GroundEvent,
   GroundEventSource,
@@ -59,7 +60,7 @@ export function buildGroundEvent(
 export function proposeFromReality(
   projectState: ProjectState,
   input: RealityProposeInput,
-  extractor: ProposeExtractor = "semantic"
+  extractor: ProposeExtractor | "canonical" = "semantic"
 ): RealityProposeResult {
   if (projectState.project.id !== input.project_id) {
     throw new Error(
@@ -77,7 +78,18 @@ export function proposeFromReality(
     project_id: input.project_id,
     input_text: text,
     project_state: projectState,
+    source: input.source ?? "manual",
   };
+
+  if (extractor === "canonical") {
+    const translation = proposeCanonicalTranslation(projectState, input);
+    if (translation) return Object.assign({
+      schema_version: "0.6.1" as const, ground_event: groundEvent,
+      result: translation.result, project_state_mutated: false as const,
+      loop_stage: "propose" as const, requires_human_apply: true as const,
+      reality_classification: null,
+    }, { translation_trace: translation.trace });
+  }
 
   // mock 経路は fixture 依存の旧 extractor をそのまま使う（回帰互換）
   if (extractor === "mock") {

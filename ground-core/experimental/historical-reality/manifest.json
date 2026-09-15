@@ -1,0 +1,8 @@
+{
+  "status": "local authored evidence-record integrity; not source authenticity",
+  "access_date": "2026-09-14",
+  "sha256": {
+    "round1.dataset.json": "5bc32592aa80ee4742f8e01b09d4381dacc1ce080fb930772a7a1ea2b24c70c2",
+    "round1.landscape.json": "40c3d8b4094e67359d5469c09fcf30dcba9479e3bb123401fb618d465021960f"
+  }
+}

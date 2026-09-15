@@ -1,0 +1,15 @@
+{
+  "kind": "current_system_catalogue_extract",
+  "url": "https://contents.history.go.kr/front/hm/view.do?levelId=hm_121_0010",
+  "holdings": [
+    "Kyujanggak 奎23016",
+    "Kyujanggak 奎23017",
+    "Japan diplomatic archives B13091012600"
+  ],
+  "raw_date": [
+    "光武八年二月廿三日",
+    "明治三十七年二月廿三日"
+  ],
+  "originals_inspected": false,
+  "limit": "Publisher asserts custody; neither signatures nor language collation visually authenticated"
+}

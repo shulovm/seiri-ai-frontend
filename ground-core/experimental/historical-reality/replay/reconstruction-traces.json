@@ -1,0 +1,1190 @@
+[
+  {
+    "reconstruction": {
+      "id": "r-reply",
+      "proposition": "Actual Russian reply transmission, possession and Japanese receipt before diplomatic rupture",
+      "status": "unresolved",
+      "claim_ids": [
+        "c392-instruction",
+        "c393-termination",
+        "c678-uncertainty",
+        "c678-sent",
+        "c679-held"
+      ],
+      "relation_ids": [
+        "e-c678-sent",
+        "e-c679-held",
+        "e-reply-qualifies"
+      ],
+      "reason": "nested diplomatic reports; actor/time mismatch; no original transmission or receipt log",
+      "alternatives": [
+        "reply dispatched and held by Russian minister but not delivered to Japanese government",
+        "reports use different reply versions or timings"
+      ],
+      "unknowns": [
+        "original wording",
+        "dispatch clock time",
+        "routing",
+        "recipient receipt",
+        "whether proposed terms were authoritative"
+      ],
+      "assessed_on": "2026-09-14"
+    },
+    "claims": [
+      {
+        "id": "c392-instruction",
+        "source_id": "frus:1904:392",
+        "subject_id": "jp-minister-ru",
+        "predicate": "instructed_to",
+        "object": "present termination note and break diplomatic relations",
+        "claimant_id": "jp-fm",
+        "report_chain": [
+          "jp-fm",
+          "griscom",
+          "hay"
+        ],
+        "temporal_scope": {
+          "raw": "before report of February 6",
+          "precision": "unknown",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "spatial_scope": "St. Petersburg / Tokyo",
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for attribution to inspected edition; not a truth score",
+          "context": "d392 parenthetical paraphrase; instruction is not proof of delivery"
+        },
+        "epistemic_limit": "source assertion; not promoted to historical reality"
+      },
+      {
+        "id": "c393-termination",
+        "source_id": "frus:1904:393",
+        "subject_id": "jp-government",
+        "predicate": "declares_intention",
+        "object": "terminate present negotiations and reserve independent action",
+        "claimant_id": "jp-government",
+        "report_chain": [
+          "jp-government",
+          "hay"
+        ],
+        "temporal_scope": {
+          "raw": "Washington memorandum February 6",
+          "precision": "day",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": "1904-02-06",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "spatial_scope": "Washington / St. Petersburg",
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for attribution to inspected edition; not a truth score",
+          "context": "copied note, concluding paragraphs; no original delivery timestamp"
+        },
+        "epistemic_limit": "source assertion; not promoted to historical reality"
+      },
+      {
+        "id": "c678-uncertainty",
+        "source_id": "frus:1904:678",
+        "subject_id": "jp-minister-ru",
+        "predicate": "reported_knowledge_state",
+        "object": "no positive knowledge of Russian reply",
+        "claimant_id": "jp-minister-ru",
+        "report_chain": [
+          "jp-minister-ru",
+          "mccormick",
+          "hay"
+        ],
+        "temporal_scope": {
+          "raw": "as reported February 7",
+          "precision": "day",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": "1904-02-07",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "spatial_scope": "St. Petersburg",
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for attribution to inspected edition; not a truth score",
+          "context": "no positive knowledge is not complete ignorance; time of conversation unknown"
+        },
+        "epistemic_limit": "source assertion; not promoted to historical reality"
+      },
+      {
+        "id": "c678-sent",
+        "source_id": "frus:1904:678",
+        "subject_id": "ru-government",
+        "predicate": "reported_reply_status",
+        "object": "reply sent to Admiral Alexieff, with modification authority",
+        "claimant_id": "ru-fm",
+        "report_chain": [
+          "ru-fm",
+          "jp-minister-ru",
+          "mccormick",
+          "hay"
+        ],
+        "temporal_scope": {
+          "raw": "before February 7 report",
+          "precision": "unknown",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "spatial_scope": "St. Petersburg / Far East",
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for attribution to inspected edition; not a truth score",
+          "context": "nested reported speech; proposed conditions described as foreign minister own view"
+        },
+        "epistemic_limit": "source assertion; not promoted to historical reality"
+      },
+      {
+        "id": "c679-held",
+        "source_id": "frus:1904:679",
+        "subject_id": "ru-minister-jp",
+        "predicate": "reportedly_possessed",
+        "object": "Russian reply when Japanese minister requested passports",
+        "claimant_id": "ru-fm",
+        "report_chain": [
+          "ru-fm",
+          "mccormick",
+          "hay"
+        ],
+        "temporal_scope": {
+          "raw": "when passports requested",
+          "precision": "unknown",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "spatial_scope": "Tokyo",
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for attribution to inspected edition; not a truth score",
+          "context": "possession by Russian minister is not receipt by Japanese government"
+        },
+        "epistemic_limit": "source assertion; not promoted to historical reality"
+      }
+    ],
+    "relations": [
+      {
+        "id": "e-c678-sent",
+        "source_id": "frus:1904:678",
+        "claim_id": "c678-sent",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "inspectable source wording supports extraction, not truth of external event"
+      },
+      {
+        "id": "e-c679-held",
+        "source_id": "frus:1904:679",
+        "claim_id": "c679-held",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "inspectable source wording supports extraction, not truth of external event"
+      },
+      {
+        "id": "e-reply-qualifies",
+        "source_id": "frus:1904:679",
+        "claim_id": "c678-uncertainty",
+        "relation": "qualifies",
+        "scope": "historical_reconstruction",
+        "reason": "possession by Russian minister and lack of positive knowledge by Japanese minister concern different actors; NOT direct contradiction"
+      }
+    ],
+    "sources": [
+      {
+        "id": "frus:1904:392",
+        "title": "FRUS 1904, document 392",
+        "creator": "griscom",
+        "recipient": "hay",
+        "issuing_organization": "American Legation, Tokyo",
+        "creation": {
+          "raw": "1904-02-06",
+          "precision": "day",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": "1904-02-06",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "creation_place": "Tokyo",
+        "original_language": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "inspected_language": "English",
+        "source_type": "diplomatic document",
+        "contemporary_or_retrospective": "contemporary communication through later published edition",
+        "manifestation": "telegram paraphrase",
+        "purpose": "reports information received from Japanese foreign minister",
+        "visibility_at_creation": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "archive": "United States Department of State, Office of the Historian (edition host; original repository not established)",
+        "collection": "Papers Relating to the Foreign Relations of the United States, 1904",
+        "publication": {
+          "publisher": "Government Printing Office",
+          "place": "Washington",
+          "year": "1905",
+          "authority_url": "https://history.state.gov/historicaldocuments/frus1904"
+        },
+        "locator": {
+          "document_number": "392",
+          "page": {
+            "status": "unknown",
+            "reason": "HTML page marker not inspected for this record"
+          }
+        },
+        "url": "https://history.state.gov/historicaldocuments/frus1904/d392",
+        "access_date": "2026-09-14",
+        "digitization": {
+          "provider": "Office of the Historian",
+          "method": "web tool rendered text; original image not inspected",
+          "digitization_date": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          }
+        },
+        "authenticity": {
+          "status": "hosted_official_edition",
+          "limit": "original telegram, autograph, archival custody and editorial accuracy not authenticated"
+        },
+        "completeness": {
+          "status": "excerpt_only",
+          "reason": "short inspected excerpt plus researcher paraphrase; not a full document capture"
+        },
+        "known_alterations": [
+          "telegram paraphrase"
+        ],
+        "access_at_time": {
+          "status": "unknown",
+          "reason": "addressee does not prove receipt or public access"
+        },
+        "excerpt": "the Japanese minister at St. Petersburg has been instructed to present a note",
+        "inspection": "edition_text_inspected",
+        "designation": "Mr. Griscom to Mr. Hay.",
+        "source_completeness": {
+          "status": "unknown",
+          "reason": "original source completeness not authenticated; existing completeness field describes saved sample"
+        }
+      },
+      {
+        "id": "frus:1904:393",
+        "title": "FRUS 1904, document 393",
+        "creator": "jp-government",
+        "recipient": "hay",
+        "issuing_organization": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "creation": {
+          "raw": "1904-02-06",
+          "precision": "day",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": "1904-02-06",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "creation_place": "Washington",
+        "original_language": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "inspected_language": "English",
+        "source_type": "diplomatic document",
+        "contemporary_or_retrospective": "contemporary communication through later published edition",
+        "manifestation": "copy of note, deposited memorandum",
+        "purpose": "Japanese diplomatic position and termination language",
+        "visibility_at_creation": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "archive": "United States Department of State, Office of the Historian (edition host; original repository not established)",
+        "collection": "Papers Relating to the Foreign Relations of the United States, 1904",
+        "publication": {
+          "publisher": "Government Printing Office",
+          "place": "Washington",
+          "year": "1905",
+          "authority_url": "https://history.state.gov/historicaldocuments/frus1904"
+        },
+        "locator": {
+          "document_number": "393",
+          "page": {
+            "status": "unknown",
+            "reason": "HTML page marker not inspected for this record"
+          }
+        },
+        "url": "https://history.state.gov/historicaldocuments/frus1904/d393",
+        "access_date": "2026-09-14",
+        "digitization": {
+          "provider": "Office of the Historian",
+          "method": "web tool rendered text; original image not inspected",
+          "digitization_date": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          }
+        },
+        "authenticity": {
+          "status": "hosted_official_edition",
+          "limit": "original telegram, autograph, archival custody and editorial accuracy not authenticated"
+        },
+        "completeness": {
+          "status": "excerpt_only",
+          "reason": "short inspected excerpt plus researcher paraphrase; not a full document capture"
+        },
+        "known_alterations": [
+          "copy of note, deposited memorandum"
+        ],
+        "access_at_time": {
+          "status": "unknown",
+          "reason": "addressee does not prove receipt or public access"
+        },
+        "excerpt": "Copy of a note addressed by the Japanese minister to Russia to the Russian minister for foreign affairs",
+        "inspection": "edition_text_inspected",
+        "designation": "Memorandum left with the Secretary of State.",
+        "source_completeness": {
+          "status": "unknown",
+          "reason": "original source completeness not authenticated; existing completeness field describes saved sample"
+        }
+      },
+      {
+        "id": "frus:1904:678",
+        "title": "FRUS 1904, document 678",
+        "creator": "mccormick",
+        "recipient": "hay",
+        "issuing_organization": "American Embassy, St. Petersburg",
+        "creation": {
+          "raw": "1904-02-07",
+          "precision": "day",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": "1904-02-07",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "creation_place": "St. Petersburg",
+        "original_language": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "inspected_language": "English",
+        "source_type": "diplomatic document",
+        "contemporary_or_retrospective": "contemporary communication through later published edition",
+        "manifestation": "telegram paraphrase",
+        "purpose": "nested reports of Russian reply and Japanese minister uncertainty",
+        "visibility_at_creation": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "archive": "United States Department of State, Office of the Historian (edition host; original repository not established)",
+        "collection": "Papers Relating to the Foreign Relations of the United States, 1904",
+        "publication": {
+          "publisher": "Government Printing Office",
+          "place": "Washington",
+          "year": "1905",
+          "authority_url": "https://history.state.gov/historicaldocuments/frus1904"
+        },
+        "locator": {
+          "document_number": "678",
+          "page": {
+            "status": "unknown",
+            "reason": "HTML page marker not inspected for this record"
+          }
+        },
+        "url": "https://history.state.gov/historicaldocuments/frus1904/d678",
+        "access_date": "2026-09-14",
+        "digitization": {
+          "provider": "Office of the Historian",
+          "method": "web tool rendered text; original image not inspected",
+          "digitization_date": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          }
+        },
+        "authenticity": {
+          "status": "hosted_official_edition",
+          "limit": "original telegram, autograph, archival custody and editorial accuracy not authenticated"
+        },
+        "completeness": {
+          "status": "excerpt_only",
+          "reason": "short inspected excerpt plus researcher paraphrase; not a full document capture"
+        },
+        "known_alterations": [
+          "telegram paraphrase"
+        ],
+        "access_at_time": {
+          "status": "unknown",
+          "reason": "addressee does not prove receipt or public access"
+        },
+        "excerpt": "although he had no positive knowledge of the Russian reply",
+        "inspection": "edition_text_inspected",
+        "designation": "Mr. McCormick to Mr. Hay.",
+        "source_completeness": {
+          "status": "unknown",
+          "reason": "original source completeness not authenticated; existing completeness field describes saved sample"
+        }
+      },
+      {
+        "id": "frus:1904:679",
+        "title": "FRUS 1904, document 679",
+        "creator": "mccormick",
+        "recipient": "hay",
+        "issuing_organization": "American Embassy, St. Petersburg",
+        "creation": {
+          "raw": "1904-02-08",
+          "precision": "day",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": "1904-02-08",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "creation_place": "St. Petersburg",
+        "original_language": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "inspected_language": "English",
+        "source_type": "diplomatic document",
+        "contemporary_or_retrospective": "contemporary communication through later published edition",
+        "manifestation": "telegram paraphrase",
+        "purpose": "reports Russian foreign minister account of reply possession",
+        "visibility_at_creation": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "archive": "United States Department of State, Office of the Historian (edition host; original repository not established)",
+        "collection": "Papers Relating to the Foreign Relations of the United States, 1904",
+        "publication": {
+          "publisher": "Government Printing Office",
+          "place": "Washington",
+          "year": "1905",
+          "authority_url": "https://history.state.gov/historicaldocuments/frus1904"
+        },
+        "locator": {
+          "document_number": "679",
+          "page": {
+            "status": "unknown",
+            "reason": "HTML page marker not inspected for this record"
+          }
+        },
+        "url": "https://history.state.gov/historicaldocuments/frus1904/d679",
+        "access_date": "2026-09-14",
+        "digitization": {
+          "provider": "Office of the Historian",
+          "method": "web tool rendered text; original image not inspected",
+          "digitization_date": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          }
+        },
+        "authenticity": {
+          "status": "hosted_official_edition",
+          "limit": "original telegram, autograph, archival custody and editorial accuracy not authenticated"
+        },
+        "completeness": {
+          "status": "excerpt_only",
+          "reason": "short inspected excerpt plus researcher paraphrase; not a full document capture"
+        },
+        "known_alterations": [
+          "telegram paraphrase"
+        ],
+        "access_at_time": {
+          "status": "unknown",
+          "reason": "addressee does not prove receipt or public access"
+        },
+        "excerpt": "the Russian minister at Tokyo had the Russian reply when the Japanese minister asked for his passports",
+        "inspection": "edition_text_inspected",
+        "designation": "Mr. McCormick to Mr. Hay.",
+        "source_completeness": {
+          "status": "unknown",
+          "reason": "original source completeness not authenticated; existing completeness field describes saved sample"
+        }
+      }
+    ]
+  },
+  {
+    "reconstruction": {
+      "id": "r-variag",
+      "proposition": "Variag fate and sequence of capture, self-sinking and later acquisition",
+      "status": "unresolved",
+      "claim_ids": [
+        "c395-captured",
+        "cjacar-selfsink"
+      ],
+      "relation_ids": [
+        "e-c395-captured",
+        "e-cjacar-selfsink",
+        "e-fate-qualifies"
+      ],
+      "reason": "contemporary paraphrase and later archival guide differ in description; underlying original images uninspected",
+      "alternatives": [
+        "capture report used loose or premature terminology",
+        "later salvage/acquisition was conflated with battle capture"
+      ],
+      "unknowns": [
+        "original upstream telegram",
+        "meaning of captured in paraphrase",
+        "actual fate sequence",
+        "guide February 8 versus report February 9"
+      ],
+      "assessed_on": "2026-09-14"
+    },
+    "claims": [
+      {
+        "id": "c395-captured",
+        "source_id": "frus:1904:395",
+        "subject_id": "variag",
+        "predicate": "reported_fate",
+        "object": "captured",
+        "claimant_id": "jp-fm",
+        "report_chain": [
+          "jp-fm",
+          "griscom",
+          "hay"
+        ],
+        "temporal_scope": {
+          "raw": "to-day, February 9",
+          "precision": "day",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": "1904-02-09",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "spatial_scope": "near Chemulpo",
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for attribution to inspected edition; not a truth score",
+          "context": "foreign minister informs Griscom; upstream naval telegram not inspected"
+        },
+        "epistemic_limit": "source assertion; not promoted to historical reality"
+      },
+      {
+        "id": "cjacar-selfsink",
+        "source_id": "jacar:chemulpo-guide",
+        "subject_id": "variag",
+        "predicate": "later_guide_describes",
+        "object": "returned to port and self-sank; directs reader to C05110134800 image 33",
+        "claimant_id": {
+          "status": "unknown",
+          "reason": "claim extracted from later JACAR guide, not directly from Imperial Japanese Navy record"
+        },
+        "report_chain": [],
+        "temporal_scope": {
+          "raw": "guide says February 8; other report February 9",
+          "precision": "unknown",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "spatial_scope": "Chemulpo / Incheon",
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for attribution to inspected edition; not a truth score",
+          "context": "later guide, not extracted original; date discrepancy deliberately retained"
+        },
+        "epistemic_limit": "source assertion; not promoted to historical reality"
+      }
+    ],
+    "relations": [
+      {
+        "id": "e-c395-captured",
+        "source_id": "frus:1904:395",
+        "claim_id": "c395-captured",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "inspectable source wording supports extraction, not truth of external event"
+      },
+      {
+        "id": "e-cjacar-selfsink",
+        "source_id": "jacar:chemulpo-guide",
+        "claim_id": "cjacar-selfsink",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "inspectable source wording supports extraction, not truth of external event"
+      },
+      {
+        "id": "e-fate-qualifies",
+        "source_id": "jacar:chemulpo-guide",
+        "claim_id": "c395-captured",
+        "relation": "qualifies",
+        "scope": "historical_reconstruction",
+        "reason": "later guide describes self-sinking and later incorporation; capture timing/meaning unresolved; primary image not inspected"
+      }
+    ],
+    "sources": [
+      {
+        "id": "frus:1904:395",
+        "title": "FRUS 1904, document 395",
+        "creator": "griscom",
+        "recipient": "hay",
+        "issuing_organization": "American Legation, Tokyo",
+        "creation": {
+          "raw": "1904-02-09",
+          "precision": "day",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": "1904-02-09",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "creation_place": "Tokyo",
+        "original_language": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "inspected_language": "English",
+        "source_type": "diplomatic document",
+        "contemporary_or_retrospective": "contemporary communication through later published edition",
+        "manifestation": "telegram paraphrase",
+        "purpose": "reports Japanese foreign minister information about Chemulpo",
+        "visibility_at_creation": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "archive": "United States Department of State, Office of the Historian (edition host; original repository not established)",
+        "collection": "Papers Relating to the Foreign Relations of the United States, 1904",
+        "publication": {
+          "publisher": "Government Printing Office",
+          "place": "Washington",
+          "year": "1905",
+          "authority_url": "https://history.state.gov/historicaldocuments/frus1904"
+        },
+        "locator": {
+          "document_number": "395",
+          "page": {
+            "status": "unknown",
+            "reason": "HTML page marker not inspected for this record"
+          }
+        },
+        "url": "https://history.state.gov/historicaldocuments/frus1904/d395",
+        "access_date": "2026-09-14",
+        "digitization": {
+          "provider": "Office of the Historian",
+          "method": "web tool rendered text; original image not inspected",
+          "digitization_date": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          }
+        },
+        "authenticity": {
+          "status": "hosted_official_edition",
+          "limit": "original telegram, autograph, archival custody and editorial accuracy not authenticated"
+        },
+        "completeness": {
+          "status": "excerpt_only",
+          "reason": "short inspected excerpt plus researcher paraphrase; not a full document capture"
+        },
+        "known_alterations": [
+          "telegram paraphrase"
+        ],
+        "access_at_time": {
+          "status": "unknown",
+          "reason": "addressee does not prove receipt or public access"
+        },
+        "excerpt": "the Russian gunboat Korietz was sunk and the cruiser Variag was captured",
+        "inspection": "edition_text_inspected",
+        "designation": "Mr. Griscom to Mr. Hay.",
+        "source_completeness": {
+          "status": "unknown",
+          "reason": "original source completeness not authenticated; existing completeness field describes saved sample"
+        }
+      },
+      {
+        "id": "jacar:chemulpo-guide",
+        "title": "海上の戦い（解説を読む）仁川沖海戦",
+        "creator": {
+          "status": "unknown",
+          "reason": "individual author not identified"
+        },
+        "creation": {
+          "raw": "current exhibition page",
+          "precision": "unknown",
+          "calendar": "not applicable",
+          "normalized_day": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          },
+          "time_standard": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          }
+        },
+        "source_type": "later archival exhibition guide",
+        "manifestation": "curated description; NOT inspected underlying military record",
+        "archive": "JACAR; underlying records attributed to NIDS",
+        "collection": "日露戦争特別展2; 極秘 明治37.8年海戦史への導線",
+        "locator": {
+          "reference_codes": [
+            "C05110032100",
+            "C05110134800"
+          ],
+          "images": [
+            "C05110032100:6–11 (guide locator)",
+            "C05110134800:33 (guide locator)"
+          ]
+        },
+        "url": "https://www.jacar.go.jp/exhibition/nichiro2/sensoushi/kaijou_02_outline.html",
+        "access_date": "2026-09-14",
+        "excerpt": "レファレンスコード ： C05110032100",
+        "purpose": "source discovery and later account comparison",
+        "authenticity": {
+          "status": "official_guide",
+          "limit": "underlying images could not be opened in web tool"
+        },
+        "completeness": {
+          "status": "excerpt_only",
+          "reason": "paraphrase; original military report not acquired"
+        },
+        "access_at_time": {
+          "status": "unknown",
+          "reason": "secret historical compilation does not imply 1904 public availability"
+        },
+        "inspection": "guide_text_inspected",
+        "source_completeness": {
+          "status": "unknown",
+          "reason": "original source completeness not authenticated; existing completeness field describes saved sample"
+        }
+      }
+    ]
+  },
+  {
+    "reconstruction": {
+      "id": "r-protocol-text",
+      "proposition": "Inspected English protocol reproduction juxtaposes guarantee of Korean integrity with conditional strategic occupation provision",
+      "status": "strongly_established",
+      "claim_ids": [
+        "c430-guarantee",
+        "c430-occupation"
+      ],
+      "relation_ids": [
+        "e-c430-guarantee",
+        "e-c430-occupation"
+      ],
+      "reason": "text-level reconstruction only; Article III and IV inspected. Does not establish actual control, consent or legal validity",
+      "alternatives": [],
+      "unknowns": [
+        "original treaty collation",
+        "Korean negotiation conditions",
+        "actual local control"
+      ],
+      "assessed_on": "2026-09-14"
+    },
+    "claims": [
+      {
+        "id": "c430-guarantee",
+        "source_id": "frus:1904:430",
+        "subject_id": "jp-government",
+        "predicate": "protocol_text_guarantees",
+        "object": "independence and territorial integrity of Korean Empire",
+        "claimant_id": "jp-government",
+        "report_chain": [
+          "jp-government",
+          "hay"
+        ],
+        "temporal_scope": {
+          "raw": "protocol dated February 23",
+          "precision": "day",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": "1904-02-23",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "spatial_scope": "Korean Empire",
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for attribution to inspected edition; not a truth score",
+          "context": "Article III; legal text does not establish actual sovereignty or control"
+        },
+        "epistemic_limit": "source assertion; not promoted to historical reality"
+      },
+      {
+        "id": "c430-occupation",
+        "source_id": "frus:1904:430",
+        "subject_id": "jp-government",
+        "predicate": "protocol_text_allows_conditionally",
+        "object": "occupation of strategically necessary places for stated object",
+        "claimant_id": "jp-government",
+        "report_chain": [
+          "jp-government",
+          "hay"
+        ],
+        "temporal_scope": {
+          "raw": "protocol dated February 23",
+          "precision": "day",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": "1904-02-23",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "spatial_scope": "Korean Empire",
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for attribution to inspected edition; not a truth score",
+          "context": "Article IV; conditional permission distinct from actual occupation"
+        },
+        "epistemic_limit": "source assertion; not promoted to historical reality"
+      }
+    ],
+    "relations": [
+      {
+        "id": "e-c430-guarantee",
+        "source_id": "frus:1904:430",
+        "claim_id": "c430-guarantee",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "inspectable source wording supports extraction, not truth of external event"
+      },
+      {
+        "id": "e-c430-occupation",
+        "source_id": "frus:1904:430",
+        "claim_id": "c430-occupation",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "inspectable source wording supports extraction, not truth of external event"
+      }
+    ],
+    "sources": [
+      {
+        "id": "frus:1904:430",
+        "title": "FRUS 1904, document 430",
+        "creator": "jp-government",
+        "recipient": "hay",
+        "issuing_organization": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "creation": {
+          "raw": "1904-02-26",
+          "precision": "day",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": "1904-02-26",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "creation_place": "Washington",
+        "original_language": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "inspected_language": "English",
+        "source_type": "diplomatic document",
+        "contemporary_or_retrospective": "contemporary communication through later published edition",
+        "manifestation": "telegram received February 25, deposited February 26; protocol reproduced in English",
+        "purpose": "Japanese representation of Korean consent and protocol provisions",
+        "visibility_at_creation": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "archive": "United States Department of State, Office of the Historian (edition host; original repository not established)",
+        "collection": "Papers Relating to the Foreign Relations of the United States, 1904",
+        "publication": {
+          "publisher": "Government Printing Office",
+          "place": "Washington",
+          "year": "1905",
+          "authority_url": "https://history.state.gov/historicaldocuments/frus1904"
+        },
+        "locator": {
+          "document_number": "430",
+          "page": {
+            "status": "unknown",
+            "reason": "HTML page marker not inspected for this record"
+          }
+        },
+        "url": "https://history.state.gov/historicaldocuments/frus1904/d430",
+        "access_date": "2026-09-14",
+        "digitization": {
+          "provider": "Office of the Historian",
+          "method": "web tool rendered text; original image not inspected",
+          "digitization_date": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          }
+        },
+        "authenticity": {
+          "status": "hosted_official_edition",
+          "limit": "original telegram, autograph, archival custody and editorial accuracy not authenticated"
+        },
+        "completeness": {
+          "status": "excerpt_only",
+          "reason": "short inspected excerpt plus researcher paraphrase; not a full document capture"
+        },
+        "known_alterations": [
+          "telegram received February 25, deposited February 26; protocol reproduced in English"
+        ],
+        "access_at_time": {
+          "status": "unknown",
+          "reason": "addressee does not prove receipt or public access"
+        },
+        "excerpt": "with the full knowledge and consent of Korea",
+        "inspection": "edition_text_inspected",
+        "temporal_annotations": [
+          {
+            "role": "protocol_date_asserted",
+            "time": {
+              "raw": "23d instant",
+              "precision": "day",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": "1904-02-23",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            }
+          },
+          {
+            "role": "received_by_japanese_minister_date",
+            "time": {
+              "raw": "25th of February",
+              "precision": "day",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": "1904-02-25",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            }
+          },
+          {
+            "role": "deposited_edition_date",
+            "time": {
+              "raw": "February 26, 1904",
+              "precision": "day",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": "1904-02-26",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            }
+          }
+        ],
+        "designation": "[Untitled]",
+        "source_completeness": {
+          "status": "unknown",
+          "reason": "original source completeness not authenticated; existing completeness field describes saved sample"
+        }
+      }
+    ]
+  },
+  {
+    "reconstruction": {
+      "id": "r-portarthur",
+      "proposition": "Attack described by translated Russian diplomatic notification",
+      "status": "possible",
+      "claim_ids": [
+        "c680-attack"
+      ],
+      "relation_ids": [
+        "e-c680-attack"
+      ],
+      "reason": "single translated diplomatic account; no independent operational comparison in this fixture",
+      "alternatives": [],
+      "unknowns": [
+        "precise event time",
+        "independent ship log confirmation"
+      ],
+      "assessed_on": "2026-09-14"
+    },
+    "claims": [
+      {
+        "id": "c680-attack",
+        "source_id": "frus:1904:680",
+        "subject_id": "ru-navy",
+        "predicate": "reported_attacked_at_anchor",
+        "object": "Japanese torpedo boats attacked Russian squadron",
+        "claimant_id": "ru-fm",
+        "report_chain": [
+          "ru-fm",
+          "us-state"
+        ],
+        "temporal_scope": {
+          "raw": "night 27th January [9th February]",
+          "precision": "day",
+          "calendar": "edition dual date; no exact instant",
+          "normalized_day": "1904-02-09",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "spatial_scope": "Port Arthur outer roadstead",
+        "extraction": {
+          "status": "researcher_paraphrase",
+          "confidence": "high for attribution to inspected edition; not a truth score",
+          "context": "translated February 9 telegram deposited February 10"
+        },
+        "epistemic_limit": "source assertion; not promoted to historical reality"
+      }
+    ],
+    "relations": [
+      {
+        "id": "e-c680-attack",
+        "source_id": "frus:1904:680",
+        "claim_id": "c680-attack",
+        "relation": "attests_recorded_assertion",
+        "scope": "inspected_text",
+        "reason": "inspectable source wording supports extraction, not truth of external event"
+      }
+    ],
+    "sources": [
+      {
+        "id": "frus:1904:680",
+        "title": "FRUS 1904, document 680",
+        "creator": "ru-fm",
+        "recipient": "us-state",
+        "issuing_organization": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "creation": {
+          "raw": "1904-02-10",
+          "precision": "day",
+          "calendar": "edition date; original calendar unverified",
+          "normalized_day": "1904-02-10",
+          "time_standard": {
+            "status": "unknown",
+            "reason": "no clock time or offset in inspected text"
+          }
+        },
+        "creation_place": "Washington",
+        "original_language": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "inspected_language": "English",
+        "source_type": "diplomatic document",
+        "contemporary_or_retrospective": "contemporary communication through later published edition",
+        "manifestation": "translation of February 9 telegram deposited by Russian ambassador",
+        "purpose": "Russian diplomatic notification of Port Arthur attack",
+        "visibility_at_creation": {
+          "status": "unknown",
+          "reason": "not established by inspected edition"
+        },
+        "archive": "United States Department of State, Office of the Historian (edition host; original repository not established)",
+        "collection": "Papers Relating to the Foreign Relations of the United States, 1904",
+        "publication": {
+          "publisher": "Government Printing Office",
+          "place": "Washington",
+          "year": "1905",
+          "authority_url": "https://history.state.gov/historicaldocuments/frus1904"
+        },
+        "locator": {
+          "document_number": "680",
+          "page": {
+            "status": "unknown",
+            "reason": "HTML page marker not inspected for this record"
+          }
+        },
+        "url": "https://history.state.gov/historicaldocuments/frus1904/d680",
+        "access_date": "2026-09-14",
+        "digitization": {
+          "provider": "Office of the Historian",
+          "method": "web tool rendered text; original image not inspected",
+          "digitization_date": {
+            "status": "unknown",
+            "reason": "not established by inspected edition"
+          }
+        },
+        "authenticity": {
+          "status": "hosted_official_edition",
+          "limit": "original telegram, autograph, archival custody and editorial accuracy not authenticated"
+        },
+        "completeness": {
+          "status": "excerpt_only",
+          "reason": "short inspected excerpt plus researcher paraphrase; not a full document capture"
+        },
+        "known_alterations": [
+          "translation of February 9 telegram deposited by Russian ambassador"
+        ],
+        "access_at_time": {
+          "status": "unknown",
+          "reason": "addressee does not prove receipt or public access"
+        },
+        "excerpt": "In the night 27th January [9th February]",
+        "inspection": "edition_text_inspected",
+        "temporal_annotations": [
+          {
+            "role": "underlying_telegram_date",
+            "time": {
+              "raw": "9th of February, 1904",
+              "precision": "day",
+              "calendar": "edition date; original calendar unverified",
+              "normalized_day": "1904-02-09",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            }
+          },
+          {
+            "role": "reported_event_date",
+            "time": {
+              "raw": "night 27th January [9th February]",
+              "precision": "day",
+              "calendar": "dual date in edition; inferred Julian/Gregorian pair, not an exact instant",
+              "normalized_day": "1904-02-09",
+              "time_standard": {
+                "status": "unknown",
+                "reason": "no clock time or offset in inspected text"
+              }
+            },
+            "normalization_basis": "edition brackets; no midnight or UTC inferred"
+          }
+        ],
+        "designation": "[Untitled]",
+        "source_completeness": {
+          "status": "unknown",
+          "reason": "original source completeness not authenticated; existing completeness field describes saved sample"
+        }
+      }
+    ]
+  }
+]

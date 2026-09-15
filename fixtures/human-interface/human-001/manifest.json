@@ -1,0 +1,19 @@
+{
+  "checkpoint": "HUMAN-001A",
+  "source": {
+    "path": "ground-core/experimental/historical-reality/replay/19041904-1904-4904-8904-190419041904.json",
+    "checkout": "ground/checkpoint-187",
+    "checkout_commit": "650a8c00416b77d36c7318bc73fd8f1991f95a4e",
+    "tracking_status": "untracked local saved snapshot; not part of master; no replay performed"
+  },
+  "project_id": "19041904-1904-4904-8904-190419041904",
+  "entity_id": "72bf5051-f100-524a-ac33-7a911f6d974a",
+  "purpose": "Immutable read-only proof of existing canonical ProjectState references for HUMAN-001; experimental Historical semantics are not authority.",
+  "file": "project-state.json",
+  "snapshot_schema_version": "0.1.24",
+  "canonical_contract_schema_version": "0.1.25",
+  "canonical_contract_commit": "fbfafef737132c8049998f9ca7d1d5f68fa90c56",
+  "sha256": "863545f650835b2b36c283ed2455cfe6fc31f10fbad78ee8647dc264ae56ad6c",
+  "byte_length": 44286,
+  "preservation": "Exact source bytes; no filtering, regeneration, schema rewrite, or frontend model conversion."
+}

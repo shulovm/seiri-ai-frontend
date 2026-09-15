@@ -2,6 +2,12 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
+    { "source": "/reality", "destination": "/index.html" },
+    { "source": "/reality/:projectId", "destination": "/index.html" },
+    { "source": "/ma/reality", "destination": "/index.html" },
+    { "source": "/ma/reality/:projectId", "destination": "/index.html" },
+    { "source": "/reality/:projectId/:entityId", "destination": "/index.html" },
+    { "source": "/ma/reality/:projectId/:entityId", "destination": "/index.html" },
     { "source": "/", "destination": "/index.html" },
     { "source": "/plans", "destination": "/index.html" },
     { "source": "/welcome", "destination": "/index.html" },
@@ -14,6 +20,7 @@
   ],
   "functions": {
     "api/[[...path]].js": {
+      "includeFiles": "{server/human-interface/**,ground-core/**,docs/schemas/**,fixtures/human-interface/**}",
       "maxDuration": 120,
       "memory": 1024
     }

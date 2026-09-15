@@ -1,0 +1,28 @@
+{
+  "counts": {
+    "sources": 23,
+    "claims": 41,
+    "relations": 43,
+    "actors": 36,
+    "reconstructions": 8,
+    "nodes": 17,
+    "edges": 7,
+    "actor_records": 6,
+    "scoped_assessments": 10,
+    "assets": 5
+  },
+  "parent_integrity": "dataset and landscape SHA256 verified",
+  "canonical_projection": {
+    "claims": 41,
+    "historical_events": 0,
+    "historical_states": 0,
+    "confidence_scope": "Inherited 0.95 is an uncalibrated source-text attribution estimate only; scoped historical assessments remain sidecar."
+  },
+  "validation": "Materialized, validated, canonical patch applied, file-store round-trip, all source traces retained, PDF magic/size/hash verified.",
+  "limits": [
+    "No authentication of historical originals",
+    "No missing stage or UTC instant inferred",
+    "Actor query includes inherited Round1 records and a supplementary Round2 layer",
+    "Full PDFs acquired; only declared pages inspected"
+  ]
+}

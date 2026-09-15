@@ -1,0 +1,177 @@
+{
+  "assets": [
+    {
+      "id": "r4:asset-english",
+      "source_id": "r4:s-english",
+      "path": "evidence/rj4-togo-english.html",
+      "sha256": "38eca20c64e71807e5dd0c7f5c2bcac65d6d29eb872f34ee0c360843d444c841",
+      "bytes": 16437,
+      "format": "html",
+      "origin_url": "https://losthistory.net/russojapanesewar/togo-aar1.html",
+      "inspection": "Full page inspected; edition/translator unknown"
+    },
+    {
+      "id": "r4:asset-stark",
+      "source_id": "r4:s-stark",
+      "path": "evidence/rj4-stark.html",
+      "sha256": "8daae291046c9cf6499b2ba90f82262564c9d43df244c5498f67784171634966",
+      "bytes": 21772,
+      "format": "html",
+      "origin_url": "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_006/",
+      "inspection": "Full transcription inspected; original watch log and reports not inspected"
+    },
+    {
+      "id": "r4:asset-novik",
+      "source_id": "r4:s-novik",
+      "path": "evidence/rj4-novik.html",
+      "sha256": "036eab8c92c59756ce51e633bbae74473505b117708adfb0b63daadac90b2a52",
+      "bytes": 9703,
+      "format": "html",
+      "origin_url": "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_024/",
+      "inspection": "Partial download ends mid-report after return around 04:00; opening paragraphs only inspected"
+    },
+    {
+      "id": "r4:asset-sevastopol",
+      "source_id": "r4:s-sevastopol",
+      "path": "evidence/rj4-sevastopol.html",
+      "sha256": "1f6d4936b0aa56c8e170b6d94208fac9dac827ba671866886ea6857b40537731",
+      "bytes": 14073,
+      "format": "html",
+      "origin_url": "https://tsushima.su/RU/libru/i/Page_7/page_18/page_20/doc_stark/doc_stark_016/",
+      "inspection": "Full displayed excerpt inspected; underlying captain manuscript/publication unverified"
+    },
+    {
+      "id": "r4:asset-cherkasov",
+      "source_id": "r4:s-cherkasov",
+      "path": "evidence/rj4-cherkasov.html",
+      "sha256": "39980b850fd386cc71700abf2561b8f68040b92eea456983fc96032d064f7d52",
+      "bytes": 381008,
+      "format": "html",
+      "origin_url": "https://militera.lib.ru/memo/russian/cherkasov_vn/01.html",
+      "inspection": "Printed page markers 17–20 and next-day repair context inspected, not whole memoir"
+    },
+    {
+      "id": "r4:asset-memoir-edition",
+      "source_id": "r4:s-memoir-edition",
+      "path": "evidence/rj4-cherkasov-edition.html",
+      "sha256": "0086e6301f5d92d1e07110b0646c196d6440d0dba7d37ff4880287614ea35413",
+      "bytes": 8949,
+      "format": "html",
+      "origin_url": "https://militera.lib.ru/memo/russian/cherkasov_vn/index.html",
+      "inspection": "Edition and web-processing metadata inspected"
+    },
+    {
+      "id": "r4:asset-astorian",
+      "source_id": "r4:s-astorian",
+      "path": "evidence/rj4-astorian.pdf",
+      "sha256": "3da0b55d6d721eb433932164323df36a7bf6e3eb16421368d9c6e8a3b5b8fb16",
+      "bytes": 576326,
+      "format": "pdf",
+      "origin_url": "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1.pdf",
+      "inspection": "Page 1 scan visually inspected; web OCR separately retained"
+    },
+    {
+      "id": "r4:asset-clarendon",
+      "source_id": "r4:s-clarendon",
+      "path": "evidence/rj4-clarendon.pdf",
+      "sha256": "5a9d87a01db8a1eafe5cc461432e7ec009c7642e5837a383b7e17f0693367d9a",
+      "bytes": 16809792,
+      "format": "pdf",
+      "origin_url": "https://newspapers.swco.ttu.edu/server/api/core/bitstreams/8ee25498-d4a8-42e0-8d4e-a6f2d31511d3/content",
+      "inspection": "Page 1 scan visually inspected; other pages not inspected"
+    },
+    {
+      "id": "r4:asset-guide",
+      "source_id": "r4:s-guide",
+      "path": "evidence/rj4-jacar-guide.html",
+      "sha256": "fa91c84f8e6ddc0d123fd1c55b9ac8fdb001e1c826efc9cccbf658a98586d953",
+      "bytes": 75373,
+      "format": "html",
+      "origin_url": "https://www.jacar.go.jp/exhibition/nichiro2/sensoushi/kaijou_01_detail.html",
+      "inspection": "Chart, explanation and source references inspected; modern reconstruction"
+    },
+    {
+      "id": "r4:asset-photo",
+      "source_id": "r4:s-photo",
+      "path": "evidence/rj4-photo-catalog.html",
+      "sha256": "ed86fdbf757a8634e45d18be09da4e4479f592c1eb72e224dabe6ec519813252",
+      "bytes": 58680,
+      "format": "html",
+      "origin_url": "https://collections.tepapa.govt.nz/object/272298",
+      "inspection": "Embedded metadata inspected; photograph image not inspected"
+    },
+    {
+      "id": "r4:asset-astorian-ocr",
+      "source_id": "r4:s-astorian",
+      "path": "evidence/rj4-astorian.html",
+      "sha256": "c390db1ea1f51d6187e1b94d7bc75d01baa14990dbc73a979d1b77f68f9a83ce",
+      "bytes": 36073,
+      "format": "html",
+      "origin_url": "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/",
+      "inspection": "Full page including OCR inspected; numeral collated against scan"
+    },
+    {
+      "id": "r4:asset-astorian-image",
+      "source_id": "r4:s-astorian",
+      "path": "evidence/rj4-astorian-1.png",
+      "sha256": "f8932d0fa47ac9184b4bae0ad353790cf28b4e2f3116e79bb716fef665774598",
+      "bytes": 4030380,
+      "format": "png",
+      "origin_url": "https://oregonnews.uoregon.edu/lccn/sn85042400/1904-02-10/ed-1/seq-1/",
+      "inspection": "Visually inspected scan frame; web HTML/OCR is a separate representation"
+    },
+    {
+      "id": "r4:asset-clarendon-image",
+      "source_id": "r4:s-clarendon",
+      "path": "evidence/rj4-clarendon-1.png",
+      "sha256": "e2f48bbbe477f1e2b05770e3d85bf0062e2372b1c37a2f07dbab9f45e71b82cf",
+      "bytes": 3286673,
+      "format": "png",
+      "origin_url": "https://newspapers.swco.ttu.edu/server/api/core/bitstreams/8ee25498-d4a8-42e0-8d4e-a6f2d31511d3/content",
+      "inspection": "Visually inspected scan frame; web HTML/OCR is a separate representation"
+    },
+    {
+      "id": "r4:asset-jp-diagram",
+      "source_id": "r2:togo-copy",
+      "path": "evidence/rj4-local-19.png",
+      "sha256": "3f789df886136fd14702d84da955e3955f049b0d15297b9869b6747abc89bf2c",
+      "bytes": 153202,
+      "format": "png",
+      "origin_url": "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "inspection": "Visually inspected scan frame; web HTML/OCR is a separate representation"
+    },
+    {
+      "id": "r4:asset-jp-disposition",
+      "source_id": "r2:togo-copy",
+      "path": "evidence/rj4-local-20.png",
+      "sha256": "1276fc712e25d33be105a5ab04de1ac98c44df68e2a68e4bd3e90d47f0486b73",
+      "bytes": 154713,
+      "format": "png",
+      "origin_url": "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "inspection": "Visually inspected scan frame; web HTML/OCR is a separate representation"
+    },
+    {
+      "id": "r4:asset-jp-compilation",
+      "source_id": "r2:togo-copy",
+      "path": "evidence/rj4-local-16.png",
+      "sha256": "c4fd723bf2e84ad78125545764565b0ffb34d38198195b458c63e5e773fa9d15",
+      "bytes": 286632,
+      "format": "png",
+      "origin_url": "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "inspection": "Visually inspected scan frame; web HTML/OCR is a separate representation"
+    },
+    {
+      "id": "r4:asset-jp-disputed-time",
+      "source_id": "r2:togo-copy",
+      "path": "evidence/rj4-check07.png",
+      "sha256": "6254bac62261bb5e652a8f2ddea21bae221d537e41ab45f6c47812b0455e2a4d",
+      "bytes": 316553,
+      "format": "png",
+      "origin_url": "https://www.jacar.archives.go.jp/das/meta/C09050255300",
+      "inspection": "Image7 frame0009 rendered240dpi and visually reinspected; minute numeral unresolved; no crop or numerical enhancement"
+    }
+  ],
+  "inherited_asset": "../round2/evidence/rj-portarthur.pdf",
+  "inherited_sha256": "da72ab0296335459e8e55664be317e66842e7a5a29a002166d4f12c4823822b6",
+  "inspection_boundary": "PDF acquisition does not imply every frame read; declared pages only; Novik HTML explicitly incomplete; TePapa image not inspected"
+}
