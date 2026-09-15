@@ -12,10 +12,10 @@ function Fields({ record }) {
 export function CatalogView({ response }) {
   return <main className="hi-explorer"><header><p>GROUND Human Interface · read-only</p><h1>Projects</h1></header>
     <p className="hi-note">Human Interfaceに登録されたProject read scopeのtransport catalogです。GROUND全体のProject一覧ではありません。この一覧ではsnapshotの内容・整合性は未確認です。</p>
-    <p className="hi-note">source qualificationはsnapshotの由来です。canonical contentの真偽や品質の評価ではありません。</p>
+    <p className="hi-note">source modeは保存sourceの運用形態、source qualificationはsnapshotの由来です。canonical contentの真偽や品質の評価ではありません。</p>
     <ul className="hi-browse-list">{response.registered_projects.map(project => <li key={project.project_id}>
       <Link to={`/reality/${encodeURIComponent(project.project_id)}`}>{project.project_id}</Link>
-      <Fields record={{source_key:project.source_key,source_qualification:project.source_qualification}} />
+      <Fields record={{source_key:project.source_key,source_mode:project.source_mode,source_qualification:project.source_qualification}} />
     </li>)}</ul></main>;
 }
 export function ProjectView({ response }) {
@@ -28,7 +28,7 @@ export function ProjectView({ response }) {
         <p><code>{entity.kind}</code><br /><code>{entity.id}</code></p>
         <details><summary>Identity fields</summary><Fields record={entity} /></details>
       </li>)}</ul></section>
-    <section className="hi-transport"><h2>Transport / Snapshot source</h2><p className="hi-note">source qualification は由来を示します。Project の種類や品質評価ではありません。</p><Fields record={response.transport.source} /></section>
+    <section className="hi-transport"><h2>Transport / Snapshot source</h2><p className="hi-note">source mode は保存sourceの運用形態、source qualification は由来を示します。Project の種類や品質評価ではありません。snapshot_fingerprint はこのresponseを生成したexact stored bytesのSHA-256です。mutable sourceは更新可能であり、request間でfingerprintが変わる場合があります。</p><Fields record={response.transport.source} /></section>
   </main>;
 }
 export default function Browse({ catalog = false }) {

@@ -64,6 +64,13 @@ function EvidenceRead({ result }) {
 export function RealityReadFailure({ error, context = 'Reality Explorer' }) {
   const integrity = error.code === 'FIXTURE_INTEGRITY_FAILURE';
   const scopeExplanation = {
+    LIVE_RUNTIME_CONFIG_UNAVAILABLE: '登録live sourceのruntime configurationを利用できません。別storageへfallbackしていません。',
+    LIVE_ROOT_UNAVAILABLE: '登録live sourceのstorage rootを利用できません。空のProjectを示す結果ではありません。',
+    LIVE_PROJECT_FILE_MISSING: '登録live sourceのProject fileを読めません。GROUND全体でのProject不存在を示す判定ではありません。',
+    LIVE_PROJECT_ID_MISMATCH: '取得snapshotのProject IDがrequestと一致しないため、canonical recordsは表示していません。',
+    LIVE_SNAPSHOT_VALIDATION_FAILURE: '登録live sourceのcanonical snapshot検証が失敗したため、canonical recordsは表示していません。',
+    LIVE_PERMISSION_DENIED: '登録live sourceへの読取権限がありません。canonical recordsの0件という結果ではありません。',
+    LIVE_READ_FAILURE: '登録live sourceを読めません。別sourceへfallbackしていません。',
     PROJECT_SCOPE_MISMATCH: 'この Project ID はHuman Interfaceの登録read scope外です。GROUND全体でのProjectやRealityの不存在を示す判定ではありません。',
     ENTITY_NOT_IN_SNAPSHOT: 'この検証済みsnapshotのRealityEntity collectionに、そのIDは存在しません。他のsnapshotや世界での不存在を意味しません。',
     ENTITY_NOT_FOUND: 'この Entity ID は登録された proof read scope の対象ではありません。ProjectState 内に Entity が存在しないという判定ではありません。',
@@ -92,7 +99,7 @@ export default function RealityReadView({ response }) {
     ['Claim', transport.returned_counts.claims, records.claims],
   ];
   return <main className="hi-explorer">
-    <header className="hi-context"><p className="hi-eyebrow">GROUND Human Interface · read-only · HUMAN-002E</p>
+    <header className="hi-context"><p className="hi-eyebrow">GROUND Human Interface · read-only</p>
       <h1>{records.entity.label}</h1><p>Reality Explorer · canonical records / existing core read results</p>
       <p>保存済み ProjectState の一つの RealityEntityと、その scope に対する既存 core 読取結果を見ています。</p>
       <h2>Canonical records · context</h2>
@@ -104,14 +111,16 @@ export default function RealityReadView({ response }) {
       </dl>
       <RawView value={records.project} label="Canonical / raw · Project" />
       <section className="hi-transport"><h2>Transport metadata · read source</h2>
-      <p className="hi-note">読取 source と schema の情報です。canonical record の field や真偽の評価ではありません。source_qualification は読取 source の由来です。成功 response は server の fixture hash 検証後に返されています。</p>
+      <p className="hi-note">読取 source と schema の情報です。canonical record の field や真偽の評価ではありません。source_qualification は読取 source の由来です。source_mode は保存sourceの運用形態です。snapshot_fingerprint はこのresponseを生成したexact stored bytesのSHA-256です。</p>
+      <p className="hi-note">{source.source_mode === 'immutable_proof_snapshot' ? 'Immutable proof snapshot · fixture hash 検証後の読取結果です。' : 'Mutable canonical storage · sourceは更新可能です。各requestで取得したsnapshotを表示し、request間でfingerprintが変わる場合があります。'}</p>
       <dl className="hi-fields">
+        <div><dt>source_mode</dt><dd><code>{source.source_mode}</code></dd></div>
         <div><dt>stored_schema_version</dt><dd><code>{source.stored_schema_version}</code></dd></div>
         <div><dt>read_schema_version</dt><dd><code>{source.read_schema_version}</code></dd></div>
         <div><dt>source_key</dt><dd><code>{source.source_key}</code></dd></div>
         <div><dt>source_qualification</dt><dd><code>{source.source_qualification}</code></dd></div>
-        <div><dt>fixture</dt><dd><code>{source.fixture}</code></dd></div>
-        <div><dt>sha256</dt><dd><code>{source.sha256}</code></dd></div>
+        {source.fixture && <div><dt>fixture</dt><dd><code>{source.fixture}</code></dd></div>}
+        <div><dt>snapshot_fingerprint</dt><dd><code>{source.snapshot_fingerprint}</code></dd></div>
       </dl>
       <RawView value={transport} label="Raw · transport metadata (not a canonical record)" />
       </section>
@@ -155,7 +164,7 @@ export default function RealityReadView({ response }) {
       <p>この read path の Claim-linked Evidence bundles: {reads.evidence_for_claim.length}</p>
       <p className="hi-note">ProjectState 全体の Evidence 件数ではありません。各Claimの bundle が同じ Evidence id を参照する場合があります。</p>
       {reads.evidence_for_claim.length > 0 && <p>ClaimEvidenceLink records returned: {linkCount}<br />Unique linked Evidence returned in this scope: {linkedEvidenceIds.size}</p>}
-      <p className="hi-note">この read path は Claim と Evidence の明示的な link を表示します。Event / State の根拠への接続を示すものではありません。</p>
+      <p className="hi-note">この read path は Claim と Evidence の明示的な link を表示します。Observation → Evidence の参照はこのread scopeに含まれません。表示されないEvidenceの不存在を示すものではありません。Event / State の根拠への接続を示すものではありません。</p>
       {reads.evidence_for_claim.length > 0 && <p className="hi-note">Link の件数と Evidence identity の件数は別です。Unique linked Evidence は返却された bundle 内の異なる Evidence id の件数です。</p>}
       </div>
       {records.claims.map(claim => <details className="hi-claim" key={claim.id} open={records.claims.length === 1}>
