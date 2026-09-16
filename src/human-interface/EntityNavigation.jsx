@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 const sections = [['entity', 'Entity'], ['worldline', 'Worldline'], ['observations', 'Observations'], ['claims', 'Claims']];
 
-export default function EntityNavigation({ entity, projectId }) {
+export default function EntityNavigation({ entity, projectId, observations }) {
   const bar = useRef(null);
   useEffect(() => {
     const element = bar.current;
@@ -15,14 +15,17 @@ export default function EntityNavigation({ entity, projectId }) {
     // Only these presentation anchors are handled; fragments never select records.
     const jump = () => {
       const id = window.location.hash.slice(1);
-      if (!['top', ...sections.map(([key]) => key)].includes(id)) return;
-      const target = main.querySelector(`#${id}`) || (id === 'top' ? main : null);
+      if (!['top', ...sections.map(([key]) => key),
+        ...(observations.length > 1 ? ['observation-index'] : []),
+        ...observations.map(record => `observation-${record.id}`)].includes(id)) return;
+      const target = document.getElementById(id);
+      if (!target || !main.contains(target)) return;
       if (target) { target.focus({ preventScroll: true }); target.scrollIntoView({ block: 'start' }); }
     };
     const frame = requestAnimationFrame(jump);
     window.addEventListener('hashchange', jump);
     return () => { cancelAnimationFrame(frame); observer.disconnect(); window.removeEventListener('hashchange', jump); };
-  }, [entity.id, projectId]);
+  }, [entity.id, projectId, observations]);
 
   return <aside ref={bar} className="hi-retained-context" aria-label="Current Entity and page navigation">
     <div className="hi-retained-identity">

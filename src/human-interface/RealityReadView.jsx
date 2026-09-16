@@ -115,7 +115,7 @@ export default function RealityReadView({ response }) {
     ['Claim', transport.returned_counts.claims, records.claims],
   ];
   return <main className="hi-explorer" id="top" tabIndex={-1}>
-    <EntityNavigation entity={records.entity} projectId={records.project.id} />
+    <EntityNavigation entity={records.entity} projectId={records.project.id} observations={records.observations} />
     <p className="hi-note">ページ内リンクは表示sectionへの移動です。重要度・workflow・因果順を示しません。0件のsectionも現在のread scopeの結果です。</p>
     <header className="hi-context"><p className="hi-eyebrow">GROUND Human Interface · read-only</p>
       <h1>{records.entity.label}</h1><p>Reality Explorer · canonical records / existing core read results</p>
@@ -175,9 +175,23 @@ export default function RealityReadView({ response }) {
       {worldline.states.map(record => <RecordPanel key={record.id} record={record} title="RealityState" />)}
     </section>
     <section className="hi-section hi-anchor" id="observations" tabIndex={-1}><h2>Observations</h2><p className="hi-note">Observation collection は Worldline とは別の読取結果です。observed_at を Worldline の latest_time へ追加・置換する表示ではありません。</p><p>この read scope で返された EpistemicObservation records: {records.observations.length}</p>
-      {records.observations.map(record => <div key={record.id} className="hi-observation-group">
+      {records.observations.length > 1 && <nav id="observation-index" className="hi-observation-index hi-anchor" tabIndex={-1} aria-label="Observation index">
+        <h3>Observation index</h3>
+        <p className="hi-note">このread scopeのresponse順です。時間順・重要度を意味しません。contentは原文の表示previewです。全文は各recordで確認できます。</p>
+        <ul>{records.observations.map(record => <li key={record.id}>
+          <a href={`#observation-${record.id}`}>
+            <span className="hi-observation-preview" title={record.content}>{record.content}</span>
+            {record.provenance?.external_id != null && <code className="hi-observation-locator">{record.provenance.external_id}</code>}
+            <span className="hi-kind">Observation ID: <code>{record.id}</code></span>
+          </a>
+        </li>)}</ul>
+      </nav>}
+      {records.observations.map(record => <div key={record.id} id={`observation-${record.id}`} className="hi-observation-group hi-anchor" tabIndex={-1} role="region" aria-label={`EpistemicObservation ${record.id}`}>
+        <p className="hi-kind">EpistemicObservation · <code>{record.id}</code></p>
+        {records.observations.length > 1 && <a href="#observation-index">Back to Observation index</a>}
         <RecordPanel record={record} title="EpistemicObservation" />
         <ObservationEvidenceRead observationId={record.id} result={reads.evidence_for_observation?.find(bundle => bundle.observation_id === record.id)} />
+        {records.observations.length > 1 && <a href="#observation-index">Back to Observation index</a>}
       </div>)}
     </section>
     <section className="hi-section hi-anchor" id="claims" tabIndex={-1}><h2>Claims</h2><p>この read scope で返された Claim records: {records.claims.length}</p>

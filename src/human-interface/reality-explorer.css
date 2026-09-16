@@ -80,3 +80,14 @@
   .hi-retained-context { padding: 8px; }
   .hi-retained-context nav { gap: 4px 12px; }
 }
+
+/* Preview clips only layout: the original content remains in the link and record. */
+.hi-observation-index { padding: 18px 0; }
+.hi-observation-index ul { list-style: none; margin: 0; padding: 0; }
+.hi-observation-index li { border-bottom: 1px solid #cdd1d1; }
+.hi-observation-index a { display: block; padding: 14px 0; }
+.hi-observation-preview { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; white-space: pre-wrap; }
+.hi-observation-locator, .hi-observation-index .hi-kind { display: block; margin-top: 6px; }
+.hi-observation-group { margin: 28px 0; }
+/* Keep each raw disclosure bounded so its native close control stays nearby. */
+.hi-observation-group .hi-raw > pre { max-height: min(60vh, 32rem); overflow: auto; }

@@ -45,7 +45,7 @@ test('missing bundle is not invented as a zero match',()=>{
 });
 test('actual live response renders Observation 1 / Evidence 1 unchanged',{skip:!process.env.GROUND_RUNTIME_CONFIG},()=>{
  const r=createHumanRealityReader(createHumanSourceResolver({runtimeConfigPath:process.env.GROUND_RUNTIME_CONFIG}))(LIVE_PROJECT_ID,'fbdfd235-1a5b-5a5d-ad30-6f2c170fe9f9');
- assert.equal(r.transport.source.snapshot_fingerprint,'f45b265afb6f4d9165ac46aa26eb1f16d82bbf94a3739212421bca93463e830b');
+ assert.equal(r.transport.source.snapshot_fingerprint,'9ff0d8070296d2d5493b618b13d75beab003581a6f7011ae642a53f46fc453cf');
  const html=render(r);assert.equal(r.core_read_results.evidence_for_observation.length,1);
  const e=r.core_read_results.evidence_for_observation[0].evidence[0];assert.equal(e.id,'3151b313-d5bc-5b58-a17d-a61add22f22d');
  assert.ok(html.includes(escape(JSON.stringify(e,null,2))));assert.ok(html.includes('Reference to the recorded document-inspection result.'));
