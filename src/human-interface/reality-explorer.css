@@ -63,3 +63,20 @@
 .hi-observation-evidence { margin: 0 0 28px; padding: 16px; border-left: 2px solid #a8b0b0; }
 .hi-observation-evidence > p { overflow-wrap: anywhere; }
 @media (max-width: 720px) { .hi-observation-evidence { padding: 12px 0 12px 12px; } }
+
+/* Navigation repeats identity fields only; no record selection or semantic summary. */
+.hi-retained-context { position: sticky; top: 0; z-index: 2; background: #f9f9f6; border: 1px solid #cdd1d1; padding: 8px 12px; font-size: 13px; }
+.hi-retained-identity { display: flex; align-items: baseline; gap: 12px; min-width: 0; }
+.hi-retained-label { min-width: 0; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; line-height: 1.4; }
+.hi-retained-identity > code { flex-shrink: 0; font-size: 12px; }
+.hi-retained-context nav { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 4px; }
+.hi-retained-context nav a { padding: 2px 0; font-size: 13px; }
+.hi-context-actions { border-top: 1px solid #e2e4e2; padding-top: 4px; }
+.hi-anchor { scroll-margin-top: calc(var(--hi-context-height, 150px) + 12px); }
+.hi-anchor:focus-visible { outline: 2px solid #343b3f; outline-offset: 2px; }
+.hi-transport-disclosure > summary { font-weight: 550; }
+.hi-transport-disclosure:not([open]) { padding-top: 4px; padding-bottom: 4px; }
+@media (max-width: 720px) {
+  .hi-retained-context { padding: 8px; }
+  .hi-retained-context nav { gap: 4px 12px; }
+}

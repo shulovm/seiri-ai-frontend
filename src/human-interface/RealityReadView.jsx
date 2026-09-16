@@ -1,4 +1,5 @@
 import React from 'react';
+import EntityNavigation from './EntityNavigation.jsx';
 
 function RawView({ value, label = 'Canonical / raw record' }) {
   return <details className="hi-raw"><summary>{label}</summary><pre>{JSON.stringify(value, null, 2)}</pre></details>;
@@ -113,7 +114,9 @@ export default function RealityReadView({ response }) {
     ['Worldline entries · core read result', reads.worldline.ordered_entries.length, reads.worldline.ordered_entries],
     ['Claim', transport.returned_counts.claims, records.claims],
   ];
-  return <main className="hi-explorer">
+  return <main className="hi-explorer" id="top" tabIndex={-1}>
+    <EntityNavigation entity={records.entity} projectId={records.project.id} />
+    <p className="hi-note">ページ内リンクは表示sectionへの移動です。重要度・workflow・因果順を示しません。0件のsectionも現在のread scopeの結果です。</p>
     <header className="hi-context"><p className="hi-eyebrow">GROUND Human Interface · read-only</p>
       <h1>{records.entity.label}</h1><p>Reality Explorer · canonical records / existing core read results</p>
       <p>保存済み ProjectState の一つの RealityEntityと、その scope に対する既存 core 読取結果を見ています。</p>
@@ -125,7 +128,7 @@ export default function RealityReadView({ response }) {
         <div><dt>entity.kind</dt><dd><code>{records.entity.kind}</code></dd></div>
       </dl>
       <RawView value={records.project} label="Canonical / raw · Project" />
-      <section className="hi-transport"><h2>Transport metadata · read source</h2>
+      <details className="hi-transport hi-transport-disclosure"><summary>Transport metadata · read source</summary>
       <p className="hi-note">読取 source と schema の情報です。canonical record の field や真偽の評価ではありません。source_qualification は読取 source の由来です。source_mode は保存sourceの運用形態です。snapshot_fingerprint はこのresponseを生成したexact stored bytesのSHA-256です。</p>
       <p className="hi-note">{source.source_mode === 'immutable_proof_snapshot' ? 'Immutable proof snapshot · fixture hash 検証後の読取結果です。' : 'Mutable canonical storage · sourceは更新可能です。各requestで取得したsnapshotを表示し、request間でfingerprintが変わる場合があります。'}</p>
       <dl className="hi-fields">
@@ -138,7 +141,7 @@ export default function RealityReadView({ response }) {
         <div><dt>snapshot_fingerprint</dt><dd><code>{source.snapshot_fingerprint}</code></dd></div>
       </dl>
       <RawView value={transport} label="Raw · transport metadata (not a canonical record)" />
-      </section>
+      </details>
     </header>
     <section className="hi-section"><h2>Records in this read scope</h2>
       <p className="hi-kind">Transport-level returned counts / existing core entry count</p>
@@ -150,8 +153,8 @@ export default function RealityReadView({ response }) {
         <RawView value={value} label={`Raw collection · ${label}`} />
       </li>)}</ul>
     </section>
-    <section className="hi-section"><h2>Canonical Entity</h2><RecordPanel record={records.entity} title="RealityEntity" /></section>
-    <section className="hi-section hi-core-read"><h2>Worldline</h2><p className="hi-kind">Existing core read result · getRealityWorldline</p>
+    <section className="hi-section hi-anchor" id="entity" tabIndex={-1}><h2>Canonical Entity</h2><RecordPanel record={records.entity} title="RealityEntity" /></section>
+    <section className="hi-section hi-core-read hi-anchor" id="worldline" tabIndex={-1}><h2>Worldline</h2><p className="hi-kind">Existing core read result · getRealityWorldline</p>
       <p className="hi-note">この Entity scope の既存 core 読取結果です。空の entries は、歴史上何も起きなかったという判定ではありません。</p>
       <p className="hi-note">この section は既存 core の Worldline result を表示します。この read scope の全recordを並べ直した chronology ではなく、latest_time は Reality 全体の最新時刻を示す表示ではありません。Observation collection は別に表示しています。</p>
       <h3>temporal_summary · core read result</h3>
@@ -171,13 +174,13 @@ export default function RealityReadView({ response }) {
     <section className="hi-section"><h2>RealityStates</h2><p>この read scope で返された RealityState records: {worldline.states.length}</p>
       {worldline.states.map(record => <RecordPanel key={record.id} record={record} title="RealityState" />)}
     </section>
-    <section className="hi-section"><h2>Observations</h2><p className="hi-note">Observation collection は Worldline とは別の読取結果です。observed_at を Worldline の latest_time へ追加・置換する表示ではありません。</p><p>この read scope で返された EpistemicObservation records: {records.observations.length}</p>
+    <section className="hi-section hi-anchor" id="observations" tabIndex={-1}><h2>Observations</h2><p className="hi-note">Observation collection は Worldline とは別の読取結果です。observed_at を Worldline の latest_time へ追加・置換する表示ではありません。</p><p>この read scope で返された EpistemicObservation records: {records.observations.length}</p>
       {records.observations.map(record => <div key={record.id} className="hi-observation-group">
         <RecordPanel record={record} title="EpistemicObservation" />
         <ObservationEvidenceRead observationId={record.id} result={reads.evidence_for_observation?.find(bundle => bundle.observation_id === record.id)} />
       </div>)}
     </section>
-    <section className="hi-section"><h2>Claims</h2><p>この read scope で返された Claim records: {records.claims.length}</p>
+    <section className="hi-section hi-anchor" id="claims" tabIndex={-1}><h2>Claims</h2><p>この read scope で返された Claim records: {records.claims.length}</p>
       <div className="hi-linked-scope"><h3>Claim-linked Evidence · read scope</h3>
       <p>この read path の Claim-linked Evidence bundles: {reads.evidence_for_claim.length}</p>
       <p className="hi-note">ProjectState 全体の Evidence 件数ではありません。各Claimの bundle が同じ Evidence id を参照する場合があります。</p>
