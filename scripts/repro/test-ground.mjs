@@ -4,11 +4,13 @@ import {tmpdir} from 'node:os';
 import {resolve,join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
+import {createRunnerCopyPolicy} from './runner-copy-policy.mjs';
 const root=fileURLToPath(new URL('../../',import.meta.url));
 const scratch=mkdtempSync(join(tmpdir(),'ground-repro-tests-'));
+const copyPolicy=createRunnerCopyPolicy(root);
 // All input roots are explicit. No runtime storage, .env, or other worktree is read.
 for(const name of ['ground-core','docs','scripts','package.json','package-lock.json','.gitignore']){
- cpSync(join(root,name),join(scratch,name),{recursive:true,filter:p=>!p.startsWith(join(root,'ground-core/storage'))});
+ cpSync(join(root,name),join(scratch,name),{recursive:true,filter:copyPolicy});
 }
 symlinkSync(join(root,'node_modules'),join(scratch,'node_modules'),'dir');
 // The independent repository supports ignore checks and exact historical Git blobs.
