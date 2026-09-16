@@ -15,7 +15,7 @@ const transportStatuses = {
   LIVE_SNAPSHOT_VALIDATION_FAILURE: 503, LIVE_PERMISSION_DENIED: 503, LIVE_READ_FAILURE: 503,
 };
 
-export function createHumanInterfaceRouter(reader, browseReader) {
+export function createHumanInterfaceRouter(reader, browseReader, provenanceReader) {
   const router = Router();
   const handle = select => async (req, res) => {
     res.set('Cache-Control', 'no-store');
@@ -47,5 +47,20 @@ export function createHumanInterfaceRouter(reader, browseReader) {
   router.all('/projects/:projectId', handle((loaded, req) => (browseReader ?? loaded.humanBrowseReader).project(req.params.projectId)));
   router.all('/reality/:projectId/:entityId', handle((loaded, req) =>
     (reader ?? loaded.readHumanReality)(req.params.projectId, req.params.entityId)));
+  // Separate lazy boundary: bundle/import failure never disables canonical Entity reads.
+  router.all('/reality/:projectId/:entityId/observations/:observationId/provenance-source', async (req, res) => {
+    res.set('Cache-Control', 'no-store');
+    if (req.method !== 'GET') { res.set('Allow', 'GET'); return res.status(405).json({transport_error:{code:'METHOD_NOT_ALLOWED'}}); }
+    if (Object.keys(req.query).length) return res.status(400).json({transport_error:{code:'UNSUPPORTED_QUERY_PARAMETERS'}});
+    try {
+      const loaded = await tsImport('./provenance-source.ts', import.meta.url);
+      return res.json((provenanceReader ?? loaded.resolveProvenanceSource)(req.params.projectId, req.params.entityId, req.params.observationId, req.get('If-Ground-Snapshot-Fingerprint')));
+    } catch (error) {
+      const known = /^(PROVENANCE_|OBSERVATION_BINDING_MISMATCH$|OBSERVATION_NOT_IN_SCOPE$|SNAPSHOT_)/.test(error?.code ?? '');
+      if (known) return res.status(error.status ?? 503).json({transport_error:{code:error.code}});
+      if (Object.hasOwn(transportStatuses, error?.code)) return res.status(transportStatuses[error.code]).json({transport_error:{code:error.code}});
+      return res.status(503).json({transport_error:{code:'PROVENANCE_SOURCE_UNAVAILABLE'}});
+    }
+  });
   return router;
 }
