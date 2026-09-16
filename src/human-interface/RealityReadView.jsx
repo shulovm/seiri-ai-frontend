@@ -1,5 +1,6 @@
 import React from 'react';
 import EntityNavigation from './EntityNavigation.jsx';
+import FrozenInputPanel from './FrozenInputPanel.jsx';
 
 function RawView({ value, label = 'Canonical / raw record' }) {
   return <details className="hi-raw"><summary>{label}</summary><pre>{JSON.stringify(value, null, 2)}</pre></details>;
@@ -190,6 +191,7 @@ export default function RealityReadView({ response }) {
         <p className="hi-kind">EpistemicObservation · <code>{record.id}</code></p>
         {records.observations.length > 1 && <a href="#observation-index">Back to Observation index</a>}
         <RecordPanel record={record} title="EpistemicObservation" />
+        <FrozenInputPanel key={`${records.project.id}/${records.entity.id}/${record.id}/${source.snapshot_fingerprint}`} projectId={records.project.id} entityId={records.entity.id} observation={record} fingerprint={source.snapshot_fingerprint} hasIndex={records.observations.length > 1} />
         <ObservationEvidenceRead observationId={record.id} result={reads.evidence_for_observation?.find(bundle => bundle.observation_id === record.id)} />
         {records.observations.length > 1 && <a href="#observation-index">Back to Observation index</a>}
       </div>)}

@@ -91,3 +91,16 @@
 .hi-observation-group { margin: 28px 0; }
 /* Keep each raw disclosure bounded so its native close control stays nearby. */
 .hi-observation-group .hi-raw > pre { max-height: min(60vh, 32rem); overflow: auto; }
+
+/* Projection input is a separate disclosure, outside canonical record/Evidence panels. */
+.hi-frozen-panel { margin: 18px 0; padding: 12px 16px; border: 1px dashed #879494; background: #f0f3f1; overflow-wrap: anywhere; }
+.hi-frozen-panel > summary { font-weight: 550; }
+.hi-frozen-panel button { padding: 8px 12px; font: inherit; font-size: 13px; cursor: pointer; color: #294955; background: #f9f9f6; border: 1px solid #879494; border-radius: 3px; }
+.hi-frozen-panel button:focus-visible { outline: 2px solid #343b3f; outline-offset: 3px; }
+.hi-frozen-panel section { margin: 24px 0; }
+.hi-frozen-panel pre { max-height: min(60vh, 32rem); overflow: auto; }
+.hi-frozen-operations { margin: 16px 0; padding: 8px 0; border-block: 1px solid #cdd1d1; }
+.hi-frozen-context, .hi-frozen-actions { font-size: 13px; }
+.hi-frozen-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.hi-external-source { padding: 12px; border-left: 2px solid #879494; }
+@media (max-width: 720px) { .hi-frozen-panel { padding: 10px; } }

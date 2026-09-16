@@ -15,7 +15,7 @@ function check(r:any){
  assert.equal(JSON.stringify(r),before);
  const index=html.match(/<nav id="observation-index"[\s\S]*?<\/nav>/)?.[0];
  assert.equal(Boolean(index),records.length>1);
- assert.equal((html.match(/href="#observation-index"/g)||[]).length,records.length>1?records.length*2:0);
+ assert.equal((html.match(/href="#observation-index"/g)||[]).length,records.length>1?records.length*4:0);
  let last=-1;
  for(const record of records){
   assert.ok(html.includes(`id="observation-${record.id}" class="hi-observation-group hi-anchor" tabindex="-1" role="region" aria-label="EpistemicObservation ${record.id}"`));
