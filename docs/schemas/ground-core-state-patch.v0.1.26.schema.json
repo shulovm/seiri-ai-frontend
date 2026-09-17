@@ -1,0 +1,65 @@
+{
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project_id",
+    "source",
+    "operations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "0.1.26"
+    },
+    "project_id": {
+      "$ref": "#/$defs/uuid"
+    },
+    "source": {
+      "enum": [
+        "manual",
+        "import",
+        "human_review"
+      ]
+    },
+    "operations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "op",
+          "entity",
+          "entity_id",
+          "payload"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "op": {
+            "const": "upsert"
+          },
+          "entity": {
+            "enum": [
+              "claim",
+              "claim_assessment",
+              "claim_evidence_link"
+            ]
+          },
+          "entity_id": {
+            "$ref": "#/$defs/uuid"
+          },
+          "payload": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ground.ink/schemas/ground-core/state-patch/v0.1.26",
+  "$defs": {
+    "uuid": {
+      "type": "string",
+      "format": "uuid"
+    }
+  }
+}
