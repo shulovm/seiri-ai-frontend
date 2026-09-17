@@ -1,0 +1,249 @@
+{
+  "audit_base": "3c96feba22bc6b4ed44d86de3e0072a09ea16b42",
+  "promotion_decision": "HOLD",
+  "formal_integration_tested": false,
+  "full_core": {
+    "tests": 3958,
+    "pass": 3854,
+    "fail": 104,
+    "same_failure_names_as_semantic007": true,
+    "new_failures": [],
+    "failure_names": [
+      "Director Engine v0.3 > Momotaro でキャラ固定 action を primary 推薦する",
+      "Director Engine v0.3 > ProjectState は recommend 実行後も変更されない",
+      "Director Engine v0.3 > confidence は 0〜1",
+      "Director Engine v0.3 > depends_on 未完了 action は primary 推薦不可",
+      "Director Engine v0.3 > done action は推薦対象から除外",
+      "Director Engine v0.3 > eligible action が 0 の場合 no_eligible_actions report",
+      "EventResolver v0.2.2 > Momotaro「MJ文面は後でいい」で next_action candidate が出る",
+      "EventResolver v0.2.2 > Momotaro「まずキャラ固定からやる」で next_action candidate が出る",
+      "EventResolver v0.2.2 > proposed_patch に action done が入らない",
+      "EventResolver v0.2.2 > proposed_patch に primary_next_action_id 更新が入らない",
+      "Human Review Bridge v0.2.3 > ActionDeferred approve → primary 変更なし",
+      "Human Review Bridge v0.2.3 > ActionDeferred note → observation.body に追記",
+      "Human Review Bridge v0.2.3 > PriorityChanged approve + done action → reject",
+      "Human Review Bridge v0.2.3 > PriorityChanged approve → observation + primary upsert",
+      "Human Review Bridge v0.2.3 > reject_resolution → observation のみ、judgment なし",
+      "Human Review Bridge v0.2.3 > selected_entity_id が candidates にない → reject",
+      "Portfolio Director v0.4 > FreeWater を top recommendation にする",
+      "Portfolio Director v0.4 > GROUND Core が deferred に入る",
+      "Portfolio Director v0.4 > Momotaro が alternative に入る",
+      "Portfolio Director v0.4 > ProjectState を変更しない",
+      "Portfolio Director v0.4 > blocked_projects が出る",
+      "Portfolio Director v0.4 > confidence が 0〜1",
+      "Portfolio Director v0.4 > deferred_recommendations がある",
+      "Portfolio Director v0.4 > dependency blocked project は blocked status になる",
+      "Portfolio Director v0.4 > project_health が 3 件ある",
+      "Portfolio Director v0.4 > reasons が空でない",
+      "Portfolio Director v0.4 > why_not_alternatives がある",
+      "Portfolio tie-break v0.4.2 > deferred message uses less-than when primary score is higher",
+      "Reality Loop Phase 1 v0.6.0 > CLI reality-apply で明示適用",
+      "Reality Loop Phase 1 v0.6.0 > CLI reality-propose --out しても state 不変",
+      "Reality Loop Phase 1 v0.6.0 > Clarification は apply できない",
+      "Reality Loop Phase 1 v0.6.0 > Event入力だけでは ProjectState が変わらない",
+      "Reality Loop Phase 1 v0.6.0 > Proposal生成でも ProjectState が変わらない",
+      "Reality Loop Phase 1 v0.6.0 > apply後の ProjectState を既存 GROUND pipeline が読める",
+      "Reality Loop Phase 1 v0.6.0 > dogfood 3 project — FreeWater + GROUND + 第3 fixture で studio-brief 再評価",
+      "Reality Loop Phase 1 v0.6.0 > 不正 patch を拒否",
+      "Reality Loop Phase 1 v0.6.0 > 不正な project_id を拒否",
+      "Reality Loop Phase 1 v0.6.0 > 明示的 apply 時のみ変更される",
+      "Reality Semantics v0.6.1 > INTENTION: 実験したい → completed fact にならない",
+      "Reality Semantics v0.6.1 > NEGATIVE: 曖昧すぎる自然文 → Clarification",
+      "Reality Semantics v0.6.1 > OBSERVATION: 320 pass / 0 fail → observation Proposal",
+      "Reality Semantics v0.6.1 > OBSERVATION: 実装した → Clarification ではなく Proposal",
+      "Reality Semantics v0.6.1 > PROGRESS: 段階移行 → Proposal（完了断定しない）",
+      "Reality Semantics v0.6.1 > REGRESSION: CandidateCreated / Deferred / Stop も既存detectorで検出",
+      "Reality Semantics v0.6.1 > REGRESSION: DecisionMade 系は既存 semantic を破壊しない",
+      "Reality Semantics v0.6.1 > SAFETY: reality-propose のみでは storage 不変",
+      "Reality Semantics v0.6.1 > classifyRealityText: intention と observation を分離",
+      "State Reconciliation Controls v0.6.2 > CLI reconcile-propose は proposal のみで isolated + live storage checksum 不変",
+      "Studio Brief CLI v0.5.5 > 3 project fixture",
+      "Studio Brief CLI v0.5.5 > 4 project fixture",
+      "Studio Brief CLI v0.5.5 > CLI exit0",
+      "Studio Brief CLI v0.5.5 > FLOW表示",
+      "Studio Brief CLI v0.5.5 > Portfolio順位不変",
+      "Studio Brief CLI v0.5.5 > ProjectState不変",
+      "Studio Brief CLI v0.5.5 > StudioReport 不変 — pipeline 実行後",
+      "Studio Brief CLI v0.5.5 > TODAY表示",
+      "Studio Brief CLI v0.5.5 > applyPatch未使用 — adapter ソース",
+      "Studio Brief CLI v0.5.5 > deep-work",
+      "Studio Brief CLI v0.5.5 > deferred なし",
+      "Studio Brief CLI v0.5.5 > headline表示 — Narrative headline",
+      "Studio Brief CLI v0.5.5 > json出力",
+      "Studio Brief CLI v0.5.5 > morning",
+      "Studio Brief CLI v0.5.5 > no blocked",
+      "Studio Brief CLI v0.5.5 > no risk",
+      "Studio Brief CLI v0.5.5 > out出力",
+      "Studio Brief CLI v0.5.5 > saveProject未使用 — studio-brief ソース",
+      "Studio Brief CLI v0.5.5 > session",
+      "Studio Brief CLI v0.5.5 > 固有名詞 hardcode なし — adapter / studio-brief ソース",
+      "Studio Engine v0.5.3 > 3 project fixture — 実プロジェクト期待",
+      "Studio Engine v0.5.3 > 4 project fixture",
+      "Studio Engine v0.5.3 > DirectorReport 不変",
+      "Studio Engine v0.5.3 > PortfolioReport 不変",
+      "Studio Engine v0.5.3 > ProjectState 不変",
+      "Studio Engine v0.5.3 > alignment_status — Portfolio primary 不変",
+      "Studio Engine v0.5.3 > blocked severity 降順",
+      "Studio Engine v0.5.3 > decision materials",
+      "Studio Engine v0.5.3 > deep work >2 で alignment partially_aligned",
+      "Studio Engine v0.5.3 > deferred 理由必須",
+      "Studio Engine v0.5.3 > flow 順序 — Portfolio rank 順",
+      "Studio Engine v0.5.3 > growing project 抽出",
+      "Studio Engine v0.5.3 > requires_human_decision",
+      "Studio Engine v0.5.3 > risk project 抽出",
+      "Studio Engine v0.5.3 > summary_text 必須",
+      "Studio Engine v0.5.3 > today_focus.primary = portfolio primary",
+      "Studio Narrative Layer v0.5.4 > 3 project fixture",
+      "Studio Narrative Layer v0.5.4 > 4 project fixture",
+      "Studio Narrative Layer v0.5.4 > Portfolio 順位不変 — flow_story が recommended_flow 順を保持",
+      "Studio Narrative Layer v0.5.4 > StudioReport 不変",
+      "Studio Narrative Layer v0.5.4 > blocker_story",
+      "Studio Narrative Layer v0.5.4 > decision_story",
+      "Studio Narrative Layer v0.5.4 > deferred_story",
+      "Studio Narrative Layer v0.5.4 > flow_story",
+      "Studio Narrative Layer v0.5.4 > growth_story",
+      "Studio Narrative Layer v0.5.4 > headline 生成",
+      "Studio Narrative Layer v0.5.4 > risk_story",
+      "Studio Narrative Layer v0.5.4 > summary_story",
+      "Studio Narrative Layer v0.5.4 > today_focus_story",
+      "Studio Narrative Layer v0.5.4 > 純粋関数 — 同一入力で同一出力（generated_at 除く）",
+      "cli recommend-portfolio > --projects id,id で対象限定できる",
+      "cli recommend-portfolio > CLI recommend-portfolio --format json",
+      "cli recommend-portfolio > CLI recommend-portfolio --out",
+      "cli recommend-portfolio > CLI recommend-portfolio text 出力",
+      "cli recommend-portfolio > cmdRecommendPortfolio は saveProject / applyPatch を呼ばない",
+      "extraction mock propose > Momotaro キャラ固定入力で PatchProposal が返る"
+    ]
+  },
+  "human_interface": {
+    "tests": 136,
+    "pass": 132,
+    "skip": 4,
+    "fail": 0
+  },
+  "live_ui": {
+    "tests": 13,
+    "pass": 13,
+    "fail": 0
+  },
+  "storage_and_semantic": {
+    "tests": 92,
+    "pass": 92,
+    "fail": 0
+  },
+  "compatibility_probe": {
+    "sources": [
+      {
+        "key": "human-001",
+        "stored_schema": "0.1.24",
+        "read_schema": "0.1.25",
+        "claims": 18,
+        "legacy_confidence_preserved": true,
+        "write_schema": "0.1.25",
+        "vnext_dry_delta": {
+          "schema_version": "0.1.26",
+          "claim_assessments": []
+        },
+        "fake_assessments": 0
+      },
+      {
+        "key": "e2-b15",
+        "stored_schema": "0.1.24",
+        "read_schema": "0.1.25",
+        "claims": 0,
+        "legacy_confidence_preserved": true,
+        "write_schema": "0.1.25",
+        "vnext_dry_delta": {
+          "schema_version": "0.1.26",
+          "claim_assessments": []
+        },
+        "fake_assessments": 0
+      },
+      {
+        "key": "historical-round4",
+        "stored_schema": "0.1.24",
+        "read_schema": "0.1.25",
+        "claims": 147,
+        "legacy_confidence_preserved": true,
+        "write_schema": "0.1.25",
+        "vnext_dry_delta": {
+          "schema_version": "0.1.26",
+          "claim_assessments": []
+        },
+        "fake_assessments": 0
+      }
+    ],
+    "owner_writer": {
+      "tested_root": "disposable test root",
+      "v26_state_rejected": true,
+      "vnext_claim_rejected": true,
+      "new_collection_rejected": true
+    },
+    "explicit_isolated_v26": {
+      "legacy_claims": 1,
+      "vnext_claims": 1,
+      "assessments": 1,
+      "scopes_separate": true,
+      "legacy_assessment_rejected": true
+    },
+    "live": {
+      "fingerprint": "9ff0d8070296d2d5493b618b13d75beab003581a6f7011ae642a53f46fc453cf",
+      "stored_schema": "0.1.25",
+      "read_schema": "0.1.25",
+      "documents": 11,
+      "observations": 16,
+      "evidence": 16,
+      "claims": 0,
+      "dry_delta": {
+        "schema_version": "0.1.26",
+        "claim_assessments": []
+      },
+      "written": false
+    }
+  },
+  "virtual_merges": {
+    "origin/master": [
+      "CONFLICT (content): Merge conflict in ground-core/file-store.ts",
+      "CONFLICT (content): Merge conflict in package.json",
+      "CONFLICT (add/add): Merge conflict in server/human-interface/README.md",
+      "CONFLICT (add/add): Merge conflict in server/human-interface/browse-boundary.test.ts",
+      "CONFLICT (add/add): Merge conflict in server/human-interface/browse-ui.test.tsx",
+      "CONFLICT (add/add): Merge conflict in server/human-interface/http-route.js",
+      "CONFLICT (add/add): Merge conflict in server/human-interface/read-adapter.ts",
+      "CONFLICT (add/add): Merge conflict in server/human-interface/read-boundary.test.ts",
+      "CONFLICT (add/add): Merge conflict in server/human-interface/source-registry.test.ts",
+      "CONFLICT (add/add): Merge conflict in server/human-interface/tsconfig.json",
+      "CONFLICT (add/add): Merge conflict in server/human-interface/ui.test.tsx",
+      "CONFLICT (add/add): Merge conflict in src/human-interface/Browse.jsx",
+      "CONFLICT (add/add): Merge conflict in src/human-interface/COMPREHENSION-CONTRACT.md",
+      "CONFLICT (add/add): Merge conflict in src/human-interface/README.md",
+      "CONFLICT (add/add): Merge conflict in src/human-interface/RealityExplorer.jsx",
+      "CONFLICT (add/add): Merge conflict in src/human-interface/RealityReadView.jsx",
+      "CONFLICT (add/add): Merge conflict in src/human-interface/reality-explorer.css"
+    ],
+    "ground/core-integration-001": [
+      "CONFLICT (content): Merge conflict in .gitignore",
+      "CONFLICT (content): Merge conflict in ground-core/index.ts",
+      "CONFLICT (content): Merge conflict in package.json"
+    ]
+  },
+  "live_provenance": {
+    "tests": 17,
+    "pass": 17,
+    "fail": 0
+  },
+  "typecheck": {
+    "core": "PASS",
+    "human_server": "PASS",
+    "audit_script": "PASS"
+  },
+  "build": "PASS",
+  "browser_smoke": {
+    "preview": "http://127.0.0.1:3010",
+    "project_browse": true,
+    "frus395": true,
+    "observation_index": true,
+    "frozen_c395_first_fire": true,
+    "formal_promoted_build": false
+  }
+}
