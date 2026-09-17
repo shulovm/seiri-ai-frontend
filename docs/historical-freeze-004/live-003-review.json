@@ -1,0 +1,1113 @@
+{
+  "format": "historical-family-v1",
+  "family_id": "LIVE-003-review",
+  "checkpoint_commit": "25ba36665c1034c1317e7556abea007bb08da539",
+  "entrypoints": [
+    "ground-core/__tests__/historical-injection-freeze.test.ts",
+    "ground-core/injections/frus-1904-392/dry-review.ts"
+  ],
+  "test_entrypoints": [
+    "ground-core/__tests__/historical-injection-freeze.test.ts"
+  ],
+  "source_roots": [
+    "ground-core/__tests__/historical-injection-freeze.test.ts",
+    "ground-core/decision-snapshot-verification.ts",
+    "ground-core/errors.ts",
+    "ground-core/experimental/historical-reality/substrate.ts",
+    "ground-core/file-store.ts",
+    "ground-core/injections/frus-1904-392/dry-review.ts",
+    "ground-core/injections/frus-1904-392/package.ts",
+    "ground-core/migrate.ts",
+    "ground-core/reality/agency-core.ts",
+    "ground-core/reality/agency-types.ts",
+    "ground-core/reality/belief-types.ts",
+    "ground-core/reality/belief.ts",
+    "ground-core/reality/capability-core.ts",
+    "ground-core/reality/capability-types.ts",
+    "ground-core/reality/commitment-core.ts",
+    "ground-core/reality/commitment-types.ts",
+    "ground-core/reality/decision-core.ts",
+    "ground-core/reality/decision-memory-core.ts",
+    "ground-core/reality/decision-memory-types.ts",
+    "ground-core/reality/decision-types.ts",
+    "ground-core/reality/epistemic.ts",
+    "ground-core/reality/feasibility-core.ts",
+    "ground-core/reality/feasibility-types.ts",
+    "ground-core/reality/governance-core.ts",
+    "ground-core/reality/governance-provenance.ts",
+    "ground-core/reality/governance-types.ts",
+    "ground-core/reality/intervention-core.ts",
+    "ground-core/reality/intervention-types.ts",
+    "ground-core/reality/permission-core.ts",
+    "ground-core/reality/permission-types.ts",
+    "ground-core/reality/reference-criterion.ts",
+    "ground-core/reality/resource-commitment-core.ts",
+    "ground-core/reality/resource-commitment-types.ts",
+    "ground-core/reality/resource-core.ts",
+    "ground-core/reality/resource-types.ts",
+    "ground-core/reality/semantic-equality.ts",
+    "ground-core/state-engine.ts",
+    "ground-core/storage-owner.ts",
+    "ground-core/temporal-admission.ts",
+    "ground-core/temporal.ts",
+    "ground-core/types.ts",
+    "ground-core/validate.ts"
+  ],
+  "type_roots": [
+    "ground-core/types.ts"
+  ],
+  "frozen_input_refs": [
+    "ground-core/experimental/historical-reality/round1.dataset.json",
+    "ground-core/injections/frus-1904-392/selected-input.json"
+  ],
+  "expected_package_artifacts": [
+    "ground-core/injections/frus-1904-392/README.md",
+    "ground-core/injections/frus-1904-392/dry-review.json",
+    "ground-core/injections/frus-1904-392/manifest.json",
+    "ground-core/injections/frus-1904-392/selected-input.json"
+  ],
+  "expected_package_fingerprint": null,
+  "fingerprint_entrypoint": null,
+  "schema_version": "0.1.25",
+  "compiler_config_ref": "ground-core/tsconfig.json",
+  "compiler_policy": {
+    "typescript": "5.9.3",
+    "node_types": "22.19.20",
+    "npm": "Installed package versions must equal checkpoint lock; copied bytes inventoried, registry tarballs not attested."
+  },
+  "external_imports": [
+    "ajv-formats",
+    "ajv-formats/dist/formats.js",
+    "ajv/dist/2020.js",
+    "node:assert/strict",
+    "node:crypto",
+    "node:fs",
+    "node:module",
+    "node:path",
+    "node:test",
+    "node:url"
+  ],
+  "typecheck_only_computed_imports": [],
+  "dependencies": [
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.1.schema.json",
+      "expected_blob_oid": "8b21494b12a715022efc5b1bbe24849b00b87b32",
+      "expected_sha256": "2758ca6bc638ed8a73b21eaaf062d3b6e40649b3bbcd3adc44860df3f9e061c9",
+      "expected_byte_length": 13343,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.10.schema.json",
+      "expected_blob_oid": "59618b9bd548165b2027fc85d5ee7cd5a7b16650",
+      "expected_sha256": "1ea13af7fa50327abd5831c150ab4c34c8b6861b0218cd7ffdb6d8e699c4129d",
+      "expected_byte_length": 56851,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.11.schema.json",
+      "expected_blob_oid": "70d098aa2a1aade75536f99d40e0d6fe23e96d97",
+      "expected_sha256": "5f7d4e4f092b99b61aa47db1e534142ab271f56209faeb4e59339f9caf74f5c8",
+      "expected_byte_length": 62277,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.12.schema.json",
+      "expected_blob_oid": "0395ceb7a914c3ac7dc3957b651098d1d074a0e7",
+      "expected_sha256": "dd27e54c9bd43d24a50a600838d1b9e0568c1d319f4767525debd633b19213eb",
+      "expected_byte_length": 74089,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.13.schema.json",
+      "expected_blob_oid": "60b7495113962ab0f04db73f9e24c97f94de1c0b",
+      "expected_sha256": "f0ba09f2f71b55d2c781eff37723c9708f74c5a718468e6e79489c0f53b89599",
+      "expected_byte_length": 82258,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.14.schema.json",
+      "expected_blob_oid": "0b1890a8131adc28d96aec6afcb4df467226fa85",
+      "expected_sha256": "93301d9fd88c740d4a34af3ac325c0679d8d12476b3b7c8387d76e473aaef3a7",
+      "expected_byte_length": 84746,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.15.schema.json",
+      "expected_blob_oid": "83b9c1d6b2e4259b988caa7581e4d57cdd8c7004",
+      "expected_sha256": "ee2456a44129925faba4dee2af8e13bd78ab6be3c481884c848503f6a5ab0a90",
+      "expected_byte_length": 90569,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.16.schema.json",
+      "expected_blob_oid": "6e19d58fa9542dc760faf24b845b76b946cbfe09",
+      "expected_sha256": "4c8dd8dc6a99cf9f6b4322a97c70b7fba5e2b0541f3f0a5c73997243a71af654",
+      "expected_byte_length": 92362,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.17.schema.json",
+      "expected_blob_oid": "cfdb60729f4ca55d0d4f7357e700d707d1d2b892",
+      "expected_sha256": "6692eda15b390263dc3496c8c460986c623b11a0352c077baf9ef33a9db39a23",
+      "expected_byte_length": 112614,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.18.schema.json",
+      "expected_blob_oid": "22243f22c969a131122cbd931e1da0f050cfb271",
+      "expected_sha256": "c4046e4abda4ad30c0d3c695ff9378a0c57eb6fd6a3712b6dde07160848dc003",
+      "expected_byte_length": 114688,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.19.schema.json",
+      "expected_blob_oid": "fa942925e2c2b18173112991f8021136fedf31ec",
+      "expected_sha256": "735a34401734599c85d63c05facbcf363e61bdf3fdab324b09a08d99dd673e08",
+      "expected_byte_length": 117513,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.2.schema.json",
+      "expected_blob_oid": "87c990650cdcec57133813b87b0043977d6af740",
+      "expected_sha256": "dd38a774f0e81e7170186244d23bdd7b232c552a0e793754348368c9605ffe17",
+      "expected_byte_length": 16578,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.20.schema.json",
+      "expected_blob_oid": "e68ae3bfb522f4169d82622eaf3daf23a3e049f8",
+      "expected_sha256": "e2f3935edb31d49866529d6ff51cfb2e559d473b227e8180c70a057ede7de92e",
+      "expected_byte_length": 118952,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.21.schema.json",
+      "expected_blob_oid": "342ad23db23704cdf1f54fd146e095a46bfe0969",
+      "expected_sha256": "2733322251677a9f4b8095f8e36264b8af0f46d970fdb11209107e058c0cdc1a",
+      "expected_byte_length": 120572,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.22.schema.json",
+      "expected_blob_oid": "e50950164f046918e6bf0ad335a9be0970b6a01b",
+      "expected_sha256": "6c15cfb27448bc6f24954a9ed79424eedcd27fa0028b13a8bfbf13ee7cd28eb4",
+      "expected_byte_length": 122400,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.23.schema.json",
+      "expected_blob_oid": "7578daa9061f823529f08f2ac5eea290b492584e",
+      "expected_sha256": "6e5bad3b3ec74d776680e380971b496aefebfe49483de5292d4385455ae4cde4",
+      "expected_byte_length": 125283,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.24.schema.json",
+      "expected_blob_oid": "2deee5862938c060cb3c439425d4669c4d39c76d",
+      "expected_sha256": "4ea90ed26096b87dec4b25d6dad7bd9ea4491382eb02cf5dc3f854d92a5a8eb7",
+      "expected_byte_length": 128979,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.25.schema.json",
+      "expected_blob_oid": "e83ff89bd8620299d168b5733fcd4fb1f42960f8",
+      "expected_sha256": "72577165aa7006af18170eacc873739f89c481ea2d6097b5b7cb887d9552f11e",
+      "expected_byte_length": 131740,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.3.schema.json",
+      "expected_blob_oid": "9187fe7a2f7b661c54bfb70abb7527ba6a9ecf51",
+      "expected_sha256": "1430a250c28306150bb2335e17e94707deedca488de4ba17745cfc12c23d3966",
+      "expected_byte_length": 27877,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.4.schema.json",
+      "expected_blob_oid": "830ea2c29915a660f6d2130e7ef283327799271d",
+      "expected_sha256": "ca75a38e30a1deb9f395c99b6486023278b484e209d949c8400a9af417c953a3",
+      "expected_byte_length": 32720,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.5.schema.json",
+      "expected_blob_oid": "5c7bfa01c3870a0d330e4cd38a595cb7dd60cdf6",
+      "expected_sha256": "8de1a5112e764ba47204d39da93b9941cdcda3901f70730e17f1bf4d856e1797",
+      "expected_byte_length": 37775,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.6.schema.json",
+      "expected_blob_oid": "4aefef0f24faccaf317851f7c6736c7f4f624601",
+      "expected_sha256": "3be245582e290eeac1d7031e39ddb3740068b3b68d5c61233d027aa4a36771de",
+      "expected_byte_length": 42378,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.7.schema.json",
+      "expected_blob_oid": "c3a984abcaa578919fef878d389cd1de3aafb27a",
+      "expected_sha256": "fd7806928e594b973563c77568b37d1608dac647359c0fe0b7fb954e3c084dc5",
+      "expected_byte_length": 44695,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.8.schema.json",
+      "expected_blob_oid": "66712f8cd406ead9d0cf1ab8241d1a20949e2442",
+      "expected_sha256": "c9e9045ea1955dd600a00b178b1d17c31c15b1b7fe1bce6082954fb5aedeb8fd",
+      "expected_byte_length": 46869,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.9.schema.json",
+      "expected_blob_oid": "72997dc326bf9f7ce63dce27d537452ad82b4a6c",
+      "expected_sha256": "62e9c5a672e79f909c266160a266071c2d427a45ab3d46cce80f2cc17a3aff60",
+      "expected_byte_length": 52994,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-project-state.v0.1.schema.json",
+      "expected_blob_oid": "5cbab736b2f650edd9bc539ebfff8ed34f7df7e5",
+      "expected_sha256": "a3f937447edeba680ad5940119455da962274aab5c03b2b0e9272a1447f4ba4e",
+      "expected_byte_length": 9729,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.1.schema.json",
+      "expected_blob_oid": "f2238e5be70acaf3b1d07ed029302d68db4d1255",
+      "expected_sha256": "377e9eadc1c365a3fddd755aadd499194b932608adc243146a74d830619b1e12",
+      "expected_byte_length": 2256,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.10.schema.json",
+      "expected_blob_oid": "f82b29df6d64ea7bd197995dca2349dbd092d1f5",
+      "expected_sha256": "858a6d36940898f2fc8c94d340ab39a43c2a9a838b64f8c2d28f88438f823d0e",
+      "expected_byte_length": 3627,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.11.schema.json",
+      "expected_blob_oid": "2ce998cf1737f49e480fc36a21538d9d001fa4de",
+      "expected_sha256": "af1a0afb965cbb29fe389e407f8061b5b9062fa2e355d03d665730fc8686e06c",
+      "expected_byte_length": 3791,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.12.schema.json",
+      "expected_blob_oid": "7b24f2b9b8847a1f704073500bbc2279c50bb490",
+      "expected_sha256": "22634dd88b0e0037e58d4edcccb495217a010c6706ffee2708728f843bfa9ce4",
+      "expected_byte_length": 3927,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.13.schema.json",
+      "expected_blob_oid": "9d98fe46330bb2815293447ca3eda306c14d1698",
+      "expected_sha256": "e953fb49b63f67706b36ef0a1648af90d0ddc5d8145c5bd1d46ec098070fd194",
+      "expected_byte_length": 4097,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.14.schema.json",
+      "expected_blob_oid": "2bfdcc438596b4eeae8d8653182b2960d7093c64",
+      "expected_sha256": "0bc7437c1e9956237dd22881a8e681fcb1e98df96c6ded97a6e765fc41c3c96a",
+      "expected_byte_length": 4180,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.15.schema.json",
+      "expected_blob_oid": "53b6321720922946c90ff4ad00b4609505eec8d7",
+      "expected_sha256": "c464f4270ffdbe4cb7a35950147804487bbef6bd7689a0286bb43b63d669056f",
+      "expected_byte_length": 4291,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.16.schema.json",
+      "expected_blob_oid": "60eb699cf096c58eea2f937c605cc3cf8496a825",
+      "expected_sha256": "ea006ba5339a85186b36850623ab0df5a9a3c8332a27634ea4da8d0a2c699df6",
+      "expected_byte_length": 4385,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.17.schema.json",
+      "expected_blob_oid": "b3c871d88322360e5a790868ddd7ac341a26930c",
+      "expected_sha256": "86a373a573d2914edc32b07d38c708cdbb8a8c9b31811ab9f53d8b30a7dceeaa",
+      "expected_byte_length": 4442,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.18.schema.json",
+      "expected_blob_oid": "2c4e203ee25132435bafd3796daa01d1c89913ea",
+      "expected_sha256": "fd7b7498c1751e33b4d6039c121dc1abb10908ee4b343580d5932c680f68e882",
+      "expected_byte_length": 4521,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.19.schema.json",
+      "expected_blob_oid": "86659b2177ce7741de2a54ac485322e5e0b47163",
+      "expected_sha256": "a1f32556f08f750fa21f4d498fb68466dc7fe6328e12855b427a4c976855a632",
+      "expected_byte_length": 4607,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.2.schema.json",
+      "expected_blob_oid": "98bcc26e3be70808611fda3bfea3f679d5f43853",
+      "expected_sha256": "14023cf28fa98263e26c9f372d87ef4e9baa8dfbc6eb72b6cbc092335d6df3b6",
+      "expected_byte_length": 2387,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.20.schema.json",
+      "expected_blob_oid": "5fd92fc162c23857705972fcd7f6103ab52757d9",
+      "expected_sha256": "845f0746995cfe15c126d7f8376dbee22a285d62c751fa81530a44f8dd09fe62",
+      "expected_byte_length": 4708,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.21.schema.json",
+      "expected_blob_oid": "41418ed47a81a8731196ade6e98157281d2d89d3",
+      "expected_sha256": "cf32a180ad1db16b0447a6d2c2711c3a9fb95c48ecdc328aed9076c00c0e3476",
+      "expected_byte_length": 4816,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.22.schema.json",
+      "expected_blob_oid": "77ed3c20108a2ee1446b6010320b8190e3bd24a6",
+      "expected_sha256": "0758029d64ce4fb23c371f185a0eddaf8dceeeb0e3364187cdab35b18d4e3183",
+      "expected_byte_length": 4930,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.23.schema.json",
+      "expected_blob_oid": "8c66f35303564cc2966fc8517663ad9000d4ef73",
+      "expected_sha256": "c440cdaffb1db97cb374c5909a053661d56ef5e18f7a5479c33b1841004ec5b1",
+      "expected_byte_length": 5034,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.24.schema.json",
+      "expected_blob_oid": "3051f711c57240f489b4037e213eafc41ba8abb8",
+      "expected_sha256": "260b672817c83e0611d624c2ae411b93677566de1956b5f0b232491f45ef03d4",
+      "expected_byte_length": 5140,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.25.schema.json",
+      "expected_blob_oid": "e2fdebe44c434faa017e392cf1cd06c9fb1ee029",
+      "expected_sha256": "76dbf1c3cf73358a963d3226c0eac13f4b6c1648cc746c3fbc686e0aac8ffece",
+      "expected_byte_length": 5158,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.3.schema.json",
+      "expected_blob_oid": "59ec41df85fd7c9e7007ee4adc3a6d8f8465c07e",
+      "expected_sha256": "14b0afc7d493a3b12b9d4cd108d3a5d860686bc7ce79d9db64b170cfabfa6707",
+      "expected_byte_length": 2903,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.4.schema.json",
+      "expected_blob_oid": "0a3ed9dcf4c6f669652f6c43b32a40587759daed",
+      "expected_sha256": "5257a7d2fac9f9ced41e432157b4eee884a09fe33d99ed17051dd74c7f0b491d",
+      "expected_byte_length": 2969,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.5.schema.json",
+      "expected_blob_oid": "8ed35ff57ab114dea2dfda80709511479581085f",
+      "expected_sha256": "418b4ddd5bddaec389ec795793beaac0f4b6dd8b1c4e57e593caefd9c8605043",
+      "expected_byte_length": 3097,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.6.schema.json",
+      "expected_blob_oid": "f31cbdaaba1b480208ec6c93edcf61b880f0894f",
+      "expected_sha256": "bfc9e7acc89e36a83e37781a919676710b02d34f9978dd288151ca565a279e4e",
+      "expected_byte_length": 3218,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.7.schema.json",
+      "expected_blob_oid": "682ff53fca7ddff416f099553184d05b7473e64d",
+      "expected_sha256": "e5509cbdca8a04fcb4d39289529a66b65871d5667849ad0fdeabd14a8d5e2970",
+      "expected_byte_length": 3293,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.8.schema.json",
+      "expected_blob_oid": "a6b15fdaa8c2b59b0b56726caf4dd12e16bceada",
+      "expected_sha256": "30fc3f3ce5b22443ce77e5e31c7fde1b5e69d3d3697020536463180211ae96ac",
+      "expected_byte_length": 3369,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.9.schema.json",
+      "expected_blob_oid": "40f4d4b356891bac7b55f46350d0948c41e04063",
+      "expected_sha256": "6e468ae8bc0d3a8008e23807c7f490f99251ae1840c2ff323779e86d14e894fc",
+      "expected_byte_length": 3500,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "docs/schemas/ground-core-state-patch.v0.1.schema.json",
+      "expected_blob_oid": "f2c55fb4da086ab7e25d49c4960a889f5ec5f233",
+      "expected_sha256": "511d2195afa176220189fe96a6a1d7fae04848e13ff76ff0e679d5bb2053f300",
+      "expected_byte_length": 2162,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/__tests__/historical-injection-freeze.test.ts",
+      "expected_blob_oid": "8a49c07f51b9d3291001c3420948d1f3bc758604",
+      "expected_sha256": "0a9665c00be97965754fdc57d858ba1e659322bc68085261cc7c50ae7c912882",
+      "expected_byte_length": 7138,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/decision-snapshot-verification.ts",
+      "expected_blob_oid": "e66301995a68dba09d8854712d78725c19b7155d",
+      "expected_sha256": "884aac009bd8b92568e5115ebfe8acc933af60f36f481a9aad4033c44c597345",
+      "expected_byte_length": 2491,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/errors.ts",
+      "expected_blob_oid": "d22242e23204b79e9fb4c940a9e433e327ecee4a",
+      "expected_sha256": "dd920afcade96af30034e07ebb583a2942c6a780ddcffd5d410ae824413a1227",
+      "expected_byte_length": 841,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/experimental/historical-reality/round1.dataset.json",
+      "expected_blob_oid": "cb82ac8c0c2e9a0d6e1292ba1268d27227420e9f",
+      "expected_sha256": "5bc32592aa80ee4742f8e01b09d4381dacc1ce080fb930772a7a1ea2b24c70c2",
+      "expected_byte_length": 86198,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/experimental/historical-reality/substrate.ts",
+      "expected_blob_oid": "477e33b792f86281148a661de978537f86b23a7c",
+      "expected_sha256": "4c23a611bf0ada6483df5cf62270dbae9218bb50ec4ac472b821573cd847d6ef",
+      "expected_byte_length": 12572,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/file-store.ts",
+      "expected_blob_oid": "8cc92abe4ae41ea33eda58a04111a1b39a58efea",
+      "expected_sha256": "ecad725236a8cba09b46d96f0333c93d97a970c205132153d992e28b5998ba29",
+      "expected_byte_length": 6968,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/injections/frus-1904-392/README.md",
+      "expected_blob_oid": "db4a18d6c8996df9475bce557e76487d4e964c21",
+      "expected_sha256": "182de61f76d0d47411f81d1bd0d7c26cc933e06c4f3b1364d7d41391f5082988",
+      "expected_byte_length": 12594,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/injections/frus-1904-392/dry-review.json",
+      "expected_blob_oid": "be8df63aa3964998d51fff4eaf7c0fda8937abe1",
+      "expected_sha256": "ab4358bdfdeb1ac299767632ec8637e13cc8b79bc438dead91fa024b8fb6e728",
+      "expected_byte_length": 8356,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/injections/frus-1904-392/dry-review.ts",
+      "expected_blob_oid": "c2f0dbe5588803b3747bde000773650719ba4b19",
+      "expected_sha256": "060de56082844f8637e1b463582073c2ca5e05148109e331bb1e7d81eeab0ce1",
+      "expected_byte_length": 2498,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/injections/frus-1904-392/manifest.json",
+      "expected_blob_oid": "f5c42fb3e7bb49174c0cc57b4c0443d8b370c734",
+      "expected_sha256": "4f4a48271f96ccf72df97a52ab31cb286e326763c38a5bb717b34fc508ce842e",
+      "expected_byte_length": 619,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/injections/frus-1904-392/package.ts",
+      "expected_blob_oid": "36562fb5eef52b390fbcdcbe8d324c8fc3efe1b6",
+      "expected_sha256": "f4a59b6a3468ce6b6cbcad434f94c69a2ecec98982456937a866c6f64bd4349f",
+      "expected_byte_length": 6583,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/injections/frus-1904-392/selected-input.json",
+      "expected_blob_oid": "4f3eb9d608c515ef907a9d6f021d508fc48d1b66",
+      "expected_sha256": "2c4f2e2b9e4530d077087994e043e42920d79621c704ec8dc05a48f6a7fd849d",
+      "expected_byte_length": 10661,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/migrate.ts",
+      "expected_blob_oid": "a193cc83b590bc91135c2cc8e5e3ef4af02d5552",
+      "expected_sha256": "d047f6a4f612bc68aa144644b0fdf82b4cf9895d159909f77bdc6312b03a82ee",
+      "expected_byte_length": 36229,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/agency-core.ts",
+      "expected_blob_oid": "2ce2be980e6ef7ccfcc72663af22fc62a11f335b",
+      "expected_sha256": "7ffc237d4a149bb386f6eacc30d332be71e4b5a8869b8e52e907825850aaeaae",
+      "expected_byte_length": 17609,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/agency-types.ts",
+      "expected_blob_oid": "799770286dd0f6f3c1bb0598cc05ebac9d4ed38b",
+      "expected_sha256": "19b40d04fb3101254fb3aab3f6a51338d0fcaa4f1748fa94094c2e69ca7837b0",
+      "expected_byte_length": 3852,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/belief-types.ts",
+      "expected_blob_oid": "cc55cea1ceeb6d312901b329edd2be8f43b839db",
+      "expected_sha256": "33c8f46f49e109642f9effc8ea7a2f1b9b2a52cc3c7df0a97c9b9aabbba68bbd",
+      "expected_byte_length": 2328,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/belief.ts",
+      "expected_blob_oid": "84b63472b7e8b6d4a9f04c94dc5449a269d3c1c8",
+      "expected_sha256": "866c5338573f38a44232752f51b1091fdd0e4362a2de07dc77563893f4e200bf",
+      "expected_byte_length": 8560,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/capability-core.ts",
+      "expected_blob_oid": "b853763141a2fbb88bcf64c1560a4a0949d9dcb5",
+      "expected_sha256": "ffb6ef0b5805cf91dea0b3def470a51f4e601163217e2e3aba4c05504a094540",
+      "expected_byte_length": 9281,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/capability-types.ts",
+      "expected_blob_oid": "0a726efcee0871c2c432d4f6c4e3b88df5082687",
+      "expected_sha256": "c123a9a9aa63edd81f1f5751538924d4f629f80e5533cec06d3d504681b6c061",
+      "expected_byte_length": 2074,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/commitment-core.ts",
+      "expected_blob_oid": "39deb0f0c00e6f7fef51665bd640e5866707277b",
+      "expected_sha256": "9981265977a72484c44a24c59b534ec89a8fa6664b63b4ec827bae286fe73a31",
+      "expected_byte_length": 12462,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/commitment-types.ts",
+      "expected_blob_oid": "f0f73a4235db2052f6fd420768820772538e3e24",
+      "expected_sha256": "361b3496405920f0f59b645444082e6ac49d6dc933b64936d474b4cf3f31b6f0",
+      "expected_byte_length": 3277,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/decision-core.ts",
+      "expected_blob_oid": "3c8e4a3dd1861ba16a727b937bce91598cf039cf",
+      "expected_sha256": "4616d044c4729b6ada56765355c348c1bd0dc75e60c446e77f0aa31fef96de22",
+      "expected_byte_length": 8668,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/decision-memory-core.ts",
+      "expected_blob_oid": "873784f7ec59c9e0cf078b1adcfdd85977618276",
+      "expected_sha256": "1c22a73a20580c9a30806cb056535daad2cb8e3173fa75500c3d97472a64cbdd",
+      "expected_byte_length": 22336,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/decision-memory-types.ts",
+      "expected_blob_oid": "27df0cd0c040e35d0897387bfb30c68db549d041",
+      "expected_sha256": "eaad8ad78f805431ea8553de8943c55c479417435d8682a3c371a4564cf0a6b5",
+      "expected_byte_length": 3605,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/decision-types.ts",
+      "expected_blob_oid": "5917338a7ca46fc16d1c6fbcc5bedb305e73b7bf",
+      "expected_sha256": "e0fe33effdb517d76e5afe429c2993301113261ba80a7fb96889b8cb08eb8883",
+      "expected_byte_length": 1630,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/epistemic.ts",
+      "expected_blob_oid": "36d15c7ff88b417d54e87ec2f91a57e353f73381",
+      "expected_sha256": "a93dce1f2f0ccde437360b02f38c2a485b6f55e55ed057af6c0fa76eb699b836",
+      "expected_byte_length": 2600,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/feasibility-core.ts",
+      "expected_blob_oid": "e2bc6f6c68f66caf92ecb20fea1fba9b5c3b0091",
+      "expected_sha256": "28ac6455dbbec448cdd70d69ed2f7e79ad35273703db80b2f2adfe97ede22f2f",
+      "expected_byte_length": 19680,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/feasibility-types.ts",
+      "expected_blob_oid": "d9f47c3c3974a1417e0148780457774b2963279a",
+      "expected_sha256": "6d2c61b717780b6ccb6f2a26c027a790e1742c44144813215cbd270e092e76fa",
+      "expected_byte_length": 5048,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/governance-core.ts",
+      "expected_blob_oid": "42a2c41f417c3e89b7c97677ce7c157b14363216",
+      "expected_sha256": "23e0f3ff938148fc021f045970d9d28887d07f1ce2f61fb53e48834c36614800",
+      "expected_byte_length": 15619,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/governance-provenance.ts",
+      "expected_blob_oid": "4074062be90db0b7882bbd9936fd8c222b45b94f",
+      "expected_sha256": "a4c4b1d1b1c46eadaf70bf351756c81ea342c5b266f7740af030876edd7bddec",
+      "expected_byte_length": 15973,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/governance-types.ts",
+      "expected_blob_oid": "587991112ad952c26e08e0a0181601c289788449",
+      "expected_sha256": "cdc5b98bbd537935791dd420688e05a9e9c9304e57a7c7798a5c2b438a996ba4",
+      "expected_byte_length": 5193,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/intervention-core.ts",
+      "expected_blob_oid": "624d74d8d7571da1dc7139dda76eca13c4599d24",
+      "expected_sha256": "fbdf7779ee45ce21f52ba6a4b697f1061edb8316aa29b62ced6b6305eec71716",
+      "expected_byte_length": 10921,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/intervention-types.ts",
+      "expected_blob_oid": "3e990e31ca40af5cc0cd14072c432ad96144722a",
+      "expected_sha256": "e1aa04813b8cffb955be4edb0bf3deadfcaba45c076f5f8a074a06fe74b7e986",
+      "expected_byte_length": 1689,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/permission-core.ts",
+      "expected_blob_oid": "fc27dad9c91b05b3839d497a85f9b0454a56a914",
+      "expected_sha256": "ab6e0406aee796aa25f61863a0833fd886051c27580347d46e9ce7b5471240a3",
+      "expected_byte_length": 8081,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/permission-types.ts",
+      "expected_blob_oid": "bcf219e92d1af602bf12028776d1b3b47e3bfeb3",
+      "expected_sha256": "99d1908032ffe22744aa102904dd6299ebcc24ce42a1a275f53512c19dd7f0e5",
+      "expected_byte_length": 2008,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/reference-criterion.ts",
+      "expected_blob_oid": "2f84a805ac43c9d8fd3883a305fd6f0c1a9656df",
+      "expected_sha256": "d962f68e7aed0ed018df693745a647f559f213284087f933ef2c18fc8c64d394",
+      "expected_byte_length": 6253,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/resource-commitment-core.ts",
+      "expected_blob_oid": "7754e52fdc60cc48877c3c870721e909e56657d0",
+      "expected_sha256": "f297d2f5382cf247d95e999f5f6f8d264b152c5d53931de27f9cb4bbca0ffb82",
+      "expected_byte_length": 18190,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/resource-commitment-types.ts",
+      "expected_blob_oid": "ec6900fb7e3b09b9625700b01f5c3ed373abdb64",
+      "expected_sha256": "2fdc70801fcab2f3b29e9ae3a1d71d7763c3f4be1b82875def8bbc728c489883",
+      "expected_byte_length": 4228,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/resource-core.ts",
+      "expected_blob_oid": "9af0960670940e6140ec94d3b0086466e4252eba",
+      "expected_sha256": "7fbe380222a6320ff99df7458e6665045f6bd00045556b39b2fb8dd1f02faa6d",
+      "expected_byte_length": 9809,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/resource-types.ts",
+      "expected_blob_oid": "db84c2c46fb7785029d79a6fd29ca72c4e456828",
+      "expected_sha256": "2635452c4e098ab695a1907cac2ed5fe58614a34cc1c5bea101f3e8ed348fe77",
+      "expected_byte_length": 2146,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/reality/semantic-equality.ts",
+      "expected_blob_oid": "f395dbf2051e4a0829439889b6924a792e06a007",
+      "expected_sha256": "badf3cfca3f078e3d23498f25a4f895bb89bd29afab3835eb5816039e6c225b0",
+      "expected_byte_length": 1507,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/state-engine.ts",
+      "expected_blob_oid": "6427fd4180854cbd29899e117b804d3d72f573af",
+      "expected_sha256": "cef4a77260c7e58a6cdba99fc50c99971764c230a531d2e40cd3e2736134bf86",
+      "expected_byte_length": 262249,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/storage-owner.ts",
+      "expected_blob_oid": "5fb8ea407072780cc35d4d258e1af76588d82179",
+      "expected_sha256": "479fe02f487751f1ea25c5499bb2103c4743222d0ea4dbe7bc2acaaeb19c746b",
+      "expected_byte_length": 7210,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/temporal-admission.ts",
+      "expected_blob_oid": "e88b9d8b66c79cc56329006395c6e382653fd522",
+      "expected_sha256": "80e1f7e400aabd27030b7bc15411a80b85d5c485378a7fd0e5da8bdd057a156b",
+      "expected_byte_length": 1821,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/temporal.ts",
+      "expected_blob_oid": "cf6032cd34deefcf3d9a6537b0cb0c0b289c0161",
+      "expected_sha256": "f189a8c8486fd57950b79bf3faf0617aa779a38ccb1881ac897a319c21305ba9",
+      "expected_byte_length": 5100,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/tsconfig.json",
+      "expected_blob_oid": "b19545590e6cce5b978587e24de35e657d9fc4ea",
+      "expected_sha256": "0c6d566beda27f68b312ace688b2a93849a3aaa52c4fb7d726e8e4a2d92eb711",
+      "expected_byte_length": 324,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/types.ts",
+      "expected_blob_oid": "cc7c499d3fc825507cb7590f43df4e7fa6dfa544",
+      "expected_sha256": "2ef967f7ebb35443cd77dcbf90ed02d6aaa2fc2ca560c0a8196aa767640d21d0",
+      "expected_byte_length": 56744,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "module",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "ground-core/validate.ts",
+      "expected_blob_oid": "931467995d59d90261d8bc381e6b9d53ee763944",
+      "expected_sha256": "3c9304fcba9993b56593a92b36b3c737ca65d70db41c61529f3a7e9c3e1e9612",
+      "expected_byte_length": 24767,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "package-lock.json",
+      "expected_blob_oid": "36d9659be13ebc38130e81b169d150685080a3dd",
+      "expected_sha256": "d033e57923f308924b8067eb22c588c8390a908447107bea922def669807f232",
+      "expected_byte_length": 206700,
+      "resolution_mode": "git-object"
+    },
+    {
+      "checkpoint_id": "LIVE-003-review",
+      "source_role": "asset",
+      "commit": "25ba36665c1034c1317e7556abea007bb08da539",
+      "repo_relative_path": "package.json",
+      "expected_blob_oid": "b9a9ef701a6b882770b6fa880bebda0c72dbd217",
+      "expected_sha256": "35e34d58c5ad382024a4ec45edb5a60431af1800aa9bb37d43931ad0e0aae8b3",
+      "expected_byte_length": 1469,
+      "resolution_mode": "git-object"
+    }
+  ]
+}

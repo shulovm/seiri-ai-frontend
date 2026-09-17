@@ -9,7 +9,21 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "rootDir": ".",
-    "types": ["node"]
+    "types": [
+      "node"
+    ]
   },
-  "include": ["./**/*.ts"]
+  "include": [
+    "./**/*.ts"
+  ],
+  "exclude": [
+    "./injections/frus-1904-392/**",
+    "./injections/frus-1904-392-inspection-v1/**",
+    "./injections/historical-batch-v1/**",
+    "./injections/historical-expansion-v1/**",
+    "./__tests__/historical-injection-freeze.test.ts",
+    "./__tests__/inspection-composition.test.ts",
+    "./__tests__/historical-batch.test.ts",
+    "./__tests__/historical-expansion.test.ts"
+  ]
 }

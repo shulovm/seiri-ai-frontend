@@ -1,22 +1,19 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
-import { loadDependencyManifest, materializeHistoricalCheckpoint, executeHistoricalCheckpoint } from '../historical-dependencies/execution.js';
-import { sha256 } from '../historical-dependencies/resolver.js';
-
-test('LIVE-003B original 11 review tests execute verified historical closure under read-only isolation',()=>{
-  const {manifest}=loadDependencyManifest('live-003b-review.json');
-  const entry=manifest.dependencies.find(d=>d.repo_relative_path===manifest.entrypoint)!;
-  // If a future integration contains an evolved test, do not silently replace it with older assertions.
-  if(existsSync(resolve(entry.repo_relative_path)))assert.equal(sha256(readFileSync(resolve(entry.repo_relative_path))),entry.expected_sha256,'current review test evolved; explicit test dispatch review required');
-  const checkpoint=materializeHistoricalCheckpoint(resolve('.'),'live-003b-review.json');
-  try {
-    const result=executeHistoricalCheckpoint(checkpoint);
-    console.log('Historical execution receipt: '+JSON.stringify(result.receipt));
-    console.log(result.stdout);
-    assert.equal(result.status,0,result.stderr||result.error);
-    assert.match(result.stdout,/(?:pass 11|# pass 11)/);
-    assert.match(result.stdout,/(?:fail 0|# fail 0)/);
-  }finally{checkpoint.cleanup();}
-});
+import {resolve} from 'node:path';
+import {verifyHistoricalFamily,executeHistoricalFamilyVerification,type FamilyName} from '../historical-dependencies/family.js';
+import {assertCurrentBoundary} from '../historical-dependencies/current-boundary.js';
+test('current code graph excludes only byte-covered historical packages and tests',()=>{assertCurrentBoundary(resolve('.'));});
+for(const [name,count] of Object.entries({'live-003-review.json':11,'live-003-inspection.json':13,'live-004.json':13,'live-005.json':57})) {
+  test(name+' original tests and historical compiler boundary',()=>{
+    const handle=verifyHistoricalFamily(resolve('.'),name as FamilyName);
+    try {
+      const result=executeHistoricalFamilyVerification(handle);
+      console.log('Historical family receipt: '+JSON.stringify({...result.receipt,package_fingerprint:result.package_fingerprint}));
+      console.log(result.tests.stdout);
+      assert.equal(result.status,0,result.tests.stdout+result.tests.stderr+(result.tests.error??''));
+      assert.match(result.tests.stdout,new RegExp('(?:# |ℹ )pass '+count+'(?:\\n|\\r|$)'));
+      assert.match(result.tests.stdout,/(?:# |ℹ )fail 0/);
+    }finally{handle.cleanup();}
+  });
+}
