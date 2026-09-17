@@ -8,6 +8,8 @@ import {spawnSync} from 'node:child_process';
 import {generateFixtures,writeFixtures} from './generate-fixtures.js';
 import {materializeRound6,traceTerritory,queryTerritory,composeTerritorialAssertions,assertTerritorialProjection,type Round6} from '../../ground-core/experimental/historical-reality/round6/territory.js';
 import {createEmptyProject,applyPatch} from '../../ground-core/state-engine.js';
+import {HistoricalRepository} from '../historical-dependencies/resolver.js';
+import {loadDependencyManifest} from '../historical-dependencies/execution.js';
 
 const hash=(b:string|Buffer)=>createHash('sha256').update(b).digest('hex');
 test('fixture identities, references, and bytes survive two independent process restarts',()=>{
@@ -41,8 +43,15 @@ test('fixture setup refuses to overwrite an existing project',()=>{
 });
 test('all adopted Historical artifacts still match pre-existing checkpoint pins byte for byte',()=>{
  const manifest=JSON.parse(readFileSync(resolve('docs/repro-001/historical-artifacts.json'),'utf8')) as {path:string,bytes:number,sha256:string,pinWitnesses:{manifest:string,sha256:string}[]}[];
+ const repository=new HistoricalRepository(resolve('.'));
+ const pins=loadDependencyManifest('repro-001-artifacts.json').manifest.dependencies;
  for(const f of manifest){
-  const raw=readFileSync(resolve(f.path));assert.equal(raw.length,f.bytes,f.path);assert.equal(hash(raw),f.sha256,f.path);
+  // Only the conflicting executable identity moves to checkpoint resolution.
+  // Other adopted current files retain the existing exact-byte guard.
+  const pin=pins.find(p=>p.repo_relative_path===f.path);
+  assert.ok(pin);assert.equal(pin.expected_sha256,f.sha256);assert.equal(pin.expected_byte_length,f.bytes);
+  const raw=f.path==='ground-core/experimental/historical-reality/substrate.ts'
+   ? repository.resolveHistoricalDependency(pin) : readFileSync(resolve(f.path));assert.equal(raw.length,f.bytes,f.path);assert.equal(hash(raw),f.sha256,f.path);
   assert.ok(f.pinWitnesses.length);
   for(const w of f.pinWitnesses){
    const p=w.manifest.includes('/round7/')?'docs/repro-001/round7-pin-witness.json':w.manifest;

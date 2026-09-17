@@ -19,14 +19,18 @@ const init=spawnSync('git',['init','--quiet',scratch],{cwd:scratch,stdio:'inheri
 if(init.status!==0)process.exit(init.status??1);
 const transition=JSON.parse(readFileSync(join(root,'docs/contract-evolution/schema24-to25.json'),'utf8'));
 const history=spawnSync('git',['fetch','--quiet','--no-tags','--no-write-fetch-head',root,
- transition.previousAuthority.checkpoint,transition.approvedTransition.targetCheckpoint],{cwd:scratch,stdio:'inherit'});
+ transition.previousAuthority.checkpoint,transition.approvedTransition.targetCheckpoint,
+ // Operator-run setup imports exact registered history locally. Resolver never fetches.
+ '9cb9dc6fe2ac522679abc970c5a7daa08bcd253b','25ba36665c1034c1317e7556abea007bb08da539'],{cwd:scratch,stdio:'inherit'});
 if(history.status!==0)process.exit(history.status??1);
 writeFileSync(join(scratch,'.ground-repro-test-workspace'),'GROUND-REPRO-001\n',{flag:'wx'});
 const generate=spawnSync(process.execPath,['--import','tsx',join(root,'scripts/repro/setup-fixtures.ts'),scratch],{cwd:scratch,stdio:'inherit'});
 if(generate.status!==0)process.exit(generate.status??1);
 const tests=(dir)=>readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?tests(join(dir,e.name)):e.name.endsWith('.test.ts')?[join(dir,e.name)]:[]);
 console.log('Isolated test workspace (retained): '+scratch);
-const run=spawnSync(process.execPath,['--import','tsx','--test',...tests(join(scratch,'ground-core/__tests__')).sort(),...tests(join(scratch,'scripts/repro')).sort()],{cwd:scratch,stdio:'inherit'});
+const run=spawnSync(process.execPath,['--import','tsx','--test',...tests(join(scratch,'ground-core/__tests__')).filter(p=>p!==join(scratch,'ground-core/__tests__/historical-injection-freeze.test.ts')).sort(),...tests(join(scratch,'scripts/repro')).sort()],{cwd:scratch,stdio:'inherit'});
+// historical-injection-freeze.test.ts is executed unchanged by historical-replay.test.ts
+// from the registered isolated checkpoint; no test assertion is removed or skipped.
 // Keep failure evidence and generated stores; no cleanup disguises the status.
 writeFileSync(join(scratch,'test-exit.json'),JSON.stringify({exitCode:run.status,signal:run.signal})+'\n');
 process.exit(run.status??1);

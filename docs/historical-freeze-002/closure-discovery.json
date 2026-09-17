@@ -1,0 +1,673 @@
+{
+  "entrypoint": "ground-core/__tests__/historical-injection-freeze.test.ts",
+  "modules": 39,
+  "assets": [
+    "ground-core/experimental/historical-reality/round1.dataset.json",
+    "ground-core/injections/frus-1904-392/selected-input.json",
+    "ground-core/injections/frus-1904-392/manifest.json",
+    "docs/schemas/ground-core-project-state.v0.1.25.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.24.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.23.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.22.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.21.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.20.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.19.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.18.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.17.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.16.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.15.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.14.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.13.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.12.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.11.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.10.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.9.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.8.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.7.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.6.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.5.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.4.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.3.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.2.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.1.schema.json",
+    "docs/schemas/ground-core-project-state.v0.1.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.25.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.24.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.23.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.22.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.21.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.20.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.19.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.18.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.17.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.16.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.15.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.14.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.13.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.12.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.11.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.10.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.9.schema.json",
+    "docs/schemas/ground-core-state-patch.v0.1.8.schema.json"
+  ],
+  "external_imports": [
+    "ajv-formats",
+    "ajv-formats/dist/formats.js",
+    "ajv/dist/2020.js",
+    "node:assert/strict",
+    "node:crypto",
+    "node:fs",
+    "node:module",
+    "node:path",
+    "node:test",
+    "node:url"
+  ],
+  "edges": [
+    {
+      "from": "ground-core/__tests__/historical-injection-freeze.test.ts",
+      "to": "ground-core/state-engine.ts"
+    },
+    {
+      "from": "ground-core/__tests__/historical-injection-freeze.test.ts",
+      "to": "ground-core/validate.ts"
+    },
+    {
+      "from": "ground-core/__tests__/historical-injection-freeze.test.ts",
+      "to": "ground-core/reality/belief.ts"
+    },
+    {
+      "from": "ground-core/__tests__/historical-injection-freeze.test.ts",
+      "to": "ground-core/experimental/historical-reality/substrate.ts"
+    },
+    {
+      "from": "ground-core/__tests__/historical-injection-freeze.test.ts",
+      "to": "ground-core/injections/frus-1904-392/package.ts"
+    },
+    {
+      "from": "ground-core/injections/frus-1904-392/package.ts",
+      "to": "ground-core/experimental/historical-reality/substrate.ts"
+    },
+    {
+      "from": "ground-core/injections/frus-1904-392/package.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/experimental/historical-reality/substrate.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/experimental/historical-reality/substrate.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/belief.ts",
+      "to": "ground-core/temporal.ts"
+    },
+    {
+      "from": "ground-core/reality/belief.ts",
+      "to": "ground-core/reality/epistemic.ts"
+    },
+    {
+      "from": "ground-core/reality/belief.ts",
+      "to": "ground-core/reality/semantic-equality.ts"
+    },
+    {
+      "from": "ground-core/reality/belief.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/belief.ts",
+      "to": "ground-core/reality/belief-types.ts"
+    },
+    {
+      "from": "ground-core/reality/belief-types.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/epistemic.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/temporal.ts",
+      "to": "ground-core/errors.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/reality/semantic-equality.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/decision-snapshot-verification.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/temporal.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/temporal-admission.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/errors.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/migrate.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/reality/reference-criterion.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/reality/semantic-equality.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/reality/governance-core.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/reality/capability-core.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/reality/decision-core.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/reality/decision-memory-core.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/reality/agency-core.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/reality/intervention-core.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/reality/commitment-core.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/reality/resource-commitment-core.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/reality/resource-core.ts"
+    },
+    {
+      "from": "ground-core/state-engine.ts",
+      "to": "ground-core/validate.ts"
+    },
+    {
+      "from": "ground-core/reality/resource-core.ts",
+      "to": "ground-core/reality/semantic-equality.ts"
+    },
+    {
+      "from": "ground-core/reality/resource-core.ts",
+      "to": "ground-core/temporal.ts"
+    },
+    {
+      "from": "ground-core/reality/resource-core.ts",
+      "to": "ground-core/reality/resource-types.ts"
+    },
+    {
+      "from": "ground-core/reality/resource-core.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/resource-types.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/resource-commitment-core.ts",
+      "to": "ground-core/reality/semantic-equality.ts"
+    },
+    {
+      "from": "ground-core/reality/resource-commitment-core.ts",
+      "to": "ground-core/temporal.ts"
+    },
+    {
+      "from": "ground-core/reality/resource-commitment-core.ts",
+      "to": "ground-core/reality/commitment-core.ts"
+    },
+    {
+      "from": "ground-core/reality/resource-commitment-core.ts",
+      "to": "ground-core/reality/intervention-core.ts"
+    },
+    {
+      "from": "ground-core/reality/resource-commitment-core.ts",
+      "to": "ground-core/reality/resource-core.ts"
+    },
+    {
+      "from": "ground-core/reality/resource-commitment-core.ts",
+      "to": "ground-core/reality/resource-commitment-types.ts"
+    },
+    {
+      "from": "ground-core/reality/resource-commitment-core.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/resource-commitment-types.ts",
+      "to": "ground-core/reality/commitment-types.ts"
+    },
+    {
+      "from": "ground-core/reality/resource-commitment-types.ts",
+      "to": "ground-core/reality/resource-types.ts"
+    },
+    {
+      "from": "ground-core/reality/resource-commitment-types.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/commitment-types.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/commitment-types.ts",
+      "to": "ground-core/reality/decision-memory-types.ts"
+    },
+    {
+      "from": "ground-core/reality/commitment-types.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-memory-types.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-memory-types.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/intervention-core.ts",
+      "to": "ground-core/reality/semantic-equality.ts"
+    },
+    {
+      "from": "ground-core/reality/intervention-core.ts",
+      "to": "ground-core/temporal.ts"
+    },
+    {
+      "from": "ground-core/reality/intervention-core.ts",
+      "to": "ground-core/reality/capability-core.ts"
+    },
+    {
+      "from": "ground-core/reality/intervention-core.ts",
+      "to": "ground-core/reality/resource-core.ts"
+    },
+    {
+      "from": "ground-core/reality/intervention-core.ts",
+      "to": "ground-core/reality/intervention-types.ts"
+    },
+    {
+      "from": "ground-core/reality/intervention-core.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/intervention-types.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/capability-core.ts",
+      "to": "ground-core/reality/semantic-equality.ts"
+    },
+    {
+      "from": "ground-core/reality/capability-core.ts",
+      "to": "ground-core/temporal.ts"
+    },
+    {
+      "from": "ground-core/reality/capability-core.ts",
+      "to": "ground-core/reality/capability-types.ts"
+    },
+    {
+      "from": "ground-core/reality/capability-core.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/capability-types.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/commitment-core.ts",
+      "to": "ground-core/reality/semantic-equality.ts"
+    },
+    {
+      "from": "ground-core/reality/commitment-core.ts",
+      "to": "ground-core/decision-snapshot-verification.ts"
+    },
+    {
+      "from": "ground-core/reality/commitment-core.ts",
+      "to": "ground-core/temporal.ts"
+    },
+    {
+      "from": "ground-core/reality/commitment-core.ts",
+      "to": "ground-core/reality/decision-memory-core.ts"
+    },
+    {
+      "from": "ground-core/reality/commitment-core.ts",
+      "to": "ground-core/reality/commitment-types.ts"
+    },
+    {
+      "from": "ground-core/reality/commitment-core.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-memory-core.ts",
+      "to": "ground-core/reality/semantic-equality.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-memory-core.ts",
+      "to": "ground-core/decision-snapshot-verification.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-memory-core.ts",
+      "to": "ground-core/temporal.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-memory-core.ts",
+      "to": "ground-core/reality/feasibility-core.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-memory-core.ts",
+      "to": "ground-core/reality/decision-core.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-memory-core.ts",
+      "to": "ground-core/reality/agency-core.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-memory-core.ts",
+      "to": "ground-core/reality/capability-core.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-memory-core.ts",
+      "to": "ground-core/reality/resource-core.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-memory-core.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-memory-core.ts",
+      "to": "ground-core/reality/decision-memory-types.ts"
+    },
+    {
+      "from": "ground-core/reality/agency-core.ts",
+      "to": "ground-core/reality/semantic-equality.ts"
+    },
+    {
+      "from": "ground-core/reality/agency-core.ts",
+      "to": "ground-core/temporal.ts"
+    },
+    {
+      "from": "ground-core/reality/agency-core.ts",
+      "to": "ground-core/reality/capability-core.ts"
+    },
+    {
+      "from": "ground-core/reality/agency-core.ts",
+      "to": "ground-core/reality/decision-core.ts"
+    },
+    {
+      "from": "ground-core/reality/agency-core.ts",
+      "to": "ground-core/reality/intervention-core.ts"
+    },
+    {
+      "from": "ground-core/reality/agency-core.ts",
+      "to": "ground-core/reality/permission-core.ts"
+    },
+    {
+      "from": "ground-core/reality/agency-core.ts",
+      "to": "ground-core/reality/resource-core.ts"
+    },
+    {
+      "from": "ground-core/reality/agency-core.ts",
+      "to": "ground-core/reality/agency-types.ts"
+    },
+    {
+      "from": "ground-core/reality/agency-core.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/agency-types.ts",
+      "to": "ground-core/reality/capability-types.ts"
+    },
+    {
+      "from": "ground-core/reality/agency-types.ts",
+      "to": "ground-core/reality/decision-types.ts"
+    },
+    {
+      "from": "ground-core/reality/agency-types.ts",
+      "to": "ground-core/reality/intervention-types.ts"
+    },
+    {
+      "from": "ground-core/reality/agency-types.ts",
+      "to": "ground-core/reality/permission-types.ts"
+    },
+    {
+      "from": "ground-core/reality/agency-types.ts",
+      "to": "ground-core/reality/resource-types.ts"
+    },
+    {
+      "from": "ground-core/reality/agency-types.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/permission-types.ts",
+      "to": "ground-core/reality/governance-types.ts"
+    },
+    {
+      "from": "ground-core/reality/permission-types.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/governance-types.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-types.ts",
+      "to": "ground-core/reality/intervention-types.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-types.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/permission-core.ts",
+      "to": "ground-core/reality/semantic-equality.ts"
+    },
+    {
+      "from": "ground-core/reality/permission-core.ts",
+      "to": "ground-core/temporal.ts"
+    },
+    {
+      "from": "ground-core/reality/permission-core.ts",
+      "to": "ground-core/reality/permission-types.ts"
+    },
+    {
+      "from": "ground-core/reality/permission-core.ts",
+      "to": "ground-core/reality/governance-core.ts"
+    },
+    {
+      "from": "ground-core/reality/permission-core.ts",
+      "to": "ground-core/reality/governance-provenance.ts"
+    },
+    {
+      "from": "ground-core/reality/permission-core.ts",
+      "to": "ground-core/reality/intervention-core.ts"
+    },
+    {
+      "from": "ground-core/reality/permission-core.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/governance-provenance.ts",
+      "to": "ground-core/temporal.ts"
+    },
+    {
+      "from": "ground-core/reality/governance-provenance.ts",
+      "to": "ground-core/reality/governance-core.ts"
+    },
+    {
+      "from": "ground-core/reality/governance-provenance.ts",
+      "to": "ground-core/reality/governance-types.ts"
+    },
+    {
+      "from": "ground-core/reality/governance-provenance.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/governance-core.ts",
+      "to": "ground-core/reality/semantic-equality.ts"
+    },
+    {
+      "from": "ground-core/reality/governance-core.ts",
+      "to": "ground-core/temporal.ts"
+    },
+    {
+      "from": "ground-core/reality/governance-core.ts",
+      "to": "ground-core/reality/governance-types.ts"
+    },
+    {
+      "from": "ground-core/reality/governance-core.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-core.ts",
+      "to": "ground-core/reality/semantic-equality.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-core.ts",
+      "to": "ground-core/temporal.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-core.ts",
+      "to": "ground-core/reality/intervention-core.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-core.ts",
+      "to": "ground-core/reality/decision-types.ts"
+    },
+    {
+      "from": "ground-core/reality/decision-core.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/feasibility-core.ts",
+      "to": "ground-core/reality/semantic-equality.ts"
+    },
+    {
+      "from": "ground-core/reality/feasibility-core.ts",
+      "to": "ground-core/reality/agency-core.ts"
+    },
+    {
+      "from": "ground-core/reality/feasibility-core.ts",
+      "to": "ground-core/reality/capability-core.ts"
+    },
+    {
+      "from": "ground-core/reality/feasibility-core.ts",
+      "to": "ground-core/reality/resource-core.ts"
+    },
+    {
+      "from": "ground-core/reality/feasibility-core.ts",
+      "to": "ground-core/reality/agency-types.ts"
+    },
+    {
+      "from": "ground-core/reality/feasibility-core.ts",
+      "to": "ground-core/reality/feasibility-types.ts"
+    },
+    {
+      "from": "ground-core/reality/feasibility-core.ts",
+      "to": "ground-core/reality/feasibility-types.ts"
+    },
+    {
+      "from": "ground-core/reality/feasibility-core.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/feasibility-types.ts",
+      "to": "ground-core/reality/agency-types.ts"
+    },
+    {
+      "from": "ground-core/reality/feasibility-types.ts",
+      "to": "ground-core/reality/capability-types.ts"
+    },
+    {
+      "from": "ground-core/reality/feasibility-types.ts",
+      "to": "ground-core/reality/permission-types.ts"
+    },
+    {
+      "from": "ground-core/reality/feasibility-types.ts",
+      "to": "ground-core/reality/resource-types.ts"
+    },
+    {
+      "from": "ground-core/reality/feasibility-types.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/decision-snapshot-verification.ts",
+      "to": "ground-core/errors.ts"
+    },
+    {
+      "from": "ground-core/decision-snapshot-verification.ts",
+      "to": "ground-core/reality/semantic-equality.ts"
+    },
+    {
+      "from": "ground-core/decision-snapshot-verification.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/reference-criterion.ts",
+      "to": "ground-core/errors.ts"
+    },
+    {
+      "from": "ground-core/reality/reference-criterion.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/reality/reference-criterion.ts",
+      "to": "ground-core/reality/semantic-equality.ts"
+    },
+    {
+      "from": "ground-core/migrate.ts",
+      "to": "ground-core/decision-snapshot-verification.ts"
+    },
+    {
+      "from": "ground-core/migrate.ts",
+      "to": "ground-core/errors.ts"
+    },
+    {
+      "from": "ground-core/migrate.ts",
+      "to": "ground-core/types.ts"
+    },
+    {
+      "from": "ground-core/migrate.ts",
+      "to": "ground-core/validate.ts"
+    },
+    {
+      "from": "ground-core/temporal-admission.ts",
+      "to": "ground-core/temporal.ts"
+    }
+  ],
+  "filesystem_reads": {
+    "package.ts": [
+      "round1.dataset.json",
+      "selected-input.json",
+      "manifest.json",
+      "substrate.ts"
+    ],
+    "validate.ts": "literal schema names under docs/schemas"
+  },
+  "dynamic_imports": 0
+}
