@@ -1,5 +1,6 @@
 import { createServer } from 'node:http';
 import { config, verify } from './verify.js';
+import { sourceConfig, verifyBlob } from './blob-input.js';
 
 const log = (event: string, fields = {}) => process.stdout.write(JSON.stringify({
   timestamp: new Date().toISOString(), event, ...fields,
@@ -7,6 +8,8 @@ const log = (event: string, fields = {}) => process.stdout.write(JSON.stringify(
 
 try {
   const input = config(process.env);
+  const source = sourceConfig(process.env);
+  const cancellation = new AbortController();
   let ready = false;
   let stopped = false;
   let lastSuccess = 0;
@@ -22,6 +25,7 @@ try {
   function shutdown(signal: string, code = 0) {
     if (stopped) return;
     stopped = true;
+    cancellation.abort();
     ready = false;
     clearTimeout(timer);
     process.exitCode = code;
@@ -32,23 +36,27 @@ try {
   process.once('SIGTERM', () => shutdown('SIGTERM'));
   process.once('SIGINT', () => shutdown('SIGINT'));
   server.once('error', () => shutdown('HEALTH_SERVER_ERROR', 1));
-  function cycle() {
+  async function cycle() {
     if (stopped) return;
     try {
-      const result = verify(input);
+      const result = source === 'azure-blob'
+        ? await verifyBlob(input, process.env, cancellation.signal)
+        : {...verify(input), input_source: 'embedded'};
+      if (stopped) return;
       lastSuccess = Date.now();
       ready = true;
       log('snapshot_integrity_checked', result);
     } catch {
+      if (stopped) return;
       ready = false;
       // Never serialize source content, environment, credentials, or exception messages.
       log('snapshot_integrity_failed', { production_authority: false });
     }
-    timer = setTimeout(cycle, input.interval);
+    if (!stopped) timer = setTimeout(() => { void cycle(); }, input.interval);
   }
   server.listen(input.port, '0.0.0.0', () => {
     log('worker_started', { production_authority: false });
-    cycle();
+    void cycle();
   });
 } catch {
   log('worker_configuration_rejected');
