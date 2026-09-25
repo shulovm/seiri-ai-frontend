@@ -1,0 +1,29 @@
+FROM node:24.15.0-bookworm-slim@sha256:4e6b70dd6cbfc88c8157ba19aa3d9f9cce6ba4703576d55459e45efcbc9c5f5d AS build
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --ignore-scripts --no-audit --no-fund
+COPY ground-core/ ground-core/
+COPY containers/ground-worker/ containers/ground-worker/
+COPY docs/schemas/ docs/schemas/
+RUN ./node_modules/.bin/tsc -p containers/ground-worker/tsconfig.build.json
+RUN cp containers/ground-worker/corpus-pins.json dist-worker/containers/ground-worker/
+RUN node containers/ground-worker/package-corpus.mjs
+
+FROM node:24.15.0-bookworm-slim@sha256:4e6b70dd6cbfc88c8157ba19aa3d9f9cce6ba4703576d55459e45efcbc9c5f5d
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=build /app/package.json ./package.json
+COPY --from=build /app/dist-worker/ ./
+COPY --from=build /app/docs/schemas/ ./docs/schemas/
+COPY --from=build /app/corpus/ ./corpus/
+COPY --from=build /app/node_modules/ajv/ ./node_modules/ajv/
+COPY --from=build /app/node_modules/ajv-formats/ ./node_modules/ajv-formats/
+COPY --from=build /app/node_modules/fast-deep-equal/ ./node_modules/fast-deep-equal/
+COPY --from=build /app/node_modules/fast-uri/ ./node_modules/fast-uri/
+COPY --from=build /app/node_modules/json-schema-traverse/ ./node_modules/json-schema-traverse/
+COPY --from=build /app/node_modules/require-from-string/ ./node_modules/require-from-string/
+USER node
+EXPOSE 8080
+STOPSIGNAL SIGTERM
+HEALTHCHECK --interval=30s --timeout=3s --start-period=10s CMD ["node", "-e", "fetch('http://127.0.0.1:'+(process.env.GROUND_WORKER_HEALTH_PORT||8080)+'/healthz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+ENTRYPOINT ["node", "containers/ground-worker/main.js"]

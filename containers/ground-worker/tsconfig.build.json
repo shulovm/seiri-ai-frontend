@@ -1,0 +1,5 @@
+{
+  "extends": "../../ground-core/tsconfig.json",
+  "compilerOptions": { "noEmit": false, "rootDir": "../..", "outDir": "../../dist-worker" },
+  "include": ["./main.ts"]
+}
