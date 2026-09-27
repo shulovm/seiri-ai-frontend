@@ -1,0 +1,140 @@
+ℹ tests 4110
+ℹ pass 4108
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+
+✖ failing tests:
+
+test at ground-core/__tests__/contract-evolution.test.ts:1:1321
+✖ current candidate has exactly base plus approved core and enumerated contract implementation scope (176.012125ms)
+  AssertionError [ERR_ASSERTION]: unapproved candidate path set
+  + actual - expected
+  ... Skipped lines
+  
+    [
+      '.gitignore',
+      'docs/FREEWATER_GROUND_CORE_MANUAL_RUN_V0.1.md',
+      'docs/FREEWATER_GROUND_CORE_V0.1.1_PATCH.md',
+      'docs/GROUND_ACTION_INTENT_METADATA_V0.4.11.md',
+  ...
+      'docs/GROUND_SESSION_FOCUS_PORTFOLIO_V0.4.8.md',
+  +   'docs/GROUND_STORAGE_002_PERSISTENCE_CONTRACT.md',
+  +   'docs/GROUND_STORAGE_003_ROOT_OWNERSHIP.md',
+      'docs/GROUND_STUDIO_V0.5.1_BRIEF_DESIGN.md',
+      'docs/GROUND_STUDIO_V0.5.2_BRIEF_RENDERER.md',
+      'docs/GROUND_STUDIO_V0.5.3_STUDIO_ENGINE.md',
+      'docs/GROUND_STUDIO_V0.5.4_NARRATIVE_LAYER.md',
+      'docs/GROUND_STUDIO_V0.5.5_STUDIO_BRIEF_CLI.md',
+  ...
+      'ground-core/__tests__/permission-core.test.ts',
+  +   'ground-core/__tests__/persistence-contract.test.ts',
+      'ground-core/__tests__/portfolio-director.test.ts',
+      'ground-core/__tests__/prepare-legacy-fixtures.ts',
+      'ground-core/__tests__/prospective-core.test.ts',
+      'ground-core/__tests__/prospective-risk-discovery.test.ts',
+      'ground-core/__tests__/reality-core.test.ts',
+  ...
+      'ground-core/__tests__/state-engine.test.ts',
+  +   'ground-core/__tests__/storage-owner.test.ts',
+      'ground-core/__tests__/studio-brief-cli.test.ts',
+      'ground-core/__tests__/studio-brief-deep-work-candidates.test.ts',
+      'ground-core/__tests__/studio-brief-deep-work-focus.test.ts',
+      'ground-core/__tests__/studio-brief-renderer.test.ts',
+      'ground-core/__tests__/studio-brief-session-focus.test.ts',
+  ...
+      'ground-core/observation-recency.ts',
+  +   'ground-core/owner-cli.ts',
+      'ground-core/reality/agency-core.ts',
+      'ground-core/reality/agency-types.ts',
+      'ground-core/reality/apply.ts',
+      'ground-core/reality/assertion-scope.ts',
+      'ground-core/reality/attention-basis-coverage-core.ts',
+  ...
+      'ground-core/state-engine.ts',
+  +   'ground-core/storage-owner.ts',
+      'ground-core/studio/analyzers.ts',
+      'ground-core/studio/brief-adapter.ts',
+      'ground-core/studio/brief-formatters.ts',
+      'ground-core/studio/brief-renderer.ts',
+      'ground-core/studio/brief-types.ts',
+  ...
+      'package.json',
+  +   'scripts/human-interface/verify-human-001.ts',
+      'scripts/repro/generate-fixtures.ts',
+      'scripts/repro/reproducibility.test.ts',
+  +   'scripts/repro/runner-copy-policy.mjs',
+  +   'scripts/repro/runner-copy-policy.test.ts',
+      'scripts/repro/setup-fixtures.ts',
+      'scripts/repro/test-ground.mjs',
+      'scripts/repro/tsconfig.json'
+    ]
+      at baseline
+
+test at ground-core/__tests__/contract-evolution.test.ts:1:1461
+✖ unapproved current core bytes are rejected even when historical checkpoint integrity passes (328.11675ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /unapproved current bytes/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: unapproved candidate path set\n' +
+    '+ actual - expected\n' +
+    '... Skipped lines\n' +
+    '\n' +
+    '  [\n' +
+    "    '.gitignore',\n" +
+    "    'docs/FREEWATER_GROUND_CORE_MANUAL_RUN_V0.1.md',\n" +
+    "    'docs/FREEWATER_GROUND_CORE_V0.1.1_PATCH.md',\n" +
+    "    'docs/GROUND_ACTION_INTENT_METADATA_V0.4.11.md',\n" +
+    '...\n' +
+    "    'docs/GROUND_SESSION_FOCUS_PORTFOLIO_V0.4.8.md',\n" +
+    "+   'docs/GROUND_STORAGE_002_PERSISTENCE_CONTRACT.md',\n" +
+    "+   'docs/GROUND_STORAGE_003_ROOT_OWNERSHIP.md',\n" +
+    "    'docs/GROUND_STUDIO_V0.5.1_BRIEF_DESIGN.md',\n" +
+    "    'docs/GROUND_STUDIO_V0.5.2_BRIEF_RENDERER.md',\n" +
+    "    'docs/GROUND_STUDIO_V0.5.3_STUDIO_ENGINE.md',\n" +
+    "    'docs/GROUND_STUDIO_V0.5.4_NARRATIVE_LAYER.md',\n" +
+    "    'docs/GROUND_STUDIO_V0.5.5_STUDIO_BRIEF_CLI.md',\n" +
+    '...\n' +
+    "    'ground-core/__tests__/permission-core.test.ts',\n" +
+    "+   'ground-core/__tests__/persistence-contract.test.ts',\n" +
+    "    'ground-core/__tests__/portfolio-director.test.ts',\n" +
+    "    'ground-core/__tests__/prepare-legacy-fixtures.ts',\n" +
+    "    'ground-core/__tests__/prospective-core.test.ts',\n" +
+    "    'ground-core/__tests__/prospective-risk-discovery.test.ts',\n" +
+    "    'ground-core/__tests__/reality-core.test.ts',\n" +
+    '...\n' +
+    "    'ground-core/__tests__/state-engine.test.ts',\n" +
+    "+   'ground-core/__tests__/storage-owner.test.ts',\n" +
+    "    'ground-core/__tests__/studio-brief-cli.test.ts',\n" +
+    "    'ground-core/__tests__/studio-brief-deep-work-candidates.test.ts',\n" +
+    "    'ground-core/__tests__/studio-brief-deep-work-focus.test.ts',\n" +
+    "    'ground-core/__tests__/studio-brief-renderer.test.ts',\n" +
+    "    'ground-core/__tests__/studio-brief-session-focus.test.ts',\n" +
+    '...\n' +
+    "    'ground-core/observation-recency.ts',\n" +
+    "+   'ground-core/owner-cli.ts',\n" +
+    "    'ground-core/reality/agency-core.ts',\n" +
+    "    'ground-core/reality/agency-types.ts',\n" +
+    "    'ground-core/reality/apply.ts',\n" +
+    "    'ground-core/reality/assertion-scope.ts',\n" +
+    "    'ground-core/reality/attention-basis-coverage-core.ts',\n" +
+    '...\n' +
+    "    'ground-core/state-engine.ts',\n" +
+    "+   'ground-core/storage-owner.ts',\n" +
+    "    'ground-core/studio/analyzers.ts',\n" +
+    "    'ground-core/studio/brief-adapter.ts',\n" +
+    "    'ground-core/studio/brief-formatters.ts',\n" +
+    "    'ground-core/studio/brief-renderer.ts',\n" +
+    "    'ground-core/studio/brief-types.ts',\n" +
+    '...\n' +
+    "    'package.json',\n" +
+    "+   'scripts/human-interface/verify-human-001.ts',\n" +
+    "    'scripts/repro/generate-fixtures.ts',\n" +
+    "    'scripts/repro/reproducibility.test.ts',\n" +
+    "+   'scripts/repro/runner-copy-policy.mjs',\n" +
+    "+   'scripts/repro/runner-copy-policy.test.ts',\n" +
+    "    'scripts/repro/setup-fixtures.ts',\n" +
+    "    'scripts/repro/test-ground.mjs',\n" +
+    "    'scripts/repro/tsconfig.json'\n" +
+    '  ]\n'
+      at baseline

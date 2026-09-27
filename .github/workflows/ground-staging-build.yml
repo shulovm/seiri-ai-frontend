@@ -1,0 +1,33 @@
+name: GROUND build OIDC validation
+on:
+  workflow_call:
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  auth:
+    if: github.repository == 'shulovm/seiri-ai-frontend' && github.ref == 'refs/heads/master' && github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    environment: ground-staging
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.workflow_sha }}
+          path: control
+          persist-credentials: false
+      - name: Verify exact issued OIDC subject
+        run: python3 control/scripts/azure/ground-staging-auth.py --purpose build --stage subject
+      - uses: azure/login@7184910d9eb2b1c5e48f7073824a90609bb9b6d6
+        with:
+          client-id: ${{ vars.GROUND_BUILD_CLIENT_ID }}
+          tenant-id: ${{ vars.GROUND_TENANT_ID }}
+          subscription-id: ${{ vars.GROUND_SUBSCRIPTION_ID }}
+      - name: Read-only capability and identity checks
+        run: python3 control/scripts/azure/ground-staging-auth.py --purpose build --stage capabilities
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: ground-auth-build-${{ github.run_attempt }}
+          path: evidence/auth-build
+          retention-days: 90

@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "repository": "shulovm/seiri-ai-frontend",
+  "subscription": "a0d869a1-8cdc-4b87-891c-9d92dd52320d",
+  "resource_group": "rg-orimusu-ground-staging",
+  "app": "ground-worker-staging",
+  "registry": "orimusugroundacr",
+  "registry_server": "orimusugroundacr-f2gecfdaa2ddfzhb.azurecr.io",
+  "image_repository": "ground-worker",
+  "workspace": "law-ground-staging-jpe",
+  "workspace_customer_id": "d3176552-b8b8-4875-a2fb-cd4b52948044",
+  "initial_source": "e23ff04b02a6df64739cb2a7d462315eb82324f2",
+  "initial_revision": "ground-worker-staging--blob-e23ff04-260926151258",
+  "initial_digest": "sha256:6dd83661c3c88e20443abc6c5d32aa14a113156c911cd411db286c75461ef860",
+  "approved_releases": {
+    "f94fa44955e45786ef0ead092a9bfd6ee309f3a4ec6fe3c7e209e6fc316bad81": {
+      "files_checked": 152,
+      "source_traversals": 87,
+      "queries_checked": 40,
+      "claims": 187,
+      "evidence": 57
+    }
+  },
+  "activity_alert": "ground-staging-containerapp-write-review",
+  "app_api_version": "2024-03-01",
+  "known_baseline_core_failures": [
+    "current candidate has exactly base plus approved core and enumerated contract implementation scope",
+    "unapproved current core bytes are rejected even when historical checkpoint integrity passes"
+  ],
+  "known_baseline_core_signatures": {
+    "current candidate has exactly base plus approved core and enumerated contract implementation scope": "74caa90bb2315bb479e134df9ec9caa713ed93e824a71f6c792e69d6ef5aeda3",
+    "unapproved current core bytes are rejected even when historical checkpoint integrity passes": "93f05469d417c72c6dfcbf7c24b1815532ccbea78f52907b9fbe0fe8849a6547"
+  },
+  "known_baseline_failure_policy": "User-authorized exact pre-existing failures only, bound to initial_source, full counts, names and AssertionError diagnostic hashes; raw failures remain reported. No changed signature, extra failure, skip, source change or composition-contract change is admitted."
+}
