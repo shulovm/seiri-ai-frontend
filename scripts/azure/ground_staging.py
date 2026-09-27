@@ -25,6 +25,13 @@ def now():
     return dt.datetime.now(dt.timezone.utc).isoformat()
 
 
+def verify_image_binding(artifact):
+    digest = artifact.get("digest", "")
+    require(isinstance(digest, str) and re.fullmatch(r"sha256:[a-f0-9]{64}", digest), "artifact digest format")
+    require(artifact.get("image") == POLICY["registry_server"] + "/" + POLICY["image_repository"] + "@" + digest,
+            "artifact image/digest binding")
+
+
 def save(path, value):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)

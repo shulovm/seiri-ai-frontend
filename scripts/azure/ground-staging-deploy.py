@@ -21,6 +21,7 @@ report = {"status": "STOPPED", "started": now(), "phase": "GROUND-AZURE-004", "m
           "activity_alert": POLICY["activity_alert"], "workflow_run": os.environ["GITHUB_RUN_ID"],
           "workflow_attempt": os.environ["GITHUB_RUN_ATTEMPT"], "source_commit": image["source_commit"], "image": image["image"]}
 try:
+    verify_image_binding(image)
     require(image["run_id"] == report["workflow_run"] and image["attempt"] == report["workflow_attempt"], "same-run image artifact")
     require(image["source_commit"] == POLICY["initial_source"], "admitted source")
     require(image["corpus_release"] in POLICY["approved_releases"], "admitted release")

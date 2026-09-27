@@ -23,6 +23,13 @@ def fixture():
 
 
 class Guards(unittest.TestCase):
+    def test_artifact_cannot_verify_one_digest_and_deploy_another(self):
+        digest = "sha256:" + "a" * 64
+        image = g.POLICY["registry_server"] + "/ground-worker@" + digest
+        g.verify_image_binding({"digest": digest, "image": image})
+        with self.assertRaisesRegex(RuntimeError, "image/digest binding"):
+            g.verify_image_binding({"digest": "sha256:" + "b" * 64, "image": image})
+
     def test_good_health(self):
         g.healthy(*fixture())
 
