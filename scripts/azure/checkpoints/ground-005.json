@@ -1,0 +1,95 @@
+{
+  "phase": "GROUND-AZURE-005",
+  "status": "DEPLOYED_VERIFIED",
+  "closed_at": "2026-09-27T05:50:27.195530+00:00",
+  "workflow_path": ".github/workflows/ground-evidence-publish.yml",
+  "dispatch_workflow": ".github/workflows/ground-evidence-release.yml",
+  "workflow_commit": "27c97a6b5c1bd10174f533e5907ce338b119f976",
+  "github_run": "https://github.com/shulovm/seiri-ai-frontend/actions/runs/36298051511",
+  "supporting_runs": {
+    "oidc_auth": 36296780820,
+    "already_published": 36297096502,
+    "create_path_then_conditional_probe_stop": 36297382653
+  },
+  "oidc_validation": {
+    "status": "ACTUAL_TOKEN_AND_AZURE_PRINCIPAL_VERIFIED",
+    "claims": {
+      "aud": "api://AzureADTokenExchange",
+      "environment": "ground-staging",
+      "iss": "https://token.actions.githubusercontent.com",
+      "job_workflow_ref": "shulovm/seiri-ai-frontend/.github/workflows/ground-evidence-publish.yml@refs/heads/master",
+      "job_workflow_sha": "27c97a6b5c1bd10174f533e5907ce338b119f976",
+      "ref": "refs/heads/master",
+      "repository": "shulovm/seiri-ai-frontend",
+      "sub": "repo:shulovm/seiri-ai-frontend:environment:ground-staging:job_workflow_ref:shulovm/seiri-ai-frontend/.github/workflows/ground-evidence-publish.yml@refs/heads/master"
+    }
+  },
+  "publisher_identity": {
+    "name": "id-ground-evidence-publisher-staging",
+    "client_id": "b0dafe45-109d-44ee-9905-ce83dcf7ff78",
+    "principal_id": "80d930f4-a71a-42b2-9244-061f5e9d89f1"
+  },
+  "publisher_scope": "/subscriptions/a0d869a1-8cdc-4b87-891c-9d92dd52320d/resourceGroups/rg-orimusu-ground-staging/providers/Microsoft.Storage/storageAccounts/orimusugroundstg01/blobServices/default/containers/ground-evidence-staging",
+  "publisher_actions": [
+    "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
+    "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/add/action"
+  ],
+  "publisher_assignment_count": 1,
+  "negative_authority_result": {
+    "status": "VERIFIED_BY_PERMISSIONS",
+    "basis": "Final live authority audit accepted by user; exactly one container-scoped role with read and add/action only",
+    "empirical_overwrite_probe": "HTTP 412 ConditionNotMet; inconclusive for authorization and not used as denial proof",
+    "destructive_probes_against_canonical_evidence": false,
+    "details": "negative-authority-proof.json"
+  },
+  "existing_release_result": "ALREADY_PUBLISHED",
+  "controlled_publish_result": "PUBLISHED_BYTE_VERIFIED_AND_RETAINED_READBACK_VERIFIED",
+  "release_id": "f94fa44955e45786ef0ead092a9bfd6ee309f3a4ec6fe3c7e209e6fc316bad81",
+  "validation_release_id": "224ac43b5b452d8ffd3467617ae9a1e66945a51b94a7aa0fbe0c19b9bcc54929",
+  "equivalence_result": {
+    "status": "FULL_BYTE_HASH_VERIFIED",
+    "canonical_blobs": 153,
+    "validation_blobs": 2,
+    "receipts_identical_across_runs": true
+  },
+  "canonical_release_untouched": true,
+  "worker_revision": "ground-worker-staging--ci-e23ff04-36288568608-1",
+  "worker_digest": "sha256:b42d6adbbebe958587a5682bac6200997d9ef41e0ab77580c8dc1f73c2b8b1e1",
+  "worker_identity_unchanged": true,
+  "worker_rbac_unchanged": true,
+  "worker_ready": true,
+  "worker_running": true,
+  "worker_restart_count": 0,
+  "old_revisions_retained": true,
+  "azure_mutations": {
+    "this_finalization": 0,
+    "since_accepted_bootstrap_recovery": 0,
+    "prior_bootstrap_created_resources": 4
+  },
+  "storage_mutations": {
+    "this_finalization": 0,
+    "phase_total_new_validation_blobs": 2,
+    "canonical_release_writes": 0,
+    "overwrites": 0,
+    "deletes": 0
+  },
+  "test_gate": {
+    "protocol_tests_passed": 48,
+    "source_status": "ADMISSION_PASSED_WITH_EXACT_PRE_EXISTING_FAILURES",
+    "known_preexisting_failures": 2,
+    "new_failures": 0
+  },
+  "publish_separate_from_promote": true,
+  "promotion_performed": false,
+  "shared_key_used": false,
+  "sas_used": false,
+  "client_secret_used": false,
+  "human_action_required": "none",
+  "durable_checkpoint": "scripts/azure/checkpoints/ground-005.json plus exported evidence bundle",
+  "next_action": "Stop Azure-focused setup; return to GROUND main development. GROUND-AZURE-006 remains a parallel track; BTC and Historical may proceed after their short Azure architecture meetings.",
+  "limitations": [
+    "Permission-based proof is not an empirical HTTP 403 test for every forbidden operation.",
+    "The prior conditional-canary workflow remains recorded as failed at HTTP 412; its successful create/readback evidence is preserved separately.",
+    "Publish source/release admission remains explicit and fail closed; additional production authority is not granted."
+  ]
+}
