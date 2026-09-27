@@ -86,7 +86,7 @@ def negative_canary(token,release):
  return results
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('stage',choices=['prepare','subject','auth','verify-existing','create-validation']);p.add_argument('--source');p.add_argument('--sha');p.add_argument('--release');p.add_argument('--bundle',default='bundle');p.add_argument('--test-checkpoint');a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('stage',choices=['prepare','subject','auth','verify-existing','verify-validation','create-validation']);p.add_argument('--source');p.add_argument('--sha');p.add_argument('--release');p.add_argument('--bundle',default='bundle');p.add_argument('--test-checkpoint');a=p.parse_args()
  out=pathlib.Path('evidence/publisher');out.mkdir(parents=True,exist_ok=True)
  report={'stage':a.stage,'status':'STOPPED','source_commit':SOURCE,'release_id':RELEASE,'started':now(),'workflow_run':os.environ.get('GITHUB_RUN_ID'),'workflow_attempt':os.environ.get('GITHUB_RUN_ATTEMPT'),'control_sha':os.environ.get('GITHUB_SHA'),'worker_mutations':0,'write_attempts':[],'promotion':False}
  def journal(row):
@@ -108,6 +108,10 @@ def main():
    else:
     with tempfile.TemporaryDirectory() as td:
      testrelease=validation_release(pathlib.Path(td))
+     if a.stage=='verify-validation':
+      report['validation_readback']=verify_remote(store,testrelease)
+      report.update(status='RETAINED_VALIDATION_BYTE_VERIFIED',validation_release_id=testrelease.release_id,equivalence='FULL_BYTE_HASH_VERIFIED',blob_mutations=0)
+      return
      result=publish(store,testrelease,journal)
      report['validation_release']=result
      report['negative_authority']=negative_canary(token,testrelease)

@@ -15,7 +15,7 @@ on:
         required: true
         default: auth
         type: choice
-        options: [auth, verify-existing, create-validation]
+        options: [auth, verify-existing, verify-validation, create-validation]
 permissions:
   contents: read
 concurrency:

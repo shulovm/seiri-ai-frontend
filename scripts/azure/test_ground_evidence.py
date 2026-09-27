@@ -222,6 +222,24 @@ class WorkflowGateTests(unittest.TestCase):
         opener=Opener([urllib.error.HTTPError('url',412,'condition mismatch',{},None)])
         with patch.object(self.entry.urllib.request,'build_opener',return_value=opener),self.assertRaises(GateError):
             self.entry.negative_canary('token',canary)
+    def test_verify_validation_never_publishes_or_probes(self):
+        import sys
+        from contextlib import ExitStack
+        with ExitStack() as stack:
+            stack.enter_context(patch.object(sys,'argv',['publisher','verify-validation']))
+            stack.enter_context(patch.object(self.entry,'validate_bundle',return_value=object()))
+            stack.enter_context(patch.object(self.entry,'token_gate',return_value='test-token'))
+            read=stack.enter_context(patch.object(self.entry,'verify_remote',return_value=[]))
+            write=stack.enter_context(patch.object(self.entry,'publish',side_effect=AssertionError('write forbidden')))
+            probe=stack.enter_context(patch.object(self.entry,'negative_canary',side_effect=AssertionError('probe forbidden')))
+            saved=stack.enter_context(patch.object(self.entry,'save'))
+            self.entry.main()
+            self.assertEqual(read.call_count,2)
+            write.assert_not_called();probe.assert_not_called()
+            report=saved.call_args.args[1]
+            self.assertEqual(report['status'],'RETAINED_VALIDATION_BYTE_VERIFIED')
+            self.assertEqual(report['blob_mutations'],0)
+            self.assertEqual(report['write_attempts'],[])
     def test_missing_identity_binding_fails_closed(self):
         with patch.object(self.entry,'CONFIG',{'status':'NOT_CREATED'}),self.assertRaises(GateError):self.entry.binding()
 
