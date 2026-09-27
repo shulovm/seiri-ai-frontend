@@ -1,5 +1,6 @@
 """One PATCH maximum. Ambiguous client outcomes are resolved through live reads."""
 import argparse
+import hashlib
 import datetime as dt
 import json
 import os
@@ -15,11 +16,14 @@ p.add_argument("--evidence", required=True)
 a = p.parse_args()
 ev = Path(a.evidence).resolve()
 ev.mkdir(parents=True, exist_ok=True)
-baseline = json.loads(Path(a.baseline).read_text())
+baseline_bytes = Path(a.baseline).read_bytes()
+parent_baseline_sha256 = hashlib.sha256(baseline_bytes).hexdigest()
+require(parent_baseline_sha256 == "cd1ea34ade3d162fc0e0bf8fa62b3afee38fd6f9d9ebd151eea49143b49890a7", "immutable approved baseline SHA256")
+baseline = json.loads(baseline_bytes)
 image = json.loads(Path(a.image).read_text())
 report = {"status": "STOPPED", "started": now(), "phase": "GROUND-AZURE-004", "mutation_attempts": 0,
           "activity_alert": POLICY["activity_alert"], "workflow_run": os.environ["GITHUB_RUN_ID"],
-          "workflow_attempt": os.environ["GITHUB_RUN_ATTEMPT"], "source_commit": image["source_commit"], "image": image["image"]}
+          "workflow_attempt": os.environ["GITHUB_RUN_ATTEMPT"], "parent_baseline_sha256": parent_baseline_sha256, "source_commit": image["source_commit"], "image": image["image"]}
 try:
     verify_image_binding(image)
     require(image["run_id"] == report["workflow_run"] and image["attempt"] == report["workflow_attempt"], "same-run image artifact")
@@ -101,6 +105,12 @@ try:
     require(worker_roles(baseline["worker_principal_id"]) == roles, "final worker RBAC")
     require(prior_names <= {r["name"] for r in final_revs}, "final revision retention")
     save(ev / "next-baseline.json", {**baseline, "revision": expected, "image": image["image"], "retained_revisions": sorted(r["name"] for r in final_revs)})
+    save(ev / "baseline-lineage.json", {"parent_baseline_sha256": parent_baseline_sha256,
+        "successor_baseline_sha256": hashlib.sha256((ev / "next-baseline.json").read_bytes()).hexdigest(),
+        "source_commit": image["source_commit"], "image_digest": image["digest"], "workflow_run": report["workflow_run"],
+        "workflow_attempt": report["workflow_attempt"], "revision": expected,
+        "verification_evidence": ["before.json", "before-worker-roles.json", "ready-replicas.json", "integrity.json", "checkpoint.json"],
+        "original_baseline_preserved": True})
     report.update(status="DEPLOYED_VERIFIED", health_gate="VERIFIED", integrity_gate="VERIFIED", worker_identity_unchanged=True,
                   worker_rbac_unchanged=True, deployment_end=now(), activity_log_correlation="Run/source/digest/revision/time recorded; alert remains enabled")
 except Exception as e:
