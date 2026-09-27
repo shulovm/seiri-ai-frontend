@@ -1,0 +1,18 @@
+{
+  "origin_run": "36288094609",
+  "origin_attempt": "1",
+  "origin_workflow_sha": "3d067c7207d201d7dfe4223bb953a7c3aa124984",
+  "digest": "sha256:b42d6adbbebe958587a5682bac6200997d9ef41e0ab77580c8dc1f73c2b8b1e1",
+  "files": {
+    "build/build-context.json": "06a7318d5700627a38b84e86939980756eb9fceead6fac31576729b5af4f8c26",
+    "build/push.log": "9827b21f7944360957b68e6796510721711bf88b7d448c00eeb66540a1313d4c",
+    "build/build.json": "452b2b1527a3f0dcdf33ea1c5065806fe75f292ff15943423e6173684fea443d",
+    "build/build.log": "d3174b3c608394eb473117d4489e9a5a1579868a5433494c6368474c4df8f652",
+    "tests/worker-and-blob.log": "3e02849eca470c5f81067fa9d64d0b5ead2c086381b0556bb2a1db2f806f727b",
+    "tests/dependencies.log": "ff2ba3222aa26561a8f54329acefe966aba76e2d31a608f3212aecbe9a9e65b8",
+    "tests/core.log": "83d886c2aaf8184cfe07b3b41f2cf0effcabbbbce0d16cd1c7d36efc9c69aaa1",
+    "tests/worker-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test-checkpoint.json": "dadae09f9a56b4c795290be0efcf0814f36a5b0a91c8799f7a4dce30ba4915ad",
+    "tests/core-typecheck.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

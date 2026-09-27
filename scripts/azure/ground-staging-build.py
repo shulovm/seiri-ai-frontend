@@ -67,7 +67,8 @@ else:
         remote = json.loads(az(["acr", "repository", "show", "--name", POLICY["registry"], "--image", "ground-worker:" + tag]).stdout)
         digest = remote["digest"]
         require(re.fullmatch(r"sha256:[a-f0-9]{64}", digest), "ACR digest")
-        require(remote.get("name") == "ground-worker", "ACR repository")
+        require(remote.get("name") == tag, "ACR tag identity")
+        save(ev / "acr-tag-readback.json", remote)
         local = json.loads(run(["docker", "image", "inspect", ref]).stdout)[0]
         full = POLICY["registry_server"] + "/ground-worker@" + digest
         require(full in local["RepoDigests"], "pushed/remote digest agreement")

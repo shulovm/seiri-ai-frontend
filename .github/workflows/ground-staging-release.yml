@@ -2,6 +2,9 @@ name: GROUND isolated deploy with OIDC gates
 on:
   workflow_call:
     inputs:
+      reconcile_build:
+        type: boolean
+        default: false
       execute:
         type: boolean
         default: false
@@ -54,10 +57,25 @@ jobs:
           ref: ${{ github.workflow_sha }}
           path: control
           persist-credentials: false
-      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+      - if: ${{ !inputs.reconcile_build }}
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: ground-image-${{ github.run_attempt }}
           path: image-artifact
+      - if: inputs.reconcile_build
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: ground-image-1
+          run-id: 36288094609
+          github-token: ${{ github.token }}
+          path: origin-evidence/build
+      - if: inputs.reconcile_build
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: ground-test-evidence-1
+          run-id: 36288094609
+          github-token: ${{ github.token }}
+          path: origin-evidence/tests
       - name: Verify immutable approved baseline bytes
         run: |
           python3 -c 'import hashlib,pathlib; p=pathlib.Path("control/scripts/azure/baselines/cd1ea34ade3d162fc0e0bf8fa62b3afee38fd6f9d9ebd151eea49143b49890a7.json").read_bytes(); assert hashlib.sha256(p).hexdigest()=="cd1ea34ade3d162fc0e0bf8fa62b3afee38fd6f9d9ebd151eea49143b49890a7"; pathlib.Path("baseline.json").write_bytes(p)'
@@ -66,6 +84,12 @@ jobs:
           client-id: ${{ vars.GROUND_DEPLOY_CLIENT_ID }}
           tenant-id: ${{ vars.GROUND_TENANT_ID }}
           subscription-id: ${{ vars.GROUND_SUBSCRIPTION_ID }}
+      - name: Reconcile original pushed digest without rebuilding
+        if: inputs.reconcile_build
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_SHA: ${{ inputs.source_commit }}
+        run: python3 control/scripts/azure/ground-staging-reconcile-image.py
       - name: Guarded deploy and exact runtime verification
         run: python3 control/scripts/azure/ground-staging-deploy.py --baseline baseline.json --image image-artifact/image.json --evidence evidence/deploy
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

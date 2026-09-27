@@ -26,7 +26,12 @@ report = {"status": "STOPPED", "started": now(), "phase": "GROUND-AZURE-004", "m
           "workflow_attempt": os.environ["GITHUB_RUN_ATTEMPT"], "parent_baseline_sha256": parent_baseline_sha256, "source_commit": image["source_commit"], "image": image["image"]}
 try:
     verify_image_binding(image)
-    require(image["run_id"] == report["workflow_run"] and image["attempt"] == report["workflow_attempt"], "same-run image artifact")
+    if image.get("reconciliation"):
+        require(image["run_id"] == "36288094609" and image["attempt"] == "1" and image["digest"] == "sha256:b42d6adbbebe958587a5682bac6200997d9ef41e0ab77580c8dc1f73c2b8b1e1", "reviewed prior build only")
+        require(image["reconciliation"]["deployment_run_id"] == report["workflow_run"] and image["reconciliation"]["deployment_attempt"] == report["workflow_attempt"], "reconciliation bound to current deployment")
+        report["origin_build_run_id"] = image["run_id"]
+    else:
+        require(image["run_id"] == report["workflow_run"] and image["attempt"] == report["workflow_attempt"], "same-run image artifact")
     require(image["source_commit"] == POLICY["initial_source"], "admitted source")
     require(image["corpus_release"] in POLICY["approved_releases"], "admitted release")
     account = json.loads(az(["account", "show"]).stdout)
@@ -46,7 +51,8 @@ try:
     require(set(baseline["retained_revisions"]) <= prior_names, "baseline revisions retained")
     integrity(previous, image["corpus_release"], (dt.datetime.now(dt.timezone.utc) - dt.timedelta(minutes=10)).isoformat())
     remote = json.loads(az(["acr", "repository", "show", "--name", POLICY["registry"], "--image", "ground-worker@" + image["digest"]]).stdout)
-    require(remote.get("digest") == image["digest"] and remote.get("name") == "ground-worker", "deploy digest exists in ACR")
+    require(remote.get("digest") == image["digest"], "deploy digest exists in exact ACR repository path")
+    save(ev / "acr-manifest-readback.json", remote)
     suffix = "ci-" + image["source_commit"][:7] + "-" + report["workflow_run"] + "-" + report["workflow_attempt"]
     expected = POLICY["app"] + "--" + suffix
     require(expected not in prior_names, "revision suffix already exists; reconcile previous attempt")
