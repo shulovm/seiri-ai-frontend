@@ -1,0 +1,15 @@
+name: GROUND existing deployment read-only verification
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    permissions:
+      contents: read
+      actions: read
+      id-token: write
+    uses: ./.github/workflows/ground-staging-release.yml
+    with:
+      verify_existing: true
+      execute: false
