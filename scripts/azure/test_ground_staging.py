@@ -23,6 +23,23 @@ def fixture():
 
 
 class Guards(unittest.TestCase):
+    def test_only_exact_source_baseline_failure_is_admitted(self):
+        text = (g.HERE / "core-baseline-failure-report.txt").read_text()
+        result = g.classify_core_result(text, 1, g.POLICY["initial_source"])
+        self.assertEqual(result["classification"], "PRE_EXISTING_KNOWN_FAILURE")
+        self.assertEqual(result["raw_exit_code"], 1)
+        variants = [text.replace("unapproved candidate path set", "different assertion failure"),
+                    text.replace("ℹ fail 2", "ℹ fail 3"),
+                    text.replace("ℹ skipped 0", "ℹ skipped 1"),
+                    text.replace("ℹ pass 4108", "ℹ pass 4107")]
+        for variant in variants:
+            with self.assertRaises(RuntimeError):
+                g.classify_core_result(variant, 1, g.POLICY["initial_source"])
+        with self.assertRaises(RuntimeError):
+            g.classify_core_result(text, 1, "a" * 40)
+        with self.assertRaises(RuntimeError):
+            g.classify_core_result(text, 2, g.POLICY["initial_source"])
+
     def test_artifact_cannot_verify_one_digest_and_deploy_another(self):
         digest = "sha256:" + "a" * 64
         image = g.POLICY["registry_server"] + "/ground-worker@" + digest

@@ -32,6 +32,37 @@ def verify_image_binding(artifact):
             "artifact image/digest binding")
 
 
+def classify_core_result(text, exit_code, source_sha):
+    """Only the explicitly authorized exact-source baseline is admissible.
+
+    Keep raw exit=1 and PRE_EXISTING_KNOWN_FAILURE in evidence. This is not
+    a claim that all core tests pass. Any reporter/signature/count drift stops.
+    """
+    if exit_code == 0:
+        return {"classification": "PASS", "raw_exit_code": 0}
+    require(exit_code == 1 and source_sha == POLICY["initial_source"], "unadmitted core result")
+    expected = {"tests": 4110, "pass": 4108, "fail": 2, "cancelled": 0, "skipped": 0, "todo": 0}
+    for key, value in expected.items():
+        matches = re.findall(r"^ℹ " + key + r" (\d+)$", text, re.M)
+        require(matches == [str(value)], "core baseline count: " + key)
+    require(text.count("✖ failing tests:") == 1, "core failure report shape")
+    blocks = re.split(r"\ntest at ", text.split("✖ failing tests:")[1])[1:]
+    require(len(blocks) == 2, "core failure block count")
+    signatures = {}
+    for block in blocks:
+        require(block.startswith("ground-core/__tests__/contract-evolution.test.ts:"), "unexpected failing test file")
+        names = re.findall(r"^✖ (.+) \([\d.]+ms\)$", block, re.M)
+        require(len(names) == 1 and names[0] not in signatures, "core failure name")
+        start = block.find("  AssertionError")
+        end = block.find("\n      at ", start)
+        require(start >= 0 and end > start, "core failure signature shape")
+        signature = block[start:end].rstrip()
+        signatures[names[0]] = hashlib.sha256(signature.encode()).hexdigest()
+    require(signatures == POLICY["known_baseline_core_signatures"], "NEW_FAILURE: core assertion signature changed")
+    return {"classification": "PRE_EXISTING_KNOWN_FAILURE", "raw_exit_code": exit_code,
+            "admission": "EXACT_BASELINE_ONLY", "signatures": signatures}
+
+
 def save(path, value):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)

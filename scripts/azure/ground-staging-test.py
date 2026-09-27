@@ -7,7 +7,7 @@ from pathlib import Path
 import re
 import shutil
 import subprocess
-from ground_staging import POLICY, require, run, save, now
+from ground_staging import POLICY, require, run, save, now, classify_core_result
 
 p = argparse.ArgumentParser()
 p.add_argument("--source", required=True)
@@ -43,13 +43,18 @@ try:
             result = subprocess.run(cmd, cwd=src, stdout=f, stderr=subprocess.STDOUT, timeout=1200)
         entry = {"name": name, "exit_code": result.returncode}
         report["gates"].append(entry)
+        if name == "core":
+            entry.update(classify_core_result((ev / "core.log").read_text(), result.returncode, a.sha))
+            if entry["classification"] == "PRE_EXISTING_KNOWN_FAILURE":
+                report["known_preexisting_failures"] = entry["signatures"]
+                continue
         if result.returncode:
             if name == "core":
                 text = (ev / "core.log").read_text()
                 entry["known_failure_names_present"] = [x for x in POLICY["known_baseline_core_failures"] if x in text]
                 entry["known_failure_policy"] = POLICY["known_baseline_failure_policy"]
             raise RuntimeError("test gate: " + name)
-    report["status"] = "TESTS_PASSED"
+    report["status"] = "ADMISSION_PASSED_WITH_EXACT_PRE_EXISTING_FAILURES" if report.get("known_preexisting_failures") else "TESTS_PASSED"
 except Exception as e:
     report["failed_gate"] = str(e)
     raise

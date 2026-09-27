@@ -27,5 +27,9 @@
     "current candidate has exactly base plus approved core and enumerated contract implementation scope",
     "unapproved current core bytes are rejected even when historical checkpoint integrity passes"
   ],
-  "known_baseline_failure_policy": "REPORT_AND_STOP; no test exception or composition-authority change is granted by this file"
+  "known_baseline_core_signatures": {
+    "current candidate has exactly base plus approved core and enumerated contract implementation scope": "74caa90bb2315bb479e134df9ec9caa713ed93e824a71f6c792e69d6ef5aeda3",
+    "unapproved current core bytes are rejected even when historical checkpoint integrity passes": "93f05469d417c72c6dfcbf7c24b1815532ccbea78f52907b9fbe0fe8849a6547"
+  },
+  "known_baseline_failure_policy": "User-authorized exact pre-existing failures only, bound to initial_source, full counts, names and AssertionError diagnostic hashes; raw failures remain reported. No changed signature, extra failure, skip, source change or composition-contract change is admitted."
 }

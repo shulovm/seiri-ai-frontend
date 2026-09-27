@@ -8,7 +8,7 @@ Build uses a GitHub runner and a clean tracked-file context. This avoids the bro
 
 ## Gates and current blocker
 
-Local source validation on Node 24.15.0: core typecheck passes; compiled worker/Blob tests pass 14/14. The authoritative core suite returns 4108/4110, with the two existing composition-contract failures named in the policy. These failures are not waived or turned into success. The workflow stops before build/login/deployment until the source composition authority is resolved. Do not edit historical manifests or widen the composition guard just to pass CI.
+Local source validation on Node 24.15.0: core typecheck passes; compiled worker/Blob tests pass 14/14. The authoritative core suite returns 4108/4110, with the two existing composition-contract failures named in the policy. The user authorized continuation only when these exact known failures remain. The gate retains raw exit=1 and PRE_EXISTING_KNOWN_FAILURE, and admits only the exact initial SHA, complete expected counts, test names and pinned assertion-diagnostic hashes. Changed signatures, extra failures, skips or another source SHA stop. No historical manifest or composition guard is changed. This is baseline admission, not a claim that all core tests pass.
 
 The test layout must include compiled code, `corpus-pins.json` and `docs/schemas`, matching the Docker runtime layout. Missing compiled/schema files cause harness failures and are not source regressions.
 
