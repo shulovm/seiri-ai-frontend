@@ -1,7 +1,7 @@
 {
-  "status": "NOT_CREATED",
+  "status": "BOOTSTRAP_VERIFIED",
   "name": "id-ground-evidence-publisher-staging",
-  "client_id": null,
-  "principal_id": null,
-  "authority_checkpoint": null
+  "client_id": "b0dafe45-109d-44ee-9905-ce83dcf7ff78",
+  "principal_id": "80d930f4-a71a-42b2-9244-061f5e9d89f1",
+  "authority_checkpoint": "PARTIAL_BOOTSTRAP_STATE_UNDERSTOOD_NO_CLEANUP_REQUIRED"
 }

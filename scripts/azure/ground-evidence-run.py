@@ -50,7 +50,8 @@ def subject_gate():
  c=claims(t)
  require(c.get('iss')=='https://token.actions.githubusercontent.com' and c.get('aud')=='api://AzureADTokenExchange' and c.get('sub')==SUBJECT,'exact OIDC subject mismatch')
  require(c.get('job_workflow_ref')==WORKFLOW and c.get('environment')=='ground-staging','workflow/environment mismatch')
- return {k:c.get(k) for k in ('iss','aud','sub','job_workflow_ref','job_workflow_sha','environment')}
+ require(c.get('repository')=='shulovm/seiri-ai-frontend' and c.get('ref')=='refs/heads/master','token repository/ref mismatch')
+ return {k:c.get(k) for k in ('iss','aud','sub','repository','ref','job_workflow_ref','job_workflow_sha','environment')}
 
 def token_gate():
  binding()
@@ -96,6 +97,7 @@ def main():
   else:
    release=validate_bundle(pathlib.Path(a.bundle));token=token_gate();store=EntraBlockBlobStore(token)
    report['publisher_principal_id']=CONFIG['principal_id']
+   report['publisher_client_id']=CONFIG['client_id']
    # All credentialed modes first require full byte identity of the existing release.
    report['existing_release_receipts']=verify_remote(store,release)
    report['existing_release_untouched']=True
