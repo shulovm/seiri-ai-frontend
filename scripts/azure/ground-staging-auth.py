@@ -1,7 +1,7 @@
 """Auth-only validation. No resource write requests; never persist bearer tokens."""
 import argparse,base64,json,os,urllib.request,urllib.parse,urllib.error,uuid
 from pathlib import Path
-from ground_staging import POLICY,ROOT,APP,ARM,az,get,pages,save,require,app_get,contract,static_gates,healthy,worker_roles
+from ground_staging import POLICY,ROOT,APP,ARM,az,get,pages,save,require,app_get,contract,static_gates,healthy,worker_roles,approved_baseline_bytes
 
 IDS={'build':('a4cd0083-e411-45e1-b532-d7e1e7d92425','6b124c00-5ab7-435a-ac0b-65b022fe880d'), 'deploy':('5e86e667-cf19-4463-b26d-0a639138eed4','b11adb7b-9949-4580-a27c-bbce0757fcec')}
 TENANT='cc666046-841b-4c45-bf95-a23daa02d671'
@@ -68,8 +68,11 @@ def main():
     before=app_get();static_gates(before)
     revs=pages(APP+'/revisions?api-version='+POLICY['app_api_version']);r['revisions_read']='PASS'
     revision=before['properties']['latestReadyRevisionName'];replicas=pages(APP+'/revisions/'+revision+'/replicas?api-version='+POLICY['app_api_version']);r['replicas']=replicas
-    require(revision==POLICY['initial_revision'],'revision changed before first run')
-    require(before['properties']['template']['containers'][0]['image'].endswith('@'+POLICY['initial_digest']),'digest changed')
+    baseline=json.loads(approved_baseline_bytes());require(revision==baseline['revision'],'revision differs from verified baseline')
+    require(contract(before)==baseline['contract'],'configuration differs from verified baseline')
+    require(worker_roles(baseline['worker_principal_id'])==baseline['worker_roles'],'worker authority differs from baseline')
+    healthy(before,revs,replicas,revision,baseline['image'])
+    require(before['properties']['template']['containers'][0]['image']==baseline['image'],'digest differs from verified baseline')
     query="ContainerAppConsoleLogs_CL | where TimeGenerated > ago(15m) | where ContainerAppName_s == 'ground-worker-staging' | top 1 by TimeGenerated desc | project TimeGenerated, RevisionName_s, Log_s"
     result=json.loads(az(['rest','--method','post','--url','https://api.loganalytics.azure.com/v1/workspaces/'+POLICY['workspace_customer_id']+'/query','--resource','https://api.loganalytics.io','--body',json.dumps({'query':query,'timespan':'PT15M'})]).stdout)
     require(result.get('tables') and result['tables'][0].get('rows'),'console log query empty');r['log_query']=result

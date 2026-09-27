@@ -31,5 +31,10 @@
     "current candidate has exactly base plus approved core and enumerated contract implementation scope": "74caa90bb2315bb479e134df9ec9caa713ed93e824a71f6c792e69d6ef5aeda3",
     "unapproved current core bytes are rejected even when historical checkpoint integrity passes": "93f05469d417c72c6dfcbf7c24b1815532ccbea78f52907b9fbe0fe8849a6547"
   },
-  "known_baseline_failure_policy": "User-authorized exact pre-existing failures only, bound to initial_source, full counts, names and AssertionError diagnostic hashes; raw failures remain reported. No changed signature, extra failure, skip, source change or composition-contract change is admitted."
+  "known_baseline_failure_policy": "User-authorized exact pre-existing failures only, bound to initial_source, full counts, names and AssertionError diagnostic hashes; raw failures remain reported. No changed signature, extra failure, skip, source change or composition-contract change is admitted.",
+  "current_baseline_sha256": "a8f2c0294d1546ebc43b80ef0624112b8a5f3b504925d141f9a1cb9e88e870d2",
+  "verified_baselines": [
+    "cd1ea34ade3d162fc0e0bf8fa62b3afee38fd6f9d9ebd151eea49143b49890a7",
+    "a8f2c0294d1546ebc43b80ef0624112b8a5f3b504925d141f9a1cb9e88e870d2"
+  ]
 }

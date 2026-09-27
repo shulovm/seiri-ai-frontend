@@ -1,0 +1,145 @@
+{
+  "contract": {
+    "configuration": {
+      "activeRevisionsMode": "Single",
+      "dapr": null,
+      "ingress": null,
+      "maxInactiveRevisions": 100,
+      "registries": [
+        {
+          "identity": "/subscriptions/a0d869a1-8cdc-4b87-891c-9d92dd52320d/resourcegroups/rg-orimusu-ground-staging/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-ground-worker-staging",
+          "passwordSecretRef": "",
+          "server": "orimusugroundacr-f2gecfdaa2ddfzhb.azurecr.io",
+          "username": ""
+        }
+      ],
+      "secrets": null,
+      "service": null
+    },
+    "environmentId": "/subscriptions/a0d869a1-8cdc-4b87-891c-9d92dd52320d/resourceGroups/rg-orimusu-ground-staging/providers/Microsoft.App/managedEnvironments/cae-ground-staging-jpe",
+    "identity": {
+      "type": "UserAssigned",
+      "userAssignedIdentities": {
+        "/subscriptions/a0d869a1-8cdc-4b87-891c-9d92dd52320d/resourcegroups/rg-orimusu-ground-staging/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-ground-worker-staging": {
+          "clientId": "18672c66-fb8f-4436-abbe-93914841d5c7",
+          "principalId": "a6a4bca2-b0a7-49f4-bd73-211e2371df46"
+        }
+      }
+    },
+    "location": "Japan East",
+    "managedEnvironmentId": "/subscriptions/a0d869a1-8cdc-4b87-891c-9d92dd52320d/resourceGroups/rg-orimusu-ground-staging/providers/Microsoft.App/managedEnvironments/cae-ground-staging-jpe",
+    "template": {
+      "containers": [
+        {
+          "env": [
+            {
+              "name": "GROUND_WORKER_HEALTH_PORT",
+              "value": "8080"
+            },
+            {
+              "name": "GROUND_WORKER_IDENTITY_RESOURCE_ID",
+              "value": "/subscriptions/a0d869a1-8cdc-4b87-891c-9d92dd52320d/resourceGroups/rg-orimusu-ground-staging/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-ground-worker-staging"
+            },
+            {
+              "name": "GROUND_WORKER_INPUT_DIR",
+              "value": "/app/corpus"
+            },
+            {
+              "name": "GROUND_WORKER_INPUT_SCOPE",
+              "value": "historical-round6-staging"
+            },
+            {
+              "name": "GROUND_WORKER_INPUT_SOURCE",
+              "value": "azure-blob"
+            },
+            {
+              "name": "GROUND_WORKER_INTERVAL_MS",
+              "value": "60000"
+            }
+          ],
+          "name": "ground-worker-staging",
+          "probes": [
+            {
+              "failureThreshold": 3,
+              "httpGet": {
+                "path": "/healthz",
+                "port": 8080
+              },
+              "initialDelaySeconds": 1,
+              "periodSeconds": 30,
+              "successThreshold": 1,
+              "timeoutSeconds": 5,
+              "type": "Liveness"
+            },
+            {
+              "failureThreshold": 3,
+              "httpGet": {
+                "path": "/readyz",
+                "port": 8080
+              },
+              "initialDelaySeconds": 1,
+              "periodSeconds": 10,
+              "successThreshold": 1,
+              "timeoutSeconds": 5,
+              "type": "Readiness"
+            },
+            {
+              "failureThreshold": 10,
+              "httpGet": {
+                "path": "/readyz",
+                "port": 8080
+              },
+              "initialDelaySeconds": 1,
+              "periodSeconds": 12,
+              "successThreshold": 1,
+              "timeoutSeconds": 5,
+              "type": "Startup"
+            }
+          ],
+          "resources": {
+            "cpu": 0.5,
+            "ephemeralStorage": "2Gi",
+            "memory": "1Gi"
+          }
+        }
+      ],
+      "initContainers": null,
+      "scale": {
+        "maxReplicas": 1,
+        "minReplicas": 1,
+        "rules": null
+      },
+      "serviceBinds": null,
+      "terminationGracePeriodSeconds": null,
+      "volumes": null
+    },
+    "workloadProfileName": "Consumption"
+  },
+  "image": "orimusugroundacr-f2gecfdaa2ddfzhb.azurecr.io/ground-worker@sha256:b42d6adbbebe958587a5682bac6200997d9ef41e0ab77580c8dc1f73c2b8b1e1",
+  "retained_revisions": [
+    "ground-worker-staging--0000001",
+    "ground-worker-staging--blob-e23ff04-260926151258",
+    "ground-worker-staging--ci-e23ff04-36288568608-1",
+    "ground-worker-staging--dik5y47"
+  ],
+  "revision": "ground-worker-staging--ci-e23ff04-36288568608-1",
+  "worker_principal_id": "a6a4bca2-b0a7-49f4-bd73-211e2371df46",
+  "worker_roles": [
+    {
+      "condition": null,
+      "conditionVersion": null,
+      "delegatedManagedIdentityResourceId": null,
+      "principalId": "a6a4bca2-b0a7-49f4-bd73-211e2371df46",
+      "roleDefinitionId": "/subscriptions/a0d869a1-8cdc-4b87-891c-9d92dd52320d/providers/Microsoft.Authorization/roleDefinitions/2a2b9908-6ea1-4ae2-8e65-a410df84e7d1",
+      "scope": "/subscriptions/a0d869a1-8cdc-4b87-891c-9d92dd52320d/resourceGroups/rg-orimusu-ground-staging/providers/Microsoft.Storage/storageAccounts/orimusugroundstg01/blobServices/default/containers/ground-evidence-staging"
+    },
+    {
+      "condition": null,
+      "conditionVersion": null,
+      "delegatedManagedIdentityResourceId": null,
+      "principalId": "a6a4bca2-b0a7-49f4-bd73-211e2371df46",
+      "roleDefinitionId": "/subscriptions/a0d869a1-8cdc-4b87-891c-9d92dd52320d/providers/Microsoft.Authorization/roleDefinitions/b93aa761-3e63-49ed-ac28-beffa264f7ac",
+      "scope": "/subscriptions/a0d869a1-8cdc-4b87-891c-9d92dd52320d/resourceGroups/rg-orimusu-ground-staging/providers/Microsoft.ContainerRegistry/registries/orimusugroundacr"
+    }
+  ]
+}

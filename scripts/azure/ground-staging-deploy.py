@@ -18,7 +18,7 @@ ev = Path(a.evidence).resolve()
 ev.mkdir(parents=True, exist_ok=True)
 baseline_bytes = Path(a.baseline).read_bytes()
 parent_baseline_sha256 = hashlib.sha256(baseline_bytes).hexdigest()
-require(parent_baseline_sha256 == "cd1ea34ade3d162fc0e0bf8fa62b3afee38fd6f9d9ebd151eea49143b49890a7", "immutable approved baseline SHA256")
+require(baseline_bytes == approved_baseline_bytes(), "immutable reviewed baseline selection")
 baseline = json.loads(baseline_bytes)
 image = json.loads(Path(a.image).read_text())
 report = {"status": "STOPPED", "started": now(), "phase": "GROUND-AZURE-004", "mutation_attempts": 0,
@@ -86,7 +86,17 @@ try:
             raise RuntimeError("candidate provisioning failed")
         if live["properties"].get("latestReadyRevisionName") == expected:
             rp = replicas(expected)
-            healthy(live, rs, rp, expected, image["image"])
+            save(ev / "latest-revisions.json", rs)
+            save(ev / "latest-replicas.json", rp)
+            try:
+                healthy(live, rs, rp, expected, image["image"])
+            except RuntimeError as error:
+                # Single-mode promotion can expose latestReady before active flags settle.
+                # Re-read only this bounded transition; never send another PATCH.
+                if str(error) != "one expected active revision":
+                    raise
+                time.sleep(15)
+                continue
             save(ev / "ready-replicas.json", rp)
             break
         time.sleep(15)

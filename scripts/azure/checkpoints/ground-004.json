@@ -1,0 +1,55 @@
+{
+  "active_revision": "ground-worker-staging--ci-e23ff04-36288568608-1",
+  "activity_log_correlation": "Original deployment run/time/source/digest/revision recorded; no additional write; activity alert retained",
+  "azure_mutations": {
+    "container_app_patch": 1,
+    "acr_publications": 1,
+    "read_only_verification": 0
+  },
+  "expected_revision": "ground-worker-staging--ci-e23ff04-36288568608-1",
+  "health_gate": "VERIFIED",
+  "image": "orimusugroundacr-f2gecfdaa2ddfzhb.azurecr.io/ground-worker@sha256:b42d6adbbebe958587a5682bac6200997d9ef41e0ab77580c8dc1f73c2b8b1e1",
+  "integrity_checks_verified": 4,
+  "integrity_gate": "VERIFIED",
+  "origin_build_run": "36288094609",
+  "original_deployment_run": "36288568608",
+  "parent_baseline_sha256": "cd1ea34ade3d162fc0e0bf8fa62b3afee38fd6f9d9ebd151eea49143b49890a7",
+  "phase": "GROUND-AZURE-004",
+  "status": "DEPLOYED_VERIFIED",
+  "successor_baseline_sha256": "a8f2c0294d1546ebc43b80ef0624112b8a5f3b504925d141f9a1cb9e88e870d2",
+  "verification_completed": "2026-09-27T02:33:50.914371+00:00",
+  "verification_run": "36288844830",
+  "worker_identity_unchanged": true,
+  "worker_rbac_unchanged": true,
+  "deployment_patch_count": 1,
+  "acr_images_published": 1,
+  "rebuilds_after_helper_failure": 0,
+  "source_sha": "e23ff04b02a6df64739cb2a7d462315eb82324f2",
+  "test_gate": "PRE_EXISTING_KNOWN_FAILURE_ONLY; exact counts/names/hashes; no new failure",
+  "credential_model": "GitHub OIDC; separate build/deploy identities; no client secrets",
+  "historical_baseline_preserved": true,
+  "retained_revisions": [
+    "ground-worker-staging--0000001",
+    "ground-worker-staging--blob-e23ff04-260926151258",
+    "ground-worker-staging--ci-e23ff04-36288568608-1",
+    "ground-worker-staging--dik5y47"
+  ],
+  "workflow_runs": {
+    "auth": "https://github.com/shulovm/seiri-ai-frontend/actions/runs/36286944806",
+    "build": "https://github.com/shulovm/seiri-ai-frontend/actions/runs/36288094609",
+    "deployment": "https://github.com/shulovm/seiri-ai-frontend/actions/runs/36288568608",
+    "verification": "https://github.com/shulovm/seiri-ai-frontend/actions/runs/36288844830"
+  },
+  "verification_evidence_sha256": {
+    "checkpoint.json": "d2ef241a19020d64a29ddb5d982ca6f7d4df5b4f87347d916de78abde74de51d",
+    "baseline-lineage.json": "fc4e4abe49ffc71bc52ca03d8cc142cf676b8e762b71abf44ffce77a9a9e1151",
+    "next-baseline.json": "a8f2c0294d1546ebc43b80ef0624112b8a5f3b504925d141f9a1cb9e88e870d2",
+    "observation-0.json": "8437642b8b85c3cde4fa95a67370b2911fd09b0c8ccf3d906f9262164d921e01",
+    "worker-roles.json": "a2964d27ce9deea7bca61145703a5bb8159640968055fd17130f669835c59916",
+    "final-state.json": "8437642b8b85c3cde4fa95a67370b2911fd09b0c8ccf3d906f9262164d921e01",
+    "integrity.json": "28d58065efcb44410477f1a47ae6c2dd02d3d24af6feac874ade5d6668f24f46"
+  },
+  "negative_authority_scope": "ACR token scopes and exact role assignments verified; no forbidden-write attempts; custom action definitions from bootstrap",
+  "human_action_required": "none for completed 004; phase003 notification/budget policies remain pending",
+  "next_action": "GROUND-AZURE-005 evidence release pipeline"
+}

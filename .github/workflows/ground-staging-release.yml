@@ -81,7 +81,7 @@ jobs:
           path: origin-evidence/tests
       - name: Verify immutable approved baseline bytes
         run: |
-          python3 -c 'import hashlib,pathlib; p=pathlib.Path("control/scripts/azure/baselines/cd1ea34ade3d162fc0e0bf8fa62b3afee38fd6f9d9ebd151eea49143b49890a7.json").read_bytes(); assert hashlib.sha256(p).hexdigest()=="cd1ea34ade3d162fc0e0bf8fa62b3afee38fd6f9d9ebd151eea49143b49890a7"; pathlib.Path("baseline.json").write_bytes(p)'
+          python3 -c 'import pathlib,sys; sys.path.insert(0,"control/scripts/azure"); from ground_staging import approved_baseline_bytes; pathlib.Path("baseline.json").write_bytes(approved_baseline_bytes())'
       - uses: azure/login@7184910d9eb2b1c5e48f7073824a90609bb9b6d6
         with:
           client-id: ${{ vars.GROUND_DEPLOY_CLIENT_ID }}

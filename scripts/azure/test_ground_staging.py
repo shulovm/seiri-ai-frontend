@@ -137,3 +137,18 @@ class Guards(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+class ImmutableBaselines(unittest.TestCase):
+    def test_verified_successor_preserves_original_configuration_and_lineage(self):
+        from ground_staging import approved_baseline_bytes, HERE, POLICY
+        import hashlib,json
+        raw=approved_baseline_bytes();current=json.loads(raw)
+        lineage=json.loads((HERE / "baselines" / (POLICY["current_baseline_sha256"]+".lineage.json")).read_text())
+        parent_raw=(HERE / "baselines" / (lineage["parent_baseline_sha256"]+".json")).read_bytes()
+        self.assertEqual(hashlib.sha256(parent_raw).hexdigest(),lineage["parent_baseline_sha256"])
+        self.assertEqual(hashlib.sha256(raw).hexdigest(),lineage["successor_baseline_sha256"])
+        parent=json.loads(parent_raw)
+        self.assertEqual(parent["contract"],current["contract"])
+        self.assertEqual(parent["worker_roles"],current["worker_roles"])
+        self.assertTrue(set(parent["retained_revisions"])<=set(current["retained_revisions"]))
+        self.assertNotEqual(parent["revision"],current["revision"])

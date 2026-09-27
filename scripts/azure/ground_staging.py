@@ -227,3 +227,11 @@ def deployment_body(app, image, suffix):
     t["containers"][0]["image"] = image
     # Partial update preserves identity, configuration, ingress and registry auth.
     return {"properties": {"template": t}}
+
+
+def approved_baseline_bytes():
+    digest = POLICY["current_baseline_sha256"]
+    require(digest in POLICY["verified_baselines"] and re.fullmatch(r"[a-f0-9]{64}", digest), "reviewed baseline selector")
+    raw = (HERE / "baselines" / (digest + ".json")).read_bytes()
+    require(hashlib.sha256(raw).hexdigest() == digest, "immutable approved baseline bytes")
+    return raw

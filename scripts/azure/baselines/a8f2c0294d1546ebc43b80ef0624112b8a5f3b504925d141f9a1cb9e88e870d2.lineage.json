@@ -1,0 +1,17 @@
+{
+  "deployment_run": "36288568608",
+  "evidence": [
+    "checkpoint.json",
+    "worker-roles.json",
+    "integrity.json",
+    "final-state.json"
+  ],
+  "image_digest": "sha256:b42d6adbbebe958587a5682bac6200997d9ef41e0ab77580c8dc1f73c2b8b1e1",
+  "origin_build_run": "36288094609",
+  "original_baseline_preserved": true,
+  "parent_baseline_sha256": "cd1ea34ade3d162fc0e0bf8fa62b3afee38fd6f9d9ebd151eea49143b49890a7",
+  "revision": "ground-worker-staging--ci-e23ff04-36288568608-1",
+  "source_commit": "e23ff04b02a6df64739cb2a7d462315eb82324f2",
+  "successor_baseline_sha256": "a8f2c0294d1546ebc43b80ef0624112b8a5f3b504925d141f9a1cb9e88e870d2",
+  "verification_run": "36288844830"
+}

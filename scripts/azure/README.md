@@ -16,7 +16,7 @@ Auth-only checks verify actual registry token authorization: build receives pull
 
 ## Source and build gates
 
-The authoritative source core suite returns 4108/4110 with two pre-existing composition-contract failures. Only the exact source, expected counts, names and assertion hashes in the policy are admitted. Raw failure exit status remains in evidence. Changed signatures, extra failures, skips or another source stop the gate. Worker/Blob tests pass 14/14, and the deployment guard suite passes 15/15. Historical composition contracts are not changed.
+The authoritative source core suite returns 4108/4110 with two pre-existing composition-contract failures. Only the exact source, expected counts, names and assertion hashes in the policy are admitted. Raw failure exit status remains in evidence. Changed signatures, extra failures, skips or another source stop the gate. Worker/Blob tests pass 14/14, and the deployment guard suite covers immutable baseline bytes and runtime gates. Historical composition contracts are not changed.
 
 Images are built in a clean GitHub runner context from tracked source files and the existing digest-pinned base image. This avoids broader ACR Tasks authority and source-upload SAS. Publication uses the build identity's short-lived OIDC credentials. ACR and local pushed digest must agree; deployment uses only `registry/ground-worker@sha256:...`.
 
@@ -28,10 +28,12 @@ Before the one permitted PATCH, the pipeline verifies that immutable baseline, t
 
 Postconditions require the expected immutable image and revision, Healthy/Provisioned state, a Ready/Running replica with zero restarts, unchanged configuration and worker authority, retained old revisions, at least two fresh exact integrity events, the approved Blob release and false production flags.
 
-Success creates separate `next-baseline.json` and `baseline-lineage.json` artifacts containing parent/successor hashes, source SHA, image digest, workflow run/attempt, revision and verification evidence. The successor is not automatically substituted for the original baseline. A later rollout must explicitly admit a versioned verified successor through trusted control code.
+Success creates separate `next-baseline.json` and `baseline-lineage.json` artifacts containing parent/successor hashes, source SHA, image digest, workflow run/attempt, revision and verification evidence. The original remains immutable. After independent successful verification, a trusted control commit records the successor hash in `verified_baselines` and selects it as `current_baseline_sha256`. This advances the reviewed checkpoint reference without regenerating or overwriting any baseline.
 
 Failure stops the rollout and retains evidence/revisions. There is no automatic repeated roll-forward or rollback. If a ready revision fails integrity verification after switching, the retained older revision is available for a separately guarded recovery; retention does not mean it is still active.
 
 ## Evidence and activity review
 
 Artifacts record run, source, digest, time interval and revision for correlation with `ground-staging-containerapp-write-review`. The alert remains enabled; correlation does not suppress Portal incidents. GitHub artifacts retain raw evidence for 90 days. Preserve a versioned durable checkpoint and artifact hashes after a successful rollout before closing phase 004.
+
+Phase 004 first rollout is DEPLOYED_VERIFIED: build run 36288094609, single deployment run 36288568608, independent read-only verification run 36288844830. The build comparator initially confused tag name with repository name; the existing image was reconciled without rebuilding. The deployment verifier initially stopped while active-revision flags were transitioning; a read-only follow-up verified the desired runtime. No second PATCH, restart or rollback was sent. See `checkpoints/ground-004.json`.
