@@ -60,7 +60,7 @@ try:
  identities=pages(ROOT+'/providers/Microsoft.ManagedIdentity/userAssignedIdentities?api-version=2023-01-31')
  found=[x for x in identities if x['name']==NAME];require(len(found)<=1,'identity duplicate')
  tags={'ground-phase':'005','ground-purpose':'evidence-publish'}
- identity=saved_get('identity-existing',IDPATH+'?api-version=2023-01-31') if found else put('publisher-identity',IDPATH+'?api-version=2023-01-31',{'location':before['location'],'tags':tags})
+ identity=saved_get('identity-existing',IDPATH+'?api-version=2023-01-31') if found else put('publisher-identity',IDPATH+'?api-version=2023-01-31',{'location':before['location'].replace(' ','').lower(),'tags':tags})
  require(all(identity.get('tags',{}).get(k)==v for k,v in tags.items()),'identity ownership mismatch')
  pid=identity['properties']['principalId'];client=identity['properties']['clientId']
  require(pid not in [baseline['worker_principal_id'],'6b124c00-5ab7-435a-ac0b-65b022fe880d','b11adb7b-9949-4580-a27c-bbce0757fcec'],'identity separation')
