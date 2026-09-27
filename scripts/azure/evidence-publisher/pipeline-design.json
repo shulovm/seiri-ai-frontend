@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "status": "PRE_MUTATION_DESIGN",
+  "identity_name": "id-ground-evidence-publisher-staging",
+  "assignment_scope": "/subscriptions/a0d869a1-8cdc-4b87-891c-9d92dd52320d/resourceGroups/rg-orimusu-ground-staging/providers/Microsoft.Storage/storageAccounts/orimusugroundstg01/blobServices/default/containers/ground-evidence-staging",
+  "role_definition": "role-definition.json",
+  "role_assignment_note": "AssignableScopes only defines where role may be assigned; actual role assignment MUST equal assignment_scope. Audit all inherited assignments as well.",
+  "workflow_path": ".github/workflows/ground-evidence-publish.yml",
+  "workflow_installation": "NOT_INSTALLED",
+  "caller_path": ".github/workflows/ground-evidence-release.yml",
+  "github_environment": "ground-staging",
+  "federation": {
+    "issuer": "https://token.actions.githubusercontent.com",
+    "audiences": [
+      "api://AzureADTokenExchange"
+    ],
+    "subject": "repo:shulovm/seiri-ai-frontend:environment:ground-staging:job_workflow_ref:shulovm/seiri-ai-frontend/.github/workflows/ground-evidence-publish.yml@refs/heads/master"
+  },
+  "source_authority": {
+    "commit": "e23ff04b02a6df64739cb2a7d462315eb82324f2",
+    "release": "f94fa44955e45786ef0ead092a9bfd6ee309f3a4ec6fe3c7e209e6fc316bad81",
+    "new_source_admission": "Explicit reviewed source/release/expected-metric policy change. Never infer admission from a passing hash alone."
+  },
+  "permissions": {
+    "validation_job": {
+      "contents": "read"
+    },
+    "publisher_job": {
+      "contents": "read",
+      "id-token": "write"
+    }
+  },
+  "stages": [
+    {
+      "name": "validate",
+      "azure_authority": false,
+      "steps": [
+        "Checkout trusted controls at workflow SHA; checkout source at explicit full SHA, no persisted checkout credential.",
+        "Require approved source/release mapping; run phase-004 source test gate with exact known-failure policy, worker tests and worker build.",
+        "Reconstruct existing ordered corpus-pins.json with indent=2 and terminal newline from all source bytes; require exact raw bytes and expected SHA.",
+        "Run original worker verify() for replay/materialization equivalence and exact metrics; both production flags false.",
+        "Upload immutable same-run validated bundle and test receipts; include source SHA, workflow SHA, release SHA and all file hashes."
+      ]
+    },
+    {
+      "name": "publish",
+      "separate_runner": true,
+      "environment": "ground-staging",
+      "steps": [
+        "Run only reviewed control code. Download same-run bundle, bind immutable artifact ID/digest and recompute every manifest/file hash; never run source code in credentialed job.",
+        "Request GitHub OIDC with AzureADTokenExchange audience; verify exact repo, environment, job_workflow_ref and resulting sub before exchange.",
+        "Azure OIDC login as publisher only; prove principal/client/tenant and exact read+add role at exact container with no extra inherited authority. This bootstrap audit is recorded by a separate administrative reader; do not grant publisher roleAssignments/read/write.",
+        "Before first publication, verify auth-only read path and role operation contract. Denial testing must not touch an existing release; no claim of empirical write denial from local mocks.",
+        "Obtain Entra Storage bearer token, never Shared Key or SAS.",
+        "Complete paginated prefix list. Existing complete identical BlockBlob set => ALREADY_PUBLISHED, zero writes. Partial, extra or differing set => STOP.",
+        "Absent => single Put Blob BlockBlob, If-None-Match: *, no chunked Put Block/List, no write retry. Read back each payload; manifest last; complete list and read back all objects again.",
+        "Byte identity with locally semantically verified bundle establishes equivalence. Record source, release, artifact, workflow run, identity, object receipts, write attempts and outcome in durable artifact even on failure.",
+        "STOP. Never invoke deployment or promotion."
+      ]
+    }
+  ],
+  "publish_vs_promote": {
+    "automatic_promotion": false,
+    "promotion_required_inputs": [
+      "approved_source_sha",
+      "immutable_image_digest",
+      "verified_corpus_release",
+      "publish_checkpoint"
+    ],
+    "promotion_path": "existing phase-004 guarded pipeline after reviewed source/release policy admission",
+    "compiled_trust_anchor": "Worker image includes exact manifest; a new corpus release requires an image built from the matching approved manifest. Environment-only release switching is insufficient."
+  },
+  "safety_limits": {
+    "single_blob_bytes": 67108864,
+    "corpus_bytes": 134217728,
+    "manifest_last": true,
+    "overwrite": false,
+    "delete": false,
+    "embedded_fallback": false,
+    "append_blob_accepted": false,
+    "auto_resume_partial": false
+  },
+  "limitations": [
+    "add/action also permits append to Append Blobs. Protocol creates and accepts only BlockBlob; verify existing release types read-only before authority assignment.",
+    "Container-scoped add may create additional names in existing prefixes. Complete-set check rejects extras; this is not a prefix-wide WORM lock.",
+    "Other principals/account keys are outside this publisher authority boundary; no storage immutability policy or legal hold is claimed.",
+    "Live OIDC/add-only API behavior and effective role readback remain gates before live publication."
+  ],
+  "deferred_hardening": [
+    "Shared Key remains enabled; pipeline never uses it.",
+    "Public network remains enabled; no account changes in this phase."
+  ],
+  "azure_mutations": 0
+}

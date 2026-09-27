@@ -1,0 +1,75 @@
+name: GROUND Evidence controlled publication
+on:
+  workflow_dispatch:
+    inputs:
+      source_commit:
+        description: Explicit reviewed source SHA (40 characters)
+        required: true
+        type: string
+      corpus_release:
+        description: Explicit approved corpus manifest SHA-256
+        required: true
+        type: string
+      mode:
+        description: Publish stops before promotion; validation data is retained
+        required: true
+        default: auth
+        type: choice
+        options: [auth, verify-existing, create-validation]
+permissions:
+  contents: read
+concurrency:
+  group: ground-evidence-staging-publish
+  cancel-in-progress: false
+jobs:
+  validate:
+    if: github.repository == 'shulovm/seiri-ai-frontend' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.workflow_sha }}
+          path: control
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ inputs.source_commit }}
+          fetch-depth: 0
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.15.0
+      - name: Protocol and safety tests without Azure authority
+        run: python3 -m unittest discover -s control/scripts/azure -p 'test_*.py' -v
+      - name: Reviewed source test gate
+        env:
+          SOURCE_SHA: ${{ inputs.source_commit }}
+          RELEASE: ${{ inputs.corpus_release }}
+        run: python3 control/scripts/azure/ground-staging-test.py --source source --sha "$SOURCE_SHA" --release "$RELEASE" --evidence evidence/tests
+      - name: Prepare deterministic bundle and original-worker equivalence
+        env:
+          SOURCE_SHA: ${{ inputs.source_commit }}
+          RELEASE: ${{ inputs.corpus_release }}
+        run: python3 control/scripts/azure/ground-evidence-run.py prepare --source source --sha "$SOURCE_SHA" --release "$RELEASE" --bundle bundle --test-checkpoint evidence/tests/test-checkpoint.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ground-evidence-bundle-${{ github.run_attempt }}
+          path: bundle
+          if-no-files-found: error
+          retention-days: 90
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: ground-evidence-tests-${{ github.run_attempt }}
+          path: evidence
+          retention-days: 90
+  publisher:
+    needs: validate
+    permissions:
+      contents: read
+      id-token: write
+    uses: ./.github/workflows/ground-evidence-publish.yml
+    with:
+      mode: ${{ inputs.mode }}

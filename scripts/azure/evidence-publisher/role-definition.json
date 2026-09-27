@@ -1,0 +1,15 @@
+{
+  "Name": "GROUND Evidence Block Blob Publisher Staging",
+  "IsCustom": true,
+  "Description": "Create new Block Blobs and verify Evidence. No overwrite/delete or management actions. Assign only at the exact Evidence container.",
+  "Actions": [],
+  "NotActions": [],
+  "DataActions": [
+    "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
+    "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/add/action"
+  ],
+  "NotDataActions": [],
+  "AssignableScopes": [
+    "/subscriptions/a0d869a1-8cdc-4b87-891c-9d92dd52320d/resourceGroups/rg-orimusu-ground-staging"
+  ]
+}

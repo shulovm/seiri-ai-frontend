@@ -1,0 +1,121 @@
+{
+  "phase": "GROUND-AZURE-005",
+  "status": "PRE_MUTATION_DESIGN_AND_LOCAL_PROTOCOL_VERIFIED",
+  "recorded_at": "2026-09-27T03:06:59.087710+00:00",
+  "control_base_commit": "a8891be21660869cd96d0c277eafc8eed862f389",
+  "release_format": "historical-round6-staging/sha256-<SHA256(corpus-pins.json raw bytes)>/{files/<pinned-path>,manifest.json}",
+  "release_id_semantics": "Existing ordered JSON array of path/sha256 pins, two-space indent and terminal newline. Recompute every file hash and exact manifest bytes. No new wire format.",
+  "publish_vs_promote_separation": "Publish stops after verified release checkpoint. No Container App operation. Later promotion requires approved source SHA, matching immutable image digest, release and publication checkpoint through phase-004.",
+  "publisher_required_actions": [
+    "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
+    "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/add/action"
+  ],
+  "publisher_forbidden_actions": [
+    "blobs/write",
+    "blobs/delete",
+    "blobs/tags/write",
+    "Container App writes",
+    "roleAssignments/write",
+    "account listKeys",
+    "generateUserDelegationKey",
+    "ACR repository write"
+  ],
+  "publisher_role_design": {
+    "type": "custom",
+    "management_actions": [],
+    "data_actions": [
+      "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
+      "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/add/action"
+    ],
+    "no_wildcards": true,
+    "definition": "role-definition.json",
+    "assignment_scope": "/subscriptions/a0d869a1-8cdc-4b87-891c-9d92dd52320d/resourceGroups/rg-orimusu-ground-staging/providers/Microsoft.Storage/storageAccounts/orimusugroundstg01/blobServices/default/containers/ground-evidence-staging",
+    "note": "Permissions are additive; audit all inherited assignments before activation. NotDataActions is not a deny rule."
+  },
+  "publisher_scope": "/subscriptions/a0d869a1-8cdc-4b87-891c-9d92dd52320d/resourceGroups/rg-orimusu-ground-staging/providers/Microsoft.Storage/storageAccounts/orimusugroundstg01/blobServices/default/containers/ground-evidence-staging",
+  "publisher_identity_ready": {
+    "design": "READY",
+    "created": false,
+    "name": "id-ground-evidence-publisher-staging",
+    "activation": "Pending live BlockBlob-type verification, exact effective-authority readback and OIDC subject/authentication gates. No live write authorization claim from local tests."
+  },
+  "workflow_path": {
+    "intended": ".github/workflows/ground-evidence-publish.yml",
+    "caller": ".github/workflows/ground-evidence-release.yml",
+    "state": "DESIGNED_NOT_INSTALLED",
+    "plan": "pipeline-design.json",
+    "code_review": "Local release protocol reviewed; full GitHub workflow/auth wiring must be implemented and reviewed before activation."
+  },
+  "implementation": "Local tested protocol module and Entra single-Put-Blob adapter; no runnable live publish command was invoked or installed.",
+  "credential_model": "GitHub OIDC, separate UAMI; exact custom sub in pipeline-design.json. No key/SAS/client secret.",
+  "code_review": {
+    "create_only": "PASS",
+    "manifest_compatibility": "PASS",
+    "partial_collision_stop": "PASS",
+    "publish_promote_separation": "PASS",
+    "no_delete_or_fallback": "PASS",
+    "identity_roles": "DESIGN_VERIFIED",
+    "live_oidc": "NOT_RUN",
+    "live_add_only_api": "NOT_RUN"
+  },
+  "test_gate": {
+    "publisher_protocol_and_authority_tests": {
+      "passed": 26,
+      "failed": 0
+    },
+    "existing_pipeline_guard_tests": {
+      "passed": 16,
+      "failed": 0
+    },
+    "current_corpus_generation": {
+      "result": "PASS",
+      "files": 152,
+      "objects": 153,
+      "bytes_including_manifest": 89826458,
+      "manifest_sha256": "f94fa44955e45786ef0ead092a9bfd6ee309f3a4ec6fe3c7e209e6fc316bad81",
+      "deterministic": true
+    },
+    "original_worker_equivalence": {
+      "result": "PASS",
+      "files_checked": 152,
+      "source_traversals": 87,
+      "queries_checked": 40,
+      "claims": 187,
+      "evidence": 57,
+      "production_input": false,
+      "production_authority": false,
+      "source_authenticity_certified": false
+    },
+    "source_core_suite": "Not rerun in this design-only step. Previously admitted exact two pre-existing failures remain governed by phase-004 policy; actual publish validation job must run the source gate again."
+  },
+  "existing_release_untouched": true,
+  "worker_identity_unchanged": true,
+  "worker_rbac_unchanged": true,
+  "unchanged_evidence_basis": "User-authoritative phase-005 inventory plus zero Azure operations in this step; verified immutable baseline Reader roles tested locally. No fresh live-state claim.",
+  "azure_mutations": 0,
+  "azure_calls_this_step": 0,
+  "blob_writes": 0,
+  "human_action_required": "NONE_FOR_THIS_PRE_MUTATION_CHECKPOINT",
+  "next_action": "Implement/review the isolated validation + reusable OIDC workflow from the saved design, then guarded read-only check of existing release Blob types and inherited authority. Create separate publisher identity/custom role/exact-scope assignment/federation only after those gates; verify real OIDC before any Blob publication.",
+  "limitations": [
+    "add/action also permits append to Append Blobs. Protocol creates and accepts only BlockBlob; verify existing release types read-only before authority assignment.",
+    "Container-scoped add may create additional names in existing prefixes. Complete-set check rejects extras; this is not a prefix-wide WORM lock.",
+    "Other principals/account keys are outside this publisher authority boundary; no storage immutability policy or legal hold is claimed.",
+    "Live OIDC/add-only API behavior and effective role readback remain gates before live publication."
+  ],
+  "deferred_hardening": [
+    "Shared Key remains enabled; pipeline never uses it.",
+    "Public network remains enabled; no account changes in this phase."
+  ],
+  "sources": {
+    "new_blockblob_add_action": "https://learn.microsoft.com/en-us/rest/api/storageservices/put-blob",
+    "list_read_action": "https://learn.microsoft.com/en-us/rest/api/storageservices/list-blobs",
+    "append_action_boundary": "https://learn.microsoft.com/en-us/rest/api/storageservices/append-block"
+  },
+  "file_sha256": {
+    "scripts/azure/ground_evidence.py": "ed2dac0260985dc337563064da398fadd26fc1680ded987a2bb332972da4f44e",
+    "scripts/azure/test_ground_evidence.py": "1ce271fe04985bbd825dff8c6d55e54d3a8373c77133a899687bb99d06a143a0",
+    "scripts/azure/evidence-publisher/role-definition.json": "d36cd9e47cade595c402a730147b34376c61a0c9eecaeb004f73b31eaf056172",
+    "scripts/azure/evidence-publisher/pipeline-design.json": "3d8a0854ff90bc926cacd93a9ef8a42261593f0208245d49f07af3bd0b53c799"
+  }
+}
