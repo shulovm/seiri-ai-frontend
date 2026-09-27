@@ -62,6 +62,7 @@ def main():
    require(('push' in actions)==(args.purpose=='build'),'repository write capability mismatch')
    req=urllib.request.Request('https://'+registry+'/v2/ground-worker/manifests/'+POLICY['initial_digest'],headers={'Authorization':'Bearer '+acr_token,'Accept':'application/vnd.oci.image.manifest.v1+json, application/vnd.docker.distribution.manifest.v2+json'},method='HEAD')
    with urllib.request.urlopen(req,timeout=60) as response:require(response.status==200,'registry digest read')
+   r['published_image_metadata']=json.loads(az(['acr','repository','show','--name',POLICY['registry'],'--image','ground-worker:staging-e23ff04-36288094609-1']).stdout)
    r['acr_digest_read']='PASS';r['acr_write_capability']='TOKEN_SCOPE_GRANTED_NO_WRITE_PERFORMED' if args.purpose=='build' else 'TOKEN_SCOPE_EXCLUDES_PUSH_AND_DELETE'
    if args.purpose=='deploy':
     before=app_get();static_gates(before)
