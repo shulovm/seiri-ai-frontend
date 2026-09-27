@@ -1,0 +1,46 @@
+{
+  "status": "PLANNED_NOT_GRANTED",
+  "environment": "ground-staging",
+  "deployment_branch": "master",
+  "oidc_include_claim_keys": ["repo", "context", "job_workflow_ref"],
+  "issuer": "https://token.actions.githubusercontent.com",
+  "audience": "api://AzureADTokenExchange",
+  "build": {
+    "identity": "id-ground-build-staging",
+    "subject": "repo:shulovm/seiri-ai-frontend:environment:ground-staging:job_workflow_ref:shulovm/seiri-ai-frontend/.github/workflows/ground-staging-build.yml@refs/heads/master",
+    "registry_control_actions": ["Microsoft.ContainerRegistry/registries/read"],
+    "repository_role": "Container Registry Repository Writer",
+    "repository_role_id": "2a1e307c-b015-4ebd-883e-5b7698a07328",
+    "scope": "orimusugroundacr; ABAC repository-name condition equals ground-worker",
+    "data_actions": [
+      "Microsoft.ContainerRegistry/registries/repositories/content/read",
+      "Microsoft.ContainerRegistry/registries/repositories/content/write",
+      "Microsoft.ContainerRegistry/registries/repositories/metadata/read",
+      "Microsoft.ContainerRegistry/registries/repositories/metadata/write"
+    ]
+  },
+  "deploy": {
+    "identity": "id-ground-deploy-staging",
+    "subject": "repo:shulovm/seiri-ai-frontend:environment:ground-staging:job_workflow_ref:shulovm/seiri-ai-frontend/.github/workflows/ground-staging-release.yml@refs/heads/master",
+    "app_scope": "ground-worker-staging only",
+    "app_actions_to_verify": [
+      "Microsoft.App/containerApps/read",
+      "Microsoft.App/containerApps/write",
+      "Microsoft.App/containerApps/revisions/read",
+      "Microsoft.App/containerApps/revisions/replicas/read"
+    ],
+    "registry_control_actions": ["Microsoft.ContainerRegistry/registries/read"],
+    "repository_role": "Container Registry Repository Reader",
+    "repository_role_id": "b93aa761-3e63-49ed-ac28-beffa264f7ac",
+    "repository_scope": "orimusugroundacr; ABAC repository-name condition equals ground-worker",
+    "workspace_scope": "law-ground-staging-jpe only; read-only query capability requires live operation resolution",
+    "rbac_audit_action": "Microsoft.Authorization/roleAssignments/read",
+    "rbac_audit_scope": "Subscription metadata only, to detect inherited worker-role drift. No role write, role definition write or resource data access."
+  },
+  "forbidden": ["roleAssignments/write", "Storage data writes", "registry admin credentials", "client secrets", "SAS", "PAT", "subscription Contributor", "resource-group Contributor"],
+  "references": [
+    "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-rbac-abac-repository-permissions",
+    "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/containers",
+    "https://docs.github.com/en/actions/reference/security/oidc"
+  ]
+}

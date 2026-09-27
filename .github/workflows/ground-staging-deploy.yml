@@ -1,0 +1,66 @@
+name: GROUND staging safe deployment
+on:
+  workflow_dispatch:
+    inputs:
+      source_commit:
+        description: Exact approved 40-character source commit
+        required: true
+        type: string
+      corpus_release:
+        description: Approved corpus manifest SHA-256
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: ground-staging-deployment
+  cancel-in-progress: false
+jobs:
+  tests:
+    if: github.repository == 'shulovm/seiri-ai-frontend' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.workflow_sha }}
+          path: control
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ inputs.source_commit }}
+          fetch-depth: 0
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.15.0
+      - name: Verify pipeline guards
+        run: python3 -m unittest discover -s control/scripts/azure -p 'test_*.py' -v
+      - name: Test explicit source without Azure authority
+        env:
+          SOURCE_SHA: ${{ inputs.source_commit }}
+          CORPUS_RELEASE: ${{ inputs.corpus_release }}
+        run: python3 control/scripts/azure/ground-staging-test.py --source source --sha "$SOURCE_SHA" --release "$CORPUS_RELEASE" --evidence evidence/tests
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: ground-test-evidence-${{ github.run_attempt }}
+          path: evidence/tests
+          retention-days: 90
+  build:
+    needs: tests
+    permissions:
+      contents: read
+      id-token: write
+    uses: ./.github/workflows/ground-staging-build.yml
+    with:
+      source_commit: ${{ inputs.source_commit }}
+      corpus_release: ${{ inputs.corpus_release }}
+  deploy:
+    needs: build
+    permissions:
+      contents: read
+      actions: read
+      id-token: write
+    uses: ./.github/workflows/ground-staging-release.yml
