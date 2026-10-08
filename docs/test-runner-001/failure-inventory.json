@@ -1,0 +1,560 @@
+[
+  {
+    "test": "FRUS86 stored excerpt origin, unassessed proposition and explicit Claim-Link-Evidence-Observation chain",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "new Claim rejects confidence=null",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "new Claim rejects confidence=0",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "new Claim rejects confidence=0.5",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "new Claim rejects confidence=0.95",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Claim immutable subject_id",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Claim immutable predicate_kind",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Claim immutable predicate",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Claim immutable value",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Claim immutable manifestation_scope",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Claim immutable applicable_from",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Claim immutable applicable_until",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Claim immutable provenance",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Claim immutable recorded_at",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Claim immutable created_at",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Claim immutable updated_at",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Claim delete, duplicate insert and same-ID replacement fail",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "selector zero/ambiguous/non-string, mismatched subject and missing scope fail",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "frozen bytes and missing registry never fall back",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Claim admission binds reviewed payload, links and exact before snapshot",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment one then multiple, nullable time, no fusion, no representative confidence",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment overwrite/delete/duplicate ID rejected",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment rejects assessor kind only",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment rejects assessor label only",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment rejects unnamespaced assessor",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment rejects missing assessor Entity",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment rejects empty rationale",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment rejects blank rationale",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment rejects invalid result",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment rejects null result",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment rejects missing Claim",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment rejects wrong project",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment rejects missing method",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment rejects bad scale hash",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment rejects missing Evidence",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment rejects missing Observation",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment rejects bad snapshot hash",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Assessment rejects basis wrong schema",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "assessment itself and changed Claim content cannot be the frozen basis",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "broken assessment collection is never UNASSESSED; missing external basis keeps stored inventory",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "conflict is independent of assessment and different frozen excerpts do not conflict",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "artifact locator alias does not change scope; no byte-level equivalence is invented",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "entity-only interval uses existing half-open and offset-aware temporal semantics",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "legacy bytes stay unchanged, confidence retained, no invented assessment or scope",
+    "missing_path": "fixtures/human-interface/human-001/project-state.json",
+    "source_repository_path": "fixtures/human-interface/human-001/project-state.json",
+    "fixture_owner": "HUMAN-001 legacy proof",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "old writer shapes and versions rejected; old reader fails rather than dropping vNext fields",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "vNext isolated save/load exact-byte stability, independent read, archive and direct-save guard",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "durable request identity separates same-payload retry from reevaluation and changed payload",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "legacy roundtrip is isolated only; no implicit initialization of existing storage",
+    "missing_path": "fixtures/human-interface/human-001/project-state.json",
+    "source_repository_path": "fixtures/human-interface/human-001/project-state.json",
+    "fixture_owner": "HUMAN-001 legacy proof",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "definition id/version cannot be rebound across assessments",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "method/scale/qualification admission rejects scale range",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "method/scale/qualification admission rejects scale interpretation",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "method/scale/qualification admission rejects method purpose",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "method/scale/qualification admission rejects method scale identity",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "method/scale/qualification admission rejects procedure missing",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "method/scale/qualification admission rejects known action time required",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "method/scale/qualification admission rejects review artifact required",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "method/scale/qualification admission rejects rationale artifact required",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "method/scale/qualification admission rejects declared qualification without basis",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "Belief retains explicit supporting and contradicting Evidence without changing position or score",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "admission review and request binding survive independent isolated read",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "direct snapshot save also rejects unresolved new Assessment references before bytes change",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  },
+  {
+    "test": "isolated writer refuses concurrent owner and preserves the existing lock",
+    "missing_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "source_repository_path": "fixtures/human-interface/provenance/historical-round1-v1/005/selected-c86-request.json",
+    "fixture_owner": "HUMAN-008B frozen provenance bundle / LIVE-005B input",
+    "classification": "A: tracked immutable input consumed by SEMANTIC-007",
+    "expected_immutability": "Exact committed Git blob, no generation/mutation",
+    "old_runner_behavior": "top-level fixtures root absent from copy inputs"
+  }
+]

@@ -1,0 +1,92 @@
+{
+  "format": "ground-runner-fixture-inputs-v1",
+  "authority": "exact-commit-git-tree",
+  "entries": [
+    {
+      "root": "ground-core/__tests__/fixtures",
+      "role": "immutable-core-test-data",
+      "required_by": [
+        "ground-core/__tests__"
+      ],
+      "presence": "required-when-suite-present",
+      "copy_mode": "tracked-extension-blobs",
+      "extensions": [
+        ".json"
+      ],
+      "required_files": [
+        "freewater-phase0.project.json",
+        "nl-approved-source-hashes.json",
+        "nl-phase4-heldout.json",
+        "nl-phase4b-heldout-v2.json",
+        "nl-phase4b-heldout-v2b.json",
+        "nl-phase4b-heldout-v2c.json",
+        "nl-phase4b-heldout-v2d.json",
+        "nl-phase4b-heldout-v2e.json",
+        "whole-reality-primary-gold.json"
+      ]
+    },
+    {
+      "root": "docs/schemas",
+      "role": "versioned-schema-inputs",
+      "required_by": [
+        "ground-core/validate.ts"
+      ],
+      "presence": "required-when-suite-present",
+      "copy_mode": "tracked-tree-blobs",
+      "required_files": [
+        "ground-core-project-state.v0.1.25.schema.json",
+        "ground-core-state-patch.v0.1.25.schema.json"
+      ]
+    },
+    {
+      "root": "docs/schemas",
+      "role": "explicit-vnext-schema-requirements",
+      "required_by": [
+        "ground-core/__tests__/claim-vnext.test.ts"
+      ],
+      "presence": "required-when-suite-present",
+      "copy_mode": "tracked-selected-blobs",
+      "required_files": [
+        "ground-core-project-state.v0.1.26.schema.json",
+        "ground-core-state-patch.v0.1.26.schema.json"
+      ]
+    },
+    {
+      "root": "fixtures/claim-vnext",
+      "role": "test-only-manifestation-assessment-definitions",
+      "required_by": [
+        "ground-core/__tests__/claim-vnext.test.ts"
+      ],
+      "presence": "required-when-suite-present",
+      "copy_mode": "tracked-tree-blobs",
+      "required_files": [
+        "definitions.json"
+      ]
+    },
+    {
+      "root": "fixtures/human-interface/human-001",
+      "role": "legacy-0.1.25-proof-snapshot",
+      "required_by": [
+        "ground-core/__tests__/claim-vnext.test.ts"
+      ],
+      "presence": "required-when-suite-present",
+      "copy_mode": "tracked-tree-blobs",
+      "required_files": [
+        "project-state.json"
+      ]
+    },
+    {
+      "root": "fixtures/human-interface/provenance/historical-round1-v1/005",
+      "role": "read-only-test-consumer-of-frozen-provenance-inputs",
+      "required_by": [
+        "ground-core/__tests__/claim-vnext.test.ts"
+      ],
+      "presence": "required-when-suite-present",
+      "copy_mode": "tracked-selected-blobs",
+      "required_files": [
+        "selected-c86-request.json",
+        "selection-manifest.json"
+      ]
+    }
+  ]
+}
