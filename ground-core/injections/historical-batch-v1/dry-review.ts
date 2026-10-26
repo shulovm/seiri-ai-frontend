@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {isAbsolute} from 'node:path';
+import {loadProjectSnapshot} from '../../file-store.js';
+import {BASELINE,TARGET_PROJECT,dry,preflight,sha256,stableSerialize} from './package.js';
+const root=process.argv[2];assert(root&&isAbsolute(root),'Explicit absolute canonical live root required');
+const snapshot=loadProjectSnapshot(TARGET_PROJECT,{mode:'canonical-live',storageDir:root});
+assert.equal(snapshot.fingerprint,BASELINE,'HOLD: live baseline changed');
+const result=dry(snapshot.state);
+assert.equal(sha256(readFileSync(`${root}/${TARGET_PROJECT}.json`)),BASELINE);
+console.log(stableSerialize({before_fingerprint:snapshot.fingerprint,live_after_fingerprint:BASELINE,stored_schema:snapshot.stored_schema_version,read_schema:snapshot.read_schema_version,validation:snapshot.validation,preflight:preflight(snapshot.state),...result.review}).trimEnd());

@@ -1,3 +1,12 @@
+# HUMAN-003D — Browse Semantic Audit
+
+The local Browse v0 semantic gate passes for the three registered snapshots.
+Changes are limited to scope wording and comprehension documentation/tests.
+See [Browse Comprehension Contract](./COMPREHENSION-CONTRACT.md#human-003d--browse-comprehension-contract--browse-v0-gate)
+for cold findings, permitted answers, prohibited inferences and limits.
+58 tests PASS; fixture/core/schema/server contracts unchanged. Third-party
+comprehension and hosted deployment remain unverified. No HUMAN-004 is started.
+
 # HUMAN-003C — Minimal Browse UI
 
 Baseline: Core v0 e769df3dabfee6f14b388cff8a150880ee323d37 and server boundary

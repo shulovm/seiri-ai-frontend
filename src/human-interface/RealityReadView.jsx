@@ -64,7 +64,7 @@ function EvidenceRead({ result }) {
 export function RealityReadFailure({ error, context = 'Reality Explorer' }) {
   const integrity = error.code === 'FIXTURE_INTEGRITY_FAILURE';
   const scopeExplanation = {
-    PROJECT_SCOPE_MISMATCH: 'この Project ID に登録された読取 source を解決できません。Reality の不存在を示す判定ではありません。',
+    PROJECT_SCOPE_MISMATCH: 'この Project ID はHuman Interfaceの登録read scope外です。GROUND全体でのProjectやRealityの不存在を示す判定ではありません。',
     ENTITY_NOT_IN_SNAPSHOT: 'この検証済みsnapshotのRealityEntity collectionに、そのIDは存在しません。他のsnapshotや世界での不存在を意味しません。',
     ENTITY_NOT_FOUND: 'この Entity ID は登録された proof read scope の対象ではありません。ProjectState 内に Entity が存在しないという判定ではありません。',
   }[error.code];

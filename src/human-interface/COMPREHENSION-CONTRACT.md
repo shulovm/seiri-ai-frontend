@@ -219,3 +219,109 @@ Do not widen this gate to populated conflicts/unresolved/unplaced temporal cases
 new domains or naturally sourced populated Event/State/Observation, arbitrary
 Entity browsing, project-wide Evidence, relation expansion, large datasets,
 ranking, execution or writes. These need separately scoped work and proof.
+
+# HUMAN-003D — Browse Comprehension Contract / Browse v0 Gate
+
+## Method and limits
+
+Implementer cold audit starts at `/reality` before D UI changes, inspecting three
+Projects through visible navigation rather than deriving meanings from fixture
+or code. The implementer has prior project knowledge: this is not an independent
+third-party comprehension test. Hosted deployment is outside this local gate.
+
+## Cold audit findings and minimal changes
+
+- Catalog: three registered IDs and origin strings are visible, without title,
+  count, hash or verified schema. “Registered” did not explicitly identify Human
+  Interface as the registering scope. Added that scope and the statement that
+  this is not a list of all GROUND Projects.
+- Qualification: Project source section already separates origin from quality;
+  catalog lacked this explanation. Added a neutral origin/truth boundary sentence,
+  with no colors, warnings, badges or source-specific treatment.
+- Project: fields are literal and source metadata is structurally separate.
+  Prominent title and `historical sidecar required` could be read as current
+  conclusions/requirements. Added a saved-field explanation, without changing
+  canonical values or treating summary as runtime instructions.
+- Entity selection: identity-only rows, no ranks/numbers/count badges; stored
+  ordering note is already accurate. Added selection/knowledge-quantity boundary
+  and identified kind as a stored field. No document→Evidence, person→Actor or
+  asset→Resource mapping exists.
+- Source A: visible as person in B15, opens normally, zero subject records remain
+  scoped read results, no warning or error. No reverse provenance is added.
+- Project error: made Human Interface registration scope explicit. Entity absence
+  already states verified snapshot membership only; it is not a global absence.
+
+## Questions and permitted answers
+
+Projects page:
+
+1. How many read scopes are registered here? Three visible registry entries in
+   these fixtures; this is not GROUND's total Project count or a UI count metric.
+2. What identifies each entry? project_id, source_key and source_qualification.
+3. What does qualification mean? Snapshot origin metadata, not quality/trust/truth.
+4. Can title, summary, schema validity or Entity count be concluded here? No.
+5. Does order imply recent/important/production? No.
+
+Project page:
+
+1. What is its title/ID/summary/status? Read the saved canonical Project fields.
+2. Is title a current GROUND conclusion, or summary a runtime instruction? No.
+3. Which data describes the snapshot source? The separate Transport section.
+4. Which Entities can be selected? Every returned canonical identity, using label,
+   kind and ID; the disclosure includes project_id.
+5. Does selection/order indicate importance, record quantity, completeness,
+   freshness, activity or evidence richness? No.
+6. Is kind mapped to another canonical role? No; it remains its saved value.
+
+Selected Entity:
+
+1. Why can Source A be opened despite zero records? Its canonical Entity exists;
+   returned record counts describe only the selected read scope.
+2. Does zero mean useless, incomplete, unknown everywhere or historical absence? No.
+3. What does ENTITY_NOT_IN_SNAPSHOT establish? Only absence of that ID from the
+   verified selected snapshot's RealityEntity collection.
+4. What does PROJECT_SCOPE_MISMATCH establish? No registered Human Interface read
+   scope for that Project ID; not absence from all GROUND.
+
+## Gate invariants
+
+Catalog loads only registry metadata. Project content is fetched after selection.
+Canonical and transport sections remain separate. Client performs no sort/filter,
+ranking, record-count enrichment, provenance traversal or temporal resolution.
+Navigation adds no authority. Errors render alerts rather than empty lists.
+Successful zero identity lists remain Project views (UI logic test only; none of
+the three real snapshots has an empty Entity collection). Source A zero records
+are covered with the existing real snapshot.
+
+Request state is keyed by catalog/project scope and by project/entity IDs.
+Render guards hide mismatching previous scope; AbortController prevents late
+responses from repopulating an abandoned scope. No semantic state/cache is added.
+
+## Remaining limits / next phase candidates
+
+Independent reader comprehension and hosted deployment remain unproven. Future
+work may run these questions with third parties, or select another real saved
+shape for proof. No HUMAN-004, search, filtering, sorting, lens, metrics, expanded
+read scope or write/action is started by this gate.
+
+## Local gate result
+
+Browse semantic gate: PASS for the three registered snapshots. No unresolved
+blocking semantic bug was found. All 58 tests pass (existing 56 plus two D
+semantic/presentation tests). Adapter/core typechecks, focused lint, build and
+Foundation verification pass. The 36 frontend lint errors match the unchanged
+baseline diagnostics. Fixture hashes, core/schema, registry and server contracts
+are unchanged. Full core suite was not rerun; 3,753 PASS / 104 FAIL remains the
+previous measured baseline.
+
+Round4 has 42 reachable identity links; its final Te Papa Entity was opened and
+Project back navigation succeeded. At 390×844, Project/identity associations and
+qualification remain readable, with document scrollWidth equal to 390. Loading
+views carry only their current request stage, while mismatched scope guards and
+cancellation remain intact. Error-vs-empty behavior is covered by the preserved
+read-failure tests and an additional successful zero-list presentation test.
+
+The gate establishes local read-only discovery of registered saved Entity
+identities through existing canonical read paths. It does not establish full
+GROUND coverage, independent human comprehension, arbitrary future shapes,
+hosted deployment or any write/action capability.

@@ -1,0 +1,11 @@
+{
+  "package": "frus-1904-392-review-v1",
+  "source_id": "frus:1904:392",
+  "claim_id": "c392-instruction",
+  "full_dataset_sha256": "5bc32592aa80ee4742f8e01b09d4381dacc1ce080fb930772a7a1ea2b24c70c2",
+  "selected_input_sha256": "2c4f2e2b9e4530d077087994e043e42920d79621c704ec8dc05a48f6a7fd849d",
+  "upstream_substrate_sha256": "96b42fee5b7350a5aa83c43dfd5c6c185ee6e0918d2c5091ce8ecafd9b6bf79a",
+  "projection_sha256": "4c23a611bf0ada6483df5cf62270dbae9218bb50ec4ac472b821573cd847d6ef",
+  "core_baseline": "03bfe7198571f3c3353816e4243a8ac19229d8c5",
+  "policy_status": "BLOCKED_CONFIDENCE_AND_APPLICABILITY_AUTHORITY"
+}
