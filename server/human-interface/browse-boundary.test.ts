@@ -6,7 +6,7 @@ import { createHumanBrowseReader, createHumanRealityReader } from './read-adapte
 import { realitySourceRegistry as registry, createRealitySourceRegistry } from './source-registry.js';
 import { normalizeProjectState } from '../../ground-core/migrate.js';
 import { getRealityWorldline } from '../../ground-core/reality/worldline.js';
-import { getClaimsForSubject, getEvidenceForClaim, getObservationsForSubject } from '../../ground-core/reality/epistemic.js';
+import { getClaimsForSubject, getEvidenceForClaim, getEvidenceForObservation, getObservationsForSubject } from '../../ground-core/reality/epistemic.js';
 const { default: express } = await tsImport('express', import.meta.url);
 const { createHumanInterfaceRouter } = await tsImport('./http-route.js', import.meta.url);
 const load = (path: string) => readFileSync(new URL(`../../${path}`, import.meta.url));
@@ -30,7 +30,7 @@ test('catalog returns only three registered transport identities without reading
     assert.equal(response.headers.get('cache-control'), 'no-store');
     assert.deepEqual(await response.json(), {
       transport: { contract: 'human-interface-project-catalog.v1' },
-      registered_projects: registry.sources.map(s => ({project_id:s.project_id,source_key:s.source_key,source_qualification:s.source_qualification})),
+      registered_projects: registry.sources.map(s => ({project_id:s.project_id,source_key:s.source_key,source_mode:"immutable_proof_snapshot",source_qualification:s.source_qualification})),
     });
   });
   assert.equal(reads, 0);
@@ -57,7 +57,7 @@ for (const [index, source] of registry.sources.entries()) {
       assert.equal(body.canonical_entities.length, [14,4,42][index]);
       assert.deepEqual(body.transport, {
         contract:'human-interface-project-browse.v1',
-        source:{source_key:source.source_key,source_qualification:source.source_qualification,sha256:source.sha256,
+        source:{source_key:source.source_key,source_qualification:source.source_qualification,source_mode:"immutable_proof_snapshot", snapshot_fingerprint:source.sha256, sha256:source.sha256,
           stored_schema_version:'0.1.24',read_schema_version:'0.1.25',canonical_baseline_commit:'fbfafef737132c8049998f9ca7d1d5f68fa90c56'},
         requested_scope:{project_id:source.project_id},
       });
@@ -78,7 +78,7 @@ for (const [index, source] of registry.sources.entries()) {
       const result = reader(source.project_id, entity.id);
       const claims = getClaimsForSubject(state, entity.id);
       assert.deepEqual(result.canonical_records, {project:state.project,entity,observations:getObservationsForSubject(state,entity.id),claims});
-      assert.deepEqual(result.core_read_results, {worldline:getRealityWorldline(state,entity.id),evidence_for_claim:claims.map(claim=>getEvidenceForClaim(state,claim.id))});
+      assert.deepEqual(result.core_read_results, {worldline:getRealityWorldline(state,entity.id),evidence_for_claim:claims.map(claim=>getEvidenceForClaim(state,claim.id)),evidence_for_observation:getObservationsForSubject(state,entity.id).map(o=>({observation_id:o.id,evidence:getEvidenceForObservation(state,o.id)}))});
     }
     assert.equal(reads, state.reality_entities.length);
   });

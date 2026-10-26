@@ -1,0 +1,39 @@
+{
+  "predicate": {
+    "id": "test:excerpt-request", "version": "1", "predicate_kind": "attribute",
+    "predicate": "contains_request_to_respect_chinese_neutrality_and_administrative_entity",
+    "question": "TEST ONLY: Does the specified stored excerpt express this request? Not public-source authenticity or historical truth.",
+    "value_schema": {"type": "boolean"}, "scope_kinds": ["frozen_artifact"], "applicability_policy": "atemporal"
+  },
+  "entity_predicate": {
+    "id": "test:entity-condition", "version": "1", "predicate_kind": "attribute", "predicate": "condition",
+    "question": "TEST ONLY: declared condition of this entity", "value_schema": {"type": "boolean"},
+    "scope_kinds": ["entity_only"], "applicability_policy": "declared_interval"
+  },
+  "method": {
+    "id": "test:declared-estimate", "version": "1", "purpose": "proposition_epistemic_assessment",
+    "procedure": "TEST ONLY: store the explicit test assessor's declared numeric result. No production confidence policy or source judgment.",
+    "procedure_artifacts": [],
+    "allowed_scales": [{"id":"test:unit-scale","version":"1","local_pointer":"/scale"}],
+    "input_requirements": {
+      "evidence_required": true, "observation_required": true, "frozen_input_required": true,
+      "review_artifact_required": false, "rationale_artifact_required": false,
+      "known_assessed_at_required": false, "resolved_assessed_at_required": false
+    },
+    "interpretation": "An explicitly declared TEST result; neither calibrated probability nor historical truth."
+  },
+  "scale": {
+    "id":"test:unit-scale", "version":"1", "minimum":0, "maximum":1,
+    "minimum_meaning":"TEST lower endpoint of the assessor's declared estimate",
+    "maximum_meaning":"TEST upper endpoint of the assessor's declared estimate",
+    "interpretation":"TEST ONLY subjective estimate; no empirical calibration", "numeric_kind":"subjective_estimate"
+  },
+  "qualification": {
+    "id":"test:uncalibrated", "version":"1",
+    "method":{"id":"test:declared-estimate","version":"1","local_pointer":"/method"},
+    "scale":{"id":"test:unit-scale","version":"1","local_pointer":"/scale"},
+    "qualification":"not_established", "explanation":"Test contract only; calibration not established.",
+    "applicability":"Isolated test records using the test method and scale only.", "basis_refs":[]
+  },
+  "review_process": {"id":"test:admission-review", "version":"1", "procedure":"TEST ONLY scripted admission artifact; no live approval."}
+}

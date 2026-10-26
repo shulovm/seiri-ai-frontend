@@ -1,0 +1,119 @@
+{
+  "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+  "policy_version": "frus-392-stored-inspection-v1",
+  "semantic_package": "frus-1904-392-inspection-v1",
+  "semantic_package_commit": "a6f4de1ff92f8ce2e6e6c16de66e714b68b97f9f",
+  "before_fingerprint": "724f01bfdeeed0414d8e1c360195b84439ce9e30f15cb35909a7f5aca0b0f169",
+  "after_fingerprint": "f1ed694f3e0c3a10d383e816f43ca003cd6c123dad18c3f0688d2289c0f3e3bc",
+  "selected_input_sha256": "2c4f2e2b9e4530d077087994e043e42920d79621c704ec8dc05a48f6a7fd849d",
+  "dataset_fingerprint": "5bc32592aa80ee4742f8e01b09d4381dacc1ce080fb930772a7a1ea2b24c70c2",
+  "projection_implementation_fingerprint": "937b19c9aca16f8b7ddc3019c0b547a5478334c6722d02e6b5878d42e739bb8d",
+  "generated_ids": {
+    "document": "fbdfd235-1a5b-5a5d-ad30-6f2c170fe9f9",
+    "observation": "87ae62f9-9481-5577-a299-813c022d2007",
+    "evidence": "3151b313-d5bc-5b58-a17d-a61add22f22d"
+  },
+  "recorded_at": "2026-09-15T04:58:13.664Z",
+  "operations_execution_time": "2026-09-15T04:58:13.591Z",
+  "writer_owner": "ground-local-cli-v0",
+  "runtime_config": {
+    "mode": "canonical-live",
+    "storageDir": "/Users/macsaku/Library/Application Support/GROUND/storage/projects",
+    "writerOwner": "ground-local-cli-v0"
+  },
+  "source_id": "frus:1904:392",
+  "input_key": "c392-instruction",
+  "record_hashes": {
+    "fbdfd235-1a5b-5a5d-ad30-6f2c170fe9f9": "4f55d4b7525bbe051f69ce9150afb9f62a200a6af35d59361bd4fd60e3add1bb",
+    "87ae62f9-9481-5577-a299-813c022d2007": "557e355bef3bf7ca8a3aeb5e8a5c50d5dad9a824e7e68e1d78c5dee5a01d3d8d",
+    "3151b313-d5bc-5b58-a17d-a61add22f22d": "95af9e9935702145a3be3b3f678918b0ac6dec3195fceba529e4ec35036e1d9a"
+  },
+  "preflight_result": "NOT_APPLIED",
+  "validation_result": "PASS",
+  "counts": {
+    "reality_entities": 1,
+    "epistemic_observations": 1,
+    "evidence": 1,
+    "claims": 0,
+    "claim_evidence_links": 0,
+    "reality_events": 0,
+    "reality_states": 0,
+    "observations": 0
+  },
+  "source_qualification": [
+    "Historical Round1 stored inspection report",
+    "researcher-authored paraphrase",
+    "not an exact quote",
+    "not historical truth adjudication",
+    "not independent source authenticity verification"
+  ],
+  "status": "PUBLISHED_AND_INDEPENDENTLY_VERIFIED",
+  "operation_implementation_sha256": "a236b4417bd5b527884ff3084bad3a52f84a27e21b477bb2dd4387afddf40679",
+  "publish_result": {
+    "result": "PASS",
+    "save_calls": 1,
+    "path": "STORAGE-002 saveProject / STORAGE-003 canonical-live owner session"
+  },
+  "owner_session": {
+    "acquired": true,
+    "released": true
+  },
+  "independent_read_result": {
+    "result": "PASS",
+    "process_id": 90923,
+    "read_only": true,
+    "owner_released": true,
+    "after_fingerprint": "f1ed694f3e0c3a10d383e816f43ca003cd6c123dad18c3f0688d2289c0f3e3bc",
+    "stored_schema": "0.1.25",
+    "read_schema": "0.1.25",
+    "counts": {
+      "reality_entities": 1,
+      "epistemic_observations": 1,
+      "evidence": 1,
+      "claims": 0,
+      "claim_evidence_links": 0,
+      "reality_events": 0,
+      "reality_states": 0,
+      "observations": 0
+    },
+    "metadata_preserved": true,
+    "approved_fields_refs_provenance": true,
+    "extra_project_files": false,
+    "temp_or_lock_remaining": false
+  },
+  "recovery_material": {
+    "path": "/Users/macsaku/Library/Application Support/GROUND/operations/live-003c-frus392-inspection-v1/before-project-state.bytes",
+    "sha256": "724f01bfdeeed0414d8e1c360195b84439ce9e30f15cb35909a7f5aca0b0f169"
+  },
+  "negative_verification": {
+    "worktrees": 40,
+    "existing_files": 18047,
+    "changed": [
+      "/private/tmp/ground-immune-001/ground-core/storage/.governance-prov-tmp/a1b2c3d4-e5f6-4890-abcd-ef1234567890.json",
+      "/private/tmp/ground-immune-001/ground-core/storage/.governance-tmp/a1b2c3d4-e5f6-4890-abcd-ef1234567890.json"
+    ],
+    "removed": [],
+    "added": [],
+    "repository_clean": true,
+    "approved_worktree_schema_and_core_semantics_unchanged": true,
+    "default_storage_exception": "Two governance test temporary files changed in separate ground-immune-001 worktree at 2026-09-15 13:59:19 JST. Paths match existing governance tests. This operation writes only explicit live root and operations area; concurrent cause inferred, not proven. All other audited bytes unchanged.",
+    "default_storage_has_target_project": false,
+    "extra_projects": false,
+    "temp_or_lock_remaining": false
+  },
+  "verification": {
+    "focused_tests": 34,
+    "pass": 34,
+    "fail": 0,
+    "known_core_104_failures": "Baseline unchanged; no repair performed, full suite not rerun for operations-only execution"
+  },
+  "artifacts_sha256": {
+    "operation.mts": "a236b4417bd5b527884ff3084bad3a52f84a27e21b477bb2dd4387afddf40679",
+    "tests.log": "07357e8c29920a0911d66b984887f125359a723aaac72035afbcc2272ffe0157",
+    "independent-read.json": "62d0f382653247f51d6da36749cf95e02c8d7d25f6b17937f923a8dd1d61fbd9",
+    "negative-audit-before.json": "264769228a9e5f057e9f6875d4231752b6861aca9257e2964eb991be20ad74db",
+    "negative-audit-after.json": "23a531f7ed71f56b5aa2a8e8b9a29d014cc3ef2f0ede4caaf95be113a15b88c7"
+  },
+  "ui_status": "No live registration or UI changes. Canonical Evidence 1 exists; current Entity Claim-linked read does not retrieve Observation-linked Evidence.",
+  "resume_gate": "LIVE-003C complete. HUMAN-004B requires explicit next scope; not started."
+}

@@ -1,4 +1,6 @@
 import React from 'react';
+import EntityNavigation from './EntityNavigation.jsx';
+import FrozenInputPanel from './FrozenInputPanel.jsx';
 
 function RawView({ value, label = 'Canonical / raw record' }) {
   return <details className="hi-raw"><summary>{label}</summary><pre>{JSON.stringify(value, null, 2)}</pre></details>;
@@ -61,9 +63,31 @@ function EvidenceRead({ result }) {
   </details>;
 }
 
+function ObservationEvidenceRead({ observationId, result }) {
+  return <section className="hi-observation-evidence" aria-label="Evidence linked to this Observation" data-observation-id={observationId}>
+    <h3>Evidence linked to this Observation</h3>
+    <p className="hi-kind">Existing core read result · getEvidenceForObservation</p>
+    <p>Observation ID: <code>{observationId}</code></p>
+    <p className="hi-note">このsectionは、このObservationをexplicit observation_refで参照するEvidence recordsのみを表示します。保存参照は Evidence.observation_id → EpistemicObservation.id です。</p>
+    <p className="hi-note">Evidenceはtruth verdictではありません。0件はこの明示relation scopeでの返却件数であり、Evidence一般の不存在やObservationの根拠・真偽を判定するものではありません。</p>
+    {result ? <>
+      <p>このread scopeで返された明示参照Evidence records: {result.evidence.length}</p>
+      <p className="hi-note">server response順です。重要度を表しません。ObservationとEvidenceには同じEntity responseのsnapshot_fingerprintが適用されます。</p>
+      {result.evidence.map(evidence => <RecordPanel key={evidence.id} record={evidence} title="Evidence" />)}
+    </> : <p role="alert">このObservationのread resultが提供されていません。Evidence 0件という結果ではありません。</p>}
+  </section>;
+}
+
 export function RealityReadFailure({ error, context = 'Reality Explorer' }) {
   const integrity = error.code === 'FIXTURE_INTEGRITY_FAILURE';
   const scopeExplanation = {
+    LIVE_RUNTIME_CONFIG_UNAVAILABLE: '登録live sourceのruntime configurationを利用できません。別storageへfallbackしていません。',
+    LIVE_ROOT_UNAVAILABLE: '登録live sourceのstorage rootを利用できません。空のProjectを示す結果ではありません。',
+    LIVE_PROJECT_FILE_MISSING: '登録live sourceのProject fileを読めません。GROUND全体でのProject不存在を示す判定ではありません。',
+    LIVE_PROJECT_ID_MISMATCH: '取得snapshotのProject IDがrequestと一致しないため、canonical recordsは表示していません。',
+    LIVE_SNAPSHOT_VALIDATION_FAILURE: '登録live sourceのcanonical snapshot検証が失敗したため、canonical recordsは表示していません。',
+    LIVE_PERMISSION_DENIED: '登録live sourceへの読取権限がありません。canonical recordsの0件という結果ではありません。',
+    LIVE_READ_FAILURE: '登録live sourceを読めません。別sourceへfallbackしていません。',
     PROJECT_SCOPE_MISMATCH: 'この Project ID はHuman Interfaceの登録read scope外です。GROUND全体でのProjectやRealityの不存在を示す判定ではありません。',
     ENTITY_NOT_IN_SNAPSHOT: 'この検証済みsnapshotのRealityEntity collectionに、そのIDは存在しません。他のsnapshotや世界での不存在を意味しません。',
     ENTITY_NOT_FOUND: 'この Entity ID は登録された proof read scope の対象ではありません。ProjectState 内に Entity が存在しないという判定ではありません。',
@@ -91,8 +115,10 @@ export default function RealityReadView({ response }) {
     ['Worldline entries · core read result', reads.worldline.ordered_entries.length, reads.worldline.ordered_entries],
     ['Claim', transport.returned_counts.claims, records.claims],
   ];
-  return <main className="hi-explorer">
-    <header className="hi-context"><p className="hi-eyebrow">GROUND Human Interface · read-only · HUMAN-002E</p>
+  return <main className="hi-explorer" id="top" tabIndex={-1}>
+    <EntityNavigation entity={records.entity} projectId={records.project.id} observations={records.observations} />
+    <p className="hi-note">ページ内リンクは表示sectionへの移動です。重要度・workflow・因果順を示しません。0件のsectionも現在のread scopeの結果です。</p>
+    <header className="hi-context"><p className="hi-eyebrow">GROUND Human Interface · read-only</p>
       <h1>{records.entity.label}</h1><p>Reality Explorer · canonical records / existing core read results</p>
       <p>保存済み ProjectState の一つの RealityEntityと、その scope に対する既存 core 読取結果を見ています。</p>
       <h2>Canonical records · context</h2>
@@ -103,18 +129,20 @@ export default function RealityReadView({ response }) {
         <div><dt>entity.kind</dt><dd><code>{records.entity.kind}</code></dd></div>
       </dl>
       <RawView value={records.project} label="Canonical / raw · Project" />
-      <section className="hi-transport"><h2>Transport metadata · read source</h2>
-      <p className="hi-note">読取 source と schema の情報です。canonical record の field や真偽の評価ではありません。source_qualification は読取 source の由来です。成功 response は server の fixture hash 検証後に返されています。</p>
+      <details className="hi-transport hi-transport-disclosure"><summary>Transport metadata · read source</summary>
+      <p className="hi-note">読取 source と schema の情報です。canonical record の field や真偽の評価ではありません。source_qualification は読取 source の由来です。source_mode は保存sourceの運用形態です。snapshot_fingerprint はこのresponseを生成したexact stored bytesのSHA-256です。</p>
+      <p className="hi-note">{source.source_mode === 'immutable_proof_snapshot' ? 'Immutable proof snapshot · fixture hash 検証後の読取結果です。' : 'Mutable canonical storage · sourceは更新可能です。各requestで取得したsnapshotを表示し、request間でfingerprintが変わる場合があります。'}</p>
       <dl className="hi-fields">
+        <div><dt>source_mode</dt><dd><code>{source.source_mode}</code></dd></div>
         <div><dt>stored_schema_version</dt><dd><code>{source.stored_schema_version}</code></dd></div>
         <div><dt>read_schema_version</dt><dd><code>{source.read_schema_version}</code></dd></div>
         <div><dt>source_key</dt><dd><code>{source.source_key}</code></dd></div>
         <div><dt>source_qualification</dt><dd><code>{source.source_qualification}</code></dd></div>
-        <div><dt>fixture</dt><dd><code>{source.fixture}</code></dd></div>
-        <div><dt>sha256</dt><dd><code>{source.sha256}</code></dd></div>
+        {source.fixture && <div><dt>fixture</dt><dd><code>{source.fixture}</code></dd></div>}
+        <div><dt>snapshot_fingerprint</dt><dd><code>{source.snapshot_fingerprint}</code></dd></div>
       </dl>
       <RawView value={transport} label="Raw · transport metadata (not a canonical record)" />
-      </section>
+      </details>
     </header>
     <section className="hi-section"><h2>Records in this read scope</h2>
       <p className="hi-kind">Transport-level returned counts / existing core entry count</p>
@@ -126,8 +154,8 @@ export default function RealityReadView({ response }) {
         <RawView value={value} label={`Raw collection · ${label}`} />
       </li>)}</ul>
     </section>
-    <section className="hi-section"><h2>Canonical Entity</h2><RecordPanel record={records.entity} title="RealityEntity" /></section>
-    <section className="hi-section hi-core-read"><h2>Worldline</h2><p className="hi-kind">Existing core read result · getRealityWorldline</p>
+    <section className="hi-section hi-anchor" id="entity" tabIndex={-1}><h2>Canonical Entity</h2><RecordPanel record={records.entity} title="RealityEntity" /></section>
+    <section className="hi-section hi-core-read hi-anchor" id="worldline" tabIndex={-1}><h2>Worldline</h2><p className="hi-kind">Existing core read result · getRealityWorldline</p>
       <p className="hi-note">この Entity scope の既存 core 読取結果です。空の entries は、歴史上何も起きなかったという判定ではありません。</p>
       <p className="hi-note">この section は既存 core の Worldline result を表示します。この read scope の全recordを並べ直した chronology ではなく、latest_time は Reality 全体の最新時刻を示す表示ではありません。Observation collection は別に表示しています。</p>
       <h3>temporal_summary · core read result</h3>
@@ -147,15 +175,33 @@ export default function RealityReadView({ response }) {
     <section className="hi-section"><h2>RealityStates</h2><p>この read scope で返された RealityState records: {worldline.states.length}</p>
       {worldline.states.map(record => <RecordPanel key={record.id} record={record} title="RealityState" />)}
     </section>
-    <section className="hi-section"><h2>Observations</h2><p className="hi-note">Observation collection は Worldline とは別の読取結果です。observed_at を Worldline の latest_time へ追加・置換する表示ではありません。</p><p>この read scope で返された EpistemicObservation records: {records.observations.length}</p>
-      {records.observations.map(record => <RecordPanel key={record.id} record={record} title="EpistemicObservation" />)}
+    <section className="hi-section hi-anchor" id="observations" tabIndex={-1}><h2>Observations</h2><p className="hi-note">Observation collection は Worldline とは別の読取結果です。observed_at を Worldline の latest_time へ追加・置換する表示ではありません。</p><p>この read scope で返された EpistemicObservation records: {records.observations.length}</p>
+      {records.observations.length > 1 && <nav id="observation-index" className="hi-observation-index hi-anchor" tabIndex={-1} aria-label="Observation index">
+        <h3>Observation index</h3>
+        <p className="hi-note">このread scopeのresponse順です。時間順・重要度を意味しません。contentは原文の表示previewです。全文は各recordで確認できます。</p>
+        <ul>{records.observations.map(record => <li key={record.id}>
+          <a href={`#observation-${record.id}`}>
+            <span className="hi-observation-preview" title={record.content}>{record.content}</span>
+            {record.provenance?.external_id != null && <code className="hi-observation-locator">{record.provenance.external_id}</code>}
+            <span className="hi-kind">Observation ID: <code>{record.id}</code></span>
+          </a>
+        </li>)}</ul>
+      </nav>}
+      {records.observations.map(record => <div key={record.id} id={`observation-${record.id}`} className="hi-observation-group hi-anchor" tabIndex={-1} role="region" aria-label={`EpistemicObservation ${record.id}`}>
+        <p className="hi-kind">EpistemicObservation · <code>{record.id}</code></p>
+        {records.observations.length > 1 && <a href="#observation-index">Back to Observation index</a>}
+        <RecordPanel record={record} title="EpistemicObservation" />
+        <FrozenInputPanel key={`${records.project.id}/${records.entity.id}/${record.id}/${source.snapshot_fingerprint}`} projectId={records.project.id} entityId={records.entity.id} observation={record} fingerprint={source.snapshot_fingerprint} hasIndex={records.observations.length > 1} />
+        <ObservationEvidenceRead observationId={record.id} result={reads.evidence_for_observation?.find(bundle => bundle.observation_id === record.id)} />
+        {records.observations.length > 1 && <a href="#observation-index">Back to Observation index</a>}
+      </div>)}
     </section>
-    <section className="hi-section"><h2>Claims</h2><p>この read scope で返された Claim records: {records.claims.length}</p>
+    <section className="hi-section hi-anchor" id="claims" tabIndex={-1}><h2>Claims</h2><p>この read scope で返された Claim records: {records.claims.length}</p>
       <div className="hi-linked-scope"><h3>Claim-linked Evidence · read scope</h3>
       <p>この read path の Claim-linked Evidence bundles: {reads.evidence_for_claim.length}</p>
       <p className="hi-note">ProjectState 全体の Evidence 件数ではありません。各Claimの bundle が同じ Evidence id を参照する場合があります。</p>
       {reads.evidence_for_claim.length > 0 && <p>ClaimEvidenceLink records returned: {linkCount}<br />Unique linked Evidence returned in this scope: {linkedEvidenceIds.size}</p>}
-      <p className="hi-note">この read path は Claim と Evidence の明示的な link を表示します。Event / State の根拠への接続を示すものではありません。</p>
+      <p className="hi-note">この read path は Claim と Evidence の明示的な link を表示します。Observation → Evidence の参照はこのread scopeに含まれません。表示されないEvidenceの不存在を示すものではありません。Event / State の根拠への接続を示すものではありません。</p>
       {reads.evidence_for_claim.length > 0 && <p className="hi-note">Link の件数と Evidence identity の件数は別です。Unique linked Evidence は返却された bundle 内の異なる Evidence id の件数です。</p>}
       </div>
       {records.claims.map(claim => <details className="hi-claim" key={claim.id} open={records.claims.length === 1}>

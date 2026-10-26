@@ -363,6 +363,7 @@ export type {
 export {
   getClaimsForSubject,
   getEvidenceForClaim,
+  getEvidenceForObservation,
   getObservationsForSubject,
 } from "./reality/epistemic.js";
 export type { ClaimEvidenceBundle } from "./reality/epistemic.js";

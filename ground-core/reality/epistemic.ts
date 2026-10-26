@@ -5,6 +5,8 @@
  * Does not promote Claims to ontic Reality.
  */
 
+import { NotFoundError, ValidationError } from "../errors.js";
+
 import type {
   Claim,
   ClaimEvidenceLink,
@@ -91,4 +93,25 @@ export function getEvidenceForClaim(
     contradicts,
     links,
   };
+}
+
+/** Reverse read of explicit observation_ref records, in stored Evidence order.
+ * Zero matches says nothing about truth or Evidence outside this relation scope.
+ * No source/provenance inference, sorting, repair, index or mutation.
+ */
+export function getEvidenceForObservation(
+  projectState: ProjectState,
+  observationId: string
+): Evidence[] {
+  const observations = projectScoped(projectState, projectState.epistemic_observations)
+    .filter((observation) => observation.id === observationId);
+  if (observations.length === 0) {
+    throw new NotFoundError(`EpistemicObservation not found in project: ${observationId}`);
+  }
+  if (observations.length !== 1) {
+    throw new ValidationError(`Ambiguous EpistemicObservation ID: ${observationId}`);
+  }
+  return projectScoped(projectState, projectState.evidence).filter(
+    (evidence) => evidence.kind === "observation_ref" && evidence.observation_id === observationId
+  );
 }

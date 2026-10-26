@@ -1,0 +1,568 @@
+{
+  "status": "COMPLETED",
+  "package_completion": {
+    "status": "COMPLETED",
+    "prepared": {
+      "status": "PREPARED",
+      "batch_id": "frus-1904-expansion-inspection-v1",
+      "target_project": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+      "expected_before_fingerprint": "f45b265afb6f4d9165ac46aa26eb1f16d82bbf94a3739212421bca93463e830b",
+      "dataset_hash": "5bc32592aa80ee4742f8e01b09d4381dacc1ce080fb930772a7a1ea2b24c70c2",
+      "selected_input_hashes": [
+        "fe6d0c34dcf8028664c7108c6dd51428a2e123f91e37f9a73d4f37543be21ab2",
+        "37cd0daec71a7e2f9da6542c9089bb8af94f6743e0fe10ab9321f3e6e45fddf2",
+        "8c02d18d1a3c4c79dd0557aa8e68dabc7e73fc7a392738358f6daab1558f327d",
+        "e9fe1509f763b67aadcf655d456ee4ef19fcbb231968dbb45b54cd89fc888d5a",
+        "562c641e60a67649b01442494a7f536e4c254b591eb7ae4ca0bd8d86720099ac",
+        "81aba6037049bcaef92b43209c46ff205b7bcd0452476679a4f83708c309ca81",
+        "a62e5d6964d89e49f3af20d7bcab2c043b6f49fca5ca95aa160ca288cd4b9854",
+        "43b917d9e171e08d53e2291da6bbca9ae2e079ff7f6339a3c04ceb17225b308f",
+        "e764b772c1c7e2be04810a9d412d1723d3c2a7c1d09d0e704fd4c0104e40a978",
+        "556f7c0c38061e188bf93cefa20f9c42624fee94e143cf2379c8f488668a17e5",
+        "9d6d70f4f525190b0bc2f0dcbfc94e3df4c8d46e55fda6e6529b858b04802ca9",
+        "f94ddafb33c99acb957789ba1cae4baab54ce4d5883e19282cf6834caeb6531f"
+      ],
+      "package_commit": "1a5cd833b96c40aea87752f86dea9949db661ecd",
+      "package_fingerprint": "c05192742ae39eb86f42a53724d7468922a4173ce764c938a6287b069fa7d3f5",
+      "source_ids": [
+        "frus:1904:395",
+        "frus:1904:678",
+        "frus:1904:679",
+        "frus:1904:680",
+        "frus:1904:86",
+        "frus:1904:430",
+        "frus:1904:815"
+      ],
+      "report_ids": [
+        "c395-captured",
+        "c395-sunk",
+        "c395-first-fire",
+        "c678-uncertainty",
+        "c678-sent",
+        "c679-held",
+        "c680-attack",
+        "c86-request",
+        "c430-consent",
+        "c430-guarantee",
+        "c430-occupation",
+        "c815-inquiry"
+      ],
+      "generated_ids": [
+        "a4046668-2a14-5190-aa6b-c43f25bfbb34",
+        "fa61cb21-cf36-5709-ac79-323d59c44e68",
+        "58dd0021-9b1d-5571-aab6-db50cc811a18",
+        "ea4bfcb3-b0cf-5d95-a6ee-0bb9eaa7a5c6",
+        "462c0cfd-4b72-52d5-aecd-61030d0f474c",
+        "f22f9834-5686-53e1-a4a5-a5ba914b6134",
+        "cfe6ae8f-5cd6-5954-a14a-29a950627db5",
+        "22e46a9a-c570-512a-ab6e-6e4ed43b7cce",
+        "aea84378-fce1-59f0-ad4c-a0efbc9bb155",
+        "5fd5ac26-f2c2-52b3-aeca-27fa8b974299",
+        "8e93e555-ddfd-5f9f-a1e8-484044b80b03",
+        "5f3d46a4-d52b-5019-a09d-270497de2009",
+        "bd50ef41-9888-5541-a7e2-8df8095093e6",
+        "55d67c8e-d628-5b6b-a8a7-fd0b949a2702",
+        "c23046f4-c34b-5b0c-a6be-c73203bad2a5",
+        "9f59765a-ede0-5ac8-a316-84d6119cc873",
+        "e61acb30-be81-5b85-ab33-98f9cb141b43",
+        "574ceb71-a21f-59f4-abf3-43602f375d7c",
+        "0c60e1dc-c8ce-5a88-a112-ffb8410231fe",
+        "3253dd31-256c-543c-a1f5-2566cbc17132",
+        "302b3779-6975-56e4-aba0-0f2b16a078c8",
+        "705575ca-1a28-5494-ac1f-f723157fcafb",
+        "c37d7744-06ed-5495-af67-8a783904346e",
+        "180437f2-77d0-521d-ab99-1561f5268db2",
+        "ccd06bdb-d3bf-5c6d-af35-6e85bc0a336c",
+        "d4e0cea6-6644-5ce3-a8d6-04c21d0331a9",
+        "1184725c-02be-5106-aeb3-d7d2450f0fec",
+        "05767896-15ce-50fb-a346-1f5fb7830010",
+        "aedfbb8b-0407-59cd-a131-5ce2cf319a1d",
+        "0dcc23bb-eaae-572a-aa70-2c3e61a0149b",
+        "291aef16-7eaa-53ea-a744-366001b9707c"
+      ],
+      "expected_report_sets": [
+        {
+          "source_id": "frus:1904:395",
+          "document_id": "a4046668-2a14-5190-aa6b-c43f25bfbb34",
+          "report_ids": [
+            "c395-captured",
+            "c395-sunk",
+            "c395-first-fire"
+          ]
+        },
+        {
+          "source_id": "frus:1904:678",
+          "document_id": "22e46a9a-c570-512a-ab6e-6e4ed43b7cce",
+          "report_ids": [
+            "c678-uncertainty",
+            "c678-sent"
+          ]
+        },
+        {
+          "source_id": "frus:1904:679",
+          "document_id": "bd50ef41-9888-5541-a7e2-8df8095093e6",
+          "report_ids": [
+            "c679-held"
+          ]
+        },
+        {
+          "source_id": "frus:1904:680",
+          "document_id": "9f59765a-ede0-5ac8-a316-84d6119cc873",
+          "report_ids": [
+            "c680-attack"
+          ]
+        },
+        {
+          "source_id": "frus:1904:86",
+          "document_id": "0c60e1dc-c8ce-5a88-a112-ffb8410231fe",
+          "report_ids": [
+            "c86-request"
+          ]
+        },
+        {
+          "source_id": "frus:1904:430",
+          "document_id": "705575ca-1a28-5494-ac1f-f723157fcafb",
+          "report_ids": [
+            "c430-consent",
+            "c430-guarantee",
+            "c430-occupation"
+          ]
+        },
+        {
+          "source_id": "frus:1904:815",
+          "document_id": "aedfbb8b-0407-59cd-a131-5ce2cf319a1d",
+          "report_ids": [
+            "c815-inquiry"
+          ]
+        }
+      ],
+      "per_document_preflight": [
+        {
+          "source_id": "frus:1904:395",
+          "status": "NOT_APPLIED"
+        },
+        {
+          "source_id": "frus:1904:678",
+          "status": "NOT_APPLIED"
+        },
+        {
+          "source_id": "frus:1904:679",
+          "status": "NOT_APPLIED"
+        },
+        {
+          "source_id": "frus:1904:680",
+          "status": "NOT_APPLIED"
+        },
+        {
+          "source_id": "frus:1904:86",
+          "status": "NOT_APPLIED"
+        },
+        {
+          "source_id": "frus:1904:430",
+          "status": "NOT_APPLIED"
+        },
+        {
+          "source_id": "frus:1904:815",
+          "status": "NOT_APPLIED"
+        }
+      ],
+      "batch_preflight": "READY",
+      "expected_delta": {
+        "reality_entities": 7,
+        "epistemic_observations": 12,
+        "evidence": 12,
+        "claims": 0,
+        "claim_evidence_links": 0,
+        "reality_events": 0,
+        "reality_states": 0,
+        "observations": 0
+      },
+      "allowed_metadata_delta": [
+        "project.updated_at",
+        "updated_at"
+      ],
+      "writer_owner": "ground-local-cli-v0",
+      "after_fingerprint": "UNBOUND",
+      "final_recorded_at": "UNBOUND",
+      "final_record_hashes": "UNBOUND",
+      "independent_read": "UNBOUND"
+    },
+    "recorded_at": "2026-09-16T08:14:45.636Z",
+    "after_fingerprint": "9ff0d8070296d2d5493b618b13d75beab003581a6f7011ae642a53f46fc453cf",
+    "record_hashes": {
+      "a4046668-2a14-5190-aa6b-c43f25bfbb34": "56bbd086aabf3e90c32655a0b25bdd56e4969f26e7d623537431a1f7a0556666",
+      "fa61cb21-cf36-5709-ac79-323d59c44e68": "1dcde664d650cb09dea3d1ccca4035c6b77e80bf55b1efdfa37097dda3f0098f",
+      "58dd0021-9b1d-5571-aab6-db50cc811a18": "b008ff155cb27d72111aad3a4c8493da19865fe65939f2ad54d2355d12b4c657",
+      "ea4bfcb3-b0cf-5d95-a6ee-0bb9eaa7a5c6": "0c860361d0251fc3e2dd95fe250261f38feac95361709891d6a7cbf6697cd36b",
+      "462c0cfd-4b72-52d5-aecd-61030d0f474c": "2f3eb36f0f787a28aa11664aa46dc858b4a5b39503c115bee150ecb252f03b6d",
+      "f22f9834-5686-53e1-a4a5-a5ba914b6134": "9bd97fbfe5267a2750334c8b234054e4610831fda3b83f9f211182798c26613f",
+      "cfe6ae8f-5cd6-5954-a14a-29a950627db5": "24dcf5644f4ffe0157697e5c924fc90b8f889fd7cde1059cbd7168226a60311c",
+      "22e46a9a-c570-512a-ab6e-6e4ed43b7cce": "4ff5dceca3e28714ea9f3c9bb422cd5a5e0cbdf52e571b1c4f41a85bb4d13a8a",
+      "aea84378-fce1-59f0-ad4c-a0efbc9bb155": "38a0f65e3b7e36818b8921549dc89293ec6cf6343c2188585307fd7bfdf77baf",
+      "5fd5ac26-f2c2-52b3-aeca-27fa8b974299": "fcd1bcb38990af3170a16635a2ccc5a225f983792f4850d2e82c0ee33964fffc",
+      "8e93e555-ddfd-5f9f-a1e8-484044b80b03": "fd9894492cbc5da0ebf8d4df59c22bcb4f5d85d47f9dd0be230834a3fda8899f",
+      "5f3d46a4-d52b-5019-a09d-270497de2009": "248bc9c52da95d4a39a5aea7b5b70e6e6d181691b0f14d991a9224ec79fc0ef8",
+      "bd50ef41-9888-5541-a7e2-8df8095093e6": "ecd3c37ccc3a76fa2b5f4830b5d8244f6ad84a6082bfdbf6d779216edc6501a7",
+      "55d67c8e-d628-5b6b-a8a7-fd0b949a2702": "217e617f7c8f72568fa489c8ae83a985bcfa12bb677457da553f081be033c686",
+      "c23046f4-c34b-5b0c-a6be-c73203bad2a5": "8174a75bf62f753b9dd394404285711199f5ec9d608e162e8cbfff478cf885a9",
+      "9f59765a-ede0-5ac8-a316-84d6119cc873": "ea91ad9bd2957d55d21874f52f36b878ec1d9836a45590457a6522a6441b0e87",
+      "e61acb30-be81-5b85-ab33-98f9cb141b43": "6346e3bd13ecd9f9882711ce638598844f7063dc7887161aa46b44bfa5171b37",
+      "574ceb71-a21f-59f4-abf3-43602f375d7c": "7319b8b33bbbf0d780bcdbafeb71f7c70a0aebe8e0721a8f7a1c284fe8077c3e",
+      "0c60e1dc-c8ce-5a88-a112-ffb8410231fe": "c9f30d986d283c3f686e4a729b7f48228cec16ac87ecf835b299a9b008e89dc4",
+      "3253dd31-256c-543c-a1f5-2566cbc17132": "1b8c00cb6c7d21cb571e279ea6df54a55262f38426a8e2fdc3b640369352f092",
+      "302b3779-6975-56e4-aba0-0f2b16a078c8": "51e6e07d9465627d10bf911ffb2ac5d54c36ac450809c246dcc7671da97a599d",
+      "705575ca-1a28-5494-ac1f-f723157fcafb": "b91ead156e5f04f5f4dc1434e75f11898acc0b13b346307e0ea0046755a30612",
+      "c37d7744-06ed-5495-af67-8a783904346e": "380c49dfc67337360bbfa100e5a8cce65c7b380b5e42de4dd3a2edd314f56b56",
+      "180437f2-77d0-521d-ab99-1561f5268db2": "e85cc15c97b407f6b1b52de303616d58d56dd13c1c7fb7e48b43e489a0caa558",
+      "ccd06bdb-d3bf-5c6d-af35-6e85bc0a336c": "c3d1af5afcf818aac96bfd1e10d66225c562c016de78df225a6f2303448edcad",
+      "d4e0cea6-6644-5ce3-a8d6-04c21d0331a9": "a3b1194c669fde9f4e845faac869b518bdc495ac538459f7d927092fef4d89ea",
+      "1184725c-02be-5106-aeb3-d7d2450f0fec": "1222b01f95ae0a0700cee15b7ea6f52a73395a26e286dcedbc6ca71890fd43af",
+      "05767896-15ce-50fb-a346-1f5fb7830010": "527760f56b4ad692fd16f4332bce32e6036fa8a0aa94bc818d11b8787d15570f",
+      "aedfbb8b-0407-59cd-a131-5ce2cf319a1d": "71383217f0a09e969934cb280ce48e0983a42c6dd1ef94f6793dbcac49dc73f5",
+      "0dcc23bb-eaae-572a-aa70-2c3e61a0149b": "ae63ac1cb428cbdca1f0ed9a69f130649bc4775f57037e77f97149ecb75310de",
+      "291aef16-7eaa-53ea-a744-366001b9707c": "ea7f2d9e75ce92253bd2ad6d53bfb544869af707d55f7b8ebb8b4dd8f5d9cab3"
+    },
+    "independent_read_fingerprint": "9ff0d8070296d2d5493b618b13d75beab003581a6f7011ae642a53f46fc453cf"
+  },
+  "package_commit": "1a5cd833b96c40aea87752f86dea9949db661ecd",
+  "package_fingerprint": "c05192742ae39eb86f42a53724d7468922a4173ce764c938a6287b069fa7d3f5",
+  "dataset_hash": "5bc32592aa80ee4742f8e01b09d4381dacc1ce080fb930772a7a1ea2b24c70c2",
+  "before_fingerprint": "f45b265afb6f4d9165ac46aa26eb1f16d82bbf94a3739212421bca93463e830b",
+  "after_fingerprint": "9ff0d8070296d2d5493b618b13d75beab003581a6f7011ae642a53f46fc453cf",
+  "final_recorded_at": "2026-09-16T08:14:45.636Z",
+  "actual_project_updated_at": "2026-09-16T08:14:45.646Z",
+  "actual_state_updated_at": "2026-09-16T08:14:45.646Z",
+  "final_counts": {
+    "reality_entities": 11,
+    "epistemic_observations": 16,
+    "evidence": 16,
+    "claims": 0,
+    "claim_evidence_links": 0,
+    "reality_events": 0,
+    "reality_states": 0,
+    "observations": 0
+  },
+  "final_record_hashes": {
+    "a4046668-2a14-5190-aa6b-c43f25bfbb34": "56bbd086aabf3e90c32655a0b25bdd56e4969f26e7d623537431a1f7a0556666",
+    "fa61cb21-cf36-5709-ac79-323d59c44e68": "1dcde664d650cb09dea3d1ccca4035c6b77e80bf55b1efdfa37097dda3f0098f",
+    "58dd0021-9b1d-5571-aab6-db50cc811a18": "b008ff155cb27d72111aad3a4c8493da19865fe65939f2ad54d2355d12b4c657",
+    "ea4bfcb3-b0cf-5d95-a6ee-0bb9eaa7a5c6": "0c860361d0251fc3e2dd95fe250261f38feac95361709891d6a7cbf6697cd36b",
+    "462c0cfd-4b72-52d5-aecd-61030d0f474c": "2f3eb36f0f787a28aa11664aa46dc858b4a5b39503c115bee150ecb252f03b6d",
+    "f22f9834-5686-53e1-a4a5-a5ba914b6134": "9bd97fbfe5267a2750334c8b234054e4610831fda3b83f9f211182798c26613f",
+    "cfe6ae8f-5cd6-5954-a14a-29a950627db5": "24dcf5644f4ffe0157697e5c924fc90b8f889fd7cde1059cbd7168226a60311c",
+    "22e46a9a-c570-512a-ab6e-6e4ed43b7cce": "4ff5dceca3e28714ea9f3c9bb422cd5a5e0cbdf52e571b1c4f41a85bb4d13a8a",
+    "aea84378-fce1-59f0-ad4c-a0efbc9bb155": "38a0f65e3b7e36818b8921549dc89293ec6cf6343c2188585307fd7bfdf77baf",
+    "5fd5ac26-f2c2-52b3-aeca-27fa8b974299": "fcd1bcb38990af3170a16635a2ccc5a225f983792f4850d2e82c0ee33964fffc",
+    "8e93e555-ddfd-5f9f-a1e8-484044b80b03": "fd9894492cbc5da0ebf8d4df59c22bcb4f5d85d47f9dd0be230834a3fda8899f",
+    "5f3d46a4-d52b-5019-a09d-270497de2009": "248bc9c52da95d4a39a5aea7b5b70e6e6d181691b0f14d991a9224ec79fc0ef8",
+    "bd50ef41-9888-5541-a7e2-8df8095093e6": "ecd3c37ccc3a76fa2b5f4830b5d8244f6ad84a6082bfdbf6d779216edc6501a7",
+    "55d67c8e-d628-5b6b-a8a7-fd0b949a2702": "217e617f7c8f72568fa489c8ae83a985bcfa12bb677457da553f081be033c686",
+    "c23046f4-c34b-5b0c-a6be-c73203bad2a5": "8174a75bf62f753b9dd394404285711199f5ec9d608e162e8cbfff478cf885a9",
+    "9f59765a-ede0-5ac8-a316-84d6119cc873": "ea91ad9bd2957d55d21874f52f36b878ec1d9836a45590457a6522a6441b0e87",
+    "e61acb30-be81-5b85-ab33-98f9cb141b43": "6346e3bd13ecd9f9882711ce638598844f7063dc7887161aa46b44bfa5171b37",
+    "574ceb71-a21f-59f4-abf3-43602f375d7c": "7319b8b33bbbf0d780bcdbafeb71f7c70a0aebe8e0721a8f7a1c284fe8077c3e",
+    "0c60e1dc-c8ce-5a88-a112-ffb8410231fe": "c9f30d986d283c3f686e4a729b7f48228cec16ac87ecf835b299a9b008e89dc4",
+    "3253dd31-256c-543c-a1f5-2566cbc17132": "1b8c00cb6c7d21cb571e279ea6df54a55262f38426a8e2fdc3b640369352f092",
+    "302b3779-6975-56e4-aba0-0f2b16a078c8": "51e6e07d9465627d10bf911ffb2ac5d54c36ac450809c246dcc7671da97a599d",
+    "705575ca-1a28-5494-ac1f-f723157fcafb": "b91ead156e5f04f5f4dc1434e75f11898acc0b13b346307e0ea0046755a30612",
+    "c37d7744-06ed-5495-af67-8a783904346e": "380c49dfc67337360bbfa100e5a8cce65c7b380b5e42de4dd3a2edd314f56b56",
+    "180437f2-77d0-521d-ab99-1561f5268db2": "e85cc15c97b407f6b1b52de303616d58d56dd13c1c7fb7e48b43e489a0caa558",
+    "ccd06bdb-d3bf-5c6d-af35-6e85bc0a336c": "c3d1af5afcf818aac96bfd1e10d66225c562c016de78df225a6f2303448edcad",
+    "d4e0cea6-6644-5ce3-a8d6-04c21d0331a9": "a3b1194c669fde9f4e845faac869b518bdc495ac538459f7d927092fef4d89ea",
+    "1184725c-02be-5106-aeb3-d7d2450f0fec": "1222b01f95ae0a0700cee15b7ea6f52a73395a26e286dcedbc6ca71890fd43af",
+    "05767896-15ce-50fb-a346-1f5fb7830010": "527760f56b4ad692fd16f4332bce32e6036fa8a0aa94bc818d11b8787d15570f",
+    "aedfbb8b-0407-59cd-a131-5ce2cf319a1d": "71383217f0a09e969934cb280ce48e0983a42c6dd1ef94f6793dbcac49dc73f5",
+    "0dcc23bb-eaae-572a-aa70-2c3e61a0149b": "ae63ac1cb428cbdca1f0ed9a69f130649bc4775f57037e77f97149ecb75310de",
+    "291aef16-7eaa-53ea-a744-366001b9707c": "ea7f2d9e75ce92253bd2ad6d53bfb544869af707d55f7b8ebb8b4dd8f5d9cab3"
+  },
+  "expected_delta": {
+    "reality_entities": 7,
+    "epistemic_observations": 12,
+    "evidence": 12,
+    "claims": 0,
+    "claim_evidence_links": 0,
+    "reality_events": 0,
+    "reality_states": 0,
+    "observations": 0
+  },
+  "allowed_metadata_delta": [
+    "project.updated_at",
+    "updated_at"
+  ],
+  "unexpected_semantic_delta": false,
+  "writer_owner": "ground-local-cli-v0",
+  "runtime_config": {
+    "mode": "canonical-live",
+    "storageDir": "/Users/macsaku/Library/Application Support/GROUND/storage/projects",
+    "writerOwner": "ground-local-cli-v0"
+  },
+  "operations_execution_time": "2026-09-16T08:14:45.561Z",
+  "prepared_receipt_sha256": "1f82554345b49667605f7a455d1f73f5e6d78be92660babfc12fe29cb0e2f8e9",
+  "atomic_save": "PASS",
+  "save_calls": 1,
+  "owner_release": "PASS",
+  "validation": {
+    "valid": true
+  },
+  "independent_read": {
+    "result": "PASS",
+    "read_only": true,
+    "process_id": 85481,
+    "writer_process_id": 85425,
+    "after_fingerprint": "9ff0d8070296d2d5493b618b13d75beab003581a6f7011ae642a53f46fc453cf",
+    "stored_schema": "0.1.25",
+    "read_schema": "0.1.25",
+    "validation": {
+      "valid": true
+    },
+    "counts": {
+      "reality_entities": 11,
+      "epistemic_observations": 16,
+      "evidence": 16,
+      "claims": 0,
+      "claim_evidence_links": 0,
+      "reality_events": 0,
+      "reality_states": 0,
+      "observations": 0
+    },
+    "record_hashes": {
+      "a4046668-2a14-5190-aa6b-c43f25bfbb34": "56bbd086aabf3e90c32655a0b25bdd56e4969f26e7d623537431a1f7a0556666",
+      "fa61cb21-cf36-5709-ac79-323d59c44e68": "1dcde664d650cb09dea3d1ccca4035c6b77e80bf55b1efdfa37097dda3f0098f",
+      "58dd0021-9b1d-5571-aab6-db50cc811a18": "b008ff155cb27d72111aad3a4c8493da19865fe65939f2ad54d2355d12b4c657",
+      "ea4bfcb3-b0cf-5d95-a6ee-0bb9eaa7a5c6": "0c860361d0251fc3e2dd95fe250261f38feac95361709891d6a7cbf6697cd36b",
+      "462c0cfd-4b72-52d5-aecd-61030d0f474c": "2f3eb36f0f787a28aa11664aa46dc858b4a5b39503c115bee150ecb252f03b6d",
+      "f22f9834-5686-53e1-a4a5-a5ba914b6134": "9bd97fbfe5267a2750334c8b234054e4610831fda3b83f9f211182798c26613f",
+      "cfe6ae8f-5cd6-5954-a14a-29a950627db5": "24dcf5644f4ffe0157697e5c924fc90b8f889fd7cde1059cbd7168226a60311c",
+      "22e46a9a-c570-512a-ab6e-6e4ed43b7cce": "4ff5dceca3e28714ea9f3c9bb422cd5a5e0cbdf52e571b1c4f41a85bb4d13a8a",
+      "aea84378-fce1-59f0-ad4c-a0efbc9bb155": "38a0f65e3b7e36818b8921549dc89293ec6cf6343c2188585307fd7bfdf77baf",
+      "5fd5ac26-f2c2-52b3-aeca-27fa8b974299": "fcd1bcb38990af3170a16635a2ccc5a225f983792f4850d2e82c0ee33964fffc",
+      "8e93e555-ddfd-5f9f-a1e8-484044b80b03": "fd9894492cbc5da0ebf8d4df59c22bcb4f5d85d47f9dd0be230834a3fda8899f",
+      "5f3d46a4-d52b-5019-a09d-270497de2009": "248bc9c52da95d4a39a5aea7b5b70e6e6d181691b0f14d991a9224ec79fc0ef8",
+      "bd50ef41-9888-5541-a7e2-8df8095093e6": "ecd3c37ccc3a76fa2b5f4830b5d8244f6ad84a6082bfdbf6d779216edc6501a7",
+      "55d67c8e-d628-5b6b-a8a7-fd0b949a2702": "217e617f7c8f72568fa489c8ae83a985bcfa12bb677457da553f081be033c686",
+      "c23046f4-c34b-5b0c-a6be-c73203bad2a5": "8174a75bf62f753b9dd394404285711199f5ec9d608e162e8cbfff478cf885a9",
+      "9f59765a-ede0-5ac8-a316-84d6119cc873": "ea91ad9bd2957d55d21874f52f36b878ec1d9836a45590457a6522a6441b0e87",
+      "e61acb30-be81-5b85-ab33-98f9cb141b43": "6346e3bd13ecd9f9882711ce638598844f7063dc7887161aa46b44bfa5171b37",
+      "574ceb71-a21f-59f4-abf3-43602f375d7c": "7319b8b33bbbf0d780bcdbafeb71f7c70a0aebe8e0721a8f7a1c284fe8077c3e",
+      "0c60e1dc-c8ce-5a88-a112-ffb8410231fe": "c9f30d986d283c3f686e4a729b7f48228cec16ac87ecf835b299a9b008e89dc4",
+      "3253dd31-256c-543c-a1f5-2566cbc17132": "1b8c00cb6c7d21cb571e279ea6df54a55262f38426a8e2fdc3b640369352f092",
+      "302b3779-6975-56e4-aba0-0f2b16a078c8": "51e6e07d9465627d10bf911ffb2ac5d54c36ac450809c246dcc7671da97a599d",
+      "705575ca-1a28-5494-ac1f-f723157fcafb": "b91ead156e5f04f5f4dc1434e75f11898acc0b13b346307e0ea0046755a30612",
+      "c37d7744-06ed-5495-af67-8a783904346e": "380c49dfc67337360bbfa100e5a8cce65c7b380b5e42de4dd3a2edd314f56b56",
+      "180437f2-77d0-521d-ab99-1561f5268db2": "e85cc15c97b407f6b1b52de303616d58d56dd13c1c7fb7e48b43e489a0caa558",
+      "ccd06bdb-d3bf-5c6d-af35-6e85bc0a336c": "c3d1af5afcf818aac96bfd1e10d66225c562c016de78df225a6f2303448edcad",
+      "d4e0cea6-6644-5ce3-a8d6-04c21d0331a9": "a3b1194c669fde9f4e845faac869b518bdc495ac538459f7d927092fef4d89ea",
+      "1184725c-02be-5106-aeb3-d7d2450f0fec": "1222b01f95ae0a0700cee15b7ea6f52a73395a26e286dcedbc6ca71890fd43af",
+      "05767896-15ce-50fb-a346-1f5fb7830010": "527760f56b4ad692fd16f4332bce32e6036fa8a0aa94bc818d11b8787d15570f",
+      "aedfbb8b-0407-59cd-a131-5ce2cf319a1d": "71383217f0a09e969934cb280ce48e0983a42c6dd1ef94f6793dbcac49dc73f5",
+      "0dcc23bb-eaae-572a-aa70-2c3e61a0149b": "ae63ac1cb428cbdca1f0ed9a69f130649bc4775f57037e77f97149ecb75310de",
+      "291aef16-7eaa-53ea-a744-366001b9707c": "ea7f2d9e75ce92253bd2ad6d53bfb544869af707d55f7b8ebb8b4dd8f5d9cab3"
+    },
+    "existing_records_preserved": "4 Documents / 4 Observations / 4 Evidence unchanged",
+    "new31_verification": "PASS",
+    "multiple_report_relations": [
+      {
+        "source_id": "frus:1904:392",
+        "entity_id": "fbdfd235-1a5b-5a5d-ad30-6f2c170fe9f9",
+        "observations": 1,
+        "evidence_per_observation": 1
+      },
+      {
+        "source_id": "frus:1904:393",
+        "entity_id": "a1a0a37c-ceff-5690-a4cb-6e0e551e77d8",
+        "observations": 1,
+        "evidence_per_observation": 1
+      },
+      {
+        "source_id": "frus:1904:394",
+        "entity_id": "2fb4f68c-8a85-55cc-a490-d1e5fc8945b2",
+        "observations": 1,
+        "evidence_per_observation": 1
+      },
+      {
+        "source_id": "frus:1904:396",
+        "entity_id": "3d69b18c-d130-5e45-abe3-cb2ee19ce775",
+        "observations": 1,
+        "evidence_per_observation": 1
+      },
+      {
+        "source_id": "frus:1904:395",
+        "entity_id": "a4046668-2a14-5190-aa6b-c43f25bfbb34",
+        "observations": 3,
+        "evidence_per_observation": 1
+      },
+      {
+        "source_id": "frus:1904:678",
+        "entity_id": "22e46a9a-c570-512a-ab6e-6e4ed43b7cce",
+        "observations": 2,
+        "evidence_per_observation": 1
+      },
+      {
+        "source_id": "frus:1904:679",
+        "entity_id": "bd50ef41-9888-5541-a7e2-8df8095093e6",
+        "observations": 1,
+        "evidence_per_observation": 1
+      },
+      {
+        "source_id": "frus:1904:680",
+        "entity_id": "9f59765a-ede0-5ac8-a316-84d6119cc873",
+        "observations": 1,
+        "evidence_per_observation": 1
+      },
+      {
+        "source_id": "frus:1904:86",
+        "entity_id": "0c60e1dc-c8ce-5a88-a112-ffb8410231fe",
+        "observations": 1,
+        "evidence_per_observation": 1
+      },
+      {
+        "source_id": "frus:1904:430",
+        "entity_id": "705575ca-1a28-5494-ac1f-f723157fcafb",
+        "observations": 3,
+        "evidence_per_observation": 1
+      },
+      {
+        "source_id": "frus:1904:815",
+        "entity_id": "aedfbb8b-0407-59cd-a131-5ce2cf319a1d",
+        "observations": 1,
+        "evidence_per_observation": 1
+      }
+    ],
+    "owner_release": "PASS",
+    "extra_projects_or_temp_or_lock": false,
+    "project_file_stamp": {
+      "ino": "13431692",
+      "mtime_ns": "1789546485658628093",
+      "ctime_ns": "1789546485658736633",
+      "size": "34550",
+      "fingerprint": "9ff0d8070296d2d5493b618b13d75beab003581a6f7011ae642a53f46fc453cf"
+    }
+  },
+  "multiple_report_verification": [
+    {
+      "source_id": "frus:1904:392",
+      "entity_id": "fbdfd235-1a5b-5a5d-ad30-6f2c170fe9f9",
+      "observations": 1,
+      "evidence_per_observation": 1
+    },
+    {
+      "source_id": "frus:1904:393",
+      "entity_id": "a1a0a37c-ceff-5690-a4cb-6e0e551e77d8",
+      "observations": 1,
+      "evidence_per_observation": 1
+    },
+    {
+      "source_id": "frus:1904:394",
+      "entity_id": "2fb4f68c-8a85-55cc-a490-d1e5fc8945b2",
+      "observations": 1,
+      "evidence_per_observation": 1
+    },
+    {
+      "source_id": "frus:1904:396",
+      "entity_id": "3d69b18c-d130-5e45-abe3-cb2ee19ce775",
+      "observations": 1,
+      "evidence_per_observation": 1
+    },
+    {
+      "source_id": "frus:1904:395",
+      "entity_id": "a4046668-2a14-5190-aa6b-c43f25bfbb34",
+      "observations": 3,
+      "evidence_per_observation": 1
+    },
+    {
+      "source_id": "frus:1904:678",
+      "entity_id": "22e46a9a-c570-512a-ab6e-6e4ed43b7cce",
+      "observations": 2,
+      "evidence_per_observation": 1
+    },
+    {
+      "source_id": "frus:1904:679",
+      "entity_id": "bd50ef41-9888-5541-a7e2-8df8095093e6",
+      "observations": 1,
+      "evidence_per_observation": 1
+    },
+    {
+      "source_id": "frus:1904:680",
+      "entity_id": "9f59765a-ede0-5ac8-a316-84d6119cc873",
+      "observations": 1,
+      "evidence_per_observation": 1
+    },
+    {
+      "source_id": "frus:1904:86",
+      "entity_id": "0c60e1dc-c8ce-5a88-a112-ffb8410231fe",
+      "observations": 1,
+      "evidence_per_observation": 1
+    },
+    {
+      "source_id": "frus:1904:430",
+      "entity_id": "705575ca-1a28-5494-ac1f-f723157fcafb",
+      "observations": 3,
+      "evidence_per_observation": 1
+    },
+    {
+      "source_id": "frus:1904:815",
+      "entity_id": "aedfbb8b-0407-59cd-a131-5ce2cf319a1d",
+      "observations": 1,
+      "evidence_per_observation": 1
+    }
+  ],
+  "negative_verification": {
+    "protected_files_unchanged": 5105,
+    "default_targets_absent": {
+      "/Users/macsaku/seiri-ai-frontend": true,
+      "/private/tmp/ground-approved-core-human-acceptance": true,
+      "/private/tmp/ground-cli-isolation-base-20260914": true,
+      "/private/tmp/ground-cli-isolation-candidate-20260914": true,
+      "/private/tmp/ground-core-integration-001": true,
+      "/private/tmp/ground-human-001": true,
+      "/private/tmp/ground-human-002": true,
+      "/private/tmp/ground-human-003": true,
+      "/private/tmp/ground-human-004": true,
+      "/private/tmp/ground-human-004b": true,
+      "/private/tmp/ground-human-004c": true,
+      "/private/tmp/ground-human-005b": true,
+      "/private/tmp/ground-human-005c": true,
+      "/private/tmp/ground-human-006b": true,
+      "/private/tmp/ground-immune-001": true,
+      "/private/tmp/ground-immune-base-proof": true,
+      "/private/tmp/ground-integration-001": true,
+      "/private/tmp/ground-integration-20260914": true,
+      "/private/tmp/ground-integration-human-proof": true,
+      "/private/tmp/ground-live-003b": true,
+      "/private/tmp/ground-live-004b": true,
+      "/private/tmp/ground-live-005b": true,
+      "/private/tmp/ground-phase5c-proposition-attribution": true,
+      "/private/tmp/ground-phase5d-critical-activation": true,
+      "/private/tmp/ground-repro-001": true,
+      "/private/tmp/ground-repro-001-proof-a": true,
+      "/private/tmp/ground-repro-001-proof-b": true,
+      "/private/tmp/ground-rj-round10": true,
+      "/private/tmp/ground-rj-round11": true,
+      "/private/tmp/ground-rj-round12": true,
+      "/private/tmp/ground-rj-round13": true,
+      "/private/tmp/ground-rj-round14": true,
+      "/private/tmp/ground-rj-round15": true,
+      "/private/tmp/ground-rj-round16": true,
+      "/private/tmp/ground-rj-round17": true,
+      "/private/tmp/ground-rj-round18": true,
+      "/private/tmp/ground-rj-round19": true,
+      "/private/tmp/ground-rj-round20": true,
+      "/private/tmp/ground-rj-round21": true,
+      "/private/tmp/ground-rj-round22": true,
+      "/private/tmp/ground-rj-round23": true,
+      "/private/tmp/ground-rj-round8": true,
+      "/private/tmp/ground-rj-round9": true,
+      "/private/tmp/ground-semantic-002": true,
+      "/private/tmp/ground-storage-002": true,
+      "/private/tmp/ground-storage-003": true,
+      "/Users/macsaku/seiri-ai-frontend-ground-autonomous": true,
+      "/Users/macsaku/seiri-ai-frontend-ground-master": true
+    }
+  },
+  "recovery": {
+    "before_bytes": "before-project-state.bytes",
+    "sha256": "f45b265afb6f4d9165ac46aa26eb1f16d82bbf94a3739212421bca93463e830b",
+    "automatic_rollback": false
+  },
+  "operation_sha256": "adbca1e84b0e7a2b5feb9ba0dcaac690d34d333e18e8409c7f140f395d3d54d8"
+}

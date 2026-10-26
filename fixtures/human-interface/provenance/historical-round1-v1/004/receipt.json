@@ -1,0 +1,169 @@
+{
+  "project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+  "policy": "historical-stored-inspection-v1",
+  "batch_id": "frus-1904-393-394-396-inspection-v1",
+  "recorded_at": "2026-09-16T06:04:03.712Z",
+  "selected_input_hashes": [
+    "09e92a68333db6e37817ecfcf89780b0ac11b17aea0648fafed65dcb431054d4",
+    "42bfccf4abef6d79410dc3bcf6fc1914712681ee87ead1baec663a6da3cc0ebe",
+    "6572c9855a3f315199cf0c9b82d1e55e356a364609ecd4a0eb8db5f85dea1de5"
+  ],
+  "record_hashes": {
+    "a1a0a37c-ceff-5690-a4cb-6e0e551e77d8": "19bc360b95a88d18f75f3cd60092af739e4e0070ed55c1409011b773811c72b4",
+    "5e1617be-3b30-5e4c-a839-53d54a8b9e45": "8d7b71206079207074866feb5935758921b6c64aa7ca5c873d256d077227ad91",
+    "683a6945-aac4-5e5a-a291-887dc192e6b4": "00c12185ce13ba6ae8a3fb8113787fc10b014fdd4c464aa19baf32c98e5ec3d5",
+    "2fb4f68c-8a85-55cc-a490-d1e5fc8945b2": "c7c27179956450b91552a64d665ff4804ab35cb1ccfcb5c87df1d7711a458c4f",
+    "cab9db21-5fcc-5c0e-a11d-38a9d15a0e2a": "704991814ec408a9023ff86a5d9c2782d2e8dee854dc9b413f54369c412799a1",
+    "5702ac69-3f61-5c82-ace8-90c4c317dd4f": "3ac089e34ed75c022cccce423f93857a7f60dd90b91d19b28a51331b5bec6c3e",
+    "3d69b18c-d130-5e45-abe3-cb2ee19ce775": "60fd1f2da3fd956a25a1ab4c7a53fd75a3ad2ecd8a18c79392bf6608950a3cec",
+    "560d3816-d4ab-5c43-a7d0-a617f9f1a3bd": "eef6c66dcf0e35b8109f1ac338eda8a157807d81e23e8a67674afe259d33f183",
+    "30f34e69-460a-5534-ab7c-984d53fcb7a7": "a244777d7ce9bdc091b0d5ccfa952d8499c864197353eada34c58a7675c55344"
+  },
+  "status": "COMPLETED",
+  "package_commit": "b361136770d48b952164cb40900554c008ad06f4",
+  "package_fingerprint": "1dbeec4e4719970d7254c4a7b5ba614651a9b13d4bd4fc88308c2b1368a94f69",
+  "dataset_hash": "5bc32592aa80ee4742f8e01b09d4381dacc1ce080fb930772a7a1ea2b24c70c2",
+  "source_ids": [
+    "frus:1904:393",
+    "frus:1904:394",
+    "frus:1904:396"
+  ],
+  "report_ids": [
+    "c393-termination",
+    "c394-departure",
+    "c396-declaration"
+  ],
+  "generated_ids": [
+    {
+      "document": "a1a0a37c-ceff-5690-a4cb-6e0e551e77d8",
+      "observation": "5e1617be-3b30-5e4c-a839-53d54a8b9e45",
+      "evidence": "683a6945-aac4-5e5a-a291-887dc192e6b4"
+    },
+    {
+      "document": "2fb4f68c-8a85-55cc-a490-d1e5fc8945b2",
+      "observation": "cab9db21-5fcc-5c0e-a11d-38a9d15a0e2a",
+      "evidence": "5702ac69-3f61-5c82-ace8-90c4c317dd4f"
+    },
+    {
+      "document": "3d69b18c-d130-5e45-abe3-cb2ee19ce775",
+      "observation": "560d3816-d4ab-5c43-a7d0-a617f9f1a3bd",
+      "evidence": "30f34e69-460a-5534-ab7c-984d53fcb7a7"
+    }
+  ],
+  "before_fingerprint": "f1ed694f3e0c3a10d383e816f43ca003cd6c123dad18c3f0688d2289c0f3e3bc",
+  "after_fingerprint": "f45b265afb6f4d9165ac46aa26eb1f16d82bbf94a3739212421bca93463e830b",
+  "final_recorded_at": "2026-09-16T06:04:03.712Z",
+  "actual_project_updated_at": "2026-09-16T06:04:03.720Z",
+  "actual_state_updated_at": "2026-09-16T06:04:03.720Z",
+  "final_counts": {
+    "reality_entities": 4,
+    "epistemic_observations": 4,
+    "evidence": 4,
+    "claims": 0,
+    "claim_evidence_links": 0,
+    "reality_events": 0,
+    "reality_states": 0,
+    "observations": 0
+  },
+  "expected_delta": {
+    "reality_entities": 3,
+    "epistemic_observations": 3,
+    "evidence": 3,
+    "claims": 0,
+    "claim_evidence_links": 0,
+    "reality_events": 0,
+    "reality_states": 0,
+    "observations": 0
+  },
+  "allowed_metadata_delta": [
+    "project.updated_at",
+    "updated_at"
+  ],
+  "unexpected_semantic_delta": false,
+  "writer_owner": "ground-local-cli-v0",
+  "runtime_config": {
+    "mode": "canonical-live",
+    "storageDir": "/Users/macsaku/Library/Application Support/GROUND/storage/projects",
+    "writerOwner": "ground-local-cli-v0"
+  },
+  "operations_execution_time": "2026-09-16T06:04:03.678Z",
+  "preflight_before": {
+    "per_document": [
+      {
+        "source_id": "frus:1904:393",
+        "status": "NOT_APPLIED"
+      },
+      {
+        "source_id": "frus:1904:394",
+        "status": "NOT_APPLIED"
+      },
+      {
+        "source_id": "frus:1904:396",
+        "status": "NOT_APPLIED"
+      }
+    ],
+    "gate": "READY"
+  },
+  "prepared_receipt_sha256": "edcf33b17ae291be6970f0437eb15cd7c6cdbca95e49f9ca9c7eac5d06ffd3f5",
+  "validation_result": "PASS",
+  "atomic_publish": "PASS",
+  "owner_release": "PASS",
+  "independent_read": {
+    "result": "PASS",
+    "read_only": true,
+    "process_id": 92398,
+    "writer_process_id": 92267,
+    "after_fingerprint": "f45b265afb6f4d9165ac46aa26eb1f16d82bbf94a3739212421bca93463e830b",
+    "stored_schema": "0.1.25",
+    "read_schema": "0.1.25",
+    "validation": {
+      "valid": true
+    },
+    "counts": {
+      "reality_entities": 4,
+      "epistemic_observations": 4,
+      "evidence": 4,
+      "claims": 0,
+      "claim_evidence_links": 0,
+      "reality_events": 0,
+      "reality_states": 0,
+      "observations": 0
+    },
+    "record_hashes": {
+      "a1a0a37c-ceff-5690-a4cb-6e0e551e77d8": "19bc360b95a88d18f75f3cd60092af739e4e0070ed55c1409011b773811c72b4",
+      "5e1617be-3b30-5e4c-a839-53d54a8b9e45": "8d7b71206079207074866feb5935758921b6c64aa7ca5c873d256d077227ad91",
+      "683a6945-aac4-5e5a-a291-887dc192e6b4": "00c12185ce13ba6ae8a3fb8113787fc10b014fdd4c464aa19baf32c98e5ec3d5",
+      "2fb4f68c-8a85-55cc-a490-d1e5fc8945b2": "c7c27179956450b91552a64d665ff4804ab35cb1ccfcb5c87df1d7711a458c4f",
+      "cab9db21-5fcc-5c0e-a11d-38a9d15a0e2a": "704991814ec408a9023ff86a5d9c2782d2e8dee854dc9b413f54369c412799a1",
+      "5702ac69-3f61-5c82-ace8-90c4c317dd4f": "3ac089e34ed75c022cccce423f93857a7f60dd90b91d19b28a51331b5bec6c3e",
+      "3d69b18c-d130-5e45-abe3-cb2ee19ce775": "60fd1f2da3fd956a25a1ab4c7a53fd75a3ad2ecd8a18c79392bf6608950a3cec",
+      "560d3816-d4ab-5c43-a7d0-a617f9f1a3bd": "eef6c66dcf0e35b8109f1ac338eda8a157807d81e23e8a67674afe259d33f183",
+      "30f34e69-460a-5534-ab7c-984d53fcb7a7": "a244777d7ce9bdc091b0d5ccfa952d8499c864197353eada34c58a7675c55344"
+    },
+    "existing392_unchanged": true,
+    "approved_fields_refs_provenance": "PASS",
+    "human_interface_reader": "PASS: 4 Documents each Observation1 and Evidence1; no UI changes",
+    "owner_release": "PASS",
+    "extra_projects_or_temp_or_lock": false,
+    "project_file_stamp": {
+      "mtime_ns": "1789538643726730493",
+      "ctime_ns": "1789538643726827827",
+      "ino": "13315141",
+      "size": "11302",
+      "fingerprint": "f45b265afb6f4d9165ac46aa26eb1f16d82bbf94a3739212421bca93463e830b"
+    }
+  },
+  "human_interface_reader_compatibility": "PASS: 4 Documents each Observation1 and Evidence1; no UI changes",
+  "save_calls": 1,
+  "negative_verification": {
+    "protected_files_unchanged": 8047,
+    "default_target_absent": true,
+    "worktrees": 46
+  },
+  "recovery": {
+    "before_bytes": "before-project-state.bytes",
+    "sha256": "f1ed694f3e0c3a10d383e816f43ca003cd6c123dad18c3f0688d2289c0f3e3bc",
+    "automatic_rollback": false
+  },
+  "operation_implementation_sha256": "531821af7f4ca0e8a08294bc4f7bcddd1d2dc4623ffe98852f27b38487f5ee13"
+}

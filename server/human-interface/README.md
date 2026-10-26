@@ -1,4 +1,68 @@
-# HUMAN-003B — Project / Entity Browse Boundary
+# HUMAN-005B — Observation-linked Evidence Read Boundary
+
+The Entity response now additively includes
+`core_read_results.evidence_for_observation: [{ observation_id, evidence: Evidence[] }]`.
+`canonical_records.observations` and existing Claim-linked results are unchanged.
+No endpoint, metadata count, canonical type/schema or UI change is introduced.
+
+`getEvidenceForObservation(state, observationId)` is a public core pure reader in
+`ground-core/reality/epistemic.ts`, exported through `ground-core/index.ts`.
+It requires exactly one Observation with matching ID and project_id in the supplied
+ProjectState. Missing/foreign-only Observation throws existing NotFoundError;
+ambiguous local IDs throw existing ValidationError. Neither becomes an empty result.
+The HTTP boundary propagates unexpected reader errors as CANONICAL_READ_FAILURE.
+
+It returns only Evidence where project_id equals state.project.id,
+kind is observation_ref, and observation_id equals the requested ID. URL, subject,
+provenance, summary, source identity and timestamp similarity are never relation
+criteria. external_ref records are excluded even if observation_id happens to match.
+All matching canonical records/fields are returned unchanged in stored Evidence
+collection order, without ranking or inferred authority. Return cardinality is 0..N.
+
+The existing Entity membership check and getObservationsForSubject determine the
+Observation scope. Each Observation gets a bundle, including an empty evidence
+array for zero matches; zero Observations yields zero bundles. Evidence linked to
+an Observation is not renamed Entity Evidence. ClaimEvidenceLink relations remain
+in the separate evidence_for_claim result. No generic Project Evidence array exists.
+
+All readers consume the same one acquired snapshot. No reload, index, backlink,
+repair, writeback or source expansion occurs. The existing snapshot_fingerprint
+identifies the exact bytes used for the additional result as well. Evidence presence
+does not establish Observation truth. Zero means zero explicit observation_ref
+matches in this scope, not Evidence absence, unsupported content or low confidence.
+
+Verification: live Observation 87ae62f9-9481-5577-a299-813c022d2007 returns Evidence
+3151b313-d5bc-5b58-a17d-a61add22f22d, with full canonical field equality. Live Project
+fingerprint before/after is
+f1ed694f3e0c3a10d383e816f43ca003cd6c123dad18c3f0688d2289c0f3e3bc;
+root file bytes are unchanged. Opt-in reproduction uses existing GROUND_RUNTIME_CONFIG:
+`node --import tsx scripts/human-interface/verify-human-005b-live.ts`.
+
+B15 returns two bundles, for 1e8a9b55-a7fe-4bdd-8bc0-e6169ee941d2 (0 Evidence)
+and 27e042ed-38da-44c1-8a78-0a594e04fa7a (Evidence
+731d5de8-f456-4f4d-8de0-2b5b6627ee13). HUMAN-001 and Round4 return no Observation
+bundles despite their external_ref Evidence. Claim-linked results remain identical.
+The A/B mutable snapshot test publishes B immediately after acquiring A, verifies
+all A reader results including linked Evidence, then verifies B on the next request.
+
+Tests: 9 new core cases PASS; new reader plus existing epistemic-core tests 21 PASS;
+server/registry/Browse/Entity/resolver and existing UI tests 79 PASS. Full core was
+rerun on baseline C and B in the same environment: baseline 3,783 PASS / 104 FAIL;
+B 3,792 PASS / 104 FAIL (3,896 total). Failure-name sets are identical; missing
+ignored storage fixture failures were not fixed, restored or suppressed.
+Core/adapter typecheck, Human Interface lint, Vite build and Foundation all PASS.
+
+HUMAN-005C may display the Observation bundles and full canonical Evidence raw
+records under the explicit relation. This checkpoint does not modify presentation
+or claim a UI proof. No implementation blocker remains. No HUMAN-005C work started.
+
+---
+
+The following records the HUMAN-004B baseline, before the additive 005B scope above.
+Its references to Observation-linked Evidence being outside the Entity response
+are historical boundary descriptions, superseded by the contract above.
+
+# HUMAN-004B — Mutable Canonical Storage Read Boundary
 
 The existing JavaScript server mounts `http-route.js`, which uses scoped `tsx`
 `tsImport` to load the adapter and canonical TypeScript core. No global runtime
@@ -10,7 +74,9 @@ Hosted deployment and Docker image build are not verified by this checkpoint.
 
 `GET /api/human-interface/reality/:projectId/:entityId`
 
-The server-only `source-registry.ts` is the sole snapshot selection authority.
+The server-only `source-resolver.ts` selects either the immutable proof registry
+or the explicitly registered mutable live Project. `source-registry.ts` retains
+its immutable fixture contract.
 Its checked-in manifest explicitly registers `human-001`, `e2-b15` and
 `historical-round4`. The project ID uniquely resolves one entry; the entity ID
 is checked for membership in that same verified ProjectState. Every saved
@@ -19,7 +85,7 @@ The manifest candidate remains proof metadata/fixture validation, not access con
 not alternative request selectors. No path, filename, registry override, scan,
 nearest match, fallback, newest selection or multi-source merge is supported.
 
-After resolving the registered Project, each canonical request reads its registered fixture once, verifies
+For proof Projects, each canonical request reads its registered fixture once, verifies
 fresh bytes against its registered SHA-256 before parsing, then calls existing
 core normalization and validation. Stored schema remains 0.1.24; read schema is
 0.1.25. Every canonical reader receives that same normalized ProjectState.
@@ -86,7 +152,7 @@ Responses use `Cache-Control: no-store`. Failure responses contain only
 
 `GET /api/human-interface/projects` returns
 `{ transport: { contract: "human-interface-project-catalog.v1" }, registered_projects }`.
-Each catalog entry contains only `project_id`, `source_key`, `source_qualification`.
+Each catalog entry contains only `project_id`, `source_key`, `source_mode`, `source_qualification`.
 It enumerates the explicit registry in registry order, reads zero snapshot bytes,
 and performs no storage scan. It does not claim verified integrity, loaded Project,
 canonical title or confirmed schemas. Source qualification describes origin, not
@@ -105,8 +171,8 @@ quality, Project kind/status, warning severity or rank.
 
 Stored collection order is preserved; no semantic ordering is asserted.
 No identity counts, ranking, temporal summaries, search or filtering are added.
-Each canonical request reads exactly one fresh snapshot and verifies its hash
-before parsing/normalization/validation. Catalog is the explicit zero-read case.
+Each canonical request acquires exactly one snapshot. Proof hashes are checked
+before parsing; live exact-byte hashes and validation come from the core snapshot loader. Catalog is the explicit zero-read case.
 Both new routes use the same GET-only, no-query, no-store and failure boundary.
 No filesystem path or internal source origin is exposed.
 
@@ -116,7 +182,97 @@ raw ProjectState download, reverse provenance, cross-Entity traversal, derived
 ranking and write/action remain outside scope. A selectable Entity does not
 imply rich knowledge about that Entity. No React changes are included.
 
-## Verification — HUMAN-003B
+
+## Explicit live enablement (HUMAN-004B)
+
+Set `GROUND_RUNTIME_CONFIG` in the server process environment to the absolute
+path of the existing STORAGE-003 runtime JSON, then start the server. The JSON
+has the existing `CanonicalOwnerConfig` fields `mode: canonical-live`, absolute
+`storageDir`, and `writerOwner`. No new storage configuration format is added.
+STORAGE-003 has no exported config loader: owner-cli parses this JSON inline;
+the read boundary reads the same file and reuses core `assertPersistenceMode`.
+Only `{mode, storageDir}` is passed to `loadProjectSnapshot`; ownership is never
+acquired and `writerOwner` is not used as a write capability.
+
+No environment setting means proof-only (3 catalog entries). A provided setting
+explicitly enables one fourth entry: `088d09dc-dfc5-487a-8f8f-22d2b33a9249`,
+source key/qualification `canonical-live-project`. Catalog does not open the
+runtime JSON, inspect the root, load a snapshot, or assert availability. Invalid
+or missing configured runtime JSON fails on canonical read. No default-root,
+fixture or environment-storage fallback is permitted. No root enumeration occurs.
+Paths and runtime settings never appear in transport responses or error messages.
+
+Transport `source_mode` is `immutable_proof_snapshot` or
+`mutable_canonical_storage`, independent of `source_qualification`. Project and
+Entity responses include `snapshot_fingerprint`, the SHA-256 of the stored bytes
+used for that response. `sha256` remains a compatibility alias. Proof Entity
+responses retain `fixture`; live responses do not claim fixture identity or an
+immutable baseline commit. Existing proof response fields and canonical results
+remain intact. Neither source metadata nor fingerprint is a canonical field,
+revision, generation, temporal current state, truth identity, or ranking.
+
+A live Project/Entity request calls core `loadProjectSnapshot` once. All identity,
+worldline, Observation, Claim and claim-linked Evidence reads use that returned
+state. The next request may observe another fingerprint after owner publication.
+There is no cross-request pinning, latest/current selection, or temporal logic
+in the adapter. Tests publish B after acquiring A: the first response stays wholly
+A and the next response reads B. Test publication uses only disposable roots.
+
+Live failures are HTTP 503 with only `transport_error`:
+
+- `LIVE_RUNTIME_CONFIG_UNAVAILABLE`: missing/invalid configured runtime JSON.
+- `LIVE_ROOT_UNAVAILABLE`: absent/non-directory root.
+- `LIVE_PROJECT_FILE_MISSING`: the registered Project file cannot be found.
+- `LIVE_PROJECT_ID_MISMATCH`: loaded Project identity differs from request.
+- `LIVE_SNAPSHOT_VALIDATION_FAILURE`: canonical read/validation or root manifest failure.
+- `LIVE_PERMISSION_DENIED`: root/snapshot access denied.
+- `LIVE_READ_FAILURE`: other storage failure.
+
+These are read failures within registered scope, not global absence or empty
+collections. Existing proof errors, 404 unknown scope/membership, GET-only,
+no-query and no-store behavior remain. The server never imports save/owner
+acquisition, performs migration writeback, mutates manifests or removes locks/temp
+files. Existing lock/temp bytes remain unchanged during read tests.
+
+## Actual live verification and remaining scope
+
+The opt-in script `scripts/human-interface/verify-human-004b-live.ts` uses the same
+`GROUND_RUNTIME_CONFIG` environment setting and default HTTP router. It requires
+LIVE-003C fingerprint
+`f1ed694f3e0c3a10d383e816f43ca003cd6c123dad18c3f0688d2289c0f3e3bc`
+and stops for investigation on a difference; it never restores or accepts it.
+It verifies live Catalog 4, Project Entity 1, Document
+`fbdfd235-1a5b-5a5d-ad30-6f2c170fe9f9`, Observation
+`87ae62f9-9481-5577-a299-813c022d2007`, Claims/Events/States 0 and exact core
+worldline. Live Project and all existing root file bytes are unchanged afterward.
+
+Canonical storage Evidence `3151b313-d5bc-5b58-a17d-a61add22f22d` exists (1),
+but Entity response claim-linked bundles are 0. This is not a Project-wide
+Evidence count. Observation→Evidence traversal is a later read-scope checkpoint.
+React/UI, refresh, source badges, fingerprint display and presentation remain
+unchanged. HUMAN-004C can consume this server capability; no live UI proof is
+claimed or automatically started.
+
+Current verification: 89 tests PASS (all server resolver/registry/boundary and
+existing UI tests, file-store and storage-owner tests), adapter/core typechecks,
+Human Interface lint, Vite build, Foundation verification and actual live HTTP
+verification PASS. Core/storage/schema/fixtures are unchanged. Full core suite
+not rerun; known missing-fixture 104 failures are not repaired.
+
+Commands (HTTP tests require local loopback permission):
+
+```sh
+TSX_TSCONFIG_PATH=server/human-interface/ui-test-tsconfig.json node --import tsx --test server/human-interface/*.test.ts server/human-interface/*.test.tsx ground-core/__tests__/file-store.test.ts ground-core/__tests__/storage-owner.test.ts
+node_modules/.bin/tsc -p server/human-interface/tsconfig.json
+node_modules/.bin/tsc -p ground-core/tsconfig.json
+node_modules/.bin/eslint src/human-interface server/human-interface/http-route.js
+npm run build
+node --import tsx scripts/human-interface/verify-human-001.ts
+# With the existing runtime config path explicitly set in GROUND_RUNTIME_CONFIG:
+node --import tsx scripts/human-interface/verify-human-004b-live.ts
+```
+
+## Historical verification — HUMAN-003B
 
 ```sh
 node --import tsx --test server/human-interface/source-registry.test.ts server/human-interface/read-boundary.test.ts server/human-interface/browse-boundary.test.ts server/human-interface/ui.test.tsx

@@ -1,0 +1,25 @@
+{
+  "package": "frus-1904-392-inspection-v1",
+  "checkpoint": "SEMANTIC-002",
+  "status": "DRY_REVIEW_ONLY_UNPUBLISHED",
+  "previous_candidate_commit": "25ba36665c1034c1317e7556abea007bb08da539",
+  "target_project_id": "088d09dc-dfc5-487a-8f8f-22d2b33a9249",
+  "full_dataset_sha256": "5bc32592aa80ee4742f8e01b09d4381dacc1ce080fb930772a7a1ea2b24c70c2",
+  "selected_input_sha256": "2c4f2e2b9e4530d077087994e043e42920d79621c704ec8dc05a48f6a7fd849d",
+  "selected_input_path": "../frus-1904-392/selected-input.json",
+  "selection_policy": "Reuse exact pinned selection; reinterpret as recorded inspection report, never invoke old Claim projection",
+  "source_id": "frus:1904:392",
+  "historical_input_key": "c392-instruction",
+  "id_keys": {
+    "document": "frus-392-stored-inspection-v1:document:frus:1904:392",
+    "observation": "frus-392-stored-inspection-v1:inspection-result:frus:1904:392:c392-instruction",
+    "evidence": "frus-392-stored-inspection-v1:inspection-evidence:frus:1904:392:c392-instruction"
+  },
+  "generated_ids": {
+    "document": "fbdfd235-1a5b-5a5d-ad30-6f2c170fe9f9",
+    "observation": "87ae62f9-9481-5577-a299-813c022d2007",
+    "evidence": "3151b313-d5bc-5b58-a17d-a61add22f22d"
+  },
+  "projection_sha256": "937b19c9aca16f8b7ddc3019c0b547a5478334c6722d02e6b5878d42e739bb8d",
+  "final_recorded_at": "UNBOUND"
+}
