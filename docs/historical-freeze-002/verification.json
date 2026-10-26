@@ -1,0 +1,34 @@
+{
+  "base_commit": "45140c001bbc6076496c7a6e12971509362ba665",
+  "baseline": {
+    "tests": 4110,
+    "pass": 4108,
+    "fail": 2,
+    "failure_names": [
+      "current candidate has exactly base plus approved core and enumerated contract implementation scope",
+      "unapproved current core bytes are rejected even when historical checkpoint integrity passes"
+    ]
+  },
+  "candidate": {
+    "tests": 4134,
+    "pass": 4132,
+    "fail": 2,
+    "failure_names": [
+      "current candidate has exactly base plus approved core and enumerated contract implementation scope",
+      "unapproved current core bytes are rejected even when historical checkpoint integrity passes"
+    ]
+  },
+  "new_failures": 0,
+  "historical_original_child_tests": 11,
+  "child_pass": 11,
+  "child_fail": 0,
+  "note": "Child review tests are additional to parent full core count, not summed silently. Focused initial run 23 PASS; final full run includes added root immutability test (24 support tests total).",
+  "typecheck": [
+    "core PASS",
+    "server PASS",
+    "repro support PASS",
+    "historical resolver PASS"
+  ],
+  "build": "PASS",
+  "live_start_end_sha256": "9ff0d8070296d2d5493b618b13d75beab003581a6f7011ae642a53f46fc453cf"
+}

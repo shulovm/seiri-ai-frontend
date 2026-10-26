@@ -1,0 +1,233 @@
+{
+  "base": "74ccdfdccb8288edd34ea445ae74062a1cee15c8",
+  "branch": "ground/test-runner-001",
+  "date": "2026-10-09",
+  "before_proof_commit": "30f27538a68948dfce540a40e903e6d86e053316",
+  "after_proof_commit": "556a66158bb500b48e7fd7ad5bf1538b88c8372a",
+  "proof_source_tree_exact_old_AUTO_MERGE": "9d2e968edf19fc84695ea93260002baa0b986c92",
+  "core": {
+    "before-core": {
+      "tests": 4213,
+      "pass": 4149,
+      "fail": 64,
+      "failures": [
+        "Assessment one then multiple, nullable time, no fusion, no representative confidence",
+        "Assessment overwrite/delete/duplicate ID rejected",
+        "Assessment rejects assessor kind only",
+        "Assessment rejects assessor label only",
+        "Assessment rejects bad scale hash",
+        "Assessment rejects bad snapshot hash",
+        "Assessment rejects basis wrong schema",
+        "Assessment rejects blank rationale",
+        "Assessment rejects empty rationale",
+        "Assessment rejects invalid result",
+        "Assessment rejects missing Claim",
+        "Assessment rejects missing Evidence",
+        "Assessment rejects missing Observation",
+        "Assessment rejects missing assessor Entity",
+        "Assessment rejects missing method",
+        "Assessment rejects null result",
+        "Assessment rejects unnamespaced assessor",
+        "Assessment rejects wrong project",
+        "Belief retains explicit supporting and contradicting Evidence without changing position or score",
+        "Claim admission binds reviewed payload, links and exact before snapshot",
+        "Claim delete, duplicate insert and same-ID replacement fail",
+        "Claim immutable applicable_from",
+        "Claim immutable applicable_until",
+        "Claim immutable created_at",
+        "Claim immutable manifestation_scope",
+        "Claim immutable predicate",
+        "Claim immutable predicate_kind",
+        "Claim immutable provenance",
+        "Claim immutable recorded_at",
+        "Claim immutable subject_id",
+        "Claim immutable updated_at",
+        "Claim immutable value",
+        "FRUS86 stored excerpt origin, unassessed proposition and explicit Claim-Link-Evidence-Observation chain",
+        "admission review and request binding survive independent isolated read",
+        "artifact locator alias does not change scope; no byte-level equivalence is invented",
+        "assessment itself and changed Claim content cannot be the frozen basis",
+        "broken assessment collection is never UNASSESSED; missing external basis keeps stored inventory",
+        "conflict is independent of assessment and different frozen excerpts do not conflict",
+        "current candidate has exactly base plus approved core and enumerated contract implementation scope",
+        "definition id/version cannot be rebound across assessments",
+        "direct snapshot save also rejects unresolved new Assessment references before bytes change",
+        "durable request identity separates same-payload retry from reevaluation and changed payload",
+        "entity-only interval uses existing half-open and offset-aware temporal semantics",
+        "frozen bytes and missing registry never fall back",
+        "isolated writer refuses concurrent owner and preserves the existing lock",
+        "legacy bytes stay unchanged, confidence retained, no invented assessment or scope",
+        "legacy roundtrip is isolated only; no implicit initialization of existing storage",
+        "method/scale/qualification admission rejects declared qualification without basis",
+        "method/scale/qualification admission rejects known action time required",
+        "method/scale/qualification admission rejects method purpose",
+        "method/scale/qualification admission rejects method scale identity",
+        "method/scale/qualification admission rejects procedure missing",
+        "method/scale/qualification admission rejects rationale artifact required",
+        "method/scale/qualification admission rejects review artifact required",
+        "method/scale/qualification admission rejects scale interpretation",
+        "method/scale/qualification admission rejects scale range",
+        "new Claim rejects confidence=0",
+        "new Claim rejects confidence=0.5",
+        "new Claim rejects confidence=0.95",
+        "new Claim rejects confidence=null",
+        "old writer shapes and versions rejected; old reader fails rather than dropping vNext fields",
+        "selector zero/ambiguous/non-string, mismatched subject and missing scope fail",
+        "unapproved current core bytes are rejected even when historical checkpoint integrity passes",
+        "vNext isolated save/load exact-byte stability, independent read, archive and direct-save guard"
+      ]
+    },
+    "base-complete-core": {
+      "tests": 4152,
+      "pass": 4150,
+      "fail": 2,
+      "failures": [
+        "current candidate has exactly base plus approved core and enumerated contract implementation scope",
+        "unapproved current core bytes are rejected even when historical checkpoint integrity passes"
+      ]
+    },
+    "stage3-final-core": {
+      "tests": 4223,
+      "pass": 4221,
+      "fail": 2,
+      "failures": [
+        "current candidate has exactly base plus approved core and enumerated contract implementation scope",
+        "unapproved current core bytes are rejected even when historical checkpoint integrity passes"
+      ]
+    },
+    "clone-final-core": {
+      "tests": 4223,
+      "pass": 4221,
+      "fail": 2,
+      "failures": [
+        "current candidate has exactly base plus approved core and enumerated contract implementation scope",
+        "unapproved current core bytes are rejected even when historical checkpoint integrity passes"
+      ]
+    }
+  },
+  "new_ENOENT": 0,
+  "former_62_pass": 62,
+  "former_historical_51_pass": 51,
+  "unit": {
+    "tests": 10,
+    "pass": 10,
+    "fail": 0,
+    "failures": []
+  },
+  "focused": {
+    "base-focused": {
+      "tests": 58,
+      "pass": 58,
+      "fail": 0,
+      "failures": []
+    },
+    "base-ui": {
+      "tests": 19,
+      "pass": 19,
+      "fail": 0,
+      "failures": []
+    },
+    "stage3-semantic-storage": {
+      "tests": 97,
+      "pass": 97,
+      "fail": 0,
+      "failures": []
+    },
+    "stage3-human": {
+      "tests": 66,
+      "pass": 64,
+      "fail": 0,
+      "failures": []
+    },
+    "stage3-ui": {
+      "tests": 49,
+      "pass": 47,
+      "fail": 0,
+      "failures": []
+    },
+    "provenance-live": {
+      "tests": 17,
+      "pass": 17,
+      "fail": 0,
+      "failures": []
+    },
+    "live-ui": {
+      "tests": 9,
+      "pass": 9,
+      "fail": 0,
+      "failures": []
+    }
+  },
+  "historical_family_tests": [
+    11,
+    13,
+    13,
+    57
+  ],
+  "artifacts_182": "PASS",
+  "dual_identity": "PASS",
+  "current_typechecks": "PASS",
+  "historical_typechecks": "PASS",
+  "builds": "PASS",
+  "input_integrity": [
+    {
+      "run": "base-complete-core",
+      "file_count": 61,
+      "bytes": 4925955,
+      "fixture_set_sha256": "e168fc4ff695470db79b11f4c813fc68ab36c6bc23e7d207d23ba6a6980d1a40",
+      "post_execution_integrity": "PASS",
+      "test_exit": {
+        "exitCode": 1,
+        "signal": null
+      }
+    },
+    {
+      "run": "clone-final-core",
+      "file_count": 70,
+      "bytes": 5142151,
+      "fixture_set_sha256": "9e7220192c730b88aa0fc5e6ce742254883b620568be1dc329cf92d337858618",
+      "post_execution_integrity": "PASS",
+      "test_exit": {
+        "exitCode": 1,
+        "signal": null
+      }
+    }
+  ],
+  "safety": {
+    "live_start": "9ff0d8070296d2d5493b618b13d75beab003581a6f7011ae642a53f46fc453cf",
+    "live_end": "9ff0d8070296d2d5493b618b13d75beab003581a6f7011ae642a53f46fc453cf",
+    "hold_HEAD_index_MERGE_HEAD_AUTO_MERGE_unchanged": true,
+    "reflog_only_changes": [
+      {
+        "worktree": "ground-canonical-integration-v1",
+        "file": "logs/HEAD",
+        "start": "9ea7c577e59dbf7d69bc7e2a59db9ca19047efdd63eada2a73c0a2886eedec46",
+        "end": "3f9e61d9dc0bb03d4c13b210751c04f45e7f4fbaf7ea7b6b7b71634cf56640f1"
+      },
+      {
+        "worktree": "ground-canonical-integration-v1-replay",
+        "file": "logs/HEAD",
+        "start": "79fce6d755d917845d290b4a5fd83d80af93156978c481f3c8bbd8594da4072e",
+        "end": "7c2c6f64ca8074db1df664a56ffdb5429f9da5655571a1b3a07bd8e782900096"
+      },
+      {
+        "worktree": "ground-canonical-integration-v1-r2",
+        "file": "logs/HEAD",
+        "start": "da05d381f0fa9833436cdbca610f4188d5a45317d7c1edd8370fc9fd56468e5c",
+        "end": "f89480aab98a0aef568e532d292dc1019fc725dc49b7f9c9c0bee33522958cb2"
+      }
+    ],
+    "reflog_change_cause": "Not established; no explicit reflog edit/reset/prune performed. No authoritative HOLD state file changed.",
+    "old_hold_checkout_directories_missing_at_start": true,
+    "stage3_source_tree": "9d2e968edf19fc84695ea93260002baa0b986c92",
+    "proof_only_diff": [
+      "scripts/repro/fixture-inputs.json",
+      "scripts/repro/fixture-inputs.mjs",
+      "scripts/repro/fixture-inputs.test.ts",
+      "scripts/repro/test-ground.mjs"
+    ]
+  },
+  "added_top_level_fixture_files": 7,
+  "added_top_level_fixture_bytes": 73113,
+  "root_policy": "exact commit Git blobs; no checkout/live/network fallback; setup preflight; readonly + after-test hash/path validation"
+}
