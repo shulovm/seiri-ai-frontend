@@ -1,0 +1,81 @@
+{
+  "checkpoint": "HUMAN-BIZ-002A — First Real Business Reality Use",
+  "biz002_remote": {
+    "branch": "ground/human-biz-002",
+    "commit": "641b467b87e43afc79da3cdd18d1fad3c71bb660",
+    "exact_match": true
+  },
+  "project_id": "2142cf30-db65-42b6-9b20-922b80e54909",
+  "title": "GROUND / Business GROUND Human Interface開発",
+  "write_path": "existing owner-cli init / patch -> withCanonicalWriter -> runCli -> applyPatch -> saveProject (atomic)",
+  "runtime": {
+    "mode": "canonical-live",
+    "writerOwner": "ground-local-cli-v0",
+    "storageDir": "/Users/macsaku/Library/Application Support/GROUND/storage/projects"
+  },
+  "before_creation": "Project did not exist; existing root contained only Historical Project and manifest",
+  "snapshot_fingerprints": {
+    "before": "63de801956b3d87ca2fedcde96737ec9e272926e2e59795f5776856e9ab4d868",
+    "in-use": "afab2c22a5ef5e5f0b5cf8fd34e2ea01a6b8b21b8a64e39a3216366f118ccdef",
+    "after": "48cd0c2de497c8499b26ec8cad2b54cb3db772399bd0b5f22733141f32d7e832"
+  },
+  "snapshot_copies": "/private/tmp/human-biz-002a-evidence",
+  "stored_schema": "0.1.25",
+  "read_schema": "0.1.25",
+  "current_state": {
+    "id": "cbdee3aa-11ba-4e8b-8d93-6a0c1b78b81c",
+    "project_id": "2142cf30-db65-42b6-9b20-922b80e54909",
+    "primary_goal_id": null,
+    "primary_next_action_id": null,
+    "summary": "HUMAN-BIZ-002はremote固定済み。HUMAN-BIZ-002Aで実Projectの保存・Home表示・Projectへの遷移を確認した。Homeの展開で状態と決定済み行動は理解できたが、完了更新は既存owner CLIのpatchが必要だった。次に検討する不足はAction update/writeの導線。Decision / Commitmentの必要性は今回未確認。次の開発行動は人間による未決定のため追加していない。",
+    "phase": null,
+    "confidence": null,
+    "updated_at": "2026-11-08T23:09:10.076Z"
+  },
+  "blockers": [],
+  "next_actions": [
+    {
+      "id": "bd3cfc1f-e3ba-4855-a879-2290eb257c5b",
+      "project_id": "2142cf30-db65-42b6-9b20-922b80e54909",
+      "goal_id": null,
+      "blocker_id": null,
+      "depends_on_action_id": null,
+      "title": "Business Homeで実Projectを確認し、仕事の再開に不足する情報を報告する",
+      "description": "人間がHUMAN-BIZ-002Aで決定した行動。Home → Project card → operating expansionで現在状態・次の行動を確認し、必要性を確認した不足だけを分類する。HUMAN-BIZ-003には自動で進まない。",
+      "status": "done",
+      "due_at": null,
+      "sort_order": 0,
+      "created_at": "2026-11-08T23:07:16.050Z",
+      "updated_at": "2026-11-08T23:09:10.076Z"
+    }
+  ],
+  "action_history": "human-requested HUMAN-BIZ-002A use/review: in_progress -> done after actual browser review; no AI proposed next task stored",
+  "owner_released": true,
+  "historical_before_after": "9ff0d8070296d2d5493b618b13d75beab003581a6f7011ae642a53f46fc453cf",
+  "other_live_files_unchanged": true,
+  "proof_changes": false,
+  "core_changes": false,
+  "schema_changes": false,
+  "registration": "one explicit Business Project added; live discovery remains allowlisted; no endpoint, read scope or write UI added",
+  "browser": "Home -> Business card -> Operating expansion -> Project -> Home; saved summary/action in_progress then done observed",
+  "use_findings": {
+    "understood": "established checkpoint, current work, approved action and completion visible in card expansion",
+    "detail_needed": false,
+    "limitations": "agent actual use only; no independent owner comprehension or next-day longitudinal proof; Blocker empty, no populated Blocker proof",
+    "information_load": "raw collapsed by default; explanations and long summary occupy vertical space; done action remains under Next actions with explicit status",
+    "confirmed_gap": "action completion/state update requires owner CLI outside Home",
+    "next_feature_candidate": "Action update/write workflow discovery, not implementation",
+    "decision_commitment": "need not established",
+    "other_features": "Project relations / Resource / Search / Timeline / Graph / priority / recommendation not justified by this use",
+    "tomorrow": "can recover last result and that next work is undecided; cannot select or save a new human decision inside current read-only Home"
+  },
+  "verification": {
+    "server": "69 PASS / 0 FAIL / 3 live-config skips",
+    "typecheck": "PASS",
+    "build": "PASS",
+    "actual_live": "loadProjectSnapshot equals Operating response including fingerprint and records; owner lock released",
+    "full_core": "not rerun; core unchanged"
+  },
+  "blocking_issue": "none for this use; daily update depends on existing external owner CLI",
+  "next_checkpoint": "not started; no HUMAN-BIZ-003 implementation"
+}

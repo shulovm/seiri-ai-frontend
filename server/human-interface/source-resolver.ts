@@ -8,6 +8,11 @@ import { realitySourceRegistry, RealitySourceError, canonicalBaselineCommit } fr
 export const LIVE_PROJECT_ID = '088d09dc-dfc5-487a-8f8f-22d2b33a9249';
 const liveIdentity = Object.freeze({ project_id: LIVE_PROJECT_ID, source_key: 'canonical-live-project',
   source_mode: 'mutable_canonical_storage' as const, source_qualification: 'canonical-live-project' });
+export const BUSINESS_PROJECT_ID = '2142cf30-db65-42b6-9b20-922b80e54909';
+const liveIdentities = Object.freeze([liveIdentity, Object.freeze({
+  project_id: BUSINESS_PROJECT_ID, source_key: 'canonical-live-business-project',
+  source_mode: 'mutable_canonical_storage' as const, source_qualification: 'canonical-live-project',
+})]);
 export class LiveSourceError extends Error {
   constructor(public readonly code: string) { super(code); }
 }
@@ -17,7 +22,7 @@ export interface SourceIdentity {
 }
 interface ResolverOptions {
   proofRegistry?: typeof realitySourceRegistry;
-  // Server startup option only; presence explicitly enables the one registered live scope.
+  // Server startup option only; presence explicitly enables the explicitly registered live scopes.
   runtimeConfigPath?: string;
 }
 // Same STORAGE-003 CanonicalOwnerConfig JSON used by owner-cli. There is no
@@ -38,10 +43,10 @@ export function createHumanSourceResolver({ proofRegistry = realitySourceRegistr
   const proofSources: SourceIdentity[] = proofRegistry.sources.map(s => ({project_id:s.project_id,
     source_key:s.source_key, source_qualification:s.source_qualification, source_mode:'immutable_proof_snapshot'}));
   const liveEnabled = runtimeConfigPath !== undefined;
-  if (liveEnabled && proofSources.some(s => s.project_id === liveIdentity.project_id || s.source_key === liveIdentity.source_key)) {
+  if (liveEnabled && proofSources.some(s => liveIdentities.some(live => s.project_id === live.project_id || s.source_key === live.source_key))) {
     throw new RealitySourceError('AMBIGUOUS_SOURCE_REGISTRY');
   }
-  const sources = Object.freeze([...proofSources, ...(liveEnabled ? [liveIdentity] : [])].map(s => Object.freeze(s)));
+  const sources = Object.freeze([...proofSources, ...(liveEnabled ? liveIdentities : [])].map(s => Object.freeze(s)));
   return Object.freeze({ sources,
     readSnapshot(projectId: string) {
       const identity = sources.find(s => s.project_id === projectId);

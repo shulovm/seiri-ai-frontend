@@ -4,7 +4,7 @@ import { mkdtempSync, readFileSync, writeFileSync, readdirSync, rmSync, unlinkSy
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { tsImport } from 'tsx/esm/api';
-import { createHumanSourceResolver, LIVE_PROJECT_ID } from './source-resolver.js';
+import { createHumanSourceResolver, LIVE_PROJECT_ID, BUSINESS_PROJECT_ID } from './source-resolver.js';
 import { realitySourceRegistry, createRealitySourceRegistry } from './source-registry.js';
 import { createHumanBrowseReader, createHumanRealityReader } from './read-adapter.js';
 import { loadProjectSnapshot, saveProject } from '../../ground-core/file-store.js';
@@ -38,8 +38,9 @@ test('explicit enablement: zero snapshot catalog reads, no automatic discovery o
  const resolver=createHumanSourceResolver({runtimeConfigPath:x.runtimeConfigPath},()=>{reads++;throw Error('catalog must not read');});
  const other=createEmptyProject({title:'not registered'});withCanonicalWriter(x.config,o=>saveProject(other,o));
  const catalog=createHumanBrowseReader(resolver).catalog();
- assert.equal(catalog.registered_projects.length,4);assert.equal(reads,0);
+ assert.equal(catalog.registered_projects.length,5);assert.equal(reads,0);
  assert.deepEqual(catalog.registered_projects[3],{project_id:LIVE_PROJECT_ID,source_key:'canonical-live-project',source_mode:'mutable_canonical_storage',source_qualification:'canonical-live-project'});
+ assert.deepEqual(catalog.registered_projects[4],{project_id:BUSINESS_PROJECT_ID,source_key:'canonical-live-business-project',source_mode:'mutable_canonical_storage',source_qualification:'canonical-live-project'});
  assert.equal(createHumanBrowseReader(createHumanSourceResolver()).catalog().registered_projects.length,3);
  assert.throws(()=>resolver.readSnapshot(other.project.id),/UNKNOWN_PROJECT/);assert.equal(reads,0);
  assert.doesNotMatch(JSON.stringify(catalog),/storageDir|fixture_path|fingerprint|schema|integrity|title|\/private|\/Users/);
@@ -94,6 +95,9 @@ test('proof/live resolution never falls across sources; ambiguous scope rejected
  assert.throws(()=>resolver.readSnapshot(proof.sources[0].project_id),/SOURCE_UNAVAILABLE/);assert.equal(liveReads,0);
  resolver.readSnapshot(LIVE_PROJECT_ID);assert.equal(proofReads,1);assert.equal(liveReads,1);
  assert.throws(()=>resolver.readSnapshot('../../etc/passwd'),/UNKNOWN_PROJECT/);assert.equal(liveReads,1);
+ assert.throws(()=>resolver.readSnapshot(BUSINESS_PROJECT_ID),/LIVE_PROJECT_FILE_MISSING/);assert.equal(liveReads,2);
+ const businessConflict=createRealitySourceRegistry([{...proof.sources[0],project_id:BUSINESS_PROJECT_ID}]);
+ assert.throws(()=>createHumanSourceResolver({proofRegistry:businessConflict,runtimeConfigPath:x.runtimeConfigPath}),/AMBIGUOUS_SOURCE_REGISTRY/);
  const conflict=createRealitySourceRegistry([{...proof.sources[0],project_id:LIVE_PROJECT_ID}]);
  assert.throws(()=>createHumanSourceResolver({proofRegistry:conflict,runtimeConfigPath:x.runtimeConfigPath}),/AMBIGUOUS_SOURCE_REGISTRY/);
 });
@@ -103,7 +107,7 @@ test('config failures never invoke storage or default fallback; proof reads rema
  for(const path of ['relative','',join(x.dir,'missing'),x.runtimeConfigPath]){
   if(path===x.runtimeConfigPath)writeFileSync(path,JSON.stringify({mode:'local',storageDir:x.config.storageDir}));
   const r=createHumanSourceResolver({runtimeConfigPath:path},()=>{reads++;throw Error('no storage reads');});
-  assert.equal(r.sources.length,4);assert.throws(()=>r.readSnapshot(LIVE_PROJECT_ID),/LIVE_RUNTIME_CONFIG_UNAVAILABLE/);
+  assert.equal(r.sources.length,5);assert.throws(()=>r.readSnapshot(LIVE_PROJECT_ID),/LIVE_RUNTIME_CONFIG_UNAVAILABLE/);
   assert.equal(r.readSnapshot(realitySourceRegistry.sources[0].project_id).source.source_mode,'immutable_proof_snapshot');
  }
  assert.equal(reads,0);
