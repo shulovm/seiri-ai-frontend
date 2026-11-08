@@ -32,3 +32,8 @@
 .biz-operating p,.biz-operating code { overflow-wrap: anywhere; }
 .biz-operating-record { border-left: 2px solid #b6c7bb; padding: 8px 12px; margin: 14px 0; }
 .biz-record-raw pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; background: #f1f4ef; padding: 12px; }
+
+.biz-home button {max-width:100%; white-space:normal; padding:.6rem .85rem; border:1px solid #bac7bf; border-radius:6px; background:#f3f7f4; color:#234b3b; cursor:pointer; font:inherit;}
+.biz-home button:disabled {opacity:.6; cursor:wait;}
+.biz-update-error {border-left:3px solid #975339; padding:.75rem; overflow-wrap:anywhere;}
+.biz-update-receipt pre {white-space:pre-wrap; overflow-wrap:anywhere; font-size:.75rem;}

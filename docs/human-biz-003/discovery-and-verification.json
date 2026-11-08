@@ -1,0 +1,125 @@
+{
+  "checkpoint": "HUMAN-BIZ-003 — Action Update v0",
+  "status": "IMPLEMENTATION / ISOLATED VERIFICATION PASS; LIVE USE HOLD (explicit user decision)",
+  "base": "e2351be480179217215b83da040a09bfa8c9c1ee",
+  "BIZ002A_remote": {
+    "branch": "ground/human-biz-002a",
+    "commit": "e2351be480179217215b83da040a09bfa8c9c1ee",
+    "exact_match": true
+  },
+  "discovery": {
+    "owner_cli": "init/patch delegate to existing constructor, applyPatch, validation, saveProject in withCanonicalWriter",
+    "snapshot_precondition": "not provided by CLI; new adapter compares exact fingerprint inside owner session before applyPatch",
+    "transitions": "existing canonical status enum; core patch allows status updates without a transition graph. Start/complete is a narrower endpoint policy, not new core semantics",
+    "idempotency": "patch timestamps mean repeat application is not byte-idempotent. Compare-and-reject precondition plus current-status check prevents duplicate mutation; no automatic retry or request-ID model",
+    "atomic_save": "existing same-directory temp/rename contract; not a power-loss durability promise"
+  },
+  "endpoint": {
+    "method": "POST",
+    "path": "/api/human-interface/projects/:projectId/actions/:actionId/status",
+    "body": {
+      "transition": "start | complete"
+    },
+    "precondition_header": "If-Ground-Snapshot-Fingerprint (64 hex SHA-256, required)",
+    "allowlist": [
+      "2142cf30-db65-42b6-9b20-922b80e54909"
+    ],
+    "denied": "Historical / proof / unregistered / arbitrary paths; raw patches and extra fields rejected",
+    "allowed_transitions": [
+      "pending -> in_progress",
+      "in_progress -> done"
+    ],
+    "unchanged": "CurrentState, primary_next_action_id, goal/dependency refs, titles, descriptions, due dates, priorities, canonical order",
+    "error_codes": [
+      "SNAPSHOT_MISMATCH",
+      "INVALID_TRANSITION",
+      "OWNER_UNAVAILABLE",
+      "CANONICAL_VALIDATION_FAILURE",
+      "STORAGE_FAILURE",
+      "WRITE_CONFIG_UNAVAILABLE"
+    ],
+    "owner": "ground-local-cli-v0; acquire/read/check/apply/save/read/release; finally on errors; no stale lock removal",
+    "schema": "0.1.25 only and stored/read equality required; no migration"
+  },
+  "activation": {
+    "default": "disabled",
+    "runtime": "existing GROUND_RUNTIME_CONFIG absolute config with canonical-live root and owner",
+    "opt_in": "GROUND_BUSINESS_WRITE_ORIGIN = exact http loopback origin",
+    "request_guard": "loopback peer + exact Origin + Host + same-origin Sec-Fetch-Site when supplied + JSON intent; no forwarded-header trust",
+    "authority_limit": "local OS-owner use only; no remote/multi-user deployment authorization",
+    "live_smoke": "http://localhost:3017/ (write opt-in deliberately unset)",
+    "isolated_smoke": "http://localhost:3018/ using temporary isolated root only"
+  },
+  "presentation": {
+    "controls": "Start / Mark done only for enabled scope and pending/in_progress; done/cancelled read-only",
+    "confirmation": "no extra dialog: explicit status-only action, no execution; pending submit locked and stale/error snapshot cannot resubmit",
+    "groups": "Active / collapsed Completed / collapsed Cancelled; within-group stored order; no priority claim",
+    "density": "title/status primary; description/due_at and raw expand",
+    "success": "write receipt then fresh Operating GET; no optimistic canonical status",
+    "failure": "local Project alert, no automatic retry; reload required; unknown outcome or saved-but-read-failed are explicit"
+  },
+  "auditability": {
+    "receipt": [
+      "before_fingerprint",
+      "after_fingerprint",
+      "project_id",
+      "action_id",
+      "old_status",
+      "new_status",
+      "recorded_update"
+    ],
+    "recorded_update": "canonical NextAction.updated_at",
+    "retention": "response receipt and structured server operation log. No new canonical history model; deployments must retain operation logs if cross-session receipt retention is required. Snapshot alone does not retain previous fingerprints."
+  },
+  "verification": {
+    "server": "79 PASS / 0 FAIL / 3 live-dependent skips",
+    "UI": "58 PASS / 0 FAIL / 2 live-dependent skips",
+    "new_action_server": "10 PASS",
+    "new_action_UI": "4 PASS",
+    "live_read_server": "23 PASS / 0 FAIL",
+    "live_read_UI": "9 PASS / 0 FAIL",
+    "storage": "file-store + owner 21 PASS; persistence-contract 14 PASS",
+    "skip_note": "live-dependent skips covered by explicit live read subsets; counts overlap",
+    "typecheck": "PASS",
+    "build": "PASS",
+    "browser_isolated": [
+      "Start -> in_progress with new read",
+      "external writer change -> SNAPSHOT_MISMATCH, status not changed",
+      "explicit reload -> Mark done -> Completed",
+      "390px viewport scrollWidth 390"
+    ],
+    "browser_live": "Business and Historical read; existing done Action in Completed; write remains disabled",
+    "full_core": "not rerun, Core/schema unchanged",
+    "test_correction": "BIZ002A expanded catalog from 4 to 5; old live UI catalog expectation updated; grouping assertion updated for explicit new presentation"
+  },
+  "isolated_browser_receipts": [
+    {
+      "old_status": "pending",
+      "new_status": "in_progress",
+      "before_fingerprint": "351d3baf144ee74aea59f02119a5aab99593a19b36d6cdf4e5d8f57a5f9ca2ca",
+      "after_fingerprint": "af48d4cade1e285a5d200ff3c641c057c6caa8cafbeb1c72e7d6fb6e60f18302",
+      "recorded_update": "2026-11-08T23:53:35.544Z"
+    },
+    {
+      "old_status": "in_progress",
+      "new_status": "done",
+      "before_fingerprint": "758f97b0747dbe7e13b37cc17c8c16834a629534e19babcb272bcee688c038bc",
+      "after_fingerprint": "4388ad89740ffb2450e59a8bce4303a9cc1f20eb9d99437e2c92f80f64932668",
+      "recorded_update": "2026-11-08T23:54:14.109Z"
+    }
+  ],
+  "live_fingerprint_start_end": {
+    "2142cf30-db65-42b6-9b20-922b80e54909": "48cd0c2de497c8499b26ec8cad2b54cb3db772399bd0b5f22733141f32d7e832",
+    "088d09dc-dfc5-487a-8f8f-22d2b33a9249": "9ff0d8070296d2d5493b618b13d75beab003581a6f7011ae642a53f46fc453cf"
+  },
+  "live_writes": false,
+  "core_schema_proof_changes": false,
+  "remaining": {
+    "live_use": "HOLD: only existing done Action; user confirmed no target and live-only HOLD; no Action generated/reopened",
+    "CLI_free": "isolated browser progression proven; real daily workflow not yet proven",
+    "next_missing_feature": "not established without next real use",
+    "Decision_Commitment": "no new evidence of need",
+    "blocking_issue": "human-decided existing pending/in_progress Action required for live use",
+    "BIZ004": "not started"
+  }
+}

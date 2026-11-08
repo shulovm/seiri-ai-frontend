@@ -1,3 +1,4 @@
+import {actionUpdateEnabled} from './action-update.js';
 import { getRealityWorldline } from '../../ground-core/reality/worldline.js';
 import { getClaimsForSubject, getEvidenceForClaim, getEvidenceForObservation, getObservationsForSubject } from '../../ground-core/reality/epistemic.js';
 import { realitySourceRegistry, RealitySourceError } from './source-registry.js';
@@ -101,7 +102,7 @@ export function createHumanOperatingReader(sourceResolver: HumanSourceResolver |
   return (projectId: string) => {
     const {source,state} = readVerifiedProject(registry,projectId);
     return {
-      transport: {contract:'human-interface-project-operating.v1',source,requested_scope:{project_id:projectId}},
+      transport: {contract:'human-interface-project-operating.v1',action_update_enabled:actionUpdateEnabled(projectId),source,requested_scope:{project_id:projectId}},
       canonical_project: state.project,
       canonical_entities: state.reality_entities.map(({id,project_id,kind,label}) => ({id,project_id,kind,label})),
       canonical_operating_records: {current_state:state.current_state,blockers:state.blockers,next_actions:state.next_actions},

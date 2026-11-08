@@ -11,9 +11,9 @@ const { createHumanSourceResolver,LIVE_PROJECT_ID }=await tsImport('./source-res
 const { realitySourceRegistry }=await tsImport('./source-registry.ts',import.meta.url);
 const render=(view:React.ReactNode)=>renderToStaticMarkup(<MemoryRouter>{view}</MemoryRouter>);
 const resolver=createHumanSourceResolver({runtimeConfigPath:'/server-owned/unavailable.json'});
-test('live catalog shows four explicit scopes, mode and qualification without content verification',()=>{
+test('live catalog shows five explicit scopes, mode and qualification without content verification',()=>{
  const html=render(<CatalogView response={createHumanBrowseReader(resolver).catalog()}/>);
- assert.equal((html.match(/<li>/g)||[]).length,4);
+ assert.equal((html.match(/<li>/g)||[]).length,5);
  for(const text of [LIVE_PROJECT_ID,'source_mode','mutable_canonical_storage','immutable_proof_snapshot','canonical-live-project'])assert.ok(html.includes(text));
  assert.doesNotMatch(html,/snapshot_fingerprint|stored_schema_version|Live Truth|Current Reality|Authoritative History/);
 });

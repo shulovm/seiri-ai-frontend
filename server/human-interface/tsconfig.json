@@ -23,6 +23,6 @@
     "source-resolver.test.ts",
     "../../scripts/human-interface/verify-human-004b-live.ts",
     "../../scripts/human-interface/verify-human-005b-live.ts",
-    "operating-boundary.test.ts"
+    "operating-boundary.test.ts", "action-update.ts", "action-update.test.ts"
   ]
 }

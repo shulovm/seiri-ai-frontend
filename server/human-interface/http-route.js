@@ -1,3 +1,4 @@
+import {createActionUpdateRouter} from './action-route.js';
 import { Router } from 'express';
 import { tsImport } from 'tsx/esm/api';
 
@@ -17,6 +18,7 @@ const transportStatuses = {
 
 export function createHumanInterfaceRouter(reader, browseReader, provenanceReader, operatingReader) {
   const router = Router();
+  router.use(createActionUpdateRouter());
   const handle = select => async (req, res) => {
     res.set('Cache-Control', 'no-store');
     if (req.method !== 'GET') {

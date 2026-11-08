@@ -14,9 +14,9 @@ test('proof operating records preserve summaries, nulls and empty-vs-missing sem
  }
  const missing=renderToStaticMarkup(<OperatingRecords/>);assert.ok(missing.includes('Not available in current read scope'));assert.ok(!missing.includes('保存されたBlocker記録はありません'));
 });
-test('populated presentation does not suppress resolved/done or reorder actions',()=>{
+test('populated presentation retains resolved/done and groups active before completed',()=>{
  const records={current_state:null,blockers:[{id:'unit-b',title:'Resolved record',description:'stored',status:'resolved',severity:'low'}],next_actions:[{id:'unit-a',title:'First stored',status:'done',description:null,due_at:null,sort_order:9},{id:'unit-c',title:'Second stored',status:'pending',description:'stored',due_at:'2026-11-09T09:00:00+09:00',sort_order:0}]};
- const html=renderToStaticMarkup(<OperatingRecords records={records}/>);assert.ok(html.includes('resolved'));assert.ok(html.includes('done'));assert.ok(html.indexOf('First stored')<html.indexOf('Second stored'));assert.ok(html.includes('2026-11-09T09:00:00+09:00'));assert.ok(!html.includes('Recommended'));
+ const html=renderToStaticMarkup(<OperatingRecords records={records}/>);assert.ok(html.includes('resolved'));assert.ok(html.includes('done'));assert.ok(html.indexOf('Second stored')<html.indexOf('First stored'));assert.ok(html.includes('2026-11-09T09:00:00+09:00'));assert.ok(!html.includes('Recommended'));
 });
 test('operating client rejects incomplete or cross-Project response instead of empty defaults',async()=>{
  const id=realitySourceRegistry.sources[0].project_id;const body=createHumanOperatingReader()(id);
