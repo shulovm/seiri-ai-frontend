@@ -94,3 +94,18 @@ export function createHumanBrowseReader(sourceResolver: HumanSourceResolver | ty
 export const humanBrowseReader = createHumanBrowseReader();
 export type HumanProjectCatalogTransport = ReturnType<typeof humanBrowseReader.catalog>;
 export type HumanProjectBrowseTransport = ReturnType<typeof humanBrowseReader.project>;
+
+// Operating scope is a literal projection of one verified snapshot, not an assessment.
+export function createHumanOperatingReader(sourceResolver: HumanSourceResolver | typeof realitySourceRegistry = humanSourceResolver) {
+  const registry = asSourceResolver(sourceResolver);
+  return (projectId: string) => {
+    const {source,state} = readVerifiedProject(registry,projectId);
+    return {
+      transport: {contract:'human-interface-project-operating.v1',source,requested_scope:{project_id:projectId}},
+      canonical_project: state.project,
+      canonical_entities: state.reality_entities.map(({id,project_id,kind,label}) => ({id,project_id,kind,label})),
+      canonical_operating_records: {current_state:state.current_state,blockers:state.blockers,next_actions:state.next_actions},
+    };
+  };
+}
+export const readHumanOperating = createHumanOperatingReader();

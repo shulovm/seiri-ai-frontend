@@ -1,0 +1,113 @@
+{
+  "checkpoint": "HUMAN-BIZ-002 — Operating State Read Scope",
+  "base": "bbf7e9fc251d31aeda998b248cac3bc6fffc7269",
+  "BIZ001_remote_checkpoint": {
+    "name": "GROUND Human Interface — Business Home Foundation v0",
+    "branch": "ground/human-biz-001",
+    "hash": "bbf7e9fc251d31aeda998b248cac3bc6fffc7269",
+    "verified_exact": true
+  },
+  "discovery": {
+    "CurrentState": {
+      "classification_before": "NEEDS READ SCOPE",
+      "canonical": "ProjectState.current_state / ground-core/types.ts:101",
+      "meaning": "Project運営上の保存summary/phase/primary_goal_id/primary_next_action_id/confidence/updated_at。constructorや明示patchで保存される。人間著者とは自動断定しない。RealityState、Project.status、Process状態、時刻から導出するcurrent stateではない。",
+      "refs": "state-engine.tsはprimary Goal/NextAction参照整合性・削除制約を保持。"
+    },
+    "Blocker": {
+      "classification_before": "NEEDS READ SCOPE",
+      "canonical": "ProjectState.blockers / ground-core/types.ts:116",
+      "meaning": "明示された障害record。open/mitigated/resolved/accepted、severityは保存field。UNKNOWN/gap/unresolved Claim等から変換しない。"
+    },
+    "NextAction": {
+      "classification_before": "NEEDS READ SCOPE",
+      "canonical": "ProjectState.next_actions / ground-core/types.ts:129",
+      "meaning": "明示された次の行動record。pending/in_progress/done/cancelled、goal/blocker/dependency参照、nullable due_atとsort_order。Process/Commitment/Decision outcomeや実行許可とは別。更新時刻で選出しない。"
+    },
+    "classification_after": "3対象とも新しいHuman Operating readでREADY。推奨next action/現在の活動や健康状態の判定はNOT CANONICALとして追加しない。",
+    "evidence": [
+      "docs/GROUND_CORE_V0.1_DESIGN.md sections 2.4-2.6",
+      "ground-core/types.ts",
+      "ground-core/state-engine.ts",
+      "ground-core/migrate.ts",
+      "server/human-interface/read-adapter.ts",
+      "3 registered immutable snapshots and actual live Project"
+    ]
+  },
+  "read_boundary": {
+    "endpoint": "GET /api/human-interface/projects/:projectId/operating",
+    "contract": "human-interface-project-operating.v1",
+    "transport": [
+      "source identity",
+      "snapshot_fingerprint",
+      "stored/read schema",
+      "requested project scope"
+    ],
+    "canonical": [
+      "canonical_project",
+      "canonical_entities identity projection",
+      "canonical_operating_records.current_state",
+      "canonical_operating_records.blockers",
+      "canonical_operating_records.next_actions"
+    ],
+    "derived_read_result": "なし。新semantic計算なし。",
+    "snapshot": "readVerifiedProject / existing source resolverから一度だけsnapshotを取得。Homeは旧project GETと混在させず、このresponseだけからcard全体を描画。",
+    "errors": "既存registered scope、validation、source integrity、no-store、GET-only、query拒否を再利用。失敗時に空配列へfallbackしない。",
+    "unchanged": "旧Project browse response/Entity reader/provenance response contractsを維持。"
+  },
+  "presentation": {
+    "location": "既存Home card内のOperating state disclosure。新Project detail routeなし。",
+    "CurrentState": "summary、phase、updated_atとcomplete raw。nullを保存値として表示。confidenceやprimary refsはrawに保持。",
+    "Blocker": "全statusを保存配列順。title/description/status/severityとraw。",
+    "NextAction": "全statusを保存配列順。title/description/status/due_atとraw。sort_orderはrawに保持し、並べ替えなし。",
+    "empty": "このsnapshotに保存記録がないと説明。No blockers/Healthy/行動不要を意味しない。",
+    "missing": "Not available in current read scope。正常source内の必須field欠損は既存validation/client contractで失敗。",
+    "navigation": "Open Project → 既存Project browse → Entity Explorer。legacy goal/action/blocker IDをRealityEntityへ推定接続しない。"
+  },
+  "verification": {
+    "proof_snapshots": 3,
+    "actual_live": "保存CurrentState完全一致、blockers/next_actionsは空。fingerprint完全一致、bytes不変。",
+    "populated": "メモリ内unit-onlyデータでresolved/done保存、参照/nullable fields/順序を検証。新fixture/live data生成なし。実populated Business運用の証明ではない。",
+    "server": {
+      "pass": 69,
+      "skip": 3,
+      "fail": 0
+    },
+    "UI": {
+      "pass": 54,
+      "skip": 2,
+      "fail": 0
+    },
+    "live_operating_provenance_subset": {
+      "pass": 23,
+      "fail": 0
+    },
+    "live_UI_subset": {
+      "pass": 9,
+      "fail": 0
+    },
+    "skip_note": "liveなしsuiteの3/2 skipはlive設定subsetで実行。subsetは重複を含む。",
+    "typecheck": "PASS",
+    "build": "PASS",
+    "browser": "Home → Operating disclosure → CurrentState raw → Project → FRUS395 Explorer PASS",
+    "narrow": {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "scope": "live CurrentState/raw、空Blockers/NextActions、Explorer link。populated narrowは実データがなく未証明。"
+    },
+    "core_full_suite": "今回未再実行。Core/schema/fixtures変更なし。既知authority failuresは対象外。"
+  },
+  "live_fingerprint_before_after": "9ff0d8070296d2d5493b618b13d75beab003581a6f7011ae642a53f46fc453cf",
+  "core_changes": false,
+  "schema_changes": false,
+  "live_writes": false,
+  "remaining_read_scopes": [
+    "Decision",
+    "Commitment",
+    "Resource",
+    "query-scoped epistemic gaps"
+  ],
+  "next_checkpoint": "Decision/CommitmentのDiscoveryへ進めるread foundationは成立。ただし別承認。HUMAN-BIZ-003未開始。",
+  "blocking_issue": "このread scopeのblockerなし。実populated Business記録の運用確認は未証明。"
+}

@@ -1,8 +1,28 @@
 {
   "compilerOptions": {
-    "target": "ES2022", "module": "NodeNext", "moduleResolution": "NodeNext",
-    "strict": true, "skipLibCheck": true, "noEmit": true,
-    "esModuleInterop": true, "types": ["node"]
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "types": [
+      "node"
+    ]
   },
-  "include": ["provenance-source.ts", "provenance-pin.ts", "read-adapter.ts", "read-boundary.test.ts", "browse-boundary.test.ts", "source-registry.ts", "source-registry.test.ts", "source-resolver.ts", "source-resolver.test.ts", "../../scripts/human-interface/verify-human-004b-live.ts", "../../scripts/human-interface/verify-human-005b-live.ts"]
+  "include": [
+    "provenance-source.ts",
+    "provenance-pin.ts",
+    "read-adapter.ts",
+    "read-boundary.test.ts",
+    "browse-boundary.test.ts",
+    "source-registry.ts",
+    "source-registry.test.ts",
+    "source-resolver.ts",
+    "source-resolver.test.ts",
+    "../../scripts/human-interface/verify-human-004b-live.ts",
+    "../../scripts/human-interface/verify-human-005b-live.ts",
+    "operating-boundary.test.ts"
+  ]
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchCatalog, fetchProject } from './browse-client.js';
+import OperatingRecords from './OperatingRecords.jsx';
+import { fetchCatalog, fetchOperating } from './browse-client.js';
 
 export function BusinessProjectCard({ source, request }) {
   const response = request?.response;
@@ -16,6 +17,7 @@ export function BusinessProjectCard({ source, request }) {
       <dl className="biz-facts"><div><dt>保存status</dt><dd>{project.status}</dd></div>
         <div><dt>このsnapshotのEntity</dt><dd>{response.canonical_entities.length} 件</dd></div></dl>
       <p className="biz-caption">summaryとstatusはProjectの保存fieldです。現在の活動状況や進捗の判定ではありません。</p>
+      <OperatingRecords records={response.canonical_operating_records} />
       <details><summary>読取sourceとsnapshot</summary><dl className="biz-source">
         {Object.entries(response.transport.source).map(([key,value]) => <div key={key}><dt>{key}</dt><dd><code>{String(value)}</code></dd></div>)}
       </dl></details>
@@ -27,7 +29,7 @@ function ProjectCard({ source }) {
   const [request,setRequest] = useState(null);
   useEffect(() => {
     const controller = new AbortController();
-    fetchProject(source.project_id, {signal:controller.signal}).then(response => {
+    fetchOperating(source.project_id, {signal:controller.signal}).then(response => {
       if (!controller.signal.aborted) {
         if (response.canonical_project.id !== source.project_id) setRequest({id:source.project_id,error:{code:'PROJECT_ID_MISMATCH'}});
         else setRequest({id:source.project_id,response});
@@ -53,7 +55,7 @@ export function BusinessHomeView({ request }) {
       {live?.length === 0 && <p>live Projectの読取範囲は登録されていません。</p>}
     </section>
     <section className="biz-boundary" aria-labelledby="business-boundary"><h2 id="business-boundary">まだ、この画面では確認できないこと</h2>
-      <p>未解決事項、判断・Commitment、次の行動、資源の状況は、現在のProject読取範囲に含まれていません。未取得を0件や「問題なし」として扱いません。</p>
+      <p>判断・Commitment、資源、epistemic gapsの状況は、このOperating読取範囲に含まれていません。未取得を0件や「問題なし」として扱いません。</p>
       <p>Entity単位の記録は、Open ProjectからReality Explorerで確認できます。</p></section>
     {proof?.length > 0 && <section className="biz-proofs"><details><summary>検証用snapshotを見る · {proof.length} 件</summary>
       <p className="biz-caption">読取機能の検証用に登録されたsnapshotです。運営中の事業Projectとして集計しません。</p>

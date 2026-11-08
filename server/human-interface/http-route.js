@@ -15,7 +15,7 @@ const transportStatuses = {
   LIVE_SNAPSHOT_VALIDATION_FAILURE: 503, LIVE_PERMISSION_DENIED: 503, LIVE_READ_FAILURE: 503,
 };
 
-export function createHumanInterfaceRouter(reader, browseReader, provenanceReader) {
+export function createHumanInterfaceRouter(reader, browseReader, provenanceReader, operatingReader) {
   const router = Router();
   const handle = select => async (req, res) => {
     res.set('Cache-Control', 'no-store');
@@ -43,6 +43,7 @@ export function createHumanInterfaceRouter(reader, browseReader, provenanceReade
       return res.status(503).json({ transport_error: { code: 'READ_RUNTIME_UNAVAILABLE' } });
     }
   };
+  router.all('/projects/:projectId/operating', handle((loaded, req) => (operatingReader ?? loaded.readHumanOperating)(req.params.projectId)));
   router.all('/projects', handle(loaded => (browseReader ?? loaded.humanBrowseReader).catalog()));
   router.all('/projects/:projectId', handle((loaded, req) => (browseReader ?? loaded.humanBrowseReader).project(req.params.projectId)));
   router.all('/reality/:projectId/:entityId', handle((loaded, req) =>

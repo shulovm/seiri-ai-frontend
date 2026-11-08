@@ -25,3 +25,10 @@
 .biz-proofs { border-top: 1px solid #d5ded7; padding-top: 16px; }.biz-home footer { color: #69786f; font-size: 12px; margin-top: 40px; overflow-wrap: anywhere; }
 .biz-home [role=alert] { border-left: 3px solid #996d44; padding: 12px; overflow-wrap: anywhere; }
 @media(max-width:600px) { .biz-home { padding: 20px 18px 40px; }.biz-header { align-items: flex-start; }.biz-brand span { display: block; margin: 0; }.biz-intro { padding: 32px 0 26px; }.biz-card { padding: 20px; }.biz-boundary { padding: 18px; } }
+.biz-operating { border-top: 1px solid #e0e6e0; margin-top: 18px; }
+.biz-operating section { border-top: 1px solid #e0e6e0; padding: 12px 0; }
+.biz-operating h4 { font-size: 16px; margin: 12px 0; }
+.biz-operating h5 { font-size: 15px; margin: 8px 0; }
+.biz-operating p,.biz-operating code { overflow-wrap: anywhere; }
+.biz-operating-record { border-left: 2px solid #b6c7bb; padding: 8px 12px; margin: 14px 0; }
+.biz-record-raw pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; background: #f1f4ef; padding: 12px; }
