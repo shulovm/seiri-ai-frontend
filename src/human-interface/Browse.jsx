@@ -4,7 +4,7 @@ import { fetchCatalog, fetchProject } from './browse-client.js';
 import { RealityReadFailure } from './RealityReadView.jsx';
 
 export function BrowseNavigation({ projectId }) {
-  return <nav className="hi-navigation" aria-label="Reality navigation"><Link to="/reality">Projects</Link>{projectId && <> / <Link to={`/reality/${encodeURIComponent(projectId)}`}>Project</Link></>}</nav>;
+  return <nav className="hi-navigation" aria-label="Reality navigation"><Link to="/">Business Home</Link> / <Link to="/reality">Projects</Link>{projectId && <> / <Link to={`/reality/${encodeURIComponent(projectId)}`}>Project</Link></>}</nav>;
 }
 function Fields({ record }) {
   return <dl className="hi-fields">{Object.entries(record).map(([key,value]) => <div key={key}><dt>{key}</dt><dd><code>{typeof value === 'object' ? JSON.stringify(value) : String(value)}</code></dd></div>)}</dl>;

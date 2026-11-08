@@ -1,0 +1,136 @@
+{
+  "checkpoint": "HUMAN-BIZ-001",
+  "base": "16b6578c23d243d5443fb845c0fa1eeed61220d0",
+  "branch": "ground/human-biz-001",
+  "purpose": "Business Realityへのread-only入口。感情・人生相談・Personal GROUNDは対象外。",
+  "routes": {
+    "/": "BusinessHome",
+    "/organize": "既存Appを保持",
+    "/reality": "既存登録catalog",
+    "/reality/:projectId": "既存Project browse",
+    "/reality/:projectId/:entityId": "既存Reality Explorer"
+  },
+  "existing_endpoints": {
+    "GET /api/human-interface/projects": "登録metadataのみ。保存Projectの内容検証を意味しない。",
+    "GET /api/human-interface/projects/:projectId": "検証済みsnapshotからcanonical_projectとEntity identity配列、source/fingerprint",
+    "GET /api/human-interface/reality/:projectId/:entityId": "getRealityWorldline、getObservationsForSubject、getClaimsForSubject、getEvidenceForClaim、getEvidenceForObservation",
+    "GET /api/human-interface/reality/:projectId/:entityId/observations/:observationId/provenance-source": "explicit bindingとsnapshot fingerprintで固定input解決。canonical outputとは別。"
+  },
+  "source_registry": {
+    "proof": "fixtures/human-interface/source-registry.json / source-registry.ts",
+    "live": "source-resolver.ts。明示runtime config時のみ登録live Projectを既存loadProjectSnapshotで読む",
+    "home": "既存catalogとproject GETを再利用。endpoint/registry変更なし。Projectごと独立snapshot、全体同時snapshotを主張しない。"
+  },
+  "READY": [
+    {
+      "data": "Project identity/title/summary/status",
+      "boundary": "humanBrowseReader.project",
+      "home": "保存fieldをそのまま表示。summaryは新規要約ではない。statusは稼働判断ではない。"
+    },
+    {
+      "data": "Entity identitiesと件数",
+      "boundary": "canonical_entities",
+      "home": "返却された一snapshotの配列長。completenessや重要度ではない。"
+    },
+    {
+      "data": "登録source metadataと件数",
+      "boundary": "humanBrowseReader.catalog",
+      "home": "live/immutable proofをsource_modeで分離。会社全体の件数ではない。"
+    },
+    {
+      "data": "Entity Event/State/Observation/Claim/Evidence、worldline temporal summary",
+      "boundary": "既存Entity read",
+      "home": "深部Explorerの導線を維持。project summaryへ勝手に集約しない。"
+    },
+    {
+      "data": "provenance/frozen selected input/raw",
+      "boundary": "既存explicit resolver",
+      "home": "既存Explorerからアクセス。"
+    }
+  ],
+  "NEEDS_READ_SCOPE": [
+    {
+      "data": "CurrentState、Blocker、NextAction、Goal",
+      "canonical": "ProjectState.current_state/blockers/next_actions/goals",
+      "gap": "Project browseは返さない。CurrentState≠RealityState。Goal.priorityやBlocker.severityが存在してもHomeで推定しない。"
+    },
+    {
+      "data": "Decision",
+      "canonical": "legacy decisionsとRealityDecisionDeclarationは別。getRealityDecisionDeclarationsForSpace/getDecisionSpaceDecisionHistory/assessDecisionMemory",
+      "gap": "Human endpoint未公開。決める必要がある事項へ再解釈しない。"
+    },
+    {
+      "data": "Commitment",
+      "canonical": "getApplicableInterventionCommitmentDeclarations/getInterventionCommitmentHistory",
+      "gap": "対象・時間・宣言scopeを明示する新read contractが必要。pending実行を推定しない。"
+    },
+    {
+      "data": "Resources",
+      "canonical": "resource declarations/capacity/availability。getApplicableResourcesForHolder/findDeclaredResources/assessResource",
+      "gap": "Human endpoint未公開。金銭残高・effective availability・使用率へ変換しない。"
+    },
+    {
+      "data": "unresolved/gaps",
+      "canonical": "getEpistemicGapsForSubject/assessEpistemicGapsAt/getUnresolvedSubjectClaims",
+      "gap": "明示的なsubject/predicate/time queryが必要。一般Business unknown一覧やBlockerとは別。"
+    }
+  ],
+  "NOT_CANONICAL": [
+    {
+      "data": "Home独自の進捗率/health/risk score/最重要判断/推奨next action/resource percentage",
+      "reason": "このBusiness Home用のauthority-bearing contractはない。既存Goal.priorityやNextActionを不存在とは言わない。"
+    },
+    {
+      "data": "active processesの事業横断総数",
+      "reason": "調査したtypes/index/read boundaryに専用Process collection/active-process集計contractなし。open Entity taxonomyでkind=processを保存できても稼働判定を意味しない。"
+    },
+    {
+      "data": "recent relevant Realityの横断ranking",
+      "reason": "何をrecent/relevantとするかのHome用承認scopeなし。updated_atを現実の発生時刻へ転用しない。"
+    }
+  ],
+  "components": [
+    "BusinessHome",
+    "BusinessProjectCard",
+    "既存Browse/RealityExplorer/EntityNavigation/RealityReadView/FrozenInputPanel/FrozenInputView"
+  ],
+  "error_policy": "loading、読取失敗、未登録live、成功0 Entityを区別。失敗を0件に変換しない。各cardはidentityに結びつけ、unmount時abort。",
+  "verification": {
+    "UI": {
+      "pass": 51,
+      "skip": 2,
+      "fail": 0,
+      "new_tests": 4
+    },
+    "server": {
+      "pass": 64,
+      "skip": 2,
+      "fail": 0
+    },
+    "live_UI_subset": {
+      "pass": 9,
+      "fail": 0
+    },
+    "live_provenance_subset": {
+      "pass": 17,
+      "fail": 0
+    },
+    "skips": "live無設定suiteのskipは別live設定runで実行済み。重複を足してunique件数にしない。",
+    "typecheck": "Human PASS",
+    "build": "PASS",
+    "browser": "Home → live Project → FRUS395 → Observation/Evidence → frozen input PASS",
+    "narrow_viewport": {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390
+    },
+    "core_full_suite": "未再実行。core/server implementation/fixture/schema変更なし。既知2 FAILは本checkpointの修正対象外。",
+    "live_fingerprint": "9ff0d8070296d2d5493b618b13d75beab003581a6f7011ae642a53f46fc453cf"
+  },
+  "core_changes": false,
+  "schema_changes": false,
+  "server_read_changes": false,
+  "live_writes": false,
+  "next_checkpoint_proposal": "HUMAN-BIZ-002 — Project Operational Read Scope Discovery。まず保存CurrentState/Blocker/NextActionの明示fieldを同一snapshotでreadする最小境界を審査。Decision/Commitmentとepistemic gapsを混同しない。未実装。",
+  "limitations": "実liveの登録Projectは現在Historical研究1件。会社・開発・資源の実運用データが揃ったBusiness Homeの証明ではない。"
+}

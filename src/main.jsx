@@ -10,6 +10,8 @@ import Explore from './Explore.jsx'
 import './human-interface/reality-explorer.css'
 import Browse from './human-interface/Browse.jsx'
 import RealityExplorer from './human-interface/RealityExplorer.jsx'
+import BusinessHome from './human-interface/BusinessHome.jsx'
+import './human-interface/business-home.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -18,7 +20,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/reality" element={<Browse catalog />} />
         <Route path="/reality/:projectId" element={<Browse />} />
         <Route path="/reality/:projectId/:entityId" element={<RealityExplorer />} />
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<BusinessHome />} />
+        <Route path="/organize" element={<App />} />
         <Route path="/plans" element={<Plans />} />
         <Route path="/welcome" element={<Landing />} />
         <Route path="/explore" element={<Explore />} />
